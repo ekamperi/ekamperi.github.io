@@ -1,0 +1,1403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.9" />
+<title>Caching the values of ::GetCrossSection()</title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+.monospaced, code, pre {
+  font-family: "Courier New", Courier, monospace;
+  font-size: inherit;
+  color: navy;
+  padding: 0;
+  margin: 0;
+}
+pre {
+  white-space: pre-wrap;
+}
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #888;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; vertical-align: text-bottom; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel0, div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+div.unbreakable { page-break-inside: avoid; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+
+
+/* BEG @import url(bare.css); */
+/* ---------------------------------------------------------------------------
+   Bare AsciiDoc styles
+   Ryan Tomayko <r@tomayko.com>
+--------------------------------------------------------------------------- */
+
+body {
+	font-family:verdana,helvetica,arial,sans-serif;
+	font-size:81.25%;   /* 13px */
+	line-height:1.538;  /* 20px */
+	margin:40px 50px;
+	max-width:56.250em; /* 900px */
+	color:#333;
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+em {
+	font-style:italic;
+}
+
+strong {
+	font-weight:bold;
+	color:#000;
+}
+
+tt {
+	font-family:consolas, 'lucida console', 'bitstream vera sans mono',
+	           'courier new', monospace;
+	color:#000;
+}
+
+p, ul, ol, dl {
+	margin:10px 0
+}
+
+dl {
+	margin-left:40px
+}
+
+dt {
+	font-weight:normal;
+	color:#000;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family:'lucida grande',georgia,verdana,helvetica,arial,sans-serif;
+	font-weight:normal;
+	color:#000;
+}
+
+h1 {
+	font-size:30px;
+	line-height:1.428;
+	margin:20px 0;
+}
+
+h2 {
+	font-size:23px;
+	line-height:1.36363636; /* repeating, of course */
+	margin:20px 0;
+}
+
+h2 + .sectionbody {}
+
+h3 {
+	font-size:18px;
+	line-height:1.1;
+	margin:30px 0 10px 0;
+}
+
+h4 {
+	font-size:13px;
+	font-weight:bold;
+	line-height:1.538;
+}
+
+h5 {
+	font-size:13px;
+	font-style:italic;
+	line-height:1.538;
+}
+
+pre {
+	font-size:larger;
+}
+
+#header {
+	text-align:center;
+	margin-bottom:30px;
+}
+
+#header h1 { margin-bottom:0 }
+
+
+.title, .sidebar-title {
+	font-weight:normal;
+	color:#000;
+	margin-bottom:0;
+}
+
+.admonitionblock .title {
+	font-weight:bold;
+}
+
+.admonitionblock {
+	margin:30px 0px;
+	color:#555;
+}
+
+.admonitionblock td.icon {
+	width:30px;
+	padding-right:20px;
+	padding-left:20px;
+	text-transform:uppercase;
+	font-weight:bold;
+	color:#888;
+}
+
+.listingblock .content {
+	border:1px solid silver;
+	background:#eee;
+	padding:5px;
+}
+
+.listingblock .content pre {
+	margin:0;
+}
+
+.literalblock .content {
+	margin-left:40px;
+}
+
+.verseblock .content {
+	white-space:pre
+}
+
+.sidebarblock .sidebar-content {
+	border:1px solid silver;
+	background:#FFFFEE;
+	padding:0 10px;
+	color:#222;
+	font-size:smaller;
+	line-height:1.5;
+}
+
+.sidebar-title {
+	margin:10px 0;
+	font-weight:bold;
+	color:#442;
+}
+
+.quoteblock-content {
+	font-style:italic;
+	color:#444;
+	margin-left:40px;
+}
+
+.quoteblock-content .attribution {
+	font-style:normal;
+	text-align:right;
+	color:#000;
+}
+
+.exampleblock-content *:first-child { margin-top:0 }
+.exampleblock-content {
+	border-left:2px solid silver;
+	padding-left:8px;
+}
+
+#footer {
+	font-size:11px;
+	margin-top:40px;
+	border-top:1px solid silver;
+	color:#555;
+}
+
+#author {
+	color:#000;
+	text-transform:uppercase
+}
+
+/* vim: set ft=css ts=4 sw=4 noexpandtab: */
+
+/* END @import url(bare.css); */
+
+/* ---------------------------------------------------------------------------
+   FreeBSD AsciiDoc Theme
+   Ryan Tomayko <r@tomayko.com>
+
+   Based on The FreeBSD Handbook and various other FreeBSD documenration.
+--------------------------------------------------------------------------- */
+
+body {
+  font-family:verdana,helvetica,arial,sans-serif;
+  font-size:100%;
+  color:#000;
+}
+
+tt { color:#007A00 }
+pre tt { color:#000 }
+
+dt { color:#000 }
+
+h1, h2, h3, h4, h5 {
+  font-family:'lucida grande',helvetica,verdana,sans-serif;
+  color:#900;
+  font-weight:bold;
+}
+
+#header {
+  text-align:left;
+}
+#header h1 { margin-bottom:40px }
+
+h1 {
+  font-size:36px;
+  line-height:1;
+  margin:40px 0;
+}
+
+h2 {
+  font-size:28px;
+  line-height:1;
+  margin:30px 0 20px 0;
+}
+
+.sectionbody {
+  margin-left:30px;
+}
+
+pre {
+  background:#EEE;
+}
+
+/* vim: set ft=css ts=4 sw=4 noexpandtab: */
+
+/* XXX Mine */
+.monospaced, code, pre {
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 14px;
+  color: navy;
+  padding: 0;
+  margin: 0;
+}
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([1-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName.toLowerCase() == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName.toLowerCase() == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install(4);
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>Caching the values of ::GetCrossSection()</h1>
+<div id="toc">
+  <div id="toctitle">Table of Contents</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_introduction">1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>By looking at the CPU utilization flame graph, we observe that the
+calculation of cross sections in hadronic processes contributes
+much to the total execution time.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="/usr/local/opt/asciidoc/etc/asciidoc/images/icons/note.png" alt="Note" />
+</td>
+<td class="content">When we generate a CPU utilization flame graph, we basically let
+the application run and we capture userspace stack traces at a fixed
+sampling rate, e.g. 1Hz. Thefore, if one function is called frequently
+or if it takes much time to complete (or both), it is more likely to
+that its stack trace will be collected and shown in the graph.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>In this particular case both apply:</p></div>
+<div class="sect2">
+<h3 id="_time_spent_in_getcrosssection">1.1. Time spent in ::GetCrossSection()</h3>
+<div class="listingblock">
+<div class="content">
+<pre><code># dtrace -n '
+pid$target::_ZN23G4CrossSectionDataStore17GetCrossSectionEPK17G4DynamicParticlePK10G4Material:entry
+{
+    @ = count();
+}' -c '/home/stathis/mainStatAccepTest ./exercise.g4'
+
+[ ... snip ... ]
+ ---  EndOfEventAction  ---  event= 20   t=1.34s   random=0.693159
+^C
+          4942549     # ~5M times for 20 events (which is a lot)</code></pre>
+</div></div>
+</div>
+<div class="sect2">
+<h3 id="_how_many_times_getcrosssection_is_called">1.2. How many times ::GetCrossSection() is called</h3>
+<div class="listingblock">
+<div class="content">
+<pre><code>#dtrace -n '
+pid$target::_ZN23G4CrossSectionDataStore17GetCrossSectionEPK17G4DynamicParticlePK10G4Material:entry
+{
+    self-&gt;tt = vtimestamp;
+}
+
+pid$target::_ZN23G4CrossSectionDataStore17GetCrossSectionEPK17G4DynamicParticlePK10G4Material:return
+/self-&gt;tt/
+{
+    @ = sum(vtimestamp - self-&gt;tt);
+    self-&gt;tt = 0;
+}
+
+END
+{
+    normalize(@, 1000000);
+}' -c '/home/stathis/mainStatAccepTest ./exercise.g4'
+
+[ ... snip ... ]
+ ---  EndOfEventAction  ---  event= 20   t=1.61s   random=0.320998
+^C
+             3507     # msec (which is also a lot)</code></pre>
+</div></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_measure_the_repeatability_of_the_cross_section_values">2. How to measure the repeatability of the cross section values</h2>
+<div class="sectionbody">
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="/usr/local/opt/asciidoc/etc/asciidoc/images/icons/note.png" alt="Note" />
+</td>
+<td class="content">The above method can be applied to any other function in general.</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="/usr/local/opt/asciidoc/etc/asciidoc/images/icons/note.png" alt="Note" />
+</td>
+<td class="content">The first time I looked at how cross-sections are distributed,
+and before doing the following elaborate analysis, I did an error in my
+calculations. The results I got gave me the false impression that there were
+a lot more repeated values than they actually are. In hindsight,
+perhaps it wouldn&#8217;t make <em>much</em> sense to cache the results, but we should
+rather attack the problem from another angle. Nonetheless, the following is an
+interesting reading in my humble opinion.</td>
+</tr></table>
+</div>
+<div class="sect2">
+<h3 id="_the_obvious_way">2.1. The obvious way</h3>
+<div class="paragraph"><p>The obvious way would be to make <code>::GetCrossSection()</code> dump at stdout the
+calculated value. The problem with this approach is that it would output
+an overwhelming amount of data, plus we would need to write a custom tool
+to aggregate the results.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_the_dtrace_way">2.2. The DTrace way</h3>
+<div class="paragraph"><p>In order to use DTrace do the aggregation for us, we first need to consider
+some things. DTrace does <strong>not</strong> operate on floating-point numbers. Nor can it
+access (as of yet) the floating-point registers of the FPU, such as <code>ST(0), &#8230;</code></p></div>
+<div class="paragraph"><p>Let us look at the disassembled code of the epilogue of <code>::GetCrossSection()</code>:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>        ... snip ...
+
+        fstl   (%eax,%ebx,8)                            ;; store ST(0), 'sigma', to address EAX + 8*EBX
+        addl   $0x1,%ebx                                ;; increment EBX by 1
+        cmpl   %ebx,-0x24(%ebp)                         ;; compare EBX to 'nElements'
+        jg     -0x41    &lt;::GetCrossSection+0x38&gt;        ;; loop if condition true
+        addl   $0x3c,%esp                               ;; adjust ESP
+        popl   %ebx
+        popl   %esi
+        popl   %edi
+        popl   %ebp
+        ret                                             ;; return to caller</code></pre>
+</div></div>
+<div class="paragraph"><p>Judging from the above we conclude that the result of the calculation
+is returned via the FPU register, where DTrace doesn&#8217;t have access.
+Whereas, if it would have been stored in some general purpose register,
+we could read its value.</p></div>
+<div class="paragraph"><p>We workaround the above obstacle by injecting an inline assembly instruction
+inside <code>::GetCrossSection()</code>, so that the result of the calculation is copied
+into <code>EAX:EDX</code>. Mind that the result is stored in a double precision variable
+(<code>G4double</code>), hence it is 64bits wide, whereas <code>EAX</code> and <code>EDX</code> are both 32bits.
+Therefore the result needs to be split into those 2 registers and be reassembled
+later. Had we compiled everything in 64bits, we could have used <code>RAX</code> register
+which is 64bits wide.</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>G4double
+G4CrossSectionDataStore::GetCrossSection(const G4DynamicParticle* part,
+                                         const G4Material* mat)
+{
+        G4double sigma(0);
+        G4int nElements                 = mat-&gt;GetNumberOfElements();
+        const G4double* nAtomsPerVolume = mat-&gt;GetVecNbOfAtomsPerVolume();
+
+        if (unlikely(G4int(xsecelm.capacity()) &lt; nElements)) {
+                xsecelm.resize(nElements);
+        }
+
+        for (G4int i = 0; i &lt; nElements; ++i) {
+                sigma += nAtomsPerVolume[i] *
+                    GetCrossSection(part, (*mat-&gt;GetElementVector())[i], mat);
+                xsecelm[i] = sigma;
+        }
+
+        __asm__ __volatile__ ("" : : "A" (*(&amp;sigma)));    // This copies sigma to EAX:EDX
+
+        return sigma;
+}</code></pre>
+</div></div>
+<div class="paragraph"><p>Let us look at the new assembly:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>        ... snip ...
+
+       fstl   -0x40(%ebp)               ;; store ST(0) to a local variable
+       movl   -0x40(%ebp),%eax          ;; store first  half to EAX
+       movl   -0x3c(%ebp),%edx          ;; store second half to EDX, 0x3c + 0x4 = 0x40
+       addl   $0x4c,%esp
+       popl   %ebx
+       popl   %esi
+       popl   %edi
+       popl   %ebp
+       ret                              ;; return to caller</code></pre>
+</div></div>
+<div class="paragraph"><p>The result of the computation is copied from the <code>ST(0)</code> FPU register to
+a local variable, and then it is split into two halves and copied to
+<code>EAX</code> and <code>EDX</code>, which is what we wanted. DTrace can now be used to look
+at the values of <code>EAX</code> and <code>EDX</code> with the aid of the <code>uregs[]</code> array.</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code># dtrace -x aggrate=1000us -x aggsize=50M -n
+'pid$target::_ZN23G4CrossSectionDataStore17GetCrossSectionEPK17G4DynamicParticlePK10G4Material:return
+{
+        @[uregs[R_EAX], uregs[R_EDX]] = count();
+}' -c '/home/stathis/mainStatAccepTest ./exercise.g4'
+   -o uregs.cross</code></pre>
+</div></div>
+<div class="paragraph"><p>The above script will output something in the following form:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>2730418801       1064925043                7
+2937292920       1052248252                7
+1236151356       1064336539                8
+ 387162505       1062135956                9
+3605409360       1060393923                9
+....</code></pre>
+</div></div>
+<div class="paragraph"><p>The first column is the value of EAX, the second column is the value of
+EDX and the 3rd column is the count of the respective &lt;EAX,EDX&gt; pair.
+In order to reassemble the <em>sigma</em> values from the individual 32bit
+integers, we use a C/C++ union:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>union DoubleInt {
+        int32_t u_i[2];
+        double  u_d;
+};</code></pre>
+</div></div>
+<div class="paragraph"><p>We copy the integers into the <code>u_i[]</code> array, and then print the result
+from <code>u_d</code>. So, for instance in a 20 events simulation of simplified
+calorimeter:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code># tail -n100 uregs.cross | ./reassembly
+
+... snip ...
+
+0.00393944      142
+0.00260406      296
+0.00104162      409
+0.00208325      505
+0.0010615       513
+0.00243045      526
+0.00138883      565
+0.000694415     606
+0.00573212      740
+0.000347208     1190
+3.47208e-05     2213
+3.47208e-06     2614
+0.000173604     3190
+0               3103580</code></pre>
+</div></div>
+</div>
+<div class="sect2">
+<h3 id="_validation_of_the_divide_then_reassembly_procedure">2.3. Validation of the divide-then-reassembly procedure</h3>
+<div class="paragraph"><p>In order to validate the above methodology we made <code>::GetCrossSection()</code> return
+the same hard-coded values always, and saw them (the values) being reassembled
+correctly at the other end of DTrace output.</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_caching_algorithm">3. The caching algorithm</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_first_attempt">3.1. First attempt</h3>
+<div class="paragraph"><p>We used a hash map to store tuples of the form:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>((DynamicParticle, Material, Kinetic Energy), (CachedValue)).</code></pre>
+</div></div>
+<div class="paragraph"><p>The hash was computed based on the individuals components of the composite key,
+e.g., the energy, name of particle, material, etc.</p></div>
+<div class="paragraph"><p>At first, performance was way worse than without caching, which it didn&#8217;t make
+much sense, since I was under the false impression that there would be a lot of cache
+hits. Also, as the simulation progressed, the performance degraded because the
+map too often reached its maximum capacity and needed to reallocate memory and
+rehash all the existing elements.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_second_attempt">3.2. Second attempt</h3>
+<div class="paragraph"><p>After realizing that the cache hits weren&#8217;t that many, and by printing statistics
+on the hash map utilization, I noticed that the map was overwhelmed by values that
+weren&#8217;t reused. I then <strong>made the map clear itself when its load factor would go
+beyond an arbitrary upper bound</strong>, 0.8 or so.</p></div>
+<div class="paragraph"><p>That made things better, but still caching was slower than not-caching.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_third_attempt">3.3. Third attempt</h3>
+<div class="paragraph"><p>I restructured the hash map to be of the form:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>((Particle, Material, Kinetic Energy), (CachedValue, Count))</code></pre>
+</div></div>
+<div class="paragraph"><p><strong>Every time a cached value was reused, its hit count was increased</strong>. Then,
+when the map would start filling, those values with a hit count less than T
+would be discarded. That should favor the good values, throwing away the useless
+in a LRU (Least Recently Used) manner.</p></div>
+<div class="paragraph"><p>That made things better, but now the caching version is just as fast as the non-caching.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="/usr/local/opt/asciidoc/etc/asciidoc/images/icons/note.png" alt="Note" />
+</td>
+<td class="content">The following graph is <strong>not</strong> generated from the most optimized set of parameters
+(neither from the worse). It portrays how the size of the hash map gradually increases as
+more cross sections are being calculated. At some point the map&#8217;s utilization
+reaches a critical upper bound, when we decide to empty it, preserving the
+good elements though. Ideally, we would like those residuals element to increase
+after every purge cycle (here they don&#8217;t).</td>
+</tr></table>
+</div>
+<div class="paragraph"><p><span class="image">
+<a class="image" href="sizeres.png">
+<img src="sizeres.png" alt="sizeres.png" width="80%" />
+</a>
+</span></p></div>
+</div>
+<div class="sect2">
+<h3 id="_fourth_attempth">3.4. Fourth attempth</h3>
+<div class="paragraph"><p>Since the vast majority of recurring cross section values is <code>zero</code>, I decided
+to try caching only those (Particle, Material, Kinetic Energy) keys for which
+the cross section calculation would result in a zero outcome. This significantly
+increased the hits vs. misses ratio, and also allowed the hash map to reduce in
+size (or, relatedly, the hash map to be purged less often).</p></div>
+</div>
+<div class="sect2">
+<h3 id="_increasing_the_hits_ratio">3.5. Increasing the hits ratio</h3>
+<div class="paragraph"><p>Regarding the kinetic energy of a particle, it is stored in a double data type, which is
+<code>64</code> bits wide as per the IEEE 754 standard. Out of the <code>64</code> bits, the <code>52</code> bits are used to
+represent the fraction part of the number, which translates to <code>log_10(2^52) ~ 16</code> decimal
+digits of precision.</p></div>
+<div class="paragraph"><p>In order to increase the hits ratio, we consider using only up to <code>N</code> bits of
+kinetic energy when we form the composite key.</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>union {
+      double d;
+      uint64_t i;
+} uDoubleInt;
+
+uDoubleInt.d = part-&gt;GetKineticEnergy();
+std::tuple&lt;const G4DynamicParticle *,
+          const G4Material *, uint64_t&gt;
+          partmat(part, mat, uDoubleInt.i &amp; 0xFFFFFF0000000000);</code></pre>
+</div></div>
+<div class="paragraph"><p>This method increases the hits ratio, since more identical tuples are being generated,
+at the expense though of less precise results.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="/usr/local/opt/asciidoc/etc/asciidoc/images/icons/note.png" alt="Note" />
+</td>
+<td class="content">The following graph is <strong>not</strong> generated from the most optimized set of parameters
+(neither from the worse). It just portrays the depenence of hits/misses ratio on the
+number of bits that are used when creating the hash key.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p><span class="image">
+<a class="image" href="bitsprec.png">
+<img src="bitsprec.png" alt="bitsprec.png" width="80%" />
+</a>
+</span></p></div>
+</div>
+<div class="sect2">
+<h3 id="_which_hadronic_processes_are_amenable_to_cross_section_caching">3.6. Which hadronic processes are amenable to cross-section caching ?</h3>
+<div class="paragraph"><p>Every hadronic process has its own instance of <code>G4CrossSectionDataStore</code>.
+By gathering statistics (hits, misses, load factor) on a per
+<code>G4CrossSectionDataStore</code> instance basis, we have observed that not all of them
+exhibited the same statistical characteristics. Some instances would
+have a zero hits/misses ratio, whereas others a ratio of 20. Therefore,
+it would only make sense to enable caching on those cases where it could
+actually make a (positive) difference.</p></div>
+<div class="paragraph"><p>We subsequently modified the <code>G4HadronicProcess</code> and <code>G4CrossSectionDataStore</code>
+classes so that when the former instantiated the latter, it would also
+pass its process name and the particle type as the "owner" of the cross-section
+data store. This way we could map a <code>G4CrossSectionDataStore</code> instance back to
+the hadronic process, and thus identify which one of them would most interest us.</p></div>
+<div class="paragraph"><p>The combinations that manifest a considerable <code>hits/(hits+misses)</code> ratio, at
+their (presumed) steady state, in a <code>5.000</code> events Full CMS simulation are:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>PhotonInelastic  / gamma        ( ~90% )
+nFission         / neutron      ( ~98% )
+ElectroNuclear   / e-           ( ~94% )
+NeutronInelastic / neutron      ( ~35% )
+PositronNuclear  / e+           ( ~67% )
+hadElastic       / alpha        ( ~41% )
+
+hadElasticTriton / triton       ( ~2-3% )
+nCapture         / neutron      ( ~2-2% )</code></pre>
+</div></div>
+<div class="paragraph"><p>The rest of the combinations fall into the <code>0-2%</code> range.</p></div>
+<div class="paragraph"><p>The list of plots with
+<a href="http://island.quantumachine.net/~stathis/geant4/hits/">cache hits and misses</a>.</p></div>
+<div class="paragraph"><p>The list of plots with
+<a href="http://island.quantumachine.net/~stathis/geant4/loads/">hash maps' load factors</a>.</p></div>
+<div class="paragraph"><p>And here is the
+<a href="http://gitweb.dragonflybsd.org/~beket/gen-tests.git/blob_plain/master:/geant4/plothl.sh">bash/R script</a>
+that was used to generate all the above plots.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="/usr/local/opt/asciidoc/etc/asciidoc/images/icons/note.png" alt="Note" />
+</td>
+<td class="content">In order for a process to benefit from caching, not only do the hits need
+to outweigh the misses, but also there have to be a lot of cross section
+calculations. A surrogate marker for the latter is to look at how many samples
+a <em>hits</em> or <em>load</em> plot has.</td>
+</tr></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_validation_of_the_caching_algorithm">3.7. Validation of the caching algorithm</h3>
+<div class="paragraph"><p>We can enable a code block, via conditional compilation with <code>#if</code>, which
+for every <code>::GetCrossSection()</code> call it calculates the cross-section via
+the normal way (non-caching) <strong>and</strong> by querying the hash map. It then
+compares the results, and returns the correct one, while it increases
+a <code>mismatch</code> counter. This way we can be sure that the algorithm doesn&#8217;t
+produce spurious results.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_various">3.8. Various</h3>
+<div class="paragraph"><p>Currently every hadronic process has its own instance of <code>G4CrossSectionDataStore</code>
+and therefore its own cache. I turned <code>G4CrossSectionDataStore</code> into a singleton
+in an attempt to unify the caches, but Geant4 would throw an exception from some
+other part of the program.</p></div>
+<div class="paragraph"><p>After talking to John Apostolakis regarding this, not being able to unify the
+caches should be considered a good thing.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2016-12-28 01:35:10 EET
+</div>
+</div>
+</body>
+</html>

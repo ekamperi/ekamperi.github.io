@@ -1,0 +1,1308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.9" />
+<title></title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+.monospaced, code, pre {
+  font-family: "Courier New", Courier, monospace;
+  font-size: inherit;
+  color: navy;
+  padding: 0;
+  margin: 0;
+}
+pre {
+  white-space: pre-wrap;
+}
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #888;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; vertical-align: text-bottom; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel0, div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+div.unbreakable { page-break-inside: avoid; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+
+
+/* BEG @import url(bare.css); */
+/* ---------------------------------------------------------------------------
+   Bare AsciiDoc styles
+   Ryan Tomayko <r@tomayko.com>
+--------------------------------------------------------------------------- */
+
+body {
+	font-family:verdana,helvetica,arial,sans-serif;
+	font-size:81.25%;   /* 13px */
+	line-height:1.538;  /* 20px */
+	margin:40px 50px;
+	max-width:56.250em; /* 900px */
+	color:#333;
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+em {
+	font-style:italic;
+}
+
+strong {
+	font-weight:bold;
+	color:#000;
+}
+
+tt {
+	font-family:consolas, 'lucida console', 'bitstream vera sans mono',
+	           'courier new', monospace;
+	color:#000;
+}
+
+p, ul, ol, dl {
+	margin:10px 0
+}
+
+dl {
+	margin-left:40px
+}
+
+dt {
+	font-weight:normal;
+	color:#000;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family:'lucida grande',georgia,verdana,helvetica,arial,sans-serif;
+	font-weight:normal;
+	color:#000;
+}
+
+h1 {
+	font-size:30px;
+	line-height:1.428;
+	margin:20px 0;
+}
+
+h2 {
+	font-size:23px;
+	line-height:1.36363636; /* repeating, of course */
+	margin:20px 0;
+}
+
+h2 + .sectionbody {}
+
+h3 {
+	font-size:18px;
+	line-height:1.1;
+	margin:30px 0 10px 0;
+}
+
+h4 {
+	font-size:13px;
+	font-weight:bold;
+	line-height:1.538;
+}
+
+h5 {
+	font-size:13px;
+	font-style:italic;
+	line-height:1.538;
+}
+
+pre {
+	font-size:larger;
+}
+
+#header {
+	text-align:center;
+	margin-bottom:30px;
+}
+
+#header h1 { margin-bottom:0 }
+
+
+.title, .sidebar-title {
+	font-weight:normal;
+	color:#000;
+	margin-bottom:0;
+}
+
+.admonitionblock .title {
+	font-weight:bold;
+}
+
+.admonitionblock {
+	margin:30px 0px;
+	color:#555;
+}
+
+.admonitionblock td.icon {
+	width:30px;
+	padding-right:20px;
+	padding-left:20px;
+	text-transform:uppercase;
+	font-weight:bold;
+	color:#888;
+}
+
+.listingblock .content {
+	border:1px solid silver;
+	background:#eee;
+	padding:5px;
+}
+
+.listingblock .content pre {
+	margin:0;
+}
+
+.literalblock .content {
+	margin-left:40px;
+}
+
+.verseblock .content {
+	white-space:pre
+}
+
+.sidebarblock .sidebar-content {
+	border:1px solid silver;
+	background:#FFFFEE;
+	padding:0 10px;
+	color:#222;
+	font-size:smaller;
+	line-height:1.5;
+}
+
+.sidebar-title {
+	margin:10px 0;
+	font-weight:bold;
+	color:#442;
+}
+
+.quoteblock-content {
+	font-style:italic;
+	color:#444;
+	margin-left:40px;
+}
+
+.quoteblock-content .attribution {
+	font-style:normal;
+	text-align:right;
+	color:#000;
+}
+
+.exampleblock-content *:first-child { margin-top:0 }
+.exampleblock-content {
+	border-left:2px solid silver;
+	padding-left:8px;
+}
+
+#footer {
+	font-size:11px;
+	margin-top:40px;
+	border-top:1px solid silver;
+	color:#555;
+}
+
+#author {
+	color:#000;
+	text-transform:uppercase
+}
+
+/* vim: set ft=css ts=4 sw=4 noexpandtab: */
+
+/* END @import url(bare.css); */
+
+/* ---------------------------------------------------------------------------
+   FreeBSD AsciiDoc Theme
+   Ryan Tomayko <r@tomayko.com>
+
+   Based on The FreeBSD Handbook and various other FreeBSD documenration.
+--------------------------------------------------------------------------- */
+
+body {
+  font-family:verdana,helvetica,arial,sans-serif;
+  font-size:100%;
+  color:#000;
+}
+
+tt { color:#007A00 }
+pre tt { color:#000 }
+
+dt { color:#000 }
+
+h1, h2, h3, h4, h5 {
+  font-family:'lucida grande',helvetica,verdana,sans-serif;
+  color:#900;
+  font-weight:bold;
+}
+
+#header {
+  text-align:left;
+}
+#header h1 { margin-bottom:40px }
+
+h1 {
+  font-size:36px;
+  line-height:1;
+  margin:40px 0;
+}
+
+h2 {
+  font-size:28px;
+  line-height:1;
+  margin:30px 0 20px 0;
+}
+
+.sectionbody {
+  margin-left:30px;
+}
+
+pre {
+  background:#EEE;
+}
+
+/* vim: set ft=css ts=4 sw=4 noexpandtab: */
+
+/* XXX Mine */
+.monospaced, code, pre {
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 14px;
+  color: navy;
+  padding: 0;
+  margin: 0;
+}
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([1-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName.toLowerCase() == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName.toLowerCase() == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install(4);
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+<div id="toc">
+  <div id="toctitle">Table of Contents</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
+</div>
+<div id="content">
+<div class="paragraph"><p><strong>version:</strong> @@version@@</p></div>
+<div class="sect1">
+<h2 id="_how_to_install_geant4_in_solaris_11">1. HOW TO INSTALL GEANT4 IN SOLARIS 11</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_dependencies">1.1. Dependencies</h3>
+<div class="sect3">
+<h4 id="_cmake">1.1.1. cmake</h4>
+<div class="paragraph"><p><code>cmake-2.8</code> is needed but, as of the time of writing, Solaris 11 bundles
+<code>cmake-2.6</code>. Therefore, one needs to install <code>cmake-2.6</code> with:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>pkg install developer/build/cmake</code></pre>
+</div></div>
+<div class="paragraph"><p>and then use that to bootstrap <code>cmake-2.8</code>. Finally we use <code>cmake-2.8</code> to
+build <code>Geant4</code> as per the docs instructions.</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>export PATH=$PATH:/opt/cmake-2.8/bin</code></pre>
+</div></div>
+</div>
+<div class="sect3">
+<h4 id="_xerces_c">1.1.2. xerces-c</h4>
+<div class="paragraph"><p>In order to build <code>Geant4</code> with GDML support (which in turn is needed
+if one wants to run the <code>FullCMS</code> experiment), the <code>xerces-c</code> library
+must be installed. <code>xerces-c</code> doesn&#8217;t exist as binary package at all.
+Therefore, we need to build it from sources:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>pkg install library/icu         # needed as a dependency for xerces-c
+pkg install x11/library/mesa    # needed by geant4</code></pre>
+</div></div>
+<div class="paragraph"><p>In the <code>bechmarks/calorimeters/FullCMS/README</code> file, it is stated that
+the version of <code>xerces-c</code> must be the same as the one used to produce
+the <code>cms.gdml</code> (which is 2.8). <code>xerces-2.8</code> though, doesn&#8217;t seem to build
+out of the box, but <code>3.1.1</code> does and it is able to parse the gdml file
+fine (backwards compatible?).</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>wget http://apache.cc.uoc.gr//xerces/c/3/sources/xerces-c-3.1.1.tar.gz
+
+export ICUROOT="/usr"           # assuming libicu is in /usr/lib/libicu.so
+cd xerces-c-3.1.1 &amp;&amp; ./configure --prefix=/opt/xerces-c-3.1.1 \
+                  &amp;&amp; gmake &amp;&amp; gmake install</code></pre>
+</div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="/usr/local/opt/asciidoc/etc/asciidoc/images/icons/note.png" alt="Note" />
+</td>
+<td class="content"><code>XERCESC_ROOT_DIR</code> is a <code>-D&#8230;=&#8230;</code> CMake cache option; <strong>not</strong> an environmental
+variable!</td>
+</tr></table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_patch_needed_for_solaris">1.2. Patch needed for Solaris</h3>
+<div class="paragraph"><p>Solaris 11 seems to leak some symbols in <code>/usr/include/sys/regset.h</code>, around
+<code>line 78</code>. Later on, while compiling legitimate code in <code>Geant4</code>, such as:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>    G4double CA[15] =
+    { 8.03768, 9.03104, 10.0169, 11.0114, 12. , 13.0034, 14.0032, 15.0106,
+      16.0147, 17.0226, 18.0268, 19.0353, 20.0403, 21.0493, 22.0565 };
+
+    AddElement("C", 6, 15, *CN , *CA , *CS , *CW);</code></pre>
+</div></div>
+<div class="paragraph"><p>the build fails, because <code><em>CS</em></code> is substituded, during the preprocessing
+stage, with the following:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>    G4double 15[15] =
+    { 25, 23, 4, 10, 0, 10, 4, 9, 4, 19, 30, 12, 22, 54, 97 };
+
+    AddElement("C", 6, 15, *CN , *CA , *15 , *CW);</code></pre>
+</div></div>
+<div class="paragraph"><p>resulting in all kinds of weird errors. How to get the preprocessed
+source code:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>stathis:materials/src% g++ -E -I../../materials/include         \
+                              -I../../global/management/include \
+                              -I../../externals/clhep/include   \
+                           G4NistElementBuilder.cc</code></pre>
+</div></div>
+<div class="paragraph"><p>Symbols most likely to clash with geant4&#8217;s, directly taken from sys/regset.h:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>#define SS              18      /* only stored on a privilege transition */
+#define UESP            17      /* only stored on a privilege transition */
+#define EFL             16
+#define CS              15
+#define EIP             14
+#define ERR             13
+#define TRAPNO          12
+#define EAX             11
+#define ECX             10
+#define EDX             9
+#define EBX             8
+#define ESP             7
+#define EBP             6
+#define ESI             5
+#define EDI             4
+#define DS              3
+#define ES              2
+#define FS              1
+#define GS              0</code></pre>
+</div></div>
+<div class="paragraph"><p>I had to bisect the problem space by inserting <code>#undef CS</code> before and after
+the inclusion of various header files, starting from the <code>Geant4</code> specific and
+going as far as the system header files.</p></div>
+<div class="paragraph"><p><a href="http://leaf.dragonflybsd.org/~beket/geant4/solaris11.diff">This</a> is a transitive
+patch to workaround the issue. The <code>sol11fix.h</code> must be included <strong>after</strong> the
+inclusion of every other header file (in the problematic .cc files), i.e.,
+be the last header file to be included. Otherwise, the inclusion of some other
+header may cause the redefinition of the symbols.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="/usr/local/opt/asciidoc/etc/asciidoc/images/icons/note.png" alt="Note" />
+</td>
+<td class="content">I need to properly integrate the patch to not use hardcoded include
+paths, e.g., <code>#include "../../../../../global/sol11fix.hh"</code>. Otherwise it
+will not work out of the box if one -say- tries to build granular libraries,
+by invoking make in <code>$G4INSTALL/source</code>, rather than <code>$G4INSTALL</code>.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>Pere suggested that since the inclusion of <code>sys/wait.h</code> in <code>stdlib.h</code> is
+guarded by:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>#if defined(__EXTENSIONS__) || defined(_XPG4)
+#include &lt;sys/wait.h&gt;
+#endif</code></pre>
+</div></div>
+<div class="paragraph"><p>perhaps we could make the issue go away by passing <code>-U__EXTENSIONS__</code>
+or <code>-U_XPG4</code> in g++. This is something that I will soon test.</p></div>
+<div class="sect3">
+<h4 id="_how_to_enable_the_smarttrackstack">1.2.1. How to enable the SmartTrackStack</h4>
+<div class="paragraph"><p>Calling <code>cmake -DG4_USESMARTSTACK &#8230;</code> will not work, because that sets
+a CMake cache variable. What we want is to pass a preprocessor macro
+in g+<code>. The proper way to do that is to add the following in the +CMakeLists.txt</code>
+file:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>add_definitions(-DG4_USESMARTTRACKSTACK)</code></pre>
+</div></div>
+<div class="paragraph"><p>or modify the <code>CMAKE_CXX_FLAGS</code> variable, again inside the <code>CMakeLists.txt</code>.</p></div>
+</div>
+<div class="sect3">
+<h4 id="_fullcms">1.2.2. FullCMS</h4>
+<div class="olist lowerroman"><ol class="lowerroman">
+<li>
+<p>
+fast notes &#8230;
+</p>
+</li>
+</ol></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>export XERCESROOT=/opt/xerces-c...
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:...</code></pre>
+</div></div>
+<div class="paragraph"><p>setup the environmental variables &#8230;</p></div>
+<div class="paragraph"><p>apply the patch <a href="http://leaf.dragonflybsd.org/~beket/geant4/fullCMS.diff">http://leaf.dragonflybsd.org/~beket/geant4/fullCMS.diff</a>
+build granular libraries
+QUESTION: does GEANT4_BUILD_GRANULAR_LIBRARIES=ON builds ONLY granular
+libraries or does it build them along with non-granular ?</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>cd $G4INSTALL/source
+gmake</code></pre>
+</div></div>
+<div class="paragraph"><p>and the libraries should reside at:</p></div>
+<div class="paragraph"><p>After rebuilding geant4 with <code>GDML</code> support and the installation of
+benchmarks/calorimeters/FullCMS and for no apparent reason, <code>Geant4</code> programs
+started to hang. A <code>pstack(1)</code> on <code>exampleN01</code> (which has been previously
+working fine) returned:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>curl http://leaf.dragonflybsd.org/~beket/geant4/pstack.exampleN01 |\
+     /usr/gnu/bin/c++filt | less</code></pre>
+</div></div>
+<div class="paragraph"><p>Part of the problem is the call to <code><em>cxa_guard_acquire()</code>, which is used
+internally by <code>g\</code>+ to protect the construction of local static variables.
+It seems though that <code></em>cxa_guard_release()</code> is never get called and the
+program just waits indefinetely. I hypothesize that 1) the initialisation
+code is thread-safe, but not reentrant-safe and 2) there is a 2nd call
+from the same context, possibly due to the construction of some complex
+object, which leads to the deadlock. The construction of global static
+variables doesn&#8217;t pose a problem, as it takes place before any function
+of the translation unit gets executed.</p></div>
+<div class="paragraph"><p>UPDATE: It appears that this problem is exhibited when the Debug option
+<code>-DCMAKE_BUILD_TYPE=Debug</code> is set, along with <code>GEANT4_USE_GDML, etc</code>. A
+workaround is to either disable debug or add the following line in
+<code>$G4SOURCE/CMakeLists.txt</code>:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>set(CMAKE_CXX_FLAGS "-fno-threadsafe-statics")</code></pre>
+</div></div>
+<div class="paragraph"><p>There is also a patch in <a href="http://leaf.dragonflybsd.org/~beket/CMakeLists.txt.diff">http://leaf.dragonflybsd.org/~beket/CMakeLists.txt.diff</a>
+that applies the above change. Since we are interested in the sequential
+code path efficiency, we chose to disable thread safe statics instead
+of debugging symbols. Question: what about the impact on performance due to lack
+of optimizations ?</p></div>
+<div class="paragraph"><p>When building granular libraries, one needs to set $PATH like:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>    export PATH=/usr/gnu/bin:$PATH</code></pre>
+</div></div>
+<div class="paragraph"><p>so that the GNU toolchain takes precedence over the native,
+otherwise some commands will fail (e.g., @$(GREP), etc).</p></div>
+<div class="paragraph"><p>Use Linux-g++ as G4System</p></div>
+<div class="paragraph"><p>The <code>GNUmakefile</code> couldn&#8217;t generate the <code>libname.map</code> file. It would flood
+with errors from <code>grep(1)</code>, of the form:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>grep: error: missing argument for operation -- e</code></pre>
+</div></div>
+<div class="paragraph"><p>The modified file that works ok is this:
+the <a href="http://leaf.dragonflybsd.org/~beket/geant4/GNUmakefile2">http://leaf.dragonflybsd.org/~beket/geant4/GNUmakefile2</a> . Soon,
+I&#8217;ll have a unified diff against the original and integrate it with
+<code>setup.sh</code>.</p></div>
+<div class="paragraph"><p>After the granular libraries have been built by running gmake in
+<code>$G4INSTALL/source</code>, trying to build <code>FullCMS</code> results to this:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>stathis:calorimeter/FullCMS% sudo -E gmake
+Using granular libraries ...
+Linking full_cms
+Undefined                       first referenced
+ symbol                             in file
+G4GeometryTolerance::GetSurfaceTolerance() const
+/home/stathis/gen-tests/geant4/geant4.9.5.p01/tmp/Linux-g++/full_cms/libfull_cms.a(MyDetectorConstruction.o)
+
+G4UIcmdWithADoubleAndUnit::SetDefaultValue(double)
+/home/stathis/gen-tests/geant4/geant4.9.5.p01/tmp/Linux-g++/full_cms/libfull_cms.a(MyDetectorMessenger.o)
+
+CLHEP::HepRandom::setTheSeed(long, int)
+/home/stathis/gen-tests/geant4/geant4.9.5.p01/tmp/Linux-g++/full_cms/exe/full_cms.o
+... lots of similar errors ...</code></pre>
+</div></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>stathis:calorimeter/FullCMS% nm $G4LIB/$G4SYSTEM/libG4globman.a \
+                             | grep GetSurface | /usr/gnu/bin/c++filt
+000000e0 T G4GeometryTolerance::GetSurfaceTolerance() const</code></pre>
+</div></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>ld: fatal: library -lG4heprandom: not found
+ld: warning: file ../../../../../../outputs/library/SunOS-g++/libG4procman.so: attempted multiple inclusion of file
+ld: warning: file ../../../../../../outputs/library/SunOS-g++/libG4volumes.so: attempted multiple inclusion of file
+ld: warning: file ../../../../../../outputs/library/SunOS-g++/libG4track.so: attempted multiple inclusion of file
+ld: warning: file ../../../../../../outputs/library/SunOS-g++/libG4partman.so: attempted multiple inclusion of file
+ld: warning: file ../../../../../../outputs/library/SunOS-g++/libG4geometrymng.so: attempted multiple inclusion of file
+ld: warning: file ../../../../../../outputs/library/SunOS-g++/libG4materials.so: attempted multiple inclusion of file
+ld: warning: file ../../../../../../outputs/library/SunOS-g++/libG4intercoms.so: attempted multiple inclusion of file
+ld: warning: file ../../../../../../outputs/library/SunOS-g++/libG4globman.so: attempted multiple inclusion of file
+ld: fatal: file processing errors. No output written to ../../../../../../outputs/library/SunOS-g++/libG4emdna-molman.so
+collect2: ld returned 1 exit status
+make[2]: *** [outputs/library/SunOS-g++/libG4emdna-molman.so] Error 1
+make[2]: Leaving directory `/home/stathis/gen-tests/geant4/geant4.9.5.p01-build-smart'
+make[1]: *** [source/processes/electromagnetic/dna/molecules/management/CMakeFiles/G4emdna-molman.dir/all] Error 2
+make[1]: Leaving directory `/home/stathis/gen-tests/geant4/geant4.9.5.p01-build-smart'
+make: *** [all] Error 2</code></pre>
+</div></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_how_to_find_memory_leaks_with_libumem">1.3. How to find memory leaks with libumem</h3>
+<div class="paragraph"><p>First, set some environmental variables in order to use the <code>libumem</code> memory allocator:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>LD_PRELOAD=libumem.so.1; export LD_PRELOAD
+UMEM_DEBUG=default; export UMEM_DEBUG</code></pre>
+</div></div>
+<div class="paragraph"><p>Then use <code>mdb</code> to run your binary:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>/usr/bin/mdb /home/stathis/gen-tests/geant4/geant4.9.5.p01/bin/Linux-g++/full_cms
+:r ./bench1_10.g4
+....
+^C
+mdb: stop on SIGINT
+mdb: target stopped at:
+_ZN10G4QPDGCode9MakeQCodeERKi+0x43e:    leal   (%eax,%eax,2),%ebx
+mdb: You've got symbols!
+Loading modules: [ ld.so.1 libumem.so.1 libc.so.1 libuutil.so.1 libnvpair.so.1 ]</code></pre>
+</div></div>
+<div class="paragraph"><p>Then use <code>::findleaks</code> dcmd to -guess what- find the memory leaks:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>&gt; ::findleaks -dv
+findleaks: using cached results (use '-f' to force a full run)
+CACHE     LEAKED   BUFCTL CALLER
+099bf390       1 0aa867c8 libstdc++.so.6.0.14`_Znwj+0x29
+099bf390       1 0ac60438 libstdc++.so.6.0.14`_Znwj+0x29
+099bf390       1 0ac60780 libstdc++.so.6.0.14`_Znwj+0x29
+...</code></pre>
+</div></div>
+<div class="paragraph"><p>Enable C++ symbol demangling and walk through all the leaked buffers, acquiring
+the stack trace that led to that leak and output everything to the <code>umem.txt</code> file:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>&gt; $G
+C++ symbol demangling enabled
+&gt; ::walk leak | ::bufctl_audit !tee umem.txt</code></pre>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2016-12-28 01:35:10 EET
+</div>
+</div>
+</body>
+</html>

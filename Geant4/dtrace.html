@@ -1,0 +1,1531 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.9" />
+<title></title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+.monospaced, code, pre {
+  font-family: "Courier New", Courier, monospace;
+  font-size: inherit;
+  color: navy;
+  padding: 0;
+  margin: 0;
+}
+pre {
+  white-space: pre-wrap;
+}
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #888;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; vertical-align: text-bottom; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel0, div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+div.unbreakable { page-break-inside: avoid; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+
+
+/* BEG @import url(bare.css); */
+/* ---------------------------------------------------------------------------
+   Bare AsciiDoc styles
+   Ryan Tomayko <r@tomayko.com>
+--------------------------------------------------------------------------- */
+
+body {
+	font-family:verdana,helvetica,arial,sans-serif;
+	font-size:81.25%;   /* 13px */
+	line-height:1.538;  /* 20px */
+	margin:40px 50px;
+	max-width:56.250em; /* 900px */
+	color:#333;
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+em {
+	font-style:italic;
+}
+
+strong {
+	font-weight:bold;
+	color:#000;
+}
+
+tt {
+	font-family:consolas, 'lucida console', 'bitstream vera sans mono',
+	           'courier new', monospace;
+	color:#000;
+}
+
+p, ul, ol, dl {
+	margin:10px 0
+}
+
+dl {
+	margin-left:40px
+}
+
+dt {
+	font-weight:normal;
+	color:#000;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family:'lucida grande',georgia,verdana,helvetica,arial,sans-serif;
+	font-weight:normal;
+	color:#000;
+}
+
+h1 {
+	font-size:30px;
+	line-height:1.428;
+	margin:20px 0;
+}
+
+h2 {
+	font-size:23px;
+	line-height:1.36363636; /* repeating, of course */
+	margin:20px 0;
+}
+
+h2 + .sectionbody {}
+
+h3 {
+	font-size:18px;
+	line-height:1.1;
+	margin:30px 0 10px 0;
+}
+
+h4 {
+	font-size:13px;
+	font-weight:bold;
+	line-height:1.538;
+}
+
+h5 {
+	font-size:13px;
+	font-style:italic;
+	line-height:1.538;
+}
+
+pre {
+	font-size:larger;
+}
+
+#header {
+	text-align:center;
+	margin-bottom:30px;
+}
+
+#header h1 { margin-bottom:0 }
+
+
+.title, .sidebar-title {
+	font-weight:normal;
+	color:#000;
+	margin-bottom:0;
+}
+
+.admonitionblock .title {
+	font-weight:bold;
+}
+
+.admonitionblock {
+	margin:30px 0px;
+	color:#555;
+}
+
+.admonitionblock td.icon {
+	width:30px;
+	padding-right:20px;
+	padding-left:20px;
+	text-transform:uppercase;
+	font-weight:bold;
+	color:#888;
+}
+
+.listingblock .content {
+	border:1px solid silver;
+	background:#eee;
+	padding:5px;
+}
+
+.listingblock .content pre {
+	margin:0;
+}
+
+.literalblock .content {
+	margin-left:40px;
+}
+
+.verseblock .content {
+	white-space:pre
+}
+
+.sidebarblock .sidebar-content {
+	border:1px solid silver;
+	background:#FFFFEE;
+	padding:0 10px;
+	color:#222;
+	font-size:smaller;
+	line-height:1.5;
+}
+
+.sidebar-title {
+	margin:10px 0;
+	font-weight:bold;
+	color:#442;
+}
+
+.quoteblock-content {
+	font-style:italic;
+	color:#444;
+	margin-left:40px;
+}
+
+.quoteblock-content .attribution {
+	font-style:normal;
+	text-align:right;
+	color:#000;
+}
+
+.exampleblock-content *:first-child { margin-top:0 }
+.exampleblock-content {
+	border-left:2px solid silver;
+	padding-left:8px;
+}
+
+#footer {
+	font-size:11px;
+	margin-top:40px;
+	border-top:1px solid silver;
+	color:#555;
+}
+
+#author {
+	color:#000;
+	text-transform:uppercase
+}
+
+/* vim: set ft=css ts=4 sw=4 noexpandtab: */
+
+/* END @import url(bare.css); */
+
+/* ---------------------------------------------------------------------------
+   FreeBSD AsciiDoc Theme
+   Ryan Tomayko <r@tomayko.com>
+
+   Based on The FreeBSD Handbook and various other FreeBSD documenration.
+--------------------------------------------------------------------------- */
+
+body {
+  font-family:verdana,helvetica,arial,sans-serif;
+  font-size:100%;
+  color:#000;
+}
+
+tt { color:#007A00 }
+pre tt { color:#000 }
+
+dt { color:#000 }
+
+h1, h2, h3, h4, h5 {
+  font-family:'lucida grande',helvetica,verdana,sans-serif;
+  color:#900;
+  font-weight:bold;
+}
+
+#header {
+  text-align:left;
+}
+#header h1 { margin-bottom:40px }
+
+h1 {
+  font-size:36px;
+  line-height:1;
+  margin:40px 0;
+}
+
+h2 {
+  font-size:28px;
+  line-height:1;
+  margin:30px 0 20px 0;
+}
+
+.sectionbody {
+  margin-left:30px;
+}
+
+pre {
+  background:#EEE;
+}
+
+/* vim: set ft=css ts=4 sw=4 noexpandtab: */
+
+/* XXX Mine */
+.monospaced, code, pre {
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 14px;
+  color: navy;
+  padding: 0;
+  margin: 0;
+}
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([1-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName.toLowerCase() == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName.toLowerCase() == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install(4);
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+<div id="toc">
+  <div id="toctitle">Table of Contents</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
+</div>
+<div id="content">
+<div class="paragraph"><p><strong>version:</strong> @@version@@</p></div>
+<div class="sect1">
+<h2 id="_how_to_profile_with_dtrace">1. How to profile with DTrace</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_how_to_measure_the_total_execution_time">1.1. How to measure the total execution time</h3>
+<div class="paragraph"><p>Total execution time is the single most important metric by which we score
+geant4 and full_cms.</p></div>
+<div class="paragraph"><div class="title">What should be the entry point for our profiling ?</div><p>Since we would like to skip the whole initialization part of <code>full_cms</code>, we
+shoule trace from <code>BeamOn()</code> or even better from the <code>EventManager::DoEventLoop()</code>,
+because <code>BeamOn()</code> calls some initialization routines itself.</p></div>
+<div class="paragraph"><p>We use the following script:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>#!/bin/bash
+
+set -e
+set -x
+
+benchmarks=(bench1_10.g4 bench1_100.g4 bench1_200.g4 bench1_300.g4 bench1_500.g4 bench1_1k.g4 bench1_5k.g4)
+
+for j in {1..5};
+do
+    for bench in "${benchmarks[@]}";
+    do
+        cat /devices/pseudo/dummy@0:0
+        dtrace -n '
+                pid$target::*DoEventLoop*:entry                { self-&gt;pstart = vtimestamp; }
+                pid$target::*DoEventLoop*:return/self-&gt;pstart/ { @ = sum((vtimestamp - self-&gt;pstart)/1000000);
+                                                                 self-&gt;pstart = 0; }' -c \
+                '/home/stathis/gen-tests/geant4/geant4.9.5.p01/bin/Linux-g++/full_cms ./'${bench}'' -o \
+                    "res-${bench}-$j"
+    done
+done</code></pre>
+</div></div>
+</div>
+<div class="sect2">
+<h3 id="_how_to_measure_the_average_time_spent_by_a_function">1.2. How to measure the average time spent by a function</h3>
+<div class="paragraph"><div class="title">What should be the entry point for our profiling ?</div><p>As previous.</p></div>
+<div class="paragraph"><div class="title">Which functions should we be profiling ?</div><p>Trying to calculate the time that each functions consumes is troublesome. <code>DTrace</code> matches around
+<code>40,000</code> probes and the execution is slowed down considerably. If that option is chosen though,
+use <code>vtimestamp</code> instead of <code>timestamp</code>, so that the results are less affected by the <code>DTrace</code> itself.</p></div>
+<div class="paragraph"><p>Another, more pragmatic approach, is to identify those functions that contribute most in the overall
+execution time and focus on profiling them only. This can be done by taking sample stack traces,
+while <code>full_cms</code> is running. Then, we examine those stack traces and deduce which functions are the
+"hottest" (a function that is taking a lot time to execute, is more likely to get sampled, since we
+are sampling at a fixed rate).</p></div>
+<div class="paragraph"><p>More information can be found <a href="https://github.com/brendangregg/FlameGraph">here</a>. E.g.,</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>solaris# dtrace -x ustackframes=100                                                               \
+                -x strsize=5000                                                                   \
+                -n 'BEGIN { tracing = 0; }                                                        \
+                    pid$target::*DoEventLoop*:entry { tracing = 1; }                              \
+                    pid$target::*DoEventLoop*:return { exit(0); }                                 \
+                    profile-97/tracing != 0/ { @[ustack()] = count(); }'                          \
+                 -c "/home/stathis/geant4/geant4.9.5.p01/bin/Linux-g++/full_cms ./bench_10.g4"    \
+                 -o out.user_stacks</code></pre>
+</div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="/usr/local/opt/asciidoc/etc/asciidoc/images/icons/important.png" alt="Important" />
+</td>
+<td class="content">The profile target does NOT fire in thread context, therefore using <code>self&#8594;tracing</code>
+as a predicate will not work. Use a global variable instead.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>For 10 events the above invocation produces approximately 3MB of profiling data.</p></div>
+<div class="ulist"><div class="title">Next steps are:</div><ul>
+<li>
+<p>
+generate the folded output with <code>stackcollapse.pl</code>
+</p>
+</li>
+<li>
+<p>
+pass the output to <code>cxxfilt</code> to demangle the c++ symbols
+</p>
+</li>
+<li>
+<p>
+delete the line corresponding the idle line, which looks like <code>"  4168"</code>
+</p>
+</li>
+<li>
+<p>
+generate the svg file with <code>flamegraph.pl</code>
+</p>
+</li>
+</ul></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>./stackcollapse.pl   out.user_stacks    |
+/usr/gnu/bin/c++filt -n -p              |
+grep DoEventLoop                        |
+sed 's/full_cms`//g'                    |
+./flamegraph.pl &gt; DoEventLoop.demangled.svg</code></pre>
+</div></div>
+<div class="paragraph"><p><a href="http://leaf.dragonflybsd.org/<sub>beket/geant4/flamegraph.svg">This</a> is an example of the svg output
+file, and <a href="http://leaf.dragonflybsd.org/</sub>beket/geant4/flamegraph-demangled.svg">this</a> is with
+demangled names.</p></div>
+<div class="paragraph"><div class="title">Generate the targeted DTrace script</div><p>After having identified the "hot" functions, we run a shell script that generates a <code>DTrace</code>
+script that focuses on profiling these functions only.</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>curl -o stacks2dtrace.sh http://leaf.dragonflybsd.org/~beket/geant4/stack2dtrace.sh
+chmod +x stacks2dtrace.sh
+stacks2dtrace.sh &lt;folded.file&gt; &gt; test.d</code></pre>
+</div></div>
+<div class="paragraph"><p>Example of DTrace script:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>curl -o test.d http://leaf.dragonflybsd.org/~beket/geant4/test.d</code></pre>
+</div></div>
+<div class="paragraph"><p>The script should be called with <code>-Z</code> (for not failing on unmathced probes) and with
+<code>-x dynvarsize=8m</code> (for not dropping dynamic variables). E.g.,</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>solaris# ./test.d -Z -x dynvarsize=8m \
+         -c "/home/stathis/gen-tests/geant4/geant4.9.5.p01/bin/Linux-g++/full_cms ./bench1_10.g4"</code></pre>
+</div></div>
+<div class="paragraph"><p>Example of DTrace output:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>curl -o http://leaf.dragonflybsd.org/~beket/geant4/test.d.out1 \
+     c++filt -n -p</code></pre>
+</div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="/usr/local/opt/asciidoc/etc/asciidoc/images/icons/note.png" alt="Note" />
+</td>
+<td class="content">g++ generates mangled symbols during the compilation. So, we use *globs* inside the <code>DTrace</code> script,
+if we don&#8217;t want to nm(1) the executable and copy the exact (mangled) names from there. I looked
+for a way to generate mangled names for g++, but their abi:: exported interface has only <code>__cxa_demangle()</code>.</td>
+</tr></table>
+</div>
+<div class="paragraph"><div class="title">How many events should we be simulating ?</div><p>We let the <code>full_cms</code> run for <code>100</code> events and every time one such event is processed,
+we print the average time spent on the "hot" functions. The idea is to see past which
+event region the average times enter a steady state.  We do this by enabling a probe,
+like the following:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>pid$target::*MyEventAction*EndOfEventAction*:entry
+{
+        printa(@_);
+}</code></pre>
+</div></div>
+<div class="paragraph"><p>An example can be found <a href="http://leaf.dragonflybsd.org/<sub>beket/geant4/stad.out">here</a>. We, then, use
+a <a href="http://leaf.dragonflybsd.org/</sub>beket/geant4/q.awk">script file</a> to extract the aggregations for
+every event, and <a href="http://leaf.dragonflybsd.org/~beket/geant4/rec.sh">another one</a>, to reconstruct
+a time series for every "hot" function.</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>(echo -n 'set log y; plot '; for f in _Z*; do echo -n "'$f' notitle with lines,"; done) \
+      | gnuplot -persist
+(echo -n 'plot '; for f in _Z*; do echo -n "'$f' notitle smooth csplines,"; done) \
+      | gnuplot -persist</code></pre>
+</div></div>
+<div class="paragraph"><p>Complementary, we generate separate plots for each one of the traced functions,
+with the use of <a href="http://leaf.dragonflybsd.org/<sub>beket/geant4/genpl.sh">this script</a>.
+Sample output can be found either in the form of a
+<a href="https://plus.google.com/u/0/photos/108524938275387430003/albums/5750217012217829393">picassa web album</a>
+or as a <a href="http://leaf.dragonflybsd.org/</sub>beket/geant4/plots/bench1_100.g4.min30">plain directory listing</a>.</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_use_other_metrics">2. How to use other metrics</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_cycles_per_instruction_cpi">2.1. Cycles per Instruction (CPI)</h3>
+<div class="sect3">
+<h4 id="_cpustat_1m_and_cputrack_1">2.1.1. cpustat(1M) and cputrack(1)</h4>
+<div class="paragraph"><p>Solaris has two utilities for examining hardware performance counters:
+<code>cpustat(1M)</code> for overall system monitoring, and <code>cputrack(1)</code> for monitoring
+a process (or a family of them). With the help of
+<a href="http://gitweb.dragonflybsd.org/~beket/gen-tests.git/blob/refs/heads/master:/geant4/x64ipc.sh">this script</a>,
+we can measure the cycles per instruction (CPI) of the <code>full_cms</code> experiment
+during its lifetime. For example:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>solaris# ./x64ipc.sh ./full_cms ./bench1_10.g4
+    Instructions      CPI     %CPU
+        71986399     1.13    65.42
+           69678     2.00     9.69
+         3035697     1.22    17.47
+           21070     3.13     7.21
+         2479098     1.22    18.21
+           21119     3.31     7.09
+         1684096     1.15    18.34
+           21170     3.20     7.05
+         1117784     1.06    18.38
+^C</code></pre>
+</div></div>
+<div class="paragraph"><p>A file with the full results from a complete simulation of the <code>bench1_100.g4</code> may be found
+<a href="http://leaf.dragonflybsd.org/<sub>beket/geant4/bench1_100.g4.cpi.dat">here</a>. The data can be then plotted
+with <a href="http://gitweb.dragonflybsd.org/</sub>beket/gen-tests.git/blob/refs/heads/master:/geant4/cpiplot.sh">this script</a>, and the output image <a href="http://leaf.dragonflybsd.org/~beket/geant4/bench1_100.g4.cpi.dat.png">looks like this</a>.
+Putting it all together:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>solaris# cat /devices/pseudo/dummy@*    # to invalidate all the CPU caches
+solaris# ./x64ipc.sh -q ./full_cms ./bench1_10.g4 &gt; ./bench1_10.g4.ipc
+solaris# ./cpiplot.sh ./bench1_10.g4.ipc | gnuplot &gt; ./bench1_10.g4.ipc.png</code></pre>
+</div></div>
+<div class="paragraph"><p>The part of the plot where the CPI peaks is most likely contributed by the
+initialization of <code>full_cms</code>. As we, assumingly, enter the actual simulation and
+start processing events, CPI drops and stabilizes at <code><sub>1.2</code>. The plot also shows
+the ideal CPI ratio for a tight cpu-bounded application, which is </sub>0.3-4 given
+that <code>amd64</code> tries to execute <code>3</code> instructions per cycle.</p></div>
+<div class="paragraph"><p>Rule of thumb: Low CPI: we are cpu-bounded, High CPI: we are memory-bounded (cache misses?).</p></div>
+<div class="paragraph"><p><strong>References</strong>: <a href="http://dtrace.org/blogs/brendan/2007/02/27/amd64-pics-cpi/">AMD64 PICs, CPI</a>, by Brendan Gregg</p></div>
+</div>
+<div class="sect3">
+<h4 id="_the_cpc_cpu_performance_counters_dtrace_provider">2.1.2. The cpc (cpu performance counters) DTrace provider</h4>
+<div class="paragraph"><p>There is a <code>DTrace</code> module that allows us to access the CPU hardware counters from
+<strong>within</strong> a <code>DTrace</code> script. We could use that to get live stack traces when the CPI
+goes beyond some threshold, identifying the exact code paths that worth optimizing.
+Unfortunately, in amd64 CPU architecture one cannot access more than 1 hardware counter,
+and consequently cannot calculate the CPI ratio. Instead, we measure the cache misses
+which are a major contributor to the CPI ratio. We do that as following:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>dtrace -x ustackframes=100
+       -x strsize=5000
+       -n 'cpc:::PAPI_l2_dcm-all-10000 /execname == "full_cms"/ { @[ustack()] = count(); }'
+       -c  "/path/to/full_cms ./bench1_10.g4" -o stack.dcm</code></pre>
+</div></div>
+<div class="paragraph"><p>Everytime <code>full_cms</code> hits <code>10000</code> <code>L2</code> data cache misses, we acquire the current
+userspace stack trace. We then proceed as previous to generate a
+<a href="http://leaf.dragonflybsd.org/~beket/geant4/stack.svg">flamegraph</a> with the greatest
+offenders in terms of <code>L2</code> cache misses. It is shown that approximately half of
+the cache misses originate from the initialization code <code>(GDML + xerces-c)</code>.</p></div>
+<div class="paragraph"><p>Similar analysis for <a href="http://leaf.dragonflybsd.org/~beket/geant4/stack.icm.demangled.DoEventLoop">Instruction Cache misses</a>.</p></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_caches_hits_and_misses">2.2. Caches hits and misses</h3>
+<div class="sect3">
+<h4 id="_how_to_plot_the_data_cache_or_instruction_cache_misses">2.2.1. How to plot the Data Cache (or Instruction Cache) misses</h4>
+<div class="paragraph"><p>Similar to how we gather and plot CPI statistics, we can do the same with the
+Data Cache misses and Instruction Cache misses. For <strong>Instruction Cache</strong> misses:</p></div>
+<div class="paragraph"><p><a href="http://gitweb.dragonflybsd.org/<sub>beket/gen-tests.git/blob_plain/master:/geant4/x64l2icmisses.sh">[script</a>]
+<a href="http://leaf.dragonflybsd.org/</sub>beket/geant4/bench1_100.g4.ic.png">[plot</a>]</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>solaris# cat /devices/pseudo/dummy@*    # to invalidate all the CPU caches
+solaris# ./x64l2icmisses.sh -q ./full_cms ./bench1_100.g4 &gt; ./bench1_100.g4.ic
+solaris# ./icmissesplot.sh ./bench1_100.g4.ic | gnuplot &gt; ./bench1_100.g4.ic.png</code></pre>
+</div></div>
+<div class="paragraph"><p>or, for <strong>Data Cache</strong> misses:</p></div>
+<div class="paragraph"><p><a href="http://gitweb.dragonflybsd.org/<sub>beket/gen-tests.git/blob_plain/master:/geant4/x64l2dcmisses.sh">[script</a>]
+<a href="http://leaf.dragonflybsd.org/</sub>beket/geant4/bench1_100.g4.dc.png">[plot</a>]</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>solaris# cat /devices/pseudo/dummy@*    # to invalidate all the CPU caches
+solaris# ./x64l2dcmisses.sh -q ./full_cms ./bench1_100.g4 &gt; ./bench1_100.g4.dc
+solaris# ./dcmissesplot.sh ./bench1_100.g4.dc | gnuplot &gt; ./bench1_100.g4.dc.png</code></pre>
+</div></div>
+</div>
+<div class="sect3">
+<h4 id="_how_to_invalidate_the_cpu_caches_from_userland">2.2.2. How to invalidate the CPU caches from userland</h4>
+<div class="paragraph"><p>In order for our measurements to be unbiased we need to flush the CPU caches
+everytime we start a new profiling cycle. Otherwise, we may get an artificially
+improved <code>hits/miss</code> ratio. There is an instruction, <code>wbinvd</code>, (write back and
+invalidate cache), that flushes both the <code>L1</code> (internal) and <code>L2</code> (external) caches,
+but requires to be called from <strong>kernel context</strong>. <code>DTrace</code> cannot be used here, since
+it was designed to disallow arbitrary code execution in kernel, whereas <code>SystemTap</code>
+is more liberal in nature and may be an option in Linux systems.</p></div>
+<div class="paragraph"><p>For Solaris, I used the <a href="http://leaf.dragonflybsd.org/~beket/geant4/dummy.c">dummy skeleton device driver</a>,
+to issue the <code>wbinvd</code> instruction. How to build:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>cc -D_KERNEL -m64 -xarch=sse2a -xmodel=kernel -c dummy.c        # it needs the sunstudio compiler
+/usr/ccs/bin/ld -r -o dummy dummy.o                             # gcc from pkg repo is 32 bits
+
+cp dummy /tmp/dummy
+cp dummy.conf /usr/kernel/drv
+ln -s /tmp/dummy /usr/kernel/drv/amd64/dummy
+
+add_drv dummy
+cat /devices/pseudo/dummy@*</code></pre>
+</div></div>
+<div class="paragraph"><p>How to make sure that the <code>wbinvd</code> instruction has not been optimized out for whatever reason:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>solaris# objdump -d /tmp/dummy| /usr/gnu/bin/grep -C5 wbinvd
+0000000000000330 &lt;dummy_open&gt;:
+ 330:   55                      push   %rbp
+ 331:   48 8b ec                mov    %rsp,%rbp
+ 334:   48 83 ec 10             sub    $0x10,%rsp
+ 338:   eb 00                   jmp    33a &lt;dummy_open+0xa&gt;
+ 33a:   0f 09                   wbinvd
+ 33c:   33 c0                   xor    %eax,%eax
+ 33e:   89 45 fc                mov    %eax,-0x4(%rbp)
+ 341:   eb 00                   jmp    343 &lt;dummy_open+0x13&gt;
+ 343:   48 8d 45 fc             lea    -0x4(%rbp),%rax
+ 347:   8b 00                   mov    (%rax),%eax
+solaris#</code></pre>
+</div></div>
+</div>
+<div class="sect3">
+<h4 id="_how_to_invalidate_caches_from_within_a_dtrace_script">2.2.3. How to invalidate caches from within a DTrace script</h4>
+<div class="paragraph"><p>There were some concerns whether the combination of the <code>cpc</code> provider and the
+flamegraph approach for visualizing the CPU cache misses was valid. I.e.,
+whether functions appearing to be causing many cache misses, were indeed
+causing many cache misses.</p></div>
+<div class="paragraph"><p>To dismiss any doubts, I decided to take some random <code>Geant4</code> function and make
+it invalidate the CPU caches on purpose, every time it was called. I would then
+regenerate the flamegraph and compare it with one from the untainted version of the
+function.</p></div>
+<div class="paragraph"><p>The <code>G4PropagatorInField::ComputeStep()</code> function did not cause many (data) cache misses
+(&lt;2% of total), so it seemed like a good candidate.</p></div>
+<div class="paragraph"><p>The first idea was to do something like the following:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>dtrace  -q -w
+        -x ustackframes=100
+        -x strsize=5000
+        -n 'cpc:::PAPI_l2_dcm-all-10000 /execname == "full_cms"/ { @[ustack()] = count(); }
+            pid$target::*G4PropagatorInField*ComputeStep*:entry { system("cat /devices/pseudo/dummy@0:0;"); }'
+        -c "/home/stathis/gen-tests/geant4/geant4.9.5.p01/bin/Linux-g++/full_cms ./bench1_10.g4"
+        -o stack.misses.fake</code></pre>
+</div></div>
+<div class="paragraph"><p>Everytime the function would get called, it would <code>cat(1)</code> to our specially crafted
+dummy device  driver and that would cause the CPU caches to get flushed. Unfortunately, all
+the "<code>cat(1)</code>'s" occur once per <code>switchrate</code>, which is around <code>1</code> sec by default.
+Also, the <code>cat(1)</code> happens in userspace when <code>dtrace(1M)</code> periodically claims
+its buffers. Therefore this would not give valid results, since the function
+call and the invalidation of CPU caches would be significantly dissociated timewise.</p></div>
+<div class="paragraph"><p>For the above reasons, we decided to pursue another route. DTrace has a built-in function,
+named <code>rand()</code> that returns a pseudo-number generator. This function can be used
+in constructs like this:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>pid$target::*G4PropagatorInField*ComputeStep*:entry
+/rand() % 101 == 0/
+{
+        ... do stuff ...
+}</code></pre>
+</div></div>
+<div class="paragraph"><p>After the <code>G4PropagatorInField::ComputeStep()</code> function is called, <code>DTrace</code>
+executes <code>rand()</code> and iff the condition <code>rand() % 101 == 0</code> is met, the code
+that resides inside the block is executed. <strong>Therefore the function call and</strong> <code>rand()</code>
+<strong>call happen very close in time. What we did was to replace the "genuine" version
+of</strong> <code>rand()</code> <strong>with another one that called</strong> <code>wbinvd</code>. We achieved that  by
+rewriting kernel instructions with live patching. The <code>rand()</code> function is
+<a href="http://src.illumos.org/source/xref/illumos-gate/usr/src/uts/common/dtrace/dtrace.c#3234">implemented as</a>:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>regs[rd] = (dtrace_gethrtime() * 2416 + 374441) % 1771875;</code></pre>
+</div></div>
+<div class="paragraph"><p>So, locating it inside <code>dtrace_dif_subr</code> was easy (<code>0x1b0963</code> is the hex
+representation of <code>1771875</code>):</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>&gt; dtrace_dif_subr::dis !grep -C5 0x1b0963
+dtrace_dif_subr+0x25a9:         jmp    +0x32    &lt;dtrace_dif_subr+0x25dd&gt;
+dtrace_dif_subr+0x25ab:         call   +0x3844030       &lt;dtrace_gethrtime&gt;
+dtrace_dif_subr+0x25b0:         imulq  $0x970,%rax,%rax
+dtrace_dif_subr+0x25b7:         addq   $0x5b6a9,%rax
+dtrace_dif_subr+0x25bd:         js     +0x8     &lt;dtrace_dif_subr+0x25c7&gt;
+dtrace_dif_subr+0x25bf:         cmpq   $0x1b0963,%rax
+dtrace_dif_subr+0x25c5:         jl     +0xf     &lt;dtrace_dif_subr+0x25d6&gt;
+dtrace_dif_subr+0x25c7:         cqtd
+dtrace_dif_subr+0x25c9:         movq   $0x1b0963,%rcx
+dtrace_dif_subr+0x25d0:         idivq  %rcx
+dtrace_dif_subr+0x25d3:         movq   %rdx,%rax
+dtrace_dif_subr+0x25d6:         movl   %r12d,%ecx
+dtrace_dif_subr+0x25d9:         movq   %rax,(%rbx,%rcx,8)
+dtrace_dif_subr+0x25dd:         addq   $0xc8,%rsp
+&gt;</code></pre>
+</div></div>
+<div class="paragraph"><p>We then replaced the <code>idivq</code> instruction, which occupied <code>3</code> bytes,
+with a <code>nop</code> (90) and <code>wbinvd</code> (0F 09):</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>&gt; dtrace_dif_subr+0x25d0/v 0x90
+&gt; dtrace_dif_subr+0x25d1/v 0x0F
+&gt; dtrace_dif_subr+0x25d2/v 0x09
+&gt;</code></pre>
+</div></div>
+<div class="paragraph"><p>We disassembled the result, just to make sure that everything
+went as planned:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>&gt; dtrace_dif_subr+0x25d0::dis
+&gt; dtrace_dif_subr+0x25c9:         movq   $0x1b0963,%rcx
+&gt; dtrace_dif_subr+0x25d0:         nop
+&gt; dtrace_dif_subr+0x25d1:         wbinvd
+&gt; dtrace_dif_subr+0x25d3:         movq   %rdx,%rax
+&gt;</code></pre>
+</div></div>
+<div class="paragraph"><p>To summarize, <strong>the reasons why we chose to hack</strong> <code>rand()</code> are:</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist"><ul>
+<li>
+<p>
+It exists.
+</p>
+</li>
+<li>
+<p>
+It is easy to locate it in the disassembled code, due to the way it is implemented.
+</p>
+</li>
+<li>
+<p>
+It is executed very close in time with respect to the function call that we want to instrument.
+</p>
+</li>
+<li>
+<p>
+It is orthogonal to the rest of our profiling, so patching it will not affect us.
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>Finally, we ran the profiling as previously:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>dtrace  -q
+        -w
+        -x ustackframes=100
+        -x strsize=5000
+        -n 'cpc:::PAPI_l2_dcm-all-10000 /execname == "full_cms"/ { @[ustack()] = count(); }
+            pid$target::*G4PropagatorInField*ComputeStep*:entry/rand()%101 == 0/ {}'
+        -c "/home/stathis/gen-tests/geant4/geant4.9.5.p01/bin/Linux-g++/full_cms ./bench1_10.g4"
+        -o stack.misses.fake</code></pre>
+</div></div>
+<div class="paragraph"><p>We subsequently regenerated the flamegraph and confirmed that <code>DTrace</code>
+identified the increase in the CPU cache misses. Here is the graph with
+<a href="http://leaf.dragonflybsd.org/<sub>beket/geant4/DoEventLoop.computeStep_original.svg">the unaltered <code>ComputeStep</code></a>
+function and this is the regenerated graph with <a href="http://leaf.dragonflybsd.org/</sub>beket/geant4/DoEventLoop.computeStep_altered.svg">the altered function</a>.</p></div>
+<div class="paragraph"><p>The same exact analysis have been performed for <code>G4VoxelNavigation::LocateNextVoxel()</code>.
+<a href="http://leaf.dragonflybsd.org/<sub>beket/geant4/DoEventLoop.locateNextVoxel_original.svg">The unaltered function</a> and
+the regenerated graph with <a href="http://leaf.dragonflybsd.org/</sub>beket/geant4/DoEventLoop.locateNextVoxel_altered.svg">the altered function</a>.</p></div>
+<div class="paragraph"><p>Special thanks to Sean Silva for his insights.</p></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_outliers_in_graphs_of_hardware_cpu_counters">2.3. Outliers in graphs of hardware CPU counters</h3>
+<div class="paragraph"><p>It has been brought to our attention that the graphs for CPI, DC/IC misses, etc
+had lots of outliers. We hypothesized that this could be an artifact imposed
+by the scheduler and/or other actions of the host operating system. For this
+reason we made the <code>full_cms</code> bind to a specific cpu (other than #0) during
+its lifetime. The command that we used was <code>pbind(1M)</code> in Solaris. After that
+the vast majority of the outliers has been disappeared.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_why_in_the_flame_leaf_graphs_are_functions_appearing_to_be_called_by_others_whereas_there_is_no_such_direct_call_in_the_source_code">2.4. Why, in the flame/leaf-graphs, are functions appearing to be called by others, whereas there is no such direct call in the source code</h3>
+<div class="paragraph"><p>This is an artifact caused by a compiler optimization, known as <strong>tail-call elimination</strong> or
+<strong>tail-call optimization</strong>. This type of optimization (which happens by default in g++ at
+the <code>-O2</code> optimization level), happens when a function <code>A()</code> calls function <code>C()</code> as its
+last action. E.g.</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>int A()
+{
+    B();
+    return C();
+}</code></pre>
+</div></div>
+<div class="paragraph"><p>In that case, the generated code is <strong>not</strong> this (pseudo-assembly):</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>A:
+    call B
+    call C
+    ret</code></pre>
+</div></div>
+<div class="paragraph"><p>but this:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>A:
+    call B
+    <strong>jmp C</strong></code></pre>
+</div></div>
+<div class="paragraph"><p>The <em>benefit</em>, in terms of performance, is that we don&#8217;t setup a new
+stack trace for the function that is about to be called. The <em>drawback</em> is
+that we lose potentially useful information for debugging and profiling.
+A typical example can be found in the <code>ProcessOneEvent()</code> function. In the
+source code there exists this sequence of function calls:
+<code>DoEventLoop() &#8594; ProcessOneEvent() &#8594; DoProcessing() &#8594; &#8230;</code></p></div>
+<div class="paragraph"><p>In the generated leafgraphs though, <code>DoProcessing()</code> appears to be a direct
+descendant node of <code>DoEventLoop()</code>, with <code>ProcessOneEvent()</code> not appearing at
+all. In the disassembled code:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>> $G
+C++ symbol demangling enabled
+> _ZN14G4EventManager15ProcessOneEventEP7G4Event::dis
+G4EventManager::ProcessOneEvent:subl   $0xc,%esp
+G4EventManager::ProcessOneEvent+3:      movl   0x10(%esp),%eax
+G4EventManager::ProcessOneEvent+7:      movl   $0x0,0x10(%eax)
+G4EventManager::ProcessOneEvent+0xe:    addl   $0xc,%esp
+<strong>G4EventManager::ProcessOneEvent+0x11:   jmp    -0x11f6  <G4EventManager::DoProcessing></strong>
+></code></pre>
+</div></div>
+<div class="paragraph"><p>As we can see, instead of a <code>call/ret</code> to <code>G4EventManager::DoProcessing()</code> there
+is instead a <code>jmp</code> instruction. Which is the reason why DTrace appears to be missing
+the <code>ProcessOneEvent()</code> (since its stack-frame is being taken by <code>DoProcessing()</code>.</p></div>
+<div class="sect3">
+<h4 id="_how_to_measure_time_spent_in_code_processoneevent_code">2.4.1. How to measure time spent in <code>ProcessOneEvent()</code></h4>
+<div class="paragraph"><p>In continuation of the above, in order to precisely measure the time spent in
+<code>ProcessOneEvent()</code>, we need to follow the execution to <code>DoProcessing()</code> and
+find the address where it <code>ret</code>'urns. We do so by disassemblying <code>DoProcessing()</code>.
+We then supply that address as the return point to DTrace, which can probe arbitrary
+addresses, as shown below:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>dtrace -n '
+BEGIN
+{
+        evtcnt = 0;
+}
+
+pid$target::_ZN14G4EventManager15ProcessOneEventEP7G4Event:entry
+{
+        self-&gt;pstart = vtimestamp;
+}
+
+pid$target::-:8c8fbcf
+/self-&gt;pstart/
+{
+        t = vtimestamp - self-&gt;pstart;
+        printf("evtcnt=%d t=%d\n", ++evtcnt, t);
+        self-&gt;pstart = 0;
+}' -c '/home/stathis/gen-tests/geant4/geant4.9.5.p01-default/bin/Linux-g++/full_cms ./bench1_10.g4' -o poe.out</code></pre>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2016-12-28 01:35:10 EET
+</div>
+</div>
+</body>
+</html>
