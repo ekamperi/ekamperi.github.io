@@ -1083,8 +1083,8 @@ grep DoEventLoop                        |
 sed 's/full_cms`//g'                    |
 ./flamegraph.pl &gt; DoEventLoop.demangled.svg</code></pre>
 </div></div>
-<div class="paragraph"><p>images/flamegraph.svg[This] is an example of the svg output
-file, and images/geant4/flamegraph-demangled.svg[this] is with
+<div class="paragraph"><p><a href="http://ekamperi.bitbucket.io/Geant4/images/flamegraph.svg">This</a> is an example of the svg output
+file, and <a href="http://ekamperi.bitbucket.io/Geant4/images/flamegraph-demangled.svg">this</a> is with
 demangled names.</p></div>
 <div class="paragraph"><div class="title">Generate the targeted DTrace script</div><p>After having identified the "hot" functions, we run a shell script that generates a <code>DTrace</code>
 script that focuses on profiling these functions only.</p></div>
@@ -1418,11 +1418,13 @@ It is orthogonal to the rest of our profiling, so patching it will not affect us
 </div></div>
 <div class="paragraph"><p>We subsequently regenerated the flamegraph and confirmed that <code>DTrace</code>
 identified the increase in the CPU cache misses. Here is the graph with
-images/DoEventLoop.computeStep_original.svg[the unaltered <code>ComputeStep</code>]
-function and this is the regenerated graph with images/DoEventLoop.computeStep_altered.svg[the altered function].</p></div>
+<a href="http://ekamperi.bitbucket.io/Geant4/images/DoEventLoop.computeStep_original.svg">the unaltered <code>ComputeStep</code></a>
+function and this is the regenerated graph with
+<a href="http://ekamperi.bitbucket.io/Geant4/images/DoEventLoop.computeStep_altered.svg">the altered function</a>.</p></div>
 <div class="paragraph"><p>The same exact analysis have been performed for <code>G4VoxelNavigation::LocateNextVoxel()</code>.
-images/DoEventLoop.locateNextVoxel_original.svg[The unaltered function] and
-the regenerated graph with images/DoEventLoop.locateNextVoxel_altered.svg[the altered function].</p></div>
+<a href="http://ekamperi.bitbucket.io/Geant4/images/DoEventLoop.locateNextVoxel_original.svg">The unaltered function</a> and
+the regenerated graph with
+<a href="http://ekamperi.bitbucket.io/Geant4/images/DoEventLoop.locateNextVoxel_altered.svg">the altered function</a>.</p></div>
 <div class="paragraph"><p>Special thanks to Sean Silva for his insights.</p></div>
 </div>
 </div>
@@ -1524,7 +1526,7 @@ pid$target::-:8c8fbcf
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-01-01 00:55:50 EET
+Last updated 2017-01-01 01:04:46 EET
 </div>
 </div>
 </body>
