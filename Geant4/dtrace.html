@@ -1133,9 +1133,9 @@ like the following:</p></div>
         printa(@_);
 }</code></pre>
 </div></div>
-<div class="paragraph"><p>An example can be found <a href="http://leaf.dragonflybsd.org/<sub>beket/geant4/stad.out">here</a>. We, then, use
-a <a href="http://leaf.dragonflybsd.org/</sub>beket/geant4/q.awk">script file</a> to extract the aggregations for
-every event, and <a href="http://leaf.dragonflybsd.org/~beket/geant4/rec.sh">another one</a>, to reconstruct
+<div class="paragraph"><p>An example can be found <a href="http://ekamperi.bitbucket.io/Geant4/files/stad.out">here</a>. We, then, use
+a <a href="http://ekamperi.bitbucket.io/Geant4/files/q.awk">script file</a> to extract the aggregations for
+every event, and <a href="http://ekamperi.bitbucket.io/Geant4/files/rec.sh">another one</a>, to reconstruct
 a time series for every "hot" function.</p></div>
 <div class="listingblock">
 <div class="content">
@@ -1162,7 +1162,7 @@ or as a <a href="http://leaf.dragonflybsd.org/</sub>beket/geant4/plots/bench1_10
 <div class="paragraph"><p>Solaris has two utilities for examining hardware performance counters:
 <code>cpustat(1M)</code> for overall system monitoring, and <code>cputrack(1)</code> for monitoring
 a process (or a family of them). With the help of
-<a href="http://gitweb.dragonflybsd.org/~beket/gen-tests.git/blob/refs/heads/master:/geant4/x64ipc.sh">this script</a>,
+<a href="https://bitbucket.org/ekamperi/geant4/src/master/scripts/x64ipc.sh">this script</a>,
 we can measure the cycles per instruction (CPI) of the <code>full_cms</code> experiment
 during its lifetime. For example:</p></div>
 <div class="listingblock">
@@ -1182,7 +1182,7 @@ during its lifetime. For example:</p></div>
 </div></div>
 <div class="paragraph"><p>A file with the full results from a complete simulation of the <code>bench1_100.g4</code> may be found
 <a href="http://leaf.dragonflybsd.org/<sub>beket/geant4/bench1_100.g4.cpi.dat">here</a>. The data can be then plotted
-with <a href="http://gitweb.dragonflybsd.org/</sub>beket/gen-tests.git/blob/refs/heads/master:/geant4/cpiplot.sh">this script</a>, and the output image <a href="http://leaf.dragonflybsd.org/~beket/geant4/bench1_100.g4.cpi.dat.png">looks like this</a>.
+with <a href="https://bitbucket.org/ekamperi/geant4/src/master/scripts/cpiplot.sh">this script</a>, and the output image <a href="http://leaf.dragonflybsd.org/</sub>beket/geant4/bench1_100.g4.cpi.dat.png">looks like this</a>.
 Putting it all together:</p></div>
 <div class="listingblock">
 <div class="content">
@@ -1227,8 +1227,8 @@ the cache misses originate from the initialization code <code>(GDML + xerces-c)<
 <h4 id="_how_to_plot_the_data_cache_or_instruction_cache_misses">2.2.1. How to plot the Data Cache (or Instruction Cache) misses</h4>
 <div class="paragraph"><p>Similar to how we gather and plot CPI statistics, we can do the same with the
 Data Cache misses and Instruction Cache misses. For <strong>Instruction Cache</strong> misses:</p></div>
-<div class="paragraph"><p><a href="http://gitweb.dragonflybsd.org/<sub>beket/gen-tests.git/blob_plain/master:/geant4/x64l2icmisses.sh">[script</a>]
-<a href="http://leaf.dragonflybsd.org/</sub>beket/geant4/bench1_100.g4.ic.png">[plot</a>]</p></div>
+<div class="paragraph"><p><a href="https://bitbucket.org/ekamperi/geant4/src/master/scripts/x64l2icmisses.sh">[script</a>]
+<a href="http://leaf.dragonflybsd.org/~beket/geant4/bench1_100.g4.ic.png">[plot</a>]</p></div>
 <div class="listingblock">
 <div class="content">
 <pre><code>solaris# cat /devices/pseudo/dummy@*    # to invalidate all the CPU caches
@@ -1236,8 +1236,8 @@ solaris# ./x64l2icmisses.sh -q ./full_cms ./bench1_100.g4 &gt; ./bench1_100.g4.i
 solaris# ./icmissesplot.sh ./bench1_100.g4.ic | gnuplot &gt; ./bench1_100.g4.ic.png</code></pre>
 </div></div>
 <div class="paragraph"><p>or, for <strong>Data Cache</strong> misses:</p></div>
-<div class="paragraph"><p><a href="http://gitweb.dragonflybsd.org/<sub>beket/gen-tests.git/blob_plain/master:/geant4/x64l2dcmisses.sh">[script</a>]
-<a href="http://leaf.dragonflybsd.org/</sub>beket/geant4/bench1_100.g4.dc.png">[plot</a>]</p></div>
+<div class="paragraph"><p><a href="https://bitbucket.org/ekamperi/geant4/src/master/scripts/x64ipc.sh/x64l2dcmisses.sh">[script</a>]
+<a href="http://leaf.dragonflybsd.org/~beket/geant4/bench1_100.g4.dc.png">[plot</a>]</p></div>
 <div class="listingblock">
 <div class="content">
 <pre><code>solaris# cat /devices/pseudo/dummy@*    # to invalidate all the CPU caches
@@ -1526,7 +1526,7 @@ pid$target::-:8c8fbcf
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-01-01 01:16:29 EET
+Last updated 2017-01-01 01:41:42 EET
 </div>
 </div>
 </body>
