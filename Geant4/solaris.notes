@@ -1,0 +1,312 @@
+*version:* @@version@@
+
+== HOW TO INSTALL GEANT4 IN SOLARIS 11
+
+=== Dependencies
+==== cmake
++cmake-2.8+ is needed but, as of the time of writing, Solaris 11 bundles
++cmake-2.6+. Therefore, one needs to install +cmake-2.6+ with:
+
+----
+pkg install developer/build/cmake
+----
+
+and then use that to bootstrap +cmake-2.8+. Finally we use +cmake-2.8+ to
+build +Geant4+ as per the docs instructions.
+
+----
+export PATH=$PATH:/opt/cmake-2.8/bin     
+----
+
+==== xerces-c
+In order to build +Geant4+ with GDML support (which in turn is needed
+if one wants to run the +FullCMS+ experiment), the +xerces-c+ library
+must be installed. +xerces-c+ doesn't exist as binary package at all.
+Therefore, we need to build it from sources:
+
+----
+pkg install library/icu		# needed as a dependency for xerces-c
+pkg install x11/library/mesa 	# needed by geant4
+----
+
+In the +bechmarks/calorimeters/FullCMS/README+ file, it is stated that
+the version of +xerces-c+ must be the same as the one used to produce
+the +cms.gdml+ (which is 2.8). +xerces-2.8+ though, doesn't seem to build
+out of the box, but +3.1.1+ does and it is able to parse the gdml file
+fine (backwards compatible?).
+
+----
+wget http://apache.cc.uoc.gr//xerces/c/3/sources/xerces-c-3.1.1.tar.gz
+
+export ICUROOT="/usr"		# assuming libicu is in /usr/lib/libicu.so
+cd xerces-c-3.1.1 && ./configure --prefix=/opt/xerces-c-3.1.1 \
+   		  && gmake && gmake install
+----
+
+NOTE: +XERCESC_ROOT_DIR+ is a +-D...=...+ CMake cache option; *not* an environmental
+variable!
+
+=== Patch needed for Solaris
+
+Solaris 11 seems to leak some symbols in +/usr/include/sys/regset.h+, around
++line 78+. Later on, while compiling legitimate code in +Geant4+, such as:
+
+----
+    G4double CA[15] =
+    { 8.03768, 9.03104, 10.0169, 11.0114, 12. , 13.0034, 14.0032, 15.0106,
+      16.0147, 17.0226, 18.0268, 19.0353, 20.0403, 21.0493, 22.0565 };
+
+    AddElement("C", 6, 15, *CN , *CA , *CS , *CW);
+----
+
+the build fails, because +'CS'+ is substituded, during the preprocessing
+stage, with the following:
+
+----
+    G4double 15[15] =
+    { 25, 23, 4, 10, 0, 10, 4, 9, 4, 19, 30, 12, 22, 54, 97 };
+
+    AddElement("C", 6, 15, *CN , *CA , *15 , *CW);
+----
+
+resulting in all kinds of weird errors. How to get the preprocessed
+source code:
+
+----
+stathis:materials/src% g++ -E -I../../materials/include		\
+		       	      -I../../global/management/include \
+			      -I../../externals/clhep/include 	\
+			   G4NistElementBuilder.cc
+----
+
+Symbols most likely to clash with geant4's, directly taken from sys/regset.h:
+
+----
+#define SS              18      /* only stored on a privilege transition */
+#define UESP            17      /* only stored on a privilege transition */
+#define EFL             16
+#define CS              15
+#define EIP             14
+#define ERR             13
+#define TRAPNO          12
+#define EAX             11
+#define ECX             10
+#define EDX             9
+#define EBX             8
+#define ESP             7
+#define EBP             6
+#define ESI             5
+#define EDI             4
+#define DS              3
+#define ES              2
+#define FS              1
+#define GS              0
+----
+
+I had to bisect the problem space by inserting +#undef CS+ before and after
+the inclusion of various header files, starting from the +Geant4+ specific and
+going as far as the system header files.
+
+http://leaf.dragonflybsd.org/~beket/geant4/solaris11.diff[This] is a transitive
+patch to workaround the issue. The +sol11fix.h+ must be included *after* the
+inclusion of every other header file (in the problematic .cc files), i.e.,
+be the last header file to be included. Otherwise, the inclusion of some other
+header may cause the redefinition of the symbols.
+
+NOTE: I need to properly integrate the patch to not use hardcoded include
+paths, e.g., +#include "../../../../../global/sol11fix.hh"+. Otherwise it
+will not work out of the box if one -say- tries to build granular libraries,
+by invoking make in +$G4INSTALL/source+, rather than +$G4INSTALL+.
+
+Pere suggested that since the inclusion of +sys/wait.h+ in +stdlib.h+ is
+guarded by:
+
+----
+#if defined(__EXTENSIONS__) || defined(_XPG4)
+#include <sys/wait.h>
+#endif
+----
+
+perhaps we could make the issue go away by passing +-U\__EXTENSIONS__+
+or +-U_XPG4+ in g++. This is something that I will soon test.
+
+==== How to enable the SmartTrackStack ====
+
+
+Calling +cmake -DG4_USESMARTSTACK ...+ will not work, because that sets
+a CMake cache variable. What we want is to pass a preprocessor macro
+in g++. The proper way to do that is to add the following in the +CMakeLists.txt+
+file:
+
+----
+add_definitions(-DG4_USESMARTTRACKSTACK)
+----
+
+or modify the +CMAKE_CXX_FLAGS+ variable, again inside the +CMakeLists.txt+.
+
+==== FullCMS
+... fast notes ...
+
+----
+export XERCESROOT=/opt/xerces-c...
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:...
+----
+
+setup the environmental variables ...
+
+apply the patch http://leaf.dragonflybsd.org/~beket/geant4/fullCMS.diff
+build granular libraries 
+QUESTION: does GEANT4_BUILD_GRANULAR_LIBRARIES=ON builds ONLY granular
+libraries or does it build them along with non-granular ?
+
+----
+cd $G4INSTALL/source
+gmake
+----
+
+and the libraries should reside at:
+
+After rebuilding geant4 with +GDML+ support and the installation of
+benchmarks/calorimeters/FullCMS and for no apparent reason, +Geant4+ programs
+started to hang. A +pstack(1)+ on +exampleN01+ (which has been previously 
+working fine) returned:
+
+----    
+curl http://leaf.dragonflybsd.org/~beket/geant4/pstack.exampleN01 |\
+     /usr/gnu/bin/c++filt | less
+----
+
+Part of the problem is the call to +__cxa_guard_acquire()+, which is used
+internally by +g\++ to protect the construction of local static variables.
+It seems though that +__cxa_guard_release()+ is never get called and the
+program just waits indefinetely. I hypothesize that 1) the initialisation
+code is thread-safe, but not reentrant-safe and 2) there is a 2nd call
+from the same context, possibly due to the construction of some complex
+object, which leads to the deadlock. The construction of global static
+variables doesn't pose a problem, as it takes place before any function
+of the translation unit gets executed.
+
+UPDATE: It appears that this problem is exhibited when the Debug option
++-DCMAKE_BUILD_TYPE=Debug+ is set, along with +GEANT4_USE_GDML, etc+. A
+workaround is to either disable debug or add the following line in
++$G4SOURCE/CMakeLists.txt+:
+
+----
+set(CMAKE_CXX_FLAGS "-fno-threadsafe-statics")
+----
+
+There is also a patch in http://leaf.dragonflybsd.org/~beket/CMakeLists.txt.diff
+that applies the above change. Since we are interested in the sequential
+code path efficiency, we chose to disable thread safe statics instead
+of debugging symbols. Question: what about the impact on performance due to lack
+of optimizations ?
+
+When building granular libraries, one needs to set $PATH like:
+
+----
+    export PATH=/usr/gnu/bin:$PATH
+----
+
+so that the GNU toolchain takes precedence over the native,
+otherwise some commands will fail (e.g., @$(GREP), etc).
+
+Use Linux-g++ as G4System
+
+The +GNUmakefile+ couldn't generate the +libname.map+ file. It would flood
+with errors from +grep(1)+, of the form:
+
+----
+grep: error: missing argument for operation -- e
+----
+
+The modified file that works ok is this:
+the http://leaf.dragonflybsd.org/~beket/geant4/GNUmakefile2 . Soon,
+I'll have a unified diff against the original and integrate it with
++setup.sh+.
+
+After the granular libraries have been built by running gmake in
++$G4INSTALL/source+, trying to build +FullCMS+ results to this:
+
+----
+stathis:calorimeter/FullCMS% sudo -E gmake
+Using granular libraries ...
+Linking full_cms
+Undefined                       first referenced
+ symbol                             in file
+G4GeometryTolerance::GetSurfaceTolerance() const
+/home/stathis/gen-tests/geant4/geant4.9.5.p01/tmp/Linux-g++/full_cms/libfull_cms.a(MyDetectorConstruction.o)
+
+G4UIcmdWithADoubleAndUnit::SetDefaultValue(double) 
+/home/stathis/gen-tests/geant4/geant4.9.5.p01/tmp/Linux-g++/full_cms/libfull_cms.a(MyDetectorMessenger.o)
+
+CLHEP::HepRandom::setTheSeed(long, int)
+/home/stathis/gen-tests/geant4/geant4.9.5.p01/tmp/Linux-g++/full_cms/exe/full_cms.o
+... lots of similar errors ...
+----
+
+----
+stathis:calorimeter/FullCMS% nm $G4LIB/$G4SYSTEM/libG4globman.a \ 
+			     | grep GetSurface | /usr/gnu/bin/c++filt
+000000e0 T G4GeometryTolerance::GetSurfaceTolerance() const
+----
+
+
+
+----
+ld: fatal: library -lG4heprandom: not found
+ld: warning: file ../../../../../../outputs/library/SunOS-g++/libG4procman.so: attempted multiple inclusion of file
+ld: warning: file ../../../../../../outputs/library/SunOS-g++/libG4volumes.so: attempted multiple inclusion of file
+ld: warning: file ../../../../../../outputs/library/SunOS-g++/libG4track.so: attempted multiple inclusion of file
+ld: warning: file ../../../../../../outputs/library/SunOS-g++/libG4partman.so: attempted multiple inclusion of file
+ld: warning: file ../../../../../../outputs/library/SunOS-g++/libG4geometrymng.so: attempted multiple inclusion of file
+ld: warning: file ../../../../../../outputs/library/SunOS-g++/libG4materials.so: attempted multiple inclusion of file
+ld: warning: file ../../../../../../outputs/library/SunOS-g++/libG4intercoms.so: attempted multiple inclusion of file
+ld: warning: file ../../../../../../outputs/library/SunOS-g++/libG4globman.so: attempted multiple inclusion of file
+ld: fatal: file processing errors. No output written to ../../../../../../outputs/library/SunOS-g++/libG4emdna-molman.so
+collect2: ld returned 1 exit status
+make[2]: *** [outputs/library/SunOS-g++/libG4emdna-molman.so] Error 1
+make[2]: Leaving directory `/home/stathis/gen-tests/geant4/geant4.9.5.p01-build-smart'
+make[1]: *** [source/processes/electromagnetic/dna/molecules/management/CMakeFiles/G4emdna-molman.dir/all] Error 2
+make[1]: Leaving directory `/home/stathis/gen-tests/geant4/geant4.9.5.p01-build-smart'
+make: *** [all] Error 2
+----
+
+=== How to find memory leaks with libumem
+
+First, set some environmental variables in order to use the +libumem+ memory allocator:
+----
+LD_PRELOAD=libumem.so.1; export LD_PRELOAD
+UMEM_DEBUG=default; export UMEM_DEBUG
+----
+
+Then use +mdb+ to run your binary:
+----
+/usr/bin/mdb /home/stathis/gen-tests/geant4/geant4.9.5.p01/bin/Linux-g++/full_cms
+:r ./bench1_10.g4
+....
+^C
+mdb: stop on SIGINT
+mdb: target stopped at:
+_ZN10G4QPDGCode9MakeQCodeERKi+0x43e:    leal   (%eax,%eax,2),%ebx
+mdb: You've got symbols!
+Loading modules: [ ld.so.1 libumem.so.1 libc.so.1 libuutil.so.1 libnvpair.so.1 ]
+----
+
+Then use +::findleaks+ dcmd to -guess what- find the memory leaks:
+----
+> ::findleaks -dv                               
+findleaks: using cached results (use '-f' to force a full run)
+CACHE     LEAKED   BUFCTL CALLER
+099bf390       1 0aa867c8 libstdc++.so.6.0.14`_Znwj+0x29
+099bf390       1 0ac60438 libstdc++.so.6.0.14`_Znwj+0x29
+099bf390       1 0ac60780 libstdc++.so.6.0.14`_Znwj+0x29
+...
+----
+
+Enable C++ symbol demangling and walk through all the leaked buffers, acquiring
+the stack trace that led to that leak and output everything to the +umem.txt+ file:
+----
+> $G
+C++ symbol demangling enabled
+> ::walk leak | ::bufctl_audit !tee umem.txt
+----
