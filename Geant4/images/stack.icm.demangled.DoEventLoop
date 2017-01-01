@@ -1,0 +1,1019 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="1200" height="834" onload="init(evt)" viewBox="0 0 1200 834" xmlns="http://www.w3.org/2000/svg" >
+<defs >
+	<linearGradient id="background" y1="0" y2="1" x1="0" x2="0" >
+		<stop stop-color="#eeeeee" offset="5%" />
+		<stop stop-color="#eeeeb0" offset="95%" />
+	</linearGradient>
+</defs>
+<style type="text/css">
+	rect[rx]:hover { stroke:black; stroke-width:1; }
+	text:hover { stroke:black; stroke-width:1; stroke-opacity:0.35; }
+</style>
+<script type="text/ecmascript">
+<![CDATA[
+	var details;
+	function init(evt) { details = document.getElementById("details").firstChild; }
+	function s(info) { details.nodeValue = info; }
+	function c() { details.nodeValue = ' '; }
+]]>
+</script>
+<rect x="0.0" y="0" width="1200.0" height="834.0" fill="url(#background)"  />
+<text text-anchor="middle" x="600" y="24" font-size="17" font-family="Verdana" fill="rgb(0,0,0)"  >Leaf graph of full_cms Instruction Cache misses, 10 events</text>
+<text text-anchor="left" x="10" y="817" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Function:</text>
+<text text-anchor="" x="70" y="817" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" id="details" > </text>
+<rect x="379.8" y="433" width="1.3" height="15.0" fill="rgb(213,220,44)" rx="2" ry="2" onmouseover="s('G4VoxelNavigation::ComputeSafety (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="87.4" y="465" width="1.4" height="15.0" fill="rgb(207,41,26)" rx="2" ry="2" onmouseover="s('G4VCSGfaceted::SurfaceNormal (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="430.5" y="449" width="1.3" height="15.0" fill="rgb(236,42,53)" rx="2" ry="2" onmouseover="s('libm.so.2`log (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="86.1" y="449" width="1.3" height="15.0" fill="rgb(218,208,21)" rx="2" ry="2" onmouseover="s('libm.so.2`__libm__reduction (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1109.9" y="465" width="2.7" height="15.0" fill="rgb(207,72,53)" rx="2" ry="2" onmouseover="s('G4HadProjectile::G4HadProjectile (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="817.6" y="305" width="2.6" height="15.0" fill="rgb(207,188,15)" rx="2" ry="2" onmouseover="s('libstdc (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="809.6" y="305" width="5.3" height="15.0" fill="rgb(254,191,53)" rx="2" ry="2" onmouseover="s('G4UIcommand::DoIt (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="307.7" y="449" width="4.0" height="15.0" fill="rgb(222,171,53)" rx="2" ry="2" onmouseover="s('G4CrossSectionPairGG::GetElementCrossSection (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="865.6" y="305" width="5.4" height="15.0" fill="rgb(249,193,40)" rx="2" ry="2" onmouseover="s('G4UImanager::ApplyCommand (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="1186.0" y="529" width="1.3" height="15.0" fill="rgb(216,102,36)" rx="2" ry="2" onmouseover="s('G4VProcess::StartTracking (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="929.7" y="417" width="1.3" height="15.0" fill="rgb(249,144,18)" rx="2" ry="2" onmouseover="s('libc.so.1`malloc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1182.0" y="433" width="1.3" height="15.0" fill="rgb(234,117,49)" rx="2" ry="2" onmouseover="s('G4NavigationLevel::~G4NavigationLevel (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="38.0" y="497" width="1.4" height="15.0" fill="rgb(238,102,23)" rx="2" ry="2" onmouseover="s('G4PEEffectFluoModel::CrossSectionPerVolume (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="618.7" y="305" width="1.3" height="15.0" fill="rgb(229,83,14)" rx="2" ry="2" onmouseover="s('G4CascadeSampler(30 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="818.9" y="193" width="1.3" height="15.0" fill="rgb(247,189,30)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="921.7" y="353" width="1.3" height="15.0" fill="rgb(237,9,17)" rx="2" ry="2" onmouseover="s('G4Quasmon::CalculateHadronizationProbabilities (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="42.0" y="465" width="1.4" height="15.0" fill="rgb(205,137,13)" rx="2" ry="2" onmouseover="s('G4VoxelNavigation::ComputeSafety (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="572.0" y="385" width="12.0" height="15.0" fill="rgb(233,126,3)" rx="2" ry="2" onmouseover="s('G4CascadeCheckBalance::collide (9 samples, 1.02%)')" onmouseout="c()" />
+<rect x="820.2" y="209" width="1.4" height="15.0" fill="rgb(221,183,27)" rx="2" ry="2" onmouseover="s(' std::less(int) (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="689.4" y="353" width="1.4" height="15.0" fill="rgb(239,179,44)" rx="2" ry="2" onmouseover="s('G4Neutron::Definition (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="769.5" y="433" width="1.4" height="15.0" fill="rgb(211,83,5)" rx="2" ry="2" onmouseover="s('G4IntraNucleiCascader::generateCascade (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="159.5" y="433" width="9.3" height="15.0" fill="rgb(230,97,45)" rx="2" ry="2" onmouseover="s('G4MagInt_Driver::QuickAdvance (7 samples, 0.79%)')" onmouseout="c()" />
+<rect x="72.7" y="417" width="1.4" height="15.0" fill="rgb(222,5,41)" rx="2" ry="2" onmouseover="s('G4IntersectingCone::LineHitsCone2 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1187.3" y="481" width="2.7" height="15.0" fill="rgb(212,6,0)" rx="2" ry="2" onmouseover="s('libstdc (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="762.9" y="401" width="5.3" height="15.0" fill="rgb(221,17,51)" rx="2" ry="2" onmouseover="s('G4NucleiModel::initializeCascad (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="1071.2" y="449" width="1.3" height="15.0" fill="rgb(233,36,5)" rx="2" ry="2" onmouseover="s('libm.so.2`sincos (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="911.0" y="449" width="20.0" height="15.0" fill="rgb(211,220,47)" rx="2" ry="2" onmouseover="s('G4ChiralInvariantPhaseSpace::ApplyYourself (15 samples, 1.70%)')" onmouseout="c()" />
+<rect x="980.4" y="433" width="1.4" height="15.0" fill="rgb(211,172,17)" rx="2" ry="2" onmouseover="s('G4PolyhedraSide::DistanceToOneSide (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="818.9" y="289" width="1.3" height="15.0" fill="rgb(237,195,19)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="543.9" y="433" width="2.7" height="15.0" fill="rgb(247,81,30)" rx="2" ry="2" onmouseover="s('G4CascadeDeexcitation::collide (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1111.2" y="433" width="1.4" height="15.0" fill="rgb(239,98,9)" rx="2" ry="2" onmouseover="s('libm.so.2`exp (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1085.9" y="433" width="1.3" height="15.0" fill="rgb(222,62,0)" rx="2" ry="2" onmouseover="s('G4UrbanMscModel95::ComputeTheta0 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="782.9" y="385" width="4.0" height="15.0" fill="rgb(244,52,26)" rx="2" ry="2" onmouseover="s('G4CollisionOutput::addOutgoingNuclei (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="1033.8" y="401" width="4.0" height="15.0" fill="rgb(225,226,6)" rx="2" ry="2" onmouseover="s('G4SandiaTable::GetSandiaCofPerAtom (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="1005.8" y="465" width="1.3" height="15.0" fill="rgb(212,143,45)" rx="2" ry="2" onmouseover="s('CLHEP::RanluxEngine::flat (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="18.0" y="529" width="2.7" height="15.0" fill="rgb(222,48,18)" rx="2" ry="2" onmouseover="s('G4ProcessManager::EndTracking (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="952.4" y="449" width="1.3" height="15.0" fill="rgb(233,176,14)" rx="2" ry="2" onmouseover="s('G4InelasticInteraction::SetUpChange (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="665.4" y="305" width="1.3" height="15.0" fill="rgb(216,66,11)" rx="2" ry="2" onmouseover="s(' G4ParticleLargerEkin) (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="590.7" y="401" width="1.3" height="15.0" fill="rgb(224,169,24)" rx="2" ry="2" onmouseover="s('G4DynamicParticle::G4DynamicParticle (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1187.3" y="401" width="2.7" height="15.0" fill="rgb(219,60,23)" rx="2" ry="2" onmouseover="s('libc.so.1`__write (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="10.0" y="721" width="1180.0" height="15.0" fill="rgb(250,67,48)" rx="2" ry="2" onmouseover="s('G4UIcommand::DoIt (884 samples, 100.00%)')" onmouseout="c()" />
+<text text-anchor="" x="13" y="731.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4UIcommand::DoIt (884 samples, 100.00%)')" onmouseout="c()" >G4UIcommand::DoIt</text>
+<rect x="580.0" y="369" width="1.3" height="15.0" fill="rgb(254,108,2)" rx="2" ry="2" onmouseover="s('G4CollisionOutput::getTotalCharge (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="956.4" y="241" width="1.3" height="15.0" fill="rgb(221,151,14)" rx="2" ry="2" onmouseover="s('libc.so.1`memset (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="920.4" y="353" width="1.3" height="15.0" fill="rgb(232,208,35)" rx="2" ry="2" onmouseover="s('G4QNucleus::InitCandidateVector (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="48.7" y="465" width="30.7" height="15.0" fill="rgb(219,99,40)" rx="2" ry="2" onmouseover="s('G4NormalNavigation::ComputeStep (23 samples, 2.60%)')" onmouseout="c()" />
+<rect x="231.6" y="385" width="1.3" height="15.0" fill="rgb(239,84,38)" rx="2" ry="2" onmouseover="s('G4Trap::SurfaceNormal (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="263.6" y="433" width="44.1" height="15.0" fill="rgb(211,129,1)" rx="2" ry="2" onmouseover="s('G4CrossSectionDataStore::GetIsoCrossSection (33 samples, 3.73%)')" onmouseout="c()" />
+<rect x="612.0" y="305" width="1.3" height="15.0" fill="rgb(235,23,49)" rx="2" ry="2" onmouseover="s(' 8)::findFinalStateIndex (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="868.3" y="161" width="1.3" height="15.0" fill="rgb(238,50,41)" rx="2" ry="2" onmouseover="s('libc.so.1`_malloc_unlocked (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="357.1" y="449" width="1.3" height="15.0" fill="rgb(250,39,47)" rx="2" ry="2" onmouseover="s('libm.so.2`log (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="730.8" y="289" width="1.3" height="15.0" fill="rgb(234,136,27)" rx="2" ry="2" onmouseover="s('libc.so.1`realfree (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="143.5" y="433" width="4.0" height="15.0" fill="rgb(216,158,34)" rx="2" ry="2" onmouseover="s('G4PolyconeSide::Intersect (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="888.3" y="417" width="2.7" height="15.0" fill="rgb(218,166,16)" rx="2" ry="2" onmouseover="s('CLHEP::HepLorentzVector::boostVector (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="629.4" y="337" width="2.6" height="15.0" fill="rgb(225,20,47)" rx="2" ry="2" onmouseover="s('G4CascadeInterpolator(9)::getBin (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="955.1" y="305" width="1.3" height="15.0" fill="rgb(205,200,5)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="665.4" y="321" width="1.3" height="15.0" fill="rgb(209,114,41)" rx="2" ry="2" onmouseover="s(' int (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="911.0" y="465" width="21.4" height="15.0" fill="rgb(230,199,37)" rx="2" ry="2" onmouseover="s('G4GammaNuclearReaction::ApplyYourself (16 samples, 1.81%)')" onmouseout="c()" />
+<rect x="16.7" y="545" width="1170.6" height="15.0" fill="rgb(244,222,18)" rx="2" ry="2" onmouseover="s('G4TrackingManager::ProcessOneTrack (877 samples, 99.21%)')" onmouseout="c()" />
+<text text-anchor="" x="19.6742081447964" y="555.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4TrackingManager::ProcessOneTrack (877 samples, 99.21%)')" onmouseout="c()" >G4TrackingManager::ProcessOneTrack</text>
+<rect x="1108.6" y="465" width="1.3" height="15.0" fill="rgb(227,188,25)" rx="2" ry="2" onmouseover="s('G4HadFinalState::SetLocalEnergyDeposit (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="726.8" y="353" width="2.7" height="15.0" fill="rgb(210,167,0)" rx="2" ry="2" onmouseover="s('G4NucleiPropertiesTableAME03::GetBindingEnergy (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="551.9" y="417" width="16.1" height="15.0" fill="rgb(230,41,24)" rx="2" ry="2" onmouseover="s('G4IntraNucleiCascader::finishCascade (12 samples, 1.36%)')" onmouseout="c()" />
+<rect x="1187.3" y="449" width="2.7" height="15.0" fill="rgb(220,66,14)" rx="2" ry="2" onmouseover="s('libc.so.1`_fwrite_unlocked (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1107.2" y="465" width="1.4" height="15.0" fill="rgb(208,220,49)" rx="2" ry="2" onmouseover="s('G4EnergyRangeManager::GetHadronicInteraction (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="27.4" y="513" width="2.6" height="15.0" fill="rgb(244,21,27)" rx="2" ry="2" onmouseover="s('G4Navigator::ResetState (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="812.2" y="257" width="1.4" height="15.0" fill="rgb(238,135,54)" rx="2" ry="2" onmouseover="s('G4VMultipleScattering::BuildPhysicsTable (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1104.6" y="465" width="2.6" height="15.0" fill="rgb(212,122,13)" rx="2" ry="2" onmouseover="s('G4CrossSectionDataStore::SampleZandA (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="450.5" y="401" width="1.3" height="15.0" fill="rgb(206,54,42)" rx="2" ry="2" onmouseover="s('G4QNucleus::CoulBarPenProb (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1071.2" y="417" width="1.3" height="15.0" fill="rgb(252,54,39)" rx="2" ry="2" onmouseover="s('libm.so.2`__libm__rem_pio2 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="708.1" y="353" width="2.7" height="15.0" fill="rgb(236,64,49)" rx="2" ry="2" onmouseover="s(' std::allocator(G4InuclElementaryParticle) ) ) (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1163.3" y="449" width="1.3" height="15.0" fill="rgb(213,144,4)" rx="2" ry="2" onmouseover="s('G4IonTable::GetIon (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="972.4" y="449" width="1.4" height="15.0" fill="rgb(219,85,12)" rx="2" ry="2" onmouseover="s('G4NavigationLevel::~G4NavigationLevel (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="895.0" y="401" width="1.3" height="15.0" fill="rgb(226,222,35)" rx="2" ry="2" onmouseover="s('libc.so.1`mutex_lock (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="439.8" y="401" width="1.4" height="15.0" fill="rgb(244,65,0)" rx="2" ry="2" onmouseover="s('G4QNucleus::DecayDibaryon (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="461.2" y="481" width="1.3" height="15.0" fill="rgb(247,147,27)" rx="2" ry="2" onmouseover="s('CLHEP::Hep3Vector::rotate (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="932.4" y="401" width="1.3" height="15.0" fill="rgb(245,128,28)" rx="2" ry="2" onmouseover="s('libm.so.2`__libm__rem_pio2 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="895.0" y="385" width="1.3" height="15.0" fill="rgb(252,109,27)" rx="2" ry="2" onmouseover="s('libc.so.1`mutex_lock_impl (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="718.8" y="417" width="38.7" height="15.0" fill="rgb(212,204,7)" rx="2" ry="2" onmouseover="s('G4IntraNucleiCascader::initialize (29 samples, 3.28%)')" onmouseout="c()" />
+<rect x="526.6" y="433" width="1.3" height="15.0" fill="rgb(222,107,4)" rx="2" ry="2" onmouseover="s('G4CascadeChannelTables::GetTable (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="279.6" y="417" width="4.0" height="15.0" fill="rgb(211,14,32)" rx="2" ry="2" onmouseover="s('G4ElectroNuclearCrossSection::GetIsoCrossSection (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="119.5" y="449" width="4.0" height="15.0" fill="rgb(206,64,24)" rx="2" ry="2" onmouseover="s('G4Tubs::DistanceToIn (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="585.3" y="369" width="4.0" height="15.0" fill="rgb(244,192,39)" rx="2" ry="2" onmouseover="s('G4InuclNuclei::getNucleiMass (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="1037.8" y="433" width="1.4" height="15.0" fill="rgb(238,159,22)" rx="2" ry="2" onmouseover="s('G4VelocityTable::Value (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="820.2" y="145" width="1.4" height="15.0" fill="rgb(207,154,30)" rx="2" ry="2" onmouseover="s(' std::pair(int const (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="437.1" y="481" width="1.4" height="15.0" fill="rgb(219,14,29)" rx="2" ry="2" onmouseover="s('G4IonTable::GetIon (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="179.5" y="401" width="1.4" height="15.0" fill="rgb(246,100,50)" rx="2" ry="2" onmouseover="s('G4ClassicalRK4::DumbStepper (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="940.4" y="449" width="5.3" height="15.0" fill="rgb(226,219,9)" rx="2" ry="2" onmouseover="s('CLHEP::HepLorentzVector::rotate (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="44.7" y="465" width="1.3" height="15.0" fill="rgb(209,74,48)" rx="2" ry="2" onmouseover="s('G4Box::DistanceToIn (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="818.9" y="113" width="1.3" height="15.0" fill="rgb(234,151,49)" rx="2" ry="2" onmouseover="s('libc.so.1`realfree (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="664.1" y="305" width="1.3" height="15.0" fill="rgb(249,33,40)" rx="2" ry="2" onmouseover="s('G4InuclElementaryParticle::operator= (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="955.1" y="353" width="1.3" height="15.0" fill="rgb(244,74,52)" rx="2" ry="2" onmouseover="s('G4NuclearLevelStore::GetManager (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="816.2" y="321" width="4.0" height="15.0" fill="rgb(223,75,8)" rx="2" ry="2" onmouseover="s('libstdc (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="650.7" y="337" width="1.4" height="15.0" fill="rgb(205,219,37)" rx="2" ry="2" onmouseover="s(' std::allocator(G4InuclElementaryParticle) )::_M_fill_insert (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="438.5" y="465" width="14.7" height="15.0" fill="rgb(241,221,51)" rx="2" ry="2" onmouseover="s('G4QEnvironment::FSInteraction (11 samples, 1.24%)')" onmouseout="c()" />
+<rect x="925.7" y="417" width="1.3" height="15.0" fill="rgb(219,114,42)" rx="2" ry="2" onmouseover="s('CLHEP::RanluxEngine::flat (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="754.8" y="321" width="1.4" height="15.0" fill="rgb(231,28,7)" rx="2" ry="2" onmouseover="s('libc.so.1`realfree (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="238.3" y="369" width="1.3" height="15.0" fill="rgb(221,11,8)" rx="2" ry="2" onmouseover="s('libm.so.2`atan2 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="40.7" y="465" width="1.3" height="15.0" fill="rgb(213,50,7)" rx="2" ry="2" onmouseover="s('G4Trap::DistanceToOut (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="952.4" y="465" width="1.3" height="15.0" fill="rgb(230,83,25)" rx="2" ry="2" onmouseover="s('G4LEAntiNeutronInelastic::ApplyYourself (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="351.7" y="465" width="6.7" height="15.0" fill="rgb(230,134,21)" rx="2" ry="2" onmouseover="s('G4BraggIonModel::GetChargeSquareRatio (5 samples, 0.57%)')" onmouseout="c()" />
+<rect x="39.4" y="497" width="209.5" height="15.0" fill="rgb(205,111,17)" rx="2" ry="2" onmouseover="s('G4Transportation::AlongStepGetPhysicalInteractionLength (157 samples, 17.76%)')" onmouseout="c()" />
+<text text-anchor="" x="42.3665158371041" y="507.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4Transportation::AlongStepGetPhysicalInteractionLength (157 samples, 17.76%)')" onmouseout="c()" >G4Transportation::AlongS..</text>
+<rect x="865.6" y="273" width="5.4" height="15.0" fill="rgb(236,78,13)" rx="2" ry="2" onmouseover="s('G4UserPhysicsListMessenger::SetNewValue (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="294.3" y="417" width="12.0" height="15.0" fill="rgb(251,55,10)" rx="2" ry="2" onmouseover="s('G4HadronCrossSections::GetInelasticCrossSection (9 samples, 1.02%)')" onmouseout="c()" />
+<rect x="236.9" y="385" width="2.7" height="15.0" fill="rgb(228,206,13)" rx="2" ry="2" onmouseover="s('G4PolyconeSide::DistanceAway (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="491.9" y="401" width="2.6" height="15.0" fill="rgb(248,76,47)" rx="2" ry="2" onmouseover="s('G4PionMinus::Definition (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="10.0" y="737" width="1180.0" height="15.0" fill="rgb(226,216,48)" rx="2" ry="2" onmouseover="s('G4UImanager::ApplyCommand (884 samples, 100.00%)')" onmouseout="c()" />
+<text text-anchor="" x="13" y="747.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4UImanager::ApplyCommand (884 samples, 100.00%)')" onmouseout="c()" >G4UImanager::ApplyCommand</text>
+<rect x="1032.5" y="417" width="5.3" height="15.0" fill="rgb(234,37,38)" rx="2" ry="2" onmouseover="s('G4PEEffectFluoModel::ComputeCrossSectionPerAtom (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="1069.9" y="449" width="1.3" height="15.0" fill="rgb(237,173,0)" rx="2" ry="2" onmouseover="s('libm.so.2`__libm__reduction (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="956.4" y="305" width="1.3" height="15.0" fill="rgb(220,66,50)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1174.0" y="449" width="1.3" height="15.0" fill="rgb(231,69,15)" rx="2" ry="2" onmouseover="s('G4Track::CalculateVelocity (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="612.0" y="321" width="1.3" height="15.0" fill="rgb(245,196,37)" rx="2" ry="2" onmouseover="s('G4CascadeSampler(30 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="374.4" y="449" width="6.7" height="15.0" fill="rgb(218,24,3)" rx="2" ry="2" onmouseover="s('G4Navigator::ComputeSafety (5 samples, 0.57%)')" onmouseout="c()" />
+<rect x="118.1" y="449" width="1.4" height="15.0" fill="rgb(238,5,8)" rx="2" ry="2" onmouseover="s('G4Trap::DistanceToOut (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1175.3" y="433" width="1.4" height="15.0" fill="rgb(222,28,6)" rx="2" ry="2" onmouseover="s('G4Track::CalculateVelocity (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="471.9" y="481" width="488.5" height="15.0" fill="rgb(251,53,2)" rx="2" ry="2" onmouseover="s('G4HadronicProcess::PostStepDoIt (366 samples, 41.40%)')" onmouseout="c()" />
+<text text-anchor="" x="474.85520361991" y="491.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4HadronicProcess::PostStepDoIt (366 samples, 41.40%)')" onmouseout="c()" >G4HadronicProcess::PostStepDoIt</text>
+<rect x="398.4" y="481" width="1.4" height="15.0" fill="rgb(209,177,4)" rx="2" ry="2" onmouseover="s('CLHEP::RandGaussQ::transformQuick (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="693.4" y="337" width="1.4" height="15.0" fill="rgb(206,196,8)" rx="2" ry="2" onmouseover="s('G4InuclSpecialFunctions::generateWithRandomAngles (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="604.0" y="353" width="1.3" height="15.0" fill="rgb(207,160,11)" rx="2" ry="2" onmouseover="s(' G4PionNucSampler)::getOutgoingParticleTypes (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="10.0" y="625" width="1180.0" height="15.0" fill="rgb(216,220,46)" rx="2" ry="2" onmouseover="s('G4UIcommand::DoIt (884 samples, 100.00%)')" onmouseout="c()" />
+<text text-anchor="" x="13" y="635.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4UIcommand::DoIt (884 samples, 100.00%)')" onmouseout="c()" >G4UIcommand::DoIt</text>
+<rect x="829.6" y="385" width="1.3" height="15.0" fill="rgb(222,133,38)" rx="2" ry="2" onmouseover="s('libm.so.2`exp (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="810.9" y="241" width="1.3" height="15.0" fill="rgb(254,212,12)" rx="2" ry="2" onmouseover="s('G4ProcessTable::Insert (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1164.6" y="433" width="1.4" height="15.0" fill="rgb(211,31,44)" rx="2" ry="2" onmouseover="s('G4NucleiPropertiesTableAME03::GetAtomicMass (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="857.6" y="385" width="1.4" height="15.0" fill="rgb(213,90,20)" rx="2" ry="2" onmouseover="s('G4NucleiPropertiesTableAME03::IsInTable (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1187.3" y="513" width="2.7" height="15.0" fill="rgb(211,115,43)" rx="2" ry="2" onmouseover="s('G4strstreambuf::sync (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="609.3" y="337" width="2.7" height="15.0" fill="rgb(229,166,40)" rx="2" ry="2" onmouseover="s(' G4PionNucSampler)::getOutgoingParticleTypes (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="745.5" y="369" width="1.3" height="15.0" fill="rgb(237,122,30)" rx="2" ry="2" onmouseover="s('G4NucleiModel::zoneIntegralWoodsSaxon (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="912.4" y="385" width="1.3" height="15.0" fill="rgb(237,113,29)" rx="2" ry="2" onmouseover="s('G4QEnvironment::EvaporateResidual (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="632.0" y="337" width="4.0" height="15.0" fill="rgb(239,220,28)" rx="2" ry="2" onmouseover="s('G4CascadeInterpolator(9)::interpolate (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="76.7" y="449" width="2.7" height="15.0" fill="rgb(206,125,13)" rx="2" ry="2" onmouseover="s('libm.so.2`atan2 (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="485.2" y="449" width="2.7" height="15.0" fill="rgb(206,37,3)" rx="2" ry="2" onmouseover="s('G4CascadeCheckBalance::momentumOkay (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1180.7" y="497" width="1.3" height="15.0" fill="rgb(215,175,52)" rx="2" ry="2" onmouseover="s('G4VParticleChange::UpdateStepInfo (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="818.9" y="257" width="1.3" height="15.0" fill="rgb(210,185,40)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="818.9" y="209" width="1.3" height="15.0" fill="rgb(250,90,52)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="708.1" y="385" width="2.7" height="15.0" fill="rgb(246,152,3)" rx="2" ry="2" onmouseover="s('std::__insertion_sort(__gnu_cxx::__normal_iterator(G4InuclElementaryParticle* (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="315.7" y="449" width="2.6" height="15.0" fill="rgb(242,217,45)" rx="2" ry="2" onmouseover="s('G4NeutronInelasticCrossSection::GetElementCrossSection (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1000.5" y="449" width="4.0" height="15.0" fill="rgb(229,117,28)" rx="2" ry="2" onmouseover="s('G4NavigationHistory::G4NavigationHistory (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="816.2" y="337" width="4.0" height="15.0" fill="rgb(225,133,41)" rx="2" ry="2" onmouseover="s('G4IonTable::GetIonName (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="951.1" y="433" width="1.3" height="15.0" fill="rgb(244,126,0)" rx="2" ry="2" onmouseover="s('G4Alpha::Definition (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="702.8" y="225" width="2.7" height="15.0" fill="rgb(221,212,47)" rx="2" ry="2" onmouseover="s(' std::pair(G4InuclElementaryParticle (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="660.1" y="369" width="1.3" height="15.0" fill="rgb(222,227,45)" rx="2" ry="2" onmouseover="s('G4LorentzConvertor::setBullet (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="820.2" y="33" width="1.4" height="15.0" fill="rgb(245,229,28)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1105.9" y="449" width="1.3" height="15.0" fill="rgb(250,225,38)" rx="2" ry="2" onmouseover="s('G4CrossSectionDataStore::GetCrossSection (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="845.6" y="321" width="1.3" height="15.0" fill="rgb(229,147,22)" rx="2" ry="2" onmouseover="s('G4UImanager::ApplyCommand (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="935.0" y="465" width="1.4" height="15.0" fill="rgb(236,46,27)" rx="2" ry="2" onmouseover="s('G4HadProjectile::G4HadProjectile (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="742.8" y="353" width="2.7" height="15.0" fill="rgb(254,146,12)" rx="2" ry="2" onmouseover="s('libm.so.2`log (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="702.8" y="289" width="2.7" height="15.0" fill="rgb(253,17,7)" rx="2" ry="2" onmouseover="s(' double) ) ) ) (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="527.9" y="433" width="5.4" height="15.0" fill="rgb(230,221,36)" rx="2" ry="2" onmouseover="s('G4CascadeColliderBase::inelasticInteractionPossible (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="956.4" y="257" width="1.3" height="15.0" fill="rgb(254,181,18)" rx="2" ry="2" onmouseover="s('libc.so.1`_findiop (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="568.0" y="417" width="150.8" height="15.0" fill="rgb(206,3,19)" rx="2" ry="2" onmouseover="s('G4IntraNucleiCascader::generateCascade (113 samples, 12.78%)')" onmouseout="c()" />
+<text text-anchor="" x="570.963800904977" y="427.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4IntraNucleiCascader::generateCascade (113 samples, 12.78%)')" onmouseout="c()" >G4IntraNucleiCasc..</text>
+<rect x="909.7" y="449" width="1.3" height="15.0" fill="rgb(238,192,52)" rx="2" ry="2" onmouseover="s('G4ChiralInvariantPhaseSpace::ApplyYourself (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="505.2" y="449" width="4.0" height="15.0" fill="rgb(251,82,29)" rx="2" ry="2" onmouseover="s('G4CascadeInterface::createTarget (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="216.9" y="401" width="1.3" height="15.0" fill="rgb(223,185,28)" rx="2" ry="2" onmouseover="s('libm.so.2`pow (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="306.3" y="417" width="1.4" height="15.0" fill="rgb(207,181,30)" rx="2" ry="2" onmouseover="s('G4HadronCrossSections::IsApplicable (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="62.1" y="449" width="1.3" height="15.0" fill="rgb(214,27,30)" rx="2" ry="2" onmouseover="s('G4PolyconeSide::Intersect (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="863.0" y="417" width="2.6" height="15.0" fill="rgb(213,104,28)" rx="2" ry="2" onmouseover="s('G4CollisionOutput::reset (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="757.5" y="401" width="1.3" height="15.0" fill="rgb(239,221,25)" rx="2" ry="2" onmouseover="s('G4CollisionOutput::reset (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="640.0" y="321" width="1.4" height="15.0" fill="rgb(221,2,26)" rx="2" ry="2" onmouseover="s('G4DynamicParticle::SetMomentum (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="487.9" y="449" width="1.3" height="15.0" fill="rgb(230,29,47)" rx="2" ry="2" onmouseover="s('G4CascadeColliderBase::inelasticInteractionPossible (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="957.7" y="401" width="1.4" height="15.0" fill="rgb(205,98,7)" rx="2" ry="2" onmouseover="s('G4VLongitudinalStringDecay::LightFragmentationTest (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="690.8" y="353" width="1.3" height="15.0" fill="rgb(212,195,34)" rx="2" ry="2" onmouseover="s('CLHEP::HepRandom::getTheEngine (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="859.0" y="401" width="1.3" height="15.0" fill="rgb(215,103,34)" rx="2" ry="2" onmouseover="s('G4NonEquilibriumEvaporator::getMatrixElement (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="163.5" y="401" width="4.0" height="15.0" fill="rgb(218,165,7)" rx="2" ry="2" onmouseover="s('G4ClassicalRK4::DumbStepper (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="932.4" y="465" width="1.3" height="15.0" fill="rgb(220,137,30)" rx="2" ry="2" onmouseover="s('G4HELambdaInelastic::ApplyYourself (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="867.0" y="257" width="4.0" height="15.0" fill="rgb(247,79,8)" rx="2" ry="2" onmouseover="s('G4VUserPhysicsList::AddProcessManager (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="820.2" y="161" width="1.4" height="15.0" fill="rgb(223,146,41)" rx="2" ry="2" onmouseover="s('std::_Rb_tree(int (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="649.4" y="369" width="2.7" height="15.0" fill="rgb(213,35,18)" rx="2" ry="2" onmouseover="s('G4ElementaryParticleCollider::generateSCMpionAbsorption (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="821.6" y="385" width="1.3" height="15.0" fill="rgb(224,151,1)" rx="2" ry="2" onmouseover="s('G4InuclSpecialFunctions::G4cbrt (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="740.2" y="353" width="2.6" height="15.0" fill="rgb(241,39,13)" rx="2" ry="2" onmouseover="s('libm.so.2`exp (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="957.7" y="369" width="1.4" height="15.0" fill="rgb(211,61,42)" rx="2" ry="2" onmouseover="s('G4HadronBuilder::BuildLowSpin (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="501.2" y="433" width="1.4" height="15.0" fill="rgb(208,101,7)" rx="2" ry="2" onmouseover="s('G4DynamicParticle::SetDefinition (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1159.3" y="433" width="1.3" height="15.0" fill="rgb(244,26,48)" rx="2" ry="2" onmouseover="s('G4ElasticHadrNucleusHE::GetQ2_2 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1077.9" y="465" width="13.3" height="15.0" fill="rgb(249,61,32)" rx="2" ry="2" onmouseover="s('G4UrbanMscModel95::SampleScattering (10 samples, 1.13%)')" onmouseout="c()" />
+<rect x="620.0" y="337" width="1.4" height="15.0" fill="rgb(241,205,45)" rx="2" ry="2" onmouseover="s('G4CascadeFunctions(G4CascadeNPChannelData (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="183.5" y="465" width="49.4" height="15.0" fill="rgb(217,111,29)" rx="2" ry="2" onmouseover="s('G4MultiLevelLocator::EstimateIntersectionPoint (37 samples, 4.19%)')" onmouseout="c()" />
+<rect x="1143.3" y="369" width="8.0" height="15.0" fill="rgb(251,24,1)" rx="2" ry="2" onmouseover="s('G4QPDGCode::GetNuclMass (6 samples, 0.68%)')" onmouseout="c()" />
+<rect x="891.0" y="433" width="10.7" height="15.0" fill="rgb(221,14,27)" rx="2" ry="2" onmouseover="s('libstdc (8 samples, 0.90%)')" onmouseout="c()" />
+<rect x="804.2" y="385" width="2.7" height="15.0" fill="rgb(239,146,53)" rx="2" ry="2" onmouseover="s('G4DynamicParticle::G4DynamicParticle (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="20.7" y="497" width="1.3" height="15.0" fill="rgb(238,129,53)" rx="2" ry="2" onmouseover="s('libm.so.2`log (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="702.8" y="273" width="2.7" height="15.0" fill="rgb(216,84,14)" rx="2" ry="2" onmouseover="s(' int (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="915.0" y="385" width="10.7" height="15.0" fill="rgb(239,65,28)" rx="2" ry="2" onmouseover="s('G4Quasmon::Fragment (8 samples, 0.90%)')" onmouseout="c()" />
+<rect x="833.6" y="401" width="1.3" height="15.0" fill="rgb(222,128,9)" rx="2" ry="2" onmouseover="s('G4InuclNuclei::getNucleiMass (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="240.9" y="449" width="8.0" height="15.0" fill="rgb(235,178,47)" rx="2" ry="2" onmouseover="s('G4VoxelNavigation::ComputeStep (6 samples, 0.68%)')" onmouseout="c()" />
+<rect x="848.3" y="321" width="1.3" height="15.0" fill="rgb(234,18,32)" rx="2" ry="2" onmouseover="s('G4ParticleDefinition::G4ParticleDefinition (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="814.9" y="305" width="1.3" height="15.0" fill="rgb(206,55,43)" rx="2" ry="2" onmouseover="s('G4UIcommand::IsAvailable (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="786.9" y="401" width="1.3" height="15.0" fill="rgb(207,153,53)" rx="2" ry="2" onmouseover="s('G4DynamicParticle::G4DynamicParticle (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="331.7" y="497" width="2.7" height="15.0" fill="rgb(233,167,21)" rx="2" ry="2" onmouseover="s('G4VEnergyLossProcess::AlongStepGetPhysicalInteractionLength (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="329.0" y="481" width="1.4" height="15.0" fill="rgb(248,210,28)" rx="2" ry="2" onmouseover="s('G4PhysicsVector::Value (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="239.6" y="433" width="1.3" height="15.0" fill="rgb(247,73,10)" rx="2" ry="2" onmouseover="s('libm.so.2`atan2 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="664.1" y="289" width="1.3" height="15.0" fill="rgb(214,160,15)" rx="2" ry="2" onmouseover="s('G4InuclParticle::operator= (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1017.8" y="449" width="9.3" height="15.0" fill="rgb(225,9,54)" rx="2" ry="2" onmouseover="s('G4VEmModel::SelectRandomAtom (7 samples, 0.79%)')" onmouseout="c()" />
+<rect x="246.3" y="417" width="1.3" height="15.0" fill="rgb(250,218,14)" rx="2" ry="2" onmouseover="s('G4PolyconeSide::Intersect (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="810.9" y="257" width="1.3" height="15.0" fill="rgb(240,27,7)" rx="2" ry="2" onmouseover="s('G4ProcessManager::G4ProcessManager (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="725.5" y="321" width="1.3" height="15.0" fill="rgb(251,31,19)" rx="2" ry="2" onmouseover="s('G4NucleiPropertiesTableAME03::GetIndex (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="689.4" y="369" width="1.4" height="15.0" fill="rgb(254,130,39)" rx="2" ry="2" onmouseover="s('G4InuclElementaryParticle::type (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1162.0" y="449" width="1.3" height="15.0" fill="rgb(213,221,13)" rx="2" ry="2" onmouseover="s('G4IonTable::FindIon (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="845.6" y="369" width="4.0" height="15.0" fill="rgb(234,136,42)" rx="2" ry="2" onmouseover="s('G4ParticleTable::GetIon (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="702.8" y="241" width="2.7" height="15.0" fill="rgb(215,189,27)" rx="2" ry="2" onmouseover="s(' double) const&amp; (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="506.6" y="401" width="1.3" height="15.0" fill="rgb(232,63,2)" rx="2" ry="2" onmouseover="s('G4InuclNuclei::setExitationEnergy (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="463.8" y="465" width="2.7" height="15.0" fill="rgb(217,61,18)" rx="2" ry="2" onmouseover="s('G4DecayProducts::Boost (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="754.8" y="337" width="1.4" height="15.0" fill="rgb(228,96,52)" rx="2" ry="2" onmouseover="s('libc.so.1`_malloc_unlocked (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="955.1" y="257" width="1.3" height="15.0" fill="rgb(230,47,30)" rx="2" ry="2" onmouseover="s('libc.so.1`_endopen (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="875.0" y="305" width="1.3" height="15.0" fill="rgb(237,12,1)" rx="2" ry="2" onmouseover="s('G4ParticleDefinition::G4ParticleDefinition (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="527.9" y="401" width="1.4" height="15.0" fill="rgb(240,105,2)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="507.9" y="401" width="1.3" height="15.0" fill="rgb(246,20,19)" rx="2" ry="2" onmouseover="s('G4ParticleTable::GetIon (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="426.5" y="481" width="2.6" height="15.0" fill="rgb(210,53,26)" rx="2" ry="2" onmouseover="s('G4UrbanMscModel95::ComputeTrueStepLength (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="955.1" y="225" width="1.3" height="15.0" fill="rgb(235,191,51)" rx="2" ry="2" onmouseover="s('libc.so.1`__open64 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="888.3" y="433" width="2.7" height="15.0" fill="rgb(229,22,53)" rx="2" ry="2" onmouseover="s('G4LorentzConvertor::toTheTargetRestFrame (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="809.6" y="321" width="6.6" height="15.0" fill="rgb(231,135,15)" rx="2" ry="2" onmouseover="s('G4UImanager::ApplyCommand (5 samples, 0.57%)')" onmouseout="c()" />
+<rect x="582.6" y="369" width="1.4" height="15.0" fill="rgb(219,70,20)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="676.1" y="385" width="29.4" height="15.0" fill="rgb(235,85,19)" rx="2" ry="2" onmouseover="s('G4NucleiModel::generateInteractionPartners (22 samples, 2.49%)')" onmouseout="c()" />
+<rect x="503.9" y="417" width="1.3" height="15.0" fill="rgb(249,32,38)" rx="2" ry="2" onmouseover="s('G4InuclParticle::setMomentum (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="527.9" y="385" width="1.4" height="15.0" fill="rgb(232,154,26)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="495.9" y="449" width="9.3" height="15.0" fill="rgb(217,173,45)" rx="2" ry="2" onmouseover="s('G4CascadeInterface::createBullet (7 samples, 0.79%)')" onmouseout="c()" />
+<rect x="884.3" y="417" width="1.4" height="15.0" fill="rgb(247,161,23)" rx="2" ry="2" onmouseover="s('G4LorentzConvertor::setBullet (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="756.2" y="337" width="1.3" height="15.0" fill="rgb(235,3,39)" rx="2" ry="2" onmouseover="s('libc.so.1`mutex_lock (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="927.0" y="353" width="1.4" height="15.0" fill="rgb(207,34,31)" rx="2" ry="2" onmouseover="s('G4QPDGCode::MakeQCode (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="451.8" y="401" width="1.4" height="15.0" fill="rgb(221,178,49)" rx="2" ry="2" onmouseover="s('G4QNucleus::InitCandidateVector (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="904.3" y="465" width="2.7" height="15.0" fill="rgb(208,18,28)" rx="2" ry="2" onmouseover="s('G4CascadeInterface::copyOutputToHadronicResult (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="716.1" y="385" width="2.7" height="15.0" fill="rgb(220,160,48)" rx="2" ry="2" onmouseover="s(' std::allocator(G4CascadParticle) )::_M_range_insert(__gnu_cxx::__normal_iterator(G4CascadParticle* (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="139.5" y="433" width="1.3" height="15.0" fill="rgb(224,146,44)" rx="2" ry="2" onmouseover="s('G4VCSGfaceted::DistanceTo (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1088.6" y="449" width="1.3" height="15.0" fill="rgb(235,203,5)" rx="2" ry="2" onmouseover="s('G4VMscModel::ComputeDisplacement (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="152.8" y="481" width="96.1" height="15.0" fill="rgb(225,55,29)" rx="2" ry="2" onmouseover="s('G4PropagatorInField::ComputeStep (72 samples, 8.14%)')" onmouseout="c()" />
+<text text-anchor="" x="155.828054298643" y="491.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4PropagatorInField::ComputeStep (72 samples, 8.14%)')" onmouseout="c()" >G4Propagato..</text>
+<rect x="621.4" y="337" width="1.3" height="15.0" fill="rgb(223,223,25)" rx="2" ry="2" onmouseover="s('G4CascadeFunctions(G4CascadePPChannelData (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="451.8" y="369" width="1.4" height="15.0" fill="rgb(220,181,38)" rx="2" ry="2" onmouseover="s('G4QHadron::G4QHadron (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1151.3" y="401" width="4.0" height="15.0" fill="rgb(254,96,37)" rx="2" ry="2" onmouseover="s('G4QNeutronElasticCrossSection::GetTabValues (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="936.4" y="465" width="9.3" height="15.0" fill="rgb(241,19,8)" rx="2" ry="2" onmouseover="s('G4HadronicProcess::FillResult (7 samples, 0.79%)')" onmouseout="c()" />
+<rect x="729.5" y="353" width="2.6" height="15.0" fill="rgb(241,29,19)" rx="2" ry="2" onmouseover="s('libstdc (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="363.7" y="481" width="2.7" height="15.0" fill="rgb(207,226,8)" rx="2" ry="2" onmouseover="s('G4UrbanMscModel90::ComputeTruePathLengthLimit (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1166.0" y="433" width="1.3" height="15.0" fill="rgb(224,8,23)" rx="2" ry="2" onmouseover="s('G4NucleiPropertiesTableAME03::GetNuclearMass (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="24.7" y="529" width="5.3" height="15.0" fill="rgb(208,80,51)" rx="2" ry="2" onmouseover="s('G4SteppingManager::SetInitialStep (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="1179.3" y="449" width="1.4" height="15.0" fill="rgb(218,61,48)" rx="2" ry="2" onmouseover="s('G4VParticleChange::CheckSecondary (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="697.4" y="353" width="1.4" height="15.0" fill="rgb(227,202,13)" rx="2" ry="2" onmouseover="s('G4CascadeFunctions(G4CascadeNPChannelData (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="115.5" y="417" width="1.3" height="15.0" fill="rgb(237,47,7)" rx="2" ry="2" onmouseover="s('G4PolyPhiFace::InsideEdgesExact (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="909.7" y="417" width="1.3" height="15.0" fill="rgb(230,124,41)" rx="2" ry="2" onmouseover="s('G4QEnvironment::InitClustersVector (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="883.0" y="401" width="1.3" height="15.0" fill="rgb(209,156,53)" rx="2" ry="2" onmouseover="s('G4DynamicParticle::SetMomentum (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="720.1" y="385" width="37.4" height="15.0" fill="rgb(250,116,17)" rx="2" ry="2" onmouseover="s('G4NucleiModel::generateModel (28 samples, 3.17%)')" onmouseout="c()" />
+<rect x="215.6" y="417" width="1.3" height="15.0" fill="rgb(217,79,18)" rx="2" ry="2" onmouseover="s('G4FieldTrack::G4FieldTrack (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="809.6" y="369" width="12.0" height="15.0" fill="rgb(227,229,25)" rx="2" ry="2" onmouseover="s('G4ParticleTable::GetIon (9 samples, 1.02%)')" onmouseout="c()" />
+<rect x="765.5" y="385" width="1.4" height="15.0" fill="rgb(253,0,47)" rx="2" ry="2" onmouseover="s('G4InuclSpecialFunctions::generateWithFixedTheta (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="222.2" y="385" width="9.4" height="15.0" fill="rgb(210,199,13)" rx="2" ry="2" onmouseover="s('G4Navigator::GetLocalExitNormal (7 samples, 0.79%)')" onmouseout="c()" />
+<rect x="976.4" y="433" width="1.4" height="15.0" fill="rgb(253,212,43)" rx="2" ry="2" onmouseover="s('G4VCSGfaceted::Inside (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="818.9" y="129" width="1.3" height="15.0" fill="rgb(250,48,51)" rx="2" ry="2" onmouseover="s('libc.so.1`cleanfree (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1007.1" y="465" width="21.4" height="15.0" fill="rgb(211,16,43)" rx="2" ry="2" onmouseover="s('G4BetheHeitlerModel::SampleSecondaries (16 samples, 1.81%)')" onmouseout="c()" />
+<rect x="955.1" y="417" width="2.6" height="15.0" fill="rgb(225,132,9)" rx="2" ry="2" onmouseover="s('G4ExcitationHandler::BreakItUp (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="940.4" y="433" width="1.3" height="15.0" fill="rgb(211,222,45)" rx="2" ry="2" onmouseover="s('CLHEP::Hep3Vector::operator*= (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="820.2" y="65" width="1.4" height="15.0" fill="rgb(245,75,34)" rx="2" ry="2" onmouseover="s(' std::allocator(std::pair(int const (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1103.2" y="465" width="1.4" height="15.0" fill="rgb(220,198,2)" rx="2" ry="2" onmouseover="s('CLHEP::HepLorentzRotation::rotateZ (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="247.6" y="433" width="1.3" height="15.0" fill="rgb(237,43,39)" rx="2" ry="2" onmouseover="s('G4VoxelNavigation::LocateNextVoxel (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="820.2" y="241" width="1.4" height="15.0" fill="rgb(230,141,38)" rx="2" ry="2" onmouseover="s(' std::_Select1st(std::pair(int const (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="612.0" y="353" width="5.4" height="15.0" fill="rgb(232,60,51)" rx="2" ry="2" onmouseover="s('G4CascadeFunctions(G4CascadeNPChannelData (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="849.6" y="385" width="6.7" height="15.0" fill="rgb(210,137,30)" rx="2" ry="2" onmouseover="s('G4InuclSpecialFunctions::paraMakerTruncated (5 samples, 0.57%)')" onmouseout="c()" />
+<rect x="438.5" y="481" width="14.7" height="15.0" fill="rgb(207,109,35)" rx="2" ry="2" onmouseover="s('G4QEnvironment::Fragment (11 samples, 1.24%)')" onmouseout="c()" />
+<rect x="114.1" y="449" width="4.0" height="15.0" fill="rgb(216,152,28)" rx="2" ry="2" onmouseover="s('G4SubtractionSolid::DistanceToOut (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="955.1" y="337" width="1.3" height="15.0" fill="rgb(210,25,21)" rx="2" ry="2" onmouseover="s('G4NuclearLevelManager::G4NuclearLevelManager (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="641.4" y="353" width="5.3" height="15.0" fill="rgb(248,177,43)" rx="2" ry="2" onmouseover="s('G4LorentzConvertor::rotate (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="389.1" y="497" width="1.3" height="15.0" fill="rgb(208,37,1)" rx="2" ry="2" onmouseover="s('G4UniversalFluctuation::SampleFluctuations (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="887.0" y="433" width="1.3" height="15.0" fill="rgb(206,227,42)" rx="2" ry="2" onmouseover="s('G4LorentzConvertor::setTarget (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="846.9" y="289" width="1.4" height="15.0" fill="rgb(244,95,34)" rx="2" ry="2" onmouseover="s(' std::allocator(char) )::_S_construct(char*) (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="10.0" y="593" width="1180.0" height="15.0" fill="rgb(236,63,8)" rx="2" ry="2" onmouseover="s('G4RunManager::BeamOn (884 samples, 100.00%)')" onmouseout="c()" />
+<text text-anchor="" x="13" y="603.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4RunManager::BeamOn (884 samples, 100.00%)')" onmouseout="c()" >G4RunManager::BeamOn</text>
+<rect x="1017.8" y="433" width="9.3" height="15.0" fill="rgb(238,7,28)" rx="2" ry="2" onmouseover="s('G4VEmModel::CrossSectionPerVolume (7 samples, 0.79%)')" onmouseout="c()" />
+<rect x="20.7" y="513" width="1.3" height="15.0" fill="rgb(254,196,2)" rx="2" ry="2" onmouseover="s('G4Decay::StartTracking (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="813.6" y="257" width="1.3" height="15.0" fill="rgb(241,49,5)" rx="2" ry="2" onmouseover="s('G4VUserPhysicsList::BuildPhysicsTable (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="509.2" y="449" width="5.4" height="15.0" fill="rgb(243,149,34)" rx="2" ry="2" onmouseover="s('G4CascadeInterface::retryInelasticNucleus (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="596.0" y="401" width="114.8" height="15.0" fill="rgb(238,191,31)" rx="2" ry="2" onmouseover="s('G4NucleiModel::generateParticleFate (86 samples, 9.73%)')" onmouseout="c()" />
+<text text-anchor="" x="598.995475113122" y="411.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4NucleiModel::generateParticleFate (86 samples, 9.73%)')" onmouseout="c()" >G4NucleiModel..</text>
+<rect x="429.1" y="465" width="2.7" height="15.0" fill="rgb(252,35,11)" rx="2" ry="2" onmouseover="s('G4WentzelVIModel::ComputeXSectionPerVolume (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="574.6" y="289" width="1.4" height="15.0" fill="rgb(228,112,20)" rx="2" ry="2" onmouseover="s(' std::allocator(G4InuclNuclei) ) ) ) (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="235.6" y="433" width="1.3" height="15.0" fill="rgb(240,136,6)" rx="2" ry="2" onmouseover="s('G4Cons::DistanceToOut (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="236.9" y="433" width="2.7" height="15.0" fill="rgb(239,119,10)" rx="2" ry="2" onmouseover="s('G4VCSGfaceted::DistanceToOut (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="822.9" y="385" width="4.0" height="15.0" fill="rgb(215,229,43)" rx="2" ry="2" onmouseover="s('G4InuclSpecialFunctions::paraMaker (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="429.1" y="481" width="2.7" height="15.0" fill="rgb(224,39,10)" rx="2" ry="2" onmouseover="s('G4WentzelVIModel::ComputeTrueStepLength (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="142.1" y="433" width="1.4" height="15.0" fill="rgb(231,197,17)" rx="2" ry="2" onmouseover="s('G4IntersectingCone::LineHitsCone (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="246.3" y="433" width="1.3" height="15.0" fill="rgb(208,149,20)" rx="2" ry="2" onmouseover="s('G4VCSGfaceted::DistanceToOut (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="248.9" y="497" width="1.4" height="15.0" fill="rgb(225,57,7)" rx="2" ry="2" onmouseover="s('G4UrbanMscModel90::ComputeGeomPathLength (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1037.8" y="449" width="1.4" height="15.0" fill="rgb(222,46,16)" rx="2" ry="2" onmouseover="s('G4Track::G4Track (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1071.2" y="433" width="1.3" height="15.0" fill="rgb(214,116,33)" rx="2" ry="2" onmouseover="s('libm.so.2`__libm__reduction (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="772.2" y="433" width="108.1" height="15.0" fill="rgb(222,213,30)" rx="2" ry="2" onmouseover="s('G4InuclCollider::deexcite (81 samples, 9.16%)')" onmouseout="c()" />
+<text text-anchor="" x="775.194570135747" y="443.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4InuclCollider::deexcite (81 samples, 9.16%)')" onmouseout="c()" >G4InuclColli..</text>
+<rect x="846.9" y="305" width="1.4" height="15.0" fill="rgb(245,145,45)" rx="2" ry="2" onmouseover="s(' std::char_traits(char) (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="574.6" y="321" width="1.4" height="15.0" fill="rgb(213,88,10)" rx="2" ry="2" onmouseover="s(' std::allocator(G4InuclNuclei) )::_M_range_insert(__gnu_cxx::__normal_iterator(G4InuclNuclei const* (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="399.8" y="481" width="2.6" height="15.0" fill="rgb(234,214,40)" rx="2" ry="2" onmouseover="s('CLHEP::RanluxEngine::flat (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="638.7" y="337" width="1.3" height="15.0" fill="rgb(254,143,5)" rx="2" ry="2" onmouseover="s('G4InuclElementaryParticle::setType (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1081.9" y="449" width="5.3" height="15.0" fill="rgb(208,118,5)" rx="2" ry="2" onmouseover="s('G4UrbanMscModel95::SampleCosineTheta (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="179.5" y="417" width="1.4" height="15.0" fill="rgb(230,157,52)" rx="2" ry="2" onmouseover="s('G4MagErrorStepper::Stepper (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="928.4" y="417" width="1.3" height="15.0" fill="rgb(217,12,20)" rx="2" ry="2" onmouseover="s('G4QNucleus::~G4QNucleus (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="750.8" y="369" width="6.7" height="15.0" fill="rgb(228,227,14)" rx="2" ry="2" onmouseover="s('libstdc (5 samples, 0.57%)')" onmouseout="c()" />
+<rect x="734.8" y="353" width="5.4" height="15.0" fill="rgb(213,219,51)" rx="2" ry="2" onmouseover="s('G4NucleiModel::zoneIntegralWoodsSaxon (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="702.8" y="353" width="2.7" height="15.0" fill="rgb(218,152,48)" rx="2" ry="2" onmouseover="s(' double)* (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="730.8" y="273" width="1.3" height="15.0" fill="rgb(238,220,22)" rx="2" ry="2" onmouseover="s('libc.so.1`t_delete (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="365.1" y="465" width="1.3" height="15.0" fill="rgb(253,141,33)" rx="2" ry="2" onmouseover="s('G4VEmModel::CrossSectionPerVolume (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="234.3" y="449" width="6.6" height="15.0" fill="rgb(228,179,45)" rx="2" ry="2" onmouseover="s('G4NormalNavigation::ComputeStep (5 samples, 0.57%)')" onmouseout="c()" />
+<rect x="402.4" y="481" width="2.7" height="15.0" fill="rgb(253,169,6)" rx="2" ry="2" onmouseover="s('G4BraggIonModel::CorrectionsAlongStep (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1101.9" y="449" width="1.3" height="15.0" fill="rgb(239,127,54)" rx="2" ry="2" onmouseover="s('CLHEP::HepRotation::rotate (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="868.3" y="209" width="1.3" height="15.0" fill="rgb(221,184,5)" rx="2" ry="2" onmouseover="s(' std::allocator(G4VProcess*) )::_M_insert_aux (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="608.0" y="369" width="41.4" height="15.0" fill="rgb(228,40,27)" rx="2" ry="2" onmouseover="s('G4ElementaryParticleCollider::generateSCMfinalState (31 samples, 3.51%)')" onmouseout="c()" />
+<rect x="927.0" y="385" width="1.4" height="15.0" fill="rgb(249,197,43)" rx="2" ry="2" onmouseover="s('G4QHadron::G4QHadron (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="877.6" y="321" width="1.4" height="15.0" fill="rgb(253,111,53)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1028.5" y="465" width="1.3" height="15.0" fill="rgb(223,108,29)" rx="2" ry="2" onmouseover="s('G4KleinNishinaCompton::SampleSecondaries (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="955.1" y="465" width="4.0" height="15.0" fill="rgb(246,219,10)" rx="2" ry="2" onmouseover="s('G4TheoFSGenerator::ApplyYourself (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="123.5" y="449" width="5.3" height="15.0" fill="rgb(240,57,46)" rx="2" ry="2" onmouseover="s('G4Tubs::DistanceToOut (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="314.3" y="433" width="1.4" height="15.0" fill="rgb(218,100,32)" rx="2" ry="2" onmouseover="s('G4NistManager::Instance (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="820.2" y="97" width="1.4" height="15.0" fill="rgb(230,63,27)" rx="2" ry="2" onmouseover="s(' G4ParticleDefinition*) ) (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="46.0" y="465" width="1.4" height="15.0" fill="rgb(219,119,11)" rx="2" ry="2" onmouseover="s('G4Box::DistanceToOut (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="977.8" y="433" width="2.6" height="15.0" fill="rgb(236,78,43)" rx="2" ry="2" onmouseover="s('G4PolyconeSide::Inside (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="943.1" y="417" width="2.6" height="15.0" fill="rgb(242,15,42)" rx="2" ry="2" onmouseover="s('CLHEP::HepRotation::rotate (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="179.5" y="385" width="1.4" height="15.0" fill="rgb(220,200,6)" rx="2" ry="2" onmouseover="s('G4Mag_UsualEqRhs::EvaluateRhsGivenB (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="218.2" y="417" width="1.4" height="15.0" fill="rgb(211,155,17)" rx="2" ry="2" onmouseover="s('G4MagInt_Driver::OneGoodStep (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="690.8" y="369" width="1.3" height="15.0" fill="rgb(210,73,0)" rx="2" ry="2" onmouseover="s('G4InuclSpecialFunctions::inuclRndm (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="585.3" y="385" width="4.0" height="15.0" fill="rgb(238,197,8)" rx="2" ry="2" onmouseover="s('G4CascadeRecoilMaker::deltaM (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="546.6" y="433" width="1.3" height="15.0" fill="rgb(253,46,14)" rx="2" ry="2" onmouseover="s('G4CollisionOutput::boostToLabFrame (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="698.8" y="337" width="1.3" height="15.0" fill="rgb(210,204,44)" rx="2" ry="2" onmouseover="s(' G4PionNucSampler)::getCrossSection (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="915.0" y="369" width="1.4" height="15.0" fill="rgb(208,164,43)" rx="2" ry="2" onmouseover="s('G4QContent::G4QContent (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="849.6" y="369" width="5.4" height="15.0" fill="rgb(231,97,2)" rx="2" ry="2" onmouseover="s('G4CascadeInterpolator(5)::getBin (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="818.9" y="177" width="1.3" height="15.0" fill="rgb(252,218,50)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="20.7" y="529" width="2.6" height="15.0" fill="rgb(233,185,9)" rx="2" ry="2" onmouseover="s('G4ProcessManager::StartTracking (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="908.3" y="465" width="1.4" height="15.0" fill="rgb(235,166,17)" rx="2" ry="2" onmouseover="s('G4CrossSectionDataStore::SampleZandA (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="463.8" y="481" width="8.1" height="15.0" fill="rgb(209,190,22)" rx="2" ry="2" onmouseover="s('G4Decay::DecayIt (6 samples, 0.68%)')" onmouseout="c()" />
+<rect x="1164.6" y="449" width="2.7" height="15.0" fill="rgb(218,135,10)" rx="2" ry="2" onmouseover="s('G4NucleiProperties::GetNuclearMass (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1037.8" y="465" width="1.4" height="15.0" fill="rgb(241,187,20)" rx="2" ry="2" onmouseover="s('G4ParticleChangeForGamma::AddSecondary (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="605.3" y="369" width="2.7" height="15.0" fill="rgb(252,182,41)" rx="2" ry="2" onmouseover="s('G4CollisionOutput::addOutgoingParticles (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="725.5" y="337" width="1.3" height="15.0" fill="rgb(249,188,39)" rx="2" ry="2" onmouseover="s('G4NucleiPropertiesTableAME03::IsInTable (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="912.4" y="369" width="1.3" height="15.0" fill="rgb(241,38,35)" rx="2" ry="2" onmouseover="s('G4QNucleus::EvaporateNucleus (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="955.1" y="433" width="2.6" height="15.0" fill="rgb(229,186,2)" rx="2" ry="2" onmouseover="s('G4PreCompoundModel::DeExcite (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="437.1" y="433" width="1.4" height="15.0" fill="rgb(224,65,13)" rx="2" ry="2" onmouseover="s('G4UImanager::ApplyCommand (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="63.4" y="433" width="1.3" height="15.0" fill="rgb(223,210,5)" rx="2" ry="2" onmouseover="s('G4Box::DistanceToOut (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="782.9" y="321" width="4.0" height="15.0" fill="rgb(250,78,4)" rx="2" ry="2" onmouseover="s(' std::allocator(G4InuclNuclei) ) ) ) (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="668.1" y="385" width="2.6" height="15.0" fill="rgb(243,119,47)" rx="2" ry="2" onmouseover="s('G4InuclElementaryParticle::type (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="10.0" y="705" width="1180.0" height="15.0" fill="rgb(226,92,43)" rx="2" ry="2" onmouseover="s('G4UIcontrolMessenger::SetNewValue (884 samples, 100.00%)')" onmouseout="c()" />
+<text text-anchor="" x="13" y="715.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4UIcontrolMessenger::SetNewValue (884 samples, 100.00%)')" onmouseout="c()" >G4UIcontrolMessenger::SetNewValue</text>
+<rect x="964.4" y="481" width="40.1" height="15.0" fill="rgb(228,184,20)" rx="2" ry="2" onmouseover="s('G4Transportation::PostStepDoIt (30 samples, 3.39%)')" onmouseout="c()" />
+<rect x="275.6" y="353" width="1.4" height="15.0" fill="rgb(221,56,16)" rx="2" ry="2" onmouseover="s('G4QPDGCode::G4QPDGCode (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="402.4" y="465" width="1.4" height="15.0" fill="rgb(209,167,26)" rx="2" ry="2" onmouseover="s('G4ionEffectiveCharge::EffectiveCharge (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1166.0" y="417" width="1.3" height="15.0" fill="rgb(221,83,36)" rx="2" ry="2" onmouseover="s('G4NucleiPropertiesTableAME03::GetAtomicMass (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="646.7" y="353" width="2.7" height="15.0" fill="rgb(249,181,29)" rx="2" ry="2" onmouseover="s('std::vector(G4InuclElementaryParticle (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="72.7" y="433" width="4.0" height="15.0" fill="rgb(231,127,19)" rx="2" ry="2" onmouseover="s('G4PolyconeSide::Intersect (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="602.7" y="369" width="1.3" height="15.0" fill="rgb(231,57,30)" rx="2" ry="2" onmouseover="s('CLHEP::HepLorentzVector::boostVector (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="589.3" y="385" width="1.4" height="15.0" fill="rgb(242,146,10)" rx="2" ry="2" onmouseover="s('G4InuclNuclei::getNucleiMass (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="14.0" y="545" width="1.3" height="15.0" fill="rgb(252,54,26)" rx="2" ry="2" onmouseover="s('G4Track::~G4Track (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="490.5" y="433" width="5.4" height="15.0" fill="rgb(226,143,16)" rx="2" ry="2" onmouseover="s('G4CascadeInterface::makeDynamicParticle (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="139.5" y="417" width="1.3" height="15.0" fill="rgb(229,142,54)" rx="2" ry="2" onmouseover="s('G4PolyhedraSide::Distance (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="818.9" y="241" width="1.3" height="15.0" fill="rgb(227,76,54)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="873.6" y="241" width="1.4" height="15.0" fill="rgb(250,154,11)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="334.4" y="497" width="26.7" height="15.0" fill="rgb(221,89,38)" rx="2" ry="2" onmouseover="s('G4VEnergyLossProcess::PostStepGetPhysicalInteractionLength (20 samples, 2.26%)')" onmouseout="c()" />
+<rect x="1187.3" y="529" width="2.7" height="15.0" fill="rgb(254,81,52)" rx="2" ry="2" onmouseover="s('libstdc (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="955.1" y="209" width="1.3" height="15.0" fill="rgb(242,127,34)" rx="2" ry="2" onmouseover="s('libc.so.1`syscall (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="845.6" y="305" width="1.3" height="15.0" fill="rgb(212,162,45)" rx="2" ry="2" onmouseover="s('G4UIcommand::DoIt (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="765.5" y="369" width="1.4" height="15.0" fill="rgb(231,83,2)" rx="2" ry="2" onmouseover="s('libm.so.2`sincos (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="909.7" y="401" width="1.3" height="15.0" fill="rgb(224,4,13)" rx="2" ry="2" onmouseover="s('G4QPDGCode::G4QPDGCode (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="809.6" y="385" width="12.0" height="15.0" fill="rgb(251,67,3)" rx="2" ry="2" onmouseover="s('G4InuclNuclei::makeDefinition (9 samples, 1.02%)')" onmouseout="c()" />
+<rect x="1068.5" y="449" width="1.4" height="15.0" fill="rgb(237,31,43)" rx="2" ry="2" onmouseover="s('G4eBremsstrahlungRelModel::SetupForMaterial (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="513.2" y="433" width="1.4" height="15.0" fill="rgb(246,158,38)" rx="2" ry="2" onmouseover="s('G4CascadeCheckBalance::momentumOkay (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="522.6" y="449" width="1.3" height="15.0" fill="rgb(217,190,23)" rx="2" ry="2" onmouseover="s('G4IntraNucleiCascader::collide (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="913.7" y="369" width="1.3" height="15.0" fill="rgb(249,25,23)" rx="2" ry="2" onmouseover="s('G4QContent::GetSPDGCode (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="716.1" y="369" width="2.7" height="15.0" fill="rgb(233,119,46)" rx="2" ry="2" onmouseover="s(' std::vector(G4CascadParticle (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="92.8" y="449" width="8.0" height="15.0" fill="rgb(220,67,32)" rx="2" ry="2" onmouseover="s('G4Cons::DistanceToIn (6 samples, 0.68%)')" onmouseout="c()" />
+<rect x="782.9" y="401" width="4.0" height="15.0" fill="rgb(237,225,41)" rx="2" ry="2" onmouseover="s('G4CollisionOutput::add (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="773.5" y="417" width="2.7" height="15.0" fill="rgb(245,128,22)" rx="2" ry="2" onmouseover="s('G4CascadeColliderBase::setVerboseLevel (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1182.0" y="497" width="1.3" height="15.0" fill="rgb(232,60,41)" rx="2" ry="2" onmouseover="s('G4TouchableHistory::~G4TouchableHistory (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="768.2" y="417" width="1.3" height="15.0" fill="rgb(235,119,38)" rx="2" ry="2" onmouseover="s('G4NucleiModel::reset (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="674.8" y="385" width="1.3" height="15.0" fill="rgb(250,35,1)" rx="2" ry="2" onmouseover="s('G4NucleiModel::boundaryTransition (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="949.7" y="449" width="2.7" height="15.0" fill="rgb(231,10,9)" rx="2" ry="2" onmouseover="s('G4LFission::Atomas (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="449.2" y="401" width="1.3" height="15.0" fill="rgb(222,34,17)" rx="2" ry="2" onmouseover="s('G4QContent::operator-= (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1168.6" y="449" width="1.4" height="15.0" fill="rgb(227,198,27)" rx="2" ry="2" onmouseover="s('G4QNeutronElasticCrossSection::GetExchangeT (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="809.6" y="337" width="6.6" height="15.0" fill="rgb(210,213,14)" rx="2" ry="2" onmouseover="s('G4IonTable::AddProcessManager (5 samples, 0.57%)')" onmouseout="c()" />
+<rect x="470.5" y="433" width="1.4" height="15.0" fill="rgb(209,125,25)" rx="2" ry="2" onmouseover="s('G4PhaseSpaceDecayChannel::Pmx (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="820.2" y="225" width="1.4" height="15.0" fill="rgb(226,176,34)" rx="2" ry="2" onmouseover="s(' G4ParticleDefinition*) ) (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="702.8" y="369" width="2.7" height="15.0" fill="rgb(210,29,10)" rx="2" ry="2" onmouseover="s('std::__introsort_loop(__gnu_cxx::__normal_iterator(std::pair(G4InuclElementaryParticle (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="650.7" y="353" width="1.4" height="15.0" fill="rgb(206,152,53)" rx="2" ry="2" onmouseover="s('std::vector(G4InuclElementaryParticle (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="681.4" y="369" width="1.4" height="15.0" fill="rgb(219,218,24)" rx="2" ry="2" onmouseover="s('CLHEP::RanluxEngine::flat (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="907.0" y="465" width="1.3" height="15.0" fill="rgb(231,139,28)" rx="2" ry="2" onmouseover="s('G4CascadeInterface::createTarget (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="662.7" y="337" width="2.7" height="15.0" fill="rgb(244,45,13)" rx="2" ry="2" onmouseover="s(' std::allocator(G4InuclElementaryParticle) ) ) (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="425.1" y="481" width="1.4" height="15.0" fill="rgb(220,134,31)" rx="2" ry="2" onmouseover="s('libm.so.2`log (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1032.5" y="433" width="5.3" height="15.0" fill="rgb(232,157,11)" rx="2" ry="2" onmouseover="s('G4VEmModel::CrossSectionPerVolume (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="810.9" y="289" width="4.0" height="15.0" fill="rgb(229,163,35)" rx="2" ry="2" onmouseover="s('G4UserPhysicsListMessenger::SetNewValue (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="277.0" y="385" width="1.3" height="15.0" fill="rgb(227,26,52)" rx="2" ry="2" onmouseover="s('libm.so.2`log (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1111.2" y="449" width="1.4" height="15.0" fill="rgb(243,123,46)" rx="2" ry="2" onmouseover="s('CLHEP::HepLorentzRotation::rotateZ (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="696.1" y="369" width="6.7" height="15.0" fill="rgb(241,111,2)" rx="2" ry="2" onmouseover="s('G4NucleiModel::totalCrossSection (5 samples, 0.57%)')" onmouseout="c()" />
+<rect x="1080.5" y="449" width="1.4" height="15.0" fill="rgb(219,24,30)" rx="2" ry="2" onmouseover="s('CLHEP::HepRandom::getTheEngine (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="662.7" y="369" width="2.7" height="15.0" fill="rgb(241,147,20)" rx="2" ry="2" onmouseover="s('std::__insertion_sort(__gnu_cxx::__normal_iterator(G4InuclElementaryParticle* (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="88.8" y="449" width="1.3" height="15.0" fill="rgb(208,160,6)" rx="2" ry="2" onmouseover="s('CLHEP::Hep3Vector::operator() (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1168.6" y="433" width="1.4" height="15.0" fill="rgb(217,157,54)" rx="2" ry="2" onmouseover="s('libm.so.2`exp (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="909.7" y="433" width="1.3" height="15.0" fill="rgb(215,157,23)" rx="2" ry="2" onmouseover="s('G4QEnvironment::G4QEnvironment (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="924.4" y="353" width="1.3" height="15.0" fill="rgb(214,228,20)" rx="2" ry="2" onmouseover="s('G4Quasmon::ModifyInMatterCandidates (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="322.4" y="481" width="2.6" height="15.0" fill="rgb(215,216,45)" rx="2" ry="2" onmouseover="s('G4VProcess::SubtractNumberOfInteractionLengthLeft (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="909.7" y="465" width="1.3" height="15.0" fill="rgb(214,175,10)" rx="2" ry="2" onmouseover="s('G4ElectroNuclearReaction::ApplyYourself (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="106.1" y="449" width="4.0" height="15.0" fill="rgb(234,149,18)" rx="2" ry="2" onmouseover="s('G4Polyhedra::DistanceToIn (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="927.0" y="417" width="1.4" height="15.0" fill="rgb(226,113,51)" rx="2" ry="2" onmouseover="s('G4QEnvironment::InitClustersVector (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="665.4" y="369" width="1.3" height="15.0" fill="rgb(244,70,24)" rx="2" ry="2" onmouseover="s('std::__introsort_loop(__gnu_cxx::__normal_iterator(G4InuclElementaryParticle* (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="979.1" y="417" width="1.3" height="15.0" fill="rgb(245,62,31)" rx="2" ry="2" onmouseover="s('G4PolyconeSide::DistanceAway (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="658.7" y="369" width="1.4" height="15.0" fill="rgb(212,96,5)" rx="2" ry="2" onmouseover="s('G4LorentzConvertor::getKinEnergyInTheTRS (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="111.4" y="449" width="2.7" height="15.0" fill="rgb(218,194,48)" rx="2" ry="2" onmouseover="s('G4SubtractionSolid::DistanceToIn (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="746.8" y="369" width="2.7" height="15.0" fill="rgb(211,152,26)" rx="2" ry="2" onmouseover="s('libc.so.1`free (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="820.2" y="257" width="1.4" height="15.0" fill="rgb(210,86,38)" rx="2" ry="2" onmouseover="s(' G4ParticleDefinition*) (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="893.7" y="401" width="1.3" height="15.0" fill="rgb(218,101,31)" rx="2" ry="2" onmouseover="s('libc.so.1`_malloc_unlocked (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="620.0" y="321" width="1.4" height="15.0" fill="rgb(235,91,12)" rx="2" ry="2" onmouseover="s(' G4PionNucSampler)::getMultiplicity (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="466.5" y="465" width="1.4" height="15.0" fill="rgb(245,170,42)" rx="2" ry="2" onmouseover="s('G4DecayTable::SelectADecayChannel (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="351.7" y="481" width="6.7" height="15.0" fill="rgb(210,192,22)" rx="2" ry="2" onmouseover="s('G4VEmModel::ChargeSquareRatio (5 samples, 0.57%)')" onmouseout="c()" />
+<rect x="381.1" y="497" width="1.3" height="15.0" fill="rgb(247,183,16)" rx="2" ry="2" onmouseover="s('G4BraggIonModel::MaxSecondaryEnergy (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="871.0" y="289" width="4.0" height="15.0" fill="rgb(219,89,4)" rx="2" ry="2" onmouseover="s('libstdc (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="621.4" y="321" width="1.3" height="15.0" fill="rgb(229,198,42)" rx="2" ry="2" onmouseover="s(' G4PionNucSampler)::getMultiplicity (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="598.7" y="385" width="1.3" height="15.0" fill="rgb(235,85,53)" rx="2" ry="2" onmouseover="s('G4CascadParticle::getPathToTheNextZone (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="66.1" y="449" width="6.6" height="15.0" fill="rgb(245,141,0)" rx="2" ry="2" onmouseover="s('G4Tubs::DistanceToOut (5 samples, 0.57%)')" onmouseout="c()" />
+<rect x="955.1" y="385" width="1.3" height="15.0" fill="rgb(234,126,54)" rx="2" ry="2" onmouseover="s('G4PhotonEvaporation::EmittedFragment (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="106.1" y="433" width="4.0" height="15.0" fill="rgb(225,109,40)" rx="2" ry="2" onmouseover="s('G4PolyhedraSide::Intersect (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="654.7" y="353" width="4.0" height="15.0" fill="rgb(205,204,36)" rx="2" ry="2" onmouseover="s('CLHEP::HepLorentzVector::boost (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="820.2" y="321" width="1.4" height="15.0" fill="rgb(227,151,42)" rx="2" ry="2" onmouseover="s('G4ParticleDefinition::G4ParticleDefinition (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="442.5" y="433" width="10.7" height="15.0" fill="rgb(219,112,8)" rx="2" ry="2" onmouseover="s('G4Quasmon::Fragment (8 samples, 0.90%)')" onmouseout="c()" />
+<rect x="716.1" y="353" width="2.7" height="15.0" fill="rgb(246,92,16)" rx="2" ry="2" onmouseover="s(' std::allocator(G4CascadParticle) ) ) ) (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="517.2" y="449" width="1.4" height="15.0" fill="rgb(213,121,34)" rx="2" ry="2" onmouseover="s('G4CollisionOutput::rotateEvent (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="868.3" y="177" width="1.3" height="15.0" fill="rgb(222,147,42)" rx="2" ry="2" onmouseover="s('libc.so.1`malloc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="222.2" y="433" width="10.7" height="15.0" fill="rgb(205,201,16)" rx="2" ry="2" onmouseover="s('G4VIntersectionLocator::GetLastSurfaceNormal (8 samples, 0.90%)')" onmouseout="c()" />
+<rect x="955.1" y="321" width="1.3" height="15.0" fill="rgb(252,67,26)" rx="2" ry="2" onmouseover="s('G4NuclearLevelManager::MakeLevels (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="700.1" y="321" width="1.3" height="15.0" fill="rgb(251,75,38)" rx="2" ry="2" onmouseover="s('G4CascadeInterpolator(30)::getBin (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="130.1" y="433" width="9.4" height="15.0" fill="rgb(206,34,0)" rx="2" ry="2" onmouseover="s('G4PolyconeSide::Intersect (7 samples, 0.79%)')" onmouseout="c()" />
+<rect x="266.3" y="417" width="13.3" height="15.0" fill="rgb(249,199,53)" rx="2" ry="2" onmouseover="s('G4CHIPSElasticXS::GetIsoCrossSection (10 samples, 1.13%)')" onmouseout="c()" />
+<rect x="818.9" y="225" width="1.3" height="15.0" fill="rgb(231,89,9)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="865.6" y="385" width="14.7" height="15.0" fill="rgb(214,185,31)" rx="2" ry="2" onmouseover="s('G4InuclNuclei::fill (11 samples, 1.24%)')" onmouseout="c()" />
+<rect x="354.4" y="449" width="2.7" height="15.0" fill="rgb(245,154,20)" rx="2" ry="2" onmouseover="s('G4ionEffectiveCharge::EffectiveCharge (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="903.0" y="449" width="1.3" height="15.0" fill="rgb(205,26,37)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1089.9" y="449" width="1.3" height="15.0" fill="rgb(227,31,15)" rx="2" ry="2" onmouseover="s('libm.so.2`sin (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="625.4" y="353" width="12.0" height="15.0" fill="rgb(235,124,24)" rx="2" ry="2" onmouseover="s('G4ElementaryParticleCollider::sampleCMmomentumFor2to2 (9 samples, 1.02%)')" onmouseout="c()" />
+<rect x="18.0" y="513" width="2.7" height="15.0" fill="rgb(214,80,25)" rx="2" ry="2" onmouseover="s('G4ProcessManager::GetAttribute (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1039.2" y="465" width="2.6" height="15.0" fill="rgb(219,162,6)" rx="2" ry="2" onmouseover="s('G4eeToTwoGammaModel::SampleSecondaries (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="956.4" y="273" width="1.3" height="15.0" fill="rgb(240,88,39)" rx="2" ry="2" onmouseover="s('libc.so.1`fopen64 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="382.4" y="497" width="4.0" height="15.0" fill="rgb(208,144,18)" rx="2" ry="2" onmouseover="s('G4ParticleChangeForTransport::UpdateStepForAlongStep (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="920.4" y="305" width="1.3" height="15.0" fill="rgb(221,116,25)" rx="2" ry="2" onmouseover="s('G4QPDGCode::G4QPDGCode (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="454.5" y="481" width="1.3" height="15.0" fill="rgb(243,7,28)" rx="2" ry="2" onmouseover="s('G4VParticleChange::AddSecondary (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="617.4" y="337" width="1.3" height="15.0" fill="rgb(229,73,49)" rx="2" ry="2" onmouseover="s(' G4KaonHypSampler)::getOutgoingParticleTypes (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="64.7" y="449" width="1.4" height="15.0" fill="rgb(252,65,38)" rx="2" ry="2" onmouseover="s('G4Trap::DistanceToOut (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1013.8" y="449" width="4.0" height="15.0" fill="rgb(231,150,10)" rx="2" ry="2" onmouseover="s('CLHEP::Hep3Vector::rotateUz (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="1133.9" y="433" width="24.1" height="15.0" fill="rgb(234,189,0)" rx="2" ry="2" onmouseover="s('G4QNeutronElasticCrossSection::GetCrossSection (18 samples, 2.04%)')" onmouseout="c()" />
+<rect x="455.8" y="497" width="2.7" height="15.0" fill="rgb(225,175,11)" rx="2" ry="2" onmouseover="s('G4eplusAnnihilation::AtRestDoIt (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="993.8" y="401" width="1.3" height="15.0" fill="rgb(238,202,6)" rx="2" ry="2" onmouseover="s('G4PolyhedraSide::DistanceAway (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="959.1" y="465" width="1.3" height="15.0" fill="rgb(241,17,13)" rx="2" ry="2" onmouseover="s('libm.so.2`atan2 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="584.0" y="385" width="1.3" height="15.0" fill="rgb(215,197,47)" rx="2" ry="2" onmouseover="s('G4CollisionOutput::getTotalBaryonNumber (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="666.7" y="321" width="1.4" height="15.0" fill="rgb(222,132,53)" rx="2" ry="2" onmouseover="s(' G4ParticleLargerEkin) (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="618.7" y="337" width="1.3" height="15.0" fill="rgb(241,196,22)" rx="2" ry="2" onmouseover="s('G4CascadeFunctions(G4CascadeNNChannelData (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="12.7" y="545" width="1.3" height="15.0" fill="rgb(233,182,15)" rx="2" ry="2" onmouseover="s('G4EventManager::StackTracks (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="441.2" y="401" width="1.3" height="15.0" fill="rgb(228,30,33)" rx="2" ry="2" onmouseover="s('G4QNucleus::EvaporateBaryon (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="570.6" y="401" width="14.7" height="15.0" fill="rgb(239,131,30)" rx="2" ry="2" onmouseover="s('G4CascadeRecoilMaker::collide (11 samples, 1.24%)')" onmouseout="c()" />
+<rect x="778.9" y="401" width="4.0" height="15.0" fill="rgb(249,206,10)" rx="2" ry="2" onmouseover="s('G4CascadeColliderBase::setVerboseLevel (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="273.0" y="369" width="4.0" height="15.0" fill="rgb(224,65,2)" rx="2" ry="2" onmouseover="s('G4QNeutronElasticCrossSection::GetQ2max (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="837.6" y="401" width="21.4" height="15.0" fill="rgb(209,140,11)" rx="2" ry="2" onmouseover="s('G4NonEquilibriumEvaporator::collide (16 samples, 1.81%)')" onmouseout="c()" />
+<rect x="63.4" y="449" width="1.3" height="15.0" fill="rgb(240,143,24)" rx="2" ry="2" onmouseover="s('G4SubtractionSolid::DistanceToOut (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="845.6" y="289" width="1.3" height="15.0" fill="rgb(208,189,24)" rx="2" ry="2" onmouseover="s('G4UserPhysicsListMessenger::SetNewValue (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="435.8" y="481" width="1.3" height="15.0" fill="rgb(233,128,8)" rx="2" ry="2" onmouseover="s('G4DynamicParticle::G4DynamicParticle (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="462.5" y="481" width="1.3" height="15.0" fill="rgb(242,61,52)" rx="2" ry="2" onmouseover="s('G4CascadeInterface::ApplyYourself (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="155.5" y="465" width="28.0" height="15.0" fill="rgb(214,23,14)" rx="2" ry="2" onmouseover="s('G4ChordFinder::AdvanceChordLimited (21 samples, 2.38%)')" onmouseout="c()" />
+<rect x="876.3" y="321" width="1.3" height="15.0" fill="rgb(248,141,42)" rx="2" ry="2" onmouseover="s('libc.so.1`strlen (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="920.4" y="289" width="1.3" height="15.0" fill="rgb(239,160,13)" rx="2" ry="2" onmouseover="s('G4QPDGCode::MakeQCode (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="875.0" y="289" width="1.3" height="15.0" fill="rgb(229,217,47)" rx="2" ry="2" onmouseover="s('G4PDGCodeChecker::CheckPDGCode (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="618.7" y="289" width="1.3" height="15.0" fill="rgb(233,185,4)" rx="2" ry="2" onmouseover="s(' 8)::findMultiplicity (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="605.3" y="321" width="2.7" height="15.0" fill="rgb(245,174,18)" rx="2" ry="2" onmouseover="s(' std::vector(G4InuclElementaryParticle (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1131.3" y="449" width="28.0" height="15.0" fill="rgb(239,49,10)" rx="2" ry="2" onmouseover="s('G4CHIPSElastic::SampleInvariantT (21 samples, 2.38%)')" onmouseout="c()" />
+<rect x="916.4" y="369" width="1.3" height="15.0" fill="rgb(234,124,43)" rx="2" ry="2" onmouseover="s('G4QHadron::G4QHadron (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="514.6" y="449" width="2.6" height="15.0" fill="rgb(228,60,28)" rx="2" ry="2" onmouseover="s('G4CollisionOutput::reset (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="585.3" y="401" width="5.4" height="15.0" fill="rgb(205,74,35)" rx="2" ry="2" onmouseover="s('G4CascadeRecoilMaker::fillRecoil (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="955.1" y="289" width="1.3" height="15.0" fill="rgb(240,205,31)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="861.6" y="401" width="1.4" height="15.0" fill="rgb(220,217,0)" rx="2" ry="2" onmouseover="s('libm.so.2`exp (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="148.8" y="449" width="2.7" height="15.0" fill="rgb(215,82,20)" rx="2" ry="2" onmouseover="s('G4VoxelNavigation::LocateNextVoxel (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="948.4" y="449" width="1.3" height="15.0" fill="rgb(229,175,37)" rx="2" ry="2" onmouseover="s('G4HadFinalState::AddSecondary (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="331.7" y="481" width="1.3" height="15.0" fill="rgb(243,21,2)" rx="2" ry="2" onmouseover="s('G4PhysicsLogVector::FindBinLocation (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1067.2" y="449" width="1.3" height="15.0" fill="rgb(248,179,25)" rx="2" ry="2" onmouseover="s('G4PhysicsVector::Value (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="30.0" y="529" width="1156.0" height="15.0" fill="rgb(236,139,41)" rx="2" ry="2" onmouseover="s('G4SteppingManager::Stepping (866 samples, 97.96%)')" onmouseout="c()" />
+<text text-anchor="" x="33.0226244343891" y="539.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4SteppingManager::Stepping (866 samples, 97.96%)')" onmouseout="c()" >G4SteppingManager::Stepping</text>
+<rect x="1175.3" y="417" width="1.4" height="15.0" fill="rgb(246,194,5)" rx="2" ry="2" onmouseover="s('G4VelocityTable::Value (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="871.0" y="241" width="2.6" height="15.0" fill="rgb(253,101,11)" rx="2" ry="2" onmouseover="s('libc.so.1`vsprintf (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="788.2" y="401" width="1.3" height="15.0" fill="rgb(233,116,54)" rx="2" ry="2" onmouseover="s('G4DynamicParticle::~G4DynamicParticle (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="321.0" y="465" width="1.4" height="15.0" fill="rgb(220,171,42)" rx="2" ry="2" onmouseover="s('G4ProtonInelasticCrossSection::GetProtonCrossSection (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="826.9" y="385" width="1.4" height="15.0" fill="rgb(225,163,13)" rx="2" ry="2" onmouseover="s('G4NucleiProperties::GetBindingEnergy (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="283.6" y="401" width="10.7" height="15.0" fill="rgb(217,59,5)" rx="2" ry="2" onmouseover="s('G4HadronCrossSections::CalcScatteringCrossSections (8 samples, 0.90%)')" onmouseout="c()" />
+<rect x="311.7" y="449" width="4.0" height="15.0" fill="rgb(227,203,17)" rx="2" ry="2" onmouseover="s('G4HadronFissionDataSet::GetElementCrossSection (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="491.9" y="417" width="4.0" height="15.0" fill="rgb(223,157,12)" rx="2" ry="2" onmouseover="s('G4InuclElementaryParticle::type (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="956.4" y="385" width="1.3" height="15.0" fill="rgb(238,210,10)" rx="2" ry="2" onmouseover="s('G4VGammaDeexcitation::DoChain (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="661.4" y="369" width="1.3" height="15.0" fill="rgb(205,42,21)" rx="2" ry="2" onmouseover="s('G4LorentzConvertor::toTheCenterOfMass (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="228.9" y="369" width="2.7" height="15.0" fill="rgb(237,190,53)" rx="2" ry="2" onmouseover="s('G4Trap::SurfaceNormal (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="865.6" y="337" width="13.4" height="15.0" fill="rgb(208,100,18)" rx="2" ry="2" onmouseover="s('G4IonTable::CreateIon (10 samples, 1.13%)')" onmouseout="c()" />
+<rect x="749.5" y="369" width="1.3" height="15.0" fill="rgb(206,207,24)" rx="2" ry="2" onmouseover="s('libc.so.1`memcpy (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="242.3" y="433" width="1.3" height="15.0" fill="rgb(233,29,39)" rx="2" ry="2" onmouseover="s('G4Polyhedra::DistanceToIn (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="845.6" y="337" width="1.3" height="15.0" fill="rgb(229,170,14)" rx="2" ry="2" onmouseover="s('G4IonTable::AddProcessManager (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1100.6" y="465" width="2.6" height="15.0" fill="rgb(248,30,27)" rx="2" ry="2" onmouseover="s('CLHEP::Hep3Vector::rotate (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="700.1" y="337" width="1.3" height="15.0" fill="rgb(219,192,8)" rx="2" ry="2" onmouseover="s(' G4PionNucSampler)::getCrossSection (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="809.6" y="353" width="12.0" height="15.0" fill="rgb(221,31,8)" rx="2" ry="2" onmouseover="s('G4IonTable::CreateIon (9 samples, 1.02%)')" onmouseout="c()" />
+<rect x="996.4" y="465" width="1.4" height="15.0" fill="rgb(248,5,53)" rx="2" ry="2" onmouseover="s('G4Navigator::LocateGlobalPointWithinVolume (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="932.4" y="449" width="1.3" height="15.0" fill="rgb(242,61,49)" rx="2" ry="2" onmouseover="s('G4HEInelastic::MediumEnergyCascading (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="80.7" y="465" width="1.4" height="15.0" fill="rgb(232,163,18)" rx="2" ry="2" onmouseover="s('G4Trap::DistanceToOut (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="435.8" y="497" width="1.3" height="15.0" fill="rgb(254,170,2)" rx="2" ry="2" onmouseover="s('G4Decay::DecayIt (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="505.2" y="401" width="1.4" height="15.0" fill="rgb(217,111,42)" rx="2" ry="2" onmouseover="s('G4InuclNuclei::makeDefinition (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="319.7" y="465" width="1.3" height="15.0" fill="rgb(234,131,47)" rx="2" ry="2" onmouseover="s('G4HadronCaptureDataSet::GetElementCrossSection (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="616.0" y="321" width="1.4" height="15.0" fill="rgb(248,195,10)" rx="2" ry="2" onmouseover="s('std::vector(int (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="729.5" y="305" width="2.6" height="15.0" fill="rgb(209,95,33)" rx="2" ry="2" onmouseover="s('libc.so.1`cleanfree (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="23.3" y="529" width="1.4" height="15.0" fill="rgb(242,187,53)" rx="2" ry="2" onmouseover="s('G4SteppingManager::GetProcessNumber (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="458.5" y="497" width="722.2" height="15.0" fill="rgb(220,117,14)" rx="2" ry="2" onmouseover="s('G4SteppingManager::InvokePSDIP (541 samples, 61.20%)')" onmouseout="c()" />
+<text text-anchor="" x="461.506787330317" y="507.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4SteppingManager::InvokePSDIP (541 samples, 61.20%)')" onmouseout="c()" >G4SteppingManager::InvokePSDIP</text>
+<rect x="975.1" y="449" width="1.3" height="15.0" fill="rgb(215,88,7)" rx="2" ry="2" onmouseover="s('G4Polyhedra::Inside (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="180.9" y="433" width="1.3" height="15.0" fill="rgb(205,168,1)" rx="2" ry="2" onmouseover="s('G4MagIntegratorStepper::ComputeRightHandSide (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1163.3" y="433" width="1.3" height="15.0" fill="rgb(231,14,20)" rx="2" ry="2" onmouseover="s('G4IonTable::FindIon (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="880.3" y="433" width="1.4" height="15.0" fill="rgb(226,42,5)" rx="2" ry="2" onmouseover="s('G4InuclElementaryParticle::~G4InuclElementaryParticle (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="439.8" y="433" width="2.7" height="15.0" fill="rgb(246,178,7)" rx="2" ry="2" onmouseover="s('G4QEnvironment::EvaporateResidual (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="453.2" y="465" width="1.3" height="15.0" fill="rgb(211,165,45)" rx="2" ry="2" onmouseover="s('G4QEnvironment::CreateQuasmon (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="789.5" y="401" width="42.8" height="15.0" fill="rgb(245,27,15)" rx="2" ry="2" onmouseover="s('G4EquilibriumEvaporator::collide (32 samples, 3.62%)')" onmouseout="c()" />
+<rect x="618.7" y="353" width="4.0" height="15.0" fill="rgb(220,83,41)" rx="2" ry="2" onmouseover="s('G4ElementaryParticleCollider::generateMultiplicity (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="845.6" y="241" width="1.3" height="15.0" fill="rgb(222,137,15)" rx="2" ry="2" onmouseover="s('std::vector(G4ProcessAttribute* (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="134.1" y="417" width="2.7" height="15.0" fill="rgb(234,90,51)" rx="2" ry="2" onmouseover="s('G4IntersectingCone::LineHitsCone1 (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="710.8" y="401" width="4.0" height="15.0" fill="rgb(223,165,22)" rx="2" ry="2" onmouseover="s('G4NucleiModel::worthToPropagate (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="381.1" y="513" width="50.7" height="15.0" fill="rgb(210,87,22)" rx="2" ry="2" onmouseover="s('G4SteppingManager::InvokeAlongStepDoItProcs (38 samples, 4.30%)')" onmouseout="c()" />
+<text text-anchor="" x="384.085972850679" y="523.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4SteppingManager::InvokeAlongStepDoItProcs (38 samples, 4.30%)')" onmouseout="c()" >G4Step..</text>
+<rect x="960.4" y="481" width="1.3" height="15.0" fill="rgb(211,139,13)" rx="2" ry="2" onmouseover="s('G4PhaseSpaceDecayChannel::DecayIt (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="439.8" y="417" width="2.7" height="15.0" fill="rgb(229,91,6)" rx="2" ry="2" onmouseover="s('G4QNucleus::EvaporateNucleus (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="957.7" y="449" width="1.4" height="15.0" fill="rgb(253,78,34)" rx="2" ry="2" onmouseover="s('G4VPartonStringModel::Scatter (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="168.8" y="449" width="13.4" height="15.0" fill="rgb(220,123,36)" rx="2" ry="2" onmouseover="s('G4MagInt_Driver::AccurateAdvance (10 samples, 1.13%)')" onmouseout="c()" />
+<rect x="547.9" y="433" width="221.6" height="15.0" fill="rgb(221,151,0)" rx="2" ry="2" onmouseover="s('G4IntraNucleiCascader::collide (166 samples, 18.78%)')" onmouseout="c()" />
+<text text-anchor="" x="550.941176470588" y="443.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4IntraNucleiCascader::collide (166 samples, 18.78%)')" onmouseout="c()" >G4IntraNucleiCascader::col..</text>
+<rect x="757.5" y="417" width="1.3" height="15.0" fill="rgb(244,1,12)" rx="2" ry="2" onmouseover="s('G4IntraNucleiCascader::newCascade (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="43.4" y="481" width="109.4" height="15.0" fill="rgb(235,0,48)" rx="2" ry="2" onmouseover="s('G4Navigator::ComputeStep (82 samples, 9.28%)')" onmouseout="c()" />
+<text text-anchor="" x="46.3710407239819" y="491.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4Navigator::ComputeStep (82 samples, 9.28%)')" onmouseout="c()" >G4Navigator::..</text>
+<rect x="702.8" y="257" width="2.7" height="15.0" fill="rgb(207,138,3)" rx="2" ry="2" onmouseover="s(' bool (*)(std::pair(G4InuclElementaryParticle (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1072.5" y="465" width="5.4" height="15.0" fill="rgb(233,81,43)" rx="2" ry="2" onmouseover="s('G4UrbanMscModel90::SampleScattering (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="10.0" y="673" width="1180.0" height="15.0" fill="rgb(210,167,22)" rx="2" ry="2" onmouseover="s('G4UIbatch::SessionStart (884 samples, 100.00%)')" onmouseout="c()" />
+<text text-anchor="" x="13" y="683.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4UIbatch::SessionStart (884 samples, 100.00%)')" onmouseout="c()" >G4UIbatch::SessionStart</text>
+<rect x="1175.3" y="449" width="2.7" height="15.0" fill="rgb(205,53,13)" rx="2" ry="2" onmouseover="s('G4Track::G4Track (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="714.8" y="401" width="1.3" height="15.0" fill="rgb(241,35,19)" rx="2" ry="2" onmouseover="s('G4VCascadeCollider::setVerboseLevel (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="236.9" y="417" width="2.7" height="15.0" fill="rgb(246,98,16)" rx="2" ry="2" onmouseover="s('G4VCSGfaceted::DistanceTo (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="306.3" y="401" width="1.4" height="15.0" fill="rgb(251,80,7)" rx="2" ry="2" onmouseover="s('G4HadronCrossSections::GetParticleCode (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="24.7" y="513" width="2.7" height="15.0" fill="rgb(209,209,28)" rx="2" ry="2" onmouseover="s('G4Navigator::ResetHierarchyAndLocate (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="140.8" y="449" width="6.7" height="15.0" fill="rgb(220,10,43)" rx="2" ry="2" onmouseover="s('G4VCSGfaceted::DistanceToOut (5 samples, 0.57%)')" onmouseout="c()" />
+<rect x="662.7" y="321" width="2.7" height="15.0" fill="rgb(253,91,48)" rx="2" ry="2" onmouseover="s(' G4ParticleLargerEkin) (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="766.9" y="385" width="1.3" height="15.0" fill="rgb(209,214,16)" rx="2" ry="2" onmouseover="s('G4InuclSpecialFunctions::inuclRndm (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="182.2" y="449" width="1.3" height="15.0" fill="rgb(234,102,32)" rx="2" ry="2" onmouseover="s('G4UniformMagField::GetFieldValue (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="236.9" y="401" width="2.7" height="15.0" fill="rgb(224,24,52)" rx="2" ry="2" onmouseover="s('G4PolyconeSide::Distance (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1179.3" y="465" width="1.4" height="15.0" fill="rgb(221,228,12)" rx="2" ry="2" onmouseover="s('G4VParticleChange::AddSecondary (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="820.2" y="289" width="1.4" height="15.0" fill="rgb(221,126,29)" rx="2" ry="2" onmouseover="s('std::_Rb_tree(int (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1052.5" y="465" width="20.0" height="15.0" fill="rgb(246,196,7)" rx="2" ry="2" onmouseover="s('G4SeltzerBergerModel::SampleSecondaries (15 samples, 1.70%)')" onmouseout="c()" />
+<rect x="941.7" y="433" width="4.0" height="15.0" fill="rgb(207,92,39)" rx="2" ry="2" onmouseover="s('CLHEP::Hep3Vector::rotate (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="820.2" y="177" width="1.4" height="15.0" fill="rgb(242,209,8)" rx="2" ry="2" onmouseover="s(' G4ParticleDefinition*) ) )::_M_insert_unique (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="968.4" y="465" width="28.0" height="15.0" fill="rgb(214,109,37)" rx="2" ry="2" onmouseover="s('G4Navigator::LocateGlobalPointAndSetup (21 samples, 2.38%)')" onmouseout="c()" />
+<rect x="222.2" y="417" width="10.7" height="15.0" fill="rgb(250,21,10)" rx="2" ry="2" onmouseover="s('G4Navigator::GetGlobalExitNormal (8 samples, 0.90%)')" onmouseout="c()" />
+<rect x="766.9" y="369" width="1.3" height="15.0" fill="rgb(216,93,31)" rx="2" ry="2" onmouseover="s('CLHEP::HepRandom::getTheEngine (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="818.9" y="273" width="1.3" height="15.0" fill="rgb(206,212,3)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="782.9" y="353" width="4.0" height="15.0" fill="rgb(208,133,40)" rx="2" ry="2" onmouseover="s(' std::allocator(G4InuclNuclei) )::_M_range_insert(__gnu_cxx::__normal_iterator(G4InuclNuclei const* (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="961.7" y="481" width="2.7" height="15.0" fill="rgb(227,76,48)" rx="2" ry="2" onmouseover="s('G4SeltzerBergerModel::SampleSecondaries (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="732.1" y="369" width="13.4" height="15.0" fill="rgb(228,102,36)" rx="2" ry="2" onmouseover="s('G4NucleiModel::fillZoneVolumes (10 samples, 1.13%)')" onmouseout="c()" />
+<rect x="318.3" y="449" width="1.4" height="15.0" fill="rgb(245,99,50)" rx="2" ry="2" onmouseover="s('libm.so.2`log (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="750.8" y="353" width="2.7" height="15.0" fill="rgb(252,135,15)" rx="2" ry="2" onmouseover="s('libc.so.1`free (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="409.1" y="465" width="1.4" height="15.0" fill="rgb(242,11,49)" rx="2" ry="2" onmouseover="s('G4LPhysicsFreeVector::FindBinLocation (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="604.0" y="369" width="1.3" height="15.0" fill="rgb(212,0,13)" rx="2" ry="2" onmouseover="s('G4CascadeFunctions(G4CascadeNPChannelData (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="167.5" y="401" width="1.3" height="15.0" fill="rgb(251,157,3)" rx="2" ry="2" onmouseover="s('G4UniformMagField::GetFieldValue (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="403.8" y="465" width="1.3" height="15.0" fill="rgb(241,101,28)" rx="2" ry="2" onmouseover="s('libm.so.2`log (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="505.2" y="433" width="4.0" height="15.0" fill="rgb(247,125,32)" rx="2" ry="2" onmouseover="s('G4CascadeInterface::createTarget (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="925.7" y="433" width="4.0" height="15.0" fill="rgb(214,159,3)" rx="2" ry="2" onmouseover="s('G4QEnvironment::G4QEnvironment (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="174.2" y="433" width="1.3" height="15.0" fill="rgb(253,186,12)" rx="2" ry="2" onmouseover="s('G4MagErrorStepper::Stepper (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="576.0" y="353" width="1.3" height="15.0" fill="rgb(227,92,51)" rx="2" ry="2" onmouseover="s('std::vector(G4InuclNuclei (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="594.7" y="401" width="1.3" height="15.0" fill="rgb(226,31,54)" rx="2" ry="2" onmouseover="s('G4InuclElementaryParticle::type (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="729.5" y="321" width="2.6" height="15.0" fill="rgb(231,189,11)" rx="2" ry="2" onmouseover="s('libc.so.1`_malloc_unlocked (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="463.8" y="449" width="2.7" height="15.0" fill="rgb(211,56,53)" rx="2" ry="2" onmouseover="s('G4DecayProducts::Boost (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="361.1" y="497" width="20.0" height="15.0" fill="rgb(223,141,19)" rx="2" ry="2" onmouseover="s('G4VMultipleScattering::AlongStepGetPhysicalInteractionLength (15 samples, 1.70%)')" onmouseout="c()" />
+<rect x="881.7" y="417" width="2.6" height="15.0" fill="rgb(205,106,18)" rx="2" ry="2" onmouseover="s('G4InuclParticle::setMomentum (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="612.0" y="337" width="5.4" height="15.0" fill="rgb(210,211,36)" rx="2" ry="2" onmouseover="s(' G4PionNucSampler)::getOutgoingParticleTypes (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="410.5" y="481" width="13.3" height="15.0" fill="rgb(254,205,15)" rx="2" ry="2" onmouseover="s('G4UniversalFluctuation::SampleFluctuations (10 samples, 1.13%)')" onmouseout="c()" />
+<rect x="820.2" y="129" width="1.4" height="15.0" fill="rgb(215,196,50)" rx="2" ry="2" onmouseover="s(' G4ParticleDefinition*) (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="845.6" y="273" width="1.3" height="15.0" fill="rgb(233,7,33)" rx="2" ry="2" onmouseover="s('G4VUserPhysicsList::AddProcessManager (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="782.9" y="369" width="4.0" height="15.0" fill="rgb(218,170,38)" rx="2" ry="2" onmouseover="s('std::vector(G4InuclNuclei (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="47.4" y="465" width="1.3" height="15.0" fill="rgb(221,64,27)" rx="2" ry="2" onmouseover="s('G4Cons::SurfaceNormal (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="692.1" y="353" width="4.0" height="15.0" fill="rgb(241,137,10)" rx="2" ry="2" onmouseover="s('G4NucleiModel::generateNucleonMomentum (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="927.0" y="401" width="1.4" height="15.0" fill="rgb(230,100,50)" rx="2" ry="2" onmouseover="s('G4QCandidate::G4QCandidate (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="820.2" y="113" width="1.4" height="15.0" fill="rgb(239,123,7)" rx="2" ry="2" onmouseover="s(' std::_Select1st(std::pair(int const (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1105.9" y="433" width="1.3" height="15.0" fill="rgb(250,9,30)" rx="2" ry="2" onmouseover="s('G4CrossSectionDataStore::GetCrossSection (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="347.7" y="481" width="4.0" height="15.0" fill="rgb(209,104,26)" rx="2" ry="2" onmouseover="s('G4PhysicsVector::Value (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="820.2" y="193" width="1.4" height="15.0" fill="rgb(235,25,7)" rx="2" ry="2" onmouseover="s(' std::allocator(std::pair(int const (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="576.0" y="321" width="1.3" height="15.0" fill="rgb(224,70,35)" rx="2" ry="2" onmouseover="s(' std::vector(G4InuclNuclei (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="574.6" y="369" width="2.7" height="15.0" fill="rgb(243,140,39)" rx="2" ry="2" onmouseover="s('G4CollisionOutput::add (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="932.4" y="417" width="1.3" height="15.0" fill="rgb(222,38,39)" rx="2" ry="2" onmouseover="s('libm.so.2`__libm__reduction (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="620.0" y="305" width="1.4" height="15.0" fill="rgb(249,220,11)" rx="2" ry="2" onmouseover="s('G4CascadeSampler(30 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="91.4" y="449" width="1.4" height="15.0" fill="rgb(241,137,6)" rx="2" ry="2" onmouseover="s('G4Box::DistanceToOut (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="100.8" y="449" width="5.3" height="15.0" fill="rgb(250,156,34)" rx="2" ry="2" onmouseover="s('G4Cons::DistanceToOut (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="10.0" y="785" width="1180.0" height="15.0" fill="rgb(229,54,23)" rx="2" ry="2" onmouseover="s('all samples (884 samples, 100%)')" onmouseout="c()" />
+<text text-anchor="" x="13" y="795.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('all samples (884 samples, 100%)')" onmouseout="c()" ></text>
+<rect x="845.6" y="353" width="4.0" height="15.0" fill="rgb(247,132,0)" rx="2" ry="2" onmouseover="s('G4IonTable::CreateIon (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="945.7" y="465" width="6.7" height="15.0" fill="rgb(221,228,31)" rx="2" ry="2" onmouseover="s('G4LCapture::ApplyYourself (5 samples, 0.57%)')" onmouseout="c()" />
+<rect x="1032.5" y="449" width="5.3" height="15.0" fill="rgb(241,123,37)" rx="2" ry="2" onmouseover="s('G4VEmModel::SelectRandomAtom (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="672.1" y="385" width="2.7" height="15.0" fill="rgb(246,203,27)" rx="2" ry="2" onmouseover="s('G4LorentzConvertor::G4LorentzConvertor (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="884.3" y="433" width="1.4" height="15.0" fill="rgb(251,198,29)" rx="2" ry="2" onmouseover="s('G4LorentzConvertor::G4LorentzConvertor (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="662.7" y="353" width="2.7" height="15.0" fill="rgb(212,31,23)" rx="2" ry="2" onmouseover="s(' std::vector(G4InuclElementaryParticle (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="701.4" y="337" width="1.4" height="15.0" fill="rgb(229,37,5)" rx="2" ry="2" onmouseover="s(' G4PionNucSampler)::getCrossSection (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="88.8" y="465" width="62.7" height="15.0" fill="rgb(224,122,12)" rx="2" ry="2" onmouseover="s('G4VoxelNavigation::ComputeStep (47 samples, 5.32%)')" onmouseout="c()" />
+<text text-anchor="" x="91.7556561085973" y="475.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4VoxelNavigation::ComputeStep (47 samples, 5.32%)')" onmouseout="c()" >G4Voxel..</text>
+<rect x="371.7" y="465" width="1.4" height="15.0" fill="rgb(219,136,43)" rx="2" ry="2" onmouseover="s('G4PhysicsVector::Value (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="574.6" y="337" width="1.4" height="15.0" fill="rgb(242,196,44)" rx="2" ry="2" onmouseover="s('std::vector(G4InuclNuclei (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="913.7" y="385" width="1.3" height="15.0" fill="rgb(211,129,54)" rx="2" ry="2" onmouseover="s('G4QHadron::G4QHadron (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="871.0" y="321" width="4.0" height="15.0" fill="rgb(236,122,19)" rx="2" ry="2" onmouseover="s('G4IonTable::GetIonName (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="692.1" y="369" width="4.0" height="15.0" fill="rgb(217,227,13)" rx="2" ry="2" onmouseover="s('G4NucleiModel::generateNucleon (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="605.3" y="305" width="2.7" height="15.0" fill="rgb(229,73,36)" rx="2" ry="2" onmouseover="s(' std::allocator(G4InuclElementaryParticle) ) ) ) (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1154.0" y="385" width="1.3" height="15.0" fill="rgb(225,54,44)" rx="2" ry="2" onmouseover="s('libm.so.2`pow (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="437.1" y="465" width="1.4" height="15.0" fill="rgb(252,207,33)" rx="2" ry="2" onmouseover="s('G4IonTable::CreateIon (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="541.3" y="385" width="2.6" height="15.0" fill="rgb(209,125,8)" rx="2" ry="2" onmouseover="s('libstdc (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="989.8" y="433" width="2.6" height="15.0" fill="rgb(236,39,17)" rx="2" ry="2" onmouseover="s('G4Cons::Inside (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="956.4" y="369" width="1.3" height="15.0" fill="rgb(217,219,38)" rx="2" ry="2" onmouseover="s('G4ContinuumGammaDeexcitation::CreateTransition (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="682.8" y="369" width="5.3" height="15.0" fill="rgb(235,84,27)" rx="2" ry="2" onmouseover="s('G4CascadParticle::getPathToTheNextZone (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="620.0" y="273" width="1.4" height="15.0" fill="rgb(226,53,17)" rx="2" ry="2" onmouseover="s('G4CascadeInterpolator(30)::interpolate (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="933.7" y="465" width="1.3" height="15.0" fill="rgb(254,190,38)" rx="2" ry="2" onmouseover="s('G4HadFinalState::GetNumberOfSecondaries (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="973.8" y="449" width="1.3" height="15.0" fill="rgb(211,34,29)" rx="2" ry="2" onmouseover="s('G4NavigationLevelRep::G4NavigationLevelRep (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="426.5" y="497" width="5.3" height="15.0" fill="rgb(234,73,54)" rx="2" ry="2" onmouseover="s('G4VMultipleScattering::AlongStepDoIt (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="700.1" y="353" width="1.3" height="15.0" fill="rgb(223,42,33)" rx="2" ry="2" onmouseover="s('G4CascadeFunctions(G4CascadePiMinusPChannelData (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="971.1" y="449" width="1.3" height="15.0" fill="rgb(253,218,32)" rx="2" ry="2" onmouseover="s('G4Cons::Inside (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="826.9" y="353" width="1.4" height="15.0" fill="rgb(220,182,37)" rx="2" ry="2" onmouseover="s('G4NucleiPropertiesTableAME03::GetIndex (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="502.6" y="433" width="2.6" height="15.0" fill="rgb(238,211,25)" rx="2" ry="2" onmouseover="s('G4InuclElementaryParticle::fill (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="510.6" y="433" width="2.6" height="15.0" fill="rgb(229,190,17)" rx="2" ry="2" onmouseover="s('G4CascadeCheckBalance::energyOkay (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="621.4" y="305" width="1.3" height="15.0" fill="rgb(239,94,25)" rx="2" ry="2" onmouseover="s('G4CascadeInterpolator(30)::interpolate (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="255.6" y="481" width="1.3" height="15.0" fill="rgb(216,7,51)" rx="2" ry="2" onmouseover="s('G4PhysicsVector::Value (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="150.2" y="433" width="1.3" height="15.0" fill="rgb(228,188,53)" rx="2" ry="2" onmouseover="s('CLHEP::Hep3Vector::operator() (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="267.6" y="401" width="10.7" height="15.0" fill="rgb(206,183,20)" rx="2" ry="2" onmouseover="s('G4QNeutronElasticCrossSection::GetCrossSection (8 samples, 0.90%)')" onmouseout="c()" />
+<rect x="10.0" y="753" width="1180.0" height="15.0" fill="rgb(229,140,20)" rx="2" ry="2" onmouseover="s('main (884 samples, 100.00%)')" onmouseout="c()" />
+<text text-anchor="" x="13" y="763.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('main (884 samples, 100.00%)')" onmouseout="c()" >main</text>
+<rect x="1156.6" y="417" width="1.4" height="15.0" fill="rgb(244,5,50)" rx="2" ry="2" onmouseover="s('G4QNeutronElasticCrossSection::GetQ2max (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="283.6" y="417" width="10.7" height="15.0" fill="rgb(234,119,7)" rx="2" ry="2" onmouseover="s('G4HadronCrossSections::GetElasticCrossSection (8 samples, 0.90%)')" onmouseout="c()" />
+<rect x="1182.0" y="465" width="1.3" height="15.0" fill="rgb(205,159,45)" rx="2" ry="2" onmouseover="s('std::_Destroy(G4NavigationLevel* (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="869.6" y="241" width="1.4" height="15.0" fill="rgb(244,161,48)" rx="2" ry="2" onmouseover="s('G4VUserPhysicsList::PreparePhysicsTable (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="386.4" y="497" width="2.7" height="15.0" fill="rgb(229,171,5)" rx="2" ry="2" onmouseover="s('G4Transportation::AlongStepDoIt (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="576.0" y="305" width="1.3" height="15.0" fill="rgb(220,9,22)" rx="2" ry="2" onmouseover="s(' std::allocator(G4InuclNuclei) ) ) ) (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="458.5" y="513" width="723.5" height="15.0" fill="rgb(211,130,25)" rx="2" ry="2" onmouseover="s('G4SteppingManager::InvokePostStepDoItProcs (542 samples, 61.31%)')" onmouseout="c()" />
+<text text-anchor="" x="461.506787330317" y="523.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4SteppingManager::InvokePostStepDoItProcs (542 samples, 61.31%)')" onmouseout="c()" >G4SteppingManager::InvokePostStepDoItProcs</text>
+<rect x="826.9" y="369" width="1.4" height="15.0" fill="rgb(228,107,46)" rx="2" ry="2" onmouseover="s('G4NucleiPropertiesTableAME03::IsInTable (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="166.2" y="385" width="1.3" height="15.0" fill="rgb(253,205,8)" rx="2" ry="2" onmouseover="s('G4Mag_UsualEqRhs::EvaluateRhsGivenB (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="702.8" y="321" width="2.7" height="15.0" fill="rgb(220,8,10)" rx="2" ry="2" onmouseover="s(' double) (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="846.9" y="321" width="1.4" height="15.0" fill="rgb(221,214,51)" rx="2" ry="2" onmouseover="s('std::basic_string(char (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="562.6" y="401" width="5.4" height="15.0" fill="rgb(219,139,32)" rx="2" ry="2" onmouseover="s('G4CollisionOutput::setOnShell (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="219.6" y="449" width="1.3" height="15.0" fill="rgb(243,125,54)" rx="2" ry="2" onmouseover="s('G4Navigator::LocateGlobalPointWithinVolume (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="325.0" y="481" width="1.4" height="15.0" fill="rgb(221,139,10)" rx="2" ry="2" onmouseover="s('libm.so.2`log (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="725.5" y="353" width="1.3" height="15.0" fill="rgb(249,177,6)" rx="2" ry="2" onmouseover="s('G4NucleiProperties::GetBindingEnergy (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1027.1" y="449" width="1.4" height="15.0" fill="rgb(235,10,39)" rx="2" ry="2" onmouseover="s('libm.so.2`__libm__reduction (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="652.1" y="337" width="1.3" height="15.0" fill="rgb(229,132,30)" rx="2" ry="2" onmouseover="s('G4KaonPlus::Definition (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1041.8" y="481" width="30.7" height="15.0" fill="rgb(210,79,41)" rx="2" ry="2" onmouseover="s('G4VEnergyLossProcess::PostStepDoIt (23 samples, 2.60%)')" onmouseout="c()" />
+<rect x="697.4" y="321" width="1.4" height="15.0" fill="rgb(241,154,4)" rx="2" ry="2" onmouseover="s('G4CascadeInterpolator(30)::getBin (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="128.8" y="449" width="12.0" height="15.0" fill="rgb(209,183,9)" rx="2" ry="2" onmouseover="s('G4VCSGfaceted::DistanceToIn (9 samples, 1.02%)')" onmouseout="c()" />
+<rect x="920.4" y="337" width="1.3" height="15.0" fill="rgb(236,72,29)" rx="2" ry="2" onmouseover="s('G4QCandidate::G4QCandidate (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="243.6" y="433" width="1.3" height="15.0" fill="rgb(212,229,35)" rx="2" ry="2" onmouseover="s('G4SubtractionSolid::DistanceToIn (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="729.5" y="369" width="2.6" height="15.0" fill="rgb(237,158,48)" rx="2" ry="2" onmouseover="s('G4NucleiModel::fillPotentials (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="582.6" y="353" width="1.4" height="15.0" fill="rgb(247,104,40)" rx="2" ry="2" onmouseover="s('libc.so.1`strcmp (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="256.9" y="417" width="1.4" height="15.0" fill="rgb(231,114,17)" rx="2" ry="2" onmouseover="s('G4UPiNuclearCrossSection::Interpolate (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="674.8" y="369" width="1.3" height="15.0" fill="rgb(227,129,29)" rx="2" ry="2" onmouseover="s('G4InuclParticle::setMomentum (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="893.7" y="417" width="6.6" height="15.0" fill="rgb(244,194,26)" rx="2" ry="2" onmouseover="s('libc.so.1`malloc (5 samples, 0.57%)')" onmouseout="c()" />
+<rect x="15.3" y="545" width="1.4" height="15.0" fill="rgb(243,206,5)" rx="2" ry="2" onmouseover="s('G4TrackStack::PopFromStack (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="956.4" y="401" width="1.3" height="15.0" fill="rgb(244,182,41)" rx="2" ry="2" onmouseover="s('G4PhotonEvaporation::BreakUpFragment (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="90.1" y="449" width="1.3" height="15.0" fill="rgb(254,111,47)" rx="2" ry="2" onmouseover="s('G4Box::DistanceToIn (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="860.3" y="401" width="1.3" height="15.0" fill="rgb(245,167,21)" rx="2" ry="2" onmouseover="s('libgcc_s.so.1`__powidf2 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="820.2" y="273" width="1.4" height="15.0" fill="rgb(246,88,13)" rx="2" ry="2" onmouseover="s(' std::pair(int const (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="609.3" y="353" width="2.7" height="15.0" fill="rgb(223,204,26)" rx="2" ry="2" onmouseover="s('G4CascadeFunctions(G4CascadeNNChannelData (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="670.7" y="385" width="1.4" height="15.0" fill="rgb(223,161,27)" rx="2" ry="2" onmouseover="s('G4InuclElementaryParticle::~G4InuclElementaryParticle (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="957.7" y="433" width="1.4" height="15.0" fill="rgb(217,197,10)" rx="2" ry="2" onmouseover="s('G4ExcitedStringDecay::FragmentStrings (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="848.3" y="337" width="1.3" height="15.0" fill="rgb(206,58,26)" rx="2" ry="2" onmouseover="s('G4Ions::G4Ions (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="26.0" y="481" width="1.4" height="15.0" fill="rgb(248,93,42)" rx="2" ry="2" onmouseover="s('G4ReflectedSolid::Inside (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="116.8" y="401" width="1.3" height="15.0" fill="rgb(219,199,0)" rx="2" ry="2" onmouseover="s('G4IntersectingCone::LineHitsCone1 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="944.4" y="401" width="1.3" height="15.0" fill="rgb(230,175,19)" rx="2" ry="2" onmouseover="s('libm.so.2`cexp (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="761.5" y="401" width="1.4" height="15.0" fill="rgb(223,105,52)" rx="2" ry="2" onmouseover="s('G4InuclSpecialFunctions::inuclRndm (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="846.9" y="337" width="1.4" height="15.0" fill="rgb(217,127,24)" rx="2" ry="2" onmouseover="s('G4IonTable::GetIonName (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="437.1" y="417" width="1.4" height="15.0" fill="rgb(205,92,10)" rx="2" ry="2" onmouseover="s('G4UIcommand::DoIt (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="832.3" y="401" width="1.3" height="15.0" fill="rgb(253,154,24)" rx="2" ry="2" onmouseover="s('G4EquilibriumEvaporator::getQF (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="143.5" y="417" width="4.0" height="15.0" fill="rgb(247,15,39)" rx="2" ry="2" onmouseover="s('G4IntersectingCone::LineHitsCone1 (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="494.5" y="401" width="1.4" height="15.0" fill="rgb(231,172,35)" rx="2" ry="2" onmouseover="s('G4PionPlus::Definition (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="438.5" y="449" width="14.7" height="15.0" fill="rgb(238,9,6)" rx="2" ry="2" onmouseover="s('G4QEnvironment::HadronizeQEnvironment (11 samples, 1.24%)')" onmouseout="c()" />
+<rect x="317.0" y="417" width="1.3" height="15.0" fill="rgb(213,101,21)" rx="2" ry="2" onmouseover="s('G4Pow::GetInstance (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1160.6" y="449" width="1.4" height="15.0" fill="rgb(247,223,23)" rx="2" ry="2" onmouseover="s('G4HadProjectile::GetTotalMomentum (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="457.2" y="481" width="1.3" height="15.0" fill="rgb(222,97,15)" rx="2" ry="2" onmouseover="s('CLHEP::HepRandom::getTheEngine (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="820.2" y="305" width="1.4" height="15.0" fill="rgb(230,57,25)" rx="2" ry="2" onmouseover="s('G4ParticleTable::Insert (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="74.1" y="417" width="2.6" height="15.0" fill="rgb(247,83,10)" rx="2" ry="2" onmouseover="s('G4PolyconeSide::PointOnCone (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="271.6" y="385" width="5.4" height="15.0" fill="rgb(247,196,37)" rx="2" ry="2" onmouseover="s('G4QNeutronElasticCrossSection::CalculateCrossSection (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="295.7" y="401" width="10.6" height="15.0" fill="rgb(222,98,17)" rx="2" ry="2" onmouseover="s('G4HadronCrossSections::CalcScatteringCrossSections (8 samples, 0.90%)')" onmouseout="c()" />
+<rect x="820.2" y="49" width="1.4" height="15.0" fill="rgb(221,35,37)" rx="2" ry="2" onmouseover="s(' G4ParticleDefinition*) ) )::_M_insert_ (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="618.7" y="321" width="1.3" height="15.0" fill="rgb(253,206,30)" rx="2" ry="2" onmouseover="s(' G4PionNucSampler)::getMultiplicity (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="932.4" y="433" width="1.3" height="15.0" fill="rgb(221,19,8)" rx="2" ry="2" onmouseover="s('libm.so.2`sincos (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="10.0" y="641" width="1180.0" height="15.0" fill="rgb(249,184,11)" rx="2" ry="2" onmouseover="s('G4UImanager::ApplyCommand (884 samples, 100.00%)')" onmouseout="c()" />
+<text text-anchor="" x="13" y="651.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4UImanager::ApplyCommand (884 samples, 100.00%)')" onmouseout="c()" >G4UImanager::ApplyCommand</text>
+<rect x="912.4" y="401" width="13.3" height="15.0" fill="rgb(229,189,5)" rx="2" ry="2" onmouseover="s('G4QEnvironment::HadronizeQEnvironment (10 samples, 1.13%)')" onmouseout="c()" />
+<rect x="856.3" y="385" width="1.3" height="15.0" fill="rgb(242,222,26)" rx="2" ry="2" onmouseover="s('G4LorentzConvertor::setBullet (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1001.8" y="433" width="2.7" height="15.0" fill="rgb(229,48,5)" rx="2" ry="2" onmouseover="s('G4EnhancedVecAllocator(G4NavigationLevel)::allocate (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="139.5" y="401" width="1.3" height="15.0" fill="rgb(237,57,4)" rx="2" ry="2" onmouseover="s('G4PolyhedraSide::GetPhi (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="533.3" y="433" width="10.6" height="15.0" fill="rgb(209,166,1)" rx="2" ry="2" onmouseover="s('G4CascadeColliderBase::useEPCollider (8 samples, 0.90%)')" onmouseout="c()" />
+<rect x="957.7" y="385" width="1.4" height="15.0" fill="rgb(215,68,14)" rx="2" ry="2" onmouseover="s('G4VLongitudinalStringDecay::FragmentationMass (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="845.6" y="257" width="1.3" height="15.0" fill="rgb(210,184,38)" rx="2" ry="2" onmouseover="s('G4ProcessManager::G4ProcessManager (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="929.7" y="369" width="1.3" height="15.0" fill="rgb(252,71,53)" rx="2" ry="2" onmouseover="s('libc.so.1`t_splay (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="489.2" y="433" width="1.3" height="15.0" fill="rgb(208,196,3)" rx="2" ry="2" onmouseover="s('G4CascadeCheckBalance::collide (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="953.7" y="465" width="1.4" height="15.0" fill="rgb(219,38,34)" rx="2" ry="2" onmouseover="s('G4ParticleChange::AddSecondary (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="867.0" y="241" width="2.6" height="15.0" fill="rgb(241,182,25)" rx="2" ry="2" onmouseover="s('G4ProcessManager::G4ProcessManager (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="156.8" y="433" width="2.7" height="15.0" fill="rgb(224,39,35)" rx="2" ry="2" onmouseover="s('G4MagInt_Driver::ComputeNewStepSize (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="256.9" y="497" width="69.5" height="15.0" fill="rgb(243,67,39)" rx="2" ry="2" onmouseover="s('G4VDiscreteProcess::PostStepGetPhysicalInteractionLength (52 samples, 5.88%)')" onmouseout="c()" />
+<text text-anchor="" x="259.945701357466" y="507.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4VDiscreteProcess::PostStepGetPhysicalInteractionLength (52 samples, 5.88%)')" onmouseout="c()" >G4VDiscr..</text>
+<rect x="622.7" y="353" width="1.3" height="15.0" fill="rgb(232,105,5)" rx="2" ry="2" onmouseover="s('G4ElementaryParticleCollider::generateOutgoingPartTypes (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="533.3" y="417" width="10.6" height="15.0" fill="rgb(232,11,30)" rx="2" ry="2" onmouseover="s('libstdc (8 samples, 0.90%)')" onmouseout="c()" />
+<rect x="574.6" y="353" width="1.4" height="15.0" fill="rgb(248,146,13)" rx="2" ry="2" onmouseover="s('G4CollisionOutput::addOutgoingNuclei (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="869.6" y="225" width="1.4" height="15.0" fill="rgb(222,197,40)" rx="2" ry="2" onmouseover="s('G4GenericIon::Definition (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1084.5" y="433" width="1.4" height="15.0" fill="rgb(245,66,41)" rx="2" ry="2" onmouseover="s('G4PhysicsVector::Value (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="694.8" y="337" width="1.3" height="15.0" fill="rgb(222,117,13)" rx="2" ry="2" onmouseover="s('G4InuclSpecialFunctions::randomCOS_SIN (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="753.5" y="353" width="4.0" height="15.0" fill="rgb(239,28,53)" rx="2" ry="2" onmouseover="s('libc.so.1`malloc (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="613.3" y="321" width="1.4" height="15.0" fill="rgb(245,63,34)" rx="2" ry="2" onmouseover="s('libc.so.1`memcpy (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="957.7" y="417" width="1.4" height="15.0" fill="rgb(240,3,53)" rx="2" ry="2" onmouseover="s('G4QGSMFragmentation::FragmentString (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="585.3" y="353" width="2.7" height="15.0" fill="rgb(242,95,1)" rx="2" ry="2" onmouseover="s('G4NucleiProperties::GetNuclearMass (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1158.0" y="433" width="1.3" height="15.0" fill="rgb(207,0,14)" rx="2" ry="2" onmouseover="s('G4QProtonElasticCrossSection::GetCrossSection (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="697.4" y="337" width="1.4" height="15.0" fill="rgb(235,92,2)" rx="2" ry="2" onmouseover="s(' G4PionNucSampler)::getCrossSection (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="997.8" y="465" width="6.7" height="15.0" fill="rgb(206,20,5)" rx="2" ry="2" onmouseover="s('G4TouchableHistory::G4TouchableHistory (5 samples, 0.57%)')" onmouseout="c()" />
+<rect x="920.4" y="321" width="1.3" height="15.0" fill="rgb(252,156,37)" rx="2" ry="2" onmouseover="s('G4QHadron::G4QHadron (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="222.2" y="401" width="10.7" height="15.0" fill="rgb(208,35,52)" rx="2" ry="2" onmouseover="s('G4Navigator::GetLocalExitNormalAndCheck (8 samples, 0.90%)')" onmouseout="c()" />
+<rect x="24.7" y="497" width="2.7" height="15.0" fill="rgb(248,57,3)" rx="2" ry="2" onmouseover="s('G4Navigator::LocateGlobalPointAndSetup (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="531.9" y="417" width="1.4" height="15.0" fill="rgb(236,124,30)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="638.7" y="321" width="1.3" height="15.0" fill="rgb(222,209,38)" rx="2" ry="2" onmouseover="s('G4InuclElementaryParticle::makeDefinition (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1182.0" y="481" width="1.3" height="15.0" fill="rgb(215,220,15)" rx="2" ry="2" onmouseover="s('G4NavigationHistory::~G4NavigationHistory (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1159.3" y="449" width="1.3" height="15.0" fill="rgb(218,129,5)" rx="2" ry="2" onmouseover="s('G4ElasticHadrNucleusHE::SampleInvariantT (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1136.6" y="401" width="2.7" height="15.0" fill="rgb(207,172,41)" rx="2" ry="2" onmouseover="s('G4QNeutronElasticCrossSection::GetPTables (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="820.2" y="337" width="1.4" height="15.0" fill="rgb(217,4,21)" rx="2" ry="2" onmouseover="s('G4Ions::G4Ions (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="646.7" y="337" width="2.7" height="15.0" fill="rgb(218,169,37)" rx="2" ry="2" onmouseover="s(' std::allocator(G4InuclElementaryParticle) )::_M_fill_insert (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="526.6" y="417" width="1.3" height="15.0" fill="rgb(222,116,48)" rx="2" ry="2" onmouseover="s('G4CascadeChannelTables::FindTable (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1167.3" y="449" width="1.3" height="15.0" fill="rgb(239,117,54)" rx="2" ry="2" onmouseover="s('G4QNeutronElasticCrossSection::GetCrossSection (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="505.2" y="385" width="1.4" height="15.0" fill="rgb(223,98,9)" rx="2" ry="2" onmouseover="s('G4ParticleTable::GetIon (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="818.9" y="145" width="1.3" height="15.0" fill="rgb(205,168,45)" rx="2" ry="2" onmouseover="s('libc.so.1`_malloc_unlocked (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="54.0" y="449" width="8.1" height="15.0" fill="rgb(218,56,4)" rx="2" ry="2" onmouseover="s('G4Cons::DistanceToOut (6 samples, 0.68%)')" onmouseout="c()" />
+<rect x="637.4" y="353" width="4.0" height="15.0" fill="rgb(238,199,44)" rx="2" ry="2" onmouseover="s('G4InuclElementaryParticle::fill (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="227.6" y="369" width="1.3" height="15.0" fill="rgb(214,7,29)" rx="2" ry="2" onmouseover="s('G4Cons::Inside (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="112.8" y="417" width="1.3" height="15.0" fill="rgb(227,208,7)" rx="2" ry="2" onmouseover="s('G4PolyconeSide::Intersect (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="10.0" y="609" width="1180.0" height="15.0" fill="rgb(241,149,38)" rx="2" ry="2" onmouseover="s('G4RunMessenger::SetNewValue (884 samples, 100.00%)')" onmouseout="c()" />
+<text text-anchor="" x="13" y="619.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4RunMessenger::SetNewValue (884 samples, 100.00%)')" onmouseout="c()" >G4RunMessenger::SetNewValue</text>
+<rect x="442.5" y="417" width="1.3" height="15.0" fill="rgb(230,29,34)" rx="2" ry="2" onmouseover="s('G4QNucleus::operator= (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="250.3" y="497" width="6.6" height="15.0" fill="rgb(224,46,32)" rx="2" ry="2" onmouseover="s('G4UrbanMscModel95::ComputeGeomPathLength (5 samples, 0.57%)')" onmouseout="c()" />
+<rect x="1064.5" y="449" width="1.4" height="15.0" fill="rgb(232,156,25)" rx="2" ry="2" onmouseover="s('G4Physics2DVector::ComputeValue (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="956.4" y="289" width="1.3" height="15.0" fill="rgb(251,13,13)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="666.7" y="353" width="1.4" height="15.0" fill="rgb(249,67,8)" rx="2" ry="2" onmouseover="s(' std::vector(G4InuclElementaryParticle (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="981.8" y="449" width="14.6" height="15.0" fill="rgb(213,65,31)" rx="2" ry="2" onmouseover="s('G4VoxelNavigation::LevelLocate (11 samples, 1.24%)')" onmouseout="c()" />
+<rect x="701.4" y="353" width="1.4" height="15.0" fill="rgb(250,45,34)" rx="2" ry="2" onmouseover="s('G4CascadeFunctions(G4CascadePiZeroPChannelData (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="652.1" y="369" width="1.3" height="15.0" fill="rgb(225,24,6)" rx="2" ry="2" onmouseover="s('G4InteractionCase::set (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="10.0" y="769" width="1180.0" height="15.0" fill="rgb(231,135,47)" rx="2" ry="2" onmouseover="s('_start (884 samples, 100.00%)')" onmouseout="c()" />
+<text text-anchor="" x="13" y="779.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('_start (884 samples, 100.00%)')" onmouseout="c()" >_start</text>
+<rect x="256.9" y="481" width="65.5" height="15.0" fill="rgb(210,212,32)" rx="2" ry="2" onmouseover="s('G4HadronicProcess::GetMeanFreePath (49 samples, 5.54%)')" onmouseout="c()" />
+<text text-anchor="" x="259.945701357466" y="491.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4HadronicProcess::GetMeanFreePath (49 samples, 5.54%)')" onmouseout="c()" >G4Hadro..</text>
+<rect x="110.1" y="449" width="1.3" height="15.0" fill="rgb(227,142,17)" rx="2" ry="2" onmouseover="s('G4PolyhedraSide::Intersect (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="537.3" y="385" width="4.0" height="15.0" fill="rgb(215,193,4)" rx="2" ry="2" onmouseover="s('libc.so.1`strcmp (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="871.0" y="225" width="2.6" height="15.0" fill="rgb(244,26,19)" rx="2" ry="2" onmouseover="s('libc.so.1`_ndoprnt (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="10.0" y="577" width="1180.0" height="15.0" fill="rgb(213,195,2)" rx="2" ry="2" onmouseover="s('G4RunManager::DoEventLoop (884 samples, 100.00%)')" onmouseout="c()" />
+<text text-anchor="" x="13" y="587.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4RunManager::DoEventLoop (884 samples, 100.00%)')" onmouseout="c()" >G4RunManager::DoEventLoop</text>
+<rect x="702.8" y="337" width="2.7" height="15.0" fill="rgb(240,167,34)" rx="2" ry="2" onmouseover="s(' std::vector(std::pair(G4InuclElementaryParticle (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="992.4" y="433" width="2.7" height="15.0" fill="rgb(234,173,33)" rx="2" ry="2" onmouseover="s('G4VCSGfaceted::Inside (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="881.7" y="433" width="2.6" height="15.0" fill="rgb(208,192,0)" rx="2" ry="2" onmouseover="s('G4InuclParticle::G4InuclParticle (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="469.2" y="449" width="1.3" height="15.0" fill="rgb(228,156,45)" rx="2" ry="2" onmouseover="s('G4PhaseSpaceDecayChannel::ThreeBodyDecayIt (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="82.1" y="465" width="5.3" height="15.0" fill="rgb(209,228,36)" rx="2" ry="2" onmouseover="s('G4Tubs::SurfaceNormal (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="976.4" y="449" width="1.4" height="15.0" fill="rgb(248,99,27)" rx="2" ry="2" onmouseover="s('G4SubtractionSolid::Inside (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="258.3" y="449" width="49.4" height="15.0" fill="rgb(207,136,39)" rx="2" ry="2" onmouseover="s('G4CrossSectionDataStore::GetCrossSection (37 samples, 4.19%)')" onmouseout="c()" />
+<rect x="447.8" y="401" width="1.4" height="15.0" fill="rgb(235,2,35)" rx="2" ry="2" onmouseover="s('G4QContent::G4QContent (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="919.0" y="353" width="1.4" height="15.0" fill="rgb(217,186,12)" rx="2" ry="2" onmouseover="s('G4QHadron::RelDecayIn2 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="390.4" y="497" width="36.1" height="15.0" fill="rgb(225,100,38)" rx="2" ry="2" onmouseover="s('G4VEnergyLossProcess::AlongStepDoIt (27 samples, 3.05%)')" onmouseout="c()" />
+<rect x="79.4" y="465" width="1.3" height="15.0" fill="rgb(251,111,10)" rx="2" ry="2" onmouseover="s('G4Trap::DistanceToIn (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1187.3" y="465" width="2.7" height="15.0" fill="rgb(254,31,18)" rx="2" ry="2" onmouseover="s('libc.so.1`fwrite (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="809.6" y="289" width="1.3" height="15.0" fill="rgb(242,139,44)" rx="2" ry="2" onmouseover="s('G4UIparameter::TypeCheck (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="207.6" y="449" width="12.0" height="15.0" fill="rgb(234,55,14)" rx="2" ry="2" onmouseover="s('G4ChordFinder::ApproxCurvePointV (9 samples, 1.02%)')" onmouseout="c()" />
+<rect x="22.0" y="513" width="1.3" height="15.0" fill="rgb(215,44,48)" rx="2" ry="2" onmouseover="s('G4Transportation::StartTracking (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="602.7" y="385" width="65.4" height="15.0" fill="rgb(232,223,20)" rx="2" ry="2" onmouseover="s('G4ElementaryParticleCollider::collide (49 samples, 5.54%)')" onmouseout="c()" />
+<text text-anchor="" x="605.669683257919" y="395.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4ElementaryParticleCollider::collide (49 samples, 5.54%)')" onmouseout="c()" >G4Eleme..</text>
+<rect x="901.7" y="449" width="1.3" height="15.0" fill="rgb(248,129,47)" rx="2" ry="2" onmouseover="s('G4LorentzConvertor::getKinEnergyInTheTRS (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1170.0" y="449" width="1.3" height="15.0" fill="rgb(219,199,14)" rx="2" ry="2" onmouseover="s('libm.so.2`exp (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="845.6" y="385" width="4.0" height="15.0" fill="rgb(252,67,50)" rx="2" ry="2" onmouseover="s('G4InuclNuclei::makeDefinition (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="995.1" y="433" width="1.3" height="15.0" fill="rgb(211,208,29)" rx="2" ry="2" onmouseover="s('HepGeom::operator* (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="116.8" y="417" width="1.3" height="15.0" fill="rgb(209,130,44)" rx="2" ry="2" onmouseover="s('G4VCSGfaceted::DistanceToOut (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1079.2" y="449" width="1.3" height="15.0" fill="rgb(237,196,54)" rx="2" ry="2" onmouseover="s('0x8327688 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="956.4" y="337" width="1.3" height="15.0" fill="rgb(205,173,38)" rx="2" ry="2" onmouseover="s('G4NuclearLevelManager::G4NuclearLevelManager (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="810.9" y="273" width="4.0" height="15.0" fill="rgb(234,34,15)" rx="2" ry="2" onmouseover="s('G4VUserPhysicsList::AddProcessManager (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="443.8" y="417" width="9.4" height="15.0" fill="rgb(230,144,47)" rx="2" ry="2" onmouseover="s('G4Quasmon::HadronizeQuasmon (7 samples, 0.79%)')" onmouseout="c()" />
+<rect x="175.5" y="433" width="5.4" height="15.0" fill="rgb(248,110,48)" rx="2" ry="2" onmouseover="s('G4MagInt_Driver::OneGoodStep (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="586.7" y="321" width="1.3" height="15.0" fill="rgb(236,100,31)" rx="2" ry="2" onmouseover="s('G4NucleiPropertiesTableAME03::GetIndex (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="605.3" y="353" width="2.7" height="15.0" fill="rgb(250,47,53)" rx="2" ry="2" onmouseover="s('std::vector(G4InuclElementaryParticle (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="705.5" y="385" width="2.6" height="15.0" fill="rgb(219,135,8)" rx="2" ry="2" onmouseover="s('G4NucleiModel::passFermi (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="624.0" y="353" width="1.4" height="15.0" fill="rgb(224,125,50)" rx="2" ry="2" onmouseover="s('G4ElementaryParticleCollider::particleSCMmomentumFor2to3 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="451.8" y="353" width="1.4" height="15.0" fill="rgb(248,74,8)" rx="2" ry="2" onmouseover="s('G4QPDGCode::GetQuarkContent (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="637.4" y="337" width="1.3" height="15.0" fill="rgb(218,62,16)" rx="2" ry="2" onmouseover="s('G4DynamicParticle::SetDefinition (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="220.9" y="449" width="12.0" height="15.0" fill="rgb(238,226,14)" rx="2" ry="2" onmouseover="s('G4VIntersectionLocator::GetSurfaceNormal (9 samples, 1.02%)')" onmouseout="c()" />
+<rect x="576.0" y="337" width="1.3" height="15.0" fill="rgb(247,213,12)" rx="2" ry="2" onmouseover="s(' std::allocator(G4InuclNuclei) )::_M_range_insert(__gnu_cxx::__normal_iterator(G4InuclNuclei const* (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="879.0" y="369" width="1.3" height="15.0" fill="rgb(243,128,37)" rx="2" ry="2" onmouseover="s('G4ParticleTable::GetParticleTable (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="517.2" y="433" width="1.4" height="15.0" fill="rgb(228,86,9)" rx="2" ry="2" onmouseover="s('G4InuclParticle::setMomentum (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="605.3" y="337" width="2.7" height="15.0" fill="rgb(234,63,20)" rx="2" ry="2" onmouseover="s(' std::allocator(G4InuclElementaryParticle) )::_M_range_insert(__gnu_cxx::__normal_iterator(G4InuclElementaryParticle const* (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="216.9" y="417" width="1.3" height="15.0" fill="rgb(212,140,0)" rx="2" ry="2" onmouseover="s('G4MagInt_Driver::ComputeNewStepSize (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="658.7" y="353" width="1.4" height="15.0" fill="rgb(210,44,9)" rx="2" ry="2" onmouseover="s('CLHEP::HepLorentzVector::boostVector (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1093.9" y="481" width="86.8" height="15.0" fill="rgb(235,10,31)" rx="2" ry="2" onmouseover="s('G4WHadronElasticProcess::PostStepDoIt (65 samples, 7.35%)')" onmouseout="c()" />
+<text text-anchor="" x="1096.89140271493" y="491.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4WHadronElasticProcess::PostStepDoIt (65 samples, 7.35%)')" onmouseout="c()" >G4WHadronE..</text>
+<rect x="454.5" y="465" width="1.3" height="15.0" fill="rgb(235,31,15)" rx="2" ry="2" onmouseover="s('G4VParticleChange::CheckSecondary (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="451.8" y="385" width="1.4" height="15.0" fill="rgb(234,86,10)" rx="2" ry="2" onmouseover="s('G4QCandidate::G4QCandidate (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="652.1" y="353" width="1.3" height="15.0" fill="rgb(241,194,12)" rx="2" ry="2" onmouseover="s('G4InuclElementaryParticle::type (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="156.8" y="417" width="2.7" height="15.0" fill="rgb(229,203,38)" rx="2" ry="2" onmouseover="s('libm.so.2`pow (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="758.8" y="417" width="9.4" height="15.0" fill="rgb(235,91,16)" rx="2" ry="2" onmouseover="s('G4IntraNucleiCascader::setupCascade (7 samples, 0.79%)')" onmouseout="c()" />
+<rect x="722.8" y="369" width="2.7" height="15.0" fill="rgb(217,101,20)" rx="2" ry="2" onmouseover="s('G4InuclSpecialFunctions::bindingEnergy (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="750.8" y="337" width="2.7" height="15.0" fill="rgb(224,102,47)" rx="2" ry="2" onmouseover="s('libc.so.1`_free_unlocked (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="151.5" y="465" width="1.3" height="15.0" fill="rgb(243,4,42)" rx="2" ry="2" onmouseover="s('libm.so.2`atan2 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="490.5" y="449" width="5.4" height="15.0" fill="rgb(224,100,43)" rx="2" ry="2" onmouseover="s('G4CascadeInterface::copyOutputToHadronicResult (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="527.9" y="417" width="1.4" height="15.0" fill="rgb(244,93,40)" rx="2" ry="2" onmouseover="s('G4CascadeColliderBase::useEPCollider (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1004.5" y="481" width="37.3" height="15.0" fill="rgb(210,35,43)" rx="2" ry="2" onmouseover="s('G4VEmProcess::PostStepDoIt (28 samples, 3.17%)')" onmouseout="c()" />
+<rect x="431.8" y="513" width="26.7" height="15.0" fill="rgb(241,206,13)" rx="2" ry="2" onmouseover="s('G4SteppingManager::InvokeAtRestDoItProcs (20 samples, 2.26%)')" onmouseout="c()" />
+<rect x="1155.3" y="401" width="1.3" height="15.0" fill="rgb(220,32,48)" rx="2" ry="2" onmouseover="s('libm.so.2`pow (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="955.1" y="241" width="1.3" height="15.0" fill="rgb(253,190,9)" rx="2" ry="2" onmouseover="s('libc.so.1`open64 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="211.6" y="433" width="8.0" height="15.0" fill="rgb(254,99,11)" rx="2" ry="2" onmouseover="s('G4MagInt_Driver::AccurateAdvance (6 samples, 0.68%)')" onmouseout="c()" />
+<rect x="622.7" y="337" width="1.3" height="15.0" fill="rgb(214,133,53)" rx="2" ry="2" onmouseover="s('G4CascadeChannelTables::GetTable (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1187.3" y="545" width="2.7" height="15.0" fill="rgb(208,100,17)" rx="2" ry="2" onmouseover="s('MyEventAction::EndOfEventAction (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="865.6" y="369" width="13.4" height="15.0" fill="rgb(218,47,44)" rx="2" ry="2" onmouseover="s('G4InuclNuclei::makeDefinition (10 samples, 1.13%)')" onmouseout="c()" />
+<rect x="600.0" y="385" width="2.7" height="15.0" fill="rgb(206,152,43)" rx="2" ry="2" onmouseover="s('G4CascadParticle::propagateAlongThePath (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="162.2" y="417" width="6.6" height="15.0" fill="rgb(234,115,4)" rx="2" ry="2" onmouseover="s('G4MagErrorStepper::Stepper (5 samples, 0.57%)')" onmouseout="c()" />
+<rect x="698.8" y="353" width="1.3" height="15.0" fill="rgb(216,112,25)" rx="2" ry="2" onmouseover="s('G4CascadeFunctions(G4CascadePPChannelData (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="844.3" y="385" width="1.3" height="15.0" fill="rgb(207,91,33)" rx="2" ry="2" onmouseover="s('G4CascadeColliderBase::validateOutput (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="147.5" y="449" width="1.3" height="15.0" fill="rgb(211,147,33)" rx="2" ry="2" onmouseover="s('G4VoxelNavigation::ComputeVoxelSafety (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="278.3" y="401" width="1.3" height="15.0" fill="rgb(216,192,6)" rx="2" ry="2" onmouseover="s('G4QProtonElasticCrossSection::GetCrossSection (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="708.1" y="337" width="2.7" height="15.0" fill="rgb(213,51,54)" rx="2" ry="2" onmouseover="s(' G4ParticleLargerBeta) (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1072.5" y="449" width="1.4" height="15.0" fill="rgb(242,173,15)" rx="2" ry="2" onmouseover="s('G4UrbanMscModel90::LatCorrelation (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="929.7" y="433" width="1.3" height="15.0" fill="rgb(253,134,8)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="232.9" y="449" width="1.4" height="15.0" fill="rgb(236,226,52)" rx="2" ry="2" onmouseover="s('CLHEP::Hep3Vector::operator*= (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="956.4" y="321" width="1.3" height="15.0" fill="rgb(239,129,37)" rx="2" ry="2" onmouseover="s('G4NuclearLevelManager::MakeLevels (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1182.0" y="449" width="1.3" height="15.0" fill="rgb(220,14,45)" rx="2" ry="2" onmouseover="s(' G4EnhancedVecAllocator(G4NavigationLevel) ) (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="957.7" y="353" width="1.4" height="15.0" fill="rgb(245,152,48)" rx="2" ry="2" onmouseover="s('libc.so.1`strlen (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="955.1" y="449" width="2.6" height="15.0" fill="rgb(246,102,44)" rx="2" ry="2" onmouseover="s('G4GeneratorPrecompoundInterface::Propagate (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="48.7" y="449" width="5.3" height="15.0" fill="rgb(217,110,52)" rx="2" ry="2" onmouseover="s('G4Box::DistanceToOut (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="617.4" y="321" width="1.3" height="15.0" fill="rgb(228,11,38)" rx="2" ry="2" onmouseover="s('G4CascadeSampler(31 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="581.3" y="369" width="1.3" height="15.0" fill="rgb(248,9,7)" rx="2" ry="2" onmouseover="s('G4CollisionOutput::getTotalOutputMomentum (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="585.3" y="337" width="1.4" height="15.0" fill="rgb(234,133,4)" rx="2" ry="2" onmouseover="s('G4NucleiPropertiesTableAME03::GetAtomicMass (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="616.0" y="305" width="1.4" height="15.0" fill="rgb(239,117,54)" rx="2" ry="2" onmouseover="s(' std::allocator(int) )::_M_range_insert(int const*) (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="776.2" y="417" width="86.8" height="15.0" fill="rgb(251,60,15)" rx="2" ry="2" onmouseover="s('G4CascadeDeexcitation::collide (65 samples, 7.35%)')" onmouseout="c()" />
+<text text-anchor="" x="779.199095022624" y="427.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4CascadeDeexcitation::collide (65 samples, 7.35%)')" onmouseout="c()" >G4CascadeD..</text>
+<rect x="72.7" y="449" width="4.0" height="15.0" fill="rgb(233,36,15)" rx="2" ry="2" onmouseover="s('G4VCSGfaceted::DistanceToOut (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="1019.1" y="417" width="8.0" height="15.0" fill="rgb(221,28,45)" rx="2" ry="2" onmouseover="s('G4BetheHeitlerModel::ComputeCrossSectionPerAtom (6 samples, 0.68%)')" onmouseout="c()" />
+<rect x="453.2" y="481" width="1.3" height="15.0" fill="rgb(209,217,35)" rx="2" ry="2" onmouseover="s('G4QEnvironment::G4QEnvironment (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="87.4" y="449" width="1.4" height="15.0" fill="rgb(216,6,45)" rx="2" ry="2" onmouseover="s('G4PolyPhiFace::InsideEdges (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="32.7" y="513" width="348.4" height="15.0" fill="rgb(254,101,31)" rx="2" ry="2" onmouseover="s('G4SteppingManager::DefinePhysicalStepLength (261 samples, 29.52%)')" onmouseout="c()" />
+<text text-anchor="" x="35.6923076923077" y="523.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4SteppingManager::DefinePhysicalStepLength (261 samples, 29.52%)')" onmouseout="c()" >G4SteppingManager::DefinePhysicalStepLeng..</text>
+<rect x="620.0" y="289" width="1.4" height="15.0" fill="rgb(211,84,3)" rx="2" ry="2" onmouseover="s(' 8)::findMultiplicity (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="617.4" y="305" width="1.3" height="15.0" fill="rgb(247,12,33)" rx="2" ry="2" onmouseover="s(' 6)::findFinalStateIndex (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="366.4" y="481" width="14.7" height="15.0" fill="rgb(226,35,40)" rx="2" ry="2" onmouseover="s('G4UrbanMscModel95::ComputeTruePathLengthLimit (11 samples, 1.24%)')" onmouseout="c()" />
+<rect x="911.0" y="433" width="14.7" height="15.0" fill="rgb(233,66,24)" rx="2" ry="2" onmouseover="s('G4QEnvironment::Fragment (11 samples, 1.24%)')" onmouseout="c()" />
+<rect x="365.1" y="449" width="1.3" height="15.0" fill="rgb(242,214,37)" rx="2" ry="2" onmouseover="s('G4UrbanMscModel90::ComputeCrossSectionPerAtom (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="820.2" y="81" width="1.4" height="15.0" fill="rgb(235,39,12)" rx="2" ry="2" onmouseover="s(' std::less(int) (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="550.6" y="417" width="1.3" height="15.0" fill="rgb(247,81,29)" rx="2" ry="2" onmouseover="s('G4IntraNucleiCascader::finalize (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="865.6" y="321" width="5.4" height="15.0" fill="rgb(217,114,25)" rx="2" ry="2" onmouseover="s('G4IonTable::AddProcessManager (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="834.9" y="401" width="2.7" height="15.0" fill="rgb(219,191,7)" rx="2" ry="2" onmouseover="s('G4InuclSpecialFunctions::csNN (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="720.1" y="401" width="37.4" height="15.0" fill="rgb(217,20,4)" rx="2" ry="2" onmouseover="s('G4NucleiModel::generateModel (28 samples, 3.17%)')" onmouseout="c()" />
+<rect x="868.3" y="225" width="1.3" height="15.0" fill="rgb(214,55,21)" rx="2" ry="2" onmouseover="s('std::vector(G4VProcess* (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1051.2" y="449" width="1.3" height="15.0" fill="rgb(247,71,39)" rx="2" ry="2" onmouseover="s('libm.so.2`cexp (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="865.6" y="353" width="13.4" height="15.0" fill="rgb(214,207,32)" rx="2" ry="2" onmouseover="s('G4ParticleTable::GetIon (10 samples, 1.13%)')" onmouseout="c()" />
+<rect x="574.6" y="305" width="1.4" height="15.0" fill="rgb(234,70,29)" rx="2" ry="2" onmouseover="s(' std::vector(G4InuclNuclei (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="315.7" y="433" width="2.6" height="15.0" fill="rgb(207,103,51)" rx="2" ry="2" onmouseover="s('G4NeutronInelasticCrossSection::GetCrossSection (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1187.3" y="497" width="2.7" height="15.0" fill="rgb(247,103,33)" rx="2" ry="2" onmouseover="s('libstdc (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1182.0" y="513" width="1.3" height="15.0" fill="rgb(232,227,19)" rx="2" ry="2" onmouseover="s('G4TouchableHistory::~G4TouchableHistory (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="865.6" y="289" width="5.4" height="15.0" fill="rgb(251,4,17)" rx="2" ry="2" onmouseover="s('G4UIcommand::DoIt (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="180.9" y="417" width="1.3" height="15.0" fill="rgb(249,197,4)" rx="2" ry="2" onmouseover="s('G4Mag_UsualEqRhs::EvaluateRhsGivenB (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="617.4" y="353" width="1.3" height="15.0" fill="rgb(224,195,11)" rx="2" ry="2" onmouseover="s('G4CascadeFunctions(G4CascadeSigmaPlusNChannelData (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="702.8" y="305" width="2.7" height="15.0" fill="rgb(226,215,9)" rx="2" ry="2" onmouseover="s(' std::allocator(std::pair(G4InuclElementaryParticle (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1031.2" y="449" width="1.3" height="15.0" fill="rgb(210,97,18)" rx="2" ry="2" onmouseover="s('CLHEP::Hep3Vector::rotateUz (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="955.1" y="369" width="1.3" height="15.0" fill="rgb(246,39,38)" rx="2" ry="2" onmouseover="s('G4ContinuumGammaDeexcitation::CreateTransition (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="664.1" y="273" width="1.3" height="15.0" fill="rgb(212,228,45)" rx="2" ry="2" onmouseover="s('G4DynamicParticle::operator= (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="770.9" y="433" width="1.3" height="15.0" fill="rgb(214,127,40)" rx="2" ry="2" onmouseover="s('G4IntraNucleiCascader::newCascade (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="256.9" y="465" width="62.8" height="15.0" fill="rgb(208,121,31)" rx="2" ry="2" onmouseover="s('G4CrossSectionDataStore::GetCrossSection (47 samples, 5.32%)')" onmouseout="c()" />
+<text text-anchor="" x="259.945701357466" y="475.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4CrossSectionDataStore::GetCrossSection (47 samples, 5.32%)')" onmouseout="c()" >G4Cross..</text>
+<rect x="256.9" y="433" width="1.4" height="15.0" fill="rgb(250,106,48)" rx="2" ry="2" onmouseover="s('G4UPiNuclearCrossSection::GetElasticCrossSection (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="232.9" y="465" width="16.0" height="15.0" fill="rgb(222,192,38)" rx="2" ry="2" onmouseover="s('G4Navigator::ComputeStep (12 samples, 1.36%)')" onmouseout="c()" />
+<rect x="244.9" y="433" width="1.4" height="15.0" fill="rgb(241,95,52)" rx="2" ry="2" onmouseover="s('G4Tubs::DistanceToOut (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1171.3" y="465" width="6.7" height="15.0" fill="rgb(223,111,9)" rx="2" ry="2" onmouseover="s('G4ParticleChange::AddSecondary (5 samples, 0.57%)')" onmouseout="c()" />
+<rect x="999.1" y="449" width="1.4" height="15.0" fill="rgb(217,221,14)" rx="2" ry="2" onmouseover="s('G4EnhancedVecAllocator(G4NavigationLevel)::allocate (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="10.0" y="689" width="1180.0" height="15.0" fill="rgb(225,14,36)" rx="2" ry="2" onmouseover="s('G4UImanager::ExecuteMacroFile (884 samples, 100.00%)')" onmouseout="c()" />
+<text text-anchor="" x="13" y="699.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4UImanager::ExecuteMacroFile (884 samples, 100.00%)')" onmouseout="c()" >G4UImanager::ExecuteMacroFile</text>
+<rect x="275.6" y="337" width="1.4" height="15.0" fill="rgb(251,17,47)" rx="2" ry="2" onmouseover="s('G4QPDGCode::ConvertPDGToZNS (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="155.5" y="449" width="13.3" height="15.0" fill="rgb(239,75,13)" rx="2" ry="2" onmouseover="s('G4ChordFinder::FindNextChord (10 samples, 1.13%)')" onmouseout="c()" />
+<rect x="326.4" y="497" width="5.3" height="15.0" fill="rgb(211,62,32)" rx="2" ry="2" onmouseover="s('G4VEmProcess::PostStepGetPhysicalInteractionLength (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="806.9" y="385" width="2.7" height="15.0" fill="rgb(226,226,51)" rx="2" ry="2" onmouseover="s('G4EquilibriumEvaporator::goodRemnant (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="955.1" y="401" width="1.3" height="15.0" fill="rgb(254,5,11)" rx="2" ry="2" onmouseover="s('G4Evaporation::BreakItUp (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="405.1" y="481" width="5.4" height="15.0" fill="rgb(236,113,6)" rx="2" ry="2" onmouseover="s('G4PhysicsVector::Value (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="1139.3" y="401" width="12.0" height="15.0" fill="rgb(238,211,39)" rx="2" ry="2" onmouseover="s('G4QNeutronElasticCrossSection::GetQ2max (9 samples, 1.02%)')" onmouseout="c()" />
+<rect x="330.4" y="465" width="1.3" height="15.0" fill="rgb(240,170,53)" rx="2" ry="2" onmouseover="s('libm.so.2`log (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="136.8" y="417" width="2.7" height="15.0" fill="rgb(241,124,42)" rx="2" ry="2" onmouseover="s('G4IntersectingCone::LineHitsCone2 (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="437.1" y="449" width="1.4" height="15.0" fill="rgb(250,63,50)" rx="2" ry="2" onmouseover="s('G4IonTable::AddProcessManager (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="549.3" y="417" width="1.3" height="15.0" fill="rgb(229,164,29)" rx="2" ry="2" onmouseover="s('G4CascadeRecoilMaker::makeRecoilFragment (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="40.7" y="481" width="2.7" height="15.0" fill="rgb(208,105,3)" rx="2" ry="2" onmouseover="s('G4Navigator::ComputeSafety (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="710.8" y="385" width="4.0" height="15.0" fill="rgb(231,225,7)" rx="2" ry="2" onmouseover="s('G4NucleiModel::getFermiKinetic (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="1065.9" y="449" width="1.3" height="15.0" fill="rgb(211,135,10)" rx="2" ry="2" onmouseover="s('G4Physics2DVector::FindBinLocation (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="688.1" y="369" width="1.3" height="15.0" fill="rgb(243,30,41)" rx="2" ry="2" onmouseover="s('G4DynamicParticle::G4DynamicParticle (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="855.0" y="369" width="1.3" height="15.0" fill="rgb(232,99,19)" rx="2" ry="2" onmouseover="s('G4CascadeInterpolator(5)::interpolate (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="535.9" y="401" width="8.0" height="15.0" fill="rgb(253,12,23)" rx="2" ry="2" onmouseover="s('libstdc (6 samples, 0.68%)')" onmouseout="c()" />
+<rect x="665.4" y="337" width="1.3" height="15.0" fill="rgb(247,160,23)" rx="2" ry="2" onmouseover="s(' std::allocator(G4InuclElementaryParticle) ) ) (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="782.9" y="337" width="4.0" height="15.0" fill="rgb(208,11,2)" rx="2" ry="2" onmouseover="s(' std::vector(G4InuclNuclei (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="483.9" y="449" width="1.3" height="15.0" fill="rgb(212,84,48)" rx="2" ry="2" onmouseover="s('G4CascadeCheckBalance::energyOkay (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1073.9" y="449" width="2.6" height="15.0" fill="rgb(248,171,29)" rx="2" ry="2" onmouseover="s('G4UrbanMscModel90::SampleCosineTheta (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="868.3" y="193" width="1.3" height="15.0" fill="rgb(233,39,26)" rx="2" ry="2" onmouseover="s('libstdc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="256.9" y="449" width="1.4" height="15.0" fill="rgb(214,120,5)" rx="2" ry="2" onmouseover="s('G4BGGPionElasticXS::GetElementCrossSection (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="666.7" y="369" width="1.4" height="15.0" fill="rgb(211,152,7)" rx="2" ry="2" onmouseover="s('std::__unguarded_linear_insert(__gnu_cxx::__normal_iterator(G4InuclElementaryParticle* (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1048.5" y="465" width="4.0" height="15.0" fill="rgb(226,18,11)" rx="2" ry="2" onmouseover="s('G4MollerBhabhaModel::SampleSecondaries (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="845.6" y="225" width="1.3" height="15.0" fill="rgb(246,65,35)" rx="2" ry="2" onmouseover="s(' std::allocator(G4ProcessAttribute*) )::_M_insert_aux (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="865.6" y="401" width="14.7" height="15.0" fill="rgb(222,8,25)" rx="2" ry="2" onmouseover="s('G4InuclNuclei::copy (11 samples, 1.24%)')" onmouseout="c()" />
+<rect x="896.3" y="401" width="4.0" height="15.0" fill="rgb(238,170,11)" rx="2" ry="2" onmouseover="s('libc.so.1`mutex_unlock (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="1178.0" y="465" width="1.3" height="15.0" fill="rgb(241,199,39)" rx="2" ry="2" onmouseover="s('G4ParticleChange::Initialize (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="875.0" y="321" width="1.3" height="15.0" fill="rgb(205,179,45)" rx="2" ry="2" onmouseover="s('G4Ions::G4Ions (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="955.1" y="273" width="1.3" height="15.0" fill="rgb(224,207,43)" rx="2" ry="2" onmouseover="s('libc.so.1`fopen64 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1184.7" y="513" width="1.3" height="15.0" fill="rgb(247,219,4)" rx="2" ry="2" onmouseover="s('G4VMultipleScattering::AlongStepGetPhysicalInteractionLength (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="923.0" y="353" width="1.4" height="15.0" fill="rgb(230,116,16)" rx="2" ry="2" onmouseover="s('G4Quasmon::FillHadronVector (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="470.5" y="449" width="1.4" height="15.0" fill="rgb(215,32,50)" rx="2" ry="2" onmouseover="s('G4PhaseSpaceDecayChannel::TwoBodyDecayIt (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="467.9" y="465" width="4.0" height="15.0" fill="rgb(234,193,27)" rx="2" ry="2" onmouseover="s('G4PhaseSpaceDecayChannel::DecayIt (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="1143.3" y="385" width="8.0" height="15.0" fill="rgb(241,181,40)" rx="2" ry="2" onmouseover="s('G4QPDGCode::GetMass (6 samples, 0.68%)')" onmouseout="c()" />
+<rect x="871.0" y="273" width="4.0" height="15.0" fill="rgb(228,138,8)" rx="2" ry="2" onmouseover="s('libstdc (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="434.5" y="497" width="1.3" height="15.0" fill="rgb(236,147,44)" rx="2" ry="2" onmouseover="s('G4Decay::AtRestGetPhysicalInteractionLength (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="716.1" y="401" width="2.7" height="15.0" fill="rgb(239,55,30)" rx="2" ry="2" onmouseover="s('std::vector(G4CascadParticle (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="10.0" y="561" width="1180.0" height="15.0" fill="rgb(247,179,53)" rx="2" ry="2" onmouseover="s('G4EventManager::DoProcessing (884 samples, 100.00%)')" onmouseout="c()" />
+<text text-anchor="" x="13" y="571.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4EventManager::DoProcessing (884 samples, 100.00%)')" onmouseout="c()" >G4EventManager::DoProcessing</text>
+<rect x="952.4" y="433" width="1.3" height="15.0" fill="rgb(211,156,10)" rx="2" ry="2" onmouseover="s('G4DynamicParticle::SetMomentum (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1187.3" y="433" width="2.7" height="15.0" fill="rgb(205,155,53)" rx="2" ry="2" onmouseover="s('libc.so.1`_flsbuf (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="115.5" y="433" width="2.6" height="15.0" fill="rgb(232,39,28)" rx="2" ry="2" onmouseover="s('G4SubtractionSolid::DistanceToOut (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="361.1" y="481" width="2.6" height="15.0" fill="rgb(219,112,17)" rx="2" ry="2" onmouseover="s('G4SafetyHelper::ComputeSafety (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="650.7" y="321" width="1.4" height="15.0" fill="rgb(245,59,0)" rx="2" ry="2" onmouseover="s('G4DynamicParticle::G4DynamicParticle (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="636.0" y="337" width="1.4" height="15.0" fill="rgb(211,27,51)" rx="2" ry="2" onmouseover="s('G4ElementaryParticleCollider::sampleCMcosFor2to2 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="977.8" y="449" width="4.0" height="15.0" fill="rgb(225,12,11)" rx="2" ry="2" onmouseover="s('G4VCSGfaceted::Inside (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="929.7" y="385" width="1.3" height="15.0" fill="rgb(234,137,53)" rx="2" ry="2" onmouseover="s('libc.so.1`t_delete (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="729.5" y="337" width="2.6" height="15.0" fill="rgb(240,95,3)" rx="2" ry="2" onmouseover="s('libc.so.1`malloc (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="911.0" y="417" width="14.7" height="15.0" fill="rgb(235,2,17)" rx="2" ry="2" onmouseover="s('G4QEnvironment::FSInteraction (11 samples, 1.24%)')" onmouseout="c()" />
+<rect x="665.4" y="353" width="1.3" height="15.0" fill="rgb(224,135,6)" rx="2" ry="2" onmouseover="s(' std::vector(G4InuclElementaryParticle (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="885.7" y="433" width="1.3" height="15.0" fill="rgb(209,180,47)" rx="2" ry="2" onmouseover="s('G4LorentzConvertor::fillKinematics (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="610.7" y="305" width="1.3" height="15.0" fill="rgb(234,70,7)" rx="2" ry="2" onmouseover="s(' std::allocator(int) )::_M_range_insert(int const*) (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="560.0" y="401" width="2.6" height="15.0" fill="rgb(225,18,12)" rx="2" ry="2" onmouseover="s('G4CascadeRecoilMaker::makeRecoilFragment (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="931.0" y="449" width="1.4" height="15.0" fill="rgb(250,121,32)" rx="2" ry="2" onmouseover="s('G4ParticleTable::GetParticleTable (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="437.1" y="497" width="18.7" height="15.0" fill="rgb(218,220,8)" rx="2" ry="2" onmouseover="s('G4QCaptureAtRest::AtRestDoIt (14 samples, 1.58%)')" onmouseout="c()" />
+<rect x="1072.5" y="481" width="21.4" height="15.0" fill="rgb(243,116,40)" rx="2" ry="2" onmouseover="s('G4VMultipleScattering::PostStepDoIt (16 samples, 1.81%)')" onmouseout="c()" />
+<rect x="1076.5" y="449" width="1.4" height="15.0" fill="rgb(215,76,37)" rx="2" ry="2" onmouseover="s('libm.so.2`log (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="610.7" y="321" width="1.3" height="15.0" fill="rgb(254,26,51)" rx="2" ry="2" onmouseover="s('std::vector(int (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="900.3" y="417" width="1.4" height="15.0" fill="rgb(212,60,54)" rx="2" ry="2" onmouseover="s('libc.so.1`mutex_unlock (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="956.4" y="353" width="1.3" height="15.0" fill="rgb(212,117,33)" rx="2" ry="2" onmouseover="s('G4NuclearLevelStore::GetManager (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="523.9" y="449" width="377.8" height="15.0" fill="rgb(246,65,7)" rx="2" ry="2" onmouseover="s('G4InuclCollider::collide (283 samples, 32.01%)')" onmouseout="c()" />
+<text text-anchor="" x="526.914027149321" y="459.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4InuclCollider::collide (283 samples, 32.01%)')" onmouseout="c()" >G4InuclCollider::collide</text>
+<rect x="330.4" y="481" width="1.3" height="15.0" fill="rgb(208,89,32)" rx="2" ry="2" onmouseover="s('G4eeToTwoGammaModel::CrossSectionPerVolume (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="423.8" y="481" width="1.3" height="15.0" fill="rgb(227,172,51)" rx="2" ry="2" onmouseover="s('libm.so.2`exp (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="830.9" y="385" width="1.4" height="15.0" fill="rgb(233,85,47)" rx="2" ry="2" onmouseover="s('libm.so.2`log (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="112.8" y="433" width="1.3" height="15.0" fill="rgb(220,80,37)" rx="2" ry="2" onmouseover="s('G4SubtractionSolid::DistanceToIn (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="246.3" y="401" width="1.3" height="15.0" fill="rgb(228,112,16)" rx="2" ry="2" onmouseover="s('G4IntersectingCone::LineHitsCone1 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="993.8" y="417" width="1.3" height="15.0" fill="rgb(242,107,3)" rx="2" ry="2" onmouseover="s('G4PolyhedraSide::Inside (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="577.3" y="369" width="2.7" height="15.0" fill="rgb(238,50,37)" rx="2" ry="2" onmouseover="s('G4CollisionOutput::addOutgoingParticles (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="373.1" y="465" width="8.0" height="15.0" fill="rgb(228,79,7)" rx="2" ry="2" onmouseover="s('G4SafetyHelper::ComputeSafety (6 samples, 0.68%)')" onmouseout="c()" />
+<rect x="477.2" y="465" width="427.1" height="15.0" fill="rgb(206,143,25)" rx="2" ry="2" onmouseover="s('G4CascadeInterface::ApplyYourself (320 samples, 36.20%)')" onmouseout="c()" />
+<text text-anchor="" x="480.194570135747" y="475.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4CascadeInterface::ApplyYourself (320 samples, 36.20%)')" onmouseout="c()" >G4CascadeInterface::ApplyYourself</text>
+<rect x="597.3" y="385" width="1.4" height="15.0" fill="rgb(208,182,1)" rx="2" ry="2" onmouseover="s('CLHEP::operator/ (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="640.0" y="337" width="1.4" height="15.0" fill="rgb(231,174,10)" rx="2" ry="2" onmouseover="s('G4InuclParticle::setMomentum (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="929.7" y="401" width="1.3" height="15.0" fill="rgb(207,72,53)" rx="2" ry="2" onmouseover="s('libc.so.1`_malloc_unlocked (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="762.9" y="385" width="2.6" height="15.0" fill="rgb(229,73,40)" rx="2" ry="2" onmouseover="s('G4DynamicParticle::G4DynamicParticle (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="533.3" y="401" width="2.6" height="15.0" fill="rgb(217,183,19)" rx="2" ry="2" onmouseover="s('libc.so.1`strcmp (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1092.6" y="465" width="1.3" height="15.0" fill="rgb(244,77,21)" rx="2" ry="2" onmouseover="s('libm.so.2`cexp (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="871.0" y="257" width="4.0" height="15.0" fill="rgb(242,137,7)" rx="2" ry="2" onmouseover="s('libstdc (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="1176.7" y="433" width="1.3" height="15.0" fill="rgb(252,226,29)" rx="2" ry="2" onmouseover="s('G4VelocityTable::GetMinTOfVelocityTable (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="586.7" y="337" width="1.3" height="15.0" fill="rgb(217,87,11)" rx="2" ry="2" onmouseover="s('G4NucleiPropertiesTableAME03::IsInTable (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1087.2" y="449" width="1.4" height="15.0" fill="rgb(247,110,36)" rx="2" ry="2" onmouseover="s('G4UrbanMscModel95::SampleDisplacement (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="592.0" y="401" width="2.7" height="15.0" fill="rgb(223,150,46)" rx="2" ry="2" onmouseover="s('G4IntraNucleiCascader::processTrappedParticle (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="453.2" y="449" width="1.3" height="15.0" fill="rgb(252,186,36)" rx="2" ry="2" onmouseover="s('G4QContent::GetSPDGCode (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="518.6" y="449" width="4.0" height="15.0" fill="rgb(225,122,21)" rx="2" ry="2" onmouseover="s('G4Fragment::operator= (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="505.2" y="417" width="4.0" height="15.0" fill="rgb(231,37,27)" rx="2" ry="2" onmouseover="s('G4InuclNuclei::fill (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="333.0" y="481" width="1.4" height="15.0" fill="rgb(206,69,38)" rx="2" ry="2" onmouseover="s('G4PhysicsVector::Value (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="702.8" y="209" width="2.7" height="15.0" fill="rgb(254,194,44)" rx="2" ry="2" onmouseover="s(' double) const&amp;)) (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1112.6" y="465" width="58.7" height="15.0" fill="rgb(245,130,19)" rx="2" ry="2" onmouseover="s('G4HadronElastic::ApplyYourself (44 samples, 4.98%)')" onmouseout="c()" />
+<text text-anchor="" x="1115.57918552036" y="475.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4HadronElastic::ApplyYourself (44 samples, 4.98%)')" onmouseout="c()" >G4Hadr..</text>
+<rect x="917.7" y="369" width="8.0" height="15.0" fill="rgb(210,102,31)" rx="2" ry="2" onmouseover="s('G4Quasmon::HadronizeQuasmon (6 samples, 0.68%)')" onmouseout="c()" />
+<rect x="1187.3" y="417" width="2.7" height="15.0" fill="rgb(221,48,16)" rx="2" ry="2" onmouseover="s('libc.so.1`_xflsbuf (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="1091.2" y="465" width="1.4" height="15.0" fill="rgb(251,47,30)" rx="2" ry="2" onmouseover="s('libm.so.2`acos (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="475.9" y="465" width="1.3" height="15.0" fill="rgb(206,79,42)" rx="2" ry="2" onmouseover="s('G4CascadeCheckBalance::energyOkay (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="614.7" y="321" width="1.3" height="15.0" fill="rgb(237,137,42)" rx="2" ry="2" onmouseover="s('libc.so.1`memmove (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1029.8" y="465" width="8.0" height="15.0" fill="rgb(218,26,28)" rx="2" ry="2" onmouseover="s('G4PEEffectFluoModel::SampleSecondaries (6 samples, 0.68%)')" onmouseout="c()" />
+<rect x="465.2" y="433" width="1.3" height="15.0" fill="rgb(238,11,44)" rx="2" ry="2" onmouseover="s('CLHEP::HepLorentzVector::boost (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="481.2" y="449" width="1.3" height="15.0" fill="rgb(229,144,40)" rx="2" ry="2" onmouseover="s('G4CascadeCheckBalance::baryonOkay (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="489.2" y="449" width="1.3" height="15.0" fill="rgb(206,39,20)" rx="2" ry="2" onmouseover="s('G4CascadeInterface::checkFinalResult (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="666.7" y="337" width="1.4" height="15.0" fill="rgb(254,46,54)" rx="2" ry="2" onmouseover="s(' std::allocator(G4InuclElementaryParticle) ) ) (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="588.0" y="353" width="1.3" height="15.0" fill="rgb(236,204,50)" rx="2" ry="2" onmouseover="s('G4NucleiPropertiesTableAME03::GetNuclearMass (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="725.5" y="369" width="4.0" height="15.0" fill="rgb(211,125,44)" rx="2" ry="2" onmouseover="s('G4NucleiModel::fillBindingEnergies (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="828.3" y="385" width="1.3" height="15.0" fill="rgb(207,223,0)" rx="2" ry="2" onmouseover="s('G4NucleiPropertiesTableAME03::GetBindingEnergy (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="865.6" y="417" width="14.7" height="15.0" fill="rgb(221,141,48)" rx="2" ry="2" onmouseover="s('G4InuclNuclei::G4InuclNuclei (11 samples, 1.24%)')" onmouseout="c()" />
+<rect x="482.5" y="449" width="1.4" height="15.0" fill="rgb(241,163,9)" rx="2" ry="2" onmouseover="s('G4CascadeCheckBalance::chargeOkay (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="653.4" y="369" width="5.3" height="15.0" fill="rgb(223,127,5)" rx="2" ry="2" onmouseover="s('G4LorentzConvertor::backToTheLab (4 samples, 0.45%)')" onmouseout="c()" />
+<rect x="708.1" y="369" width="2.7" height="15.0" fill="rgb(223,61,6)" rx="2" ry="2" onmouseover="s(' std::vector(G4InuclElementaryParticle (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="871.0" y="305" width="4.0" height="15.0" fill="rgb(210,201,8)" rx="2" ry="2" onmouseover="s('libstdc (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="738.8" y="337" width="1.4" height="15.0" fill="rgb(216,10,25)" rx="2" ry="2" onmouseover="s('libm.so.2`pow (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="825.6" y="369" width="1.3" height="15.0" fill="rgb(208,65,19)" rx="2" ry="2" onmouseover="s('G4CascadeInterpolator(5)::getBin (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1135.3" y="417" width="21.3" height="15.0" fill="rgb(218,177,13)" rx="2" ry="2" onmouseover="s('G4QNeutronElasticCrossSection::CalculateCrossSection (16 samples, 1.81%)')" onmouseout="c()" />
+<rect x="333.0" y="465" width="1.4" height="15.0" fill="rgb(231,151,13)" rx="2" ry="2" onmouseover="s('libm.so.2`log10 (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="353.1" y="449" width="1.3" height="15.0" fill="rgb(233,45,19)" rx="2" ry="2" onmouseover="s('G4EmCorrections::EffectiveChargeCorrection (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="818.9" y="161" width="1.3" height="15.0" fill="rgb(217,38,23)" rx="2" ry="2" onmouseover="s('libc.so.1`malloc (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="505.2" y="369" width="1.4" height="15.0" fill="rgb(209,34,39)" rx="2" ry="2" onmouseover="s('G4IonTable::FindIon (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="529.3" y="417" width="2.6" height="15.0" fill="rgb(252,122,47)" rx="2" ry="2" onmouseover="s('libm.so.2`log (2 samples, 0.23%)')" onmouseout="c()" />
+<rect x="927.0" y="369" width="1.4" height="15.0" fill="rgb(240,218,34)" rx="2" ry="2" onmouseover="s('G4QPDGCode::G4QPDGCode (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="868.3" y="145" width="1.3" height="15.0" fill="rgb(221,224,51)" rx="2" ry="2" onmouseover="s('libc.so.1`cleanfree (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="1183.3" y="513" width="1.4" height="15.0" fill="rgb(229,105,37)" rx="2" ry="2" onmouseover="s('G4Transportation::PostStepGetPhysicalInteractionLength (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="992.4" y="417" width="1.4" height="15.0" fill="rgb(220,24,28)" rx="2" ry="2" onmouseover="s('G4PolyhedraSide::DistanceToOneSide (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="419.8" y="465" width="4.0" height="15.0" fill="rgb(213,91,42)" rx="2" ry="2" onmouseover="s('CLHEP::RandGaussQ::transformQuick (3 samples, 0.34%)')" onmouseout="c()" />
+<rect x="1129.9" y="449" width="1.4" height="15.0" fill="rgb(242,27,53)" rx="2" ry="2" onmouseover="s('CLHEP::RanluxEngine::flat (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="622.7" y="321" width="1.3" height="15.0" fill="rgb(251,130,43)" rx="2" ry="2" onmouseover="s('G4CascadeChannelTables::FindTable (1 samples, 0.11%)')" onmouseout="c()" />
+<rect x="10.0" y="657" width="1180.0" height="15.0" fill="rgb(208,19,23)" rx="2" ry="2" onmouseover="s('G4UIbatch::ExecCommand (884 samples, 100.00%)')" onmouseout="c()" />
+<text text-anchor="" x="13" y="667.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" onmouseover="s('G4UIbatch::ExecCommand (884 samples, 100.00%)')" onmouseout="c()" >G4UIbatch::ExecCommand</text>
+<rect x="358.4" y="481" width="2.7" height="15.0" fill="rgb(247,100,22)" rx="2" ry="2" onmouseover="s('libm.so.2`log (2 samples, 0.23%)')" onmouseout="c()" />
+</svg>
