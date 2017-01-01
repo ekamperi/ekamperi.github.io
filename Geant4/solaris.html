@@ -986,7 +986,7 @@ asciidoc.install(4);
 <div id="content">
 <div class="paragraph"><p><strong>version:</strong> @@version@@</p></div>
 <div class="sect1">
-<h2 id="_how_to_install_geant4_in_solaris_11">1. HOW TO INSTALL GEANT4 IN SOLARIS 11</h2>
+<h2 id="_how_to_build_geant4_on_solaris_11">1. How to build Geant4 on Solaris 11</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_dependencies">1.1. Dependencies</h3>
@@ -1096,7 +1096,7 @@ source code:</p></div>
 <div class="paragraph"><p>I had to bisect the problem space by inserting <code>#undef CS</code> before and after
 the inclusion of various header files, starting from the <code>Geant4</code> specific and
 going as far as the system header files.</p></div>
-<div class="paragraph"><p><a href="http://leaf.dragonflybsd.org/~beket/geant4/solaris11.diff">This</a> is a transitive
+<div class="paragraph"><p><a href="https://bitbucket.org/ekamperi/geant4/src/master/patches/solaris11.diff">This</a> is a transitive
 patch to workaround the issue. The <code>sol11fix.h</code> must be included <strong>after</strong> the
 inclusion of every other header file (in the problematic .cc files), i.e.,
 be the last header file to be included. Otherwise, the inclusion of some other
@@ -1301,7 +1301,7 @@ C++ symbol demangling enabled
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-12-28 01:35:10 EET
+Last updated 2017-01-01 02:23:42 EET
 </div>
 </div>
 </body>
