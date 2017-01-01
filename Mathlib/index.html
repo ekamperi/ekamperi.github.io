@@ -1264,7 +1264,7 @@ the fact that it allows us direct comparisons with good libm&#8217;s, like Solar
 made us stick to it for the moment.</p></div>
 <div class="paragraph"><p>If you have some exotic hardware, please do me a favor. Run the diagnostics
 and mail me back the results. I have uploaded mine
-<a href="http://netbsd-soc.sourceforge.net/projects/mathlib/ulps.html">here</a>. More to come.</p></div>
+<a href="https://ekamperi.bitbucket.io/Mathlib/ulps.html">here</a>. More to come.</p></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -1286,7 +1286,7 @@ or worked around downstream.</td>
 <h2 id="_performance_measurement">6. Performance measurement</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>We have performance probes for
-<a href="http://gitweb.dragonflybsd.org/~beket/mathlib.git/tree/master:/etc"><code>fenv.h</code></a>
+<a href="https://bitbucket.org/ekamperi/mathlib/src/master/etc/"><code>fenv.h</code></a>
 interface, e.g.</p></div>
 <div class="literalblock">
 <div class="content">
@@ -1303,8 +1303,8 @@ mathlib/etc%</code></pre>
 </div></div>
 <div class="paragraph"><p>Since recently, we are able to measure the performance of <code>math.h</code> and
 <code>complex.h</code> function, <strong>with respect to their input</strong>. Code is
-<a href="http://gitweb.dragonflybsd.org/<sub>beket/mathlib.git/blob/master:/etc/profmath.c">here</a>.
-Graphs are <a href="http://leaf.dragonflybsd.org/</sub>beket/graphs">here</a>. You can generate
+<a href="https://bitbucket.org/ekamperi/mathlib/src/master/etc/profmath.c">here</a>.
+Graphs are <a href="http://leaf.dragonflybsd.org/~beket/graphs">here</a>. You can generate
 your own, if you have <code>gnuplot</code> installed, via:</p></div>
 <div class="literalblock">
 <div class="content">
@@ -1327,10 +1327,10 @@ and protect us from introducing such when we will implement the long double vers
 <div class="sectionbody">
 <div class="paragraph"><p>For every math function, we test it against a small set of good <code>{x, &#8230;, f(x, &#8230;)}</code>
 pairs. These data are generated automatically by a utility, that resides
-<a href="http://gitweb.dragonflybsd.org/<sub>beket/mathlib.git/blob_plain/master:/etc/realgen.c">here</a>.
+<a href="http://gitweb.dragonflybsd.org/~beket/mathlib.git/blob_plain/master:/etc/realgen.c">here</a>.
 It uses the <code>gmp/mpfr</code> libraries. The output is valid C code that can be used
 without any modifications.
-<a href="http://gitweb.dragonflybsd.org/</sub>beket/mathlib.git/blob/master:/math/include/t_acos.h">This is an example</a>.</p></div>
+<a href="https://bitbucket.org/ekamperi/mathlib/src/master/math/include/t_acos.h">This is an example</a>.</p></div>
 </div>
 </div>
 <div class="sect1">
@@ -1572,7 +1572,7 @@ Freenode network at <code>#netbsd-code</code>. My nick is <code>Beket</code>.</p
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2017-01-02 00:14:31 EET
+ 2017-01-02 00:21:03 EET
 </div>
 </div>
 </body>
