@@ -1,1 +1,1333 @@
-This is a test.
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.9" />
+<title>Google Summer of code 2010 | mathlib</title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+.monospaced, code, pre {
+  font-family: "Courier New", Courier, monospace;
+  font-size: inherit;
+  color: navy;
+  padding: 0;
+  margin: 0;
+}
+pre {
+  white-space: pre-wrap;
+}
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #888;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; vertical-align: text-bottom; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel0, div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+div.unbreakable { page-break-inside: avoid; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+
+
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([1-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName.toLowerCase() == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName.toLowerCase() == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install(4);
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>Google Summer of code 2010 | mathlib</h1>
+<span id="author">Stathis Kamperis</span><br />
+<div id="toc">
+  <div id="toctitle">Table of Contents</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="../icons/note.png" alt="Note" />
+</td>
+<td class="content">Portions of stuff mentioned here are WIP. If this page doesn&#8217;t render properly,
+blame <a href="http://www.methods.co.nz/asciidoc/">asciidoc</a>.</td>
+</tr></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_objectives">1. Objectives</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>The goals of the project are to:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Write <em>unit tests</em> for the <code>math.h</code>, <code>fenv.h</code>, <code>complex.h</code> and <code>float.h</code>
+interfaces.
+</p>
+</li>
+<li>
+<p>
+Write tools for <em>automatic code generation</em> (i.e.,
+automatic generation of known to be good <code>{x, &#8230;, f(x, &#8230;)}</code> pairs).
+</p>
+</li>
+<li>
+<p>
+Implement support for <em>floating-point exceptions</em> for common architectures
+(x86, amd64) and for less common (sparc64, m68k).
+</p>
+</li>
+<li>
+<p>
+Implement <em>long double</em> versions of math functions (software emulated for
+now, i.e. not FPU optimized).
+</p>
+</li>
+<li>
+<p>
+Write tools that will allow us <em>observability</em> of the mathlib, such as measuring
+the error in floating-point computations or the speed of the algorithms.
+</p>
+</li>
+<li>
+<p>
+Audit existing code, fix or document where due.
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_manually_run_the_tests">2. Manually run the tests</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>In order to <em>checkout</em> the tests you need <a href="http://git-scm.com">Git</a>:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>git clone git://gitweb.dragonflybsd.org/~beket/mathlib.git</code></pre>
+</div></div>
+<div class="paragraph"><p>There&#8217;s also a <a href="http://gitweb.dragonflybsd.org/~beket/mathlib.git">Gitweb interface</a>
+for checking the code with your browser. From the same place you can download
+<em>tar archives</em> of the entire source tree, if for some reason you can&#8217;t or don&#8217;t want
+to afford git.</p></div>
+<div class="paragraph"><p>Subsequent <em>updates</em> are done with:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>% cd mathlib
+mathlib% git pull</code></pre>
+</div></div>
+<div class="paragraph"><p>In order for the tests to be ran, you need the
+<a href="http://www.netbsd.org/~jmmv/atf">Automated Testing Framework</a>
+which NetBSD ships by default. If you don&#8217;t run NetBSD and you have installed
+ATF by yourself in some non-default prefix, e.g. <code>/usr/local</code>, make sure that
+your <code>PATH</code> environmental variable is properly set. The test suite has been
+rebased on top of <code>ATF 0.12</code>, but older versions may still work.</p></div>
+<div class="paragraph"><p>You also need <code>gmake</code>, <code>autoconf</code> and <code>automake</code>. In order to generate beautiful
+html reports you have to install <code>libxslt</code>. All of these packages, are provided
+by <code>pkgsrc</code>. We are not happy with these dependencies, but they allowed us to be
+portable and effective, in the limited timeframe of the Google Summer of Code event.</p></div>
+<div class="paragraph"><p>To build, run the tests and generate the html report:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>% cd mathlib
+mathlib% make all
+[...]
+mathlib% make run
+[...]
+mathilb% make run-html
+[...]</code></pre>
+</div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="../icons/note.png" alt="Note" />
+</td>
+<td class="content">The math/, complex/ and fenv/ subdirectories have an <code>Atffile</code> in them.
+There you can tweak the <code>iterations</code> parameter. This variable affects the
+stochastic tests inside the suite: the larger the value, the more exhaustive
+the tests and the more time they consume to complete.</td>
+</tr></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_test_run_logs">3. Test run logs</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>We are running irregularly irregular
+<a href="http://leaf.dragonflybsd.org/~beket/logs">automated tests</a> against:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+NetBSD
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+x86, amd64, vax, m68k and sparc64
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+FreeBSD
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+x86, amd64
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Linux
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+x86, amd64
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+OpenSolaris
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+amd64
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Darwin
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+amd64
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+<div class="paragraph"><p>If you have some {OS, platform} combination that is not listed in here, I would
+be grateful if you did:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>~% cd mathlib
+mathlib% make run-html</code></pre>
+</div></div>
+<div class="paragraph"><p>And mailed me back the <code>results.html</code> file.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_unified_diffs">4. Unified diffs</h2>
+<div class="sectionbody">
+<div class="paragraph"><p><a href="http://leaf.dragonflybsd.org/~beket/netbsd/">Here</a> you can find (more or less)
+up to date diffs against NetBSD HEAD.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="../icons/note.png" alt="Note" />
+</td>
+<td class="content">The patches regarding <code>fenv.h</code> support for
+<a href="http://mail-index.netbsd.org/source-changes/2010/07/31/msg012212.html">x86, amd64</a>
+and for <a href="http://mail-index.netbsd.org/source-changes/2011/01/31/msg017905.html">sparc64</a>,
+have been committed to the official NetBSD source repository.
+Some long double versions and general cleanup
+<a href="http://mail-index.netbsd.org/source-changes/2010/09/15/msg013322.html">here</a> and
+<a href="http://mail-index.netbsd.org/source-changes/2010/09/15/msg013321.html">here</a>.
+The remquo{,f}() functions
+<a href="http://mail-index.netbsd.org/source-changes/2011/02/06/msg018140.html">have</a>
+<a href="http://mail-index.netbsd.org/source-changes/2011/02/06/msg018145.html">been</a> committed.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>You can apply the diffs with:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>% patch -p0 &lt; mathlib.diff</code></pre>
+</div></div>
+<div class="paragraph"><p>And then refer to <a href="http://www.netbsd.org/docs/guide/en/chap-updating.html">NetBSD guide</a>
+on how to build source and install new world. Or just follow these steps:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>% su root -c 'mkdir /usr/obj; chmod g+w /usr/obj'
+% cd /usr/src
+% ./build.sh -O /usr/obj -T /usr/tools -U distribution sets
+% su root -c 'cd /usr/src &amp;&amp; ./build.sh -O /usr/obj -U install=/'</code></pre>
+</div></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_error_estimation_of_libm_functions">5. Error estimation of libm functions</h2>
+<div class="sectionbody">
+<div class="paragraph"><p><a href="http://gitweb.dragonflybsd.org/~beket/mathlib.git/tree/master:/ulps">Here</a> you
+can find a utility to calculate the error in terms of <code>ULPs</code> for most of the
+libm functions. This includes double and long double precision, real and complex
+valued functions. The utility depends on the existence of <code>gmp</code>, <code>mpfr</code> and
+<code>mpc</code> libraries. <code>gmp</code> is an arbitrary precision arithmetic library, <code>mpfr</code> a
+multi-precision floating-point library and <code>mpc</code> same as <code>mpfr</code> but for complex
+numbers.</p></div>
+<div class="paragraph"><p>In order to build it, please do the following:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>mathlib% cd ulps
+mathlib/ulps% make</code></pre>
+</div></div>
+<div class="paragraph"><p>Only <code>autoconf</code> is needed (2.59 or later). <code>Automake</code> is <em>not</em> needed.</p></div>
+<div class="paragraph"><p>Example usage:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>mathlib/ulps% ./ulps
+ulps: [all | list | &lt;function1&gt; &lt;function2&gt; ...]
+mathlib/ulps% ./ulps all
+        FUNCTION     Max ULP    Min ULP    Avg ULP    skipped
+[ 1/62] acos         0.5000     0.0000     0.0000           0
+        acosl        0.5000     0.0000     0.0000           0
+[ 2/62] acosh        0.5000     0.0000     0.0001           0
+        acoshl       0.5000     0.0000     0.1638           0
+[ 3/62] asin         0.0000     0.0000     0.0000           0
+        asinl        0.5000     0.0000     0.0000           0
+[ 4/62] asinh        0.5000     0.0000     0.0001           0
+        asinhl       1.0000     0.0000     0.0824           0
+[ 5/62] atan         0.0000     0.0000     0.0000           0
+        atanl        0.5000     0.0000     0.0000           0
+Percentage complete: 83.60
+^C</code></pre>
+</div></div>
+<div class="paragraph"><p>Or individual function names may be provided, e.g.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>mathlib/ulps% ./ulps cbrt fabs
+        FUNCTION     Max ULP    Min ULP    Avg ULP    skipped
+[ 1/ 2] cbrt         0.5000     0.0000     0.0909           0
+[ 2/ 2] fabs         0.0000     0.0000     0.0000           0
+mathlib/ulps%</code></pre>
+</div></div>
+<div class="paragraph"><p>The definition of <code>ULP</code> that we are using may be found
+<a href="http://download.oracle.com/docs/cd/E19963-01/821-1464/libm-3lib/index.html">in this document</a>.
+Although reasonable voices have been raised regarding the fitness of this
+definition, its straight-forwardness from an implementation point of view and
+the fact that it allows us direct comparisons with good libm&#8217;s, like Solaris,
+made us stick to it for the moment.</p></div>
+<div class="paragraph"><p>If you have some exotic hardware, please do me a favor. Run the diagnostics
+and mail me back the results. I have uploaded mine
+<a href="http://netbsd-soc.sourceforge.net/projects/mathlib/ulps.html">here</a>. More to come.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="../icons/note.png" alt="Note" />
+</td>
+<td class="content">Incidentally, we discovered a bug in <code>mpfr</code>. If <code>mpfr_tgamma()</code> was called
+with an argument that would naturally cause an underflow, it would enter an
+infinite loop. Upstream developers were informed and problem was solved both in
+<code>svn trunk</code> and in <code>3.0</code> branch. See also <a href="http://www.mpfr.org/mpfr-3.0.0/#fixed">this</a>.
+Also, we discovered a few bugs in <code>mpc</code> library, affecting most notably the complex
+trigonometric functions. The symptoms are ever-lasting loops on certain input ranges.
+If you experience such behaviour, skip that function until it is fixed upstream
+or worked around downstream.</td>
+</tr></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_performance_measurement">6. Performance measurement</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>We have performance probes for
+<a href="http://gitweb.dragonflybsd.org/~beket/mathlib.git/tree/master:/etc"><code>fenv.h</code></a>
+interface, e.g.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>mathlib/etc% ./proffenv
+feclearexcept() FE_ALL_EXCEPT:   256 msecs for 1000000 iterations
+feclearexcept()        random:   289 msecs for 1000000 iterations
+     fegetenv()              :   233 msecs for 1000000 iterations
+feraiseexcept()              :   457 msecs for 1000000 iterations
+     fesetenv()    FE_DFL_ENV:   241 msecs for 1000000 iterations
+     fesetenv()        random:   483 msecs for 1000000 iterations
+  feupdateenv()    FE_DFL_ENV:   291 msecs for 1000000 iterations
+  feupdateenv()        random:   533 msecs for 1000000 iterations
+mathlib/etc%</code></pre>
+</div></div>
+<div class="paragraph"><p>Since recently, we are able to measure the performance of <code>math.h</code> and
+<code>complex.h</code> function, <strong>with respect to their input</strong>. Code is
+<a href="http://gitweb.dragonflybsd.org/<sub>beket/mathlib.git/blob/master:/etc/profmath.c">here</a>.
+Graphs are <a href="http://leaf.dragonflybsd.org/</sub>beket/graphs">here</a>. You can generate
+your own, if you have <code>gnuplot</code> installed, via:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>% cd mathlib/etc
+mathlib/etc% make gen-graphs
+[...]</code></pre>
+</div></div>
+<div class="paragraph"><p>Most algorithms exhibit constant-time behaviour, but there are some interesting
+cases, e.g., compare
+<a href="http://leaf.dragonflybsd.org/<sub>beket/graphs/NetBSD/5.99.33/i386/cos.csv.png">NetBSD cos()</a> against,
+<a href="http://leaf.dragonflybsd.org/</sub>beket/graphs/SunOS/5.11/i86pc/cos.csv.png">OpenSolaris cos()</a>.
+(Our graph maybe interpreted on the basis of <code>iterative argument reduction</code> for very large
+inputs. It seems that Sun&#8217;s developers managed to short circuit it.)</p></div>
+<div class="paragraph"><p>This tool will allow us to identify pathological cases in existing implementations
+and protect us from introducing such when we will implement the long double versions.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_c_code_generator">7. C code generator</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>For every math function, we test it against a small set of good <code>{x, &#8230;, f(x, &#8230;)}</code>
+pairs. These data are generated automatically by a utility, that resides
+<a href="http://gitweb.dragonflybsd.org/<sub>beket/mathlib.git/blob_plain/master:/etc/realgen.c">here</a>.
+It uses the <code>gmp/mpfr</code> libraries. The output is valid C code that can be used
+without any modifications.
+<a href="http://gitweb.dragonflybsd.org/</sub>beket/mathlib.git/blob/master:/math/include/t_acos.h">This is an example</a>.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_status_todo">8. Status | Todo</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_fenv_h_functions">8.1. fenv.h - functions</h3>
+<div class="tableblock">
+<table rules="all"
+style="margin-left:auto; margin-right:auto;"
+width="75%"
+frame="border"
+cellspacing="0" cellpadding="4">
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<thead>
+<tr>
+<th align="left" valign="center">                      </th>
+<th align="center" valign="center"> i387     </th>
+<th align="center" valign="center"> amd64     </th>
+<th align="center" valign="center"> sparc64 </th>
+<th align="center" valign="center"> m68k</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td align="left" valign="center"><p class="table"><strong>feupdateenv</strong></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table">WIP</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td align="left" valign="center"><p class="table"><strong>feclearexcept</strong></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table">WIP</p></td>
+</tr>
+<tr>
+<td align="left" valign="center"><p class="table"><strong>fegetexceptflag</strong></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table">WIP</p></td>
+</tr>
+<tr>
+<td align="left" valign="center"><p class="table"><strong>feraiseexcept</strong></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table">WIP</p></td>
+</tr>
+<tr>
+<td align="left" valign="center"><p class="table"><strong>fesetexceptflag</strong></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table">WIP</p></td>
+</tr>
+<tr>
+<td align="left" valign="center"><p class="table"><strong>fetestexcept</strong></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table">WIP</p></td>
+</tr>
+<tr>
+<td align="left" valign="center"><p class="table"><strong>fegetround</strong></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table">WIP</p></td>
+</tr>
+<tr>
+<td align="left" valign="center"><p class="table"><strong>fesetround</strong></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table">WIP</p></td>
+</tr>
+<tr>
+<td align="left" valign="center"><p class="table"><strong>fegetenv</strong></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table">WIP</p></td>
+</tr>
+<tr>
+<td align="left" valign="center"><p class="table"><strong>feholdexcept</strong></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table">WIP</p></td>
+</tr>
+<tr>
+<td align="left" valign="center"><p class="table"><strong>fesetenv</strong></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table">WIP</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fenv_h_data_types">8.2. fenv.h - data types</h3>
+<div class="tableblock">
+<table rules="all"
+style="margin-left:auto; margin-right:auto;"
+width="75%"
+frame="border"
+cellspacing="0" cellpadding="4">
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<thead>
+<tr>
+<th align="left" valign="center">                </th>
+<th align="center" valign="center"> i387  </th>
+<th align="center" valign="center"> amd64   </th>
+<th align="center" valign="center"> sparc64 </th>
+<th align="center" valign="center"> m68k</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td align="left" valign="center"><p class="table"><strong>fexcept_t</strong></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table">WIP</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td align="left" valign="center"><p class="table"><strong>fenv_t</strong></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table"><code>YES</code></p></td>
+<td align="center" valign="center"><p class="table">WIP</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_error_signaling">8.3. Error signaling</h3>
+<div class="paragraph"><p>There are two ways for libm to signal errors during computations. Either via
+errno or by raising floating-point exceptions. POSIX expects that at least one
+is supported. We should expose our capabilities by defining <code>math_errhandling</code>
+and <code>MATH_ERRNO|MATH_ERREXCEPT</code>. Currently we don&#8217;t.</p></div>
+<div class="paragraph"><p>Errno is already available. As for floating-point exceptions, currently only
+<code>i386</code>, <code>amd64</code> and <code>sparc64</code> support them. Question though is whether errno
+and/or floating-point evnironment are <em>properly updated</em> by libm during the various
+computations.</p></div>
+<div class="paragraph"><p>To shed some light on this, we forced the definition of <code>MATH_ERRNO</code> and <code>MATH_ERREXCEPT</code>,
+<em>as if we did</em> support them, and ran the test suite.
+Preliminary results for <code>i386</code>
+<a href="http://leaf.dragonflybsd.org/<sub>beket/logs/NetBSD/5.99.29/i386/results-errno-30-06-10.html">errno</a>
+and
+<a href="http://leaf.dragonflybsd.org/</sub>beket/logs/NetBSD/5.99.29/i386/results-errexcept-30-06-10.html">errexcept</a>.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_namespace_issues">8.4. Namespace issues</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+Defining <code>_POSIX_C_SOURCE</code> or <code>_XOPEN_SOURCE</code> prior to the inclusion of
+<code>math.h</code> hides copysign() function. Possibly others too.
+</p>
+</li>
+<li>
+<p>
+<code>signbit()</code> uses a gcc builtin function that only works with floats and
+doubles. Roll out our own just like FreeBSD does.
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect2">
+<h3 id="_precision_loss_of_periodic_functions_in_x86">8.5. Precision loss of periodic functions in x86</h3>
+<div class="paragraph"><p>If you take a look at <a href="http://netbsd-soc.sourceforge.net/projects/mathlib/ulps.html">the ulp reports</a>
+you will notice that, except for OpenSolaris, all libm&#8217;s perform very poorly
+when it comes to <code>sin</code> or <code>cos</code> functions (and possibly others). The cause
+appears to be the limited precision of <code>Pi</code> (66 bits), that is used during
+the <em>argument reduction process</em>.</p></div>
+<div class="paragraph"><p>This topic is further discussed in
+<a href="http://software.intel.com/en-us/forums/showthread.php?t=74354">this thread</a> of Intel&#8217;s forum.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_vax">8.6. VAX</h3>
+<div class="paragraph"><p>We don&#8217;t have <code>nextafter()</code> implementation for VAX, which
+blocks us from calculating the <code>ULPs</code> of the various math functions.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_build_issues_in_tests_done">8.7. Build issues in tests (done)</h3>
+<div class="paragraph"><p>For every function we write test cases for, we check its <code>float</code>, <code>double</code> and
+<code>long double</code> version, in the <em>same</em> test program. On the other hand, NetBSD
+misses a lot of *l() functions, which blocks test programs from building.
+Therefore, we need to use <code>autoconf</code> and surround the hot spots with
+<code>#ifdef</code> blocks. Just like we do in <code>ulps/</code>.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_notable_references">8.8. Notable references</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://mail-index.netbsd.org/tech-userlevel/2010/05/28/msg003625.html">x87 reserved bits thread</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://software.intel.com/en-us/forums/showthread.php?t=74354">x87 FSIN/FCOS mediocre accuracy</a>
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contact">9. Contact</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>For any questions and/or suggestions, please feel free to contact me via e-mail.
+My address is <code>ekamperi at gmail dot com</code>. You can also find me via IRC in
+Freenode network at <code>#netbsd-code</code>. My nick is <code>Beket</code>.</p></div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Last updated
+ 2017-01-01 17:48:29 EET
+</div>
+</div>
+</body>
+</html>
