@@ -1254,7 +1254,7 @@ invalidate cache), that flushes both the <code>L1</code> (internal) and <code>L2
 but requires to be called from <strong>kernel context</strong>. <code>DTrace</code> cannot be used here, since
 it was designed to disallow arbitrary code execution in kernel, whereas <code>SystemTap</code>
 is more liberal in nature and may be an option in Linux systems.</p></div>
-<div class="paragraph"><p>For Solaris, I used the <a href="http://leaf.dragonflybsd.org/~beket/geant4/dummy.c">dummy skeleton device driver</a>,
+<div class="paragraph"><p>For Solaris, I used the <a href="https://bitbucket.org/ekamperi/geant4/src/master/patches/dummy.c">dummy skeleton device driver</a>,
 to issue the <code>wbinvd</code> instruction. How to build:</p></div>
 <div class="listingblock">
 <div class="content">
@@ -1526,7 +1526,7 @@ pid$target::-:8c8fbcf
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-01-01 02:16:32 EET
+Last updated 2017-01-01 02:19:13 EET
 </div>
 </div>
 </body>
