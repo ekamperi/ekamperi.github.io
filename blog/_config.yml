@@ -1,3 +1,2 @@
-remote_theme: qwtel/hydejack
-
+remote_theme: poole/lanyon
 makdown: kramdown
