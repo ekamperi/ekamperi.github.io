@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Adversarial attacks on neural networks"
-date:   2019-07-23 15:28:56 +0000
+title:  "Gradient descent"
+date:   2019-07-28
 categories: jekyll update
 ---
 
