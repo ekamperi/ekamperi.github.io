@@ -1,4 +1,4 @@
-remote_theme: poole/lanyon
+theme: minima
 makdown: kramdown
 kramdown:
   math_engine: mathjax
