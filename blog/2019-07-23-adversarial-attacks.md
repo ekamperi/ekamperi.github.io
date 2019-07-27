@@ -5,7 +5,6 @@ date:   2019-07-23 15:28:56 +0000
 categories: jekyll update
 ---
 
-## Adversarial attacks on neural networks
 I'm studying adversarial attacks on neural networks. These attacks are grouped into targeted, where a legitimate input is changed by some imperceptible amount and the new input is miss-classified by the network. E.g.
 
 [![enter image description here][1]][1]
