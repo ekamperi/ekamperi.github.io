@@ -1,2 +1,6 @@
 remote_theme: poole/lanyon
 makdown: kramdown
+kramdown:
+  math_engine: mathjax
+  math_enging_opts:
+    preview: true
