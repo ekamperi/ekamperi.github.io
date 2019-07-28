@@ -1,3 +1,12 @@
+title: A blog on science
+author: Stathis Kamperis
+email: ekamperi@gmail.com
+description: >
+  A blog on things I’m interested in such as mathematics, physics, programming,
+  machine learning and radiotherapy.
+
+show_excerpts: false
+
 theme: minima
 makdown: kramdown
 kramdown:
@@ -10,6 +19,7 @@ header_pages:
   - portfolio.md
 
 minima:
+  show_excerpts: true
   social_links:
     twitter: stathisktw
     github: ekamperi
