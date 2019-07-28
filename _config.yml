@@ -5,7 +5,7 @@ description: >
   A blog on things I’m interested in such as mathematics, physics, programming,
   machine learning and radiotherapy.
 
-show_excerpts: false
+show_excerpts: true
 
 theme: minima
 makdown: kramdown
