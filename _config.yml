@@ -8,8 +8,6 @@ description: >
 show_excerpts: true
 show_drafts: true
 
-
-theme: minima
 makdown: kramdown
 kramdown:
   math_engine: mathjax
@@ -18,11 +16,14 @@ kramdown:
 
 header_pages:
   - about.md
-  - portfolio.md
 
 minima:
+  date_format: "%b %-d, %Y"
   social_links:
     twitter: stathisktw
     github: ekamperi
 
- 
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
