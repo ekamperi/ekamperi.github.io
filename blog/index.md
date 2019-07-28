@@ -1,1 +1,5 @@
-This is a test on starting a blog on things I'm interested in: mathematics, physics, machine learning and radiotherapy.
+I am a radiation oncologist and physicist with masters in computational physics. Currently, I work
+on my thesis which has to do with [radiomics](https://en.wikipedia.org/wiki/Radiomics) in
+head neck cancer.
+
+[This is the list of my publications.](https://scholar.google.gr/citations?hl=en&user=HMbAeKQAAAAJ)
