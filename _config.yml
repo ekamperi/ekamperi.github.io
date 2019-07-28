@@ -6,6 +6,8 @@ description: >
   machine learning and radiotherapy.
 
 show_excerpts: true
+show_drafts: true
+
 
 theme: minima
 makdown: kramdown
