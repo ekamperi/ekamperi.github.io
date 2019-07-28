@@ -19,9 +19,8 @@ header_pages:
   - portfolio.md
 
 minima:
-  show_excerpts: true
   social_links:
     twitter: stathisktw
     github: ekamperi
-    facebook: Stathis Kamperis
+
  
