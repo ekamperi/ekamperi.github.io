@@ -20,8 +20,8 @@ header_pages:
 minima:
   date_format: "%b %-d, %Y"
   social_links:
-    twitter: stathisktw
-    github: ekamperi
+    twitter_username: stathisktw
+    github_username: ekamperi
 
 theme: minima
 plugins:
