@@ -5,13 +5,13 @@ date:   2019-07-23 15:28:56 +0000
 categories: jekyll update
 ---
 
-I'm studying adversarial attacks on neural networks. These attacks are grouped into targeted, where a legitimate input is changed by some imperceptible amount and the new input is miss-classified by the network. E.g.
+"Adversarial" means involving or characterized by conflict or opposition. In the context of neural networks, "adversarial examples" refer to specially crafted inputs whose purpose is to cause the neural network to misclassify it. These examples (or attacks) are grouped into *targeted*, where a legitimate input is changed by some imperceptible amount and the new input is misclassified by the network. E.g.
 
 [![enter image description here][1]][1]
 
 Source: Goodfellow IJ, Shlens J, Szegedy C. Explaining and Harnessing Adversarial Examples [Internet]. arXiv [stat.ML]. 2014. Available from [here](http://arxiv.org/abs/1412.6572).
 
-And to non-targeted, where you just want to come up with some random input that leads to a specific output, like:
+And to *non-targeted*, where you just want to come up with some random input that leads to a specific output, like:
 
 [![enter image description here][2]][2]
 
@@ -30,7 +30,6 @@ $$y_\text{adv}$$ is the goal value (e.g. $$y_\text{adv} = [0,0,0,1,0,0,0,0,0,0]$
 $$
 x_{j,\text{new}} = x_{j,\text{old}} - \alpha \frac{\partial }{\partial x_j}J(x)
 $$
-
 
 **Questions:**
 
