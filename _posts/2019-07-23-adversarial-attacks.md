@@ -55,10 +55,10 @@ $$
 [Useful link][6] on `NetPortGradient[]`.
 
 
-  [1]: https://i.stack.imgur.com/NPbEe.png
-  [2]: https://i.stack.imgur.com/h7mGD.png
+  [1]: https://i.stack.imgur.com/NPbEel.png
+  [2]: https://i.stack.imgur.com/h7mGDl.png
   [3]: https://en.wikipedia.org/wiki/Gradient_descent
   [4]: https://en.wikipedia.org/wiki/Vanishing_gradient_problem
-  [5]: https://i.stack.imgur.com/z8PU0.png
+  [5]: https://i.stack.imgur.com/z8PU0l.png
   [6]: https://mathematica.stackexchange.com/questions/185948/netportgradient-output-port-restriction
  
