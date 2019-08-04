@@ -5,16 +5,18 @@ date:   2019-07-23 15:28:56 +0000
 categories: jekyll update
 ---
 
-"Adversarial" means involving or characterized by conflict or opposition. In the context of neural networks, "adversarial examples" refer to specially crafted inputs whose purpose is to cause the neural network to misclassify it. These examples (or attacks) are grouped into *targeted*, where a legitimate input is changed by some imperceptible amount and the new input is misclassified by the network. E.g.
+### Introduction
+Adversarial means "involving or characterized by conflict or opposition". In the context of neural networks, "adversarial examples" refer to specially crafted inputs whose purpose is to cause the neural network to misclassify them. These examples (or attacks) are grouped into *targeted*, where a legitimate input is changed by some imperceptible amount and the new input is misclassified by the network. E.g.
 
-[![enter image description here][1]][1]
+[![Example of targeted adversarial attack][1]][1]
 
 Source: Goodfellow IJ, Shlens J, Szegedy C. Explaining and Harnessing Adversarial Examples [Internet]. arXiv [stat.ML]. 2014. Available from [here](http://arxiv.org/abs/1412.6572).
 
 And to *non-targeted*, where you just want to come up with some random input that leads to a specific output, like:
 
-[![enter image description here][2]][2]
+[![Example of non-targeted adversarial attack][2]][2]
 
+### Generation
 A fast method for constructing a targeted-example is $$x_\text{adv} = x + \underbrace{\epsilon sign\left({\nabla_x J(x)}\right)}_{\text{perturbation factor}}$$, where $$x$$ is the legitimate input you target, $$\epsilon$$ some small number and $$J(x)$$ the cost as a function of input $$x$$.
 
 For non-targeted attacks, the value of $$x_\text{adv}$$ can be found via [gradient descent][3] as the one that minimizes the following definition of cost function $$J$$, starting with some random value for $$x$$.
