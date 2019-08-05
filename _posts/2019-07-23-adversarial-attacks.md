@@ -76,23 +76,26 @@ $$
 $$
 
 #### Non-targeted example
-For non-targeted attacks, the value of $$x_\text{adv}$$ can be found via [gradient descent][3] as the one that minimizes the following definition of cost function $$J$$, starting with some random value for $$x$$.
+For non-targeted attacks, the value of $$\mathbf{x}_\text{adv}$$ can be found via [gradient descent][3] as the one that minimizes the following definition of cost function $$J$$, starting with some random value for $$\mathbf{x}$$.
 
 $$
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
-J(x) = \frac{1}{2}\norm{y(x)-y_\text{adv}}_2^2 
-=\frac{1}{2}\norm{h_\Theta(x) - y_\text{adv}}_2^2
+J(\mathbf{x}) = \frac{1}{2}\norm{y(\mathbf{x})-\mathbf{y}_\text{target}}_2^2 
+=\frac{1}{2}\norm{h_\Theta(\mathbf{x}) - \mathbf{y}_\text{target}}_2^2
 $$
 
-$$y_\text{adv}$$ is the goal value (e.g. $$y_\text{adv} = [0,0,0,1,0,0,0,0,0,0]$$ in the above image), $$h_\Theta(x)$$ is the output of the network for some input $$x$$ and $$x$$ gets updated with:
+$$\mathbf{y}_\text{target}$$ is the target class value (e.g. $$\mathbf{y}_\text{target} = [0,0,0,1,0,0,0,0,0,0]$$ in the above image), $$h_\Theta(\mathbf{x})$$ is the output of the network for some input $$\mathbf{x}$$ and $$\mathbf{x}$$ gets updated with:
 
 $$
-x_{j,\text{new}} = x_{j,\text{old}} - \alpha \frac{\partial }{\partial x_j}J(x)
+x_{j,\text{new}} = x_{j,\text{old}} - \alpha \frac{\partial }{\partial x_j}J(\mathbf{x})
 $$
 
-[Useful link][6] on `NetPortGradient[]`.
+[Useful link][4] on `NetPortGradient[]`.
 
 
   [1]: https://i.stack.imgur.com/NPbEel.png
   [2]: https://i.stack.imgur.com/h7mGDl.png
   [3]: https://en.wikipedia.org/wiki/Gradient_descent
+  [4]: https://mathematica.stackexchange.com/questions/185948/netportgradient-output-port-restriction
+ 
+  
