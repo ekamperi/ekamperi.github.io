@@ -38,6 +38,18 @@ Therefore:
 
 $$\max_{\left\| a \right\|\le \epsilon} J(h(x+a),y) = \max_{\left\| a \right\|\le \epsilon} \alpha \nabla_x J(h(x),y)$$
 
+The values of $$\alpha$$ that maximize the above quantity are $$\alpha_i = \epsilon sign(\nabla_x J)_i$$. The proof follows:
+
+\begin{align}
+\max_{\left\| \alpha \right\|\le \epsilon} \nabla_x J(h(x),y) \alpha
+&= \max_{\left\| \epsilon a' \right\|\le \epsilon} \nabla_x J(h(x),y) \epsilon \alpha'\\
+&=\epsilon \max_{\left\| a' \right\|\le 1} \nabla_x J(h(x),y) \alpha'\\
+&=\epsilon \max_{\left\| a \right\|\le 1} \nabla_x J(h(x),y) \alpha\\
+&= \left\| \nabla_x J(h(x), y)\right\|_{*}
+\end{align}
+
+Where $$\left\| \cdot \right\|_{*}$$ is the dual norm.
+
 #### Non-targeted example
 For non-targeted attacks, the value of $$x_\text{adv}$$ can be found via [gradient descent][3] as the one that minimizes the following definition of cost function $$J$$, starting with some random value for $$x$$.
 
