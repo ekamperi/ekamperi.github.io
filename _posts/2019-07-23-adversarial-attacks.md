@@ -73,11 +73,11 @@ $$
 $$
 
 Therefore:
+
 $$
 \sum_i {\nabla_x J(h(x),y)}_i \left(\alpha_i - \epsilon sign\left(\nabla_x J(h(x),y)_i\right)\right) = 0 \Rightarrow\\
 \alpha_i = \epsilon sign\left(\nabla_x J(h(x),y)_i\right)
 $$
-
 
 #### Non-targeted example
 For non-targeted attacks, the value of $$x_\text{adv}$$ can be found via [gradient descent][3] as the one that minimizes the following definition of cost function $$J$$, starting with some random value for $$x$$.
