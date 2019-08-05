@@ -12,13 +12,13 @@ Adversarial means "involving or characterized by conflict or opposition". In the
 
 Source: Goodfellow IJ, Shlens J, Szegedy C. Explaining and Harnessing Adversarial Examples [Internet]. arXiv [stat.ML]. 2014. Available from [here](http://arxiv.org/abs/1412.6572).
 
-And to *non-targeted*, when you just want to come up with some random input that results to a specific output, even if it looks like noise, like:
+And to *non-targeted*, when you just want to come up with some random input that results to a specific output, even if it looks like noise, as in the following network which is trained to recognize digits:
 
 [![Example of non-targeted adversarial attack][2]][2]
 
 ### Generation
 #### Targeted example
-A fast method for constructing a targeted example is via $$\mathbf{x}_\text{adv} = \mathbf{x} + \underbrace{\epsilon sign\left({\nabla_x J(\mathbf{x})}\right)}_{\text{perturbation factor } \mathbf{\alpha}}$$, where $$\mathbf{x}$$ is the legitimate input you target (e.g. your original "panda" image), $$\epsilon$$ is some small number (whose value you determine by trial-and-error) and $$J(\mathbf{x})$$ is the cost as a function of input $$\mathbf{x}$$. The gradient $$\nabla_x J(\mathbf{x})$$ with respect to input $$\mathbf{x}$$ can be calculated with [backpropagation](https://en.wikipedia.org/wiki/Backpropagation). Let's see, how we could derive this formula.
+A fast method for constructing a targeted example is via $$\mathbf{x}_\text{adv} = \mathbf{x} + \overbrace{\epsilon sign\left({\nabla_x J(\mathbf{x})}\right)}_{\text{perturbation factor } \mathbf{\alpha}}$$, where $$\mathbf{x}$$ is the legitimate input you target (e.g. your original "panda" image), $$\epsilon$$ is some small number (whose value you determine by trial-and-error) and $$J(\mathbf{x})$$ is the cost as a function of input $$\mathbf{x}$$. The gradient $$\nabla_x J(\mathbf{x})$$ with respect to input $$\mathbf{x}$$ can be calculated with [backpropagation](https://en.wikipedia.org/wiki/Backpropagation). Let's see, how we could derive this formula.
 
 A multivariable function $$f(\mathbf{x})$$ can be written as a [Taylor series](https://en.wikipedia.org/wiki/Taylor_series):
 
