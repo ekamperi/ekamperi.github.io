@@ -38,7 +38,9 @@ Therefore:
 
 $$\max_{\left\| a \right\|\le \epsilon} J(h(x+a),y) = \max_{\left\| a \right\|\le \epsilon} \alpha \nabla_x J(h(x),y)$$
 
-The values of $$\alpha$$ that maximize the above quantity are $$\alpha_i = \epsilon sign(\nabla_x J)_i$$. The proof follows:
+The values of $$\alpha$$ that maximize the above quantity, under the [infinity norm](https://en.wikipedia.org/wiki/Norm_(mathematics)#Maximum_norm_(special_case_of:_infinity_norm,_uniform_norm,_or_supremum_norm)) are $$\alpha_i = \epsilon sign(\nabla_x J)_i$$. 
+
+The proof follows:
 
 $$
 \begin{align}
