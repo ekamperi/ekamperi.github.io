@@ -54,7 +54,7 @@ Where $$\left\| \cdot \right\|_{*}$$ is the [dual norm](https://en.wikipedia.org
 
 If we assume the infinity norm then
 
-$$\left\|\alpha\right\|_{\infty}=\alpha_1\le 1$$.
+$$\left\|\alpha\right\|_{\infty}=\max_{(\alpha_1\le 1)}$$.
 
 #### Non-targeted example
 For non-targeted attacks, the value of $$x_\text{adv}$$ can be found via [gradient descent][3] as the one that minimizes the following definition of cost function $$J$$, starting with some random value for $$x$$.
