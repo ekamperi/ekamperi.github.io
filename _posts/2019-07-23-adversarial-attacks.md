@@ -18,7 +18,7 @@ And to *non-targeted*, where you just want to come up with some random input tha
 
 ### Generation
 #### Targeted example
-A fast method for constructing a targeted example is via $$x_\text{adv} = x + \underbrace{\epsilon sign\left({\nabla_x J(x)}\right)}_{\text{perturbation factor}}$$, where $$x$$ is the legitimate input you target (e.g. your "panda" image), $$\epsilon$$ some small number (whose value you determine by trial-and-error) and $$J(x)$$ the cost as a function of input $$x$$. The gradient $$\nabla_x J(x)$$ with respect to input $$x$$ can be calculated with backpropagation. Let's see, though, how we could derive to this formula.
+A fast method for constructing a targeted example is via $$\mathbf{x}_\text{adv} = x + \underbrace{\epsilon sign\left({\nabla_x J(\mathbf{x})}\right)}_{\text{perturbation factor}}$$, where $$\mathbf{x}$$ is the legitimate input you target (e.g. your "panda" image), $$\epsilon$$ some small number (whose value you determine by trial-and-error) and $$J(\mathbf{x})$$ the cost as a function of input $$\mathbf{x}$$. The gradient $$\nabla_x J(\mathbf{x})$$ with respect to input $$\mathbf{x}$$ can be calculated with backpropagation. Let's see, though, how we could derive to this formula.
 
 Let us recall that a multivariable function $$f(\mathbf{x})$$ can be written as a Taylor series:
 
