@@ -18,15 +18,15 @@ And to *non-targeted*, where you just want to come up with some random input tha
 
 ### Generation
 #### Targeted example
-A fast method for constructing a targeted example is $$x_\text{adv} = x + \underbrace{\epsilon sign\left({\nabla_x J(x)}\right)}_{\text{perturbation factor}}$$, where $$x$$ is the legitimate input you target, $$\epsilon$$ some small number and $$J(x)$$ the cost as a function of input $$x$$.
+A fast method for constructing a targeted example is $$x_\text{adv} = x + \underbrace{\epsilon sign\left({\nabla_x J(x)}\right)}_{\text{perturbation factor}}$$, where $$x$$ is the legitimate input you target, $$\epsilon$$ some small number and $$J(x)$$ the cost as a function of input $$x$$. Let's see how we could derive to this formula.
 
-Let us recall that a function $f$ can be written as a Taylor series like this:
-$$f(x+\alpha) = f(x) + \alpha \nabla_x f(x) + O\left(\alpha^2\right)$$
+Let us recall that a multivariable function $$f(\mathbf{x})$$ can be written as a Taylor series:
+$$f(\mathbf{x}+\mathbf{\alpha}) = f(\mathbf{x}) + \mathbf{\alpha} \nabla_x f(\mathbf{x}) + O\left(\left\|\alpha^2\right\|\right)$$, where $$\mathbf{x}=(x_1, x_2, \ldots)$$ and $$\mathbf{alpha} = (\alpha_1, \alpha_2,\ldots)$$
 
 Similarly, we expand our cost function $J$:
 $$J(h(x+\alpha),y) = \underbrace{J(h(x),y)}_{\text{fixed}}+\alpha \nabla_xJ(h(x),y)+O(\alpha^2)$$
 
-Our goal is to maximize the cost function $J$:
+Our goal is to maximize the cost function $$J$$:
 $$\max J(\hat{y}, y)=\max_{\left\| a \right\|\le \epsilon} J(h(x+\alpha), y)$$
 
 $$\max_{\left\| a \right\|\le \epsilon} J(h(x+a),y) = \max_{\left\| a \right\|\le \epsilon} \alpha \nabla_x J(h(x),y)$$
