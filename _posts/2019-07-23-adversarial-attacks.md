@@ -17,8 +17,20 @@ And to *non-targeted*, where you just want to come up with some random input tha
 [![Example of non-targeted adversarial attack][2]][2]
 
 ### Generation
-A fast method for constructing a targeted-example is $$x_\text{adv} = x + \underbrace{\epsilon sign\left({\nabla_x J(x)}\right)}_{\text{perturbation factor}}$$, where $$x$$ is the legitimate input you target, $$\epsilon$$ some small number and $$J(x)$$ the cost as a function of input $$x$$.
+#### Targeted example
+A fast method for constructing a targeted example is $$x_\text{adv} = x + \underbrace{\epsilon sign\left({\nabla_x J(x)}\right)}_{\text{perturbation factor}}$$, where $$x$$ is the legitimate input you target, $$\epsilon$$ some small number and $$J(x)$$ the cost as a function of input $$x$$.
 
+Let us recall that a function $f$ can be written as a Taylor series like this:
+$$f(x+\alpha) = f(x) + \alpha \nabla_x f(x) + O\left(\alpha^2\right)$$
+
+Similarly, we expand our cost function $J$:
+$$J(h(x+\alpha),y) = \underbrace{J(h(x),y)}_{\text{fixed}}+\alpha \nabla_xJ(h(x),y)+O(\alpha^2)$$
+
+Our goal is to maximize the cost function $J$:
+$$\max J(\hat{y}, y)=\max_{\left\| a \right\|\le \epsilon} J(h(x+\alpha), y)$$
+
+$$\max_{\left\| a \right\|\le \epsilon} J(h(x+a),y) = \max_{\left\| a \right\|\le \epsilon} \alpha \nabla_x J(h(x),y)$$
+#### Non-targeted example
 For non-targeted attacks, the value of $$x_\text{adv}$$ can be found via [gradient descent][3] as the one that minimizes the following definition of cost function $$J$$, starting with some random value for $$x$$.
 
 $$
