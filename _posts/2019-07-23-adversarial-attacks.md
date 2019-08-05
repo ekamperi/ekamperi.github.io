@@ -60,8 +60,24 @@ $$
 It holds that $$\left\|\cdot\right\|_{*} = \left\|\cdot\right\|_1$$. Therefore:
 
 $$
-\max_{\left\|\alpha\right\| \le \epsilon} \nabla_x J(h(x),y) \alpha = \epsilon \left\| \nabla_x J(h(x), y)\right\|_{*}
+\max_{\left\|\alpha\right\| \le \epsilon} \nabla_x J(h(x),y) \alpha = \epsilon \left\| \nabla_x J(h(x), y)\right\|_{1}
 $$
+
+Finally we solve the following equation:
+
+$$
+\begin{align}
+\sum_i {\nabla_x J(h(x),y)}_i \alpha_i &= \epsilon \sum_i \left|\nabla_x J(h(x), y)_i\right| \Rightarrow\\
+\sum_i {\nabla_x J(h(x),y)}_i \alpha_i &= \epsilon \sum_i  sign\left(\nabla_x J(h(x),y)_i\right)\nabla_x J(h(x), y)_i
+\end{align}
+$$
+
+Therefore:
+$$
+\sum_i {\nabla_x J(h(x),y)}_i \left(\alpha_i - \epsilon sign\left(\nabla_x J(h(x),y)_i\right)\right) = 0 \Rightarrow\\
+\alpha_i = \epsilon sign\left(\nabla_x J(h(x),y)_i\right)
+$$
+
 
 #### Non-targeted example
 For non-targeted attacks, the value of $$x_\text{adv}$$ can be found via [gradient descent][3] as the one that minimizes the following definition of cost function $$J$$, starting with some random value for $$x$$.
