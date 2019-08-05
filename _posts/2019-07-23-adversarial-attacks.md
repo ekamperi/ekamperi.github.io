@@ -40,13 +40,13 @@ $$\max_{\left\| a \right\|\le \epsilon} J(h(x+a),y) = \max_{\left\| a \right\|\l
 
 The values of $$\alpha$$ that maximize the above quantity are $$\alpha_i = \epsilon sign(\nabla_x J)_i$$. The proof follows:
 
-\begin{align}
+$$
 \max_{\left\| \alpha \right\|\le \epsilon} \nabla_x J(h(x),y) \alpha
 &= \max_{\left\| \epsilon a' \right\|\le \epsilon} \nabla_x J(h(x),y) \epsilon \alpha'\\
 &=\epsilon \max_{\left\| a' \right\|\le 1} \nabla_x J(h(x),y) \alpha'\\
 &=\epsilon \max_{\left\| a \right\|\le 1} \nabla_x J(h(x),y) \alpha\\
 &= \left\| \nabla_x J(h(x), y)\right\|_{*}
-\end{align}
+$$
 
 Where $$\left\| \cdot \right\|_{*}$$ is the dual norm.
 
