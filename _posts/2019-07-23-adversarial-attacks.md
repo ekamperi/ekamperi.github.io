@@ -22,7 +22,7 @@ A fast method for constructing a targeted example is $$x_\text{adv} = x + \under
 
 Let us recall that a multivariable function $$f(\mathbf{x})$$ can be written as a Taylor series:
 
-$$f(\mathbf{x}+\mathbf{\alpha}) = f(\mathbf{x}) + \mathbf{\alpha} \nabla_x f(\mathbf{x}) + O\left(\left\|\alpha^2\right\|\right)$$, where $$\mathbf{x}=(x_1, x_2, \ldots)$$ and $$\mathbf{alpha} = (\alpha_1, \alpha_2,\ldots)$$
+$$f(\mathbf{x}+\mathbf{\alpha}) = f(\mathbf{x}) + \mathbf{\alpha} \nabla_x f(\mathbf{x}) + O\left(\left\|\alpha^2\right\|\right)$$, where $$\mathbf{x}=(x_1, x_2, \ldots)$$ and $$\mathbf{\alpha} = (\alpha_1, \alpha_2,\ldots)$$
 
 Similarly, we expand our cost function $$J$$:
 
