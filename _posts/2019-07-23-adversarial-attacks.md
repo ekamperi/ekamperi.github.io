@@ -22,7 +22,7 @@ A fast method for constructing a targeted example is via $$\mathbf{x}_\text{adv}
 
 Our cost function is $$J(\hat{y}, y) = J(h(x),y)$$, where $$h(x)$$ is the hypothesis function (basically the value of the network's output layer). Normally, when training a network we want to minimize the cost function $$J$$ so that our network's prediction $$\hat{y}$$ is as close to the true value $$y$$ as possible. When constructing a targeted adersarial attack, though, we want the exact opposite. We want to come up with a new input $$\mathbf{x}_\text{adv}$$, such that the predicted value $$\hat{y}$$ is as much away from $$y$$ as possible. The maximization of the cost function $$J$$ is subject to a constraint, namely that the change we introduce (the perturbation factor $$\mathbf{a}$$) very small (so that it goes unnoticed by a human).
 
-More formally our goal can be expressed as$:
+More formally our goal can be expressed as:
 
 $$\max J(\hat{y}, y)=\max_{\left\| a \right\|\le \epsilon} J(h(x+\alpha), y)$$
 
@@ -32,7 +32,9 @@ $$f(\mathbf{x}+\mathbf{\alpha}) = f(\mathbf{x}) + \mathbf{\alpha} \nabla_x f(\ma
 
 By applying the above formula to the cost function $$J$$ we wget:
 
-$$J(h(x+\alpha),y) = \underbrace{J(h(x),y)}_{\text{fixed}}+\alpha \nabla_xJ(h(x),y)+O(\alpha^2)$$
+$$J(h(x+\alpha),y) = \underbrace{J(h(x),y)}_{\text{fixed}}+\alpha \nabla_xJ(h(x),y)+\mathcal{O}(\left\|\alpha^2\right\|)$$
+
+Therefore:
 
 $$\max_{\left\| a \right\|\le \epsilon} J(h(x+a),y) = \max_{\left\| a \right\|\le \epsilon} \alpha \nabla_x J(h(x),y)$$
 #### Non-targeted example
