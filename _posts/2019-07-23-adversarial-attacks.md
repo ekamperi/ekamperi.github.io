@@ -30,6 +30,8 @@ In order to solve this optimization problem, we will linearize $$J$$. Let us rec
 
 $$f(\mathbf{x}+\mathbf{\alpha}) = f(\mathbf{x}) + \mathbf{\alpha} \nabla_x f(\mathbf{x}) + \mathcal{O}\left(\left\|\alpha^2\right\|\right)$$, where $$\mathbf{x}=(x_1, x_2, \ldots)$$ and $$\mathbf{\alpha} = (\alpha_1, \alpha_2,\ldots)$$
 
+By applying the above formula to the cost function $$J$$ we wget:
+
 $$J(h(x+\alpha),y) = \underbrace{J(h(x),y)}_{\text{fixed}}+\alpha \nabla_xJ(h(x),y)+O(\alpha^2)$$
 
 $$\max_{\left\| a \right\|\le \epsilon} J(h(x+a),y) = \max_{\left\| a \right\|\le \epsilon} \alpha \nabla_x J(h(x),y)$$
