@@ -42,11 +42,11 @@ The value of $$\alpha$$ that maximizes the above quantity, under the [infinity n
 
 $$
 \begin{align}
-\max_{\left\| \alpha \right\|\le \epsilon} \nabla_x J(h(x),y) \alpha
-&= \max_{\left\| \epsilon a' \right\|\le \epsilon} \nabla_x J(h(x),y) \epsilon \alpha'\\
-&=\epsilon \max_{\left\| a' \right\|\le 1} \nabla_x J(h(x),y) \alpha'\\
-&=\epsilon \max_{\left\| a \right\|\le 1} \nabla_x J(h(x),y) \alpha\\
-&= \epsilon \left\| \nabla_x J(h(x), y)\right\|_{*}
+\max_{\left\| \alpha \right\|\le \epsilon} \nabla_x J(h(\mathbf{x}),y) \alpha
+&= \max_{\left\| \epsilon a' \right\|\le \epsilon} \nabla_x J(h(\mathbf{x}),y) \epsilon \alpha'\\
+&=\epsilon \max_{\left\| a' \right\|\le 1} \nabla_x J(h(\mathbf{x}),y) \alpha'\\
+&=\epsilon \max_{\left\| a \right\|\le 1} \nabla_x J(h(\mathbf{x}),y) \alpha\\
+&= \epsilon \left\| \nabla_x J(h(\mathbf{x}), y)\right\|_{*}
 \end{align}
 $$
 
@@ -59,10 +59,10 @@ $$
 $$
 
 $$
-\max_{\left\|\alpha\right\| \le \epsilon} \nabla_x J(h(x),y) = \epsilon \left\| \nabla_x J(h(x), y)\right\|_{*}
+\max_{\left\|\alpha\right\| \le \epsilon} \nabla_x J(h(\mathbf{x}),y) \alpha = \epsilon \left\| \nabla_x J(h(\mathbf{x}), y)\right\|_{*}
 $$
 
-Under the infinite norm it holds that $$\left\|\cdot\right\|_\infty = \left\|\cdot\right\|_1$$.
+Under the infinite norm it holds that $$\left\|\cdot\right\|_{*} = \left\|\cdot\right\|_1$$.
 
 #### Non-targeted example
 For non-targeted attacks, the value of $$x_\text{adv}$$ can be found via [gradient descent][3] as the one that minimizes the following definition of cost function $$J$$, starting with some random value for $$x$$.
