@@ -50,7 +50,7 @@ $$
 \end{align}
 $$
 
-Where $$\left\| \cdot \right\|_{*}$$ is the [dual norm](https://en.wikipedia.org/wiki/Dual_norm#Mathematical_Optimization).
+Where $$\left\| \cdot \right\|_{*}$$ is the [dual norm](https://en.wikipedia.org/wiki/Dual_norm#Mathematical_Optimization)).
 
 If we assume the infinity norm then $$\left\| \alpha \right\|_{\infty} = \max(\left|\alpha_1\right|, \left|\alpha_2\right|,\ldots) \le 1$$
 
