@@ -22,15 +22,15 @@ A fast method for constructing a targeted example is via $$\mathbf{x}_\text{adv}
 
 Our cost function is $$J(\hat{y}, y) = J(h(x),y)$$, where $$h(x)$$ is the hypothesis function (basically the value of the network's output layer). Normally, when training a network we want to minimize the cost function $$J$$ so that our network's prediction $$\hat{y}$$ is as close to the true value $$y$$ as possible. When constructing a targeted adersarial attack, though, we want the exact opposite. We want to come up with a new input $$\mathbf{x}_\text{adv}$$, such that the predicted value $$\hat{y}$$ is as much away from $$y$$ as possible. The maximization of the cost function $$J$$ is subject to a constraint, namely that the change we introduce (the perturbation factor $$\mathbf{a}$$) very small (so that it goes unnoticed by a human).
 
-A multivariable function $$f(\mathbf{x})$$ can be written as a [Taylor series](https://en.wikipedia.org/wiki/Taylor_series):
+More formally our goal can be expressed as$:
+
+$$\max J(\hat{y}, y)=\max_{\left\| a \right\|\le \epsilon} J(h(x+\alpha), y)$$
+
+In order to solve this optimization problem, we will linearize $$J$$. Let us recall that a multivariable function $$f(\mathbf{x})$$ can be written as a [Taylor series](https://en.wikipedia.org/wiki/Taylor_series):
 
 $$f(\mathbf{x}+\mathbf{\alpha}) = f(\mathbf{x}) + \mathbf{\alpha} \nabla_x f(\mathbf{x}) + \mathcal{O}\left(\left\|\alpha^2\right\|\right)$$, where $$\mathbf{x}=(x_1, x_2, \ldots)$$ and $$\mathbf{\alpha} = (\alpha_1, \alpha_2,\ldots)$$
 
 $$J(h(x+\alpha),y) = \underbrace{J(h(x),y)}_{\text{fixed}}+\alpha \nabla_xJ(h(x),y)+O(\alpha^2)$$
-
-Our goal is to maximize the cost function $$J$$:
-
-$$\max J(\hat{y}, y)=\max_{\left\| a \right\|\le \epsilon} J(h(x+\alpha), y)$$
 
 $$\max_{\left\| a \right\|\le \epsilon} J(h(x+a),y) = \max_{\left\| a \right\|\le \epsilon} \alpha \nabla_x J(h(x),y)$$
 #### Non-targeted example
