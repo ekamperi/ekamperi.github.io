@@ -38,13 +38,7 @@ Therefore:
 
 $$\max_{\left\| a \right\|\le \epsilon} J(h(x+a),y) = \max_{\left\| a \right\|\le \epsilon} \alpha \nabla_x J(h(x),y)$$
 
-The values of $$\alpha$$ that maximize the above quantity, under the [infinity norm](https://en.wikipedia.org/wiki/Norm_(mathematics)#Maximum_norm_(special_case_of:_infinity_norm,_uniform_norm,_or_supremum_norm)) are $$\alpha_i = \epsilon sign(\nabla_x J)_i$$. Before proving this relation, let us provide some intuition. If we assume the infinity norm then 
-
-$$
-\left\| \alpha \right\|_{\infty} = \max(\left|\alpha_1\right|, \left|\alpha_2\right|,\ldots) \le 1
-$$
-
-The proof follows:
+The values of $$\alpha$$ that maximize the above quantity, under the [infinity norm](https://en.wikipedia.org/wiki/Norm_(mathematics)#Maximum_norm_(special_case_of:_infinity_norm,_uniform_norm,_or_supremum_norm)) are $$\alpha_i = \epsilon sign(\nabla_x J)_i$$. The proof goes as this:
 
 $$
 \begin{align}
@@ -56,7 +50,9 @@ $$
 \end{align}
 $$
 
-Where $$\left\| \cdot \right\|_{*}$$ is the dual norm.
+Where $$\left\| \cdot \right\|_{*}$$ is the [dual norm](https://en.wikipedia.org/wiki/Dual_norm#Mathematical_Optimization).
+
+If we assume the infinity norm then $$\left\| \alpha \right\|_{\infty} = \max(\left|\alpha_1\right|, \left|\alpha_2\right|,\ldots) \le 1$$
 
 #### Non-targeted example
 For non-targeted attacks, the value of $$x_\text{adv}$$ can be found via [gradient descent][3] as the one that minimizes the following definition of cost function $$J$$, starting with some random value for $$x$$.
