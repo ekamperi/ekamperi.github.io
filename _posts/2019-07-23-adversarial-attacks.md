@@ -52,9 +52,9 @@ $$
 
 Where $$\left\| \cdot \right\|_{*}$$ is the [dual norm](https://en.wikipedia.org/wiki/Dual_norm#Mathematical_Optimization).
 
-If we assume the infinity norm then
+If we assume the infinity norm then:
 
-$$\left\|\alpha\right\|_{\infty}=\max(\alpha_1, \alpha_2, \ldots)\le 1$$.
+$$\left\|\alpha\right\|_{\infty}=\max(\left|\alpha_1\right|, \alpha_2, \ldots)\le 1$$.
 
 #### Non-targeted example
 For non-targeted attacks, the value of $$x_\text{adv}$$ can be found via [gradient descent][3] as the one that minimizes the following definition of cost function $$J$$, starting with some random value for $$x$$.
