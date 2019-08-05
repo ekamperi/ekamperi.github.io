@@ -52,12 +52,7 @@ $$
 
 Where $$\left\| \cdot \right\|_{*}$$ is the [dual norm](https://en.wikipedia.org/wiki/Dual_norm#Mathematical_Optimization).
 
-Since we have assumed the infinity norm:
-$$
-\left\| \alpha \right\|_\infty = \max(\left|\alpha_1\right|, \left|\alpha_2\right|,\ldots) \le 1
-$$
-
-It holds that $$\left\|\cdot\right\|_{*} = \left\|\cdot\right\|_1$$. Therefore:
+Since we have assumed the infinity norm: $$\left\| \alpha \right\|_\infty = \max(\left|\alpha_1\right|, \left|\alpha_2\right|,\ldots) \le 1$$, it holds that $$\left\|\cdot\right\|_{*} = \left\|\cdot\right\|_1$$. Therefore:
 
 $$
 \max_{\left\|\alpha\right\| \le \epsilon} \nabla_x J(h(x),y) \alpha = \epsilon \left\| \nabla_x J(h(x), y)\right\|_{1}
