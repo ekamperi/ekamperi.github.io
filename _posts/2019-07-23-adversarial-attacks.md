@@ -38,7 +38,7 @@ Therefore:
 
 $$\max_{\left\| a \right\|\le \epsilon} J(h(x+a),y) = \max_{\left\| a \right\|\le \epsilon} \alpha \nabla_x J(h(x),y)$$
 
-The value of $$\alpha$$ that maximizes the above quantity, under the [infinity norm](https://en.wikipedia.org/wiki/Norm_(mathematics)#Maximum_norm_(special_case_of:_infinity_norm,_uniform_norm,_or_supremum_norm)) are $$\alpha_i = \epsilon sign(\nabla_x J)_i$$. The proof goes as this:
+The value of $$\alpha$$ that maximizes the above quantity, under the [infinity norm](https://en.wikipedia.org/wiki/Norm_(mathematics)#Maximum_norm_(special_case_of:_infinity_norm,_uniform_norm,_or_supremum_norm)) is $$\alpha_i = \epsilon sign(\nabla_x J)_i$$. The proof goes as this:
 
 $$
 \begin{align}
@@ -52,13 +52,17 @@ $$
 
 Where $$\left\| \cdot \right\|_{*}$$ is the [dual norm](https://en.wikipedia.org/wiki/Dual_norm#Mathematical_Optimization).
 
-If we assume the infinity norm then:
+Since we have assumed the infinity norm:
 
 $$
 \max(\left|\alpha_1\right|, \left|\alpha_2\right|,\ldots) \le 1
 $$
 
-WIP
+$$
+\max_{\left\|\alpha\right\| \le \epsilon} \nabla_x J(h(x),y) = \epsilon \left\| \nabla_x J(h(x), y)\right\|_{*}
+$$
+
+Under the infinite norm it holds that $$\left\|\cdot\right\|_\infty = \left\|\cdot\right\|_1$$.
 
 #### Non-targeted example
 For non-targeted attacks, the value of $$x_\text{adv}$$ can be found via [gradient descent][3] as the one that minimizes the following definition of cost function $$J$$, starting with some random value for $$x$$.
