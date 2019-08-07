@@ -16,11 +16,11 @@ And to *non-targeted*, when you just want to come up with some random input that
 
 [![Example of non-targeted adversarial attack][2]][2]
 
-Adversarial attacks could potentially pose a security threat for real-world machine learning applications. Szegedy et al. (2014) showed that an adversarial example that was designed to be misclassified by a model $$M1$$ is often also misclassified by a model $$M2$$. This means that it is possible to attack a machine learning system *without* having access to its underlying model ($$M2$).
+Adversarial attacks could potentially pose a security threat for real-world machine learning applications, such as self-driving cars, facial recognition applications, etc. Szegedy et al. (2014) showed that an adversarial example that was designed to be misclassified by a model $$M1$$ is often also misclassified by a model $$M2$$. This "adversarial transferability" property means that it is possible to exploit a machine learning system *without* having any knowledge of its underlying model ($$M2$).
 
 ### Generation
 #### Targeted example
-A fast method for constructing a targeted example is via $$\mathbf{x}_\text{adv} = \mathbf{x} + \overbrace{\epsilon sign\left({\nabla_x J(\mathbf{x})}\right)}^{\text{perturbation factor } \mathbf{\alpha}}$$, where $$\mathbf{x}$$ is the legitimate input you target (e.g. your original "panda" image), $$\epsilon$$ is some small number (whose value you determine by trial-and-error) and $$J(\mathbf{x})$$ is the cost as a function of input $$\mathbf{x}$$. The gradient $$\nabla_x J(\mathbf{x})$$ with respect to input $$\mathbf{x}$$ can be calculated with [backpropagation](https://en.wikipedia.org/wiki/Backpropagation). This method is simple and computationally efficient when compared to other more complex methods, however it usually has a lower success rate.
+A fast method for constructing a targeted example is via $$\mathbf{x}_\text{adv} = \mathbf{x} + \overbrace{\epsilon sign\left({\nabla_x J(\mathbf{x})}\right)}^{\text{perturbation factor } \mathbf{\alpha}}$$, where $$\mathbf{x}$$ is the legitimate input you target (e.g. your original "panda" image), $$\epsilon$$ is some small number (whose value you determine by trial-and-error) and $$J(\mathbf{x})$$ is the cost as a function of input $$\mathbf{x}$$. The gradient $$\nabla_x J(\mathbf{x})$$ with respect to input $$\mathbf{x}$$ can be calculated with [backpropagation](https://en.wikipedia.org/wiki/Backpropagation). This method is simple and computationally efficient when compared to other more complex methods (it requires only 1 gradient calculation after all), however it usually has a lower success rate.
 
 Let's see, how we could derive this formula.
 
@@ -30,7 +30,7 @@ More formally our goal can be expressed as:
 
 $$\max J(\hat{y}, y)=\max_{\left\| a \right\|\le \epsilon} J(h(x+\alpha), y)$$
 
-In order to solve this optimization problem, we will linearize $$J$$. Let us recall that a multivariable function $$f(\mathbf{x})$$ can be written as a [Taylor series](https://en.wikipedia.org/wiki/Taylor_series):
+In order to solve this optimization problem, we will linearize $$J$$ with respect to input $$x$$. Let us recall that a multivariable function $$f(\mathbf{x})$$ can be written as a [Taylor series](https://en.wikipedia.org/wiki/Taylor_series):
 
 $$f(\mathbf{x}+\mathbf{\alpha}) = f(\mathbf{x}) + \mathbf{\alpha} \nabla_x f(\mathbf{x}) + \mathcal{O}\left(\left\|\alpha^2\right\|\right)$$, where $$\mathbf{x}=(x_1, x_2, \ldots)$$, $$\mathbf{\alpha} = (\alpha_1, \alpha_2,\ldots)$$ and $$\nabla_x$$ the gradient with respect to input $$\mathbf{x}$$.
 
