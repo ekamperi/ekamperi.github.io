@@ -16,10 +16,10 @@ And to *targeted*, when you want to force the model to predict a *specific outpu
 
 [![Example of non-targeted adversarial attack][2]][2]
 
-Adversarial attacks could potentially pose a security threat for real-world machine learning applications, such as self-driving cars, facial recognition applications, etc. Szegedy et al. (2014) showed that an adversarial example that was designed to be misclassified by a model $$M1$$ is often also misclassified by a model $$M2$$. This "adversarial transferability" property means that it is possible to exploit a machine learning system *without* having any knowledge of its underlying model ($$M2$).
+Adversarial attacks could potentially pose a security threat for real-world machine learning applications, such as self-driving cars, facial recognition applications, etc. Szegedy et al. (2014) showed that an adversarial example that was designed to be misclassified by a model $$M1$$ is often also misclassified by a model $$M2$$. This "adversarial transferability" property means that it is possible to exploit a machine learning system *without* having any knowledge of its underlying model ($$M2$$).
 
 ### Generation
-#### Targeted example
+#### Non-Targeted example
 A fast method for constructing a targeted example is via $$\mathbf{x}_\text{adv} = \mathbf{x} + \overbrace{\epsilon sign\left({\nabla_x J(\mathbf{x})}\right)}^{\text{perturbation factor } \mathbf{\alpha}}$$, where $$\mathbf{x}$$ is the legitimate input you target (e.g. your original "panda" image), $$\epsilon$$ is some small number (whose value you determine by trial-and-error) and $$J(\mathbf{x})$$ is the cost as a function of input $$\mathbf{x}$$. The gradient $$\nabla_x J(\mathbf{x})$$ with respect to input $$\mathbf{x}$$ can be calculated with [backpropagation](https://en.wikipedia.org/wiki/Backpropagation). This method is simple and computationally efficient when compared to other more complex methods (it requires only 1 gradient calculation after all), however it usually has a lower success rate.
 
 Let's see, how we could derive this formula.
@@ -79,7 +79,10 @@ $$
 \alpha_i = \epsilon sign\left(\nabla_x J(h(x),y)_i\right)
 $$
 
-#### Non-targeted example
+#### Targeted example
+
+When we want to steer the model's output to some specific class, $$y_\text{target}$$, instead of increasing the cost function $$J(\hat{y}, y_\text{true})$$, we instead decrease the cost function between the predicted $$\hat{y}$$ and the target class $$y_\text{target}$$.
+
 For non-targeted attacks, the value of $$\mathbf{x}_\text{adv}$$ can be found via [gradient descent][3] as the one that minimizes the following definition of cost function $$J$$, starting with some random value for $$\mathbf{x}$$.
 
 $$
