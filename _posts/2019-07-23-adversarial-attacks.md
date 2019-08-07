@@ -6,13 +6,13 @@ categories: jekyll update
 ---
 
 ### Introduction
-Adversarial means "involving or characterized by conflict or opposition". In the context of neural networks, "adversarial examples" refer to specially crafted inputs whose purpose is to force the neural network to misclassify them. These examples (or attacks) are grouped into *targeted*, when a legitimate input is changed by some imperceptible amount and the new input is misclassified by the network. E.g.
+Adversarial means "involving or characterized by conflict or opposition". In the context of neural networks, "adversarial examples" refer to specially crafted inputs whose purpose is to force the neural network to misclassify them. These examples (or attacks) are grouped into *non-targeted*, when a legitimate input is changed by some imperceptible amount and the new input is misclassified by the network. E.g.
 
 [![Example of targeted adversarial attack][1]][1]
 
 Source: Goodfellow IJ, Shlens J, Szegedy C. Explaining and Harnessing Adversarial Examples [Internet]. arXiv [stat.ML]. 2014. Available from [here](http://arxiv.org/abs/1412.6572).
 
-And to *non-targeted*, when you just want to come up with some random input that results to a specific output, even if it looks like noise, as in the following network which is trained to recognize digits:
+And to *targeted*, when you want to force the model to predict a *specific output* ($$y_\text{target}$$), even if it looks like noise, as in the following network which is trained to recognize digits:
 
 [![Example of non-targeted adversarial attack][2]][2]
 
