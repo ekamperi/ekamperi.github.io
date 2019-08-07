@@ -63,7 +63,7 @@ $$
 \max_{\left\|\alpha\right\| \le \epsilon} \nabla_x J(h(x),y) \alpha = \epsilon \left\| \nabla_x J(h(x), y)\right\|_{1}
 $$
 
-Finally we solve the following equation:
+Finally we solve the following equation (notice that $$|x| = sign(x) x$$):
 
 $$
 \begin{align}
