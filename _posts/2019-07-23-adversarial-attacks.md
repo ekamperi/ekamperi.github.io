@@ -83,11 +83,12 @@ $$
 {% raw %}
 ~~~~
 ClearAll["Global`*"];
+
 (* Load the neural network model *)
 netOriginalModel = 
  NetModel["SqueezeNet V1.1 Trained on ImageNet Competition Data"];
 
-(* This is an African wild dog image we will use as intput X *)
+(* This is an African wild dog image we will use as input X *)
 legitX =
  ImageResize[#, {227, 227}] &@
   RemoveAlphaChannel@
@@ -101,14 +102,14 @@ netM = NetReplacePart[netOriginalModel, "Output" -> None];
 idx = Ordering[netM[legitX]][[-1]];
 ytrue = ConstantArray[0, 1000]; ytrue[[idx]] = 1;
 
-(* Calculate the gradients *)
+(* Calculate the signed gradients *)
 dy[x_] := netM[x] - ytrue;
 calcGrads[x_] :=
   ArrayReshape[#, {227, 227, 3}] &@
    Sign@netM[<|"Input" -> x, NetPortGradient["Output"] -> dy[x]|>, 
      NetPortGradient["Input"]];
 
-(* new image = old image + epsilon * sign(grads) *)
+(* new image = old image + epsilon * signed_gradients *)
 getAdv[x_, epsilon_] := Image[ImageData@x + epsilon*calcGrads[x]]
 
 tnew[epsilon_] :=
