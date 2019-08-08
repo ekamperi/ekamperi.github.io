@@ -79,6 +79,45 @@ $$
 \alpha_i = \epsilon sign\left(\nabla_x J(h(x),y)_i\right)
 $$
 
+#### Code
+~~~~
+ClearAll["Global`*"];
+
+(* Load the neural network model *)
+netOriginalModel = 
+ NetModel["SqueezeNet V1.1 Trained on ImageNet Competition Data"];
+
+(* This is an African wild dog image we will use as intput X *)
+legitX =
+ ImageResize[#, {227, 227}] &@
+  RemoveAlphaChannel@
+   Import[
+    "https://farm1.static.flickr.com/159/384015403_25353f2a7d.jpg"];
+
+(* Remove the decoder from the output, so that we get a vector y as the output *)
+netM = NetReplacePart[netOriginalModel, "Output" -> None];
+
+(* Find the index of the African wild dog and construct the true output vector ytrue *)
+idx = Ordering[netM[legitX]][[-1]];
+ytrue = ConstantArray[0, 1000]; ytrue[[idx]] = 1;
+
+(* Calculate the gradients *)
+dy[x_] := netM[x] - ytrue;
+calcGrads[x_] :=
+  ArrayReshape[#, {227, 227, 3}] &@
+   Sign@netM[<|"Input" -> x, NetPortGradient["Output"] -> dy[x]|>, 
+     NetPortGradient["Input"]];
+
+(* new image = old image + epsilon * sign(grads) *)
+getAdv[x_, epsilon_] := Image[ImageData@x + epsilon*calcGrads[x]]
+
+tnew[epsilon_] :=
+ With[{newImage = getAdv[legitX, epsilon]},
+  {{legitX, netOriginalModel[legitX]}, {newImage, netOriginalModel[newImage]}}]
+
+tnew[0.0815]
+~~~~
+
 #### Targeted example
 
 When we want to steer the model's output to some specific class, $$y_\text{target}$$, instead of increasing the cost function $$J(\hat{y}, y_\text{true})$$, we instead decrease the cost function between the predicted $$\hat{y}$$ and the target class $$y_\text{target}$$.
