@@ -118,6 +118,9 @@ tnew[epsilon_] :=
 tnew[0.0815]
 ~~~~
 
+And this is the result:
+
+
 #### Targeted example
 
 When we want to steer the model's output to some specific class, $$y_\text{target}$$, instead of increasing the cost function $$J(\hat{y}, y_\text{true})$$, we instead decrease the cost function between the predicted $$\hat{y}$$ and the target class $$y_\text{target}$$.
