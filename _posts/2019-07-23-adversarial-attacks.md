@@ -80,7 +80,7 @@ $$
 $$
 
 #### Code
-~~~~
+````
 ClearAll["Global`*"];
 
 (* Load the neural network model *)
@@ -116,7 +116,7 @@ tnew[epsilon_] :=
   {{legitX, netOriginalModel[legitX]}, {newImage, netOriginalModel[newImage]}}]
 
 tnew[0.0815]
-~~~~
+````
 
 And this is the result:
 
