@@ -113,7 +113,7 @@ $$
 
     tnew[epsilon_] :=
      With[{newImage = getAdv[legitX, epsilon]},
-      {{legitX, netOriginalModel[legitX]}, {newImage, netOriginalModel[newImage]}}]
+      \{\{legitX, netOriginalModel[legitX]\}, \{newImage, netOriginalModel[newImage]\}\}]
 
     tnew[0.0815]
 ````
