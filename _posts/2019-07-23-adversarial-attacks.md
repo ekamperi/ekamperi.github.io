@@ -176,7 +176,7 @@ Style[Grid[{{Image[randomX, ImageSize -> Small], p1}}], ImageSizeMultipliers -> 
 {% endraw %}
 ![LeNet]({{ site.url }}/images/lenet1.png)
 
-As you can see in the above image when given some random input (noise), LeNet outputs some probabilities for each class. Our goal is to come up with an image $$\mathbf{x}$$ such as that the network will classify it as -say- digit $$4$$. Therefore, the ideal output vector $$\mathbf{y_\text{target}}$$ is $$[0,0,0,0,1,0,0,0,0,0]$$.
+As you can see in the above image when given a random input (noise), LeNet outputs some probabilities for each class. Our goal is to come up with an image $$\mathbf{x}$$ such as that the network will classify it -say- as digit $$4$$. Therefore, the ideal output vector $$\mathbf{y_\text{target}}$$ is $$[0,0,0,0,1,0,0,0,0,0]$$.
 
 {% raw %}
 ~~~~
