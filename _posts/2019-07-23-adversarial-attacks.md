@@ -133,6 +133,19 @@ When we want to steer the model's output to some specific class, $$y_\text{targe
 
 Therefore, instead of $$\mathbf{x}_\text{adv} = \mathbf{x} + \overbrace{\epsilon sign\left({\nabla_x J(\mathbf{x},y_\text{true})}\right)}^{\text{perturbation factor } \mathbf{\alpha}}$$, we do $$\mathbf{x}_\text{adv} = \mathbf{x} - \overbrace{\epsilon sign\left({\nabla_x J(\mathbf{x},y_\text{target})}\right)}^{\text{perturbation factor } \mathbf{\alpha}}$$.
 
+Instead of doing just one update, one could use an iterative approach where the value of $$\mathbf{x}_\text{adv}$$ is calculated via [gradient descent][3] as the one that minimizes the following definition of cost function $$J$$, starting with some random value for $$\mathbf{x}$$.
+
+$$
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+J(\mathbf{x}) = \frac{1}{2}\norm{y(\mathbf{x})-\mathbf{y}_\text{target}}_2^2 
+$$
+
+Here $$\mathbf{y}_\text{target}$$ is the target class value (e.g. $$\mathbf{y}_\text{target} = [0,0,0,1,0,0,0,0,0,0]$$,  $$y(\mathbf{x})$$ is the output of the network for some input $$\mathbf{x}$$. The update rule for $$\mathbf{x}$$ is the following:
+
+$$
+x_{j,\text{new}} = x_{j,\text{old}} - \alpha \frac{\partial }{\partial x_j}J(\mathbf{x})
+$$
+
 Let us perform a targeted attack on the LeNet network, which was developed by [Yann LeCun](https://en.wikipedia.org/wiki/Yann_LeCun) and his collaborators while they experimented with machine learning solutions for classification on the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database). MNIST is a large database of handwritten digits that is commonly used for training image classification systems.
 
 {% raw %}
@@ -163,6 +176,8 @@ Style[Grid[{{Image[randomX, ImageSize -> Small], p1}}], ImageSizeMultipliers -> 
 {% endraw %}
 ![LeNet]({{ site.url }}/images/lenet1.png)
 
+As you can see in the above image, when given some random input (noise), LeNet outputs these probabilities for each class. Our goal is to come up with an image $$\mathbf{x}$$ such that network classifies it as -say- digit $$4$$.
+
 {% raw %}
 ~~~~
 (* The target output vector, ytarget *)
@@ -178,22 +193,7 @@ calcGrads[x_] :=
 ~~~~
 {% endraw %}
 
-For non-targeted attacks, the value of $$\mathbf{x}_\text{adv}$$ can be found via [gradient descent][3] as the one that minimizes the following definition of cost function $$J$$, starting with some random value for $$\mathbf{x}$$.
-
-$$
-\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
-J(\mathbf{x}) = \frac{1}{2}\norm{y(\mathbf{x})-\mathbf{y}_\text{target}}_2^2 
-=\frac{1}{2}\norm{h_\Theta(\mathbf{x}) - \mathbf{y}_\text{target}}_2^2
-$$
-
-$$\mathbf{y}_\text{target}$$ is the target class value (e.g. $$\mathbf{y}_\text{target} = [0,0,0,1,0,0,0,0,0,0]$$ in the above image), $$h_\Theta(\mathbf{x})$$ is the output of the network for some input $$\mathbf{x}$$ and $$\mathbf{x}$$ gets updated with:
-
-$$
-x_{j,\text{new}} = x_{j,\text{old}} - \alpha \frac{\partial }{\partial x_j}J(\mathbf{x})
-$$
-
 [Useful link][4] on `NetPortGradient[]`.
-
 
   [1]: https://i.stack.imgur.com/NPbEel.png
   [2]: https://i.stack.imgur.com/h7mGDl.png
