@@ -80,6 +80,7 @@ $$
 $$
 
 #### Example code in Mathematica
+
 {% raw %}
 ~~~~
 ClearAll["Global`*"];
@@ -117,6 +118,7 @@ tnew[epsilon_] :=
   {{legitX, netOriginalModel[legitX]}, {newImage, 
     netOriginalModel[newImage]}}]
 
+(* epsilon = 0.0815 *)
 tnew[0.0815]
 ~~~~
 {% endraw %}
