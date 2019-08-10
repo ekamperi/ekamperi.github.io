@@ -162,7 +162,7 @@ We start with some random image as $$\mathbf{x}$$:
 {% raw %}
 ~~~~
 (* Start with some random image *)
-randomX = RandomImage[{0, 1}, ImageDimensions@testData[[1, 1]]];
+randomX = RandomImage[{0, 1}, ImageDimensions@trainingData[[1, 1]]];
 
 netM = NetReplacePart[netOriginalModel, "Output" -> None]
 
