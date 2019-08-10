@@ -140,7 +140,7 @@ Let us perform a targeted attack on LeNet network. It was developed by [Yann LeC
 Take[RandomSample[trainingData], 10]
 ~~~~
 {% endraw %}
-![MNIST example]({{ site.url }}/images/mnist.png)
+![MNIST example]({{ site.url }}/images/mnist.jpg)
 
 For non-targeted attacks, the value of $$\mathbf{x}_\text{adv}$$ can be found via [gradient descent][3] as the one that minimizes the following definition of cost function $$J$$, starting with some random value for $$\mathbf{x}$$.
 
