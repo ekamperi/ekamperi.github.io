@@ -263,7 +263,7 @@ $$
 \end{align}
 $$
 
-So, the phrase "Imposing a gradient at the output using the syntax <|…,NetPortGradient[oport] -> ograd|> is equivalent to replacing this scalar sum with a *dot product between the output and ograd*." makes sense now.
+So, the phrase "Imposing a gradient at the output using the syntax `NetPortGradient[oport] -> ograd` is equivalent to replacing this scalar sum with a *dot product between the output and ograd*" makes sense now.
 
 [Useful link][4] on `NetPortGradient[]`.
 
