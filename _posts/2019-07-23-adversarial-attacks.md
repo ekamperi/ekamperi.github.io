@@ -239,7 +239,7 @@ Style[Grid[{{Image[randomX, ImageSize -> Small], p2}}],
 
 #### Note on `NetPortGradient[]` function.
 
-In the documentation of `NetPortGradient[]` the following sentence is mentioned:
+In the documentation of [NetPortGradient[]](https://reference.wolfram.com/language/ref/NetPortGradient.html) the following sentence is mentioned:
 > For a net with vector or array outputs, the gradient returned when using NetPortGradient
 > is the ordinary gradient of the scalar sum of all outputs. Imposing a gradient at the output
 > using the syntax <|…,NetPortGradient[oport] -> ograd|> is equivalent to replacing this scalar sum
