@@ -6,13 +6,13 @@ categories: [machine learning]
 ---
 
 ### Introduction
-Adversarial means "involving or characterized by conflict or opposition". In the context of neural networks, "adversarial examples" refer to specially crafted inputs whose purpose is to force the neural network to misclassify them. These examples (or attacks) are grouped into *non-targeted*, when a legitimate input is changed by some imperceptible amount and the new input is misclassified by the network. E.g.
+Adversarial means "involving or characterized by conflict or opposition". In the context of neural networks, "adversarial examples" refer to specially crafted inputs whose purpose is to force the neural network to misclassify them. These examples (or attacks) are grouped into *non-targeted*, when a valid input is changed by some imperceptible amount to a new one that is misclassified by the network (but we can't control the new class that the network will pick, hence non-targeted). E.g.
 
 [![Example of targeted adversarial attack][1]][1]
 
 Source: Goodfellow IJ, Shlens J, Szegedy C. Explaining and Harnessing Adversarial Examples [Internet]. arXiv [stat.ML]. 2014. Available from [here](http://arxiv.org/abs/1412.6572).
 
-And to *targeted*, when you want to force the model to predict a *specific output* ($$y_\text{target}$$), even if it looks like noise, as in the following network which is trained to recognize digits:
+And to *targeted*, when you force the model to predict a *specific output* ($$y_\text{target}$$), as in the following network which is trained to recognize digits:
 
 [![Example of non-targeted adversarial attack][2]][2]
 
@@ -184,7 +184,9 @@ As you can see in the above image when given a random input (noise), LeNet outpu
 ytarget = ConstantArray[0, 10]; ytarget[[5]] = 1; ytarget
 (* {0, 0, 0, 0, 1, 0, 0, 0, 0, 0} *)
 
-(* Calculate signed gradients *)
+(* Calculate signed gradients with respect to input x.
+   In standard gradient descent we update our variables by a factor
+   proportional to the magnitude of the gradient. *)
 dy[x_] := netM[x] - ytarget;
 calcGrads[x_] :=
  ArrayReshape[#, Dimensions@ImageData@randomX] &@
@@ -226,7 +228,7 @@ Style[Grid[{{p1, p2}}], ImageSizeMultipliers -> 1]
 
 ![LeNet]({{ site.url }}/images/lenet_comparison.png)
 
-Notice how our adversarial input image bears no resemblance to a $$4$$ digit, yet the network is "100% sure" that this is the digit $$4$$.
+Notice how our adversarial input image bears no resemblance to a $$4$$ digit, yet the network is "100% sure" that this is a $$4$$ digit.
 
 {% raw %}
 ~~~~
