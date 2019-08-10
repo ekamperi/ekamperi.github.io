@@ -137,7 +137,7 @@ Instead of doing just one update, we could use an *iterative* approach where the
 
 $$
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
-J(\mathbf{x}, \mathbf{y_\text{target}}) = \frac{1}{2}\norm{y(\mathbf{x})-\mathbf{y}_\text{target}}_2^2 
+J(\mathbf{x}, \mathbf{y}_\text{target}) = \frac{1}{2}\norm{y(\mathbf{x})-\mathbf{y}_\text{target}}_2^2 
 $$
 
 Here $$\mathbf{y}_\text{target}$$ is the target class value (e.g. $$\mathbf{y}_\text{target} = [0,0,0,0,1,0,0,0,0,0]$$ and  $$y(\mathbf{x})$$ is the output of the network for some input $$\mathbf{x}$$. The update rule for $$\mathbf{x}$$ is the following:
