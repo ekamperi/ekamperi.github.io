@@ -133,14 +133,14 @@ When we want to steer the model's output to some specific class, $$y_\text{targe
 
 Therefore, instead of $$\mathbf{x}_\text{adv} = \mathbf{x} + \overbrace{\epsilon sign\left({\nabla_x J(\mathbf{x},y_\text{true})}\right)}^{\text{perturbation factor } \mathbf{\alpha}}$$, we do $$\mathbf{x}_\text{adv} = \mathbf{x} - \overbrace{\epsilon sign\left({\nabla_x J(\mathbf{x},y_\text{target})}\right)}^{\text{perturbation factor } \mathbf{\alpha}}$$.
 
-Instead of doing just one update, one could use an iterative approach where the value of $$\mathbf{x}_\text{adv}$$ is calculated via [gradient descent][3] as the one that minimizes the following definition of cost function $$J$$, starting with some random value for $$\mathbf{x}$$.
+Instead of doing just one update, we could use an *iterative* approach where the value of $$\mathbf{x}_\text{adv}$$ is iteratively calculated via [gradient descent][3], as the one that minimizes the following definition of cost function $$J$$ (starting with some random value for $$\mathbf{x}$$):
 
 $$
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
-J(\mathbf{x}) = \frac{1}{2}\norm{y(\mathbf{x})-\mathbf{y}_\text{target}}_2^2 
+J(\mathbf{x}, \mathbf{y_\text{target}}) = \frac{1}{2}\norm{y(\mathbf{x})-\mathbf{y}_\text{target}}_2^2 
 $$
 
-Here $$\mathbf{y}_\text{target}$$ is the target class value (e.g. $$\mathbf{y}_\text{target} = [0,0,0,1,0,0,0,0,0,0]$$,  $$y(\mathbf{x})$$ is the output of the network for some input $$\mathbf{x}$$. The update rule for $$\mathbf{x}$$ is the following:
+Here $$\mathbf{y}_\text{target}$$ is the target class value (e.g. $$\mathbf{y}_\text{target} = [0,0,0,0,1,0,0,0,0,0]$$,  $$y(\mathbf{x})$$ is the output of the network for some input $$\mathbf{x}$$. The update rule for $$\mathbf{x}$$ is the following:
 
 $$
 x_{j,\text{new}} = x_{j,\text{old}} - \alpha \frac{\partial }{\partial x_j}J(\mathbf{x})
@@ -176,7 +176,7 @@ Style[Grid[{{Image[randomX, ImageSize -> Small], p1}}], ImageSizeMultipliers -> 
 {% endraw %}
 ![LeNet]({{ site.url }}/images/lenet1.png)
 
-As you can see in the above image, when given some random input (noise), LeNet outputs these probabilities for each class. Our goal is to come up with an image $$\mathbf{x}$$ such that network classifies it as -say- digit $$4$$.
+As you can see in the above image when given some random input (noise), LeNet outputs some probabilities for each class. Our goal is to come up with an image $$\mathbf{x}$$ such as that the network will classify it as -say- digit $$4$$. Therefore, the ideal output vector $$\mathbf{y_\text{target}}$$ is $$[0,0,0,0,1,0,0,0,0,0]$$.
 
 {% raw %}
 ~~~~
@@ -190,6 +190,43 @@ calcGrads[x_] :=
  ArrayReshape[#, Dimensions@ImageData@randomX] &@
   Sign@netM[<|"Input" -> x, NetPortGradient["Output"] -> dy[x]|>, 
     NetPortGradient["Input"]]
+
+(* Run some iterations of gradient descent with a learning rate 0.01 *)
+(* Save the values of cost function J so that we plot it *)
+errors =
+  Reap[
+    For[i = 1, i <= 30, i++,
+     randomX = Image[ImageData@randomX - 0.01*calcGrads[randomX]];
+     Sow@Total[0.5 (netM[randomX] - ytarget)^2]
+     ]
+    ][[2, 1]];
+~~~~
+{% endraw %}
+
+Here is the plot of cost function $$J$$ vs. the iterations of gradient descent:
+![Cost function]({{ site.url }}/images/cost_function.png)
+
+
+{% raw %}
+~~~~
+p2 = DiscretePlot[netM[randomX][[k + 1]], {k, 0, 9}, PlotRange -> All,
+    Frame -> {True, True, False, False}, 
+   FrameLabel -> {"Class", "Probability"}, 
+   FrameTicks -> {Range[0, 9], Automatic}, 
+   PlotLabel -> "LeNet output on adversarial input", 
+   PlotStyle -> AbsolutePointSize[5]];
+Style[Grid[{{p1, p2}}], ImageSizeMultipliers -> 1]
+~~~~
+{% endraw %}
+
+![LeNet output on random (left) and adversarial (right) example]({{ site.url }}/images/cost_function.png)
+
+Notice how our adversarial input image bears no resemblance to a $$4$$ digit, yet the network is "100% sure" that this is the digit $$4$$.
+
+{% raw %}
+~~~~
+Style[Grid[{{Image[randomX, ImageSize -> Small], p2}}], 
+ ImageSizeMultipliers -> 1]
 ~~~~
 {% endraw %}
 
