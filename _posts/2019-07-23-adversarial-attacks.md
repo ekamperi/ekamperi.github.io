@@ -222,7 +222,7 @@ Style[Grid[{{p1, p2}}], ImageSizeMultipliers -> 1]
 ~~~~
 {% endraw %}
 
-![LeNet]({{ site.url }}/images/lenet2.png)
+![LeNet]({{ site.url }}/images/lenet_comparison.png)
 
 Notice how our adversarial input image bears no resemblance to a $$4$$ digit, yet the network is "100% sure" that this is the digit $$4$$.
 
@@ -233,7 +233,7 @@ Style[Grid[{{Image[randomX, ImageSize -> Small], p2}}],
 ~~~~
 {% endraw %}
 
-![LeNet output on random (left) and adversarial (right) example]({{ site.url }}/images/cost_function.png)
+![LeNet output on random (left) and adversarial (right) example]({{ site.url }}/images/lenet2.png)
 
 [Useful link][4] on `NetPortGradient[]`.
 
