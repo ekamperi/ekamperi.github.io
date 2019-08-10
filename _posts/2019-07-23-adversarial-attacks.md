@@ -137,6 +137,9 @@ Let us perform a targeted attack on LeNet network. It was developed by [Yann LeC
 
 {% raw %}
 ~~~~
+ClearAll["Global`*"];
+netOriginalModel = NetModel["LeNet Trained on MNIST Data"]
+trainingData = ResourceData["MNIST", "Tr
 Take[RandomSample[trainingData], 10]
 ~~~~
 {% endraw %}
