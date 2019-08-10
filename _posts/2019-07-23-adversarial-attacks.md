@@ -210,16 +210,14 @@ Here is the plot of cost function $$J$$ vs. the iterations of gradient descent:
 {% raw %}
 ~~~~
 p2 = DiscretePlot[netM[randomX][[k + 1]], {k, 0, 9}, PlotRange -> All,
-    Frame -> {True, True, False, False}, 
-   FrameLabel -> {"Class", "Probability"}, 
-   FrameTicks -> {Range[0, 9], Automatic}, 
-   PlotLabel -> "LeNet output on adversarial input", 
-   PlotStyle -> AbsolutePointSize[5]];
+   Frame -> {True, True, False, False}, 
+   FrameLabel -> {"Class", "Probability"}, FrameTicks -> {Range[0, 9], Automatic}, 
+   PlotLabel -> "LeNet output on adversarial input", PlotStyle -> AbsolutePointSize[5]];
 Style[Grid[{{p1, p2}}], ImageSizeMultipliers -> 1]
 ~~~~
 {% endraw %}
 
-![LeNet output on random (left) and adversarial (right) example]({{ site.url }}/images/cost_function.png)
+![LeNet]({{ site.url }}/images/lenet2.png)
 
 Notice how our adversarial input image bears no resemblance to a $$4$$ digit, yet the network is "100% sure" that this is the digit $$4$$.
 
@@ -229,6 +227,8 @@ Style[Grid[{{Image[randomX, ImageSize -> Small], p2}}],
  ImageSizeMultipliers -> 1]
 ~~~~
 {% endraw %}
+
+![LeNet output on random (left) and adversarial (right) example]({{ site.url }}/images/cost_function.png)
 
 [Useful link][4] on `NetPortGradient[]`.
 
