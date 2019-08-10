@@ -206,8 +206,9 @@ errors =
 Here is the plot of cost function $$J$$ vs. the iterations of gradient descent:
 {% raw %}
 ~~~~
-ListPlot[errors, Joined -> True, InterpolationOrder -> 1, Filling -> Axis, PlotRange -> All, 
- Frame -> {True, True, False, False}, FrameLabel -> {"Iteration", "Cost function J"}]
+ListPlot[errors, Joined -> True, InterpolationOrder -> 1, Filling -> Axis,
+ PlotRange -> All, Frame -> {True, True, False, False},
+ FrameLabel -> {"Iteration", "Cost function J"}]
 ~~~~
 {% endraw %}
 ![Cost function]({{ site.url }}/images/cost_function.png)
@@ -217,7 +218,8 @@ ListPlot[errors, Joined -> True, InterpolationOrder -> 1, Filling -> Axis, PlotR
 p2 = DiscretePlot[netM[randomX][[k + 1]], {k, 0, 9}, PlotRange -> All,
    Frame -> {True, True, False, False}, 
    FrameLabel -> {"Class", "Probability"}, FrameTicks -> {Range[0, 9], Automatic}, 
-   PlotLabel -> "LeNet output on adversarial input", PlotStyle -> AbsolutePointSize[5]];
+   PlotLabel -> "LeNet output on adversarial input",
+   PlotStyle -> AbsolutePointSize[5]];
 Style[Grid[{{p1, p2}}], ImageSizeMultipliers -> 1]
 ~~~~
 {% endraw %}
