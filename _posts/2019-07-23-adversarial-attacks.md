@@ -235,6 +235,7 @@ Style[Grid[{{Image[randomX, ImageSize -> Small], p2}}],
 ~~~~
 {% endraw %}
 
+LeNet output on random (left) and adversarial (right) example.
 ![LeNet output on random (left) and adversarial (right) example]({{ site.url }}/images/lenet2.png)
 
 #### Note on `NetPortGradient[]` function.
