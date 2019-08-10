@@ -248,6 +248,23 @@ In the documentation of [NetPortGradient[]](https://reference.wolfram.com/langua
 > using the syntax <|…,NetPortGradient[oport] -> ograd|> is equivalent to replacing this scalar sum
 > with a dot product between the output and ograd.
 
+I did find this sentence a bit confusing, but if you do the math it makes sense. Let us assume a [mean squared error](https://en.wikipedia.org/wiki/Mean_squared_error) as our cost function $$J$$:
+$$
+J=\text{MSE}(\hat{\mathbf{y}}, \mathbf{y}) = \frac{1}{2}\left\| \hat{\mathbf{y}}- \mathbf{y} \right\|_2^2
+=\frac{1}{2}\sum_j^N \left(\hat{y}-y\right)_j^2
+$$
+
+Then, by computing the gradient of $$J$$ with respect to input $$\mathbf{x}$$ we get:
+$$
+\begin{align}
+\frac{\partial}{\partial x} J &=\frac{1}{2}\sum_j^N 2(\hat{y}-y)_j \left(\frac{\partial}{\partial x}\hat{y_j}(x)-
+\frac{\partial}{\partial x}y_j\right)\\
+&= \sum_j^N(\hat{y}-y)_j \frac{\partial}{\partial x}\hat{y_j}(x) = \underbrace{(\hat{\mathbf{y}}-\mathbf{y})}_{ograd}\cdot \nabla_x \hat{\mathbf{y}}(x)
+\end{align}
+$$
+
+So, the phrase "Imposing a gradient at the output using the syntax <|…,NetPortGradient[oport] -> ograd|> is equivalent to replacing this scalar sum with a *dot product between the output and ograd*." makes sense now.
+
 [Useful link][4] on `NetPortGradient[]`.
 
   [1]: https://i.stack.imgur.com/NPbEel.png
