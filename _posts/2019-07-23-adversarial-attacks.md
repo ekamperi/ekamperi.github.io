@@ -133,17 +133,50 @@ When we want to steer the model's output to some specific class, $$y_\text{targe
 
 Therefore, instead of $$\mathbf{x}_\text{adv} = \mathbf{x} + \overbrace{\epsilon sign\left({\nabla_x J(\mathbf{x},y_\text{true})}\right)}^{\text{perturbation factor } \mathbf{\alpha}}$$, we do $$\mathbf{x}_\text{adv} = \mathbf{x} - \overbrace{\epsilon sign\left({\nabla_x J(\mathbf{x},y_\text{target})}\right)}^{\text{perturbation factor } \mathbf{\alpha}}$$.
 
-Let us perform a targeted attack on LeNet network. It was developed by [Yann LeCun](https://en.wikipedia.org/wiki/Yann_LeCun) and his collaborators while they experimented with a large range of machine learning solutions for classification on the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database), a large database of handwritten digits that is commonly used for training various image processing systems.
+Let us perform a targeted attack on the LeNet network, which was developed by [Yann LeCun](https://en.wikipedia.org/wiki/Yann_LeCun) and his collaborators while they experimented with machine learning solutions for classification on the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database). MNIST is a large database of handwritten digits that is commonly used for training image classification systems.
 
 {% raw %}
 ~~~~
 ClearAll["Global`*"];
 netOriginalModel = NetModel["LeNet Trained on MNIST Data"]
-trainingData = ResourceData["MNIST", "Tr
+trainingData = ResourceData["MNIST", "TrainingData"];
 Take[RandomSample[trainingData], 10]
 ~~~~
 {% endraw %}
 ![MNIST example]({{ site.url }}/images/mnist.jpg)
+
+We start with some random image as $$\mathbf{x}$$:
+{% raw %}
+~~~~
+(* Start with some random image *)
+randomX = RandomImage[{0, 1}, ImageDimensions@testData[[1, 1]]];
+
+netM = NetReplacePart[netOriginalModel, "Output" -> None]
+
+p1 = DiscretePlot[netM[randomX][[k + 1]], {k, 0, 9}, PlotRange -> All,
+   Frame -> {True, True, False, False}, 
+   FrameLabel -> {"Class", "Probability"}, 
+   FrameTicks -> {Range[0, 9], Automatic}, 
+   PlotLabel -> "LeNet output on a random image", PlotStyle -> AbsolutePointSize[5]];
+Style[Grid[{{Image[randomX, ImageSize -> Small], p1}}], ImageSizeMultipliers -> 1]
+~~~~
+{% endraw %}
+![LeNet]({{ site.url }}/images/lenet1.png)
+
+{% raw %}
+~~~~
+(* The target output vector, ytarget *)
+ytarget = ConstantArray[0, 10]; ytarget[[5]] = 1; ytarget
+(* {0, 0, 0, 0, 1, 0, 0, 0, 0, 0} *)
+
+(* Calculate signed gradients *)
+dy[x_] := netM[x] - ytarget;
+calcGrads[x_] :=
+ ArrayReshape[#, Dimensions@ImageData@randomX] &@
+  Sign@netM[<|"Input" -> x, NetPortGradient["Output"] -> dy[x]|>, 
+    NetPortGradient["Input"]]
+~~~~
+{% endraw %}
 
 For non-targeted attacks, the value of $$\mathbf{x}_\text{adv}$$ can be found via [gradient descent][3] as the one that minimizes the following definition of cost function $$J$$, starting with some random value for $$\mathbf{x}$$.
 
