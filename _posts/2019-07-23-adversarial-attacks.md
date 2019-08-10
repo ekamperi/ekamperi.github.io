@@ -24,7 +24,7 @@ A fast method for constructing a targeted example is via $$\mathbf{x}_\text{adv}
 
 Let's see, how we could derive this formula.
 
-Our cost function is $$J(\hat{y}, y) = J(h(x),y)$$, where $$h(x)$$ is the hypothesis function (basically the value of the network's output layer). Normally, when training a network we want to minimize the cost function $$J$$ so that our network's prediction $$\hat{y}$$ is as close to the true value $$y$$ as possible. When constructing a targeted adersarial attack, though, we want the exact opposite. We want to come up with a new input $$\mathbf{x}_\text{adv}$$, such that the predicted value $$\hat{y}$$ is as much away from $$y$$ as possible. The maximization of the cost function $$J$$ is subject to a constraint, namely that the change we introduce (the perturbation factor $$\mathbf{\alpha}$$) is very small (so that it goes unnoticed by a human).
+Our cost function is $$J(\hat{\mathbf{y}}, \mathbf{y}) = J(h(\mathbf{x}),\mathbf{y})$$, where $$h(\mathbf{x})$$ is the hypothesis function (basically the value of the network's output layer). Normally, when training a network we want to minimize the cost function $$J$$ so that our network's prediction $$\hat{y}$$ is as close to the true value $$y$$ as possible. When constructing a targeted adersarial attack, though, we want the exact opposite. We want to come up with a new input $$\mathbf{x}_\text{adv}$$, such that the predicted value $$\hat{\mathbf{y}}$$ is as much away from $$y$$ as possible. The maximization of the cost function $$J$$ is subject to a constraint, namely that the change we introduce (the perturbation factor $$\mathbf{\alpha}$$) is very small (so that it goes unnoticed by a human).
 
 More formally our goal can be expressed as:
 
@@ -140,7 +140,7 @@ $$
 J(\mathbf{x}, \mathbf{y_\text{target}}) = \frac{1}{2}\norm{y(\mathbf{x})-\mathbf{y}_\text{target}}_2^2 
 $$
 
-Here $$\mathbf{y}_\text{target}$$ is the target class value (e.g. $$\mathbf{y}_\text{target} = [0,0,0,0,1,0,0,0,0,0]$$,  $$y(\mathbf{x})$$ is the output of the network for some input $$\mathbf{x}$$. The update rule for $$\mathbf{x}$$ is the following:
+Here $$\mathbf{y}_\text{target}$$ is the target class value (e.g. $$\mathbf{y}_\text{target} = [0,0,0,0,1,0,0,0,0,0]$$ and  $$y(\mathbf{x})$$ is the output of the network for some input $$\mathbf{x}$$. The update rule for $$\mathbf{x}$$ is the following:
 
 $$
 x_{j,\text{new}} = x_{j,\text{old}} - \alpha \frac{\partial }{\partial x_j}J(\mathbf{x})
@@ -176,7 +176,7 @@ Style[Grid[{{Image[randomX, ImageSize -> Small], p1}}], ImageSizeMultipliers -> 
 {% endraw %}
 ![LeNet]({{ site.url }}/images/lenet1.png)
 
-As you can see in the above image when given a random input (noise), LeNet outputs some probabilities for each class. Our goal is to come up with an image $$\mathbf{x}$$ such as that the network will classify it -say- as digit $$4$$. Therefore, the ideal output vector $$\mathbf{y_\text{target}}$$ is $$[0,0,0,0,1,0,0,0,0,0]$$.
+As you can see in the above image when given a random input (noise), LeNet outputs some probabilities for each class. Our goal is to come up with an image $$\mathbf{x}$$ such as that the network will classify it -say- as digit $$4$$. Therefore, the ideal output vector $$\mathbf{y}_\text{target}$$ is $$[0,0,0,0,1,0,0,0,0,0]$$.
 
 {% raw %}
 ~~~~
