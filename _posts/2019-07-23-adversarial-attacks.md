@@ -131,6 +131,15 @@ When we want to steer the model's output to some specific class, $$y_\text{targe
 
 Therefore, instead of $$\mathbf{x}_\text{adv} = \mathbf{x} + \overbrace{\epsilon sign\left({\nabla_x J(\mathbf{x},y_\text{true})}\right)}^{\text{perturbation factor } \mathbf{\alpha}}$$, we do $$\mathbf{x}_\text{adv} = \mathbf{x} - \overbrace{\epsilon sign\left({\nabla_x J(\mathbf{x},y_\text{target})}\right)}^{\text{perturbation factor } \mathbf{\alpha}}$$.
 
+Let us perform a targeted attack on LeNet network. It was developed by [Yann LeCun](https://en.wikipedia.org/wiki/Yann_LeCun) and his collaborators while they experimented with a large range of machine learning solutions for classification on the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database), a large database of handwritten digits that is commonly used for training various image processing systems.
+
+{% raw %}
+~~~~
+Take[RandomSample[trainingData], 10]
+~~~~
+{% endraw %}
+![MNIST example]({{ site.url }}/images/mnist.png)
+
 For non-targeted attacks, the value of $$\mathbf{x}_\text{adv}$$ can be found via [gradient descent][3] as the one that minimizes the following definition of cost function $$J$$, starting with some random value for $$\mathbf{x}$$.
 
 $$
