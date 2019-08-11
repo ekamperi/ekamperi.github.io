@@ -6,21 +6,23 @@ categories: [machine learning]
 ---
 
 ### Introduction
-Adversarial means "involving or characterized by conflict or opposition". In the context of neural networks, "adversarial examples" refer to specially crafted inputs whose purpose is to force the neural network to misclassify them. These examples (or attacks) are grouped into *non-targeted*, when a valid input is changed by some imperceptible amount to a new one that is misclassified by the network (but we can't control the new class that the network will pick, hence non-targeted). E.g.
+Adversarial means "involving or characterized by conflict or opposition". In the context of neural networks, "adversarial examples" (or attacks) refer to specially crafted inputs whose purpose is to force the neural network to misclassify them. This may sound counter-intuitive, but they could potentially pose a security threat for real-world machine learning applications, such as self-driving cars, facial recognition applications, etc. 
+
+Adversarial examples are grouped into *non-targeted*, when a valid input is changed by some imperceptible amount to a new one that is misclassified by the network (but we can't control the new class that the network will pick, hence non-targeted). E.g.
 
 [![Example of targeted adversarial attack][1]][1]
 
 Source: Goodfellow IJ, Shlens J, Szegedy C. Explaining and Harnessing Adversarial Examples [Internet]. arXiv [stat.ML]. 2014. Available from [here](http://arxiv.org/abs/1412.6572).
 
-And to *targeted*, when you force the model to predict a *specific output* ($$y_\text{target}$$), as in the following network which is trained to recognize digits:
+And to *targeted*, when you force the model to predict a *specific output* ($$y_\text{target}$$), as in the following network which was trained to recognize digits and we manipulate it to output a "3 digit":
 
 [![Example of non-targeted adversarial attack][2]][2]
 
-Adversarial attacks could potentially pose a security threat for real-world machine learning applications, such as self-driving cars, facial recognition applications, etc. Szegedy et al. (2014) showed that an adversarial example that was designed to be misclassified by a model $$M1$$ is often also misclassified by a model $$M2$$. This "adversarial transferability" property means that it is possible to exploit a machine learning system *without* having any knowledge of its underlying model ($$M2$$).
+Szegedy et al. (2014) showed that an adversarial example that was designed to be misclassified by a model $$M_1$$ is often also misclassified by a model $$M_2$$. This "adversarial transferability" property means that it is possible to exploit a machine learning system *without* having any knowledge of its underlying model ($$M2$$).
 
 ### Generation
 #### Non-Targeted example
-A fast method for constructing a targeted example is via $$\mathbf{x}_\text{adv} = \mathbf{x} + \overbrace{\epsilon sign\left({\nabla_x J(\mathbf{x})}\right)}^{\text{perturbation factor } \mathbf{\alpha}}$$, where $$\mathbf{x}$$ is the legitimate input you target (e.g. your original "panda" image), $$\epsilon$$ is some small number (whose value you determine by trial-and-error) and $$J(\mathbf{x})$$ is the cost as a function of input $$\mathbf{x}$$. The gradient $$\nabla_x J(\mathbf{x})$$ with respect to input $$\mathbf{x}$$ can be calculated with [backpropagation](https://en.wikipedia.org/wiki/Backpropagation). This method is simple and computationally efficient when compared to other more complex methods (it requires only 1 gradient calculation after all), however it usually has a lower success rate.
+A fast method for constructing a targeted example is via $$\mathbf{x}_\text{adv} = \mathbf{x} + \overbrace{\epsilon sign\left({\nabla_x J(\mathbf{x})}\right)}^{\text{perturbation factor } \mathbf{\alpha}}$$, where $$\mathbf{x}$$ is the legitimate input you target (e.g. your original "panda" image), $$\epsilon$$ is some small number (whose value you determine by trial-and-error) and $$J(\mathbf{x})$$ is the cost as a function of input $$\mathbf{x}$$. The gradient $$\nabla_x J(\mathbf{x})$$ with respect to input $$\mathbf{x}$$ can be calculated with [backpropagation](https://en.wikipedia.org/wiki/Backpropagation). This method is simple and computationally efficient when compared to other more complex methods (it requires only *one* gradient calculation after all), however it usually has a lower success rate.
 
 Let's see, how we could derive this formula.
 
@@ -129,7 +131,7 @@ And this is the result:
 
 #### Targeted example
 
-When we want to steer the model's output to some specific class, $$y_\text{target}$$, instead of increasing the cost function $$J(\hat{y}, y_\text{true})$$, we instead decrease the cost function between the predicted $$\hat{y}$$ and the target class $$y_\text{target}$$.
+When we want to steer the model's output to some specific class, $$\mathbf{y}_\text{target}$$, instead of increasing the cost function $$J(\hat{\mathbf{y}}, \mathbf{y}_\text{true})$$, we instead decrease the cost function between the predicted $$\hat{\mathbf{y}}$$ and the target class $$\mathbfPy}_\text{target}$$.
 
 Therefore, instead of $$\mathbf{x}_\text{adv} = \mathbf{x} + \overbrace{\epsilon sign\left({\nabla_x J(\mathbf{x},y_\text{true})}\right)}^{\text{perturbation factor } \mathbf{\alpha}}$$, we do $$\mathbf{x}_\text{adv} = \mathbf{x} - \overbrace{\epsilon sign\left({\nabla_x J(\mathbf{x},y_\text{target})}\right)}^{\text{perturbation factor } \mathbf{\alpha}}$$.
 
@@ -137,7 +139,7 @@ Instead of doing just one update, we could use an *iterative* approach where the
 
 $$
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
-J(\mathbf{x}, \mathbf{y}_\text{target}) = \frac{1}{2}\norm{y(\mathbf{x})-\mathbf{y}_\text{target}}_2^2 
+J(\mathbf{y(x)}, \mathbf{y}_\text{target}) = \frac{1}{2}\norm{y(\mathbf{x})-\mathbf{y}_\text{target}}_2^2 
 $$
 
 Here $$\mathbf{y}_\text{target}$$ is the target class value (e.g. $$\mathbf{y}_\text{target} = [0,0,0,0,1,0,0,0,0,0]$$ and  $$y(\mathbf{x})$$ is the output of the network for some input $$\mathbf{x}$$. The update rule for $$\mathbf{x}$$ is the following:
