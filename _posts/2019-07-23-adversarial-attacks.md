@@ -290,6 +290,13 @@ $$
 
 The [hypermater](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)) $$\lambda$$ controls the ratio of original vs. adversarial examples in the training set.
 
+This straighforward approach makes the model more resilient compared to an "undefended
+classifier", however it has a few shortcomings:
+
+1. It doesn't scale very well to classifiers that process high resolution input images, like the ImageNet dataset
+2. Adversarial training does not make your model robust against stronger attacks
+3. Suprisingly, it is easy to construct adversarial examples against a network that has already been trained with adversarial examples.
+
 [Useful link][4] on `NetPortGradient[]`.
 
   [1]: https://i.stack.imgur.com/NPbEel.png
@@ -298,5 +305,7 @@ The [hypermater](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)
   [4]: https://mathematica.stackexchange.com/questions/185948/netportgradient-output-port-restriction
  
 ### References
-Christian Szegedy, Wojciech Zaremba, Ilya Sutskever, Joan Bruna, Dumitru Erhan, Ian J. Goodfellow, and Rob Fergus. Intriguing properties of neural networks. ICLR, abs/1312.6199, 2014. URL
+1. Akhtar N, Mian A. Threat of Adversarial Attacks on Deep Learning in Computer Vision: A Survey [Internet]. arXiv [cs.CV]. 2018. Available from: http://arxiv.org/abs/1801.00553
+
+2. Christian Szegedy, Wojciech Zaremba, Ilya Sutskever, Joan Bruna, Dumitru Erhan, Ian J. Goodfellow, and Rob Fergus. Intriguing properties of neural networks. ICLR, abs/1312.6199, 2014. URL
 http://arxiv.org/abs/1312.6199.
