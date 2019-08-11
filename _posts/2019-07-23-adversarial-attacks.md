@@ -98,10 +98,12 @@ legitX =
    Import[
     "https://farm1.static.flickr.com/159/384015403_25353f2a7d.jpg"];
 
-(* Remove the decoder from the output, so that we get a vector y as the output *)
+(* Remove the decoder from the output,
+   so that we get a vector y as the output *)
 netM = NetReplacePart[netOriginalModel, "Output" -> None];
 
-(* Find the index of the African wild dog and construct the true output vector ytrue *)
+(* Find the index of the African wild dog and
+   construct the true output vector ytrue *)
 idx = Ordering[netM[legitX]][[-1]];
 ytrue = ConstantArray[0, 1000]; ytrue[[idx]] = 1;
 
@@ -267,7 +269,7 @@ $$
 
 So, the phrase "Imposing a gradient at the output using the syntax `NetPortGradient[oport] -> ograd` is equivalent to replacing this scalar sum with a *dot product between the output and ograd*" makes sense now.
 
-Similarly, the phrase "For a net with vector or array outputs, the gradient returned when using `NetPortGradient` is the ordinary gradient of the scalar sum of all outputs", means that if we dont's specify an output gradient (*ograd*), then `NetPortGradient` will return $$\sum_j^N \frac{\partial}{\partial x}\hat{y_j}$$.
+Similarly, the phrase "For a net with vector or array outputs, the gradient returned when using `NetPortGradient` is the ordinary gradient of the scalar sum of all outputs", means that if we dont's specify an output gradient (*ograd*), then `NetPortGradient` will return the scalara $$\sum_j^N \frac{\partial}{\partial x}\hat{y_j}$$.
 
 [Useful link][4] on `NetPortGradient[]`.
 
