@@ -307,8 +307,7 @@ The term distillation means training one network using the
 ![defensive distillation]({{ site.url }}/images/defensive_distillation.png)
 Source: Papernot et al (2015).
 
-The benefit of using soft probabilities $$F(X)$$ as training labels is thought to lie in the additional knowledge encoded in probability
-vectors compared to hard class labels. For example, suppose we train a network that does digit recognition from handwritten images $$X$$. For some input $$X$$ the probability of class $$5$$ is $$F5(X) = 0.7$$ and the probability of class $$6$$ is $$F1(X) = 0.3$$. This implies some structural similarity between 5s and 6s. Papernote et al (2015) mention that training a network with this relative information of classes should prevent the model from overfitting.
+The benefit of using soft probabilities $$F(X)$$ as training labels is thought to lie in the additional knowledge encoded in the probability vectors compared to hard class labels. For example, suppose we train a network that does digit recognition from handwritten images $$X$$. For some input $$X$$ the probability of class $$5$$ is $$F_5(X) = 0.7$$ and the probability of class $$6$$ is $$F_6(X) = 0.3$$. This implies some structural similarity between 5s and 6s. Papernote et al (2015) mention that training a network with this relative information of classes should prevent the model from overfitting.
 
   [1]: https://i.stack.imgur.com/NPbEel.png
   [2]: https://i.stack.imgur.com/h7mGDl.png
