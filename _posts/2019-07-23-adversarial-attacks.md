@@ -309,7 +309,7 @@ Source: Papernot et al (2015).
 
 The benefit of using soft probabilities $$F(\mathbf{x})$$ as training labels is thought to lie in the additional knowledge encoded in the probability vectors compared to hard class labels. For example, suppose we train a network that does digit recognition from handwritten images. For some input $$\mathbf{x}$$ the probability of class $$5$$ is $$F_5(\mathbf{x}) = 0.7$$ and the probability of class $$6$$ is $$F_6(\mathbf{x}) = 0.3$$. This implies some structural similarity between 5s and 6s. Papernote et al (2015) mention that training a network with this relative information of classes should prevent the model from overfitting.
 
-The softmax function in its standard form is:
+Let's dive into some details. Recall that the softmax function in its standard form is:
 
 $$
 f(\mathbf{z})_i = \frac{\exp(z_i)}{\sum_j^N \exp(z_j)}
@@ -321,7 +321,9 @@ $$
 f(\mathbf{z})_i = \frac{\exp(z_i/T)}{\sum_j^N \exp(z_j/T)}
 $$
 
-Where $$T$$ is an yet another [hyperparameter](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)) and is called the "temperature" of the process. Temperature needs to be $$>1$$ and typical values go as high as $$30$$.
+Where $$T$$ is an yet another [hyperparameter](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)) and is called the "temperature" of the process. Temperature needs to be $$>1$$ and typical values go as high as $$30$$. Here you can see the effect of increasing the temperature on the output of the modified softmax function.
+
+![modified_softmax]({{ site.url }}/images/modified_softmax.png)
 
   [1]: https://i.stack.imgur.com/NPbEel.png
   [2]: https://i.stack.imgur.com/h7mGDl.png
