@@ -309,6 +309,21 @@ Source: Papernot et al (2015).
 
 The benefit of using soft probabilities $$F(X)$$ as training labels is thought to lie in the additional knowledge encoded in the probability vectors compared to hard class labels. For example, suppose we train a network that does digit recognition from handwritten images $$X$$. For some input $$X$$ the probability of class $$5$$ is $$F_5(X) = 0.7$$ and the probability of class $$6$$ is $$F_6(X) = 0.3$$. This implies some structural similarity between 5s and 6s. Papernote et al (2015) mention that training a network with this relative information of classes should prevent the model from overfitting.
 
+The softmax function in its standard form is:
+
+$$
+f(\mathbf{z})_i = \frac{\exp(z_i)}{\sum_j^N \exp(z_j)}
+$$
+
+But in the context of distillation it is modified to the following form:
+
+$$
+f(\mathbf{z})_i = \frac{\exp(z_i/T)}{\sum_j^N \exp(z_j/T)}
+$$
+
+Where $$T$$ is an hyperparameter and is called the "temperature" of the process.
+
+
   [1]: https://i.stack.imgur.com/NPbEel.png
   [2]: https://i.stack.imgur.com/h7mGDl.png
   [3]: https://en.wikipedia.org/wiki/Gradient_descent
