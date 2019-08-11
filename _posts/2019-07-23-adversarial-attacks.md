@@ -131,7 +131,7 @@ And this is the result:
 
 #### Targeted example
 
-When we want to steer the model's output to some specific class, $$\mathbf{y}_\text{target}$$, instead of increasing the cost function $$J(\hat{\mathbf{y}}, \mathbf{y}_\text{true})$$, we instead decrease the cost function between the predicted $$\hat{\mathbf{y}}$$ and the target class $$\mathbfPy}_\text{target}$$.
+When we want to steer the model's output to some specific class, $$\mathbf{y}_\text{target}$$, instead of increasing the cost function $$J(\hat{\mathbf{y}}, \mathbf{y}_\text{true})$$, we instead decrease the cost function between the predicted $$\hat{\mathbf{y}}$$ and the target class $$\mathbf{y}_\text{target}$$.
 
 Therefore, instead of $$\mathbf{x}_\text{adv} = \mathbf{x} + \overbrace{\epsilon sign\left({\nabla_x J(\mathbf{x},y_\text{true})}\right)}^{\text{perturbation factor } \mathbf{\alpha}}$$, we do $$\mathbf{x}_\text{adv} = \mathbf{x} - \overbrace{\epsilon sign\left({\nabla_x J(\mathbf{x},y_\text{target})}\right)}^{\text{perturbation factor } \mathbf{\alpha}}$$.
 
