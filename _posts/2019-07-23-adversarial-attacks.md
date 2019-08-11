@@ -321,8 +321,7 @@ $$
 f(\mathbf{z})_i = \frac{\exp(z_i/T)}{\sum_j^N \exp(z_j/T)}
 $$
 
-Where $$T$$ is an hyperparameter and is called the "temperature" of the process.
-
+Where $$T$$ is an yet another [hyperparameter](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)) and is called the "temperature" of the process. Temperature needs to be $$>1$$ and typical values go as high as $$30$$.
 
   [1]: https://i.stack.imgur.com/NPbEel.png
   [2]: https://i.stack.imgur.com/h7mGDl.png
