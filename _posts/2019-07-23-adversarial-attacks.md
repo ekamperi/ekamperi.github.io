@@ -5,6 +5,8 @@ date:   2019-07-23 15:28:56 +0000
 categories: [machine learning]
 ---
 
+{:toc}
+
 ### Introduction
 Adversarial means "involving or characterized by conflict or opposition". In the context of neural networks, "adversarial examples" (or attacks) refer to specially crafted inputs whose purpose is to force the neural network to misclassify them. This may sound counter-intuitive, but they could potentially pose a security threat for real-world machine learning applications, such as self-driving cars, facial recognition applications, etc. 
 
@@ -244,7 +246,7 @@ Style[Grid[{{Image[randomX, ImageSize -> Small], p2}}],
 LeNet output on random (left) and adversarial (right) example.
 ![LeNet output on random (left) and adversarial (right) example]({{ site.url }}/images/lenet2.png)
 
-#### Note on `NetPortGradient[]` function.
+### Note on `NetPortGradient[]` function.
 
 In the documentation of [NetPortGradient[]](https://reference.wolfram.com/language/ref/NetPortGradient.html) the following sentence is mentioned:
 > For a net with vector or array outputs, the gradient returned when using NetPortGradient
@@ -270,6 +272,8 @@ $$
 So, the phrase "Imposing a gradient at the output using the syntax `NetPortGradient[oport] -> ograd` is equivalent to replacing this scalar sum with a *dot product between the output and ograd*" makes sense now.
 
 Similarly, the phrase "For a net with vector or array outputs, the gradient returned when using `NetPortGradient` is the ordinary gradient of the scalar sum of all outputs", means that if we dont's specify an output gradient (*ograd*), then `NetPortGradient` will return the scalara $$\sum_j^N \frac{\partial}{\partial x}\hat{y_j}$$.
+
+### Defending ag
 
 [Useful link][4] on `NetPortGradient[]`.
 
