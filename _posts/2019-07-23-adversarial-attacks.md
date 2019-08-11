@@ -267,6 +267,8 @@ $$
 
 So, the phrase "Imposing a gradient at the output using the syntax `NetPortGradient[oport] -> ograd` is equivalent to replacing this scalar sum with a *dot product between the output and ograd*" makes sense now.
 
+Similarly, the phrase "For a net with vector or array outputs, the gradient returned when using `NetPortGradient` is the ordinary gradient of the scalar sum of all outputs", means that if we dont's specify an output gradient (*ograd*), then `NetPortGradient` will return $$\sum_j^N \frac{\partial}{\partial x}\hat{y_j}$$.
+
 [Useful link][4] on `NetPortGradient[]`.
 
   [1]: https://i.stack.imgur.com/NPbEel.png
