@@ -20,4 +20,11 @@ The intuition is that the sign of the gradient points us to the direction we hav
 
 Recall that a multivariable function $$f(\mathbf{x})$$ can be written as a [Taylor series](https://en.wikipedia.org/wiki/Taylor_series):
 
-$$f(\mathbf{x}+\boldsymbol{\delta x}) = f(\mathbf{x}) + \nabla_x f(\mathbf{x})\boldsymbol{\delta x}  + \mathcal{O}\left(\left\|\boldsymbol{\delta^2 x}\right\|\right)$$
+$$f(\mathbf{x}+\delta \boldsymbol{x}) = f(\mathbf{x}) + \nabla_x f(\mathbf{x})\delta \boldsymbol{x} + \mathcal{O}\left(\left\|\delta^2 \boldsymbol{x}\right\|\right)$$
+
+Suppose that we want to minimize $$f(\mathbf{x})$$, by taking a step from $$\mathbf{x}$$ to $$\mathbf{x} + \mathbf{\delta x}$$. This means that we would like $$f(\mathbf{x} + \delta\mathbf{x})$$ to be smaller than $$f(\mathbf{x})$$. If we substitute the formula from the Taylor expansion of $$f(\mathbf{x} + \delta\mathbf{x})$$, we get:
+
+$$f(\mathbf{x}+\delta \boldsymbol{x}) < f(\mathbf{x}) \Leftrightarrow\\
+f(\mathbf{x}) + \nabla_x f(\mathbf{x})\delta \boldsymbol{x}  < f(\mathbf{x}) \Leftrightarrow
+\nabla_x f(\mathbf{x})\delta \boldsymbol{x} < 0
+$$
