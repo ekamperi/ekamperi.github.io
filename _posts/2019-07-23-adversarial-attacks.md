@@ -331,10 +331,10 @@ of its inputs is reduced when defensive distillation is performed at training ti
 $$
 \begin{align}
 \frac{\partial f(\mathbf{z})_i}{\partial z_k}
-&= \frac{1}{g^2(z)} \left(\frac{\partial \exp(z_i/T)}{\partial z_k}g(\mathbf{z}) - \exp(z_i/T) \frac{\partial g(\mathbf{z})}{\partial z_k}\right)\\
-&=\frac{1}{g^2(z)}\frac{\exp(z_i/T)}{T} \left(\frac{\partial z_i}{\partial z_k}g(\mathbf{z}) - T\frac{\partial g(\mathbf{z})}{\partial z_k} \right)\\
-&=\frac{1}{g^2(z)}\frac{\exp(z_i/T)}{T}\left(\sum_j^N \frac{\partial z_i}{\partial z_k}\exp(z_j/T) - \sum_j^N \frac{\partial z_j}{\partial z_k}\exp(z_j/T)\right)\\
-&=\frac{1}{T}\frac{\exp(z_i/T)}{g^2(z)}\left[\sum_j^N \left(\frac{\partial z_i}{\partial z_k} - \frac{\partial z_j}{\partial z_k}\right)\exp(z_j/T) \right]
+&= \frac{1}{g^2(\mathbf{z})} \left(\frac{\partial \exp(z_i/T)}{\partial z_k}g(\mathbf{z}) - \exp(z_i/T) \frac{\partial g(\mathbf{z})}{\partial z_k}\right)\\
+&=\frac{1}{g^2(\mathbf{z})}\frac{\exp(z_i/T)}{T} \left(\frac{\partial z_i}{\partial z_k}g(\mathbf{z}) - T\frac{\partial g(\mathbf{z})}{\partial z_k} \right)\\
+&=\frac{1}{g^2(\mathbf{z})}\frac{\exp(z_i/T)}{T}\left(\sum_j^N \frac{\partial z_i}{\partial z_k}\exp(z_j/T) - \sum_j^N \frac{\partial z_j}{\partial z_k}\exp(z_j/T)\right)\\
+&=\frac{1}{T}\frac{\exp(z_i/T)}{g^2(\mathbf{z})}\left[\sum_j^N \left(\frac{\partial z_i}{\partial z_k} - \frac{\partial z_j}{\partial z_k}\right)\exp(z_j/T) \right]
 \end{align}
 $$
 
