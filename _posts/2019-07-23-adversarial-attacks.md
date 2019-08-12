@@ -341,7 +341,7 @@ $$
 \end{align}
 $$
 
-For fixed values of $$\mathbf{z} = (z_1, z_2, \ldots)$$ it follows that $$\frac{\partial f(\mathbf{z})_i}{\partial z_k} \sim 1/T$$. . Mind that at test time the temperature is set back to $$T=1$$.
+For fixed values of $$\mathbf{z} = (z_1, z_2, \ldots)$$ it follows that $$\frac{\partial f(\mathbf{z})_i}{\partial z_k} \sim 1/T$$. Mind that at test time the temperature is set back to $$T=1$$.
 
   [1]: https://i.stack.imgur.com/NPbEel.png
   [2]: https://i.stack.imgur.com/h7mGDl.png
