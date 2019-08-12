@@ -1,0 +1,12 @@
+ ---
+ ---
+
+ @import "minima";
+
+ .highlight {
+  background: #d1d1d1;
+  @extend %vertical-rhythm;
+
+  .highlighter-rouge & {
+    background: #d1d1d1;
+  }
