@@ -11,7 +11,7 @@ $$
 \theta_j \leftarrow \theta_j - \alpha \frac{\partial}{\partial \theta_j} J(\boldsymbol{\theta})
 $$
 
-Where the symbol "$$\leftarrow$$" means that the variable to the left is assigned the value of the right side and $$\alpha$$ is the learning rate (how fast we update our model parameters).
+The symbol "$$\leftarrow$$" means that the variable to the left is assigned the value of the right side and $$\alpha$$ is the learning rate (how fast we update our model parameters).
 
 This introduction is invariably accompanied by an image like this:
 ![gradient descent]({{ site.url }}/images/gradient_descent.png)
@@ -33,4 +33,4 @@ To restate our problem: what is the optimal $$\delta\mathbf{x}$$ step that we ne
 
 Also keep in mind that $$\nabla_x f(\mathbf{x})$$ and $$\delta \boldsymbol{x}$$ are just vectors, therefore we need to minimize the dot product $$u \dot v$$, with $$\mathbf{u} = \nabla_x f(\mathbf{x})$$ and $$\mathbf{v} = \delta \mathbf{x}$$.
 
-Since $$u \dot v = u v \cos(u, v)$$ it follows that when the angle between $$\mathbf{u}$$ and $$\mathbf{v}$$ is $$\varphi = -\pi$$ then the dot product takes its minimum value.
+Since $$\mathbf{u} \dot \mathbf{v} = |u| |v| \cos(\mathbf{u}, \mathbf{v})$$ it follows that when the angle between $$\mathbf{u}$$ and $$\mathbf{v}$$ is $$\varphi = -\pi$$ then the dot product takes its minimum value.
