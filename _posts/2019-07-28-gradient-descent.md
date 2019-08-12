@@ -18,3 +18,4 @@ This introduction is invariably accompanied by an image like this:
 
 The intuition is that the sign of the gradient points us to the direction we have to move in order to minimize $$J$$. I'd like to present the same subject from another perspective though, that is less often stated.
 
+ 
