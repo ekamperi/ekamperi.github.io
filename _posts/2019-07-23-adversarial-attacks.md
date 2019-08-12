@@ -12,7 +12,7 @@ categories: [machine learning]
 {:toc}
 
 ### Introduction
-Adversarial means "involving or characterized by conflict or opposition". In the context of neural networks, "adversarial examples" (or attacks) refer to specially crafted inputs whose purpose is to force the neural network to misclassify them. This may sound counter-intuitive, but they could potentially pose a security threat for real-world machine learning applications, such as self-driving cars, facial recognition applications, etc. 
+Adversarial means "involving or characterized by conflict or opposition". In the context of neural networks, "adversarial examples" (or attacks) refer to specially crafted inputs whose purpose is to force the neural network to misclassify them. This may sound counter-intuitive, but they could potentially pose a security threat for real-world machine learning applications, such as self-driving cars, facial recognition applications, etc. Besides safety, these examples are interesting in the context of interpretability of neural networks and generalization.
 
 Adversarial examples are grouped into *non-targeted*, when a valid input is changed by some imperceptible amount to a new one that is misclassified by the network (but we can't control the new class that the network will pick, hence non-targeted). E.g.
 
