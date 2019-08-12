@@ -326,7 +326,7 @@ Where $$T$$ is an yet another [hyperparameter](https://en.wikipedia.org/wiki/Hyp
 ![modified_softmax]({{ site.url }}/images/modified_softmax.png)
 
 So how does this effect is beneficial to us? You can see from the above image that with increasing temperature, the output of the network becomes smoother and for very large values of $$T$$ it flattens out. Therefore the model sensitivity to small variations
-of its inputs is reduced when defensive distillation is performed at training time. We can prove this statement by calculating the Jacobian for a model $$f(\mathbf{z})_i = \frac{\exp(z_i/T)}{\sum_j^N \exp(z_j/T)}$$ at temperature $$T$$:
+of its inputs is reduced when defensive distillation is performed at training time. We can prove this statement by calculating the [Jacobian](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant) for a model $$f(\mathbf{z})_i = \frac{\exp(z_i/T)}{\sum_j^N \exp(z_j/T)}$$ at temperature $$T$$:
 
 $$
 \begin{align}
