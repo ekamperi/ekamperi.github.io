@@ -327,9 +327,7 @@ Where $$T$$ is an yet another [hyperparameter](https://en.wikipedia.org/wiki/Hyp
 
 So how is this effect beneficial to us? You can see from the above image that with increasing temperature, the output of the network becomes smoother and for very large values of $$T$$ it flattens out (in the limit of $$T\to\infty$$ all outputs become the same, equal to $$1/N$$, where $$N$$ is the number of classes). Therefore the model sensitivity to small variations
 of its inputs is reduced when defensive distillation is performed at training time. Do you recall how we exploited the gradient of the cost function with respect to input in order to drive drive the network to whatever direction we wanted? Defensive distillation  at high
-temperatures can lead to decreases in the amplitude of adversarial gradients by factors up to $$10^30$$ (Papernote, 2015).
-.
-• Q: Does defensive distillation lead to more rob
+temperatures can lead to decreases in the amplitude of adversarial gradients by factors up to $$10^30$$ (Papernot, 2015).
 
 We can prove this statement by calculating the [Jacobian](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant) for a model $$f(\mathbf{z})_i = \frac{\exp(z_i/T)}{g(\mathbf{z})}$$ at temperature $$T$$ and $$g(\mathbf{z})=\sum_j^N \exp(z_j/T)$$:
 
