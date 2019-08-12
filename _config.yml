@@ -23,11 +23,11 @@ minima:
     twitter: stathisktw
     github: ekamperi
 
-remote_theme: jekyll/lanyon
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
+remote_theme: poole/lanyon
+#plugins:
+#  - jekyll-feed
+#  - jekyll-seo-tag
+#  - jekyll-sitemap
 
 google_analytics: UA-145393080-1
 
