@@ -23,7 +23,7 @@ minima:
     twitter: stathisktw
     github: ekamperi
 
-remote_theme: jekyll/lanyon
+remote_theme: jekyll/minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
