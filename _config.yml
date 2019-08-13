@@ -14,18 +14,11 @@ kramdown:
   math_enging_opts:
     preview: true
 
-header_pages:
-  - about.md
-
 minima:
   date_format: "%b %-d, %Y"
   social_links:
     twitter: stathisktw
     github: ekamperi
-
-header_pages:
-  - about.html
-  - archive.html
 
 remote_theme: jekyll/minima
 plugins:
@@ -33,6 +26,10 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+
+header_pages:
+  - about.html
+  - archive.html
 
 google_analytics: UA-145393080-1
 
