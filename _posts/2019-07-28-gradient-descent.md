@@ -14,7 +14,7 @@ $$
 The symbol "$$\leftarrow$$" means that the variable to the left is assigned the value of the right side and $$\alpha$$ is the learning rate (how fast we update our model parameters or how big steps we take when we change the values of the model's parameters). The algorithm is iterative and stops when convergence is achieved, i.e. when the gradient is so small that $$\boldsymbol{\theta}$$ doesn't change.
 
 This introduction is invariably accompanied by an image like this:
-![gradient descent]({{ site.url }}/images/gradient_descent.png)
+![gradient descent]({{ site.url }}/images/gradient_descent.png){:height="75%" width="75%"}
 
 The intuition is that the sign of the gradient points us to the direction we have to move in order to minimize $$J$$. I'd like to present the same subject from another perspective, though, that doesn't receive much attention.
 
