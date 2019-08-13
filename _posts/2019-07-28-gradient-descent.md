@@ -11,7 +11,7 @@ $$
 \theta_j \leftarrow \theta_j - \alpha \frac{\partial}{\partial \theta_j} J(\boldsymbol{\theta})
 $$
 
-The symbol "$$\leftarrow$$" means that the variable to the left is assigned the value of the right side and $$\alpha$$ is the learning rate (how fast we update our model parameters or how big steps we take when we change the values of the model's parameters). The algorithm is iterative and stops when we convergence is achieved, i.e. when the gradient is so small that $$\boldsymbol{\theta}$$ doesn't change.
+The symbol "$$\leftarrow$$" means that the variable to the left is assigned the value of the right side and $$\alpha$$ is the learning rate (how fast we update our model parameters or how big steps we take when we change the values of the model's parameters). The algorithm is iterative and stops when convergence is achieved, i.e. when the gradient is so small that $$\boldsymbol{\theta}$$ doesn't change.
 
 This introduction is invariably accompanied by an image like this:
 ![gradient descent]({{ site.url }}/images/gradient_descent.png)
