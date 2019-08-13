@@ -36,6 +36,6 @@ plugins:
 
 google_analytics: UA-145393080-1
 
-disqus:
-    shortname: stathiskamperis
+#disqus:
+#    shortname: stathiskamperis
 
