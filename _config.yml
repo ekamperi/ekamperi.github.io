@@ -24,11 +24,9 @@ remote_theme: jekyll/minima
 plugins:
   - jekyll-archives
   - jekyll-feed
+  - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
-
-gems:
-  - jekyll-paginate
 
 paginate: 2
 paginate_path: posts/page:num/
