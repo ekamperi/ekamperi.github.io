@@ -23,6 +23,10 @@ minima:
     twitter: stathisktw
     github: ekamperi
 
+header_pages:
+  about.html
+  archive.html
+
 remote_theme: jekyll/minima
 plugins:
   - jekyll-archives
