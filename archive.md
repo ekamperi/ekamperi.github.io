@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Archive
-permalink: /archive/
 ---
 
 <h1>Archive of posts from {{ page.date | date: "%Y" }}</h1>
