@@ -28,8 +28,8 @@ plugins:
   - jekyll-sitemap
 
 header_pages:
-  - about.html
-  - archive.html
+  - about.md
+  - archive.md
 
 google_analytics: UA-145393080-1
 
