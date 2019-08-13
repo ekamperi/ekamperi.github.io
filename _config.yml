@@ -27,6 +27,12 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+gems:
+  - jekyll-paginate
+
+paginate: 1
+paginate_path: posts/page:num/
+
 header_pages:
   - about.md
   - archive.md
