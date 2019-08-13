@@ -9,7 +9,7 @@ layout: default
 
   {{ content }}
 
-  {%- if paginator.total_posts > 0 -%}
+
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
     <ul class="post-list">
       {% for post in paginator.posts %}
@@ -33,6 +33,6 @@ layout: default
         <svg class="svg-icon orange"><use xlink:href="{{ 'assets/minima-social-icons.svg#rss' | relative_url }}"></use></svg><span>Subscribe</span>
       </a>
     </p>
-  {%- endif -%}
+
 
 </div>
