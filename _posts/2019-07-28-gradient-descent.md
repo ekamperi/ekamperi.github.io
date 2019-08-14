@@ -14,8 +14,9 @@ $$
 The symbol "$$\leftarrow$$" means that the variable to the left is assigned the value of the right side and $$\alpha$$ is the learning rate (how fast we update our model parameters or how big steps we take when we change the values of the model's parameters). The algorithm is iterative and stops when convergence is achieved, i.e. when the gradient is so small that $$\boldsymbol{\theta}$$ doesn't change.
 
 This introduction is invariably accompanied by an image like this:
+
 <p align="center">
- <img style="width: 50%; height: 50%" src="{{ site.url }}/images/gradient_descent.png">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gradient_descent.png">
 </p>
 
 The intuition is that the sign of the gradient points us to the direction we have to move in order to minimize $$J$$. I'd like to present the same subject from another perspective, though, that doesn't receive much attention.
@@ -35,7 +36,9 @@ To restate our problem: what is the optimal $$\delta\mathbf{x}$$ step that we ne
 
 Keep in mind that $$\nabla_x f(\mathbf{x})$$ and $$\delta \boldsymbol{x}$$ are just vectors, therefore we need to minimize the dot product $$\mathbf{u} \cdot \mathbf{v}$$, with $$\mathbf{u} = \nabla_x f(\mathbf{x})$$ and $$\mathbf{v} = \delta \mathbf{x}$$.
 
-![gradient descent2]({{ site.url }}/images/gradient_descent2.png){:height="50%" width="50%"}
+<p align="center">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/gradient_descent2.png">
+</p>
 
 Since $$\mathbf{u} \cdot \mathbf{v} = \left\|u\right\| \left\|v\right\| \cos(\mathbf{u}, \mathbf{v})$$ it follows that when the angle between $$\mathbf{u}$$ and $$\mathbf{v}$$ is $$\varphi = -\pi$$, then the dot product takes its minimum value. Therefore $$\delta \mathbf{x} = - \nabla_x f(\mathbf{x})$$.
 
