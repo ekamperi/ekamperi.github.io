@@ -158,19 +158,20 @@ $$
 
 Let us perform a targeted attack on the LeNet network, which was developed by [Yann LeCun](https://en.wikipedia.org/wiki/Yann_LeCun) and his collaborators while they experimented with machine learning solutions for classification on the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database). MNIST is a large database of handwritten digits that is commonly used for training image classification systems.
 
+{% highlight mathematica %}
 {% raw %}
-~~~~
 ClearAll["Global`*"];
 netOriginalModel = NetModel["LeNet Trained on MNIST Data"]
 trainingData = ResourceData["MNIST", "TrainingData"];
 Take[RandomSample[trainingData], 10]
-~~~~
 {% endraw %}
+{% endhighlight %}
+
 ![MNIST example]({{ site.url }}/images/mnist.jpg)
 
 We start with some random image as $$\mathbf{x}$$:
+{% highlight mathematica %}
 {% raw %}
-~~~~
 (* Start with some random image *)
 randomX = RandomImage[{0, 1}, ImageDimensions@trainingData[[1, 1]]];
 
@@ -182,14 +183,15 @@ p1 = DiscretePlot[netM[randomX][[k + 1]], {k, 0, 9}, PlotRange -> All,
    FrameTicks -> {Range[0, 9], Automatic}, 
    PlotLabel -> "LeNet output on a random image", PlotStyle -> AbsolutePointSize[5]];
 Style[Grid[{{Image[randomX, ImageSize -> Small], p1}}], ImageSizeMultipliers -> 1]
-~~~~
 {% endraw %}
+{% endhighlight %}
+
 ![LeNet]({{ site.url }}/images/lenet1.png)
 
 As you can see in the above image when given a random input (noise), LeNet outputs some probabilities for each class. Our goal is to come up with an image $$\mathbf{x}$$ such as that the network will classify it -say- as digit $$4$$. Therefore, the ideal output vector $$\mathbf{y}_\text{target}$$ is $$[0,0,0,0,1,0,0,0,0,0]$$.
 
+{% highlight mathematica %}
 {% raw %}
-~~~~
 (* The target output vector, ytarget *)
 ytarget = ConstantArray[0, 10]; ytarget[[5]] = 1; ytarget
 (* {0, 0, 0, 0, 1, 0, 0, 0, 0, 0} *)
@@ -212,42 +214,44 @@ errors =
      Sow@Total[0.5 (netM[randomX] - ytarget)^2]
      ]
     ][[2, 1]];
-~~~~
 {% endraw %}
+{% endhighlight %}
 
 Here is the plot of cost function $$J$$ vs. the iterations of gradient descent:
+{% highlight mathematica %}
 {% raw %}
-~~~~
 ListPlot[errors, Joined -> True, InterpolationOrder -> 1, Filling -> Axis,
  PlotRange -> All, Frame -> {True, True, False, False},
  FrameLabel -> {"Iteration", "Cost function J"}]
-~~~~
 {% endraw %}
+{% endhighlight %}
+
 ![Cost function]({{ site.url }}/images/cost_function.png)
 
+{% highlight mathematica %}
 {% raw %}
-~~~~
 p2 = DiscretePlot[netM[randomX][[k + 1]], {k, 0, 9}, PlotRange -> All,
    Frame -> {True, True, False, False}, 
    FrameLabel -> {"Class", "Probability"}, FrameTicks -> {Range[0, 9], Automatic}, 
    PlotLabel -> "LeNet output on adversarial input",
    PlotStyle -> AbsolutePointSize[5]];
 Style[Grid[{{p1, p2}}], ImageSizeMultipliers -> 1]
-~~~~
 {% endraw %}
+{% endhighlight %}
 
 ![LeNet]({{ site.url }}/images/lenet_comparison.png)
 
 Notice how our adversarial input image bears no resemblance to a $$4$$ digit (or any digit at all for that matter), yet the network is "100% sure" that this is a $$4$$ digit.
 
+{% highlight mathematica %}
 {% raw %}
-~~~~
 Style[Grid[{{Image[randomX, ImageSize -> Small], p2}}], 
  ImageSizeMultipliers -> 1]
-~~~~
 {% endraw %}
+{% endhighlight %}
 
 LeNet output on random (left) and adversarial (right) example.
+
 ![LeNet output on random (left) and adversarial (right) example]({{ site.url }}/images/lenet2.png)
 
 ### Note on `NetPortGradient[]` function.
