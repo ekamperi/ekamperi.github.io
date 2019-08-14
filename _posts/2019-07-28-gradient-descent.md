@@ -15,7 +15,7 @@ The symbol "$$\leftarrow$$" means that the variable to the left is assigned the 
 
 This introduction is invariably accompanied by an image like this:
 <p align="center">
- <img width="600" height="200" src="{{ site.url }}/images/gradient_descent.png">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/gradient_descent.png">
 </p>
 
 The intuition is that the sign of the gradient points us to the direction we have to move in order to minimize $$J$$. I'd like to present the same subject from another perspective, though, that doesn't receive much attention.
