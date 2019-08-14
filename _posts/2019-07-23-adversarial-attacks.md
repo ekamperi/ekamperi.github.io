@@ -89,6 +89,7 @@ $$
 
 Here is an example code written in [Mathematica](https://en.wikipedia.org/wiki/Wolfram_Mathematica) (most machine learning snippets are written in Python and yet another Python code would be boring. Besides, Mathematica is an outstanding language to do exploratory analysis).
 
+{% highlight mathematica %}
 {% raw %}
 ~~~~
 ClearAll["Global`*"];
@@ -132,6 +133,7 @@ tnew[epsilon_] :=
 tnew[0.0815]
 ~~~~
 {% endraw %}
+{% endhighlight %}
 
 And this is the result:
 
