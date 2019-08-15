@@ -48,20 +48,21 @@ Since $$\mathbf{u} \cdot \mathbf{v} = \left\|u\right\| \left\|v\right\| \cos(\ma
 
 ### The Hessian matrix
 
-It's interesting to consider what happens when the gradient becomes zero, i.e. $$\nabla_x f(\mathbf{x}) = 0$$. Since it's zero, this means that we are not moving towards any direction. At this point we have not yet assumed anything about the "shape" of the function, i.e. whether it was [convex](https://en.wikipedia.org/wiki/Convex_function) or non-convex. So, are we on a minimum? On a [saddle point](https://en.wikipedia.org/wiki/Saddle_point)?
+It's interesting to consider what happens when the gradient becomes zero, i.e. $$\nabla_x f(\mathbf{x}) = 0$$. Since it's zero, this means that we are not moving towards any direction. At this point we have not yet assumed anything about the "shape" of the function, i.e. whether it was [convex](https://en.wikipedia.org/wiki/Convex_function) or non-convex. So, are we on a minimum? Are we on a [saddle point](https://en.wikipedia.org/wiki/Saddle_point)?
 
 <p align="center">
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/optimization_shape.png">
 </p>
-Image taken from [here].(https://www.offconvex.org/2016/03/22/saddlepoints)
+Image taken from [here](https://www.offconvex.org/2016/03/22/saddlepoints).
 
-The answer to this question is hidden in the second-order terms of the Taylor series, which informs us about the *local curvature* in the neighborhood of $$\mathbf{x}$$. Previously, when expanding $$f(\mathbf{x})$$ we considered only the first-order terms. By also taking into account the second-order terms we get:
+The answer to this question is hidden in the second-order terms of the Taylor series, which inform us about the *local curvature* in the neighborhood of $$\mathbf{x}$$. Previously, when expanding $$f(\mathbf{x})$$ we considered only the first-order terms. By also taking into account the second-order terms we get:
 
 $$f(\mathbf{x}+\delta \boldsymbol{x}) = f(\mathbf{x}) + \nabla_x f(\mathbf{x})\delta \boldsymbol{x} + \frac{1}{2} \delta\mathbf{x}^T \mathbf{H}\delta\mathbf{x} + \mathcal{O}\left(\left\|\delta^3 \boldsymbol{x}\right\|\right)$$
 
 Where $$\mathbf{H} = \nabla_x^2f(\mathbf{x})$$ is the [Hessian matrix]($https://en.wikipedia.org/wiki/Hessian_matrix).
 
-Now we are able to answer the question in the case of $$\nabla_x f(\mathbf{x}) = 0$$:
+Now we are able to explore what's happening in the case of $$\nabla_x f(\mathbf{x}) = 0$$:
+
 $$
 \begin{align}
 f(\mathbf{x}+\delta \boldsymbol{x})
@@ -70,17 +71,16 @@ f(\mathbf{x}+\delta \boldsymbol{x}) &= f(\mathbf{x}) + \frac{1}{2} \delta\mathbf
 \end{align}
 $$
 
-The answer is in the product $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$:
+The same argument as before can be applied. We want to take a step from $$\mathbf{x}$$ to $$\mathbf{x} + \mathbf{\delta x}$$ and $$f(\mathbf{x} + \delta\mathbf{x})$$ be smaller than $$f(\mathbf{x})$$. Therefore, we need to find a vector $$\delta \mathbf{x}$$ for which $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} < 0$$ and move along it.
+
+To sum up regarding the product $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$ we have these cases:
 
 * $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} > 0$$: We are stuck on a local minimum.
 * $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} < 0$$: We are stuck on a local maximum.
 * $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$ has both positive and negative eigenvalues: We are stuck on a saddle point.
 * None of the above: We have no clue. We need even higher-order data to figure it out.
 
-Notice how the same set of reasoning can be applied as before. 
-Suppose that we want to minimize $$f(\mathbf{x})$$, by taking a step from $$\mathbf{x}$$ to $$\mathbf{x} + \mathbf{\delta x}$$. This means that we would like $$f(\mathbf{x} + \delta\mathbf{x})$$ to be smaller than $$f(\mathbf{x})$$. Then we need to find a vector $$\delta \mathbf{x}$$ for which $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} < 0$$ and move along it.
-
-In the early days of neural networks, it was believed that the proliferation of local minima would be a problem, but it turned out that this was not the case. Instead, the proliferation of saddle points, especially in high dimensional problems of practical interest, is the core of the problem (Dauphin et al, 2014). Such saddle points are surrounded by plateaus where the error is high and they can dramatically slow down optimization, giving the impression of the existence of a local minimum.
+In the early days of neural networks, it was believed that the proliferation of local minima would be a problem, in the sense that gradient descent would get stuck in them. But it turned out that this was not the case. Instead, the proliferation of saddle points, especially in high dimensional problems (e.g. neural networks), is the core of the problem (Dauphin et al, 2014). Such saddle points are surrounded by plateaus where the error is high and they can dramatically slow down optimization, giving the impression of the existence of a local minimum.
 
 ### References
 1. Dauphin Y, Pascanu R, Gulcehre C, Cho K, Ganguli S, Bengio Y. Identifying and attacking the saddle point problem in high-dimensional non-convex optimization [Internet]. arXiv [cs.LG]. 2014. Available from: http://arxiv.org/abs/1406.2572
