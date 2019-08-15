@@ -65,3 +65,8 @@ So the gradient is zero, which means that we are not moving towards any directio
  Are we on a global minimum? On a local minum? Or on a [saddle point](https://en.wikipedia.org/wiki/Saddle_point)?
 
 The answer to this question is hidden in the product $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$, which informs us about the *local curvature* in the neighborhood of $$\mathbf{x}$$.
+
+* $$\mathbf{H}$$ is positive definite at $$\mathbf{x}$$: We are stuck on a local minimum.
+* $$\mathbf{H}$$ is negative definite at $$\mathbf{x}$$: We are stuck on a local maximum.
+* $$\mathbf{H}$$ has both positive and negative eigenvalues: We are stuck on a saddle point..
+* None of the above: We have no clue.
