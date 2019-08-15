@@ -72,3 +72,5 @@ The answer to this question is hidden in the product $$\delta\mathbf{x}^T \mathb
 * $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} < 0$$: We are stuck on a local maximum.
 * $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$ has both positive and negative eigenvalues: We are stuck on a saddle point.
 * None of the above: We have no clue. We need even higher-order data to figure it out.
+
+Gradient descent is a simple method and it usually gives meaningful results for both convex and nonconvex optimization. For convex optimization it gives the global optimum under fairly general conditions. For nonconvex optimization it may arrive at a local optimum.
