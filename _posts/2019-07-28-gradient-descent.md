@@ -20,7 +20,7 @@ This introduction is invariably accompanied by an image like this:
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gradient_descent.png">
 </p>
 
-In the above scenario we have only $$1$$ parameter ($$w$$) and we want to minimize the cost function $$J(w)$$. The intuition is that the sign of the gradient points us to the direction we have to move in order to minimize $$J$$. Imagine that we have many parameters, then we are walking inside an $$D-$$dimensional space, where $$D$$ is the number of parameters. But it's easier to visualize with $$D=1$$ or $$D=2$$ so most people use this as an example.
+In the above scenario we only have $$1$$ parameter ($$w$$) and we want to minimize the cost function $$J(w)$$. The intuition is that the sign of the gradient points us to the direction we have to move in order to minimize $$J$$. Imagine that we have many parameters, then we are walking inside an $$D-$$dimensional space. But since it's easier to visualize with $$D=1$$ or $$D=2$$, most people use this as an example.
 
 I'd like to present the same subject from another perspective, though, that doesn't receive much attention.
 
