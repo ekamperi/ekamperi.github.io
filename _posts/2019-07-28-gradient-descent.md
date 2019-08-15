@@ -68,5 +68,5 @@ The answer to this question is hidden in the product $$\delta\mathbf{x}^T \mathb
 
 * $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} > 0$$: We are stuck on a local minimum.
 * $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} < 0$$: We are stuck on a local maximum.
-* $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} has both positive and negative eigenvalues: We are stuck on a saddle point.
+* $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$ has both positive and negative eigenvalues: We are stuck on a saddle point.
 * None of the above: We have no clue.
