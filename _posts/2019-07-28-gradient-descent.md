@@ -63,8 +63,12 @@ f(\mathbf{x}+\delta \boldsymbol{x}) &= f(\mathbf{x}) + \frac{1}{2} \delta\mathbf
 \end{align}
 $$
 
-So the gradient is zero, which means that we are not moving towards any direction. At this point we have not yet assumed anything about the "shape" of the function, i.e. whether it was [convex](https://en.wikipedia.org/wiki/Convex_function) or non-convex.
- Are we on a global minimum? On a local minum? Or on a [saddle point](https://en.wikipedia.org/wiki/Saddle_point)?
+So the gradient is zero, which means that we are not moving towards any direction. At this point we have not yet assumed anything about the "shape" of the function, i.e. whether it was [convex](https://en.wikipedia.org/wiki/Convex_function) or non-convex. Are we on a global minimum? On a local minum? Or on a [saddle point](https://en.wikipedia.org/wiki/Saddle_point)?
+
+<p align="center">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/optimization_shape.png">
+</p>
+Image taken from [here](https://www.offconvex.org/2016/03/22/saddlepoints)
 
 The answer to this question is hidden in the product $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$, which informs us about the *local curvature* in the neighborhood of $$\mathbf{x}$$.
 
