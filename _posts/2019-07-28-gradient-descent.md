@@ -75,9 +75,9 @@ The same argument as before can be applied. We want to take a step from $$\mathb
 
 To sum up regarding the product $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$ we have these cases:
 
-* $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} > 0$$: We are stuck on a local minimum.
-* $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} < 0$$: We are stuck on a local maximum.
-* $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$ has both positive and negative eigenvalues: We are stuck on a saddle point.
+* $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} > 0$$: We are on a local minimum.
+* $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} < 0$$: We are on a local maximum.
+* $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$ has both positive and negative eigenvalues: We are on a saddle point.
 * None of the above: We have no clue. We need even higher-order data to figure it out.
 
 In the early days of neural networks, it was believed that the proliferation of local minima would be a problem, in the sense that gradient descent would get stuck in them. But it turned out that this was not the case. Instead, the proliferation of saddle points, especially in high dimensional problems (e.g. neural networks), is the core of the problem (Dauphin et al, 2014). Such saddle points are surrounded by plateaus where the error is high and they can dramatically slow down optimization, giving the impression of the existence of a local minimum.
