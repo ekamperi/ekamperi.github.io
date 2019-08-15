@@ -49,15 +49,15 @@ Previously, when expanding $$f(\mathbf{x})$$ we considered only the first-order 
 
 $$f(\mathbf{x}+\delta \boldsymbol{x}) = f(\mathbf{x}) + \nabla_x f(\mathbf{x})\delta \boldsymbol{x} + \frac{1}{2} \delta\mathbf{x}^T \mathbf{H}\delta\mathbf{x} + \mathcal{O}\left(\left\|\delta^3 \boldsymbol{x}\right\|\right)$$
 
-Where $$\mathbf{H} = \nabla_x^2f(\mathbf{x})$ is the [Hessian matrix]($https://en.wikipedia.org/wiki/Hessian_matrix).
+Where $$\mathbf{H} = \nabla_x^2f(\mathbf{x})$$ is the [Hessian matrix]($https://en.wikipedia.org/wiki/Hessian_matrix).
 
 It's interesting to think what happens when the gradient becomes zero, i.e. $$\nabla_x f(\mathbf{x}) = 0$$. Then:
 
 $$
 \begin{align}
 f(\mathbf{x}+\delta \boldsymbol{x})
-&= f(\mathbf{x}) + \underbrace{\nabla_x f(\mathbf{x})\delta \boldsymbol{x}}_\text{zero} + \frac{1}{2} \delta\mathbf{x}^T \mathbf{H}\delta\mathbf{x} + \mathcal{O}\left(\left\|\delta^3 \boldsymbol{x}\right\|\right)\\
-&= f(\mathbf{x}+\delta \boldsymbol{x}) = f(\mathbf{x}) + \frac{1}{2} \delta\mathbf{x}^T \mathbf{H}\delta\mathbf{x} + \mathcal{O}\left(\left\|\delta^3 \boldsymbol{x}\right\|\right)
+= f(\mathbf{x}) + \underbrace{\nabla_x f(\mathbf{x})\delta \boldsymbol{x}}_\text{zero} + \frac{1}{2} \delta\mathbf{x}^T \mathbf{H}\delta\mathbf{x} + \mathcal{O}\left(\left\|\delta^3 \boldsymbol{x}\right\|\right)\\
+f(\mathbf{x}+\delta \boldsymbol{x}) &= f(\mathbf{x}) + \frac{1}{2} \delta\mathbf{x}^T \mathbf{H}\delta\mathbf{x} + \mathcal{O}\left(\left\|\delta^3 \boldsymbol{x}\right\|\right)
 \end{align}
 $$
 
