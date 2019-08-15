@@ -20,7 +20,7 @@ This introduction is invariably accompanied by an image like this:
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gradient_descent.png">
 </p>
 
-In the above scenario we only have $$1$$ parameter ($$w$$) and we want to minimize the cost function $$J(w)$$. The intuition is that the sign of the gradient points us to the direction we have to move in order to minimize $$J$$. Imagine that we have many parameters, then we are walking inside an $$D-$$dimensional space. But since it's easier to visualize with $$D=1$$ or $$D=2$$, most people use this as an example.
+In the above scenario we only have $$1$$ parameter ($$w$$) and we want to minimize the cost function $$J(w)$$. The intuition is that the sign of the gradient points us to the direction we have to move in order to minimize $$J$$. Imagine that we have many parameters, then we are navigating inside a $$D-$$dimensional space. But since it's easier to visualize with $$D=1$$ or $$D=2$$, most people use the above image as an example.
 
 I'd like to present the same subject from another perspective, though, that doesn't receive much attention.
 
@@ -45,7 +45,7 @@ Keep in mind that $$\nabla_x f(\mathbf{x})$$ and $$\delta \boldsymbol{x}$$ are j
 </p>
 
 Since $$\mathbf{u} \cdot \mathbf{v} = \left\|u\right\| \left\|v\right\| \cos(\mathbf{u}, \mathbf{v})$$ it follows that when the angle between $$\mathbf{u}$$ and $$\mathbf{v}$$ is $$\varphi = -\pi$$, then the dot product takes its minimum value. Therefore $$\delta \mathbf{x} = - \nabla_x f(\mathbf{x})$$.
-, 
+
 ### The Hessian matrix
 Previously, when expanding $$f(\mathbf{x})$$ we considered only the first-order terms in the Taylor series. By also taking into account the second-order terms we get:
 
@@ -53,7 +53,7 @@ $$f(\mathbf{x}+\delta \boldsymbol{x}) = f(\mathbf{x}) + \nabla_x f(\mathbf{x})\d
 
 Where $$\mathbf{H} = \nabla_x^2f(\mathbf{x})$$ is the [Hessian matrix]($https://en.wikipedia.org/wiki/Hessian_matrix).
 
-It's interesting to think what happens when the gradient becomes zero, i.e. $$\nabla_x f(\mathbf{x}) = 0$$. Then:
+It's interesting to consider what happens when the gradient becomes zero, i.e. $$\nabla_x f(\mathbf{x}) = 0$$. Then:
 
 $$
 \begin{align}
