@@ -20,9 +20,9 @@ This introduction is invariably accompanied by an image like this:
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gradient_descent.png">
 </p>
 
-In the above scenario we only have $$1$$ parameter ($$w$$) and we want to minimize the cost function $$J(w)$$. The intuition is that the sign of the gradient points us to the direction we have to move in order to minimize $$J$$. Imagine that we have many parameters, then we are navigating inside a $$D-$$dimensional space. But since it's easier to visualize with $$D=1$$ or $$D=2$$, most people use the above image as an example.
+In the above scenario we only have $$1$$ parameter, $$w$$, and we want to minimize the cost function $$J(w)$$. The intuition is that the sign of the gradient points us to the direction we have to move in order to minimize $$J$$. Imagine that we have many parameters, then we are navigating inside a $$D-$$dimensional space. But since it's easier to visualize with $$D=1$$ or $$D=2$$, most people use the above image as an example (or a 2D version of it).
 
-I'd like to present the same subject from another perspective, though, that doesn't receive much attention.
+I'd like to present the same subject from a slightly different perspective, though, that doesn't receive much attention.
 
 ### Connection to Taylor series
 Recall that a multivariable function $$f(\mathbf{x})$$ can be written as a [Taylor series](https://en.wikipedia.org/wiki/Taylor_series):
@@ -66,9 +66,9 @@ $$
 So the gradient is zero, which means that we are not moving towards any direction. At this point we have not yet assumed anything about the "shape" of the function, i.e. whether it was [convex](https://en.wikipedia.org/wiki/Convex_function) or non-convex. Are we on a global minimum? On a local minum? Or on a [saddle point](https://en.wikipedia.org/wiki/Saddle_point)?
 
 <p align="center">
- <img style="width: 50%; height: 50%" src="{{ site.url }}/images/optimization_shape.png">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/optimization_shape.png">
 </p>
-Image taken from [here](https://www.offconvex.org/2016/03/22/saddlepoints)
+Image taken from [here].(https://www.offconvex.org/2016/03/22/saddlepoints)
 
 The answer to this question is hidden in the product $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$, which informs us about the *local curvature* in the neighborhood of $$\mathbf{x}$$.
 
@@ -77,4 +77,7 @@ The answer to this question is hidden in the product $$\delta\mathbf{x}^T \mathb
 * $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$ has both positive and negative eigenvalues: We are stuck on a saddle point.
 * None of the above: We have no clue. We need even higher-order data to figure it out.
 
-Gradient descent is a simple method and it usually gives meaningful results for both convex and non-convex optimization problems. For convex optimization it gives the global optimum under fairly general conditions. For non-convex it may arrive at a local optimum.
+In the early days of neural networks, it was believed that the proliferation of local minima would be a problem, but it turned out that this was not the case. Instead, the proliferation of saddle points, especially in high dimensional problems of practical interest, is the core of the problem (Dauphin et al, 2014). Such saddle points are surrounded by plateaus where the error is high and they can dramatically slow down optimization, giving the impression of the existence of a local minimum.
+
+### References
+1. Dauphin Y, Pascanu R, Gulcehre C, Cho K, Ganguli S, Bengio Y. Identifying and attacking the saddle point problem in high-dimensional non-convex optimization [Internet]. arXiv [cs.LG]. 2014. Available from: http://arxiv.org/abs/1406.2572
