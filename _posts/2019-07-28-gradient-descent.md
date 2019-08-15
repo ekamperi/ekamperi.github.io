@@ -49,6 +49,8 @@ Previously, when expanding $$f(\mathbf{x})$$ we considered only the first-order 
 
 $$f(\mathbf{x}+\delta \boldsymbol{x}) = f(\mathbf{x}) + \nabla_x f(\mathbf{x})\delta \boldsymbol{x} + \frac{1}{2} \delta\mathbf{x}^T \mathbf{H}\delta\mathbf{x} + \mathcal{O}\left(\left\|\delta^3 \boldsymbol{x}\right\|\right)$$
 
+Where $$\mathbf{H} = \nabla_x^2f(\mathbf{x})$ is the [Hessian matrix]($https://en.wikipedia.org/wiki/Hessian_matrix).
+
 It's interesting to think what happens when the gradient becomes zero, i.e. $$\nabla_x f(\mathbf{x}) = 0$$. Then:
 
 $$
@@ -59,8 +61,7 @@ f(\mathbf{x}+\delta \boldsymbol{x})
 \end{align}
 $$
 
-At this point we have not yet assumed anything about the "shape" of the function, i.e. whether it was [convex](https://en.wikipedia.org/wiki/Convex_function) or non-convex.
+So the gradient is zero, which means that we are not moving towards any direction. At this point we have not yet assumed anything about the "shape" of the function, i.e. whether it was [convex](https://en.wikipedia.org/wiki/Convex_function) or non-convex.
+ Are we on a global minimum? On a local minum? Or on a [saddle point](https://en.wikipedia.org/wiki/Saddle_point)?
 
-So the gradient is zero, which means that we are not moving towards any direction. Are we on a global minimum? A local minum? Or a [saddle point](https://en.wikipedia.org/wiki/Saddle_point)?
-
-The answer to this question is hidden in the Hessian matrix $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$, which informs us about the *local curvature* in the neighborhood of $$\mathbf{x}$$.
+The answer to this question is hidden in the product $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$, which informs us about the *local curvature* in the neighborhood of $$\mathbf{x}$$.
