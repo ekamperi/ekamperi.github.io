@@ -31,6 +31,10 @@ ClearAll["Global`*"];
 (* Generate some points along the 5x+7 line plus some noise *)
 data = Table[{x + RandomReal[], 7 + 5 x + RandomReal[]}, {x, 0, 10, 0.1}];
 
+(* Define our cost function as the mean of the square error, i.e.
+   (1/n) * Sum (y_predicted - y_true)^2 *)
+cost[u_, v_] := Mean[(u + v*First@# - Last@#)^2 & /@ data]
+
 {% endraw %}
 {% endhighlight %}
 
