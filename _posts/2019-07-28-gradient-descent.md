@@ -22,6 +22,18 @@ This introduction is invariably accompanied by an image like this:
 
 In the above scenario we only have $$1$$ parameter, $$w$$, and we want to minimize the cost function $$J(w)$$. The intuition is that the sign of the gradient points us to the direction we have to move in order to minimize $$J$$. Imagine that we have many parameters, then we are navigating inside a $$D-$$dimensional space. But since it's easier to visualize with $$D=1$$ or $$D=2$$, most people use the above image as an example (or a 2D version of it).
 
+Although the post is not about gradient descent per se, let's just take on a really simple example.
+
+{% highlight mathematica %}
+{% raw %}
+ClearAll["Global`*"];
+(* Generate some points along the 5x+7 line plus some noise *)
+data = Table[{x + RandomReal[], 7 + 5 x + RandomReal[]}, {x, 0, 10, 
+    0.1}];
+
+{% endraw %}
+{% highlight %}
+
 I'd like to present the same subject from a slightly different perspective, though, that doesn't receive much attention.
 
 ### Connection to Taylor series
