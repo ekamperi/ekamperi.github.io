@@ -26,13 +26,13 @@ Although the post is not about gradient descent per se, let's just take on a rea
 
 {% highlight mathematica %}
 {% raw %}
+
 ClearAll["Global`*"];
 (* Generate some points along the 5x+7 line plus some noise *)
-data = Table[{x + RandomReal[], 7 + 5 x + RandomReal[]}, {x, 0, 10, 
-    0.1}];
+data = Table[{x + RandomReal[], 7 + 5 x + RandomReal[]}, {x, 0, 10, 0.1}];
 
 {% endraw %}
-{% highlight %}
+{% endhighlight %}
 
 I'd like to present the same subject from a slightly different perspective, though, that doesn't receive much attention.
 
