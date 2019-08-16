@@ -28,15 +28,16 @@ Although the post is not about gradient descent per se, let's just take on a rea
 {% raw %}
 
 ClearAll["Global`*"];
-(* Generate some points along the 5x+7 line plus some noise *)
+(* Generate some points along the y = 5x + 7 line plus some noise *)
 data = Table[{x + RandomReal[], 7 + 5 x + RandomReal[]}, {x, 0, 10, 0.1}];
 
 (* Define our cost function as the mean of the square error. Subscripting variables
-   don't work quite well, so let's just use u for theta0 and v for theta1.
+   doesn't work quite well, so let's just use u for theta0 and v for theta1.
    J(u, v) = (1/n) * Sum (y_predicted - y_true)^2 *)
 cost[u_, v_] := Mean[(u + v*First@# - Last@#)^2 & /@ data]
 
-(* Set the learning rate and iterate for 1000 steps, updating u, v *)
+(* Set the learning rate and iterate for 1000 steps, initialize our estimates
+   of u,v and use gradient descent to update u,v *)
 a = 10^-2;
 costs =
   Reap[
@@ -62,7 +63,7 @@ Style[Grid[{
 This is how the cost function $$J(\theta_0, \theta_1)$$ is reduced as we iterate (in the code we write $$J(u, v)$$ because subscripting isn't so robust in Mathematica.
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/cost_vs_iterations.png">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/cost_vs_iterations.png">
 </p>
 
 And this is our estimated linear model vs. our training data.
