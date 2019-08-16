@@ -60,7 +60,7 @@ Style[Grid[{
 {% endraw %}
 {% endhighlight %}
 
-This is how the cost function $$J(\theta_0, \theta_1)$$ is reduced as we iterate (in the code we write $$J(u, v)$$ because subscripting isn't so robust in Mathematica.
+This is how the cost function $$J(\theta_0, \theta_1)$$ is reduced as we iterate (in the code we write $$J(u, v)$$ because subscripting isn't so robust in Mathematica).
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/cost_vs_iterations.png">
