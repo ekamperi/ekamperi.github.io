@@ -31,12 +31,45 @@ ClearAll["Global`*"];
 (* Generate some points along the 5x+7 line plus some noise *)
 data = Table[{x + RandomReal[], 7 + 5 x + RandomReal[]}, {x, 0, 10, 0.1}];
 
-(* Define our cost function as the mean of the square error, i.e.
-   (1/n) * Sum (y_predicted - y_true)^2 *)
+(* Define our cost function as the mean of the square error. Subscripting variables
+   don't work quite well, so let's just use u for theta0 and v for theta1.
+   J(u, v) = (1/n) * Sum (y_predicted - y_true)^2 *)
 cost[u_, v_] := Mean[(u + v*First@# - Last@#)^2 & /@ data]
+
+(* Set the learning rate and iterate for 1000 steps, updating u, v *)
+a = 10^-2;
+costs =
+  Reap[
+    u = 0; v = 0;
+    For[i = 1, i <= 1000, i++,
+     u = u - a*D[cost[w0, w1], w0] /. {w0 -> u, w1 -> v};
+     v = v - a*D[cost[w0, w1], w1] /. {w0 -> u, w1 -> v};
+     Sow[cost[u, v]]
+     ]
+    ][[2, 1]];
+
+(* Plot the function of cost J vs. iterations in both linear and log scale *)
+Style[Grid[{
+   #[costs, Joined -> True, Filling -> Axis, 
+      Frame -> {True, True, False, False},
+      FrameLabel -> {"Iterations", "Cost function J"}, 
+      PlotRange -> All] & /@ {ListPlot, ListLogPlot}}],
+ ImageSizeMultipliers -> 1]
 
 {% endraw %}
 {% endhighlight %}
+
+This is how the cost function $$J(\theta_0, \theta_1)$$ is reduced as we iterate (in the code we write $$J(u, v)$$ because subscripting isn't so robust in Mathematica.
+
+<p align="center">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/cost_vs_iterations.png">
+</p>
+
+And this is our estimated linear model vs. our training data.
+
+<p align="center">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/linear_regression.png">
+</p>
 
 I'd like to present the same subject from a slightly different perspective, though, that doesn't receive much attention.
 
