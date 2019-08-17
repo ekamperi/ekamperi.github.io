@@ -162,7 +162,18 @@ For ﬁrst-order optimization algorithms, such as gradient descent, it is not en
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/saddle_point.png">
 </p>
 
-For Newton’s method (in its standard form), saddle points clearly constitute a problem (Goodfellow, 2016). Gradient descent is designed to move "downhill", whereas Newton’s method, is designed to *explicitly solve for a point where the gradient is zero* (remember that we solved for $$\nabla f(\mathbf{x} + \delta \mathbf{x}) = 0$$). In its standard form, it can as well jump to a saddle point. The proliferation of saddle points in high-dimensional parameter spaces may explain why second-order methods have not replaced gradient descent in the context of neural network training. Another problem with Newton's method is that although it usually takes less step to converge, the computational burden of these steps is considerable (particularly the calculation of $$\mathbf{H}^{-1})$$.
+For Newton’s method (in its standard form), saddle points clearly constitute a problem (Goodfellow, 2016). Gradient descent is designed to move "downhill", whereas Newton’s method, is designed to *explicitly solve for a point where the gradient is zero* (remember that we solved for $$\nabla f(\mathbf{x} + \delta \mathbf{x}) = 0$$). In its standard form, it can as well jump into a saddle point. In the example above we have:
+
+{% highlight mathematica %}
+{% raw %}
+ClearAll["Global`*"];
+f[x_, y_] := x^2 - y^2
+{x, y} - Inverse@D[f[x, y], {{x, y}, 2}] . Grad[f[x, y], {x, y}]
+(* {0, 0} *)
+{% endraw %}
+{% endhighlight %}
+
+The proliferation of saddle points in high-dimensional parameter spaces may explain why second-order methods have not replaced gradient descent in the context of neural network training. Another problem with Newton's method is that although it usually takes less step to converge, the computational burden of these steps is considerable (particularly the calculation of $$\mathbf{H}^{-1})$$.
 
 ### References
 1. Dauphin Y, Pascanu R, Gulcehre C, Cho K, Ganguli S, Bengio Y. Identifying and attacking the saddle point problem in high-dimensional non-convex optimization [Internet]. arXiv [cs.LG]. 2014. Available from: http://arxiv.org/abs/1406.2572
