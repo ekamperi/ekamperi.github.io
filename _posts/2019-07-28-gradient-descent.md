@@ -161,7 +161,7 @@ $$
 \right)
 $$
 
-If you then choose for instance $\delta \mathbf{x} = \mathbf{e}_i$, then: 
+If you then choose for instance $$\delta \mathbf{x} = \mathbf{e}_i$$, then: 
 $$\delta \mathbf{x}^T \mathbf{H} \delta \mathbf{x} = \mathbf{e}_i^T \mathbf{H} \mathbf{e}_i = \mathbf{e}_i^T(\lambda_i \mathbf{e}_i)= \lambda_i \mathbf{e_i}^T \mathbf{e_i} = \lambda_i$$
 
 Since $$e_i$$ is an orthonormal basis.
