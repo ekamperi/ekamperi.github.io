@@ -130,8 +130,6 @@ To sum up regarding the product $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x
 * $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$ has both positive and negative eigenvalues: We are on a saddle point.
 * None of the above: We have no clue. We need even higher-order data to figure it out.
 
-In the early days of neural networks, it was believed that the proliferation of local minima would be a problem, in the sense that gradient descent would get stuck in them. But it turned out that this was not the case. Instead, the proliferation of saddle points, especially in high dimensional problems (e.g. neural networks), is usually the culprit (Dauphin et al, 2014). Such saddle points may be surrounded by plateaus where the error is high and they can dramatically slow down optimization, giving the impression that we are inside a local minimum.
-
 ### Newton optimization method
 As we've seen second-order terms in the Taylor expansion provide us with insights regarding the local curvature in the neighborhood of $$\mathbf{x}$$. Naturally, we may ask whether we could come up with an optimization method that utilizes these information to converge faster (in less in steps). It turns out that this is what Newton method does.
 
@@ -154,5 +152,14 @@ $$
 
 The geometric interpretation of Newton's method is that at each iteration, it fits a paraboloid to the surface of $$f(\mathbf{x})$$ and then jumps into the maximum or minimum of that paraboloid (in higher dimensions, this may also be a saddle point). So the closer to quadratic our functions look at local level, the faster the convergence.
 
+### Saddle points
+
+In the early days of neural networks, it was believed that the proliferation of local minima would be a problem, in the sense that gradient descent would get stuck in them. But it turned out that this was not the case. Instead, the proliferation of saddle points, especially in high dimensional problems (e.g. neural networks), is usually the culprit (Dauphin et al, 2014). Such saddle points may be surrounded by plateaus where the error is high and they can dramatically slow down optimization, giving the impression that we are inside a local minimum.
+
+For ﬁrst-order optimization algorithms, such as gradient descent, it is not entirely clear how saddle points affect the optimization process. Near a saddle point, the gradient can often become very small, on the other hand, though, we do know empirically that often gradient descent is able to escape.
+
+For Newton’s method (in its standard form), saddle points clearly constitute a problem (Goodfellow, 2016). Gradient descent is designed to move "downhill", whereas Newton’s method, is designed to *explicitly solve for a point where the gradient is zero*. In its standard form, it can as well jump to a saddle point. The proliferation of saddle points in high-dimensional parameter spaces may explain why second-order methods have not replaced gradient descent in the context of neural network training.
+
 ### References
 1. Dauphin Y, Pascanu R, Gulcehre C, Cho K, Ganguli S, Bengio Y. Identifying and attacking the saddle point problem in high-dimensional non-convex optimization [Internet]. arXiv [cs.LG]. 2014. Available from: http://arxiv.org/abs/1406.2572
+2. Goodfellow I, Bengio Y, Courville A. Deep Learning. MIT Press; 2016. 800 p.
