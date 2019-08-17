@@ -175,7 +175,7 @@ f[x_, y_] := x^2 - y^2
 
 Do you see how Newton method sent us to the saddle point?
 
-The proliferation of saddle points in high-dimensional parameter spaces may explain why second-order methods have not replaced gradient descent in the context of neural network training. Another problem with Newton's method is that although it usually takes less steps to converge, the computational burden of these steps is considerable (particularly the calculation of $$\mathbf{H}^{-1})$$. There are modified versions of the Newton method, such as the "saddle free Newton" or methods that approximate $$\mathbf{H}$$.
+The proliferation of saddle points in high-dimensional parameter spaces may explain why second-order methods have not replaced gradient descent in the context of neural network training. Another problem with Newton's method is that although it usually takes less steps to converge, the computational burden of these steps is considerable (particularly the calculation of $$\mathbf{H}^{-1})$$. To be fair though, there are modified versions of the Newton method, such as the ["saddle free Newton"](https://arxiv.org/abs/1406.2572) or methods that approximate $$\mathbf{H}$$ to speed up computations.
 
 ### References
 1. Dauphin Y, Pascanu R, Gulcehre C, Cho K, Ganguli S, Bengio Y. Identifying and attacking the saddle point problem in high-dimensional non-convex optimization [Internet]. arXiv [cs.LG]. 2014. Available from: http://arxiv.org/abs/1406.2572
