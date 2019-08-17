@@ -145,7 +145,7 @@ $$
 
 If we do the math and solve for $$\delta\mathbf{x}$$ we get: $$\delta \mathbf{x} = -\mathbf{H}^{-1}\nabla f(\mathbf{x}) = - (\nabla^2 f(\mathbf{x}))^{-1} \nabla f(\mathbf{x}) $$ (obviously this only works if $$\mathbf{H}$$ is invertible). Just as with gradient descent the best step that we could take to minimize $$f(\mathbf{x})$$ was $$\delta \mathbf{x} = - \nabla_x f(\mathbf{x})$$, for Newton method the best step is $$\delta \mathbf{x} = -\mathbf{H}^{-1}\nabla f(\mathbf{x})$$.
 
-Another derivation that I liked is the "linearized optimality condition" from the Book "Convex optimization" from Boyd, Section 9.5 page 485. Here, we linearize the optimality condition $$\nabla f(\mathbf{x} + \delta \mathbf{x})$$:
+Another derivation that I liked is the "linearized optimality condition" from the Book "Convex optimization" from Boyd, Section 9.5 page 485. Here, we linearize the optimality condition $$\nabla f(\mathbf{x} + \delta \mathbf{x}) = 0$$:
 
 $$
 \nabla f(\mathbf{x} + \delta \mathbf{x} = \nabla f(\mathbf{x}) + \nabla^2 f(\mathbf{x}) \delta \mathbf{x} = 0 \Rightarrow
