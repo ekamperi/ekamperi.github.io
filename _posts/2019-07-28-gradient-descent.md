@@ -143,5 +143,9 @@ $$
 \nabla_{\delta \mathbf{x}} f(\mathbf{x} + \delta\mathbf{x}) = 0 
 $$
 
+If you do the math and solve for $$\delta\mathbf{x}$$ you get: $$\delta \mathbf{x} = -\mathbf{H}^{-1}\nabla f(\mathbf{x}) = - (\nabla^2 f(\mathbf{x}))^{-1} \nabla f(\mathbf{x}) $$
+
+Just as with gradient descent the best step that we could take to minimize $$f\mathbf{x}$$ was $$\delta \mathbf{x} = - \nabla_x f(\mathbf{x})$$, for Newton method the best step is $$\delta \mathbf{x} = -\mathbf{H}^{-1}\nabla f(\mathbf{x})$$.
+
 ### References
 1. Dauphin Y, Pascanu R, Gulcehre C, Cho K, Ganguli S, Bengio Y. Identifying and attacking the saddle point problem in high-dimensional non-convex optimization [Internet]. arXiv [cs.LG]. 2014. Available from: http://arxiv.org/abs/1406.2572
