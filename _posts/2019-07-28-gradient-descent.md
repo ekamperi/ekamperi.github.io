@@ -167,7 +167,7 @@ $$
 \delta \mathbf{x} = -(\nabla^2 f(\mathbf{x}))^{-1}\nabla f(\mathbf{x})
 $$
 
-The geometric interpretation of Newton's method is that at each iteration, it fits a paraboloid to the surface of $$f(\mathbf{x})$$ and then jumps into the maximum or minimum of that paraboloid (in higher dimensions, this may also be a saddle point). So the closer to quadratic our functions look at local level, the faster the convergence.
+The geometric interpretation of Newton's method is that at each iteration, it fits a paraboloid to the surface of $$f(\mathbf{x})$$ and then jumps into the maximum or minimum of that paraboloid (in higher dimensions, this may also be a saddle point). So the closer to quadratic our function look at local level, the faster the convergence.
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/newton.png">
