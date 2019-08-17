@@ -137,7 +137,7 @@ As we've seen second-order terms in the Taylor expansion provide us with insight
 
 $$f(\mathbf{x}+\delta \boldsymbol{x}) = f(\mathbf{x}) + \nabla_x f(\mathbf{x})\delta \boldsymbol{x} + \frac{1}{2} \delta\mathbf{x}^T \mathbf{H}\delta\mathbf{x} + \mathcal{O}\left(\left\|\delta^3 \boldsymbol{x}\right\|\right)$$
 
-The Newton method tries to find stationary points (because if there is a minimum, then it would reside in a stationary point). So, if we take the step to $$\mathbf{x} + \delta \mathbf{x}$$ we would like this new point to be stationary:
+The Newton method tries to find a step such that we end up in a stationary point (because if there is a minimum, it would reside in a stationary point). So, if we take the step to $$\mathbf{x} + \delta \mathbf{x}$$ we would like this new point to be stationary:
 
 $$
 \nabla_{\delta \mathbf{x}} f(\mathbf{x} + \delta\mathbf{x}) = 0 
