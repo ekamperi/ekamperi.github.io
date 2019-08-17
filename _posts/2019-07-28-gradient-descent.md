@@ -161,13 +161,9 @@ $$
 \right)
 $$
 
-If you choose for instance $$\delta \mathbf{x} = \mathbf{e}_i$$, then:  $$\delta \mathbf{x}^T \mathbf{H} \delta \mathbf{x} = \mathbf{e}_i^T \mathbf{H} \mathbf{e}_i = \mathbf{e}_i^T(\lambda_i \mathbf{e}_i)= \lambda_i \mathbf{e_i}^T \mathbf{e_i} = \lambda_i$$. Since $$e_i$$ is an orthonormal basis. On the other hand if you choose some "random" direction $$\delta \mathbf{x}$$, then this can be written as a linear combination of $$\mathbf{e}_i$$:
+If you choose for instance $$\delta \mathbf{x} = \mathbf{e}_i$$, then:  $$\delta \mathbf{x}^T \mathbf{H} \delta \mathbf{x} = \mathbf{e}_i^T \mathbf{H} \mathbf{e}_i = \mathbf{e}_i^T(\lambda_i \mathbf{e}_i)= \lambda_i \mathbf{e_i}^T \mathbf{e_i} = \lambda_i$$. Since $$e_i$$ is an orthonormal basis. On the other hand if you choose some "random" direction $$\delta \mathbf{x}$$, then this can be written as a linear combination of $$\mathbf{e}_i$$: $$\delta \mathbf{x} = \sum_{i=1}^{N} x_i e_i$$
 
-$$
-\delta \mathbf{x} = \sum_{i=1}^{N} x_i e_i
-$$
-
-and therefore:
+And therefore:
 
 $$
 \delta \mathbf{x}^T \mathbf{H} \delta \mathbf{x} =
@@ -185,6 +181,7 @@ $$
 = \sum_{i=1}^{N} \lambda_i x_i^2
 $$
 
+What was all this fuzz about? We managed to write $$f(\mathbf{x} + \delta \mathbf{x}) = $$:
 
 ### Newton optimization method
 As we've seen second-order terms in the Taylor expansion provide us with insights regarding the local curvature in the neighborhood of $$\mathbf{x}$$. Naturally, we may ask whether we could come up with an optimization method that utilizes these information to converge faster (in less in steps). It turns out that this is what [Newton method](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization) does.
