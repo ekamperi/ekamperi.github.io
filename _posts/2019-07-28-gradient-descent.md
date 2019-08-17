@@ -99,13 +99,13 @@ Since $$\mathbf{u} \cdot \mathbf{v} = \left\|u\right\| \left\|v\right\| \cos(\ma
 This image illustrates the effect of different learning rates $$\alpha$$ on the convergence. If $$\alpha$$ is too small, we are converging too slow.
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/learning_rate1.png">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/learning_rate_1.png">
 </p>
 
 And if it's too large, then we may be diverging!
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/learning_rate2.png">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/learning_rate_2.png">
 </p>
 
 There's a ton of literature on how to select optimal learning rates or how to change the learning rate *during* the optimization phase, but that's beyond the scope of this introductory post.
