@@ -215,6 +215,27 @@ In the early days of neural networks, it was believed that the proliferation of 
 
 For ﬁrst-order optimization algorithms, such as gradient descent, it is not entirely clear how saddle points affect the optimization process. Near a saddle point, the gradient can often become very small. On the other hand, we do know empirically that gradient descent often manages to escape. It's like leaving a ball on a surface with the shape of a saddle. At first the ball may stand still, but even the slightest perturbation will eventually make it roll and escape because this equilibrium is unstable.
 
+{% highlight mathematica %}
+{% raw %}
+
+ClearAll["Global`*"];
+f[x_, y_] := x^2 - y^2
+Style[Grid[{
+   Table[
+    Show[
+     Plot3D[f[x, y], {x, -2, 2}, {y, -2, 2}, 
+      ColorFunction -> GrayLevel, Boxed -> False, 
+      AxesLabel -> {"x", "y", "z"}, ViewPoint -> d, Axes -> False],
+     Graphics3D[
+      {Red, AbsolutePointSize[20], Point[{0, 0, 1.5}]}
+      ]
+     ],
+    {d, {{0, 2, 2}, {2, 0, 2}, {2, 2, 0}}}]
+   }], ImageSizeMultipliers -> 1/2]
+
+{% endraw %}
+{% endhighlight %}
+
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/saddle_point.png">
 </p>
