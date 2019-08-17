@@ -131,11 +131,11 @@ To sum up regarding the product $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x
 * None of the above: We have no clue. We need even higher-order data to figure it out.
 
 ### Newton optimization method
-As we've seen second-order terms in the Taylor expansion provide us with insights regarding the local curvature in the neighborhood of $$\mathbf{x}$$. Naturally, we may ask whether we could come up with an optimization method that utilizes these information to converge faster (in less in steps). It turns out that this is what Newton method does.
+As we've seen second-order terms in the Taylor expansion provide us with insights regarding the local curvature in the neighborhood of $$\mathbf{x}$$. Naturally, we may ask whether we could come up with an optimization method that utilizes these information to converge faster (in less in steps). It turns out that this is what [Newton method](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization) does.
 
 $$f(\mathbf{x}+\delta \boldsymbol{x}) = f(\mathbf{x}) + \nabla_x f(\mathbf{x})\delta \boldsymbol{x} + \frac{1}{2} \delta\mathbf{x}^T \mathbf{H}\delta\mathbf{x} + \mathcal{O}\left(\left\|\delta^3 \boldsymbol{x}\right\|\right)$$
 
-The [Newton method](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization) tries to find a step such that we end up in a [stationary point](https://en.wikipedia.org/wiki/Critical_point_(mathematics)) (because if there is a minimum, it would reside in a stationary point). So, if we take the step to $$\mathbf{x} + \delta \mathbf{x}$$ we would like this new point to be stationary:
+The Newton method tries to find a step such that we end up in a [stationary point](https://en.wikipedia.org/wiki/Critical_point_(mathematics)) (because if there is a minimum, it would reside in a stationary point). So, if we take the step to $$\mathbf{x} + \delta \mathbf{x}$$ we would like this new point to be stationary:
 
 $$
 \nabla_{\delta \mathbf{x}} f(\mathbf{x} + \delta\mathbf{x}) = 0 
@@ -162,7 +162,7 @@ For ﬁrst-order optimization algorithms, such as gradient descent, it is not en
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/saddle_point.png">
 </p>
 
-For Newton’s method (in its standard form), saddle points clearly constitute a problem (Goodfellow, 2016). Gradient descent is designed to move "downhill", whereas Newton’s method, is designed to *explicitly solve for a point where the gradient is zero* (remember that we solved for $$\nabla f(\mathbf{x} + \delta \mathbf{x}) = 0$$). In its standard form, it can as well jump into a saddle point. In the example above we have $$f(x,y) = x^2 - y^2$$, let's calculate $$(x,y)_{n+1} = (x,y)_{n} - \mathbf{H}^{-1}f(x,y) \nabla f(x, y)$$:
+For Newton’s method (in its standard form), saddle points clearly constitute a problem (Goodfellow, 2016). Gradient descent is designed to move "downhill", whereas Newton’s method, is designed to *explicitly search for a point where the gradient is zero* (remember that we solved for $$\nabla f(\mathbf{x} + \delta \mathbf{x}) = 0$$). In its standard form, it can as well jump into a saddle point. In the example above we have $$f(x,y) = x^2 - y^2$$, let's calculate $$(x,y)_{n+1} = (x,y)_{n} - \mathbf{H}^{-1}f(x,y) \nabla f(x, y)$$:
 
 {% highlight mathematica %}
 {% raw %}
