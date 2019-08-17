@@ -152,11 +152,11 @@ $$
 
 The geometric interpretation of Newton's method is that at each iteration, it fits a paraboloid to the surface of $$f(\mathbf{x})$$ and then jumps into the maximum or minimum of that paraboloid (in higher dimensions, this may also be a saddle point). So the closer to quadratic our functions look at local level, the faster the convergence.
 
-### Saddle points
+### Saddle points are sad
 
 In the early days of neural networks, it was believed that the proliferation of local minima would be a problem, in the sense that gradient descent would get stuck in them. But it turned out that this was not the case. Instead, the proliferation of saddle points, especially in high dimensional problems (e.g. neural networks), is usually the culprit (Dauphin et al, 2014). Such saddle points may be surrounded by plateaus where the error is high and they can dramatically slow down optimization, giving the impression that we are inside a local minimum.
 
-For ﬁrst-order optimization algorithms, such as gradient descent, it is not entirely clear how saddle points affect the optimization process. Near a saddle point, the gradient can often become very small, on the other hand, though, we do know empirically that often gradient descent is able to escape. It's like leaving a ball on a saddle. Initially it may seem to not be moving, but eventually it will roll and escape.
+For ﬁrst-order optimization algorithms, such as gradient descent, it is not entirely clear how saddle points affect the optimization process. Near a saddle point, the gradient can often become very small. On the other hand, we do know empirically that gradient descent often manages to escape. It's like leaving a ball on a surface with the shape of a saddle. Initially it may appear to stand still, but eventually it will roll and escape because this equilibrium is unstable.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/saddle_point.png">
@@ -172,6 +172,8 @@ f[x_, y_] := x^2 - y^2
 (* {0, 0} *)
 {% endraw %}
 {% endhighlight %}
+
+Do you see how Newton method sent us to the saddle point?
 
 The proliferation of saddle points in high-dimensional parameter spaces may explain why second-order methods have not replaced gradient descent in the context of neural network training. Another problem with Newton's method is that although it usually takes less steps to converge, the computational burden of these steps is considerable (particularly the calculation of $$\mathbf{H}^{-1})$$. There are modified versions of the Newton method, such as the "saddle free Newton" or methods that approximate $$\mathbf{H}$$.
 
