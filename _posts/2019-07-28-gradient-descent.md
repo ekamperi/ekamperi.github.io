@@ -22,7 +22,7 @@ This introduction is invariably accompanied by an image like this:
 
 In the above scenario we only have $$1$$ parameter, $$w$$, and we want to minimize the cost function $$J(w)$$. The intuition is that the sign of the gradient points us to the direction we have to move in order to minimize $$J$$. Imagine that we have many parameters, then we are navigating inside a $$D-$$dimensional space. But since it's easier to visualize with $$D=1$$ or $$D=2$$, most people use the above image as an example (or a 2D version of it).
 
-Although the post is not about gradient descent per se, let's just take on a really simple example.
+Although the post is not about implemeting gradient descent per se, let's just take on a really simple example.
 
 {% highlight mathematica %}
 {% raw %}
@@ -95,6 +95,20 @@ Keep in mind that $$\nabla_x f(\mathbf{x})$$ and $$\delta \boldsymbol{x}$$ are j
 </p>
 
 Since $$\mathbf{u} \cdot \mathbf{v} = \left\|u\right\| \left\|v\right\| \cos(\mathbf{u}, \mathbf{v})$$ it follows that when the angle between $$\mathbf{u}$$ and $$\mathbf{v}$$ is $$\varphi = -\pi$$, then the dot product takes its minimum value. Therefore $$\delta \mathbf{x} = - \nabla_x f(\mathbf{x})$$. Keep in mind that this informs us only on the *direction* we have to travel in this multidimensional parameter space. The step size, i.e. how far we go along this direction in one stem (iteration) is controlled by the learning rate $$\alpha$$.
+
+This image illustrates the effect of different learning rates $$\alpha$$ on the convergence. If $$\alpha$$ is too small, we are converging too slow.
+
+<p align="center">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/learning_rate1.png">
+</p>
+
+And if it's too large, then we may be diverging!
+
+<p align="center">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/learning_rate2.png">
+</p>
+
+There's a ton of literature on how to select optimal learning rates or how to change the learning rate *during* the optimization phase, but that's beyond the scope of this introductory post.
 
 ### The Hessian matrix
 
