@@ -121,7 +121,7 @@ f(\mathbf{x}+\delta \boldsymbol{x}) &= f(\mathbf{x}) + \frac{1}{2} \delta\mathbf
 \end{align}
 $$
 
-When the Hessian matrix is [positive definite](https://en.wikipedia.org/wiki/Definiteness_of_a_matrix#Definitions), by definition is $$\delta \mathbf{x}^T \mathbf{H} f(\mathbf{x}) \delta \mathbf{x} > 0$$ for any $$\delta \mathbf{x} \ne 0$$). Therefore we have that $$f(\mathbf{x} + \delta\mathbf{x}) = f(\mathbf{x}) + (1/2) \delta\mathbf{x}^T \mathbf{H} f(\mathbf{x})\delta \mathbf{x} > f(\mathbf{x})$$, which means that $$\mathbf{x}$$ must be a local minimum. Similarly, when the Hessian matrix is negative definite, $$\mathbf{x}$$ is a local maximum. Finally, when $$\mathbf{H}$$ has both positive and negative eigenvalues, the point is a saddle point.
+When the Hessian matrix is [positive definite](https://en.wikipedia.org/wiki/Definiteness_of_a_matrix#Definitions), by definition is $$\delta \mathbf{x}^T \mathbf{H} \delta \mathbf{x} > 0$$ for any $$\delta \mathbf{x} \ne 0$$. Therefore we have that $$f(\mathbf{x} + \delta\mathbf{x}) = f(\mathbf{x}) + (1/2) \delta\mathbf{x}^T \mathbf{H} f(\mathbf{x})\delta \mathbf{x} > f(\mathbf{x})$$, which means that $$\mathbf{x}$$ must be a local minimum. Similarly, when the Hessian matrix is negative definite, $$\mathbf{x}$$ is a local maximum. Finally, when $$\mathbf{H}$$ has both positive and negative eigenvalues, the point is a saddle point.
 
 To sum up regarding the product $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$ we have these cases:
 
@@ -130,7 +130,7 @@ To sum up regarding the product $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x
 * $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$ has both positive and negative eigenvalues: We are on a saddle point.
 * None of the above: We have no clue. We need even higher-order data to figure it out.
 
-The same argument as before can be applied. We want to take a step from $$\mathbf{x}$$ to $$\mathbf{x} + \mathbf{\delta x}$$ and $$f(\mathbf{x} + \delta\mathbf{x})$$ be smaller than $$f(\mathbf{x})$$. Therefore, we need to find a vector $$\delta \mathbf{x}$$ for which $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} < 0$$ and move along it.
+A similar argument as before could be made: we want to take a step from $$\mathbf{x}$$ to $$\mathbf{x} + \mathbf{\delta x}$$ and have $$f(\mathbf{x} + \delta\mathbf{x})$$ be smaller than $$f(\mathbf{x})$$. Therefore, we need to find a vector $$\delta \mathbf{x}$$ for which $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} < 0$$ and move along it.
 
 ### Newton optimization method
 As we've seen second-order terms in the Taylor expansion provide us with insights regarding the local curvature in the neighborhood of $$\mathbf{x}$$. Naturally, we may ask whether we could come up with an optimization method that utilizes these information to converge faster (in less in steps). It turns out that this is what [Newton method](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization) does.
