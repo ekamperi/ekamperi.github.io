@@ -147,6 +147,24 @@ To sum up regarding the product $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x
 
 A similar argument as before could be made: we want to take a step from $$\mathbf{x}$$ to $$\mathbf{x} + \mathbf{\delta x}$$ and have $$f(\mathbf{x} + \delta\mathbf{x})$$ be smaller than $$f(\mathbf{x})$$. Therefore, we need to find a vector $$\delta \mathbf{x}$$ for which $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} < 0$$ and move along it.
 
+I know that all these are too much of information, but bear with me a little more because things get interesting.
+
+
+The Hessian matrix if given by $$\mathbf{H}f(x)_{(i,j)} = \frac{\partial^2}{\partial x_i\partial x_j}f(x)$$.
+
+[If the second partial derivatives are continuous](https://en.wikipedia.org/wiki/Symmetry_of_second_derivatives#Schwarz's_theorem), then the order of the differential operators $$\frac{\partial}{\partial x_i}$$ and $$\frac{\partial}{\partial x_j}$$ can be swapped. Which makes the Hessian matrix symmetric. Also $$\mathbf{H}$$ is real. We do know that in this case we may come up with and orthonormal basis $$e1,…,e_n$$, such that the matrix
+has the form:
+
+$$
+\mathbf{H} = \left( 
+\array{\lambda_1  & 0 & \dots & 0 \\
+0 &\lambda_2 & 0 \dots & 0 \\
+& & \dots & \\
+0 &\dots & 0 & \lambda_n
+ }
+\right)
+$$
+
 ### Newton optimization method
 As we've seen second-order terms in the Taylor expansion provide us with insights regarding the local curvature in the neighborhood of $$\mathbf{x}$$. Naturally, we may ask whether we could come up with an optimization method that utilizes these information to converge faster (in less in steps). It turns out that this is what [Newton method](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization) does.
 
