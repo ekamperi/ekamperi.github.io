@@ -121,7 +121,7 @@ f(\mathbf{x}+\delta \boldsymbol{x}) &= f(\mathbf{x}) + \frac{1}{2} \delta\mathbf
 \end{align}
 $$
 
-When the Hessian matrix is [positive definite](https://en.wikipedia.org/wiki/Definiteness_of_a_matrix#Definitions), by definition is $$\delta \mathbf{x}^T \nabla^2 f(\mathbf{x}) \delta \mathbf{x} > 0$$ for any $$\delta \mathbf{x} \ne 0$$), by second order Taylor’s expansion we have that $$f(\mathbf{x} + \delta\mathbf{x}) = f(\mathbf{x}) + (1/2) \delta\mathbf{x}^T \nabla^2 f(\mathbf{x})\delta \mathbf{x} > f(\mathbf{x})$$, therefore $$\mathbf{x}$$ must be a local minimum. Similarly, when the Hessian matrix is negative definite, $$\mathbf{x}$$ is a local maximum. Finally, when $$\mathbf{H}$$ has both positive and negative eigenvalues, the point is a saddle point.
+When the Hessian matrix is [positive definite](https://en.wikipedia.org/wiki/Definiteness_of_a_matrix#Definitions), by definition is $$\delta \mathbf{x}^T \mathbf{H} f(\mathbf{x}) \delta \mathbf{x} > 0$$ for any $$\delta \mathbf{x} \ne 0$$). Therefore we have that $$f(\mathbf{x} + \delta\mathbf{x}) = f(\mathbf{x}) + (1/2) \delta\mathbf{x}^T \mathbf{H} f(\mathbf{x})\delta \mathbf{x} > f(\mathbf{x})$$, which means that $$\mathbf{x}$$ must be a local minimum. Similarly, when the Hessian matrix is negative definite, $$\mathbf{x}$$ is a local maximum. Finally, when $$\mathbf{H}$$ has both positive and negative eigenvalues, the point is a saddle point.
 
 To sum up regarding the product $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$ we have these cases:
 
