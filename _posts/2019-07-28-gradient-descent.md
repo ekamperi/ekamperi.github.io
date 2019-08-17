@@ -159,7 +159,7 @@ In the early days of neural networks, it was believed that the proliferation of 
 For ﬁrst-order optimization algorithms, such as gradient descent, it is not entirely clear how saddle points affect the optimization process. Near a saddle point, the gradient can often become very small, on the other hand, though, we do know empirically that often gradient descent is able to escape. It's like leaving a ball on a saddle. Initially it may seem to not be moving, but eventually it will roll and escape.
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/saddle_point.png">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/saddle_point.png">
 </p>
 
 For Newton’s method (in its standard form), saddle points clearly constitute a problem (Goodfellow, 2016). Gradient descent is designed to move "downhill", whereas Newton’s method, is designed to *explicitly solve for a point where the gradient is zero*. In its standard form, it can as well jump to a saddle point. The proliferation of saddle points in high-dimensional parameter spaces may explain why second-order methods have not replaced gradient descent in the context of neural network training. Another problem with Newton's method is that although it usually takes less step to converge, the computational burden of these steps is considerable (particularly the calculation of $$\mathbf{H}^{-1}$$.
