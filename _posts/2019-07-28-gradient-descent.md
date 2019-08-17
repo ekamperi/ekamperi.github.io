@@ -93,6 +93,7 @@ Keep in mind that $$\nabla_x f(\mathbf{x})$$ and $$\delta \boldsymbol{x}$$ are j
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/gradient_descent2.png">
 </p>
+(To my fellow readers: sorry that $$\nabla f$$ isn't horizontal!) 
 
 Since $$\mathbf{u} \cdot \mathbf{v} = \left\|u\right\| \left\|v\right\| \cos(\mathbf{u}, \mathbf{v})$$ it follows that when the angle between $$\mathbf{u}$$ and $$\mathbf{v}$$ is $$\varphi = -\pi$$, then the dot product takes its minimum value. Therefore $$\delta \mathbf{x} = - \nabla_x f(\mathbf{x})$$. Keep in mind that this informs us only on the *direction* we have to travel in this multidimensional parameter space. The step size, i.e. how far we go along this direction in one stem (iteration) is controlled by the learning rate $$\alpha$$.
 
