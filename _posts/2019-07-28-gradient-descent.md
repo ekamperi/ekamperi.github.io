@@ -140,7 +140,7 @@ $$f(\mathbf{x}+\delta \boldsymbol{x}) = f(\mathbf{x}) + \nabla_x f(\mathbf{x})\d
 The Newton method tries to find stationary points (because if there is a minimum, then it would reside in a stationary point). So, if we take the step to $$\mathbf{x} + \delta \mathbf{x}$$ we would like this new point to be stationary:
 
 $$
-\nabla f(\mathbf{x} + \delta\mathbf{x}) = 0 
+\nabla_{\delta \mathbf{x}} f(\mathbf{x} + \delta\mathbf{x}) = 0 
 $$
 
 ### References
