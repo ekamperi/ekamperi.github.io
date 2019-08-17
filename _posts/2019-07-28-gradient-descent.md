@@ -162,7 +162,7 @@ For ﬁrst-order optimization algorithms, such as gradient descent, it is not en
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/saddle_point.png">
 </p>
 
-For Newton’s method (in its standard form), saddle points clearly constitute a problem (Goodfellow, 2016). Gradient descent is designed to move "downhill", whereas Newton’s method, is designed to *explicitly solve for a point where the gradient is zero* (remember that we solved for $$\nabla f(\mathbf{x} + \delta \mathbf{x}) = 0$$). In its standard form, it can as well jump into a saddle point. In the example above we have $$f(x,y) = x^2 - y^2$$, let's calculate $$(x,y)_{n+1} = (x,y)_{n} - (\mathbf{H})^{-1}f(x,y) \nabla f(x, y)$$:
+For Newton’s method (in its standard form), saddle points clearly constitute a problem (Goodfellow, 2016). Gradient descent is designed to move "downhill", whereas Newton’s method, is designed to *explicitly solve for a point where the gradient is zero* (remember that we solved for $$\nabla f(\mathbf{x} + \delta \mathbf{x}) = 0$$). In its standard form, it can as well jump into a saddle point. In the example above we have $$f(x,y) = x^2 - y^2$$, let's calculate $$(x,y)_{n+1} = (x,y)_{n} - \mathbf{H}^{-1}f(x,y) \nabla f(x, y)$$:
 
 {% highlight mathematica %}
 {% raw %}
