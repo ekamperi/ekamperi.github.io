@@ -225,7 +225,7 @@ Style[Grid[{
     Show[
      Plot3D[f[x, y], {x, -2, 2}, {y, -2, 2}, 
       ColorFunction -> GrayLevel, Boxed -> False, 
-      AxesLabel -> {"x", "y", "z"}, ViewPoint -> d, Axes -> False],
+      AxesLabel -> {"x", "y", "z"}, Axes -> False, ViewPoint -> d],
      Graphics3D[
       {Red, AbsolutePointSize[20], Point[{0, 0, 1.5}]}
       ]
