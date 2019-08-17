@@ -97,7 +97,7 @@ Keep in mind that $$\nabla_x f(\mathbf{x})$$ and $$\delta \boldsymbol{x}$$ are j
 
 Since $$\mathbf{u} \cdot \mathbf{v} = \left\|u\right\| \left\|v\right\| \cos(\mathbf{u}, \mathbf{v})$$ it follows that when the angle between $$\mathbf{u}$$ and $$\mathbf{v}$$ is $$\varphi = -\pi$$, then the dot product takes its minimum value. Therefore $$\delta \mathbf{x} = - \nabla_x f(\mathbf{x})$$. Keep in mind that this informs us only on the *direction* we have to travel in this multidimensional parameter space. The step size, i.e. how far we go along this direction in one stem (iteration) is controlled by the learning rate $$\alpha$$.
 
-This image illustrates the effect of different learning rates $$\alpha$$ on the convergence. If $$\alpha$$ is too small, we are converging too slow.
+The following images illustrate the effect of different learning rates $$\alpha$$ on the convergence. If $$\alpha$$ is too small, we are converging too slow.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/learning_rate_1.png">
