@@ -161,7 +161,7 @@ $$
 \right)
 $$
 
-If you choose for instance $$\delta \mathbf{x} = \mathbf{e}_i$$ (that is, if you move along the direction of $$\mathbf{e}_i$$, then  $$\delta \mathbf{x}^T \mathbf{H} \delta \mathbf{x} = \mathbf{e}_i^T \mathbf{H} \mathbf{e}_i = \mathbf{e}_i^T(\lambda_i \mathbf{e}_i)= \lambda_i \mathbf{e_i}^T \mathbf{e_i} = \lambda_i$$, since $$e_i$$ is an orthonormal basis. On the other hand if you choose some "random" direction $$\delta \mathbf{x}$$ to move along, then this can be written as a linear combination of $$\mathbf{e}_i$$: $$\delta \mathbf{x} = \sum_{i=1}^{N} x_i e_i$$. Therefore:
+If you choose for instance $$\delta \mathbf{x} = \mathbf{e}_i$$ (that is, if you move along the direction of $$\mathbf{e}_i$$), then  $$\delta \mathbf{x}^T \mathbf{H} \delta \mathbf{x} = \mathbf{e}_i^T \mathbf{H} \mathbf{e}_i = \mathbf{e}_i^T(\lambda_i \mathbf{e}_i)= \lambda_i \mathbf{e_i}^T \mathbf{e_i} = \lambda_i$$, since $$e_i$$ is an orthonormal basis. On the other hand if you choose some "random" direction $$\delta \mathbf{x}$$ to move along, then this can be written as a linear combination of $$\mathbf{e}_i$$: $$\delta \mathbf{x} = \sum_{i=1}^{N} x_i e_i$$. Therefore:
 
 $$
 \delta \mathbf{x}^T \mathbf{H} \delta \mathbf{x} =
