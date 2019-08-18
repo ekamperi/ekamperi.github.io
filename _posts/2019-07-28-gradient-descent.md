@@ -145,9 +145,7 @@ To sum up regarding the product $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x
 * $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$ has both positive and negative eigenvalues: We are on a saddle point.
 * None of the above: We have no clue. We need even higher-order data to figure it out.
 
-A similar argument as before could be made: we want to take a step from $$\mathbf{x}$$ to $$\mathbf{x} + \mathbf{\delta x}$$ and have $$f(\mathbf{x} + \delta\mathbf{x})$$ be smaller than $$f(\mathbf{x})$$. Therefore, we need to find a vector $$\delta \mathbf{x}$$ for which $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} < 0$$ and move along it.
-
-I know that all these are too much of information, but bear with me a little more because things get interesting.
+At this point we make a similar argument as before. We want to take a step from $$\mathbf{x}$$ to $$\mathbf{x} + \mathbf{\delta x}$$ and have $$f(\mathbf{x} + \delta\mathbf{x})$$ be smaller than $$f(\mathbf{x})$$. Therefore, we need to find a vector $$\delta \mathbf{x}$$ for which $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} < 0$$ and move along it. How do we do that? I know that all these are too much of information, but bear with me a little more because things get really interesting!
 
 The Hessian matrix if given by $$\mathbf{H}f(x)_{(i,j)} = \frac{\partial^2}{\partial x_i\partial x_j}f(x)$$. [If the second partial derivatives are continuous](https://en.wikipedia.org/wiki/Symmetry_of_second_derivatives#Schwarz's_theorem), then the order of the differential operators $$\frac{\partial}{\partial x_i}$$ and $$\frac{\partial}{\partial x_j}$$ can be swapped. Which makes the Hessian matrix symmetric. Also $$\mathbf{H}$$ is real-valued. We do know that in this case (real and symmetric) we may come up with and orthonormal basis $$e_1,…,e_n$$, such that $$\mathbf{H}$$ is written in the following diagonal form:
 
