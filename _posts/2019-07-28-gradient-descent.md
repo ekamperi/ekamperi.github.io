@@ -211,9 +211,32 @@ The geometric interpretation of Newton's method is that at each iteration, it fi
 
 In the following images you can see how various optimization algorithms, including gradient descent and Newton's method, perform on a simple minimization problem.
 
+{% highlight mathematica %}
+{% raw %}
+ClearAll["Global`*"];
+<< Optimization`UnconstrainedProblems`
+Plot3D[Cos[x^2 - 3 y] + Sin[x^2 + y^2], {x, 0, 2}, {y, 0, 2}, 
+  ColorFunction -> "Rainbow", AxesLabel -> {"x", "y", "z"}, 
+  Boxed -> False]
+{% endraw %}
+{% endhighlight %}
+
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/various_optimizations.png">
 </p>
+
+{% highlight mathematica %}
+{% raw %}
+Style[
+  Grid[
+   Partition[#, 3] &[
+    FindMinimumPlot[Cos[x^2 - 3 y] + Sin[x^2 + y^2], {{x, 1}, {y, 1}},
+         Method -> #, PlotLabel -> #][[3]] & /@ {"Gradient", "Newton",
+       "ConjugateGradient", "PrincipalAxis", "QuasiNewton", 
+      "InteriorPoint"}]],
+  ImageSizeMultipliers -> 0.75
+{% endraw %}
+{% endhighlight %}
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/various_optimizations2.png">
