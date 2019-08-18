@@ -297,4 +297,4 @@ The proliferation of saddle points in high-dimensional parameter spaces may expl
 ### References
 1. Dauphin Y, Pascanu R, Gulcehre C, Cho K, Ganguli S, Bengio Y. Identifying and attacking the saddle point problem in high-dimensional non-convex optimization [Internet]. arXiv [cs.LG]. 2014. Available from: http://arxiv.org/abs/1406.2572
 2. Goodfellow I, Bengio Y, Courville A. Deep Learning. MIT Press; 2016. 800 p.
-3. [Unconstrained optimization book part1](http://library.wolfram.com/infocenter/Books/8505/UnconstrainedOptimizationPart1.pdf) and [part2](http://library.wolfram.com/infocenter/Books/8505/UnconstrainedOptimizationPart2.pdf)
+3. [Unconstrained optimization book part1](http://library.wolfram.com/infocenter/Books/8505/UnconstrainedOptimizationPart1.pdf) and [part2](http://library.wolfram.com/infocenter/Books/8505/UnconstrainedOptimizationPart2.pdf).
