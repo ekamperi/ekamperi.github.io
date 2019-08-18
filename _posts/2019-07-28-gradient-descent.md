@@ -212,7 +212,7 @@ The geometric interpretation of Newton's method is that at each iteration, it fi
 In the following images you can see how various optimization algorithms, including gradient descent and Newton's method, perform on a simple minimization problem.
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/various_optimizations.png">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/various_optimizations.png">
 </p>
 
 <p align="center">
