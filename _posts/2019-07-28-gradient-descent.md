@@ -187,7 +187,7 @@ What was all this fuzz about? We managed to write:
 
 $$
 f(\mathbf{x} + \delta \mathbf{x}) = f(\mathbf{x}) + \sum_{i=1}^N \lambda_i x_i^2
-$$.
+$$
 
 This is very important because we expressed the value of $$f$$ near $$\mathbf{x}$$ as a sum of squares multiplied by the eigenvalues of $$\mathbf{H}$$. If $$\mathbf{H}$$ has only positive eigenvalues $$\lambda_i$$ then for every $$\delta \mathbf{x}$$ it's $$f(\mathbf{x} + \delta \mathbf{x}) > f(\mathbf{x})$$, i.e. we are on a local minimum. Because no matter what direction we take, the value of our function is increasing. Similarly we can show that if all the eigenvalues are negative, we are on a local maximum. Last, it becomes obvious that if $$\mathbf{H}$$ has both positive and negative eigenvalues, we are sitting on a saddle point!
 
