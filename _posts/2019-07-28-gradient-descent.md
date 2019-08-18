@@ -240,7 +240,7 @@ Style[
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/various_optimizations2.png">
 </p>
 
-(`FindMinimumPlot` runs [FindMinimum](https://reference.wolfram.com/language/ref/FindMinimum.html), keeping track of the function and gradient calculations and steps taken during the search. The end image shows all these superimposed on a contour plot of the function. The steps are indicated with blue lines, function evaluations with green points and gradient evaluations with red points. The minimum found is shown with a large black point.)
+`FindMinimumPlot` runs [FindMinimum](https://reference.wolfram.com/language/ref/FindMinimum.html), keeping track of the function and gradient calculations and steps taken during the search. The end image shows all these superimposed on a contour plot of the function. The steps are indicated with blue lines, function evaluations with green points and gradient evaluations with red points. The minimum found is shown with a large black point.
 
 ### Saddle points are sad
 
