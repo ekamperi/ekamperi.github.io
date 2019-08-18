@@ -179,7 +179,7 @@ $$
 = \sum_{i=1}^{N} \lambda_i x_i^2
 $$
 
-What was all this fuzz about? We managed to write $$f(\mathbf{x} + \delta \mathbf{x}) = f(\mathbf{x}) + \sum_{i=1}^N \lambda_i x_i^2$$. That is very important because it puts the eigenvalues of $$\mathbf{H}$$ into the game. If $$\mathbf{H}$$ has only positive eigenvalues $$\lambda_i$$ then for every $$\delta \mathbf{x}$$ it's $$f(\mathbf{x} + \delta \mathbf{x}) > f(\mathbf{x})$$, i.e. we are on a local minimum. Similarly we can show that if all the eigenvalues are negative, we are on a local maximum. Last, it becomes obvious that if $$\mathbf{H}$$ has both positive and negative eigenvalues, we are sitting on a saddle point!
+What was all this fuzz about? We managed to write $$f(\mathbf{x} + \delta \mathbf{x}) = f(\mathbf{x}) + \sum_{i=1}^N \lambda_i x_i^2$$. This is very important because it puts the eigenvalues of $$\mathbf{H}$$ into the game. If $$\mathbf{H}$$ has only positive eigenvalues $$\lambda_i$$ then for every $$\delta \mathbf{x}$$ it's $$f(\mathbf{x} + \delta \mathbf{x}) > f(\mathbf{x})$$, i.e. we are on a local minimum. Similarly we can show that if all the eigenvalues are negative, we are on a local maximum. Last, it becomes obvious that if $$\mathbf{H}$$ has both positive and negative eigenvalues, we are sitting on a saddle point!
 
 ### Newton optimization method
 As we've seen second-order terms in the Taylor expansion provide us with insights regarding the local curvature in the neighborhood of $$\mathbf{x}$$. Naturally, we may ask whether we could come up with an optimization method that utilizes these information to converge faster (in less in steps). It turns out that this is what [Newton method](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization) does.
