@@ -195,7 +195,7 @@ $$
 $$
 
 If we do the math and solve for $$\delta\mathbf{x}$$ we get: $$\delta \mathbf{x} = -\mathbf{H}^{-1}\nabla f(\mathbf{x}) = - (\nabla^2 f(\mathbf{x}))^{-1} \nabla f(\mathbf{x}) $$ (obviously this only works if $$\mathbf{H}$$ is invertible). Just as with gradient descent the best step that we could take to minimize $$f(\mathbf{x})$$ was $$\delta \mathbf{x} = - \nabla_x f(\mathbf{x})$$, for Newton method the best step is $$\delta \mathbf{x} = -\mathbf{H}^{-1}\nabla f(\mathbf{x})$$. In practice we use $$\delta \mathbf{x} = -t\mathbf{H}^{-1}\nabla f(\mathbf{x})$$. The optimal value of $$t$$ is determined via the so called "backtracking line search". In short,
-we start with $$t=1$$ and while $$f(\mathbf{x} + t \mathbf{\delta \mathbf{x}) > f(\mathbf{x}) + \alpha t \nabla f(x)^T \delta\mathbf{x}$$, we shrink $$t_\text{new} = \beta t_\text{old}$$, else we perform the Newton update.
+we start with $$t=1$$ and while $$f(\mathbf{x} + t \delta \mathbf{x}) > f(\mathbf{x}) + \alpha t \nabla f(x)^T \delta\mathbf{x}$$, we shrink $$t_\text{new} = \beta t_\text{old}$$, else we perform the Newton update.
 
 Another derivation that I liked is the "linearized optimality condition" from the Book "Convex optimization" from Boyd, Section 9.5, page 485. Here, we linearize the optimality condition $$\nabla f(\mathbf{x} + \delta \mathbf{x}) = 0$$:
 
