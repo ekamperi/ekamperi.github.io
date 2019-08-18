@@ -209,6 +209,16 @@ The geometric interpretation of Newton's method is that at each iteration, it fi
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/newton.png">
 </p>
 
+In the following images you can see how various optimization algorithms, including gradient descent and Newton's method, perform on a simple minimization problem.
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/various_optimizations.png">
+</p>
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/various_optimizations2.png">
+</p>
+
 ### Saddle points are sad
 
 In the early days of neural networks, it was believed that the proliferation of local minima would be a problem, in the sense that gradient descent would get stuck in them. But it turned out that this was not the case. Instead, the proliferation of saddle points, especially in high dimensional problems (e.g. neural networks), is usually the culprit (Dauphin et al, 2014). Such saddle points may be surrounded by plateaus where the error is high and they can dramatically slow down optimization, giving the impression that we are inside a local minimum.
