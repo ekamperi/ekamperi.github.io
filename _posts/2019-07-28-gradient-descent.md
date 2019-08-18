@@ -149,7 +149,7 @@ A similar argument as before could be made: we want to take a step from $$\mathb
 
 I know that all these are too much of information, but bear with me a little more because things get interesting.
 
-The Hessian matrix if given by $$\mathbf{H}f(x)_{(i,j)} = \frac{\partial^2}{\partial x_i\partial x_j}f(x)$$. [If the second partial derivatives are continuous](https://en.wikipedia.org/wiki/Symmetry_of_second_derivatives#Schwarz's_theorem), then the order of the differential operators $$\frac{\partial}{\partial x_i}$$ and $$\frac{\partial}{\partial x_j}$$ can be swapped. Which makes the Hessian matrix symmetric. Also $$\mathbf{H}$$ is real. We do know that in this case we may come up with and orthonormal basis $$e_1,…,e_n$$, such that the matrix has the form:
+The Hessian matrix if given by $$\mathbf{H}f(x)_{(i,j)} = \frac{\partial^2}{\partial x_i\partial x_j}f(x)$$. [If the second partial derivatives are continuous](https://en.wikipedia.org/wiki/Symmetry_of_second_derivatives#Schwarz's_theorem), then the order of the differential operators $$\frac{\partial}{\partial x_i}$$ and $$\frac{\partial}{\partial x_j}$$ can be swapped. Which makes the Hessian matrix symmetric. Also $$\mathbf{H}$$ is real-valued. We do know that in this case (real and symmetric) we may come up with and orthonormal basis $$e_1,…,e_n$$, such that $$\mathbf{H}$$ is written in the following diagonal form:
 
 $$
 \mathbf{H} = \left( 
@@ -161,9 +161,7 @@ $$
 \right)
 $$
 
-If you choose for instance $$\delta \mathbf{x} = \mathbf{e}_i$$, then:  $$\delta \mathbf{x}^T \mathbf{H} \delta \mathbf{x} = \mathbf{e}_i^T \mathbf{H} \mathbf{e}_i = \mathbf{e}_i^T(\lambda_i \mathbf{e}_i)= \lambda_i \mathbf{e_i}^T \mathbf{e_i} = \lambda_i$$. Since $$e_i$$ is an orthonormal basis. On the other hand if you choose some "random" direction $$\delta \mathbf{x}$$, then this can be written as a linear combination of $$\mathbf{e}_i$$: $$\delta \mathbf{x} = \sum_{i=1}^{N} x_i e_i$$
-
-And therefore:
+If you choose for instance $$\delta \mathbf{x} = \mathbf{e}_i$$ (that is, if you move along the direction of $$\mathbf{e}_i$$, then  $$\delta \mathbf{x}^T \mathbf{H} \delta \mathbf{x} = \mathbf{e}_i^T \mathbf{H} \mathbf{e}_i = \mathbf{e}_i^T(\lambda_i \mathbf{e}_i)= \lambda_i \mathbf{e_i}^T \mathbf{e_i} = \lambda_i$$, since $$e_i$$ is an orthonormal basis. On the other hand if you choose some "random" direction $$\delta \mathbf{x}$$ to move along, then this can be written as a linear combination of $$\mathbf{e}_i$$: $$\delta \mathbf{x} = \sum_{i=1}^{N} x_i e_i$$. Therefore:
 
 $$
 \delta \mathbf{x}^T \mathbf{H} \delta \mathbf{x} =
@@ -181,7 +179,7 @@ $$
 = \sum_{i=1}^{N} \lambda_i x_i^2
 $$
 
-What was all this fuzz about? We managed to write $$f(\mathbf{x} + \delta \mathbf{x}) = f(\mathbf{x}) + \sum_{i=1}^N \lambda_i x_i^2$$. Consequently, if $$\mathbf{H}$$ has only positive eigenvalues $$\lambda_i$$ then for every $$\delta \mathbf{x}$$ it's $$f(\mathbf{x} + \delta \mathbf{x}) > f(\mathbf{x})$$, i.e. we are on a local minimum. Similarly we can show that if all the eigenvalues are negative, we are on a local maximum. Last, it becomes obvious that if $$\mathbf{H}$$ has both positive and negative eigenvalues, we are sitting on a saddle point!
+What was all this fuzz about? We managed to write $$f(\mathbf{x} + \delta \mathbf{x}) = f(\mathbf{x}) + \sum_{i=1}^N \lambda_i x_i^2$$. That is very important because it puts the eigenvalues of $$\mathbf{H}$$ into the game. If $$\mathbf{H}$$ has only positive eigenvalues $$\lambda_i$$ then for every $$\delta \mathbf{x}$$ it's $$f(\mathbf{x} + \delta \mathbf{x}) > f(\mathbf{x})$$, i.e. we are on a local minimum. Similarly we can show that if all the eigenvalues are negative, we are on a local maximum. Last, it becomes obvious that if $$\mathbf{H}$$ has both positive and negative eigenvalues, we are sitting on a saddle point!
 
 ### Newton optimization method
 As we've seen second-order terms in the Taylor expansion provide us with insights regarding the local curvature in the neighborhood of $$\mathbf{x}$$. Naturally, we may ask whether we could come up with an optimization method that utilizes these information to converge faster (in less in steps). It turns out that this is what [Newton method](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization) does.
