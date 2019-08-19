@@ -186,6 +186,7 @@ a.codinfox-tag-mark {
 }
 
 a.codinfox-tag-mark:hover {
-    border-style: 1px solid;
+    border-style: solid;
     border-color: red;
+    border-width: 1px;
 }
