@@ -1,6 +1,6 @@
 ---
 layout:   default
-title:    Tag
+title:    Tags
 ---
 {% comment%}
 Here we generate all the tags.
