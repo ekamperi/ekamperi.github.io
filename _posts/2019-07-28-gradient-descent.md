@@ -145,13 +145,6 @@ $$
 
 When the Hessian matrix is [positive definite](https://en.wikipedia.org/wiki/Definiteness_of_a_matrix#Definitions), by definition is $$\delta \mathbf{x}^T \mathbf{H} \delta \mathbf{x} > 0$$ for any $$\delta \mathbf{x} \ne 0$$. Therefore we have that $$f(\mathbf{x} + \delta\mathbf{x}) = f(\mathbf{x}) + (1/2) \delta\mathbf{x}^T \mathbf{H} f(\mathbf{x})\delta \mathbf{x} > f(\mathbf{x})$$, which means that $$\mathbf{x}$$ must be a local minimum. Similarly, when the Hessian matrix is negative definite, $$\mathbf{x}$$ is a local maximum. Finally, when $$\mathbf{H}$$ has both positive and negative eigenvalues, the point is a saddle point.
 
-To sum up regarding the product $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$ we have these cases:
-
-* $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} > 0$$: We are on a local minimum.
-* $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} < 0$$: We are on a local maximum.
-* $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$ has both positive and negative eigenvalues: We are on a saddle point.
-* None of the above: We have no clue. We need even higher-order data to figure it out.
-
 At this point we make a similar argument as before. We want to take a step from $$\mathbf{x}$$ to $$\mathbf{x} + \mathbf{\delta x}$$ and have $$f(\mathbf{x} + \delta\mathbf{x})$$ be smaller than $$f(\mathbf{x})$$. Therefore, we need to find a vector $$\delta \mathbf{x}$$ for which $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} < 0$$ and move along it. How do we do that? I know that all these are too much of information, but bear with me a little more because things are about to get really interesting!
 
 The Hessian matrix is given by $$\mathbf{H}f(x)_{(i,j)} = \frac{\partial^2}{\partial x_i\partial x_j}f(x)$$. [If the second partial derivatives are continuous](https://en.wikipedia.org/wiki/Symmetry_of_second_derivatives#Schwarz's_theorem), then the order of the differential operators $$\frac{\partial}{\partial x_i}$$ and $$\frac{\partial}{\partial x_j}$$ can be swapped. Which makes the Hessian matrix symmetric. Also $$\mathbf{H}$$ is real-valued. We do know that in this case (real and symmetric) we may come up with and orthonormal basis $$e_1,…,e_n$$, such that $$\mathbf{H}$$ is written in the following diagonal form:
@@ -191,6 +184,13 @@ f(\mathbf{x} + \delta \mathbf{x}) = f(\mathbf{x}) + \sum_{i=1}^N \lambda_i x_i^2
 $$
 
 This is very important because we expressed the value of $$f$$ near $$\mathbf{x}$$ as a sum of squares multiplied by the eigenvalues of $$\mathbf{H}$$. If $$\mathbf{H}$$ has only positive eigenvalues $$\lambda_i$$ then for every $$\delta \mathbf{x}$$ it's $$f(\mathbf{x} + \delta \mathbf{x}) > f(\mathbf{x})$$, i.e. we are on a local minimum. Because no matter what direction we take, the value of our function is increasing. Similarly we can show that if all the eigenvalues are negative, we are on a local maximum. Last, it becomes obvious that if $$\mathbf{H}$$ has both positive and negative eigenvalues, we are sitting on a saddle point!
+
+To sum up regarding the product $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$ we have these cases:
+
+* $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} > 0$$: We are on a local minimum.
+* $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x} < 0$$: We are on a local maximum.
+* $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$ has both positive and negative eigenvalues: We are on a saddle point.
+* None of the above: We have no clue. We need even higher-order data to figure it out.
 
 ### Newton optimization method
 As we've seen second-order terms in the Taylor expansion provide us with insights regarding the local curvature in the neighborhood of $$\mathbf{x}$$. Naturally, we may ask whether we could come up with an optimization method that utilizes these information to converge faster (in less in steps). It turns out that this is what [Newton method](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization) does.
