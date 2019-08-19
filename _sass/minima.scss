@@ -148,18 +148,22 @@ border-top: 1px solid #eee;
     padding-left: 1rem;
     list-style: none;
 }
+
 .codinfox-category-list h3 {
     font-size: 1rem;
     margin-top: 0;
 }
+
 .codinfox-category-list li small {
     font-size: 75%;
     color: #999;
 }
+
 .codinfox-category-list li a:hover {
     color: #6a9fb5;
     text-decoration: none;
 }
+
 .codinfox-category-list li a:hover small {
     color: inherit;
 }
@@ -178,10 +182,15 @@ border-top: 1px solid #eee;
 }
 
 .codinfox-tag-mark {
+    border-style: solid;
     text-decoration: none;
     font-size: 75%;
     padding: 0 .5rem 0 .5rem;
     border-radius: 5px;
     background: #e7f2f7;
     color: #6a9fb5;
+}
+
+.codinfox-tag-mark a:hover {
+    border-color: red;
 }
