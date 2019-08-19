@@ -216,7 +216,7 @@ In practice we use $$\delta \mathbf{x} = -t\mathbf{H}^{-1}\nabla f(\mathbf{x})$$
 Last, the so called *angle condition* needs to be satisfied. The intuition is that we can't be moving nearly orthogonal to the direction of gradient descent. Therefore we need the $$\cos(\mathbf{u}, \mathbf{v})$$ to satisfy the condition $$\cos(\mathbf{u}, \mathbf{v}) \ge \epsilon > 0 \Leftrightarrow \frac{\mathbf{u} \cdot \mathbf{v}}{\left\| \mathbf{u} \cdot \mathbf{v} \right\|} \ge \epsilon$$, where $$\mathbf{u} = \mathbf{H}^{-1}f(\mathbf{x}) \nabla_x f(\mathbf{x})$$ and $$ \mathbf{v} = -\nabla_x f(\mathbf{x})$$.
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/angle_condition.png">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/angle_condition.png">
 </p>
 
 The geometric interpretation of Newton's method is that at each iteration, it fits a paraboloid to the surface of $$f(\mathbf{x})$$ and then jumps into the maximum or minimum of that paraboloid (in higher dimensions, this may also be a saddle point). So the closer to quadratic our function looks at local level, the faster the convergence.
