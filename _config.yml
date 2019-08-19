@@ -28,7 +28,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
-paginate: 2
+paginate: 10
 paginate_path: posts/page:num/
 
 header_pages:
