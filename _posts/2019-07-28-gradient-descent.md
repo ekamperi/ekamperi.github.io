@@ -245,7 +245,7 @@ Plot3D[Cos[x^2 - 3 y] + Sin[x^2 + y^2], {x, 0, 2}, {y, 0, 2},
 {% raw %}
 Style[
   Grid[
-   Partition[#, 3] &[
+   Partition[#, 3]& [
     FindMinimumPlot[Cos[x^2 - 3 y] + Sin[x^2 + y^2], {{x, 1}, {y, 1}},
          Method -> #, PlotLabel -> #][[3]] & /@ {"Gradient", "Newton",
        "ConjugateGradient", "PrincipalAxis", "QuasiNewton", 
