@@ -13,7 +13,7 @@ layout: default
       {%- if page.author -%}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author | escape }}</span></span>
       {%- endif -%}</p>
- {% if page.tags %} | 
+ {% if page.tags %}
   {% for tag in page.tags %}
     <a href="{{ site.baseurl }}/blog/tags.html#{{ tag | slugify }}" class="codinfox-tag-mark">{{ tag }}</a>
   {% endfor %}
