@@ -63,6 +63,10 @@ code {
     background-color: #ffffff;
 }
 
+.site-header {
+    background-color: #f0f0f0;
+}
+
 /*
 *************************************************
 *             Taken from codinfox
@@ -86,7 +90,6 @@ code {
 .codinfox-profile-photo {
     text-align: center;
 }
-
 
 .codinfox-logo {
     height: 30px;
@@ -113,6 +116,7 @@ div.codinfox-index-bg>img {
     text-decoration: none;
     /*font-size: 0.75rem;*/
 }
+
 .codinfox-sns-flaticon>a{
     text-decoration: none;
     margin-right: .5em;
@@ -139,6 +143,7 @@ padding-top: 2rem;
 padding-bottom: 2rem;
 border-top: 1px solid #eee;
 }*/
+
 .codinfox-category-list {
     padding-left: 1rem;
     list-style: none;
