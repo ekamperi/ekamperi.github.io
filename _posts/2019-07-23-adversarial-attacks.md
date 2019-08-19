@@ -3,6 +3,7 @@ layout: post
 title:  "Adversarial attacks on neural networks"
 date:   2019-07-23 15:28:56 +0000
 categories: [machine learning]
+tags: ['lenet', 'neural networks']
 ---
 
 ### Contents
