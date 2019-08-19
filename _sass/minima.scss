@@ -203,72 +203,10 @@ border-top: 1px solid #eee;
     font-weight: bold;
 }
 
-.codinfox-tag-mark{
+.codinfox-tag-mark {
     font-size: 75%;
     padding: 0 .5rem 0 .5rem;
     border-radius: 5px;
     background: #e7f2f7;
     color: #6a9fb5;
-}
-
-.page-title {
-    text-transform: uppercase;
-}
-
-html {
-    font-family: Avenir, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
-    font-weight: 200;
-    background:#fff;
-    -webkit-text-size-adjust:100%;
-    -ms-text-size-adjust:100%;
-    text-rendering:optimizelegibility;
-    -moz-osx-font-smoothing: antialiased;
-    -webkit-font-smoothing: antialiased;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family:'Helvetica Neue', 'Microsoft Yahei', 'Hiragino Sans GB', 'Microsoft Sans Serif', 'WenQuanYi Micro Hei', sans-serif;
-    font-weight:400;
-}
-
-code,
-pre {
-    font-family:Courier, 'Courier New', monospace;
-}
-
-blockquote {
-    font-weight:300;
-    font-family:Avenir, 'Helvetica Neue', 'Microsoft Yahei', 'Hiragino Sans GB', 'Microsoft Sans Serif', 'WenQuanYi Micro Hei', sans-serif;
-}
-
-@media (min-width: 38rem) {
-    .post h2, .post h3, .post h4, .post h5, .post h6 {
-        margin-left: -1rem;
-        margin-bottom: .5rem;
-    }
-}
-
-.post {
-    font-size: 0.8rem;
-}
-
-.post h1 {
-    font-size: 1.6rem;
-}
-.post h2 {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-}
-.post h3 {
-    margin-top: 1.5rem;
-    font-size: 1rem;
-}
-.post h4, .post h5, .post h6 {
-    margin-top: 1rem;
-    font-size: 0.8rem;
-}
-
-.post h2::first-letter {
-    font-size: xx-large;
-    text-transform: uppercase;
 }
