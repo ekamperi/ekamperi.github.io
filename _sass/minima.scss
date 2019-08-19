@@ -176,7 +176,7 @@ border-top: 1px solid #eee;
     font-weight: bold;
 }
 
-.codinfox-tag-mark a {
+a.codinfox-tag-mark {
     text-decoration: none;
     font-size: 75%;
     padding: 0 .5rem 0 .5rem;
@@ -185,7 +185,7 @@ border-top: 1px solid #eee;
     color: #6a9fb5;
 }
 
-.codinfox-tag-mark a:hover {
+a.codinfox-tag-mark:hover {
     border-style: solid;
     border-color: red;
 }
