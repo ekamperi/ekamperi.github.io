@@ -13,12 +13,11 @@ layout: default
       {%- if page.author -%}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author | escape }}</span></span>
       {%- endif -%}</p>
-    <span>
-    <span class="post-date" style="display:inline-block;">{{ page.date | date_to_string }}</span> |
-    {% for tag in page.tags %}
-      <span class="codinfox-tag-mark">{{ tag }}</span>
-    {% endfor %}
-  </span>
+ {% if page.tags %} | 
+  {% for tag in page.tags %}
+    <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="codinfox-tag-mark">{{ tag }}</a>
+  {% endfor %}
+  {% endif %}
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
