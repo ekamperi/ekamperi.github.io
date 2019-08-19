@@ -34,6 +34,7 @@ paginate_path: posts/page:num/
 header_pages:
   - about.md
   - archive.md
+  - tags.md
 
 google_analytics: UA-145393080-1
 
