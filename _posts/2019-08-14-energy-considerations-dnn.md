@@ -28,6 +28,8 @@ As mind blowing as these *relative* data are, the absolute environmental impact 
 </p>
 Image taken from a techical overview titled "NVIDIA AI Inference Platform".
 
+Real-time applications may involve multiple inferences per instance. For example, a spoken question may as well go through an automatic speech recognition, speech to text, natural language processing, a recommender system, text to speech and then speech synthesis. Each of these steps is a distinct inference operation on its own. Inference throughtput and latency are both important.
+
 Things to pursuit in the future:
 * Research on hardware that requires less energy
 * Efficient training algorithms
