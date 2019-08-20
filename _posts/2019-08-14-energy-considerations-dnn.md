@@ -30,13 +30,13 @@ Image taken from a techical overview titled "NVIDIA AI Inference Platform".
 
 Real-time applications may involve multiple inferences per instance. For example, a spoken question may as well go through an automatic speech recognition, speech to text, natural language processing, a recommender system, text to speech and then speech synthesis. Each of these steps is a distinct inference operation on its own. These operations may be served over the cloud (when latency is not that much of an issue) or at client-side (when latency is an issue).
 
-Things that might become important in the future in environmental context:
-* Development of hardware that requires less energy and runs more efficiently on the AI training/inference workloads.
-* Development of efficient training algorithms (faster convergence, better generalization, requiring less math operations).
-* Techniques to perform fast hyperparameter optimization (e.g. Bayesian search vs. grid/random search)
-* Neural network compression techniques (for an overview [this is an excellent introduction]({{ site.url }}/docs/dnn_compression.pdf)) for speeding up inference (some of them may be implemented at the harware level, e.g. check the advertised optimization features of NVIDIA TensorRT inference platform).
-* Profiling tools to identify energy consumption offenders in an AI pipeline.
-* Reduction of redundant training, perhaps through better tracking and sharing of training parameters (e.g. Weights & Biases product).
+Things that might become important in the future in the environmental context:
+* Development of **hardware** that requires less energy and runs more efficiently on the AI training/inference workloads.
+* Development of **efficient training algorithms** (faster convergence, better generalization, requiring less math operations).
+* Techniques to perform **fast hyperparameter optimization** (e.g. Bayesian search vs. grid/random search)
+* **Neural network compression** techniques (for an overview [this is an excellent introduction]({{ site.url }}/docs/dnn_compression.pdf)) for speeding up inference (some of them may be implemented at the harware level, e.g. check the advertised optimization features of NVIDIA TensorRT inference platform).
+* **Profiling tools** to identify energy consumption offenders in an AI pipeline.
+* **Reduction of redundant training**, perhaps through better tracking and sharing of training parameters (e.g. Weights & Biases product).
 
 #### References
 1. Devlin J, Chang M-W, Lee K, Toutanova K. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding [Internet]. arXiv [cs.CL]. 2018. Available from: [http://arxiv.org/abs/1810.04805](http://arxiv.org/abs/1810.04805)
