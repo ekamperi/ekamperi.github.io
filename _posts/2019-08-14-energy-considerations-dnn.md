@@ -46,5 +46,5 @@ Things that might become important in the future in the environmental context:
 #### References
 1. Devlin J, Chang M-W, Lee K, Toutanova K. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding [Internet]. arXiv [cs.CL]. 2018. Available from: [http://arxiv.org/abs/1810.04805](http://arxiv.org/abs/1810.04805)
 2. Radford A, Wu J, Child R, Luan D, Amodei D, Sutskever I. Language models are unsupervised multitask learners. OpenAI Blog [Internet]. 2019;1(8). Available from: [https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
-3. So DR, Liang C, Le QV. The Evolved Transformer [Internet]. arXiv [cs.LG]. 2019. Available from: http://arxiv.org/abs/1901.11117
+3. So DR, Liang C, Le QV. The Evolved Transformer [Internet]. arXiv [cs.LG]. 2019. Available from: [http://arxiv.org/abs/1901.11117](http://arxiv.org/abs/1901.11117)
 4. Strubell E, Ganesh A, McCallum A. Energy and Policy Considerations for Deep Learning in NLP [Internet]. arXiv [cs.CL]. 2019. Available from: [http://arxiv.org/abs/1906.02243](http://arxiv.org/abs/1906.02243)
