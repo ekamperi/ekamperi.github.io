@@ -11,7 +11,7 @@ The latest advances, both in hardware and theory of training neural networks, ha
 <p align="center">
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/compute_diagram.png">
 </p>
-Image taken [from here](https://openai.com/blog/ai-and-compute/)
+Image taken [from here](https://openai.com/blog/ai-and-compute/).
 
 We will give a couple of examples on the depth of contemporary neural networks (DNNs). The *BERT* is a new language representation model which stands for "Bidirectional Encoder Representations from Transformers" (Devlin et al, 2018). In its base form BERT has 110M parameters and its training on 16 [TPU](https://en.wikipedia.org/wiki/Tensor_processing_unit) chips takes 4 days (96 hours). Another DNN from Radform et al (2019) has 1542M parameters, 48 layers and it needs 1 week (168 hours) to train on 32 TPUv3 chips.
 
@@ -21,7 +21,12 @@ To put things in perspective, the [carbon footprint](https://en.wikipedia.org/wi
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/footprint_comparison.png">
 </p>
 
-As mind blowing as these *relative* data are, the absolute environmental impact of training DNNs is small at the moment. The computational (hence environmental) cost of deploying the model for *inference* (that is using it for the intended purpose in the real world *after* you have trained it) is bigger.
+As mind blowing as these *relative* data are, the absolute environmental impact of training DNNs is small at the moment. The computational (hence environmental) cost of deploying the model for *inference* (i.e., using it for the intended purpose in the real world *after* you have trained it) is bigger.
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/nvidia_inference.png">
+</p>
+Image taken from a techical overview titled "NVIDIA AI Inference Platform".
 
 Things to pursuit in the future:
 * Research on hardware that requires less energy
