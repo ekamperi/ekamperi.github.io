@@ -125,7 +125,7 @@ It's interesting to consider what happens when the gradient becomes zero, i.e. $
 <p align="center">
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/optimization_shape.png">
 </p>
-Image taken from [here](https://www.offconvex.org/2016/03/22/saddlepoints).
+Image taken [from here](https://www.offconvex.org/2016/03/22/saddlepoints).
 
 The answer to this question is hidden in the second-order terms of the Taylor series, which inform us about the *local curvature* in the neighborhood of $$\mathbf{x}$$. Previously, when expanding $$f(\mathbf{x})$$ we considered only the first-order terms. By also taking into account the second-order terms we get:
 
