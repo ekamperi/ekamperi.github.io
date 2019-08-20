@@ -6,7 +6,7 @@ categories: [machine learning]
 tags: ['environment', 'machine learning']
 ---
 
-The advances during the past years, both in hardware and theory of training neural networks, have enabled researchers to train very deep models on voluminous data (e.g. the Wikipedia corpus). The two main categories include networks that perform image recognition/classification and those that perform natural language processing tasks. Training such networks and achieving a high accuracy requires unusually large computational resources. As a result, these models are costly to train, fine-tune and deploy, both *financially* (due to the cost of purchasing hardware and paying electricity bills or renting cloud compute time) and *environmentally*, due to the carbon dioxide emissions required to run modern hardware.
+The advances during the past years, both in hardware and theory of training neural networks, have enabled researchers to train very deep models on voluminous data (e.g. the Wikipedia corpus). The two main categories include networks that perform image recognition/classification and those that perform [natural language processing tasks](https://en.wikipedia.org/wiki/Natural_language_processing). Training such networks and achieving a high accuracy requires unusually large computational resources. As a result, these models are costly to train, fine-tune and deploy, both *financially* (due to the cost of purchasing hardware and paying electricity bills or renting cloud compute time) and *environmentally*, due to the carbon dioxide emissions required to run modern hardware.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/compute_diagram.png">
