@@ -16,6 +16,7 @@ To put things in perspective, the carbon footprint of training BERT on GPU is co
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/footprint_comparison.png">
 </p>
 
+Things to pursuit in the future:
 * Research on hardware that requires less energy
 * Efficient training algorithms
 * Efficient techniques to perform hyperparameter optimization (e.g. Bayesian search vs. grid/random search)
