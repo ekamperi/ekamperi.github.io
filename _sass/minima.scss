@@ -67,10 +67,17 @@ code {
     background-color: #f0f0f0;
 }
 
-a.post-link:hover {
-    text-decoration: none;
-    border-bottom: 2px red;
+.post-link {
+    display:block;
+    font-size:18px;
+    border-bottom: 1px solid #e7f2f7;
+    border-radius: 5px;
 }
+
+a.post-link:hover {
+    background-color: #e7f2f7;
+}
+
 /*
 *************************************************
 *             Taken from codinfox
