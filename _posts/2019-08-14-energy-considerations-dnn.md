@@ -13,7 +13,11 @@ The latest advances, both in hardware and theory of training neural networks, ha
 </p>
 Image taken [from here](https://openai.com/blog/ai-and-compute/).
 
-We will give a couple of examples on the depth of contemporary neural networks (DNNs). The *BERT* is a new language representation model which stands for "Bidirectional Encoder Representations from Transformers" (Devlin et al, 2018). In its base form BERT has 110M parameters and its training on 16 [TPU](https://en.wikipedia.org/wiki/Tensor_processing_unit) chips takes 4 days (96 hours). Another DNN from Radform et al (2019) has 1542M parameters, 48 layers and it needs 1 week (168 hours) to train on 32 TPUv3 chips.
+We will give a couple of examples on the depth of contemporary neural networks (DNNs). The *BERT* is a new language representation model which stands for "Bidirectional Encoder Representations from Transformers" (Devlin et al, 2018). In its base form BERT has 110M parameters and its training on 16 [TPU](https://en.wikipedia.org/wiki/Tensor_processing_unit) chips takes 4 days (96 hours). Another DNN from Radform et al (2019) has 1542M parameters, 48 layers and it needs 1 week (168 hours) to train on 32 TPUv3 chips. NVidia trained a 8.3 billion parameter version of a GPT-2 model known as GPT-2 8B.
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/nvidia_training.jpg">
+</p>
 
 To put things in perspective, the [carbon footprint](https://en.wikipedia.org/wiki/Carbon_footprint) of training BERT on GPU is comparable to that of a trans-American flight (Strubell et al, 2019)! But that's nothing compared to the hyperparameter optimization of the "transformer big" model from So et al (2019), where an evaluation of *15K child models* was performed, requiring a total of 979M train steps! This means that they trained 15K candidate models to decide which one was the most promising to train it further.
 
