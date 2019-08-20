@@ -28,14 +28,15 @@ As mind blowing as these *relative* data are, the absolute environmental impact 
 </p>
 Image taken from a techical overview titled "NVIDIA AI Inference Platform".
 
-Real-time applications may involve multiple inferences per instance. For example, a spoken question may as well go through an automatic speech recognition, speech to text, natural language processing, a recommender system, text to speech and then speech synthesis. Each of these steps is a distinct inference operation on its own. Inference throughtput and latency are both important.
+Real-time applications may involve multiple inferences per instance. For example, a spoken question may as well go through an automatic speech recognition, speech to text, natural language processing, a recommender system, text to speech and then speech synthesis. Each of these steps is a distinct inference operation on its own. These operations may be served over the cloud (when latency is not that much of an issue) or at client-side (when latency is an issue).
 
-Things to pursuit in the future:
-* Research on hardware that requires less energy
-* Efficient training algorithms
-* Efficient techniques to perform hyperparameter optimization (e.g. Bayesian search vs. grid/random search)
-* Neural network compression techniques (for an overview [this is an excellent introduction]({{ site.url }}/docs/dnn_compression.pdf)) for speeding up inference
-* Energy profiling tools
+Things that might become important in the future from:
+* Research on hardware that requires less energy and runs more efficiently for the AI training/inference workloads.
+* The discovery of efficient training algorithms.
+* Techniques to perform hyperparameter optimization (e.g. Bayesian search vs. grid/random search)
+* Neural network compression techniques (for an overview [this is an excellent introduction]({{ site.url }}/docs/dnn_compression.pdf)) for speeding up inference (some of them may be implement at the harware level, e.g. check the advertised optimization features of NVIDIA TensorRT inference platform).
+* Energy profiling tools to identify offenders.
+* Reduction of redundant training, perhaps through better tracking and sharing of training parameters (e.g. Weights & Biases product).
 
 #### References
 1. Devlin J, Chang M-W, Lee K, Toutanova K. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding [Internet]. arXiv [cs.CL]. 2018. Available from: [http://arxiv.org/abs/1810.04805](http://arxiv.org/abs/1810.04805)
