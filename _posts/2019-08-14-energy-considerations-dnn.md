@@ -8,6 +8,11 @@ tags: ['environment', 'machine learning']
 
 The advances during the past years, both in hardware and theory of training neural networks, have enabled researchers to train very deep models on voluminous data (e.g. the Wikipedia corpus). The two main categories include networks that perform image recognition/classification and those that perform natural language processing tasks. Training such networks and achieving a high accuracy requires unusually large computational resources. As a result, these models are costly to train, fine-tune and deploy, both *financially* (due to the cost of purchasing hardware and paying electricity bills or renting cloud compute time) and *environmentally*, due to the carbon dioxide emissions required to run modern hardware.
 
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/compute_diagram.png">
+</p>
+Image taken [from here](https://openai.com/blog/ai-and-compute/)
+
 We will give a couple of examples on the depth of contemporary deep neural networks (DNNs). The *BERT* is a new language representation model which stands for "Bidirectional Encoder Representations from Transformers" (Devlin et al, 2018). In its base form BERT has 110M parameters and its training on 16 [TPU](https://en.wikipedia.org/wiki/Tensor_processing_unit) chips takes 4 days (96 hours). Another DNN from Radform et al (2019) has 1542M parameters, 48 layers and it needs 1 week (168 hours) to train on 32 TPUv3 chips.
 
 To put things in perspective, the [carbon footprint](https://en.wikipedia.org/wiki/Carbon_footprint) of training BERT on GPU is comparable to that of a trans-American flight (Strubell et al, 2019)! But that's nothing compared to the hyperparameter optimization of the "transformer big" model from So et al (2019), where an evaluation of *15K child models* was performed, requiring a total of 979M train steps! This means that they trained 15K candidate models to decide which one was the most promising to train it further.
