@@ -13,6 +13,8 @@ kramdown:
   math_engine: mathjax
   math_enging_opts:
     preview: true
+    
+url: "https://ekamperi.github.io"
 
 minima:
   date_format: "%b %-d, %Y"
