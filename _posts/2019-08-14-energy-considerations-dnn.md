@@ -20,7 +20,7 @@ Things to pursuit in the future:
 * Research on hardware that requires less energy
 * Efficient training algorithms
 * Efficient techniques to perform hyperparameter optimization (e.g. Bayesian search vs. grid/random search)
-* Neural network compression techniques (for an overview [this is an excellent introduction]("{{ site.url }}/docs/dnn_compression.pdf"))
+* Neural network compression techniques (for an overview [this is an excellent introduction]({{ site.url }}/docs/dnn_compression.pdf))
 * Energy profiling tools
 
 #### References
