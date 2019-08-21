@@ -33,7 +33,7 @@ As mind blowing as these *relative* data are, the absolute environmental impact 
 </p>
 Image taken from a techical overview titled "NVIDIA AI Inference Platform".
 
-So, why will inference surpass training cost? Because you may train a network hundreds or thousands of times, but once you deploy it, there is a constant operation of the network multiplied by your number of clients. For example, a company that builds self-driving cars after many iterations constructs a DNN that can navigate a car. This model is then deployed to *all* cars and the network is constantly fed with real-time data (from cameras, radars, sensors, etc) that must process. 
+So, why will inference surpass the cost of training? Because you may train a network hundreds or thousands of times, but once you deploy it, there is a constant operation of the network multiplied by your number of clients. For example, a company that builds self-driving cars after many iterations constructs a DNN that can navigate a car. This model is then deployed to *all* cars and the network is constantly fed with real-time data (from cameras, radars, sensors, etc) that must process. 
 
 Also real-time applications may involve multiple inferences per instance. For example, a spoken question may as well go through an automatic speech recognition, speech to text, natural language processing, a recommender system, text to speech and then speech synthesis. Each of these steps is a distinct inference operation on its own. These operations may be served over the cloud (when latency is not that much of an issue) or at client-side (when latency is an issue).
 
