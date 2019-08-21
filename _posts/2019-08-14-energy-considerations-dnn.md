@@ -20,7 +20,7 @@ We will give a couple of examples on the depth of contemporary neural networks (
 </p>
 Image taken [from here](https://devblogs.nvidia.com/training-bert-with-gpus/).
 
-To put things in perspective, the [carbon footprint](https://en.wikipedia.org/wiki/Carbon_footprint) of training BERT on GPU is comparable to that of a trans-American flight (Strubell et al, 2019)! But that's nothing compared to the [hyperparameter optimization](https://en.wikipedia.org/wiki/Hyperparameter_optimization) of the "transformer big" model from So et al (2019), where an evaluation of *15K child models* was performed, requiring a total of 979M train steps! This means that they trained 15K candidate models, with different learning parameters (that is parameters that the network cannot infer from the data, which must be explicitly set by the researcher) to decide which one was the most promising to train it further.
+To put things in perspective, the [carbon footprint](https://en.wikipedia.org/wiki/Carbon_footprint) of training BERT on GPU is comparable to that of a trans-American flight (Strubell et al, 2019)! But that's nothing compared to the [hyperparameter optimization](https://en.wikipedia.org/wiki/Hyperparameter_optimization) of the "transformer big" model from So et al (2019), where an evaluation of *15K child models* was performed, requiring a total of 979M train steps! This means that they trained 15K candidate models, with different learning parameters (that is parameters that the network cannot infer from the data, which must be explicitly set by the researcher), to decide which one was the most promising to train it further.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/footprint_comparison.png">
