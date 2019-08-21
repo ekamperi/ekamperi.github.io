@@ -205,7 +205,7 @@ $$
 Ok, so what is the *optimal* step in terms of the learning rate $$\alpha_\text{opt}$$? Solve $$\nabla_\alpha f(\mathbf{x} - \alpha \pmb{g}) = 0$$:
 
 $$
--\pmb{g}^T \pmb{g} + \alpha_\text{opt} \pmb{g}^ \mathbf{H} \pmb{g} = 0 \Leftrightarrow \alpha_\text{opt} = \frac{\pmb{g}^T \pmb{g}}{\pmb{g}^T \mathbf{H} \pmb{g}}
+-\pmb{g}^T \pmb{g} + \alpha_\text{opt} \pmb{g}^T \mathbf{H} \pmb{g} = 0 \Leftrightarrow \alpha_\text{opt} = \frac{\pmb{g}^T \pmb{g}}{\pmb{g}^T \mathbf{H} \pmb{g}}
 $$
 
 Suppose we move along an eigenvector $$\mathbf{e}_i$$, then:
