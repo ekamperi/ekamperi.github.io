@@ -35,9 +35,9 @@ Image taken from a techical overview titled "NVIDIA AI Inference Platform".
 
 So, why will inference surpass the cost of training? Because you may train a network hundreds or thousands of times, but once you deploy it, it will be operating constantly multiplied by the number of your clients. For example, imagine a company that builds self-driving cars and after many iterations concludes on a DNN model that can safely navigate a car. This model is subsequently deployed to *all* cars and the network is continually fed with tons of real-time data (from cameras, radars, sensors, etc) that must process. Some estimates put the energy consumption of a self-driving car's "neural brain" in the range 500 - 5000 watts!
 
-Also real-time applications may involve multiple inferences per instance. For example, a spoken question may as well go through an automatic speech recognition, speech to text, natural language processing, a recommender system, text to speech and then speech synthesis. Each of these steps is a distinct inference operation on its own. These operations may be served over the cloud (when latency is not that much of an issue) or at client-side (when latency is an issue).
+Also, real-time applications may involve multiple inferences per instance. For example, a spoken question to an intelligent assistant like [Siri](https://en.wikipedia.org/wiki/Siri) may go through an automatic speech recognition, speech to text, natural language processing, a recommender system, text to speech and then speech synthesis. Each of these steps is a distinct inference operation on its own. These operations may be served over the cloud (when latency is not that much of an issue) or at client-side (when latency is an issue).
 
-Things that might become important in the future in the environmental context:
+Things that might become important in the future for reducing the negative impact of AI deployment in the environment:
 * Development of **hardware** that requires less energy and runs more efficiently on the AI training/inference workloads (e.g. dedicated chips for processing real-time data in self-driving cars).
 * Development of **efficient training algorithms** (faster convergence, better generalization, requiring less math operations).
 * Techniques to perform **fast hyperparameter optimization** (e.g. Bayesian search vs. grid/random search)
