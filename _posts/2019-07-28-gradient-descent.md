@@ -192,6 +192,33 @@ To sum up regarding the product $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x
 * $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$ has both positive and negative eigenvalues: We are on a saddle point.
 * None of the above: We have no clue. We need even higher-order data to figure it out.
 
+
+In case you feel that expressing $$f$$ in terms of the Hessian matrix eigenvalues wasn't rewarding enough, hold on! This analysis will help us have some insight on the scale of the learning rate $$\alpha$$. Suppose we are on $$\mathbf{x}$$ and we take a step $$\delta \mathbf{x} = - \alpha \nabla_x f(\mathbf{x})$$. The value of our function at the new point $$\mathbf{x} - \alpha \nabla_x \delta \mathbf{x}$$ is:
+
+$$f(\mathbf{x} - \alpha \nabla f(\mathbf{x}) = f(\mathbf{x}) - \alpha \nabla_x f(\mathbf{x})^T \nabla f(\mathbf{x}) + \frac{1}{2} \alpha^2 \nabla_x f(\mathbf{x})^T \nabla_x^2 f(\mathbf{x}) \nabla_x f(\mathbf{x})$$.
+
+For brevity let's write $$\pmb{g} = \nabla_x f(\mathbf{x})$$ and $$\mathbf{H} = \nabla_x^2 f(\mathbf{x})$$, then:
+
+$$
+f(\mathbf{x} - \alpha \pmb{g}) = f(\mathbf{x}) - \alpha \pmb{g^T} \pmb{g} + \frac{1}{2} \alpha^2 \pmb{g}^T \mathbf{H} \pmb{g}
+$$
+
+Ok, so what is the *optimal* step in terms of the learning rate $$\alpha_\text{opt}$$? Solve $$\nabla_\alpha f(\mathbf{x} - \alpha \pmb{g}) = 0$$:
+
+$$
+-\pmb{g}^T \pmb{g} + \alpha_\text{opt} \pmb{g}^ \mathbf{H} \pmb{g} = 0 \Leftrightarrow \alpha_\text{opt} = \frac{\pmb{g}^T \pmb{g}}{\pmb{g}^T \mathbf{H} \pmb{g}}
+$$
+
+Suppose we move along an eigenvector $$\mathbf{e}_i$$, then:
+
+$$
+\alpha_\text{opt} = \frac{\mathbf{e}_j^T \mathbf{e}_j}{\mathbf{e}_j^T \mathbf{H} \mathbf{e}_j} = \frac{1}{\mathbf{e}_j^T (\lambda \mathbf{e}_j}) = \frac{1}{\lambda}
+$$
+
+In the worst case scenario that we move along the eigenvector with the largest eigenvalue $$\lambda_\text{max}$$, the optimal value for the learning rate $$\alpha$$ is $$\lambda_\text{max}$$.
+$$
+
+
 ### Newton optimization method
 As we've seen second-order terms in the Taylor expansion provide us with insights regarding the local curvature in the neighborhood of $$\mathbf{x}$$. Naturally, we may ask whether we could come up with an optimization method that utilizes these information to converge faster (in less in steps). It turns out that this is what [Newton method](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization) does.
 
