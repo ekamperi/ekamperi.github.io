@@ -352,9 +352,8 @@ For fixed values of $$\mathbf{z} = (z_1, z_2, \ldots)$$ it follows that $$\frac{
   [4]: https://mathematica.stackexchange.com/questions/185948/netportgradient-output-port-restriction
  
 ### References
-1. Akhtar N, Mian A. Threat of Adversarial Attacks on Deep Learning in Computer Vision: A Survey [Internet]. arXiv [cs.CV]. 2018. Available from: http://arxiv.org/abs/1801.00553
+1. Akhtar N, Mian A. Threat of Adversarial Attacks on Deep Learning in Computer Vision: A Survey [Internet]. arXiv [cs.CV]. 2018. Available from: [http://arxiv.org/abs/1801.00553](http://arxiv.org/abs/1801.00553).
 
-2. Christian Szegedy, Wojciech Zaremba, Ilya Sutskever, Joan Bruna, Dumitru Erhan, Ian J. Goodfellow, and Rob Fergus. Intriguing properties of neural networks. ICLR, abs/1312.6199, 2014. URL
-http://arxiv.org/abs/1312.6199.
+2. Christian Szegedy, Wojciech Zaremba, Ilya Sutskever, Joan Bruna, Dumitru Erhan, Ian J. Goodfellow, and Rob Fergus. Intriguing properties of neural networks. ICLR, abs/1312.6199, 2014. URL [http://arxiv.org/abs/1312.6199](http://arxiv.org/abs/1312.6199).
 
-3. Papernot N, McDaniel P, Wu X, Jha S, Swami A. Distillation as a Defense to Adversarial Perturbations against Deep Neural Networks [Internet]. arXiv [cs.CR]. 2015. Available from: http://arxiv.org/abs/1511.04508
+3. Papernot N, McDaniel P, Wu X, Jha S, Swami A. Distillation as a Defense to Adversarial Perturbations against Deep Neural Networks [Internet]. arXiv [cs.CR]. 2015. Available from: [http://arxiv.org/abs/1511.04508](http://arxiv.org/abs/1511.04508).
