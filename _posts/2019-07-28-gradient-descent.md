@@ -211,7 +211,7 @@ $$
 Suppose we move along an eigenvector $$\mathbf{e}_i$$, then:
 
 $$
-\alpha_\text{opt} = \frac{\mathbf{e}_i^T \mathbf{e}_i}{\mathbf{e}_i^T \mathbf{H} \mathbf{e}_i} = \frac{1}{\mathbf{e}_i^T (\lambda \mathbf{e}_i}) = \frac{1}{\lambda}
+\alpha_\text{opt} = \frac{\mathbf{e}_i^T \mathbf{e}_i}{\mathbf{e}_i^T \mathbf{H} \mathbf{e}_i} = \frac{1}{\mathbf{e}_i^T (\lambda \mathbf{e}_i)} = \frac{1}{\lambda}
 $$
 
 In the worst case scenario that we move along the eigenvector with the largest eigenvalue $$\lambda_\text{max}$$, the optimal value for the learning rate $$\alpha$$ is $$\frac{1}{\lambda_\text{max}}$$. This analysis is valid to the extent that a quadratic function is a "good enough" approximation of $$f$$.
