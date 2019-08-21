@@ -11,7 +11,7 @@ The latest advances, both in hardware and theory of training neural networks, ha
 <p align="center">
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/compute_diagram.png">
 </p>
-Image taken [from here](https://openai.com/blog/ai-and-compute/) (mind that the vertical axis is in [logarithmic scale](https://en.wikipedia.org/wiki/Logarithmic_scale), so what appears as linear increase, in reality it grows exponentially).
+Image taken [from here](https://openai.com/blog/ai-and-compute/) (mind that the vertical axis is in [logarithmic scale](https://en.wikipedia.org/wiki/Logarithmic_scale), so what appears as a linear increase, in reality it's an exponential growth).
 
 We will give a couple of examples on the depth of contemporary neural networks (DNNs). The *BERT* is a new language representation model which stands for "Bidirectional Encoder Representations from Transformers" (Devlin et al, 2018). In its base form BERT has 110M parameters and its training on 16 [TPU](https://en.wikipedia.org/wiki/Tensor_processing_unit) chips takes 4 days (96 hours). Another DNN from Radform et al (2019) has 1542M parameters, 48 layers and it needs 1 week (168 hours) to train on 32 TPUv3 chips. NVidia trained a 8.3 billion parameter version of a [GPT-2](https://en.wikipedia.org/wiki/OpenAI#GPT2) model known as GPT-2 8B.
 
