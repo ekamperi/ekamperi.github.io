@@ -212,12 +212,10 @@ $$
 Suppose we move along an eigenvector $$\mathbf{e}_i$$, then:
 
 $$
-\alpha_\text{opt} = \frac{\mathbf{e}_j^T \mathbf{e}_j}{\mathbf{e}_j^T \mathbf{H} \mathbf{e}_j} = \frac{1}{\mathbf{e}_j^T (\lambda \mathbf{e}_j}) = \frac{1}{\lambda}
+\alpha_\text{opt} = \frac{\mathbf{e}_i^T \mathbf{e}_i}{\mathbf{e}_i^T \mathbf{H} \mathbf{e}_i} = \frac{1}{\mathbf{e}_i^T (\lambda \mathbf{e}_i}) = \frac{1}{\lambda}
 $$
 
-In the worst case scenario that we move along the eigenvector with the largest eigenvalue $$\lambda_\text{max}$$, the optimal value for the learning rate $$\alpha$$ is $$\lambda_\text{max}$$.
-$$
-
+In the worst case scenario that we move along the eigenvector with the largest eigenvalue $$\lambda_\text{max}$$, the optimal value for the learning rate $$\alpha$$ is $$\frac{1}{\lambda_\text{max}}$$.
 
 ### Newton optimization method
 As we've seen second-order terms in the Taylor expansion provide us with insights regarding the local curvature in the neighborhood of $$\mathbf{x}$$. Naturally, we may ask whether we could come up with an optimization method that utilizes these information to converge faster (in less in steps). It turns out that this is what [Newton method](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization) does.
