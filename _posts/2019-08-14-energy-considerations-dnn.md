@@ -33,10 +33,12 @@ As mind blowing as these *relative* data are, the absolute environmental impact 
 </p>
 Image taken from a techical overview titled "NVIDIA AI Inference Platform".
 
-Real-time applications may involve multiple inferences per instance. For example, a spoken question may as well go through an automatic speech recognition, speech to text, natural language processing, a recommender system, text to speech and then speech synthesis. Each of these steps is a distinct inference operation on its own. These operations may be served over the cloud (when latency is not that much of an issue) or at client-side (when latency is an issue).
+Why is that so? Because you may be train a network hundreds or thousands of times, but once you deploy it, there is a constant operation of the network multiplied by your number of clients. For example, a company that builds self-driving cars after many iterations constructs a DNN that can navigate a car. This model is then deployed to *all* cars and the network is constantly fed with real-time data (from cameras, radars, sensors, etc) that must process. 
+
+Also real-time applications may involve multiple inferences per instance. For example, a spoken question may as well go through an automatic speech recognition, speech to text, natural language processing, a recommender system, text to speech and then speech synthesis. Each of these steps is a distinct inference operation on its own. These operations may be served over the cloud (when latency is not that much of an issue) or at client-side (when latency is an issue).
 
 Things that might become important in the future in the environmental context:
-* Development of **hardware** that requires less energy and runs more efficiently on the AI training/inference workloads.
+* Development of **hardware** that requires less energy and runs more efficiently on the AI training/inference workloads (e.g. dedicated chips for processing real-time data in self-driving cars).
 * Development of **efficient training algorithms** (faster convergence, better generalization, requiring less math operations).
 * Techniques to perform **fast hyperparameter optimization** (e.g. Bayesian search vs. grid/random search)
 * **Neural network compression** techniques (for an overview [this is an excellent introduction]({{ site.url }}/docs/dnn_compression.pdf)) for speeding up inference (some of them may be implemented at the harware level, e.g. check the advertised optimization features of NVIDIA TensorRT inference platform).
