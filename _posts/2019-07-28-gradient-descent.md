@@ -203,6 +203,12 @@ $$
 \nabla_{\delta \mathbf{x}} f(\mathbf{x} + \delta\mathbf{x}) = 0 
 $$
 
+The geometric interpretation of Newton's method is that at each iteration, it fits a paraboloid to the surface of $$f(\mathbf{x})$$ and then jumps into the maximum or minimum of that paraboloid (in higher dimensions, this may also be a saddle point). So the closer to quadratic our function looks at local level, the faster the convergence.
+
+<p align="center">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/newton.png">
+</p>
+
 If we do the math and solve for $$\delta\mathbf{x}$$ we get: $$\delta \mathbf{x} = -\mathbf{H}^{-1}\nabla f(\mathbf{x}) = - (\nabla^2 f(\mathbf{x}))^{-1} \nabla f(\mathbf{x}) $$ (obviously this only works if $$\mathbf{H}$$ is invertible). Just as with gradient descent the best step that we could take to minimize $$f(\mathbf{x})$$ was $$\delta \mathbf{x} = - \nabla_x f(\mathbf{x})$$, for Newton method the best step is $$\delta \mathbf{x} = -\mathbf{H}^{-1}\nabla f(\mathbf{x})$$.
 
 Another derivation that I liked is the "linearized optimality condition" from the Book "Convex optimization" from Boyd, Section 9.5, page 485. Here, we linearize the optimality condition $$\nabla f(\mathbf{x} + \delta \mathbf{x}) = 0$$:
@@ -218,12 +224,6 @@ Last, the so called *angle condition* needs to be satisfied. The intuition is th
 
 <p align="center">
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/angle_condition.png">
-</p>
-
-The geometric interpretation of Newton's method is that at each iteration, it fits a paraboloid to the surface of $$f(\mathbf{x})$$ and then jumps into the maximum or minimum of that paraboloid (in higher dimensions, this may also be a saddle point). So the closer to quadratic our function looks at local level, the faster the convergence.
-
-<p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/newton.png">
 </p>
 
 In the following images you can see how various optimization algorithms, including gradient descent and Newton's method, perform on a simple minimization problem.
