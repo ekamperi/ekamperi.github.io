@@ -26,7 +26,7 @@ To put things in perspective, the [carbon footprint](https://en.wikipedia.org/wi
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/footprint_comparison.png">
 </p>
 
-As mind blowing as these *relative* data are, the absolute environmental impact of training DNNs is small at the moment. The computational (hence environmental) cost of deploying the model for *inference* will surpass that of training (inference is using your model in the real world, for the intended purpose, *after* you have trained it).
+As mind blowing as these *relative* data are, the absolute environmental impact of training DNNs is small at the moment. The computational (hence environmental) cost of deploying the model for *inference* will surpass that of training (inference in this context means using your model in the real world, for the intended purpose, *after* you have trained it).
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/nvidia_inference.png">
