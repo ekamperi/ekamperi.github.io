@@ -192,7 +192,6 @@ To sum up regarding the product $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x
 * $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$ has both positive and negative eigenvalues: We are on a saddle point.
 * None of the above: We have no clue. We need even higher-order data to figure it out.
 
-
 In case you feel that expressing $$f$$ in terms of the Hessian matrix eigenvalues wasn't rewarding enough, hold on! This analysis will help us have some insight on the scale of the learning rate $$\alpha$$. Suppose we are on $$\mathbf{x}$$ and we take a step $$\delta \mathbf{x} = - \alpha \nabla_x f(\mathbf{x})$$. The value of our function at the new point $$\mathbf{x} - \alpha \nabla_x \delta \mathbf{x}$$ is:
 
 $$f(\mathbf{x} - \alpha \nabla f(\mathbf{x})) = f(\mathbf{x}) - \alpha \nabla_x f(\mathbf{x})^T \nabla f(\mathbf{x}) + \frac{1}{2} \alpha^2 \nabla_x f(\mathbf{x})^T \nabla_x^2 f(\mathbf{x}) \nabla_x f(\mathbf{x}) + \mathcal{O}\left(\left\|\delta^3 \boldsymbol{x}\right\|\right)$$.
@@ -215,7 +214,7 @@ $$
 \alpha_\text{opt} = \frac{\mathbf{e}_i^T \mathbf{e}_i}{\mathbf{e}_i^T \mathbf{H} \mathbf{e}_i} = \frac{1}{\mathbf{e}_i^T (\lambda \mathbf{e}_i}) = \frac{1}{\lambda}
 $$
 
-In the worst case scenario that we move along the eigenvector with the largest eigenvalue $$\lambda_\text{max}$$, the optimal value for the learning rate $$\alpha$$ is $$\frac{1}{\lambda_\text{max}}$$.
+In the worst case scenario that we move along the eigenvector with the largest eigenvalue $$\lambda_\text{max}$$, the optimal value for the learning rate $$\alpha$$ is $$\frac{1}{\lambda_\text{max}}$$. This analysis is valid to the extent that a quadratic function is a "good enough" approximation of $$f$$.
 
 ### Newton optimization method
 As we've seen second-order terms in the Taylor expansion provide us with insights regarding the local curvature in the neighborhood of $$\mathbf{x}$$. Naturally, we may ask whether we could come up with an optimization method that utilizes these information to converge faster (in less in steps). It turns out that this is what [Newton method](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization) does.
