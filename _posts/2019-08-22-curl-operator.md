@@ -29,3 +29,5 @@ F_x & F_y & F_z \end{vmatrix}\\
 &= (0 - 0)\mathbf{i} + (0 - 0) \mathbf{j} + \left[\frac{-x^2+y^2}{(x^2+y^2)^2} - \frac{-x^2+y^2}{(x^2+y^2)^2}\right] \mathbf{k} = \vec{0}
 \end{align}
 $$
+
+How can it be that this swirly vector plot corresponds to an irrotational field? It depends on what rotation you are referring at. 
