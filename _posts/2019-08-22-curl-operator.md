@@ -16,7 +16,7 @@ The devil in this definiton lies in the word *infinitestimal*. I was under the i
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/curl_operator.png">
 </p>
 
-By looking at these images my first reaction was that this field is most certainly a rotational one. Imagine my surprise when I actually did the math and my intuition proved to be completely wrong:
+By looking at these images my first reaction was that this field is most certainly a rotational one. I mean look at how "swirly" it is! Imagine my surprise when I actually did the math and my intuition proved to be completely wrong:
 
 $$
 \begin{align}
@@ -30,4 +30,12 @@ F_x & F_y & F_z \end{vmatrix}\\
 \end{align}
 $$
 
-How can it be that this swirly vector plot corresponds to an irrotational field? It depends on what rotation you are referring at. 
+How can it be that this vector plot corresponds to an irrotational field? It depends on which rotation you are referring at. Imagine this is a water pool and there's a sink that sucks the water. If we put a small ball into the water, then the ball can move in two ways: 1. The general rotation of the flow around the z-axis (z-axis is perpendicular to your monitor) in the counterclockwise direction.
+2. The arrows of the field are longer the closer we are to the z-axis, therefore the vector field tends to push the ball more strongly on the side closest to the z-axis. This second effect would tend to make the sphere spin in the clockwise direction.
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/curl_rotation.png">
+</p>
+
+These two opposite effects may cancel out and therefore the curl is zero. The ball still moves inside the pool, around the z-axis, but it doesn't move *around itself*, which is what the curl operator measures.
+
