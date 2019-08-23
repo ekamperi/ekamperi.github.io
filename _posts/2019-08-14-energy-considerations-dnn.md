@@ -39,7 +39,7 @@ Also, real-time applications may involve multiple inferences per instance. For e
 
 Things that might become important in the future for reducing the negative impact of AI deployment in the environment:
 * Development of **hardware** that requires less energy and runs more efficiently on the AI training/inference workloads (e.g. dedicated chips for processing real-time data in self-driving cars).
-* Development of **efficient training algorithms** (faster convergence, better generalization, requiring less math operations).
+* Development of **efficient training algorithms** or even **better neural network architectures** (with faster convergence, better generalization and requiring less math operations).
 * Techniques to perform **fast hyperparameter optimization** (e.g. Bayesian search vs. grid/random search)
 * **Neural network compression** techniques (for an overview [this is an excellent introduction]({{ site.url }}/docs/dnn_compression.pdf)) for speeding up inference (some of them may be implemented at the harware level, e.g. check the advertised optimization features of NVIDIA TensorRT inference platform).
 * **Profiling tools** to identify energy consumption offenders in an AI pipeline.
