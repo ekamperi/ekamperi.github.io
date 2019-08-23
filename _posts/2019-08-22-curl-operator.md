@@ -30,7 +30,9 @@ F_x & F_y & F_z \end{vmatrix}\\
 \end{align}
 $$
 
-How can it be that this vector plot corresponds to an irrotational field? It depends on which rotation you are referring at. Imagine this is a water pool and there's a sink that sucks the water. If we put a small ball into the water, then the ball can move in two ways: 1. The general rotation of the flow around the z-axis (z-axis is perpendicular to your monitor) in the counterclockwise direction.
+How can it be that this vector plot corresponds to an irrotational field? It depends on which rotation you are referring at. Imagine this is a water pool and there's a sink that sucks the water. If we put a small ball into the water, then the ball can move in two ways:
+
+1. The general rotation of the flow around the z-axis (z-axis is perpendicular to your monitor) in the counterclockwise direction.
 2. The arrows of the field are longer the closer we are to the z-axis, therefore the vector field tends to push the ball more strongly on the side closest to the z-axis. This second effect would tend to make the sphere spin in the clockwise direction.
 
 <p align="center">
