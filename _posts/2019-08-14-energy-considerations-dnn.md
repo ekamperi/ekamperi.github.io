@@ -42,8 +42,10 @@ Things that might become important in the future for reducing the negative impac
 * Development of **efficient training algorithms** or even **better neural network architectures** (with faster convergence, better generalization and requiring less math operations).
 * Techniques to perform **fast hyperparameter optimization** (e.g. Bayesian search vs. grid/random search)
 * **Neural network compression** techniques (for an overview [this is an excellent introduction]({{ site.url }}/docs/dnn_compression.pdf)) for speeding up inference (some of them may be implemented at the harware level, e.g. check the advertised optimization features of NVIDIA TensorRT inference platform).
-* **Profiling tools** to identify energy consumption offenders in an AI pipeline.
 * **Reduction of redundant training**, perhaps through better tracking and sharing of training parameters (e.g. Weights & Biases product).
+* **Profiling tools** to identify energy consumption offenders in an AI pipeline.
+
+Fortunately, lots of computationally-oriented optimizations would also reduce (as a side effect) the environmental footprint. This is very important in my opinion, because it would be unrealistic to expect from industry to reduce CO2 emissions at the expense performance.
 
 #### References
 1. Devlin J, Chang M-W, Lee K, Toutanova K. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding [Internet]. arXiv [cs.CL]. 2018. Available from: [http://arxiv.org/abs/1810.04805](http://arxiv.org/abs/1810.04805)
