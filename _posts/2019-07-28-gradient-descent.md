@@ -192,7 +192,7 @@ To sum up regarding the product $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x
 * $$\delta\mathbf{x}^T \mathbf{H} \delta \mathbf{x}$$ has both positive and negative eigenvalues: We are on a saddle point.
 * None of the above: We have no clue. We need even higher-order data to figure it out.
 
-In case you feel that expressing $$f$$ in terms of the Hessian matrix eigenvalues wasn't rewarding enough, hold on! This analysis will help us have some insight on the scale of the learning rate $$\alpha$$. Suppose we are on $$\mathbf{x}$$ and we take a step $$\delta \mathbf{x} = - \alpha \nabla_x f(\mathbf{x})$$. The value of our function at the new point $$\mathbf{x} - \alpha \nabla_x \delta \mathbf{x}$$ is:
+In case you feel that expressing $$f$$ in terms of the Hessian matrix eigenvalues wasn't rewarding enough, hold on! This analysis will help us have some insight on the scale of the learning rate $$\alpha$$. Suppose we are on $$\mathbf{x}$$ and we take a step $$\delta \mathbf{x} = - \alpha \nabla_x f(\mathbf{x})$$. The value of our function at the new point $$\mathbf{x} - \alpha \nabla_x f(\mathbf{x})$$ is:
 
 $$f(\mathbf{x} - \alpha \nabla_x f(\mathbf{x})) = f(\mathbf{x}) - \alpha \nabla_x f(\mathbf{x})^T \nabla f(\mathbf{x}) + \frac{1}{2} \alpha^2 \nabla_x f(\mathbf{x})^T \nabla_x^2 f(\mathbf{x}) \nabla_x f(\mathbf{x}) + \mathcal{O}\left(\left\|\delta^3 \boldsymbol{x}\right\|\right)$$.
 
