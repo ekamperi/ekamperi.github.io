@@ -30,14 +30,13 @@ F_x & F_y & F_z \end{vmatrix}\\
 \end{align}
 $$
 
-How can it be that this vector plot corresponds to an irrotational field? It depends on which rotation you are referring at. Imagine this is a water pool and there's a sink that sucks the water. If we put a small ball into the water, then the ball can move in two ways:
+How can it be that this vector plot corresponds to an irrotational field? It depends on which rotation you are referring at. Imagine this is a water pool and there's a sink that sucks the water. If we put a small ball on the surface of the water, then the ball may  move in two distinct ways:
 
-1. The general rotation of the flow around the z-axis (z-axis is perpendicular to your monitor) in the counterclockwise direction.
-2. The arrows of the field are longer the closer we are to the z-axis, therefore the vector field tends to push the ball more strongly on the side closest to the z-axis. This second effect would tend to make the sphere spin in the clockwise direction.
+1. The general rotation of the flow around the z-axis (z-axis is perpendicular to your monitor) in the *counterclockwise* direction, along the direction of the stream lines. This is similar to the motion of the earth around the sun.
+2. Since the arrows of the field are longer the closer we are to the z-axis, the field tends to push the ball more strongly on the side closest to the z-axis, rather than the opposite side. This second effect would tend to make the ball rotate in the *clockwise* direction. This is similar to the earth spinning around its own axis, *while* it also moves around the sun.
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/curl_rotation.png">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/curl_rotation.png">
 </p>
 
-These two opposite effects may cancel out and therefore the curl is zero. The ball still moves inside the pool, around the z-axis, but it doesn't move *around itself*, which is what the curl operator measures.
-
+These two opposite effects may cancel out and in that case the curl is zero (just like in our case). The ball still moves inside the pool around the z-axis, but it doesn't move *around itself*, which is what the curl operator measures.
