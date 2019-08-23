@@ -36,7 +36,7 @@ How can it be that this vector plot corresponds to an irrotational field? It dep
 2. The arrows of the field are longer the closer we are to the z-axis, therefore the vector field tends to push the ball more strongly on the side closest to the z-axis. This second effect would tend to make the sphere spin in the clockwise direction.
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/curl_rotation.png">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/curl_rotation.png">
 </p>
 
 These two opposite effects may cancel out and therefore the curl is zero. The ball still moves inside the pool, around the z-axis, but it doesn't move *around itself*, which is what the curl operator measures.
