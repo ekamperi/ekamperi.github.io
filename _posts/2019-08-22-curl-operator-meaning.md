@@ -53,15 +53,7 @@ $$
 \left( \nabla \times \mathbf{v} \right)_x = {\partial_y \nu_z} - {\partial_z \nu_y}
 $$
 
-Recall though that
-
-$$
-\mathbf{v} = \mathbf{\omega} \times \mathbf{r} \Rightarrow \nu_z = \omega_x y-\omega_y x 
-$$
-
-and similarly $$\nu_y = \omega_x z - \omega_z x$$
-
-Therefore:
+Recall though that $$\mathbf{v} = \mathbf{\omega} \times \mathbf{r} \Rightarrow \nu_z = \omega_x y-\omega_y x $$ and similarly $$\nu_y = \omega_x z - \omega_z x$$. Therefore:
 
 $$
 \begin{align}
