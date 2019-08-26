@@ -50,10 +50,20 @@ By now, it shouldn't come as a surprise that the curl of a vector field calculat
 Let us calculate the curl of $$\mathbf{v}$$:
 
 $$
+\begin{align}
+\nabla \times \mathbf{v}
+&= \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\[5pt]
+{\dfrac{\partial}{\partial x}} & {\dfrac{\partial}{\partial y}} & {\dfrac{\partial}{\partial z}} \\[10pt]
+\nu_x & \nu_y & \nu_z \end{vmatrix}
+$$
+
+The $$x$$ component of $$\nabla \times \mathbf{v}$$ is:
+
+$$
 \left( \nabla \times \mathbf{v} \right)_x = {\partial_y \nu_z} - {\partial_z \nu_y}
 $$
 
-Recall though that $$\mathbf{v} = \mathbf{\omega} \times \mathbf{r} \Rightarrow \nu_z = \omega_x y-\omega_y x $$ and similarly $$\nu_y = \omega_x z - \omega_z x$$. Therefore:
+Recall though that $$\mathbf{v} = \mathbf{\omega} \times \mathbf{r} \Rightarrow \nu_z = \omega_x y-\omega_y x $$ and similarly $$\nu_y = \omega_x z - \omega_z x$$. Therefore (for brevity we write $$\partial_x$$ instead of $$\frac{\partial}{\partial_x}$$):
 
 $$
 \begin{align}
