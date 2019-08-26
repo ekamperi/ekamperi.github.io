@@ -56,13 +56,13 @@ $$
 \nu_x & \nu_y & \nu_z \end{vmatrix}
 $$
 
-The $$x$$ component of $$\nabla \times \mathbf{v}$$ is:
+The $$x$$ component of $$\nabla \times \mathbf{v}$$ is (for brevity we write $$\partial_x$$ instead of $${\partial}/{\partial_x}$$):
 
 $$
 \left( \nabla \times \mathbf{v} \right)_x = {\partial_y \nu_z} - {\partial_z \nu_y}
 $$
 
-Recall though that $$\mathbf{v} = \mathbf{\omega} \times \mathbf{r} \Rightarrow \nu_z = \omega_x y-\omega_y x $$ and similarly $$\nu_y = \omega_x z - \omega_z x$$. Therefore (for brevity we write $$\partial_x$$ instead of $$\frac{\partial}{\partial_x}$$):
+Recall though that $$\mathbf{v} = \mathbf{\omega} \times \mathbf{r} \Rightarrow \nu_z = \omega_x y-\omega_y x $$ and similarly $$\nu_y = \omega_x z - \omega_z x$$. Therefore:
 
 $$
 \begin{align}
