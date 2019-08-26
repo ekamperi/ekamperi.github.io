@@ -40,3 +40,40 @@ How can it be that this plot corresponds to an irrotational field? Well, it depe
 </p>
 
 These two opposite effects may cancel out (as in our case) and then the curl is zero. The ball still moves inside the pool around the z-axis, but it doesn't rotate *around itself*, which is what the curl operator measures.
+
+By now, it shouldn't come as a surprise that the curl of a vector field calculated at some point $$O$$, is related to the angular velocity of a rotating object with its center fixed at $$O$$. Let's do the math!
+
+<p align="center">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/angular_velocity_curl.png">
+</p>
+
+Let us calculate the curl of $$\mathbf{v}$$:
+
+$$
+\left( \nabla \times \mathbf{v} \right)_x = {\partial_y \nu_z} - {\partial_z \nu_y}
+$$
+
+Recall though that
+
+$$
+\mathbf{v} = \mathbf{\omega} \times \mathbf{r} \Rightarrow \nu_z = \omega_x y-\omega_y x 
+$$
+
+and similarly $$\nu_y = \omega_x z - \omega_z x$$
+
+Therefore:
+
+$$
+\begin{align}
+\left( \nabla \times \mathbf{v} \right)_x
+&= {\partial_y \nu_z} - {\partial_z \nu_y}\\
+&= \partial_y (\omega_x y - \omega_y x)- \partial_z (\omega_x z - \omega_z x)\\
+&= \omega_x + \omega_x = 2\omega_x
+\end{align}
+$$
+
+Similarly it is $$\left( \nabla \times \mathbf{v} \right)_y = 2 \omega_y$$ and $$\left( \nabla \times \mathbf{v} \right)_z = 2\omega_z$$. Therefore:
+
+$$
+\nabla \times \mathbf{v} = 2 \mathbf{\omega}
+$$
