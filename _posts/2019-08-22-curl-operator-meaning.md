@@ -50,9 +50,8 @@ By now, it shouldn't come as a surprise that the curl of a vector field calculat
 Let us calculate the curl of $$\mathbf{v}$$:
 
 $$
-\begin{align}
 \nabla \times \mathbf{v}
-&= \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\[5pt]
+= \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\[5pt]
 {\dfrac{\partial}{\partial x}} & {\dfrac{\partial}{\partial y}} & {\dfrac{\partial}{\partial z}} \\[10pt]
 \nu_x & \nu_y & \nu_z \end{vmatrix}
 $$
