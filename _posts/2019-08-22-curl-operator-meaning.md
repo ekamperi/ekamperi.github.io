@@ -6,6 +6,7 @@ categories: math
 tags: math
 ---
 
+### Introduction
 Quoting the wikipedia definition of the [curl vector operator](https://en.wikipedia.org/wiki/Curl_(mathematics)):
 
 > In vector calculus, the curl is a vector operator that describes the infinitesimal rotation of a vector field in three-dimensional Euclidean space. At every point in the field, the curl of that point is represented by a vector. The attributes of this vector (length and direction) characterize the rotation at that point.
@@ -41,6 +42,7 @@ How can it be that this plot corresponds to an irrotational field? Well, it depe
 
 These two opposite effects may cancel out (as in our case) and then the curl is zero. The ball still moves inside the pool around the z-axis, but it doesn't rotate *around itself*, which is what the curl operator measures.
 
+### Another way to view curl
 Please mind that the image above is drawn in a large scale. In reality the green circle is *infinitestimal*. Another way to look at curl is as *the average circulation of a field in a region that shrinks around a point*, i.e.:
 
 $$
@@ -53,12 +55,10 @@ $$
 (\nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}} = \lim_{A\to 0} \left( \frac{1}{A} \oint_C \mathbf{F} d\mathbf{r} \right)
 $$
 
-$$
-\oint_C \mathbf{v} d\mathbf{r} = \iint (\nabla \times \mathbf{v}) \hat{\mathbf{n}} dS 
-$$
-
+### Relation of curl with the angular velocity at some point
 By now, it shouldn't come as a surprise that the curl of a vector field calculated at some point $$O$$, is related to the angular velocity of a rotating object with its center fixed at $$O$$. Let's do the math!
 
+#### First method
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/angular_velocity_curl.png">
 </p>
@@ -94,3 +94,12 @@ Similarly it is $$\left( \nabla \times \mathbf{v} \right)_y = 2 \omega_y$$ and $
 $$
 \nabla \times \mathbf{v} = 2 \boldsymbol{\omega}
 $$
+
+#### Second method
+
+We will be using the Stokes theorem:
+
+$$
+\oint_C \mathbf{v} d\mathbf{r} = \iint (\nabla \times \mathbf{v}) \hat{\mathbf{n}} dS 
+$$
+
