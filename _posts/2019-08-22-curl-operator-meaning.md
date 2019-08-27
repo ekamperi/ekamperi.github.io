@@ -100,6 +100,6 @@ $$
 We will be using the Stokes theorem:
 
 $$
-\oint_C \mathbf{v} d\mathbf{r} = \iint (\nabla \times \mathbf{v}) \hat{\mathbf{n}} dS 
+\oint_C \mathbf{v} d\mathbf{r} = \iint (\nabla \times \mathbf{v}) \cdot \hat{\mathbf{n}} dS 
 $$
 
