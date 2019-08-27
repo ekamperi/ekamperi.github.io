@@ -41,6 +41,22 @@ How can it be that this plot corresponds to an irrotational field? Well, it depe
 
 These two opposite effects may cancel out (as in our case) and then the curl is zero. The ball still moves inside the pool around the z-axis, but it doesn't rotate *around itself*, which is what the curl operator measures.
 
+Please mind that the image above is drawn in a large scale. In reality the green circle is *infinitestimal*. Another way to look at curl is as *the average circulation of a field in a region that shrinks around a point*, i.e.:
+
+$$
+\nabla \times \mathbf{F} = \lim_{A\to 0} \left( \frac{1}{A} \oint_C \mathbf{F} d\mathbf{r} \right)
+$$
+
+Recall though that the curl is a vector, so the correct way to write the above equation is:
+
+$$
+(\nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}} = \lim_{A\to 0} \left( \frac{1}{A} \oint_C \mathbf{F} d\mathbf{r} \right)
+$$
+
+$$
+\oint_C \mathbf{v} d\mathbf{r} = \iint (\nabla \times \mathbf{v}) \hat{\mathbf{n}} dS 
+$$
+
 By now, it shouldn't come as a surprise that the curl of a vector field calculated at some point $$O$$, is related to the angular velocity of a rotating object with its center fixed at $$O$$. Let's do the math!
 
 <p align="center">
