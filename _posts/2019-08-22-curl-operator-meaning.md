@@ -55,7 +55,7 @@ $$
 (\nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}} = \lim_{A\to 0} \left( \frac{1}{A} \oint_C \mathbf{F} d\mathbf{r} \right)
 $$
 
-where $$\hat{\mathbf{n}}$$ is the normal vector to the point $$p$$ where we measure the curl.
+where $$\hat{\mathbf{n}}$$ is the normal vector to the point $$O$$ where we measure the curl.
 
 ### Relation of curl with the angular velocity at some point
 By now, it shouldn't come as a surprise that the curl of a vector field calculated at some point $$O$$, is related to the angular velocity of a rotating object with its center fixed at $$O$$. Let's do the math!
