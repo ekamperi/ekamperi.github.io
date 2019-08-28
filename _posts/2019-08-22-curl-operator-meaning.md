@@ -116,8 +116,8 @@ x & y & z \end{vmatrix}\\
 $$
 
 $$
-I = \oint_C \mathbf{v} \cdot d\mathbf{r} = (\boldsymbol{\omega} \times \mathbf{r}) \cdot d\mathbf{r}
-= \oint_C(-\omega_z y\mathbf{i} + \omega_z x \mathbf{j}) \cdot d\mathbf{r} 
+I = \oint_C \mathbf{v} \cdot \operatorname{d} \mathbf{r} = (\boldsymbol{\omega} \times \mathbf{r}) \cdot \operatorname{d} \mathbf{r}
+= \oint_C(-\omega_z y\mathbf{i} + \omega_z x \mathbf{j}) \cdot \operatorname{d} \mathbf{r} 
 $$
 
 We use the parameterization $$\mathbf{r}(t) = \rho \cos t \mathbf{i} + \rho \sin t \mathbf{j} \Rightarrow \mathbf{r}'(t) = -\rho \sin t \mathbf{i} +\rho \cos t \mathbf{j}$$, with $$t = [0, 2\pi]$$.
@@ -126,9 +126,9 @@ Therefore:
 
 $$
 \begin{align*}
-I &= \int_0^{2\pi} (-\omega_z \rho \sin t\mathbf{i} + \omega_z \rho \cos t \mathbf{j}) \cdot  (-\rho \sin t \mathbf{i} + \rho \cos t \mathbf{j}) dt\\
-&= \int_0^{2\pi} \omega_z \rho^2 \sin^2 t + \omega_z \rho^2 \cos^2 t dt \\
-&= \int_0^{2\pi} \omega_z \rho^2 dt = 2\pi\rho^2 \omega_z
+I &= \int_0^{2\pi} (-\omega_z \rho \sin t\mathbf{i} + \omega_z \rho \cos t \mathbf{j}) \cdot  (-\rho \sin t \mathbf{i} + \rho \cos t \mathbf{j}) \operatorname{d}t\\
+&= \int_0^{2\pi} \omega_z \rho^2 \sin^2 t + \omega_z \rho^2 \cos^2 t \operatorname{d}t \\
+&= \int_0^{2\pi} \omega_z \rho^2 \operatorname{d}t = 2\pi\rho^2 \omega_z
 \end{align*}
 $$
 
@@ -136,7 +136,7 @@ Therefore:
 
 $$
 \nabla \times \mathbf{v}
-= \lim_{A\to 0} \left( \frac{1}{A} \oint_C \mathbf{v} d\mathbf{r} \right)
+= \lim_{A\to 0} \left( \frac{1}{A} \oint_C \mathbf{v} \operatorname{d}\mathbf{r} \right)
 = \lim_{\rho \to 0} \left( \frac{1}{\pi \rho^2} 2\pi \rho^2 \omega_z\right) = 2\omega_z
 $$
 
