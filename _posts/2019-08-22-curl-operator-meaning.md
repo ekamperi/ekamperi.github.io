@@ -99,9 +99,7 @@ $$
 
 #### Second method
 
-Another way to attack the problem is by calculating the circulation of the vector field.
-
-We will calculate the average circulation around the point $$O$$:
+Another way to attack the problem is by calculating the average circulation of the vector field $$\mathbf{v}$$ around the point $$O$$. For simplicity let us assume that we are working on a vector field in two dimensions ($$xy$$ plane):
 
 $$
 \begin{align*}
