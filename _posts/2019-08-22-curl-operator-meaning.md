@@ -116,7 +116,7 @@ x & y & z \end{vmatrix}\\
 $$
 
 $$
-I = \oint_C \mathbf{v} \cdot \operatorname{d}\!\mathbf{r} = (\boldsymbol{\omega} \times \mathbf{r}) \cdot \operatorname{d}\!\mathbf{r}
+I = \oint_C \mathbf{v} \cdot \operatorname{d}\!\mathbf{r} = \oint_C (\boldsymbol{\omega} \times \mathbf{r}) \cdot \operatorname{d}\!\mathbf{r}
 = \oint_C(-\omega_z y\mathbf{i} + \omega_z x \mathbf{j}) \cdot \operatorname{d}\!\mathbf{r} 
 $$
 
