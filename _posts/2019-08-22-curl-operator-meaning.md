@@ -46,13 +46,13 @@ These two opposite effects may cancel out (as in our case) and then the curl is 
 Please mind that the image above is drawn in a large scale. In reality the green circle is *infinitestimal*. Another way to look at curl is as *the average circulation of a field in a region that shrinks around a point*, i.e.:
 
 $$
-\lim_{A\to 0} \left( \frac{1}{A} \oint_C \mathbf{F} d\mathbf{r} \right)
+\lim_{A\to 0} \left( \frac{1}{A} \oint_C \mathbf{F} \cdot \operatorname{d}\! \mathbf{r} \right)
 $$
 
 Where $$A$$ is the green area in the image above, as it shrinks into a point. Recall though that the curl is a vector, so the correct way to connect the above formula with the curl is:
 
 $$
-(\nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}} = \lim_{A\to 0} \left( \frac{1}{A} \oint_C \mathbf{F} d\mathbf{r} \right)
+(\nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}} = \lim_{A\to 0} \left( \frac{1}{A} \oint_C \mathbf{F} \cdot \operatorname{d}\!\mathbf{r} \right)
 $$
 
 where $$\hat{\mathbf{n}}$$ is the normal vector to the point $$O$$ where we measure the curl.
