@@ -136,7 +136,7 @@ Therefore:
 
 $$
 \nabla \times \mathbf{v}
-= \lim_{A\to 0} \left( \frac{1}{A} \oint_C \mathbf{v} \operatorname\!{d}\mathbf{r} \right)
+= \lim_{A\to 0} \left( \frac{1}{A} \oint_C \mathbf{v} \operatorname{d}\!\mathbf{r} \right)
 = \lim_{\rho \to 0} \left( \frac{1}{\pi \rho^2} 2\pi \rho^2 \omega_z\right) = 2\omega_z
 $$
 
