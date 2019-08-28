@@ -120,7 +120,7 @@ I = \oint_C \mathbf{v} \cdot d\mathbf{r} = (\boldsymbol{\omega} \times \mathbf{r
 = \oint_C(-\omega_z y\mathbf{i} + \omega_z x \mathbf{j}) \cdot d\mathbf{r} 
 $$
 
-We use the parameterization $$\mathbf{r}(t) = \rho \cos t \mathbf{i} + \rho \sin t \mathbf{j} \Rightarrow \mathbf{r}'(t) = -\rho \sin t \mathbf{i} +\rho \cos t \mathbf{j}$$
+We use the parameterization $$\mathbf{r}(t) = \rho \cos t \mathbf{i} + \rho \sin t \mathbf{j} \Rightarrow \mathbf{r}'(t) = -\rho \sin t \mathbf{i} +\rho \cos t \mathbf{j}$$, with $$t = [0, 2\pi]$$.
 
 Therefore:
 
