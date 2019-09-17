@@ -6,4 +6,9 @@ categories: math
 tags: ['machine learning', math, 'neural netowrks']
 ---
 
-Test
+$$
+z = \text{arcsin}(\sqrt{x})
+$$
+
+$$ \Delta z = \frac{dz}{d x} \Delta x \Rightarrow \Delta z = \frac{1}{2\sqrt{x (1-x)}} \Delta x
+$$t
