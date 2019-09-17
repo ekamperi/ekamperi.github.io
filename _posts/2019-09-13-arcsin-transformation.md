@@ -34,7 +34,7 @@ $$
 And since my $$y$$'s were very close to $$1$$, naturally $$s_z$$ exploded.
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/arcsin_error.png">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/arcsin_error.png">
 </p>
 
 **Moral: don't try random stuff; make educated guesses.**
