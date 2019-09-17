@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Arcsin transformation gone wrong
-date:   2019-08-22
+date:   2019-09-13
 categories: math
 tags: ['machine learning', math, 'neural netowrks']
 ---
