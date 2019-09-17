@@ -16,9 +16,7 @@ $$
 
 After running my code to the transformed data set, I noticed that not only the model didn't perform better, but the results I was getting were very bad.
 
-The reason behind this failure is, I guess, that my data were noisy and that this transformation *inflated* the error. You can check this wikipedia article on [propagation of uncertainty](https://en.wikipedia.org/wiki/Propagation_of_uncertainty). A common formula to calculate error propagation is the following. Assuming that you have $$z = f(x, y, \ldots)$$:
-
-Then your error in the variable $$z$$ is given by:
+The reason behind this failure is, I guess, that my data were noisy and that this transformation *inflated* the error. You can check this wikipedia article on [propagation of uncertainty](https://en.wikipedia.org/wiki/Propagation_of_uncertainty). A common formula to calculate error propagation is the following. Assuming that you have $$z = f(x, y, \ldots)$$, then your error in the variable $$z$$ is given by:
 
 $$
 s_z = \sqrt{ \left(\frac{\partial f}{\partial x}\right)^2 s_x^2 + \left(\frac{\partial f}{\partial y} \right)^2 s_y^2 + \cdots}
