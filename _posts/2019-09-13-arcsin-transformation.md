@@ -6,12 +6,12 @@ categories: math
 tags: ['machine learning', math, 'neural netowrks']
 ---
 
-So, I was working on a regression problem and my $$y$$ values, in theory, would fall in the range $$[0,1]$$. In reality, though, most of them were crowded between $$0.9$$ and $$1.0$$. I thought that I could apply some transformation and distribute them more evenly, without though thinking about it much.
+So, I was working on a regression problem and my $$y$$ values, in theory, would fall in the range $$[0,1]$$. In reality, though, most of them were crowded between $$0.9$$ and $$1.0$$. I thought that I could apply some transformation and distribute them more evenly, without though thinking about it too much.
 
-Therefore, I applied the arc sine square transformation:
+Therefore, I applied the [arc sine square transformation](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Arcsine_transformation), again without checking when this transformation would make sense.
 
 $$
-z = \text{arcsin}(\sqrt{x})
+z = \text{arcsin}(\sqrt{y})
 $$
 
 After running my code to the transformed data set, I noticed that not only the model didn't perform better, but the results I was getting were very bad.
@@ -26,7 +26,11 @@ $$
 
 Where $$s_z$$ represents the standard deviation of the function $$f$$, $$s_x$$ represents the standard deviation of $$x$$, $$s_y$$ represents the standard deviation of $$y$$ and so forth.
 
-So, in my case:
+So, in my case it was:
 
-$$ s_z = \frac{dz}{d x} s_x \Rightarrow s_z = \frac{1}{2\sqrt{x (1-x)}} s_x
+$$ s_z = \frac{dz}{dy} s_y \Rightarrow s_z = \frac{1}{2\sqrt{y (1-y)}} s_y
 $$
+
+And since my $$y$$'s were very close to $$1$$, naturally $$s_z$$ exploded.
+
+Moral: don't try random stuff; make educated guesses.
