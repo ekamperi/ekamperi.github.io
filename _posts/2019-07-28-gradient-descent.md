@@ -33,7 +33,7 @@ In the above scenario we only have $$1$$ parameter, $$w$$, and we want to minimi
 <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gradient_field.png">
 </p>
 
-Although the post is not about implemeting gradient descent per se, let's just take on a really simple example. Suppose we have some data in the form $$(x_i,y_i)$$ and we'd like to fit the linear regression model $$y = \theta_0 + \theta_1 x$$.
+Although the post is not about implementing gradient descent per se, let's just take on a really simple example. Suppose we have some data in the form $$(x_i,y_i)$$ and we'd like to fit the linear regression model $$y = \theta_0 + \theta_1 x$$.
 
 {% highlight mathematica %}
 {% raw %}
@@ -218,14 +218,14 @@ $$
 \alpha_\text{opt} = \frac{\mathbf{e}_i^T \mathbf{e}_i}{\mathbf{e}_i^T \mathbf{H} \mathbf{e}_i} = \frac{1}{\mathbf{e}_i^T (\lambda_i \mathbf{e}_i)} = \frac{1}{\lambda_i}
 $$
 
-In the worst case scenario that we move along the eigenvector with the largest eigenvalue $$\lambda_\text{max}$$, the optimal value for the learning rate $$\alpha$$ is $$\frac{1}{\lambda_\text{max}}$$. This analysis is valid to the extent that a quadratic function is a "good enough" approximation of $$f$$.
+In the worst case scenario that we move along the eigenvector with the largest eigenvalue $$\lambda_\text{max}$$, the optimal value for the learning rate $$\alpha$$ is $$\frac{1}{\lambda_\text{max}}$$. This analysis is valid to the extent that a quadratic function is a "good enough" approximation of $$f$$ and gives as an idea on the scale of the learning rate $$a$$.
 
 ### Newton optimization method
 As we've seen second-order terms in the Taylor expansion provide us with insights regarding the local curvature in the neighborhood of $$\mathbf{x}$$. Naturally, we may ask whether we could come up with an optimization method that utilizes these information to converge faster (in less in steps). It turns out that this is what [Newton method](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization) does.
 
 $$f(\mathbf{x}+\delta \boldsymbol{x}) = f(\mathbf{x}) + \nabla_x f(\mathbf{x})\delta \boldsymbol{x} + \frac{1}{2} \delta\mathbf{x}^T \mathbf{H}\delta\mathbf{x} + \mathcal{O}\left(\left\|\delta^3 \boldsymbol{x}\right\|\right)$$
 
-The Newton method tries to find a step such that we end up in a [stationary point](https://en.wikipedia.org/wiki/Critical_point_(mathematics)) (because if there is a minimum, it would reside in a stationary point). So, if we take the step to $$\mathbf{x} + \delta \mathbf{x}$$ we would like this new point to be stationary:
+The Newton method tries to find a step such that we end up in a [stationary point](https://en.wikipedia.org/wiki/Critical_point_(mathematics)) (because if there is a minimum, it would reside on a stationary point). So, if we take the step to $$\mathbf{x} + \delta \mathbf{x}$$ we would like this new point to be stationary:
 
 $$
 \nabla_{\delta \mathbf{x}} f(\mathbf{x} + \delta\mathbf{x}) = 0 
