@@ -14,4 +14,10 @@ $$
 f(x) = \ln(\ln(x)) \Rightarrow f'(x) = \frac{1}{\ln(x)} \cdot (\ln(x))' = \frac{1}{x \ln(x)}
 $$
 
-Then, in our training set we consider $$\frac{1}{x \ln(x)}$$ the input, i.e. the function that we want to integrate, and $$\ln(\ln(x))$$ the desired output of our model. 
+Then, in our training set we consider $$\frac{1}{x \ln(x)}$$ as the input, i.e. the function that we want to integrate, and $$\ln(\ln(x))$$ becomes the desired output of our model.
+
+$$
+\int \frac{1}{x \ln(x)} = \ln(\ln(x))+C
+$$
+
+
