@@ -34,3 +34,10 @@ Recall that when we want to calculate the *total derivative* of a function $$y =
 $$
 \frac{\partial F(x, y)}{\partial x} + \frac{\partial F(x, y)}{\partial y} \frac{\partial y}{\partial x} = 0
 $$
+
+Therefore, first we "found" the solution $$y = f_c(x)$$ and then we constructed the differential equation that this solution solves, i.e.
+
+$$
+\frac{\partial F(x, y)}{\partial x} + \frac{\partial F(x, y)}{\partial y} y' = 0
+$$
+
