@@ -6,6 +6,12 @@ categories: math
 tags: ['machine learning', math, 'neural netowrks']
 ---
 
+### Contents
+{:.no_toc}
+
+* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
+{:toc}
+
 ### Introduction
 This post was triggered by a paper [posted here](https://openreview.net/pdf?id=S1eZYeHFDS), titled "Deep learning from symbolic mathematics". The authors trained a sequence-to-sequence neural network that was able to perform symbolic integration and solve differential equations. Remarkably, they achieved results that outperform commercial Computer Algebra Systems (CAS) such as [Matlab](https://www.mathworks.com/products/matlab.html) and [Mathematica](https://www.wolfram.com/mathematica/). It's interesting to see how they built their training set.
 
@@ -85,4 +91,3 @@ $$
 After looking at these symbols, he might figure that the expression $$x^{\text{whatever}}$$, is matched with $$\text{whatever} \cdot x ^{\text{whatever} - 1}$$. And, when asked to derive $$x^{100}$$ he, correctly, writes $$100 x^{99}$$. Does this mean that he "really knows" how to differentiate the expression $$x^n$$? Also, since he doesn't know anything about the notion of limits and derivatives, he will most likely miss the meaning of "derivative as rate of change".
 
 So, when we train a neural network to integrate by providing it with thousands examples of "derivative - antiderivative" pairs, does it really learn to integrate? And what does "really" mean in this context?
-
