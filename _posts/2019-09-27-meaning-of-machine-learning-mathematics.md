@@ -68,7 +68,7 @@ From here, it's standard theory of sequence to sequence models. To sum up, we ge
 ### Thoughts
 #### Is pattern matching the same as "mathematical understanding"?
 
-Suppose I am with someone that doesn't know anything about mathematics, and provide him with a list of matching rules like:
+Suppose I am with someone that doesn't know anything about mathematics and provide him with a list of matching rules like:
 
 $$
 \begin{align*}
@@ -77,9 +77,9 @@ x^3 &\longrightarrow 3 x^2\\
 x^4 &\longrightarrow 4 x^3\\
 x^5 &\longrightarrow 5 x^4\\
 x^6 &\longrightarrow 6 x^5\\
-x^7 &\longrightarrow 7 x^5
+x^7 &\longrightarrow 7 x^5\\
 \ldots
 \end{align*}
 $$
 
-After looking at these symbols, he might figure that an expression $$x^{\text{whatever}}$$, is matched with $$\text{whatever} \cdot x ^{\text{whatever} - 1}$$. Does this mean that he "really does know" how to differentiate the expression $$x^n$$?
+After looking at these symbols, he might figure that the expression $$x^{\text{whatever}}$$, is matched with $$\text{whatever} \cdot x ^{\text{whatever} - 1}$$. And, when asked to derive $$x^100$$ he, correctly, writes $$100 x^99$$. Does this mean that he "really knows" how to differentiate the expression $$x^n$$?
