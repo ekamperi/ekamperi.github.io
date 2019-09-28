@@ -37,4 +37,4 @@ And since my $$y$$'s were very close to $$1$$, naturally $$s_z$$ exploded.
 
 **Moral: don't try random stuff; make educated guesses.**
 
-Excercise for the reader: What data transformation would actually reduce my error? Can you think of some function $$z = f(y)$$, such as that when you calculate $$\frac{dz}{dy}$$, $$s_z$$ is smaller compared to $$s_y$$ for $$y$$ values close to $$1$$?
+Excercise for the reader: What data transformation would actually reduce my error? Can you think of some function $$z = f(y)$$, such as that when you calculate $$\frac{\mathrm{d}z}{\mathrm{d}y}$$, $$s_z$$ is smaller compared to $$s_y$$ for $$y$$ values close to $$1$$?
