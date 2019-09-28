@@ -48,7 +48,7 @@ $$
 \frac{\partial F(x, y)}{\partial x} + \frac{\partial F(x, y)}{\partial y} y' = 0
 $$
 
-It feels like cheating, huh? A really simple example, where we consider $$F(x,y) = x \ln{y} = c$$:
+It feels like cheating, huh? Here is a really simple example, where we consider $$F(x,y) = x \ln{y} = c$$:
 
 $$
 \underbrace{x \ln{y}}_{F(x,y)} = c \Rightarrow \ln{y} = c/x \Rightarrow y = e^{c/x}
@@ -69,7 +69,7 @@ Mathematical expressions are modelled as trees with operators as internal nodes,
  <img style="width: 25%; height: 25%" src="{{ site.url }}/images/math_tree.png">
 </p>
 
-From here, it's standard theory of sequence to sequence models. To sum up, we generate pairs of derivatives - antiderivatives and pairs of differential equations - solutions, then we convert these expressions to trees and then to sequences. We train the neural network to accept such sequences and output other sequences, where hopefully the output is the correct solution to the input.
+From here, it's standard theory of sequence to sequence models. To sum up, we generate pairs of derivatives - antiderivatives and pairs of differential equations - solutions, then we convert these expressions to trees and then to sequences. We train the neural network to accept such sequences and output other sequences, where hopefully the output, when interpreted as a math expression, is the correct solution to the input.
 
 ### Thoughts
 #### Is pattern matching the same as "mathematical understanding"?
