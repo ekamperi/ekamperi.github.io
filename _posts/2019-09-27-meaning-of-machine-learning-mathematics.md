@@ -91,3 +91,7 @@ $$
 After looking at these symbols, he might figure that the expression $$x^{\text{whatever}}$$, is matched with $$\text{whatever} \cdot x ^{\text{whatever} - 1}$$. And, when asked to derive $$x^{100}$$ he, correctly, writes $$100 x^{99}$$. Does this mean that he "really knows" how to differentiate the expression $$x^n$$? Also, since he doesn't know anything about the notion of limits and derivatives, he will most likely miss the meaning of "derivative as rate of change".
 
 So, when we train a neural network to integrate by providing it with thousands examples of "derivative - antiderivative" pairs, does it really learn to integrate? And what does "really" mean in this context?
+
+#### The utilitarian approach
+
+The utilitarian approach states that as long as the neural network model outputs correct answers, does it really matter whether this constitutes a deeper understanding of maths? Even if it is merely a pattern matching ability acquired and perfected through the presentation of hundreds of thousands of examples, who cares?
