@@ -29,4 +29,8 @@ $$
 \frac{\partial F(x, f_c(x))}{\partial x} + \frac{\partial F(x,f_c(x))}{\partial f_c(x)} \frac{\partial f_c(x)}{\partial x} = 0
 $$
 
-Recall that when we want to calculate the *total derivative* of a function $$y = f(t, u_1, u_2, \ldots)$$, where the intermediate variables $$u_k$$ are functions of the form $$u_k = u_k(t, u_1, u_2, \ldots)$$, then $$\frac{\partial y}{\partial t} = \frac{\partial f}{\partial t} + \frac{\partial f}{\partial u_1}\frac{\partial u_1}{\partial t} + \ldots$$, since $$y$$'s value are affected directly by $$t$$ but also indirectly via the intermediate variables $$u_k$$ that are functions of $$t$$ as well.
+Recall that when we want to calculate the *total derivative* of a function $$y = f(t, u_1, u_2, \ldots)$$, where the intermediate variables $$u_k$$ are functions of the form $$u_k = u_k(t, u_1, u_2, \ldots)$$, then $$\frac{\partial y}{\partial t} = \frac{\partial f}{\partial t} + \frac{\partial f}{\partial u_1}\frac{\partial u_1}{\partial t} + \ldots$$, since $$y$$'s value are affected directly by $$t$$ but also indirectly via the intermediate variables $$u_k$$ that are functions of $$t$$ as well. If we let $$y = f_c(x)$$, then:
+
+$$
+\frac{\partial F(x, y)}{\partial x} + \frac{\partial F(x, y)}{\partial y} \frac{\partial y}{\partial x} = 0
+$$
