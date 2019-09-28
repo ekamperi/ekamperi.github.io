@@ -36,9 +36,22 @@ $$
 \frac{\partial F(x, y)}{\partial x} + \frac{\partial F(x, y)}{\partial y} \frac{\partial y}{\partial x} = 0
 $$
 
-Therefore, first we "found" the solution $$y = f_c(x)$$ and then we constructed the differential equation that this solution solves, i.e.
+Therefore, first we "found" the solution $$y = f_c(x)$$ and then we constructed the differential equation that $$y$$ solves, i.e.
 
 $$
 \frac{\partial F(x, y)}{\partial x} + \frac{\partial F(x, y)}{\partial y} y' = 0
 $$
 
+It feels like cheating, huh? A really simple example, where we consider $$F(x,y) = x \ln{y} = c$$:
+
+$$
+\underbrace{x \ln{y}}_{F(x,y)} = c \Rightarrow \ln{y} = c/x \Rightarrow y = e^{c/x}
+$$
+
+Then by differentiating with respect to $$x$$ we wget:
+
+$$
+\ln{y} + \frac{x}{y}y' = 0 \Rightarrow  x y' + y\ln{y} = 0
+$$
+
+You might want to verify that $$y = e^{c/x}$$ is a solution of $$x y' + y\ln{y} = 0$$. So $$y = e^{c/x}$$ becomes the target of the neural network and $$x y' + y\ln{y} = 0$$ the input, i.e. the differential equation that we'd like to solve.
