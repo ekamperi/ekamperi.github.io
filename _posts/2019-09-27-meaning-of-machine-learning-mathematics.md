@@ -56,17 +56,19 @@ $$
 
 You might want to verify that $$y = e^{c/x}$$ is a solution of $$x y' + y\ln{y} = 0$$. So $$y = e^{c/x}$$ becomes the target of the neural network and $$x y' + y\ln{y} = 0$$ the input, i.e. the differential equation that we'd like to solve.
 
-### Represeting mathematical expressions as sequences
+### Representing mathematical expressions as sequences
 Mathematical expressions are modelled as trees with operators as internal nodes, and numbers, constants or variables, as leaves. By enumerating nodes in prefix order, the authors transformed trees into *sequences* suitable for natural language processing models. For example the expression $$2 + 3 + 5$$ is represented by the sequence "+ 2 + 3 5".
 
 <p align="center">
  <img style="width: 25%; height: 25%" src="{{ site.url }}/images/math_tree.png">
 </p>
 
+From here, it's standard theory of sequence to sequence models. To sum up, we generate pairs of derivatives - antiderivatives and pairs of differential equations - solutions, then we convert these expressions to trees and then to sequences. We train the neural network to accept such sequences and output other sequences, where hopefully the output is the correct solution to the input.
+
 ### Thoughts
 #### Is pattern matching the same as "mathematical understanding"?
 
-Suppose that I am with someone that doesn't know anything about mathematics, and provided him with a list of rules:
+Suppose I am with someone that doesn't know anything about mathematics, and provide him with a list of matching rules like:
 
 $$
 \begin{align*}
@@ -76,5 +78,8 @@ x^4 &\longrightarrow 4 x^3\\
 x^5 &\longrightarrow 5 x^4\\
 x^6 &\longrightarrow 6 x^5\\
 x^7 &\longrightarrow 7 x^5
+\ldots
 \end{align*}
 $$
+
+After looking at these symbols, he might figure that an expression $$x^{\text{whatever}}$$, is matched with $$\text{whatever} \cdot x ^{\text{whatever} - 1}$$. Does this mean that he "really does know" how to differentiate the expression $$x^n$$?
