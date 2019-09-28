@@ -23,4 +23,10 @@ $$
 $$
 
 ### Solving first order differential equations
-The training set for solving first order differential equations is generatoed in a similar way as previously, i.e. with a "reverse logic". Let's start with a random function of two variables $$F(x,y) = c$$, $$c$$ constant. Then if $$F$$ is such that is "solvable for $$y$$", meaning that we can write $$y = f(x, c)$$, the function can be written as $$F(x, f_c(x)) = c$$. 
+The training set for solving first order differential equations is generated in a similar way as previously, i.e. with a "reverse logic". Let's start with a random function of two variables $$F(x,y) = c$$, where $$c$$ is constant. Then if $$F$$ is chosen such that it is "solvable for $$y$$", meaning that we can write $$y = f(x, c) = f_c(x)$$, the function can be expressed as $$F(x, f_c(x)) = c$$. If we differentiate with respect to $$x$$, we get:
+
+$$
+\frac{\partial F(x, f_c(x))}{\partial x} + \frac{\partial F(x,f_c(x))}{\partial f_c(x)} \frac{\partial f_c(x)}{\partial x} = 0
+$$
+
+Recall that when we'd like to calculate the *total derivative* of a function $$y = f(t, u_1, u_2, \ldots)$$, where the intermediate variables $$u_k$$ are functions of the form $$u_k = u_k(t, u_1, u_2, \ldots)$$, then $$\frac{\partial y}{t} = \frac{\partial f}{\partial t} + \frac{\partial f}{\partial u_1}\frac{\partial u_1}{\partial t} + \ldots$$, since $$y$$'s value are affected directly by $$t$$ but also indirectly via the intermediate variables $$u_k$$ that are functions of $$t$$ as well.
