@@ -94,4 +94,4 @@ So, when we train a neural network to integrate by providing it with thousands e
 
 #### The utilitarian approach
 
-The utilitarian approach states that as long as the neural network model outputs correct answers, does it really matter whether this constitutes a deeper understanding of maths? Even if it is merely a pattern matching ability acquired and perfected through the presentation of hundreds of thousands of examples, who cares?
+The utilitarian approach states that as long as the neural network model outputs correct answers, does it really matter whether this constitutes a deeper understanding of maths or not? Even if it is merely a pattern matching ability acquired and perfected through the presentation of hundreds of thousands of examples, who cares?
