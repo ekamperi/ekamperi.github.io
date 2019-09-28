@@ -42,7 +42,7 @@ $$
 \frac{\partial F(x, y)}{\partial x} + \frac{\partial F(x, y)}{\partial y} \frac{\partial y}{\partial x} = 0
 $$
 
-Therefore, first we find the solution $$y = f_c(x)$$ of an equation that doesn't yet exist and that we construct it, i.e.
+Therefore, first we find the solution $$y = f_c(x)$$ of an equation that doesn't yet exist and then we construct the equation, i.e.
 
 $$
 \frac{\partial F(x, y)}{\partial x} + \frac{\partial F(x, y)}{\partial y} y' = 0
@@ -54,7 +54,7 @@ $$
 \underbrace{x \ln{y}}_{F(x,y)} = c \Rightarrow \ln{y} = c/x \Rightarrow y = e^{c/x}
 $$
 
-Then by differentiating with respect to $$x$$ we wget:
+Then by differentiating with respect to $$x$$ we get:
 
 $$
 \ln{y} + \frac{x}{y}y' = 0 \Rightarrow  x y' + y\ln{y} = 0
