@@ -58,3 +58,9 @@ You might want to verify that $$y = e^{c/x}$$ is a solution of $$x y' + y\ln{y} 
 
 ### Represeting mathematical expressions as sequences
 Mathematical expressions are modelled as trees with operators as internal nodes, and numbers, constants or variables, as leaves. By enumerating nodes in prefix order, the authors transformed trees into *sequences* suitable for natural language processing models. For example the expression $$2 + 3 + 5$$ is represented by the sequence "+ 2 + 3 5".
+
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/math_tree.png">
+</p>
+
+
