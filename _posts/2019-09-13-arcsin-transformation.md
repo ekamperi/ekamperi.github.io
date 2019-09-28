@@ -26,7 +26,7 @@ Where $$s_z$$ represents the standard deviation of the function $$f$$, $$s_x$$ r
 
 So, in my case it was simply this:
 
-$$ s_z = \frac{dz}{dy} s_y \Rightarrow s_z = \frac{1}{2\sqrt{y (1-y)}} s_y
+$$ s_z = \frac{\mathrm{d} z}{\mathrm{d} y} s_y \Rightarrow s_z = \frac{1}{2\sqrt{y (1-y)}} s_y
 $$
 
 And since my $$y$$'s were very close to $$1$$, naturally $$s_z$$ exploded.
