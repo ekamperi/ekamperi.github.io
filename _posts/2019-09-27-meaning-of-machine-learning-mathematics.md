@@ -26,7 +26,7 @@ $$
 Then, in our training set we consider $$\frac{1}{x \ln(x)}$$ as the input, i.e. the function that we want to integrate, and $$\ln(\ln(x))$$ becomes the desired output of our model.
 
 $$
-\int \frac{1}{x \ln(x)} = \ln(\ln(x)) + C
+\int \frac{1}{x \ln(x)} dx = \ln(\ln(x)) + C
 $$
 
 #### Solving first order differential equations
