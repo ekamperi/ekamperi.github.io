@@ -63,4 +63,16 @@ Mathematical expressions are modelled as trees with operators as internal nodes,
  <img style="width: 25%; height: 25%" src="{{ site.url }}/images/math_tree.png">
 </p>
 
+### Thoughts
+#### Is pattern matching the same as "mathematical understanding"?
 
+Suppose that I am with someone that doesn't know anything about mathematics, and provided him with a list of rules:
+
+\begin{align*}
+x^2 &\longrightarrow 2 x^1\\
+x^3 &\longrightarrow 3 x^2\\
+x^4 &\longrightarrow 4 x^3\\
+x^5 &\longrightarrow 5 x^4\\
+x^6 &\longrightarrow 6 x^5\\
+x^7 &\longrightarrow 7 x^5
+\end{align*}
