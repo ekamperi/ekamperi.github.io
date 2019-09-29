@@ -90,7 +90,7 @@ x^7 &\longrightarrow 7 x^5\\
 \end{align*}
 $$
 
-After looking at these symbols, he might figure that the expression $$x^{\text{whatever}}$$ is matched with $$\text{whatever} \cdot x ^{\text{whatever} - 1}$$. And, when asked to derive $$x^{100}$$ he, correctly, writes $$100 x^{99}$$. Does this mean that he "really" knows how to differentiate the expression $$x^n$$? And even we accepth that he knows, does he *understand*? Since the theory of continuity, limits and derivatives escapes him, he will most likely miss the intuition behind derivation:
+After looking at these symbols, he might figure that the expression $$x^{\text{whatever}}$$ is matched with $$\text{whatever} \cdot x ^{\text{whatever} - 1}$$. And, when asked to derive $$x^{100}$$ he, correctly, writes $$100 x^{99}$$. Does this mean that he "really" knows how to differentiate the expression $$x^n$$? And even we accept that he knows, does he *understand*? Since the theory of continuity, limits and derivatives escapes him, he will most likely miss the intuition behind derivation:
 
 * The derivative as the rate of change.
 * The derivative as the slope of tangent.
