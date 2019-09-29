@@ -90,14 +90,14 @@ x^7 &\longrightarrow 7 x^5\\
 \end{align*}
 $$
 
-After looking at these symbols, he might figure that the expression $$x^{\text{whatever}}$$ is matched with $$\text{whatever} \cdot x ^{\text{whatever} - 1}$$. And, when asked to derive $$x^{100}$$ he, correctly, writes $$100 x^{99}$$. Does this mean that he "really knows" how to differentiate the expression $$x^n$$? Also, since he doesn't know anything about the notion of continuity, limits and derivatives, he will most likely a whole lot of the intuition:
+After looking at these symbols, he might figure that the expression $$x^{\text{whatever}}$$ is matched with $$\text{whatever} \cdot x ^{\text{whatever} - 1}$$. And, when asked to derive $$x^{100}$$ he, correctly, writes $$100 x^{99}$$. Does this mean that he "really" knows how to differentiate the expression $$x^n$$? And even we accepth that he knows, does he *understand*? Since the theory of continuity, limits and derivatives escapes him, he will most likely miss the intuition behind derivation:
 
 * The derivative as the rate of change.
 * The derivative as the slope of tangent.
-* The derivative $$n x^{n-1}$$ is the best *linear* approximation of $$x^n$$.
-* That since $$x^n$$ is differentiable at some point $$\alpha$$, then it is also continuous at $$\alpha$$.
+* The derivative $$n x^{n-1}$$ as the best *linear* approximation of $$x^n$$.
+* That since $$x^n$$ is differentiable at some point $$\alpha$$, then $$x^n$$ is also continuous at $$x = \alpha$$.
 
-So, when we train a neural network to integrate by providing it with thousands examples of "derivative - antiderivative" pairs, does it really learn to integrate? And what does "really" mean in this context?
+When we train a neural network to integrate by providing it with thousands examples of "derivative - antiderivative" pairs, the best we can hope for is that it will discover the *rule* of integration. But, is it fair to expect from the model to also pick up the intuition behind it?
 
 #### The utilitarian point of view
 
