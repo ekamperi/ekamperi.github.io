@@ -101,7 +101,7 @@ When we train a neural network to integrate by providing it with thousands examp
 
 #### The utilitarian point of view
 
-The utilitarian approach states that as long as the neural network model outputs correct answers, does it really matter whether this constitutes a deeper understanding of maths or not? Even if it is merely a pattern matching ability acquired and perfected through the presentation of hundreds of thousands of examples, who cares?
+The utilitarian approach states that as long as the neural network model outputs correct answers, it doesn't really matter whether this constitutes a deeper understanding of maths or not. Even if it is merely a pattern matching ability acquired and perfected through the presentation of hundreds of thousands of examples, who cares?
 
-In this context, we may see in a few years CAS integrating (no pun intended :P) neural network models in their solvers. In the most conservative implementations, the solver would first try to apply all the hard-coded rules and heuristics to solve the problem. If it failed to do so, then the output of a neural network model could be checked for correctness. Remember that for integration and differential equation solving, verification is very easy and very fast compared to actually solving the problem.
+In this context, we may see in a few years CAS integrating (no pun intended :P) neural network models in their solvers. In the most conservative implementations, the solver would first try to apply all the hard-coded rules and heuristics to solve the problem. If it failed to do so, then the output of a neural network model could be checked for correctness. Remember that for integration and differential equation solving, verification is very easy and very fast compared to actually solving the problem from the scratch.
 
