@@ -97,11 +97,10 @@ After looking at these symbols, he might figure that the expression $$x^{\text{w
 * The derivative $$n x^{n-1}$$ as the best *linear* approximation of $$x^n$$.
 * That since $$x^n$$ is differentiable at some point $$\alpha$$, then $$x^n$$ is also continuous at $$x = \alpha$$.
 
-We (the humans) don't learn how to differentiate by looking at thousand of derivative - antiderivative pairs. Instead, we learn from a bottop-up approach by studying the underlying theory. Therefore, is it fair to expect from an AI model to pick up the intuition behind differentiation solely by being presented with tons of matching rules? When a human couldn't possibly pick it up either? In any case, it would help if we could look at the insides of a neural network and see how these rules of differentiation are represented.
+We (the humans) don't learn how to differentiate by looking at thousand of derivative - antiderivative pairs. Instead, we learn from a bottop-up approach by studying the underlying theory. Therefore, is it fair to expect from an AI model to pick up the intuition behind differentiation solely by being presented with tons of matching rules? When a human couldn't possibly pick it up either? In any case, it would help if we could look at the insides of a neural network and see how the rules of differentiations are represented.
 
 #### The utilitarian point of view
 
 The utilitarian approach states that as long as the neural network model outputs correct answers, it doesn't really matter whether this constitutes a deeper understanding of maths or not. Even if it is merely a pattern matching ability acquired and perfected through the presentation of hundreds of thousands of examples, who cares?
 
 In this context, we may see in a few years CAS integrating (no pun intended :P) neural network models in their solvers. In the most conservative implementations, the solver would first try to apply all the hard-coded rules and heuristics to solve the problem. If it failed to do so, then the output of a neural network model could be checked for correctness. Remember that for integration and differential equation solving, verification is very easy and very fast compared to actually solving the problem from the scratch.
-
