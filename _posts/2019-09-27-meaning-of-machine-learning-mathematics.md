@@ -97,7 +97,7 @@ After looking at these symbols, he might figure that the expression $$x^{\text{w
 * The derivative $$n x^{n-1}$$ as the best *linear* approximation of $$x^n$$.
 * That since $$x^n$$ is differentiable at some point $$\alpha$$, then $$x^n$$ is also continuous at $$x = \alpha$$.
 
-We (the humans) don't learn how to differentiate by looking at thousand of derivative - antiderivative pairs. Instead, we learn from a bottop-up approach by studying the underlying theory. Therefore, is it fair to expect from an AI model to pick up the intuition behind differentiation solely by being presented with tons of matching rules? When a human couldn't possibly pick it up either?
+We (the humans) don't learn how to differentiate by looking at thousand of derivative - antiderivative pairs. Instead, we learn from a bottop-up approach by studying the underlying theory. Therefore, is it fair to expect from an AI model to pick up the intuition behind differentiation solely by being presented with tons of matching rules? When a human couldn't possibly pick it up either? In any case, it would help if we could look at the insides of a neural network and see how these rules of differentiation are represented.
 
 #### The utilitarian point of view
 
