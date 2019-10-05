@@ -13,7 +13,7 @@ tags: ['machine learning', math, 'neural networks']
 {:toc}
 
 ### Introduction
-This post was triggered by a paper [posted here](https://openreview.net/pdf?id=S1eZYeHFDS), titled "Deep learning from symbolic mathematics". The authors trained a sequence-to-sequence neural network that was able to perform symbolic integration and solve differential equations. Remarkably, they achieved results that outperform commercial Computer Algebra Systems (CAS) such as [Matlab](https://www.mathworks.com/products/matlab.html) and [Mathematica](https://www.wolfram.com/mathematica/). It's interesting to see how they built their training set.
+This post was triggered by a paper [posted here](https://openreview.net/pdf?id=S1eZYeHFDS), titled "Deep learning from symbolic mathematics". The authors trained a sequence-to-sequence neural network that was able to perform symbolic integration and solve differential equations. Remarkably, they achieved results that outperform commercial [Computer Algebra Systems (CAS)](https://en.wikipedia.org/wiki/Computer_algebra_system) such as [Matlab](https://www.mathworks.com/products/matlab.html) and [Mathematica](https://www.wolfram.com/mathematica/). It's interesting to see how they built their training set.
 
 ### Training sets
 #### Integration
@@ -97,7 +97,7 @@ After looking at these symbols, he might figure that the expression $$x^{\text{w
 * The derivative $$n x^{n-1}$$ as the best *linear* approximation of $$x^n$$.
 * That since $$x^n$$ is differentiable at some point $$\alpha$$, then $$x^n$$ is also continuous at $$x = \alpha$$.
 
-What I'm trying to say is that we (the humans) don't learn how to differentiate by looking at thousand of derivative - antiderivative pairs. Instead, we learn from a bottop-up approach, by studying the underlying theory. Therefore, is it fair to expect from an AI model to pick up the intuition behind differentiation, given that a human couldn't either pick it up solely by being presented with tons of matching rules?
+We (the humans) don't learn how to differentiate by looking at thousand of derivative - antiderivative pairs. Instead, we learn from a bottop-up approach by studying the underlying theory. Therefore, is it fair to expect from an AI model to pick up the intuition behind differentiation solely by being presented with tons of matching rules? When a human couldn't possibly pick it up either?
 
 #### The utilitarian point of view
 
