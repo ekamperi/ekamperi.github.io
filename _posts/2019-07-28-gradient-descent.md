@@ -24,7 +24,7 @@ The symbol "$$\leftarrow$$" means that the variable to the left is assigned the 
 This introduction is invariably accompanied by an image like this:
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gradient_descent.png">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gradient_descent.png" alt="Gradient descent in one dimension">
 </p>
 
 In the above scenario we only have $$1$$ parameter, $$w$$, and we want to minimize the cost function $$J(w)$$. The intuition is that the sign of the gradient points us to the direction we have to move in order to minimize $$J$$. Imagine that we have many parameters, then we are navigating inside a $$D-$$dimensional space. But since it's easier to visualize with $$D=1$$ or $$D=2$$, most people use the above image as an example (or a 2D version of it).
