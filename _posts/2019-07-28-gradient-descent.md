@@ -30,7 +30,7 @@ This introduction is invariably accompanied by an image like this:
 In the above scenario we only have $$1$$ parameter, $$w$$, and we want to minimize the cost function $$J(w)$$. The intuition is that the sign of the gradient points us to the direction we have to move in order to minimize $$J$$. Imagine that we have many parameters, then we are navigating inside a $$D-$$dimensional space. But since it's easier to visualize with $$D=1$$ or $$D=2$$, most people use the above image as an example (or a 2D version of it).
 
 <p align="center">
-<img style="width: 100%; height: 100%" src="{{ site.url }}/images/gradient_field.png">
+<img style="width: 100%; height: 100%" src="{{ site.url }}/images/gradient_field.png" alt="Gradient field">
 </p>
 
 Although the post is not about implementing gradient descent per se, let's just take on a really simple example. Suppose we have some data in the form $$(x_i,y_i)$$ and we'd like to fit the linear regression model $$y = \theta_0 + \theta_1 x$$.
@@ -74,13 +74,13 @@ Style[Grid[{
 This is how the cost function $$J(\theta_0, \theta_1)$$ is reduced as we iterate (in the code above we write $$J(u, v)$$ because subscripting isn't so robust in Mathematica).
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/cost_vs_iterations.png">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/cost_vs_iterations.png" alt="Cost evolution as a function of iteration">
 </p>
 
 And this is our estimated linear model vs. our training data.
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/linear_regression.png">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/linear_regression.png" alt="Best linear fit superimposed with data points">
 </p>
 
 I'd like to present the same subject from a slightly different perspective, though, that doesn't receive much attention.
@@ -102,7 +102,7 @@ To restate our problem: what is the optimal $$\delta\mathbf{x}$$ step that we ne
 Keep in mind that $$\nabla_x f(\mathbf{x})$$ and $$\delta \boldsymbol{x}$$ are just vectors, therefore we need to minimize the dot product $$\mathbf{u} \cdot \mathbf{v}$$, with $$\mathbf{u} = \nabla_x f(\mathbf{x})$$ and $$\mathbf{v} = \delta \mathbf{x}$$.
 
 <p align="center">
- <img style="width: 50%; height: 50%" src="{{ site.url }}/images/gradient_descent2.png">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/gradient_descent2.png" alt="Gradient descent dot product">
 </p>
 (To my fellow readers: sorry that $$\nabla f$$ isn't horizontal!) 
 
@@ -111,13 +111,13 @@ Since $$\mathbf{u} \cdot \mathbf{v} = \left\|u\right\| \left\|v\right\| \cos(\ma
 The following images illustrate the effect of different learning rates $$\alpha$$ on the convergence. If $$\alpha$$ is too small, we are converging too slow.
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/learning_rate_1.png">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/learning_rate_1.png" alt="Effect of different learning rates on convergence">
 </p>
 
 And if it's too large, then we may be diverging!
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/learning_rate_2.png">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/learning_rate_2.png" alt="Wrong learning rate can cause divergence">
 </p>
 
 There's a ton of literature on how to select optimal learning rates or how to change the learning rate *during* the optimization phase (google for adaptive learning rates, learning rate schedules and cyclical learning rates) but that's beyond the scope of this introductory post.
@@ -127,7 +127,7 @@ There's a ton of literature on how to select optimal learning rates or how to ch
 It's interesting to consider what happens when the gradient becomes zero, i.e. $$\nabla_x f(\mathbf{x}) = 0$$. Since it's zero, this means that we are not moving towards any direction. At this point we have not yet assumed anything about the "shape" of the function, i.e. whether it was [convex](https://en.wikipedia.org/wiki/Convex_function) or non-convex. So, are we on a minimum? Are we on a [saddle point](https://en.wikipedia.org/wiki/Saddle_point)?
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/optimization_shape.png">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/optimization_shape.png" alt="Shape of objective function in optimization">
 </p>
 Image taken [from here](https://www.offconvex.org/2016/03/22/saddlepoints).
 
@@ -234,7 +234,7 @@ $$
 The geometric interpretation of Newton's method is that at each iteration, it fits a paraboloid to the surface of $$f(\mathbf{x})$$ and then jumps into the maximum or minimum of that paraboloid (in higher dimensions, this may also be a saddle point). So the closer to quadratic our function looks at local level, the faster the convergence.
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/newton.png">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/newton.png" alt="Geometric interpretation of Newton method">
 </p>
 
 If we do the math and solve for $$\delta\mathbf{x}$$ we get: $$\delta \mathbf{x} = -\mathbf{H}^{-1}\nabla f(\mathbf{x}) = - (\nabla^2 f(\mathbf{x}))^{-1} \nabla f(\mathbf{x}) $$ (obviously this only works if $$\mathbf{H}$$ is invertible). Just as with gradient descent the best step that we could take to minimize $$f(\mathbf{x})$$ was $$\delta \mathbf{x} = - \nabla_x f(\mathbf{x})$$, for Newton method the best step is $$\delta \mathbf{x} = -\mathbf{H}^{-1}\nabla f(\mathbf{x})$$.
@@ -251,7 +251,7 @@ In practice we use $$\delta \mathbf{x} = -t\mathbf{H}^{-1}\nabla f(\mathbf{x})$$
 Last, the so called *angle condition* needs to be satisfied. The intuition is that we can't be moving nearly orthogonal to the direction of gradient descent. Therefore we need the $$\cos(\mathbf{u}, \mathbf{v})$$ to satisfy the condition $$\cos(\mathbf{u}, \mathbf{v}) \ge \epsilon > 0 \Leftrightarrow \frac{\mathbf{u} \cdot \mathbf{v}}{\left\| \mathbf{u} \cdot \mathbf{v} \right\|} \ge \epsilon$$, where $$\mathbf{u} = \mathbf{H}^{-1}f(\mathbf{x}) \nabla_x f(\mathbf{x})$$ and $$ \mathbf{v} = -\nabla_x f(\mathbf{x})$$.
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/angle_condition.png">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/angle_condition.png" alt="Angle condition in Newton method">
 </p>
 
 In the following images you can see how various optimization algorithms, including gradient descent and Newton's method, perform on a simple minimization problem.
@@ -267,7 +267,7 @@ Plot3D[Cos[x^2 - 3 y] + Sin[x^2 + y^2], {x, 0, 2}, {y, 0, 2},
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 50%; height: 50%" src="{{ site.url }}/images/various_optimizations.png">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/various_optimizations.png" alt="Various function minimization methods">
 </p>
 
 {% highlight mathematica %}
@@ -284,7 +284,7 @@ Style[
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/various_optimizations2.png">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/various_optimizations2.png" alt="Various function minimization methods">
 </p>
 
 `FindMinimumPlot` runs [FindMinimum](https://reference.wolfram.com/language/ref/FindMinimum.html), keeping track of the function and gradient calculations and steps taken during the search. The end image shows all these superimposed on a contour plot of the function. The steps are indicated with blue lines, function evaluations with green points and gradient evaluations with red points. The minimum found is shown with a large black point.
@@ -317,7 +317,7 @@ Style[Grid[{
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/saddle_point.png">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/saddle_point.png" alt="A function with a saddle point">
 </p>
 
 For Newton’s method (in its standard form), saddle points clearly constitute a problem (Goodfellow, 2016). Gradient descent is designed to move "downhill", whereas Newton’s method, is *explicitly designed to search for a point where the gradient is zero* (remember that we solved for $$\nabla f(\mathbf{x} + \delta \mathbf{x}) = 0$$). In its standard form, it can as well jump into a saddle point. In the example above we have $$f(x,y) = x^2 - y^2$$, let's calculate $$(x,y)_{n+1} = (x,y)_{n} - \mathbf{H}^{-1}f(x,y) \nabla f(x, y)$$:
