@@ -76,7 +76,9 @@ To sum up, we generate pairs of derivatives - antiderivatives and pairs of diffe
 ### Thoughts
 #### Is pattern matching the same as "mathematical understanding"?
 
-Suppose I am with someone that doesn't know anything about mathematics and provide him with a list of matching rules like:
+Probably not, but that's ok.
+
+Suppose I am with someone that doesn't know anything about mathematics and I provide him with a list of matching rules like:
 
 $$
 \begin{align*}
@@ -90,14 +92,14 @@ x^7 &\longrightarrow 7 x^5\\
 \end{align*}
 $$
 
-After looking at these symbols, he might figure that the expression $$x^{\text{whatever}}$$ is matched with $$\text{whatever} \cdot x ^{\text{whatever} - 1}$$. And, when asked to derive $$x^{100}$$ he, correctly, writes $$100 x^{99}$$. Does this mean that he really knows how to differentiate the expression $$x^n$$? Even if we accept that he really knows, does he really *understand*? Since the theory of continuity, limits and derivatives escapes him, he will most likely miss all the intuition behind derivation:
+After looking at these symbols, he might figure that the expression $$x^{\text{whatever}}$$ is mapped to $$\text{whatever} \cdot x ^{\text{whatever} - 1}$$. And, when asked to derive $$x^{100}$$ he, correctly, writes $$100 x^{99}$$. Does this mean that he really knows how to differentiate the expression $$x^n$$? Even if we accept that he really knows, does he really *understand*? Since the theory of continuity, limits and derivatives escapes him, he will most likely miss all the intuition behind derivation, such as:
 
 * The derivative as the rate of change.
 * The derivative as the slope of tangent.
 * The derivative $$n x^{n-1}$$ as the best *linear* approximation of $$x^n$$.
 * That since $$x^n$$ is differentiable at some point $$\alpha$$, then $$x^n$$ is also continuous at $$x = \alpha$$.
 
-We (the humans) don't learn how to differentiate by looking at thousand of derivative - antiderivative pairs. Instead, we learn from a bottop-up approach by studying the underlying theory. Therefore, is it fair to expect from an AI model to pick up the intuition behind differentiation solely by being presented with tons of matching rules? When a human couldn't possibly pick it up either? In any case, it would help if we could look at the insides of a neural network and see how the rules of differentiations are represented.
+We (the humans) don't learn to differentiate by looking at thousand of derivative - antiderivative pairs. Instead, we learn from a bottop-up approach by studying the underlying theory. Therefore, is it fair to expect from an AI model to pick up the intuition behind differentiation solely by being presented with tons of matching rules? When a human couldn't possibly pick it up either? In any case, it would help if we could look at the insides of a neural network and see how the mapping is represented.
 
 #### The utilitarian point of view
 
