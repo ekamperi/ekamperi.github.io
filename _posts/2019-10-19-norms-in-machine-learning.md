@@ -43,3 +43,5 @@ For $$p \to \infty$$, $$\ell_\infty = \max_i (\vert x_1 \vert, \vert x_2 \vert, 
 <p align="center">
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/lp_norms_2d.png">
 </p>
+
+
