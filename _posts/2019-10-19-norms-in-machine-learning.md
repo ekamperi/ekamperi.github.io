@@ -12,7 +12,7 @@ is a function that accepts as input a vector from our vector space V and spits o
 number that tells us how big a vector is. In order for a function to quantify as a norm,
 it must first fulfill some properties, so that the results of this metrization process "make sense".
 These properties are the following. For all $$u, v$$ in the vector space $$V$$ and $$\alpha$$ in
-$$\mathbff{R}$$:
+$$\mathbb{R}$$:
 
 * $$\|v\| \ge 0$$ and $$\|v\| = 0 \Leftrightarrow v = 0$$ (positive/definite)
 * $$\alpha \in \mathbb{R}: \| \alpha v \| = \|\alpha\| \| v \|$$ (absolutely scalable)
