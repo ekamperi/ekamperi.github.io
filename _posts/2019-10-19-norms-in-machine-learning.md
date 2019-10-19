@@ -32,4 +32,4 @@ For $$p = 2$$, $$\ell_2 = \sqrt{x_1^2 + x_2^2 + \ldots + x_n^2}$$
 
 For $$p = 3$$, $$\ell_3 = \sqrt[3]{x_1^3 + x_2^3 + \ldots + x_n^3}$$
 
-For $$p \to \infty$$, $$\ell_\infty$$
+For $$p \to \infty$$, $$\ell_\infty = \max_i$$
