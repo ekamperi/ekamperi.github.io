@@ -9,8 +9,11 @@ tags: ['mathematics', 'neural networks']
 ### Introduction
 A vector space, known also as a linear space, is a collection of objects (the vectors),
 which may be added together and multiplied by some scalar (a number). In machine learning
-we use vectors all the time, for instance we have the *feature vectors* that are collections
-of numbers that we group them together.
+we use vectors all the time, for instance we have *feature vectors* that are collections
+of numbers that we group them together when representing an object. In image processing,
+the features' values may be the pixels of the image, so assuming a 128 x 128 grayscale image,
+you get a 16384 vector. Feature vectors are equivalent to the vectors of independent variables
+in linear regression, but usually are much larger.
 
 Informally, a norm is a function that accepts as input a vector from our vector space V and spits out a real
 number that tells us how big a vector is. In order for a function to quantify as a norm,
