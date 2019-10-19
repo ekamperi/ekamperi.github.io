@@ -26,7 +26,7 @@ Informally, a norm is a function that accepts as input a vector from our vector 
 One of the most widely known family of norms is the $$L^p$$ norm, which is defined as:
 
 $$
-\ell_p = \left( \sum_{i=1}^N |x_i|^p \right)^(1/p), \text{for } p \ge 1
+\ell_p = \left( \sum_{i=1}^N |x_i|^p \right)^{1/p}, \text{for } p \ge 1
 $$
 
 For $$p = 1$$ you get, $$\ell_1 = \vert x_1 \vert + \vert x_2 \vert + \ldots + \vert x_n \vert$$
