@@ -9,14 +9,18 @@ tags: ['mathematics', 'neural networks']
 ### Introduction
 A vector space, known also as a linear space, is a collection of objects (the vectors),
 which may be added together and multiplied by some scalar (a number). In machine learning
-we use vectors all the time, for instance we have *feature vectors* that are collections
-of numbers that we group them together when representing an object. In image processing,
-the features' values may be the pixels of the image, so assuming a $$128 \times 128$$ grayscale image,
-we get a $$16384$$ long vector. Feature vectors are equivalent to the vectors of independent variables
-(the $$x$$-s) in linear regression, but usually are much larger. Even the output of a machine learning
-model, say a neural network that is trained to identify hand-written digits, may be represented as
-an *output vector*, e.g. $$y = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]$$ for representing $$2$$ as the correct
-output.
+we use vectors all the time. Here are some examples:
+
+* *Feature vectors* that are collections of numbers that we group them together when representing
+an object. In image processing, the features' values may be the pixels of the image, so assuming a
+$$128 \times 128$$ grayscale image, we get a $$16384$$ long vector. Feature vectors are equivalent
+to the vectors of independent variables (the $$x$$-s) in linear regression, but usually are much larger.
+* The *output* of a machine learning model, say a neural network that is trained to identify hand-written
+digits, may be represented as a vector, e.g. $$y = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]$$ for representing $$2$$
+as the correct output.
+* The loss function, i.e. the function that tells us how good or how bad are predictions are, is the norm
+of a vector space. For instance, the mean squared error is $$\text{MSE} = \frac{1}{N} \sum_i (y_\text{true} - y_\text{predicted})^2$$,
+which is (as we shall see) the $\ell_2$$ norm of vectors $$y_\text{true} - y_\text{predicted}$$.
 
 Informally, a norm is a function that accepts as input a vector from our vector space V and spits out a real
 number that tells us how big a vector is. In order for a function to qualify as a norm,
