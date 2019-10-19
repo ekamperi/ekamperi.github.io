@@ -29,7 +29,7 @@ $$
 \ell_p = \left( \sum_{i=1}^N |x_i|^p \right)^{1/p}, \text{for } p \ge 1
 $$
 
-For $$p = 1$$ you get, $$\ell_1 = \vert x_1 \vert + \vert x_2 \vert + \ldots + \vert x_n \vert$$
+For $$p = 1$$, we get $$\ell_1 = \vert x_1 \vert + \vert x_2 \vert + \ldots + \vert x_n \vert$$
 
 For $$p = 2$$, $$\ell_2 = \sqrt{x_1^2 + x_2^2 + \ldots + x_n^2}$$
 
