@@ -7,30 +7,16 @@ tags: ['mathematics', 'neural networks']
 ---
 
 ### Introduction
-A vector space, known also as a linear space, is a collection of objects (the vectors),
-which may be added together and multiplied by some scalar (a number). In machine learning
-we use vectors all the time. Here are some examples:
+A vector space, known also as a linear space, is a collection of objects (the vectors), which may be added together and multiplied by some scalar (a number). In machine learning we use vectors all the time. Here are some examples:
 
-* *Feature vectors* that are collections of numbers that we group them together when representing
-an object. In image processing, the features' values may be the pixels of the image, so assuming a
-$$128 \times 128$$ grayscale image, we get a $$16384$$ long vector. Feature vectors are equivalent
-to the vectors of independent variables (the $$x$$-s) in linear regression, but usually are much larger.
-* The *output* of a machine learning model, say a neural network that is trained to identify hand-written
-digits, may be represented as a vector, e.g. $$y = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]^T$$ for representing $$2$$
-as the correct output. By the way this representation is called *one hot encoding* and the vector *one hot vector* :D
-* The *loss function*, i.e. the function that tells us how good or how bad are predictions are, is also
-directly related to the norm of a particular vector space. For example, the mean squared error is
-defined as $$\text{MSE} = \frac{1}{N} \sum_i (y_{\text{true,}i} - y_{\text{predicted,}i})^2$$, which (as we shall see)
-is connected to the $$\ell_2$$ norm of vectors $$y_i = y_{\text{true,}i} - y_{\text{predicted,}i}$$.
+* *Feature vectors* that are collections of numbers that we group them together when representing an object. In image processing, the features' values may be the pixels of the image, so assuming a 128 $$\times$$ 128 grayscale image, we get a 16384 long vector. Feature vectors are equivalent to the vectors of independent variables (the $$x$$-s) in linear regression, but usually are much larger.
+* The *output* of a machine learning model, say a neural network that is trained to identify hand-written digits, may be represented as a vector, e.g. $$y = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]^T$$ for representing "2" as the correct output. By the way this representation is called *one hot encoding* and the vector *one hot vector* :D
+* The *loss function*, i.e. the function that tells us how good or how bad are predictions are, is also directly related to the norm of a particular vector space. For example, the mean squared error is defined as $$\text{MSE} = \frac{1}{N} \sum_i (y_{\text{true,}i} - y_{\text{predicted,}i})^2$$, which (as we shall see) is connected to the $$\ell_2$$ norm of vectors $$y_i = y_{\text{true,}i} - y_{\text{predicted,}i}$$.
 
 Let's see what does it mean for a vector space to have a norm.
 
 ### Norms
-Informally, a norm is a function that accepts as input a vector from our vector space V and spits out a real
-number that tells us how big a vector is. In order for a function to qualify as a norm,
-it must first fulfill some properties, so that the results of this metrization process kind of
-"make sense". These properties are the following. For all $$u, v$$ in the vector space $$V$$
-and $$\alpha$$ in $$\mathbb{R}$$:
+Informally, a norm is a function that accepts as input a vector from our vector space $$V$$ and spits out a real number that tells us how big that vector is. In order for a function to qualify as a norm, it must first fulfill some properties, so that the results of this metrization process kind of "make sense". These properties are the following. For all $$u, v$$ in the vector space $$V$$ and $$\alpha$$ in $$\mathbb{R}$$:
 
 * $$\|v\| \ge 0$$ and $$\|v\| = 0 \Leftrightarrow v = 0$$ (positive/definite)
 * $$\| \alpha v \| = \|\alpha\| \| v \|$$ (absolutely scalable)
@@ -40,7 +26,7 @@ and $$\alpha$$ in $$\mathbb{R}$$:
 One of the most widely known family of norms is the $$L^p$$ norm, which is defined as:
 
 $$
-\ell_p = \left( \sum_{i=1}^N |x_i|^p \right)^2, \text{for } p \ge 1
+\ell_p = \left( \sum_{i=1}^N |x_i|^p \right)^(1/p), \text{for } p \ge 1
 $$
 
 For $$p = 1$$ you get, $$\ell_1 = \vert x_1 \vert + \vert x_2 \vert + \ldots + \vert x_n \vert$$
