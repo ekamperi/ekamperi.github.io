@@ -13,10 +13,9 @@ number that tells us how big a vector is. In order for a function to quantify as
 it must first fulfill some properties, so that the results of this "metrization" process make sense.
 These properties are the following:
 
- 1. $\forall u \in V: \|v\|\ge0$ and $\|v\| =0 \Leftrightarrow v=0$ (positive/definite)
- 2. $\forall u\in V, \alpha\in \mathbb{R}: \|\alpha v\| = |\alpha|\|v\|$ (absolutely scalable)
- 3. $\forall u,v\in V : \|u+v\| \le \|u\|+\|v\|$ (Triangle inequality)
-
+ 1. $$\forall u \in V: \|v\|\ge0$$ and $$\|v\| = 0 \Leftrightarrow v = 0$$ (positive/definite)
+ 2. $$\forall u\in V, \alpha\in \mathbb{R}: \|\alpha v\| = |\alpha|\|v\|$$ (absolutely scalable)
+ 3. $$\forall u,v\in V : \|u+v\| \le \|u\|+\|v\|$$ (Triangle inequality)
 
 $$
 \ell_p = \left( \sum_{i=1}^N |x_i|^p \right)^2, p \ge 1
