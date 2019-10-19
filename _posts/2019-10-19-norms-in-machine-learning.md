@@ -40,3 +40,6 @@ For $$p = 3$$, $$\ell_3 = \sqrt[3]{x_1^3 + x_2^3 + \ldots + x_n^3}$$
 
 For $$p \to \infty$$, $$\ell_\infty = \max_i (\vert x_1 \vert, \vert x_2 \vert, \ldots, \vert x_n \vert)$$
 
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/lp_norms_2d.png">
+</p>
