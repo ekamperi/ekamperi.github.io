@@ -22,8 +22,8 @@ Informally, a norm is a function that accepts as input a vector from our vector 
 * $$\| \alpha v \| = \|\alpha\| \| v \|$$ (absolutely scalable)
 * $$\|u+v\| \le \|u\|+\|v\|$$ (Triangle inequality)
 
-### The $$L^p$$ norm
-One of the most widely known family of norms is the $$L^p$$ norm, which is defined as:
+### The $$\ell_p$$ norm
+One of the most widely known family of norms is the $$\ell_p$$ norm, which is defined as:
 
 $$
 \ell_p = \left( \sum_{i=1}^N |x_i|^p \right)^{1/p}, \text{for } p \ge 1
@@ -37,7 +37,7 @@ For $$p = 3$$, $$\ell_3 = \sqrt[3]{\vert x_1 \vert ^3 + \vert x_2 \vert ^3 + \ld
 
 For $$p \to \infty$$, $$\ell_\infty = \max_i (\vert x_1 \vert, \vert x_2 \vert, \ldots, \vert x_n \vert)$$
 
-In the following image we can see the shape of the $$L^p$$ norm for various values of $$p$$. The vector space that we are operating is $$R^2$$, i.e. vectors with two components, $$x$$ and $$y$$. In specific, we see the boundary of $$\ell_p = 1$$.
+In the following image we can see the shape of the $$\ell_p$$ norm for various values of $$p$$. The vector space that we are operating is $$\mathbb{R}^2$$. In specific, we see the boundary of $$\ell_p = 1$$, i.e. all those vectors $$v = (x,y)$$ whose $$\ell_p$$ norm equals $$1$$.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/lp_norms_2d.png" alt="The lp norm for various values of p">
