@@ -23,13 +23,13 @@ and $$\alpha$$ in $$\mathbb{R}$$:
 One of the most widely known family of norms is the $$L^p$$ norm, which is defined as:
 
 $$
-\ell_p = \left( \sum_{i=1}^N |x_i|^p \right)^2, for p \ge 1
+\ell_p = \left( \sum_{i=1}^N |x_i|^p \right)^2, \text{for } p \ge 1
 $$
 
-For $$p = 1$$ you get, $$l_1 = x_1 + x_2 + \ldots + x_n$$
+For $$p = 1$$ you get, $$\ell_1 = x_1 + x_2 + \ldots + x_n$$
 
-For $$p = 2$$, $$l_2 = \sqrt{x_1^2 + x_2^2 + \ldots + x_n^2}$$
+For $$p = 2$$, $$\ell_2 = \sqrt{x_1^2 + x_2^2 + \ldots + x_n^2}$$
 
-For $$p = 3$$, $$l_3 = \sqrt[3]{x_1^3 + x_2^3 + \ldots + x_n^3}$$
+For $$p = 3$$, $$\ell_3 = \sqrt[3]{x_1^3 + x_2^3 + \ldots + x_n^3}$$
 
-For $$l_\infty = \max_i(|x_1|, |x_2|, \ldots, |x_n|)$$
+For $$\ell_\infty = \max_i(|x_1|, |x_2|, \ldots, |x_n|)$$
