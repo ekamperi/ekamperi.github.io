@@ -40,7 +40,7 @@ For $$p \to \infty$$, $$\ell_\infty = \max_i (\vert x_1 \vert, \vert x_2 \vert, 
 Every $$\ell_p$$ attaches a different "size" in vectors and the question on what's the best norm to use, depends on the problem you solving. For example if you are building a model that wants to minimize the distance between two places in Manhattan distance, then using the $$\ell_1$$ norm would make more sense than $$\ell_2$$.
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/manhattan_distance.jpg" alt="Example of Manhattan distance and Euclidean distance">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/manhattan_distance.jpg" alt="Example of Manhattan distance and Euclidean distance">
 </p>
 
 In the following image we can see the shape of the $$\ell_p$$ norm for various values of $$p$$. The vector space that we are operating is $$\mathbb{R}^2$$. In specific, we see the boundary of $$\ell_p = 1$$, i.e. all those vectors $$v = (x,y)$$ whose $$\ell_p$$ norm equals $$1$$.
