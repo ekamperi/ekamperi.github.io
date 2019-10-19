@@ -70,3 +70,11 @@ $$
 $$
 
 If you expand the squares and simplify the inequality, you will end up in a false statement.
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/lp_norms_optimization.png" alt="The lp norm for various values of p in three dimensions">
+</p>
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/lp_norms_optimization_2.png" alt="The lp norm for various values of p in three dimensions">
+</p>
