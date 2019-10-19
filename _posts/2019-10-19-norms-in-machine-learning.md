@@ -20,7 +20,7 @@ digits, may be represented as a vector, e.g. $$y = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0
 as the correct output.
 * The loss function, i.e. the function that tells us how good or how bad are predictions are, is the norm
 of a vector space. For instance, the mean squared error is $$\text{MSE} = \frac{1}{N} \sum_i (y_\text{true} - y_\text{predicted})^2$$,
-which is (as we shall see) the $\ell_2$$ norm of vectors $$y_\text{true} - y_\text{predicted}$$.
+which is (as we shall see) the $$\ell_2$$ norm of vectors $$y_\text{true} - y_\text{predicted}$$.
 
 Informally, a norm is a function that accepts as input a vector from our vector space V and spits out a real
 number that tells us how big a vector is. In order for a function to qualify as a norm,
