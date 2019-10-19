@@ -48,13 +48,19 @@ Image taken from quora.com.
 In the following image we can see the shape of the $$\ell_p$$ norm for various values of $$p$$. The vector space that we are operating is $$\mathbb{R}^2$$. In specific, we see the boundary of $$\ell_p = 1$$, i.e. all those vectors $$v = (x,y)$$ whose $$\ell_p$$ norm equals $$1$$.
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/lp_norms_2d.png" alt="The lp norm for various values of p">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/lp_norms_2d.png" alt="The lp norm for various values of p in two dimensions">
 </p>
 
-And these are two boundaries for $$\ell_p = 1$$ and $$\ell_p = 2$$.
+These are two boundaries for $$\ell_p = 1$$ and $$\ell_p = 2$$.
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/lp_norms_2d_2.png" alt="The lp norm for various values of p">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/lp_norms_2d_2.png" alt="The lp norm for various values of p in two dimensions">
+</p>
+
+And this is the boundary for $$\ell_p = 1$$ in $$\mathbb{R}^3$$, that is the set of all $$(x,y,z)$$ points for which the vector $$v = (x,y,z)$$ has an $$\ell_p$$ equal to 1.
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/lp_norms_3d.png" alt="The lp norm for various values of p in three dimensions">
 </p>
 
 At this point the careful reader might have noticed that $$p$$ should be a real number greater than or equal to 1. So is $$\ell_{1/2}$$ a norm? The answer is no, because it violates the triangle equality. Let $$u = (x_1, y_1), v = (x_2, y_2)$$ then $$u+v=(x_1+x_2, y_1+y_2)$$.
@@ -64,4 +70,3 @@ $$
 $$
 
 If you expand the squares and simplify the inequality, you will end up in a false statement.
-
