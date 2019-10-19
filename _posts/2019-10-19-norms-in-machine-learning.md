@@ -13,7 +13,7 @@ we use vectors all the time, for instance we have *feature vectors* that are col
 of numbers that we group them together when representing an object. In image processing,
 the features' values may be the pixels of the image, so assuming a $$128 \times 128$$ grayscale image,
 we get a $$16384$$ long vector. Feature vectors are equivalent to the vectors of independent variables
-(the $x$-s$) in linear regression, but usually are much larger. Even the output of a machine learning
+(the $$x$$-s) in linear regression, but usually are much larger. Even the output of a machine learning
 model, say a neural network that is trained to identify hand-written digits, may be represented as
 an *output vector*, e.g. $$y = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]$$ for representing $$2$$ as the correct
 output.
