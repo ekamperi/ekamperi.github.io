@@ -19,7 +19,7 @@ $$\mathbb{R}$$:
 * $$\| \alpha v \| = \|\alpha\| \| v \|$$ (absolutely scalable)
 * $$\|u+v\| \le \|u\|+\|v\|$$ (Triangle inequality)
 
-### The L^p norm
+### The $$L^p$$ norm
 One of the most widely known family of norms is the $$L^p$$ norm, which is defined as:
 $$
 \ell_p = \left( \sum_{i=1}^N |x_i|^p \right)^2, p \ge 1
