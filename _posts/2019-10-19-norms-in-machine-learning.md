@@ -6,6 +6,7 @@ categories: [machine learning]
 tags: ['mathematics', 'neural networks']
 ---
 
+### Introduction
 A vector space, known also as a linear space, is a collection of objects (the vectors),
 which may be added together and multiplied by some scalar (a number). Informally, a norm
 is a function that accepts as input a vector from our vector space V and spits out a real
@@ -18,17 +19,15 @@ $$\mathbb{R}$$:
 * $$\| \alpha v \| = \|\alpha\| \| v \|$$ (absolutely scalable)
 * $$\|u+v\| \le \|u\|+\|v\|$$ (Triangle inequality)
 
+### The L^p norm
+One of the most widely known family of norms is the $$L^p$$ norm, which is defined as:
 $$
 \ell_p = \left( \sum_{i=1}^N |x_i|^p \right)^2, p \ge 1
 $$
 
-$$
-l_1 = x_1 + x_2 + \ldots + x_n
-$$
+For $$p = 1$$ you get, $$l_1 = x_1 + x_2 + \ldots + x_n$$
 
-$$
-l_2 = \sqrt{x_1^2 + x_2^2 + \ldots + x_n^2}
-$$
+For $$p = 2$$, $$l_2 = \sqrt{x_1^2 + x_2^2 + \ldots + x_n^2}$$
 
 $$
 l_3 = \sqrt[3]{x_1^3 + x_2^3 + \ldots + x_n^3}
