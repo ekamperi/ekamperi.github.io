@@ -15,7 +15,7 @@ These properties are the following. For all $$u, v$$ in the vector space $$V$$ a
 $$\mathbb{R}$$:
 
 * $$\|v\| \ge 0$$ and $$\|v\| = 0 \Leftrightarrow v = 0$$ (positive/definite)
-* $$\alpha \in \mathbb{R}: \| \alpha v \| = \|\alpha\| \| v \|$$ (absolutely scalable)
+* $$\| \alpha v \| = \|\alpha\| \| v \|$$ (absolutely scalable)
 * $$\|u+v\| \le \|u\|+\|v\|$$ (Triangle inequality)
 
 $$
