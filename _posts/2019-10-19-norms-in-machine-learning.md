@@ -19,7 +19,9 @@ to the vectors of independent variables (the $$x$$-s) in linear regression, but 
 digits, may be represented as a vector, e.g. $$y = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]$$ for representing $$2$$
 as the correct output.
 * The *loss function*, i.e. the function that tells us how good or how bad are predictions are, is also
-the norm of a particular vector space. For example, the mean squared error is $$\text{MSE} = \frac{1}{N} \sum_i (y_\text{true} - y_\text{predicted})^2$$, which (as we shall see) is the $$\ell_2$$ norm of vectors $$y_\text{true} - y_\text{predicted}$$.
+directly related to the norm of a particular vector space. For example, the mean squared error is
+defined as $$\text{MSE} = \frac{1}{N} \sum_i (y_\text{true}_i - y_\text{predicted}_i)^2$$, which (as we shall see)
+is connected to the $$\ell_2$$ norm of vectors $$y_i = y_\text{true}_i - y_\text{predicted}_i$$.
 
 Informally, a norm is a function that accepts as input a vector from our vector space V and spits out a real
 number that tells us how big a vector is. In order for a function to qualify as a norm,
