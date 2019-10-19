@@ -18,9 +18,9 @@ Let's see what does it mean for a vector space to have a norm.
 ### Norms
 Informally, a norm is a function that accepts as input a vector from our vector space $$V$$ and spits out a real number that tells us how big that vector is. In order for a function to qualify as a norm, it must first fulfill some properties, so that the results of this metrization process kind of "make sense". These properties are the following. For all $$u, v$$ in the vector space $$V$$ and $$\alpha$$ in $$\mathbb{R}$$:
 
-* $$\|v\| \ge 0$$ and $$\|v\| = 0 \Leftrightarrow v = 0$$ (positive/definite)
+* $$\|v\| \ge 0$$ and $$\|v\| = 0 \Leftrightarrow v = 0$$ (positive / definite)
 * $$\| \alpha v \| = \|\alpha\| \| v \|$$ (absolutely scalable)
-* $$\|u+v\| \le \|u\|+\|v\|$$ (Triangle inequality)
+* $$\|u+v\| \le \|u\|+\|v\|$$ (triangle inequality)
 
 ### The $$\ell_p$$ norm
 One of the most widely known family of norms is the $$\ell_p$$ norm, which is defined as:
@@ -37,7 +37,7 @@ For $$p = 3$$, $$\ell_3 = \sqrt[3]{\vert x_1 \vert ^3 + \vert x_2 \vert ^3 + \ld
 
 For $$p \to \infty$$, $$\ell_\infty = \max_i (\vert x_1 \vert, \vert x_2 \vert, \ldots, \vert x_n \vert)$$
 
-Every $$\ell_p$$ attaches a different "size" in vectors and the answer to the question on what's the best norm to use, depends on the problem you are solving. For example, if you are building an application for taxi drivers in Manhattan that needs the minimal distance between two places, then using the $$\ell_1$$ norm would make more sense than $$\ell_2$$.
+Every $$\ell_p$$ attaches a different "size" in vectors and the answer to the question on what's the best $$\ell_p$$ norm to use, depends on the problem you are solving. For example, if you are building an application for taxi drivers in Manhattan that needs the minimal distance between two places, then using the $$\ell_1$$ norm (purple) would make more sense than $$\ell_2$$ (green).
 
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/manhattan_distance.jpg" alt="Example of Manhattan distance and Euclidean distance">
