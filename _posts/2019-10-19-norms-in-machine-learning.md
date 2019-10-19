@@ -72,7 +72,7 @@ $$
 If you expand the squares and simplify the inequality, you will end up in a false statement.
 
 ### Connection with optimization
-Suppose that we would like to minimize $${\vert x \vert}_p$$ subject to the constraint $$5x + 6y = 7$$.
+Suppose that we would like to minimize $${\vert x \vert}_p$$ subject to the constraint $$5x + 6y = 7$$, for various values of $$p$$. We would start from the center of the axis and we would "blow up" until the boundary of our norm intersects with the line $$5x + 6y = 7$$. As you can see from the following pictures, for different norms, the optimal point in $$\mathbb{R}$$ is different.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/lp_norms_optimization.png" alt="The lp norm for various values of p in three dimensions">
