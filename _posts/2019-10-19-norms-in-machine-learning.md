@@ -16,7 +16,7 @@ you get a 16384 vector. Feature vectors are equivalent to the vectors of indepen
 in linear regression, but usually are much larger.
 
 Informally, a norm is a function that accepts as input a vector from our vector space V and spits out a real
-number that tells us how big a vector is. In order for a function to quantify as a norm,
+number that tells us how big a vector is. In order for a function to qualify as a norm,
 it must first fulfill some properties, so that the results of this metrization process kind of
 "make sense". These properties are the following. For all $$u, v$$ in the vector space $$V$$
 and $$\alpha$$ in $$\mathbb{R}$$:
