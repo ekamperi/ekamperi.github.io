@@ -8,8 +8,11 @@ tags: ['mathematics', 'neural networks']
 
 ### Introduction
 A vector space, known also as a linear space, is a collection of objects (the vectors),
-which may be added together and multiplied by some scalar (a number). Informally, a norm
-is a function that accepts as input a vector from our vector space V and spits out a real
+which may be added together and multiplied by some scalar (a number). In machine learning
+we use vectors all the time, for instance we have the *feature vectors*, i.e. a collection
+of numbers for each property that we group them together.
+
+Informally, a norm is a function that accepts as input a vector from our vector space V and spits out a real
 number that tells us how big a vector is. In order for a function to quantify as a norm,
 it must first fulfill some properties, so that the results of this metrization process kind of
 "make sense". These properties are the following. For all $$u, v$$ in the vector space $$V$$
