@@ -37,8 +37,7 @@ For $$p = 3$$, $$\ell_3 = \sqrt[3]{\vert x_1 \vert ^3 + \vert x_2 \vert ^3 + \ld
 
 For $$p \to \infty$$, $$\ell_\infty = \max_i (\vert x_1 \vert, \vert x_2 \vert, \ldots, \vert x_n \vert)$$
 
-In the following image we can see the shape of the $$L^p$$ norm for various values of $$p$$. The vector space
-that we are operating is $$R^2$$, i.e. vectors with two components, $$x$$ and $$y$$.
+In the following image we can see the shape of the $$L^p$$ norm for various values of $$p$$. The vector space that we are operating is $$R^2$$, i.e. vectors with two components, $$x$$ and $$y$$. In specific, we see the boundary of $$\ell_p = 1$$.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/lp_norms_2d.png" alt="The lp norm for various values of p">
