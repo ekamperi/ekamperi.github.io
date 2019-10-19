@@ -11,10 +11,10 @@ which may be added together and multiplied by some scalar (a number). Informally
 is a function that accepts as input a vector from our vector space V and spits out a real
 number that tells us how big a vector is. In order for a function to quantify as a norm,
 it must first fulfill some properties, so that the results of this metrization process "make sense".
-These properties are the following:
+These properties are the following.
 
 * $$\forall u   \in V: \|v\| \ge 0$$ and $$\|v\| = 0 \Leftrightarrow v = 0$$ (positive/definite)
-* $$\forall u   \in V, \alpha \in \mathbb{R}: \| \alpha v \| = \|\alpha\| \| v \|$$ (absolutely scalable)
+* $$\forall u   \in V, \alpha \in \mathbb{R}:$$
 * $$\forall u, v\in V: \|u+v\| \le \|u\|+\|v\|$$ (Triangle inequality)
 
 $$
