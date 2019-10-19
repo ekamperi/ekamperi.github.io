@@ -16,8 +16,8 @@ an object. In image processing, the features' values may be the pixels of the im
 $$128 \times 128$$ grayscale image, we get a $$16384$$ long vector. Feature vectors are equivalent
 to the vectors of independent variables (the $$x$$-s) in linear regression, but usually are much larger.
 * The *output* of a machine learning model, say a neural network that is trained to identify hand-written
-digits, may be represented as a vector, e.g. $$y = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]$$ for representing $$2$$
-as the correct output.
+digits, may be represented as a vector, e.g. $$y = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]^T$$ for representing $$2$$
+as the correct output. By the way this representation is called *one hot encoding* and the vector *one hot vector" :D
 * The *loss function*, i.e. the function that tells us how good or how bad are predictions are, is also
 directly related to the norm of a particular vector space. For example, the mean squared error is
 defined as $$\text{MSE} = \frac{1}{N} \sum_i (y_{\text{true,}i} - y_{\text{predicted,}i})^2$$, which (as we shall see)
