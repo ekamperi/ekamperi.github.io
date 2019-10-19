@@ -23,6 +23,9 @@ directly related to the norm of a particular vector space. For example, the mean
 defined as $$\text{MSE} = \frac{1}{N} \sum_i (y_{\text{true,}i} - y_{\text{predicted,}i})^2$$, which (as we shall see)
 is connected to the $$\ell_2$$ norm of vectors $$y_i = y_{\text{true,}i} - y_{\text{predicted,}i}$$.
 
+Let's see what does it mean for a vector space to have a norm.
+
+### Norms
 Informally, a norm is a function that accepts as input a vector from our vector space V and spits out a real
 number that tells us how big a vector is. In order for a function to qualify as a norm,
 it must first fulfill some properties, so that the results of this metrization process kind of
