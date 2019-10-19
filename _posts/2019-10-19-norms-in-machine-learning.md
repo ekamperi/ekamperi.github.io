@@ -16,13 +16,14 @@ A vector space, known also as a linear space, is a collection of objects (the ve
 Let's see what does it mean for a vector space to have a norm.
 
 ### Norms
+#### Properties
 Informally, a norm is a function that accepts as input a vector from our vector space $$V$$ and spits out a real number that tells us how big that vector is. In order for a function to qualify as a norm, it must first fulfill some properties, so that the results of this metrization process kind of "make sense". These properties are the following. For all $$u, v$$ in the vector space $$V$$ and $$\alpha$$ in $$\mathbb{R}$$:
 
 * $$\|v\| \ge 0$$ and $$\|v\| = 0 \Leftrightarrow v = 0$$ (positive / definite)
 * $$\| \alpha v \| = \|\alpha\| \| v \|$$ (absolutely scalable)
 * $$\|u+v\| \le \|u\|+\|v\|$$ (triangle inequality)
 
-### The $$\ell_p$$ norm
+#### The $$\ell_p$$ norm
 One of the most widely known family of norms is the $$\ell_p$$ norm, which is defined as:
 
 $$
@@ -50,6 +51,12 @@ In the following image we can see the shape of the $$\ell_p$$ norm for various v
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/lp_norms_2d.png" alt="The lp norm for various values of p">
 </p>
 
+And these are two boundaries for $$\ell_p = 1$$ and $$\ell_p = 2$$.
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/lp_norms_2d_2.png" alt="The lp norm for various values of p">
+</p>
+
 At this point the careful reader might have noticed that $$p$$ should be a real number greater than or equal to 1. So is $$\ell_{1/2}$$ a norm? The answer is no, because it violates the triangle equality. Let $$u = (x_1, y_1), v = (x_2, y_2)$$ then $$u+v=(x_1+x_2, y_1+y_2)$$.
 
 $$
@@ -57,3 +64,4 @@ $$
 $$
 
 If you expand the squares and simplify the inequality, you will end up in a false statement.
+
