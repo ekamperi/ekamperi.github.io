@@ -85,7 +85,7 @@ $$
 We could an $$\ell_1$$ penalty term:
 
 $$
-J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} + \underbrace{\lambda \sum_{i=1}^N w_i}_{\ell_1\text{ penalty}}
+J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} + \underbrace{\lambda \sum_{i=1}^N \lVert w_i \rVert}_{\ell_1\text{ penalty}}
 $$
 
 #### Feature selection
