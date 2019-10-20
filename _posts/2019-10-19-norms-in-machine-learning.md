@@ -119,4 +119,5 @@ And here are the same graphs superimposed.
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/lp_norms_optimization_2.png" alt="The lp norm for various values of p in three dimensions">
 </p>
 
-Οur optimization constraint (the line $$5x + 6y = 7$$) intersects with our optimization objective *always on the x or y axis*. I hope it is evident now how $$\ell_1$$ regularization forces some of the model's parameters to become zero.
+Οur optimization constraint (the line $$5x + 6y = 7$$) intersects with our optimization objective (minimization of the $$\lVert w \rVert_1$$ norm on the $$y$$ axis. I hope it is evident now how $$\ell_1$$ regularization forces some of the model's parameters to become zero, due to the geometry of the $$\ell_1$$ norm.
+
