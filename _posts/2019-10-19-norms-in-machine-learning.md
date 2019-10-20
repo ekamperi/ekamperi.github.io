@@ -11,8 +11,8 @@ A vector space, known also as a linear space, is a collection of objects (the ve
 
 * *Feature vectors* that are collections of numbers that we group them together when representing an object. In image processing, the features' values may be the pixels of the image, so assuming a 128 $$\times$$ 128 grayscale image, we get a 16384 long vector. Feature vectors are equivalent to the vectors of independent variables (the $$x$$-s) in linear regression, but usually are much larger.
 * The *output* of a machine learning model, say a neural network that is trained to identify hand-written digits, may be represented as a vector, e.g. $$y = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]^T$$ for representing "2" as the correct output. By the way this representation is called *one hot encoding* and the vector *one hot vector* :D
-* The *loss function*, i.e. the function that tells us how good or how bad are predictions are, is also directly related to the norm of a particular vector space. For example, the mean squared error is defined as $$\text{MSE} = \frac{1}{N} \sum_i (y_{\text{true,}i} - y_{\text{predicted,}i})^2$$, which (as we shall see) is connected to the $$\ell_2$$ norm of vectors $$y_i = y_{\text{true,}i} - y_{\text{predicted,}i}$$.
-* The parameters of a model, say the weights of a neural network, can be thought as a long vector $$w$$. This representation is useful when we apply *regularization* during the training of the network, so that we keep the coefficients of the model small (or, some of them, zero), rendering the model less complex than it ought to be.
+* The [*loss function*](https://en.wikipedia.org/wiki/Loss_function), i.e. the function that tells us how good or how bad are predictions are, is also directly related to the norm of a particular vector space. For example, the [mean squared error] (https://en.wikipedia.org/wiki/Mean_squared_error) is defined as $$\text{MSE} = \frac{1}{N} \sum_i (y_{\text{true,}i} - y_{\text{predicted,}i})^2$$, which (as we shall see) is connected to the $$\ell_2$$ norm of vectors $$y_i = y_{\text{true,}i} - y_{\text{predicted,}i}$$.
+* The parameters of a model, say the weights of a neural network, can be thought as a long vector $$w$$. This representation is useful when we apply [*regularization*](https://en.wikipedia.org/wiki/Mean_squared_error) during the training of the network, so that we keep the coefficients of the model small (or, some of them, zero), rendering the model less complex than it ought to be.
 
 Let's see what does it mean for a vector space to have a norm.
 
@@ -76,7 +76,7 @@ If you expand the squares and simplify the inequality, you will end up in a fals
 
 In statistical regression or machine learning, we regularly penalize either the $$\ell_1$$ norm of a solution's vector of parameter values or its $$\ell_2$$. Techniques that use the former penalty, like LASSO, encourage solutions where many of model's parameters are assigned to zero. Techniques which use an $$\ell_2$$ penalty, like ridge regression, encourage solutions where most parameter values are small (but not necessarily zero). Elastic net regularization uses a penalty term that is a combination of the $$\ell_1$$ norm and the $$\ell_2$$ norm of the parameter vector.
 
-Suppose that we are training a neural network model to read hand written digits and we are using a loss (or cost function) $$J$$:
+Suppose that we are training a neural network model to read [hand written digits](https://en.wikipedia.org/wiki/MNIST_database) and we are using a loss (or cost function) $$J$$:
 
 $$
 J = \text{MSE} = \frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2
@@ -85,13 +85,19 @@ $$
 We could add $$\ell_1$$ penalty term:
 
 $$
-J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} + \underbrace{\lambda \sum_{i=1}^N \vert w_i \vert}_{\ell_1\text{ penalty}}
+J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} + \underbrace{\lambda \sum_{i=1}^N \vert w_i \vert}_{\lVert w\rVert_1 \text{ penalty}}
 $$
 
 Or we could add $$\ell_2$$ penalty term:
 
 $$
-J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} + \underbrace{\lambda \sum_{i=1}^N {\vert w_i \vert}^2}_{\ell_2\text{ penalty}}
+J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} + \underbrace{\lambda \sum_{i=1}^N {\vert w_i \vert}^2}_{\lVert w \rVert_2^2 \text{ penalty}}
+$$
+
+In elastic regularization, we use a combination of $$\ell_1$$ and $$\ell_2$$ penalty:
+\underbrace{
+$$
+J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} +\underbrace{\lambda \left[\alpha \sum_{i=1}^N {\vert w_i \vert} + (1-\alpha) \sum_{i=1}^N {\vert w_i \vert}^2 \right]}_{\text{Combined } \lVert w \rVert_1 \text { and } \lVert w \rVert_2^2}
 $$
 
 #### Feature selection
