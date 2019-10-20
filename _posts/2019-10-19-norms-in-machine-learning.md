@@ -6,6 +6,12 @@ categories: [machine learning]
 tags: ['mathematics', 'neural networks']
 ---
 
+### Contents
+{:.no_toc}
+
+* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
+{:toc}
+
 ### Introduction
 A vector space, known also as a linear space, is a collection of objects (the vectors), which may be added together and multiplied by some scalar (a number). In machine learning we use vectors all the time. Here are some examples:
 
