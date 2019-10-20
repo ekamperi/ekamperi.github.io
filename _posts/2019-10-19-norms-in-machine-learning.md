@@ -3,7 +3,7 @@ layout: post
 title:  "Norms and machine learning"
 date:   2019-10-19
 categories: [machine learning]
-tags: ['mathematics', 'neural networks']
+tags: ['mathematics', 'neural networks', 'optimization', 'regression']
 ---
 
 ### Contents
