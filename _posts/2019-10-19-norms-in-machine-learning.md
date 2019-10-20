@@ -127,6 +127,6 @@ The notion of convexity is the subject of an entire subfield of mathematics. Con
 
 Now, the very definition of a norm implies that a norm is always a convex function. Let $$ f = \lVert \cdot \rVert $$, then:
 
-$$\underbrace{\|\alpha v+(1-\alpha)w\| \le \|\alpha v\|+\|(1-\alpha)w\|}_\text{triangle inequality} = \underbrace{\alpha\|v\|}_\text{scalability}+(1- \alpha)\|w\|$$
+$$\underbrace{\|\alpha v+(1-\alpha)w\| \le \|\alpha v\|+\|(1-\alpha)w\|}_\text{triangle inequality} = \underbrace{\alpha\|v\|+(1- \alpha)\|w\|}_\text{scalability}$$
 
 So, by using a cost function that happens to be the norm of a vector space, we end up with a convex optimization function that behaves very well. Also, adding a penalty term from, say, $$\ell_p$$ norm *preserves* the convexity of the cost function (assuming it was convex before, obviously). Because the sum of two convex functions is also a convex function. 
