@@ -82,10 +82,16 @@ $$
 J = \text{MSE} = \frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2
 $$
 
-We could an $$\ell_1$$ penalty term:
+We could add $$\ell_1$$ penalty term:
 
 $$
 J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} + \underbrace{\lambda \sum_{i=1}^N \vert w_i \vert}_{\ell_1\text{ penalty}}
+$$
+
+Or we could add $$\ell_1$$ penalty term:
+
+$$
+J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} + \underbrace{\lambda \sum_{i=1}^N \vert w_i \vert}^2_{\ell_2\text{ penalty}}
 $$
 
 #### Feature selection
