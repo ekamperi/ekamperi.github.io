@@ -121,3 +121,15 @@ And here are the same graphs superimposed.
 
 Οur optimization constraint (the line $$5x + 6y = 7$$) intersects with our optimization objective (minimization of the $$\lVert w \rVert_1$$ norm on the $$y$$ axis. I hope it is evident now how $$\ell_1$$ regularization forces some of the model's parameters to become zero, due to the geometry of the $$\ell_1$$ norm.
 
+#### Convexity of the norms
+
+The notion of convexity is the subject of an entire subfield of mathematics. Convex functions have this nice property (optimization-wise) that any local minimum is also a global minimum. A function $$f$$ is called *convex* if $$\forall x_1, x_2 \in \mathrm{dom}(f), \forall \alpha \in [0, 1]: \qquad f(\alpha x_1+(1-\alpha)x_2)\leq \alpha f(x_1)+(1-\alpha)f(x_2)$$
+
+Now, the very definition of a norm implies that a norm is always a convex function:
+
+$$\underbrace{\|\alpha v+(1-\alpha)w\| \le \|\alpha v\|+\|(1-\alpha)w\|}_\text{triangle inequality} = \underbrace{\alpha\|v\|}_\text{scalability}+(1- \alpha)\|w\|$$
+
+So using a cost function that happens to be the norm of a vector space we end up with a convex optimization function that behaves very well. Also, adding a penalty term from, say, $$\ell_p$$ norm *preserves* the convexity of the cost function (assuming it was convex without the penalty, obviously).
+
+What’s even more important than that, is that
+due to the convex nature of the feasible set of the problem, any local optimum is also the global optimum
