@@ -123,7 +123,7 @@ And here are the same graphs superimposed.
 
 #### Convexity of the norms
 
-The notion of convexity is the subject of an entire subfield of mathematics. Convex functions have this nice property (optimization-wise) that any local minimum is also a global minimum. A function $$f$$ is called *convex* if $$\forall x_1, x_2 \in \mathrm{dom}(f), \forall \alpha \in [0, 1]: \qquad f(\alpha x_1+(1-\alpha)x_2)\leq \alpha f(x_1)+(1-\alpha)f(x_2)$$
+The notion of convexity is the subject of an entire subfield of mathematics. Convex functions have this nice property (optimization-wise) that any local minimum is also a global minimum. A function $$f$$ is called *convex* if $$\forall x_1, x_2 \in \mathrm{dom}(f), \forall \alpha \in [0, 1]: \quad f(\alpha x_1+(1-\alpha)x_2)\leq \alpha f(x_1)+(1-\alpha)f(x_2)$$
 
 <p align="center">
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/convex_vs_non_convex.png" alt="Convex vs non-convex function">
