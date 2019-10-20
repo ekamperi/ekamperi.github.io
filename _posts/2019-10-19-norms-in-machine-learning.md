@@ -82,13 +82,15 @@ $$
 J = \text{MSE} = \frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2
 $$
 
-We could add $$\ell_1$$ penalty term:
+We could add an $$\ell_1$$ penalty term:
 
 $$
 J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} + \underbrace{\lambda \sum_{i=1}^N \vert w_i \vert}_{\lVert w\rVert_1 \text{ penalty}}
 $$
 
-Or we could add $$\ell_2$$ penalty term:
+The [hyperparameter](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)) is controlling how large penalty we impose on the cost function. If $$\lambda$ is large, then the model's parameters $$w_i$$ must pushed towards zero, so that the product $$\lambda \lVert w \rVert_1$$ is minimized. On the other hand, if $$\lambda$$ is already small, then the penalty is relaxed.
+
+Or we could add an $$\ell_2$$ penalty term:
 
 $$
 J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} + \underbrace{\lambda \sum_{i=1}^N {\vert w_i \vert}^2}_{\lVert w \rVert_2^2 \text{ penalty}}
@@ -99,6 +101,8 @@ In elastic regularization, we use a combination of $$\ell_1$$ and $$\ell_2$$ pen
 $$
 J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} +\underbrace{\lambda \left[\alpha \sum_{i=1}^N {\vert w_i \vert} + (1-\alpha) \sum_{i=1}^N {\vert w_i \vert}^2 \right]}_{\text{Combined } \lVert w \rVert_1 \text { and } \lVert w \rVert_2^2}
 $$
+
+With the hyperparameter $$\alpha \in [0,1]$$ controlling how much of one versus the other we use in he mixing.
 
 #### Feature selection
 Suppose that we would like to minimize $${\lVert x \rVert}_p$$ subject to the constraint $$5x + 6y = 7$$, for various values of $$p$$. We would start from the center of the axes and we would "blow up" our norm until its boundary intersected with the line $$5x + 6y = 7$$. As you can see from the following pictures, for different norms, the optimal point in $$\mathbb{R}^2$$ is different.
