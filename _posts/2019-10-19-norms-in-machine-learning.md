@@ -70,10 +70,10 @@ And this is the boundary for $$\ell_p = 1$$ in $$\mathbb{R}^3$$, that is the set
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/lp_norms_3d.png" alt="The lp norm for various values of p in three dimensions">
 </p>
 
-At this point the careful reader might have noticed that $$p$$ should be a real number greater than or equal to 1. So is $$\ell_{1/2}$$ a norm? The answer is no, because it violates the triangle equality. Let $$u = (x_1, y_1), v = (x_2, y_2)$$ then $$u+v=(x_1+x_2, y_1+y_2)$$.
+At this point the careful reader might have noticed that $$p$$ should be a real number greater than or equal to 1. So is $$\ell_{1/2}$$ a norm? The answer is no, because it violates the triangle equality. Let $$v = (x_1, y_1), w = (x_2, y_2)$$ then $$v+w=(x_1+x_2, y_1+y_2)$$.
 
 $$
-\|u+v\| \le \|u\|+\|v\| \Leftrightarrow \left(\sqrt{x_1+x_2} + \sqrt{y_1+y_2} \right)^2 \le \left(\sqrt{x_1} + \sqrt{y_1}\right)^2 + \left( \sqrt{x2} + \sqrt{y_2}\right)^2
+\|v+w\| \le \|v\|+\|w\| \Leftrightarrow \left(\sqrt{x_1+x_2} + \sqrt{y_1+y_2} \right)^2 \le \left(\sqrt{x_1} + \sqrt{y_1}\right)^2 + \left( \sqrt{x2} + \sqrt{y_2}\right)^2
 $$
 
 If you expand the squares and simplify the inequality, you will end up in a false statement.
