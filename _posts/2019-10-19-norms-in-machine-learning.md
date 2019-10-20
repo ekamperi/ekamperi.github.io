@@ -90,7 +90,7 @@ $$
 J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} + \underbrace{\lambda \sum_{i=1}^N \vert w_i \vert}_{\lVert w\rVert_1 \text{ penalty}}
 $$
 
-The [hyperparameter](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)) is controlling how large penalty we impose on the cost function. If $$\lambda$$ is large, then the model's parameters $$w_i$$ must pushed towards zero, so that the product $$\lambda \lVert w \rVert_1$$ is minimized. On the other hand, if $$\lambda$$ is already small, then the penalty is relaxed.
+The [hyperparameter](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)) $$\lambda$$ is controlling how large penalty we impose on the cost function. If $$\lambda$$ is large, then the model's parameters $$w_i$$ must pushed towards zero, so that the product $$\lambda \lVert w \rVert_1$$ is minimized. On the other hand, if $$\lambda$$ is already small, then the penalty is relaxed.
 
 Or we could add an $$\ell_2$$ penalty term:
 
@@ -119,7 +119,7 @@ And here are the same graphs superimposed.
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/lp_norms_optimization_2.png" alt="The lp norm for various values of p in three dimensions">
 </p>
 
-Οur optimization constraint (the line $$5x + 6y = 7$$) intersects with our optimization objective (minimization of the $$\lVert w \rVert_1$$ norm on the $$y$$ axis. I hope it is evident now how $$\ell_1$$ regularization forces some of the model's parameters to become zero, due to the geometry of the $$\ell_1$$ norm.
+Οur optimization constraint (the line $$5x + 6y = 7$$) intersects with our optimization objective (minimization of the $$\lVert w \rVert_1$$ norm) on the $$y$$ axis. I hope it is evident now how $$\ell_1$$ regularization forces some of the model's parameters to become zero, due to the geometry of the $$\ell_1$$ norm.
 
 #### Convexity of the norms
 
