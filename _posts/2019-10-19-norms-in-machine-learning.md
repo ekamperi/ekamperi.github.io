@@ -73,8 +73,10 @@ $$
 If you expand the squares and simplify the inequality, you will end up in a false statement.
 
 ### Connection with optimization
+We will see two applications of norms in machine learning, regularization and feature selection. Though the latter is a speciar case of regularization that is optimized for generating sparse solutions.
+
 #### Regularization
-In statistical regression or machine learning, we regularly (:D) penalize either the $$\ell_1$$ norm of a solution's vector of parameter values or its $$\ell_2$$. Techniques that use the former penalty, like [LASSO](https://en.wikipedia.org/wiki/Lasso_(statistics)), encourage solutions where many of model's parameters are assigned to zero. Techniques which use an $$\ell_2$$ penalty, like [ridge regression](https://en.wikipedia.org/wiki/Tikhonov_regularization), encourage solutions where most parameter values are small (but not necessarily zero). [Elastic net regularization](https://en.wikipedia.org/wiki/Elastic_net_regularization) uses a penalty term that is a combination of the $$\ell_1$$ norm and the $$\ell_2$$ norm of the parameter vector.
+In statistical regression or machine learning, we regularly (:D) penalize either the $$\ell_1$$ norm of a solution's vector of parameter values or its $$\ell_2$$. Techniques that use the former penalty, like [LASSO](https://en.wikipedia.org/wiki/Lasso_(statistics)), encourage solutions where many of model's parameters are assigned to zero (as we shall see in a bit). Techniques which use an $$\ell_2$$ penalty, like [ridge regression](https://en.wikipedia.org/wiki/Tikhonov_regularization), encourage solutions where most parameter values are small (but not necessarily zero). [Elastic net regularization](https://en.wikipedia.org/wiki/Elastic_net_regularization) uses a penalty term that is a combination of the $$\ell_1$$ norm and the $$\ell_2$$ norm of the parameter vector.
 
 Suppose that we are training a neural network model to read [hand written digits](https://en.wikipedia.org/wiki/MNIST_database) and we are using a loss (or cost function) $$J$$:
 
@@ -88,7 +90,7 @@ $$
 J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} + \underbrace{\lambda \sum_{i=1}^N \vert w_i \vert}_{\lVert w\rVert_1 \text{ penalty}}
 $$
 
-The [hyperparameter](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)) is controlling how large penalty we impose on the cost function. If $$\lambda$ is large, then the model's parameters $$w_i$$ must pushed towards zero, so that the product $$\lambda \lVert w \rVert_1$$ is minimized. On the other hand, if $$\lambda$$ is already small, then the penalty is relaxed.
+The [hyperparameter](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)) is controlling how large penalty we impose on the cost function. If $$\lambda$$ is large, then the model's parameters $$w_i$$ must pushed towards zero, so that the product $$\lambda \lVert w \rVert_1$$ is minimized. On the other hand, if $$\lambda$$ is already small, then the penalty is relaxed.
 
 Or we could add an $$\ell_2$$ penalty term:
 
@@ -117,3 +119,4 @@ And here are the same graphs superimposed.
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/lp_norms_optimization_2.png" alt="The lp norm for various values of p in three dimensions">
 </p>
 
+Οur optimization constraint (the line $$5x + 6y = 7$$) intersects with our optimization objective *always on the x or y axis*. I hope it is evident now how $$\ell_1$$ regularization forces some of the model's parameters to become zero.
