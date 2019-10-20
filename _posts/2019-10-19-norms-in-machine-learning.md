@@ -90,7 +90,7 @@ $$
 J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} + \underbrace{\lambda \sum_{i=1}^N \vert w_i \vert}_{\lVert w\rVert_1 \text{ penalty}}
 $$
 
-The [hyperparameter](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)) $$\lambda$$ is controlling how large penalty we impose on the cost function. If $$\lambda$$ is large, then the model's parameters $$w_i$$ must pushed towards zero, so that the product $$\lambda \lVert w \rVert_1$$ is minimized. On the other hand, if $$\lambda$$ is already small, then the penalty is relaxed.
+The [hyperparameter](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)) $$\lambda$$ is controlling how large penalty we impose on the cost function. If $$\lambda$$ is large, then the model's parameters $$w_i$$ must be pushed towards zero, so that the product $$\lambda \lVert w \rVert_1$$ is minimized. On the other hand, if $$\lambda$$ is already small, then the penalty is relaxed.
 
 Or we could add an $$\ell_2$$ penalty term:
 
