@@ -73,6 +73,22 @@ $$
 If you expand the squares and simplify the inequality, you will end up in a false statement.
 
 ### Connection with optimization
+
+In statistical regression or machine learning, we regularly penalize either the $$\ell_1$$ norm of a solution's vector of parameter values or its $$\ell_2$$. Techniques that use the former penalty, like LASSO, encourage solutions where many of model's parameters are assigned to zero. Techniques which use an $$\ell_2$$ penalty, like ridge regression, encourage solutions where most parameter values are small (but not necessarily zero). Elastic net regularization uses a penalty term that is a combination of the $$\ell_1$$ norm and the $$\ell_2$$ norm of the parameter vector.
+
+Suppose that we are training a neural network model to read hand written digits and we are using a loss (or cost function) $$J$$:
+
+$$
+J = \text{MSE} = \frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2
+$$
+
+We could an $$\ell_1$$ penalty term:
+
+$$
+J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} + \underbrace{\lambda \sum_{i=1}^N w_i}_{\ell_1\text{ penalty}}
+$$
+
+#### Feature selection
 Suppose that we would like to minimize $${\lVert x \rVert}_p$$ subject to the constraint $$5x + 6y = 7$$, for various values of $$p$$. We would start from the center of the axes and we would "blow up" our norm until its boundary intersected with the line $$5x + 6y = 7$$. As you can see from the following pictures, for different norms, the optimal point in $$\mathbb{R}^2$$ is different.
 
 <p align="center">
