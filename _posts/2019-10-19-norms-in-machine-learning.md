@@ -87,21 +87,21 @@ $$
 We could add an $$\ell_1$$ penalty term:
 
 $$
-J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} + \underbrace{\lambda \sum_{i=1}^N \vert w_i \vert}_{\lVert w\rVert_1 \text{ penalty}}
+J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} + \underbrace{\lambda \sum_{j=1}^m \vert w_j \vert}_{\lVert w\rVert_1 \text{ penalty}}
 $$
 
-The [hyperparameter](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)) $$\lambda$$ is controlling how large penalty we impose on the cost function. If $$\lambda$$ is large, then the model's parameters $$w_i$$ must be pushed towards zero, so that the product $$\lambda \lVert w \rVert_1$$ is minimized. On the other hand, if $$\lambda$$ is already small, then the penalty is relaxed.
+The [hyperparameter](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)) $$\lambda$$ is controlling how large penalty we impose on the cost function. If $$\lambda$$ is large, then the model's parameters $$w_j$$ must be pushed towards zero, so that the product $$\lambda \lVert w \rVert_1$$ is minimized. On the other hand, if $$\lambda$$ is already small, then the penalty is relaxed.
 
 Or we could add an $$\ell_2$$ penalty term:
 
 $$
-J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} + \underbrace{\lambda \sum_{i=1}^N {\vert w_i \vert}^2}_{\lVert w \rVert_2^2 \text{ penalty}}
+J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} + \underbrace{\lambda \sum_{j=1}^m {\vert w_i \vert}^2}_{\lVert w \rVert_2^2 \text{ penalty}}
 $$
 
 In elastic regularization, we use a combination of $$\ell_1$$ and $$\ell_2$$ penalty:
 
 $$
-J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} +\underbrace{\lambda \left[\alpha \sum_{i=1}^N {\vert w_i \vert} + (1-\alpha) \sum_{i=1}^N {\vert w_i \vert}^2 \right]}_{\text{Combined } \lVert w \rVert_1 \text { and } \lVert w \rVert_2^2}
+J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} +\underbrace{\lambda \left[\alpha \sum_{j=1}^N {\vert w_j \vert} + (1-\alpha) \sum_{j=1}^m {\vert w_j \vert}^2 \right]}_{\text{Combined } \lVert w \rVert_1 \text { and } \lVert w \rVert_2^2}
 $$
 
 With the hyperparameter $$\alpha \in [0,1]$$ controlling how much of one versus the other we use in the mixing.
