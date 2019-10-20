@@ -104,7 +104,7 @@ $$
 J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} +\underbrace{\lambda \left[\alpha \sum_{i=1}^N {\vert w_i \vert} + (1-\alpha) \sum_{i=1}^N {\vert w_i \vert}^2 \right]}_{\text{Combined } \lVert w \rVert_1 \text { and } \lVert w \rVert_2^2}
 $$
 
-With the hyperparameter $$\alpha \in [0,1]$$ controlling how much of one versus the other we use in he mixing.
+With the hyperparameter $$\alpha \in [0,1]$$ controlling how much of one versus the other we use in the mixing.
 
 #### Feature selection
 Suppose that we would like to minimize $${\lVert x \rVert}_p$$ subject to the constraint $$5x + 6y = 7$$, for various values of $$p$$. We would start from the center of the axes and we would "blow up" our norm until its boundary intersected with the line $$5x + 6y = 7$$. As you can see from the following pictures, for different norms, the optimal point in $$\mathbb{R}^2$$ is different.
