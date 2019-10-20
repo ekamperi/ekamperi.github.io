@@ -95,7 +95,7 @@ J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Square
 $$
 
 In elastic regularization, we use a combination of $$\ell_1$$ and $$\ell_2$$ penalty:
-\underbrace{
+
 $$
 J = \underbrace{\frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2}_{\text{Mean Squared Error}} +\underbrace{\lambda \left[\alpha \sum_{i=1}^N {\vert w_i \vert} + (1-\alpha) \sum_{i=1}^N {\vert w_i \vert}^2 \right]}_{\text{Combined } \lVert w \rVert_1 \text { and } \lVert w \rVert_2^2}
 $$
