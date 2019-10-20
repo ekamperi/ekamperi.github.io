@@ -129,4 +129,4 @@ Now, the very definition of a norm implies that a norm is always a convex functi
 
 $$\underbrace{\|\alpha v+(1-\alpha)w\| \le \|\alpha v\|+\|(1-\alpha)w\|}_\text{triangle inequality} = \underbrace{\alpha\|v\|}_\text{scalability}+(1- \alpha)\|w\|$$
 
-So, by using a cost function that happens to be the norm of a vector space, we end up with a convex optimization function that behaves very well. Also, adding a penalty term from, say, $$\ell_p$$ norm *preserves* the convexity of the cost function (assuming it was convex before, obviously). Because the sum of two convex functions, is also a convex function. 
+So, by using a cost function that happens to be the norm of a vector space, we end up with a convex optimization function that behaves very well. Also, adding a penalty term from, say, $$\ell_p$$ norm *preserves* the convexity of the cost function (assuming it was convex before, obviously). Because the sum of two convex functions is also a convex function. 
