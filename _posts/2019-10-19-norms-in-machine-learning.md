@@ -122,6 +122,11 @@ Same idea but ridge regularization instead.
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/ridge.png" alt="Ridge regression for various values of lambda">
 </p>
 
+And here you can see how LASSO regularization invokes sparsity by driving some of the model's parameters to become zero.
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/lasso_vs_ridge.png" alt="LASSO vs ridge regression">
+</p>
+
 #### Feature selection
 Suppose that we would like to minimize $${\lVert x \rVert}_p$$ subject to the constraint $$5x + 6y = 7$$, for various values of $$p$$. We would start from the center of the axes and we would "blow up" our norm until its boundary intersected with the line $$5x + 6y = 7$$. As you can see from the following pictures, for different norms, the optimal point in $$\mathbb{R}^2$$ is different.
 
