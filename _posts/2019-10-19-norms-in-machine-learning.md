@@ -122,7 +122,8 @@ Same idea but ridge regularization instead.
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/ridge.png" alt="Ridge regression for various values of lambda">
 </p>
 
-And here you can see how LASSO regularization invokes sparsity by driving some of the model's parameters to become zero.
+And here you can see how LASSO regularization invokes sparsity by driving some of the model's parameters to become zero, with increasing values of $$lambda$$. On the contrary, ridge regression keeps every parameter of the model small without forcing it to become zero.
+
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/lasso_vs_ridge.png" alt="LASSO vs ridge regression">
 </p>
