@@ -112,11 +112,19 @@ $$
 
 With the hyperparameter $$\alpha \in [0,1]$$ controlling how much of one versus the other we use in the mixing.
 
+<p align="center">
+<img style="width: 80%; height: 80%" src="{{ site.url }}/images/convex_vs_non_convex.png" alt="Convex vs non-convex function">
+</p>
+
 #### Feature selection
 Suppose that we would like to minimize $${\lVert x \rVert}_p$$ subject to the constraint $$5x + 6y = 7$$, for various values of $$p$$. We would start from the center of the axes and we would "blow up" our norm until its boundary intersected with the line $$5x + 6y = 7$$. As you can see from the following pictures, for different norms, the optimal point in $$\mathbb{R}^2$$ is different.
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/lp_norms_optimization.png" alt="The lp norm for various values of p in three dimensions">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/lasso.png" alt="LASSO regression for various values of lambda">
+</p>
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/ridge.png" alt="Ridge regression for various values of lambda">
 </p>
 
 And here are the same graphs superimposed.
