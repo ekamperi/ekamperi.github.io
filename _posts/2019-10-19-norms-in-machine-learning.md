@@ -151,6 +151,8 @@ $$
 f(\alpha x_1+(1-\alpha)x_2)\leq \alpha f(x_1)+(1-\alpha)f(x_2)
 $$
 
+Mind that the domain of $$f$$ must also be a *convex set*. Here is an example of a convex versus a non-convex function.
+
 <p align="center">
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/convex_vs_non_convex.png" alt="Convex vs non-convex function">
 </p>
