@@ -112,10 +112,12 @@ $$
 
 With the hyperparameter $$\alpha \in [0,1]$$ controlling how much of one versus the other we use in the mixing.
 
+Here is effect of $$\lambda$$'s value on a regression model with 10 variables and LASSO regularization. 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/lasso.png" alt="LASSO regression for various values of lambda">
 </p>
 
+Same idea but ridge regularization instead.
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/ridge.png" alt="Ridge regression for various values of lambda">
 </p>
