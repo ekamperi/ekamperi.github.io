@@ -15,7 +15,7 @@ tags: ['mathematics', 'neural networks', 'optimization', 'regression']
 ### Introduction
 A vector space, known also as a linear space, is a collection of objects (the vectors), which may be added together and multiplied by some scalar (a number). In machine learning we use vectors all the time. Here are some examples:
 
-* *Feature vectors* that are collections of numbers that we group them together when representing an object. In image processing, the features' values may be the pixels of the image, so assuming a 128 $$\times$$ 128 grayscale image, we get a 16384 long vector. Features are equivalent to independent variables (the $$x$$-s) in linear regression, but usually are much larger.
+* *Feature vectors* are collections of numbers that we group them together when representing an object. In image processing, the features' values may be the pixels of the image, so assuming a 128 $$\times$$ 128 grayscale image, we get a 16384 long vector. Features are equivalent to independent variables (the $$x$$-s) in linear regression, but usually are more numerous.
 * The *output* of a machine learning model, say a neural network that is trained to identify hand-written digits, may be represented as a vector, e.g. $$y = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]^T$$ for representing "2" as the correct output. By the way this representation is called *one hot encoding* and the vector *one hot vector* :D
 * The [*loss function*](https://en.wikipedia.org/wiki/Loss_function), i.e. the function that tells us how good or how bad are predictions are, is also directly related to the norm of a particular vector space. For example, the [mean squared error](https://en.wikipedia.org/wiki/Mean_squared_error) is defined as $$\text{MSE} = \frac{1}{N} \sum_i (y_{\text{true,}i} - y_{\text{predicted,}i})^2$$, which (as we shall see) is connected to the $$\ell_2$$ norm of vectors $$y_i = y_{\text{true,}i} - y_{\text{predicted,}i}$$.
 * The parameters of a model, say the weights of a neural network, can be thought as a long vector $$w$$. This representation is useful when we apply [*regularization*](https://en.wikipedia.org/wiki/Mean_squared_error) during the training of the network, so that we keep the coefficients of the model small (or, some of them, zero), preventing the model from becoming more complex than it ought to be.
@@ -52,7 +52,7 @@ Every $$\ell_p$$ assigns a different "size" to vectors and the answer to the que
 </p>
 Image taken from quora.com.
 
-In the following image we can see the shape of the $$\ell_p$$ norm for various values of $$p$$. The vector space that we are operating is $$\mathbb{R}^2$$. In specific, we see the boundary of $$\ell_p = 1$$, i.e. all those vectors $$v = (x,y)$$ whose $$\ell_p$$ norm equals $$1$$.
+In the following image we can see the shape of the $$\ell_p$$ norm for various values of $$p$$. The vector space that we are operating is $$\mathbb{R}^2$$. Concretely, we see the boundary of $$\ell_p = 1$$, i.e. all those vectors $$v = (x,y)$$ whose $$\ell_p$$ norm equals $$1$$.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/lp_norms_2d.png" alt="The lp norm for various values of p in two dimensions">
@@ -79,7 +79,7 @@ $$
 If you expand the squares and simplify the inequality, you will end up in a false statement.
 
 ### Connection with optimization
-We will see two applications of norms in machine learning, regularization and feature selection. Though the latter is a speciar case of regularization that is optimized for generating sparse solutions.
+Let's see two applications of norms in machine learning, *regularization* and *feature selection*. Though, the latter is merely a special case of regularization, that is optimized for generating sparse solutions.
 
 #### Regularization
 In statistical regression or machine learning, we regularly (:D) penalize either the $$\ell_1$$ norm of a solution's vector of parameter values or its $$\ell_2$$. Techniques that use the former penalty, like [LASSO](https://en.wikipedia.org/wiki/Lasso_(statistics)), encourage solutions where many of model's parameters are assigned to zero (as we shall see in a bit). Techniques which use an $$\ell_2$$ penalty, like [ridge regression](https://en.wikipedia.org/wiki/Tikhonov_regularization), encourage solutions where most parameter values are small (but not necessarily zero). [Elastic net regularization](https://en.wikipedia.org/wiki/Elastic_net_regularization) uses a penalty term that is a combination of the $$\ell_1$$ norm and the $$\ell_2$$ norm of the parameter vector.
