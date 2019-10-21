@@ -79,7 +79,7 @@ $$
 If you expand the squares and simplify the inequality, you will end up in a false statement.
 
 ### Connection with optimization
-Let's see two applications of norms in machine learning, *regularization* and *feature selection*. Though, the latter is merely a special case of regularization, that is optimized for generating sparse solutions.
+Let's see two applications of norms in machine learning, namely *regularization* and *feature selection*. Though, the latter is merely a special form of regularization which, by design, favors the generation of sparse solutions.
 
 #### Regularization
 In statistical regression or machine learning, we regularly (:D) penalize either the $$\ell_1$$ norm of a solution's vector of parameter values or its $$\ell_2$$. Techniques that use the former penalty, like [LASSO](https://en.wikipedia.org/wiki/Lasso_(statistics)), encourage solutions where many of model's parameters are assigned to zero (as we shall see in a bit). Techniques which use an $$\ell_2$$ penalty, like [ridge regression](https://en.wikipedia.org/wiki/Tikhonov_regularization), encourage solutions where most parameter values are small (but not necessarily zero). [Elastic net regularization](https://en.wikipedia.org/wiki/Elastic_net_regularization) uses a penalty term that is a combination of the $$\ell_1$$ norm and the $$\ell_2$$ norm of the parameter vector.
