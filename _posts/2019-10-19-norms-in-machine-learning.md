@@ -45,7 +45,7 @@ For $$p = 3$$, $$\ell_3 = \sqrt[3]{\vert x_1 \vert ^3 + \vert x_2 \vert ^3 + \ld
 
 For $$p \to \infty$$, $$\ell_\infty = \max_i (\vert x_1 \vert, \vert x_2 \vert, \ldots, \vert x_n \vert)$$
 
-Every $$\ell_p$$ assigns a different "size" to vectors and the answer to the question on what's the best $$\ell_p$$ norm to use, depends on the problem you are solving. For example, if you are building an application for taxi drivers in Manhattan that needs the minimal distance between two places, then using the $$\ell_1$$ norm (purple) would make more sense than $$\ell_2$$ (green). Because the $$\ell_2$$ distance "is not accessible" to a taxi driver as s/he can only navigate through the purple roads. Here I'm mixing the notions of norm ("length" or "size") and metric ("distance"), but you get the idea.
+Every $$\ell_p$$ assigns a different "size" to vectors and the answer to the question on what's the best $$\ell_p$$ norm to use, depends on the problem you are solving. For example, if you are building an application for taxi drivers in Manhattan that needs the minimal distance between two places, then using the $$\ell_1$$ norm (purple) would make more sense than $$\ell_2$$ (green). Because the $$\ell_2$$ distance "is not accessible" to a taxi driver, as s/he can only navigate through the purple roads. But if the same app was meant to be used by helicopter pilots, then the green line would serve them better. Here I'm mixing the notions of norm ("length" or "size") and metric ("distance"), but you get the idea.
 
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/manhattan_distance.jpg" alt="Example of Manhattan distance and Euclidean distance">
