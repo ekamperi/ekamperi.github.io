@@ -41,4 +41,19 @@ $$
 \end{align*} 
 $$
 
-There are generalized Riemannian geometries that have *torsion*, in which the symmetry $$\Gamma_{a b}^\lambda = \Gamma_{b a}^\lambda$$ does *not* hold. Those geometries are not widely used in ordinary gravitational theory. The geometry of general relativity is the *Minkowski-Einstein* geometry which is an extension of Riemannian geometry with a non-positive definite metric, but *it doesn’t involve torsion*.
+Some useful tips for the above calculation:
+
+1. The covariant derivative of a type $$(r,s)$$ tensor field along $$\mu$$ is given by the expression:
+
+$$
+\begin{align}
+  {(\nabla_\mu T)^{a_1 \ldots a_r}}_{b_1 \ldots b_s} = {}
+    &\frac{\partial}{\partial x^\mu}{T^{a_1 \ldots a_r}}_{b_1 \ldots b_s} \\
+    &+ \,{\Gamma ^{a_1}}_{\lambda\mu} {T^{\lambda a_2 \ldots a_r}}_{b_1 \ldots b_s} + \cdots + {\Gamma^{a_r}}_{\lambda\mu} {T^{a_1 \ldots a_{r-1}\lambda}}_{b_1 \ldots b_s} \\
+    &-\,{\Gamma^\lambda}_{b_1 \mu} {T^{a_1 \ldots a_r}}_{\lambda b_2 \ldots b_s} - \cdots - {\Gamma^\lambda}_{b_s \mu} {T^{a_1 \ldots a_r}}_{b_1 \ldots b_{s-1} \lambda}.
+\end{align}
+$$
+
+Meaning that you take the ordinary partial derivative of the tensor and then add $$+{\Gamma^{a_i}}_{\lambda \mu}$$ for every upper index $$a_i$$ and $$-{\Gamma^\lambda}_{b_i \mu}$$ for every lower index $$b_i$$.
+
+2. There are generalized Riemannian geometries that have *torsion*, in which the symmetry $$\Gamma_{a b}^\lambda = \Gamma_{b a}^\lambda$$ does *not* hold. Those geometries are not widely used in ordinary gravitational theory. The geometry of general relativity is the *Minkowski-Einstein* geometry which is an extension of Riemannian geometry with a non-positive definite metric, but *it doesn’t involve torsion*.
