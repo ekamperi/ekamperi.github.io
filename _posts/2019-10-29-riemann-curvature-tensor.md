@@ -13,7 +13,7 @@ I decided to watch the video lectures from Professor Susskind that are publicly 
 Generally speaking, a change in the direction of a vector parallel-transported around a closed loop is a way to measure the curvature of the space. 
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/Riemann_curvature.png" alt="Parallel transport of a vector on the surface of a sphere">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/Riemann_curvature.png" alt="Parallel transport of a vector on the surface of a sphere">
 </p>
 Image taken from [here](https://physics.stackexchange.com/questions/81113/whats-the-idea-behind-the-riemann-curvature-tensor).
 
