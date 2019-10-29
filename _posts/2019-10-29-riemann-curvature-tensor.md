@@ -10,7 +10,14 @@ So, I've decided to bite the bullet and study *general relativity*. I've been po
 
 I decided to watch the video lectures from Professor Susskind that are publicly available on YouTube. I liked them because Susskind puts an emphasis on the physical aspect of things and less on the formalism of the mathematics. Of course both are required, but for starters I think that it's best to first build the intuition.
 
-Generally speaking, a change in the direction of a vector parallel-transported around a closed loop is a way to measure the curvature of the space. The idea is to compute the commutator of two *covariant derivatives*. Let us consider the action of the operator on a random vector $$V^\rho$$:
+Generally speaking, a change in the direction of a vector parallel-transported around a closed loop is a way to measure the curvature of the space. 
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/Riemann_curvature.png" alt="Parallel transport of a vector on the surface of a sphere">
+</p>
+Image taken from [here](https://physics.stackexchange.com/questions/81113/whats-the-idea-behind-the-riemann-curvature-tensor).
+
+The idea is to compute the commutator of two *covariant derivatives*. Let us consider the action of the operator on a random vector $$V^\rho$$:
 
 $$
 \begin{align*}
