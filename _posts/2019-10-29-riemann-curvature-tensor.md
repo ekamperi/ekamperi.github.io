@@ -10,12 +10,12 @@ So, I've decided to bite the bullet and study *general relativity*. I've been po
 
 I decided to watch the video lectures from Professor Susskind that are publicly available on YouTube. I liked them because Susskind puts an emphasis on the physical aspect of things and less on the formalism of the mathematics. Of course both are required, but for starters I think that it's best to first build the intuition.
 
-Generally speaking, a change in the direction of a vector parallel-transported around a closed loop is a way to measure the curvature of the space. 
+Our goal is to come up with a tool to measure the curvature of space. Generally speaking, a change in the direction of a vector *parallel-transported around a closed loop* is a way to measure precisely this. Consider the following vector that is parallel-transported across $$A \rightarrow N \rightarrow B \rightarrow A $$.
 
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/Riemann_curvature.png" alt="Parallel transport of a vector on the surface of a sphere">
 </p>
-Image taken from [here](https://physics.stackexchange.com/questions/81113/whats-the-idea-behind-the-riemann-curvature-tensor).
+Image taken from [here](https://en.wikipedia.org/wiki/Parallel_transport).
 
 The idea is to compute the commutator of two *covariant derivatives*. Let us consider the action of the operator on a random vector $$V^\rho$$:
 
