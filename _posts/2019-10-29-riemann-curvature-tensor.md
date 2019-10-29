@@ -43,7 +43,7 @@ $$
 
 Some useful tips for the above calculation:
 
-1. The covariant derivative of a type $$(r,s)$$ tensor field along $$\mu$$ is given by the expression:
+* The covariant derivative of a type $$(r,s)$$ tensor field along $$\mu$$ is given by the expression:
 $$
 \begin{align}
   {(\nabla_\mu T)^{a_1 \ldots a_r}}_{b_1 \ldots b_s} = {}
@@ -54,4 +54,5 @@ $$
 $$
 
 Meaning that you take the ordinary partial derivative of the tensor and then add $$+{\Gamma^{a_i}}_{\lambda \mu}$$ for every upper index $$a_i$$ and $$-{\Gamma^\lambda}_{b_i \mu}$$ for every lower index $$b_i$$.
-2. There are generalized Riemannian geometries that have *torsion*, in which the symmetry $$\Gamma_{a b}^\lambda = \Gamma_{b a}^\lambda$$ does *not* hold. Those geometries are not widely used in ordinary gravitational theory. The geometry of general relativity is the *Minkowski-Einstein* geometry which is an extension of Riemannian geometry with a non-positive definite metric, but *it doesn’t involve torsion*.
+
+* There are generalized Riemannian geometries that have *torsion*, in which the symmetry $$\Gamma_{a b}^\lambda = \Gamma_{b a}^\lambda$$ does *not* hold. Those geometries are not widely used in ordinary gravitational theory. The geometry of general relativity is the *Minkowski-Einstein* geometry which is an extension of Riemannian geometry with a non-positive definite metric, but *it doesn’t involve torsion*.
