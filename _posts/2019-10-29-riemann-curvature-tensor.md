@@ -8,6 +8,10 @@ tags: ['general relativity', 'mathematics', 'tensors']
 
 So, I've decided to bite the bullet and study *general relativity*. I've been postponing it for quite a while, but the idea of my life ending without me having studied one of the most profound and fundamental theories of physics was motivating to say the least. I will be posting random stuff as I go and maybe I'll come back later to edit them, as my understanding of the theory -hopefully- deepens.
 
+I decided to watch the video lectures from Professor Susskind that are publicly available on YouTube. I liked them because Susskind puts an emphasis on the physical aspect of things and less on the formalism of the mathematics. Of course both are required, but for starters I think that it's best to first build the intuition.
+
+Generally speaking, a change in the direction of a vector parallel-transported around a closed loop is a way to measure the curvature of the space. The idea is to compute the commutator of two *covariant derivatives*. Let us consider the action of the operator on a random vector $$V^\rho$$:
+
 $$
 \begin{align*}
 [\nabla_\mu, \nabla_\nu ] V^\rho
