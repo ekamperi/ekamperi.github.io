@@ -57,4 +57,4 @@ Meaning that you take the ordinary partial derivative of the tensor and then add
 
 * There are generalized Riemannian geometries that have *torsion*, in which the symmetry $$\Gamma_{a b}^\lambda = \Gamma_{b a}^\lambda$$ does *not* hold. Those geometries are not widely used in ordinary gravitational theory. The geometry of general relativity is the *Minkowski-Einstein* geometry which is an extension of Riemannian geometry with a non-positive definite metric, but *it doesn’t involve torsion*.
 
-* Quantities that have different summation indices are equal. For instance, $$\Gamma_{\mu\lambda}^\rho \partial_\nu V^\lambda$$ is equal to $$\Gamma_{\mu\sigma}^\rho \partial_\nu V^\sigma$$, because indices $$\lambda$$ and $$\sigma$$ are used just as dummy indices for the summation.
+* Quantities that have different summation indices, but otherwise have the same symbols, are equal and cancel each other. For instance, $$\Gamma_{\mu\lambda}^\rho \partial_\nu V^\lambda$$ is equal to $$\Gamma_{\mu\sigma}^\rho \partial_\nu V^\sigma$$, because indices $$\lambda$$ and $$\sigma$$ are used just as dummy indices for the summation.
