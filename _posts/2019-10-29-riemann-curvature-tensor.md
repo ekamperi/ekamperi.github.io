@@ -36,7 +36,7 @@ $$
 - \Gamma_{\nu\lambda}^\rho \partial_\mu V^\lambda - \Gamma_{\nu\lambda}^\rho \Gamma_{\mu\sigma}^\lambda V^\sigma\\
 &= \underbrace{\left[
 \partial_\mu \Gamma_{\nu\sigma}^\rho - \partial_\nu \Gamma_{\mu\sigma}^\rho
-+ \Gamma_{\mu\lambda}^\rho \Gamma_{\nu\sigma}^\lambda - \Gamma{\nu\lambda}^\rho \Gamma_{\mu\sigma}^\lambda \right]}_{R_{\sigma\mu\nu}^\rho} V^\sigma\\
++ \Gamma_{\mu\lambda}^\rho \Gamma_{\nu\sigma}^\lambda - \Gamma_{\nu\lambda}^\rho \Gamma_{\mu\sigma}^\lambda \right]}_{R_{\sigma\mu\nu}^\rho} V^\sigma\\
 &= R_{\sigma\mu\nu}^\rho V^\sigma
 \end{align*} 
 $$
