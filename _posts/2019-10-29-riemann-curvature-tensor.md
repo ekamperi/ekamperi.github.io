@@ -41,7 +41,7 @@ $$
 \end{align*} 
 $$
 
-In summary $$R{\sigma\mu\nu}^\rho tells us the $$\rho$$ component of the difference vector obtained when transporting the vector $$\partial \sigma$$ along the $$\mu$$ and $$\nu$$ directions.
+The directions $$\mu$$ and $$\nu$$ are our two transport directions, whereas $$\sigma$$ is out initial direction. The tensor $$R_{\sigma\mu\nu}^\rho tells us the difference of the vectors obtained by transporting $$\partial\sigma$$ first along $$\nu$$ and then along $$\mu$$ directions *vs.* the same vector obtained by first transporting along $$\mu$$ and then $$\nu$$. The index $$\rho$$ is the $$\rho$$-th component.
 
 Some useful tips for the above calculation:
 
@@ -66,7 +66,7 @@ Let us calculate the curvature of the surface of a sphere. To do that we need th
 
 #### Calculation of metric tensor $$g_{\mu\nu}$$
 
-The following image illustrates the calculation of infinitestimal length on the surface of a sphere.
+The following image illustrates the calculation of infinitestimal length $$\mathrm{d}S^2$$ on the surface of a sphere.
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/infinitestimal_length_sphere.jpg">
