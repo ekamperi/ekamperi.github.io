@@ -60,6 +60,10 @@ Meaning that you take the ordinary partial derivative of the tensor and then add
 * Quantities that have different summation indices, but otherwise have the same symbols, are equal and cancel each other. For instance, $$\Gamma_{\mu\lambda}^\rho \partial_\nu V^\lambda$$ is equal to $$\Gamma_{\mu\sigma}^\rho \partial_\nu V^\sigma$$, because indices $$\lambda$$ and $$\sigma$$ are used just as dummy indices for the summation.
 
 #### Example
+<p align="center">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/infinitestimal_length_sphere.jpg">
+</p>
+
 $$
 \mathrm{d}S^2 = \left(R \mathrm{d}\theta \right)^2 + (R\sin\theta \mathrm{d}\phi)^2 
 = R^2 \left( \mathrm{d}\theta^2 + \sin^2\theta \mathrm{d}\phi^2 \right)
