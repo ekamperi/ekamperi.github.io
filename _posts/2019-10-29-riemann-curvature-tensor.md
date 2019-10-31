@@ -117,3 +117,64 @@ R^2 & 0 \\
 0 & R^2\sin^2\theta
 \end{pmatrix}
 $$
+
+#### Calculation of the Christoffel symbols
+
+Let us recall that the Christoffel symbol of the form $$\Gamma_{\mu\nu]^\lambda$$ is given by the following formula:
+
+$$
+\Gamma_{\mu\nu}^\lambda = \frac{1}{2}g^{\lambda\sigma} \left(
+\frac{\partial g_{\sigma\nu}}{\partial x^\mu} + 
+\frac{\partial g_{\sigma\mu}}{\partial x^\nu} -
+\frac{\partial g_{\mu\nu}}{\partial x^\sigma}\right)=
+\frac{1}{2}g^{\lambda\sigma} \left( \partial_\mu g_{\sigma\nu} + \partial_\nu g_{\sigma\mu} - \partial_\sigma g_{\mu\nu}\right)
+$$
+
+At this point I'm going to cheat. Here is a function in Mathematica that calculates the $$\Gamma_{\mu\nu}^\lambda$$:
+
+{% highlight mathematica %}
+{% raw %}
+ClearAll["Global`*"];
+gmn = {{r^2, 0}, {0, r^2 Sin[\[Theta]]^2}};
+
+InverseMetric[g_] := Simplify@Inverse@g
+
+ChristoffelSymbol[g_, xx_] :=
+ Block[{n, ig, res},
+  n = 2;
+  ig = InverseMetric[g];
+  res = Table[
+    (1/2) Sum[ig[[\[Lambda], \[Sigma]]]*
+       (-D[g[[\[Mu], \[Nu]]], xx[[\[Sigma]]]] +
+         D[g[[\[Sigma], \[Nu]]], xx[[\[Mu]]]] +
+         D[g[[\[Sigma], \[Mu]]], xx[[\[Nu]]]]),
+      {\[Sigma], 1, n}],
+    {\[Lambda], 1, n}, {\[Mu], 1, n}, {\[Nu], 1, n}];
+  Simplify[res]](*\[Lambda],\[Mu],\[Nu]*)
+
+ChristoffelSymbol[gmn, {\[Theta], \[CurlyPhi]}][[1]]
+(* {{0, 0}, {0, -Cos[\[Theta]] Sin[\[Theta]]}} *)
+
+ChristoffelSymbol[gmn, {\[Theta], \[CurlyPhi]}][[2]]
+(* {{0, Cot[\[Theta]]}, {Cot[\[Theta]], 0}} *)
+
+{% endraw %}
+{% endhighlight %}
+
+$$
+\left(
+\begin{array}{cc}
+ 0 & 0 \\
+ 0 & \sin (\theta ) (-\cos (\theta )) \\
+\end{array}
+\right)
+$$
+
+$$
+\left(
+\begin{array}{cc}
+ 0 & \cot (\theta ) \\
+ \cot (\theta ) & 0 \\
+\end{array}
+\right)
+$$
