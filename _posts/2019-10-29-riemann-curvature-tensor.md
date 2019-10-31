@@ -161,24 +161,21 @@ ChristoffelSymbol[gmn, {\[Theta], \[CurlyPhi]}][[2]]
 {% endraw %}
 {% endhighlight %}
 
-Or a little prettier, for $$\Gamma_{\mu\nu}^\theta$$:
+Or a little prettier:
+
 $$
 \Gamma_{\mu\nu}^\theta = 
 \left(
 \begin{array}{cc}
  0 & 0 \\
- 0 & \sin (\theta ) (-\cos (\theta )) \\
+ 0 & -\sin \theta \cos \theta  \\
 \end{array}
-\right)
-$$
-
-And for $$\Gamma_{\mu\nu}^\phi$$:
-$$
+\right)\qquad
 \Gamma_{\mu\nu}^\phi = 
 \left(
 \begin{array}{cc}
- 0 & \cot (\theta ) \\
- \cot (\theta ) & 0 \\
+ 0 & \cot \theta  \\
+ \cot \theta  & 0 \\
 \end{array}
 \right)
 $$
