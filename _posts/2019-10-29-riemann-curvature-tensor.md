@@ -120,7 +120,7 @@ $$
 
 #### Calculation of the Christoffel symbols
 
-Let us recall that the Christoffel symbol of the form $$\Gamma_{\mu\nu]^\lambda$$ is given by the following formula:
+Let us recall that the Christoffel symbol of the form $$\Gamma_{\mu\nu}^\lambda$$ is given by the following formula:
 
 $$
 \Gamma_{\mu\nu}^\lambda = \frac{1}{2}g^{\lambda\sigma} \left(
@@ -161,7 +161,9 @@ ChristoffelSymbol[gmn, {\[Theta], \[CurlyPhi]}][[2]]
 {% endraw %}
 {% endhighlight %}
 
+Or a little prettier, for $$\Gamma_{\mu\nu}^\theta$$:
 $$
+\Gamma_{\mu\nu}^\theta = 
 \left(
 \begin{array}{cc}
  0 & 0 \\
@@ -170,7 +172,9 @@ $$
 \right)
 $$
 
+And for $$\Gamma_{\mu\nu}^\phi$$:
 $$
+\Gamma_{\mu\nu}^\phi = 
 \left(
 \begin{array}{cc}
  0 & \cot (\theta ) \\
