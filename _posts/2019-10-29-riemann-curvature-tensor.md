@@ -6,7 +6,7 @@ categories: [mathematics]
 tags: ['general relativity', 'mathematics', 'tensors']
 ---
 
-So, I've decided to bite the bullet and study *general relativity*. I've been postponing it for quite a while, but the idea of my life ending without me having studied one of the most profound and fundamental theories of physics was motivating to say the least. I will be posting random stuff as I go and maybe I'll come back later to edit them, as my understanding of the theory -hopefully- deepens.
+So, I've decided to bite the bullet and study *general relativity*. I've been postponing it for quite a while, but the idea of my life ending without having studied one of the most profound and fundamental theories of physics was as much disturbing as motivating. I will be posting random stuff as I go and maybe I'll come back later to edit them, as my understanding of the theory -hopefully- deepens.
 
 I decided to watch the video lectures from Professor Susskind that are publicly available on YouTube. I liked them because Susskind puts an emphasis on the physical aspect of things and less on the formalism of the mathematics. Of course both are required, but for starters I think that it's best to first build the intuition.
 
@@ -58,3 +58,52 @@ Meaning that you take the ordinary partial derivative of the tensor and then add
 * There are generalized Riemannian geometries that have *torsion*, in which the symmetry $$\Gamma_{a b}^\lambda = \Gamma_{b a}^\lambda$$ does *not* hold. Those geometries are not widely used in ordinary gravitational theory. The geometry of general relativity is the *Minkowski-Einstein* geometry which is an extension of Riemannian geometry with a non-positive definite metric, but *it doesn’t involve torsion*.
 
 * Quantities that have different summation indices, but otherwise have the same symbols, are equal and cancel each other. For instance, $$\Gamma_{\mu\lambda}^\rho \partial_\nu V^\lambda$$ is equal to $$\Gamma_{\mu\sigma}^\rho \partial_\nu V^\sigma$$, because indices $$\lambda$$ and $$\sigma$$ are used just as dummy indices for the summation.
+
+#### Example
+$$
+\mathrm{d}S^2 = \left(R \mathrm{d}\theta \right)^2 + (R\sin\theta \mathrm{d}\phi)^2 
+= R^2 \left( \mathrm{d}\theta^2 + \sin^2\theta \mathrm{d}\phi^2 \right)
+$$
+
+But recall that
+
+$$
+\begin{align*}
+\mathrm{d}S^2
+&= g_{\mu\nu} \mathop{\mathrm{d}x^\mu}\mathop{\mathrm{d}x^\nu }
+= \sum_{\mu=1}^2 \sum_{\nu=1}^2 g_{\mu\nu} \mathop{\mathrm{d}x^\mu}\mathop{\mathrm{d}x^\nu }\\
+&= g_{11} \mathrm{d}x^1 \mathrm{d}x^1
++ \underbrace{g_{12} \mathrm{d}x^1 \mathrm{d}x^2
++ g_{21} \mathrm{d}x^2 \mathrm{d}x^1}_{\text{Equal due to symmetry}}
++ g_{22} \mathrm{d}x^2 \mathrm{d}x^2\\
+&= g_{11} (\mathrm{d}x^1)^2 + 2g_{12} \mathrm{d}x^1 \mathrm{d}x^2 + g_{22} (\mathrm{d}x^2)^2
+\end{align*}
+$$
+
+Let us use $$x^1 = \theta$$ and $$x^2 = \phi$$, then:
+
+$$
+\begin{align*}
+dS^2
+&= g_{\theta\theta} (\mathrm{d}\theta)^2 + 2g_{\theta\phi} \mathop{\mathrm{d}\theta} \mathop{\mathrm{d}\phi} &+ &g_{\phi\phi} (\mathrm{d}\phi)^2\\
+&=R^2 \mathrm{d}\theta^2 &+  &R\sin^2\theta \mathrm{d}\phi^2
+\end{align*}
+$$
+
+Therefore:
+
+$$
+g_{\theta\theta} = R^2, g_{\theta\phi} = 0, g_{\phi\phi} = R\sin^2\theta
+$$
+
+And in matrix notation:
+$$
+\begin{pmatrix}
+g_{\theta \theta} & g_{\theta \phi} \\
+g_{\phi \theta} & g_{\phi \phi}
+\end{pmatrix}=
+\begin{pmatrix}
+R^2 & 0 \\
+0 & \sin^2\theta
+\end{pmatrix}
+$$
