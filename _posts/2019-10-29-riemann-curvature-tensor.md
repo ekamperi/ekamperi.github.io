@@ -41,7 +41,7 @@ $$
 \end{align*} 
 $$
 
-The directions $$\mu$$ and $$\nu$$ are our two transport directions, whereas $$\sigma$$ is out initial direction. The tensor $$R_{\sigma\mu\nu}^\rho tells us the difference of the vectors obtained by transporting $$\partial\sigma$$ first along $$\nu$$ and then along $$\mu$$ directions *vs.* the same vector obtained by first transporting along $$\mu$$ and then $$\nu$$. The index $$\rho$$ is the $$\rho$$-th component.
+The directions $$\mu$$ and $$\nu$$ are our two transport directions, whereas $$\sigma$$ is out initial direction. The tensor $$R_{\sigma\mu\nu}^\rho$$ tells us the difference of the vectors obtained by transporting $$\partial\sigma$$ first along $$\nu$$ and then along $$\mu$$ directions *vs.* the same vector obtained by first transporting along $$\mu$$ and then $$\nu$$. The index $$\rho$$ is the $$\rho$$-th component.
 
 Some useful tips for the above calculation:
 
