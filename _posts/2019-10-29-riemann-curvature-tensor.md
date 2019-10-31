@@ -179,3 +179,11 @@ $$
 \end{array}
 \right)
 $$
+
+Let us remind ourselves of what the Christoffel symbol $$\Gamma_{\mu\nu}^\lambda$$ means:
+
+<p align="center">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/Christofell_explained.png" alt="Explanation of indices in Christofell symbol">
+</p>
+Image taken from [here](http://einsteinrelativelyeasy.com/index.php/dictionary/25-christoffel-symbol).
+
