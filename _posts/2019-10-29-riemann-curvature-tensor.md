@@ -110,6 +110,6 @@ g_{\phi \theta} & g_{\phi \phi}
 \end{pmatrix}=
 \begin{pmatrix}
 R^2 & 0 \\
-0 & \sin^2\theta
+0 & R^2\sin^2\theta
 \end{pmatrix}
 $$
