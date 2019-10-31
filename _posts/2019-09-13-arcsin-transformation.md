@@ -3,7 +3,7 @@ layout: post
 title:  Arcsin transformation gone wrong
 date:   2019-09-13
 categories: math
-tags: ['machine learning', math, 'neural networks']
+tags: ['machine learning', mathematics, 'neural networks']
 ---
 
 So, I was working on a regression problem and my $$y$$ values, in theory, would fall in the range $$[0,1]$$. In reality, though, most of them were crowded between $$0.9$$ and $$1.0$$. I thought that I could apply some transformation and distribute them more evenly, without  thinking about it too much.
