@@ -41,6 +41,8 @@ $$
 \end{align*} 
 $$
 
+In summary $$R{\sigma\mu\nu}^\rho tells us the $$\rho$$ component of the difference vector obtained when transporting the vector $$\partial \sigma$$ along the $$\mu$$ and $$\nu$$ directions.
+
 Some useful tips for the above calculation:
 
 * The covariant derivative of a type $$(r,s)$$ tensor field along $$\mu$$ is given by the expression:
