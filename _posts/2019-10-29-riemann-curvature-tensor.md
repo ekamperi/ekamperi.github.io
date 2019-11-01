@@ -8,16 +8,16 @@ tags: ['general relativity', 'mathematics', 'tensors']
 
 So, I've decided to bite the bullet and study *general relativity*. I've been postponing it for quite a while, but the idea of my life ending without having studied one of the most profound and fundamental theories of physics was as much disturbing as motivating. I will be posting random stuff as I go and maybe I'll come back later to edit them, as my understanding of the theory -hopefully- deepens.
 
-I decided to watch the video lectures from Professor Susskind that are publicly available on YouTube. I liked them because Susskind puts an emphasis on the physical aspect of things and less on the formalism of the mathematics. Of course both are required, but for starters I think that it's best to first build the intuition.
+I decided to watch the video lectures from Professor Susskind that are publicly available on YouTube. I liked them because Susskind puts an emphasis on the physical aspect of things and less on the formalism of the mathematics. Of course both are required, but for starters I think that it's best to first build some intuition.
 
-Our goal is to come up with a tool to measure the curvature of space. Generally speaking, a change in the direction of a vector *parallel-transported around a closed loop* is a way to measure precisely this. Consider the following vector that is parallel-transported across $$A \rightarrow N \rightarrow B \rightarrow A $$.
+Our today's goal is to come up with a tool to measure the curvature of space. Generally speaking, a change in the direction of a vector *parallel-transported around a closed loop* is a way to measure precisely this. Consider the following vector that is parallel-transported across $$A \rightarrow N \rightarrow B \rightarrow A $$.
 
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/Riemann_curvature.png" alt="Parallel transport of a vector on the surface of a sphere">
 </p>
 Image taken from [here](https://en.wikipedia.org/wiki/Parallel_transport).
 
-The idea is to compute the commutator of two *covariant derivatives*. Let us consider the action of the operator on a random vector $$V^\rho$$:
+And notice how the initial vector and the final vector differ with an angle $$\alpha$$. So, the idea is to compute the commutator of two *covariant derivatives*. This is as if we first move along the direction $$\mu$$ and then $$\nu$$ *vs.* first the direction $$\nu$$ and then $$\mu$$. Let us consider the action of this operator on a random vector $$V^\rho$$:
 
 $$
 \begin{align*}
@@ -57,12 +57,12 @@ $$
 
 Meaning that you take the ordinary partial derivative of the tensor and then add $$+{\Gamma^{a_i}}_{\lambda \mu}$$ for every upper index $$a_i$$ and $$-{\Gamma^\lambda}_{b_i \mu}$$ for every lower index $$b_i$$.
 
-* There are generalized Riemannian geometries that have *torsion*, in which the symmetry $$\Gamma_{a b}^\lambda = \Gamma_{b a}^\lambda$$ does *not* hold. Those geometries are not widely used in ordinary gravitational theory. The geometry of general relativity is the *Minkowski-Einstein* geometry which is an extension of Riemannian geometry with a non-positive definite metric, but *it doesn’t involve torsion*.
+* There are generalized Riemannian geometries that have *torsion*, in which the symmetry $$\Gamma_{\mu\nu}^\lambda = \Gamma_{\nu \mu}^\lambda$$ does *not* hold. Those geometries are not widely used in ordinary gravitational theory. The geometry of general relativity is the *Minkowski-Einstein* geometry which is an extension of Riemannian geometry with a non-positive definite metric, but *it doesn’t involve torsion*.
 
 * Quantities that have different summation indices, but otherwise have the same symbols, are equal and cancel each other. For instance, $$\Gamma_{\mu\lambda}^\rho \partial_\nu V^\lambda$$ is equal to $$\Gamma_{\mu\sigma}^\rho \partial_\nu V^\sigma$$, because indices $$\lambda$$ and $$\sigma$$ are used just as dummy indices for the summation.
 
 ### Example
-Let us calculate the curvature of the surface of a sphere. To do that we need the Christoffel symbols $$\Gamma_{ij}^k$$ and since these symbols are expressed in terms of the partial derivatives of the metric tensor, we need to calculate the metric tensor $$g_{\mu\nu}$$.
+Let us calculate the curvature of the surface of a sphere. To do that we need the Christoffel symbols $$\Gamma_{\mu\nu}^\lambda$$ and since these symbols are expressed in terms of the partial derivatives of the metric tensor, we need to calculate the metric tensor $$g_{\mu\nu}$$.
 
 #### Calculation of metric tensor $$g_{\mu\nu}$$
 
