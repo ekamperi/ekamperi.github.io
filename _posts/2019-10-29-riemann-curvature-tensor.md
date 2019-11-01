@@ -189,3 +189,63 @@ Let us remind ourselves of what the Christoffel symbol $$\Gamma_{\mu\nu}^\lambda
 </p>
 Image taken from [here](http://einsteinrelativelyeasy.com/index.php/dictionary/25-christoffel-symbol).
 
+{% highlight mathematica %}
+{% raw %}
+
+RiemannTensor[g_, xx_] :=
+ Block[{n, Chr, res},
+  n = 2;
+  Chr = ChristoffelSymbol[g, xx];
+  res = Table[
+    D[Chr[[\[Rho], \[Nu], \[Sigma]]], xx[[\[Mu]]]] - 
+     D[Chr[[\[Rho], \[Mu], \[Sigma]]], xx[[\[Nu]]]] + 
+     Sum[Chr[[\[Rho], \[Mu], \[Lambda]]]*
+       Chr[[\[Lambda], \[Nu], \[Sigma]]], {\[Lambda], 1, n}] - 
+     Sum[Chr[[\[Rho], \[Nu], \[Lambda]]]*
+       Chr[[\[Lambda], \[Mu], \[Sigma]]], {\[Lambda], 1, n}],
+    {\[Rho], 1, n}, {\[Sigma], 1, n}, {\[Mu], 1, n}, {\[Nu], 1, n}];
+  Simplify[res]](*\[Rho],\[Sigma],\[Mu],\[Nu]*)
+
+{% endraw %}
+{% endhighlight %}
+
+Let us calculate the componenent $$R_{\phi\theta\phi}^\theta$$ for example.
+
+{% highlight mathematica %}
+{% raw %}
+RiemannTensor[gmn, {\[Theta], \[CurlyPhi]}]
+(* {{{{0, 0}, {0, 0}}, {{0, Sin[\[Theta]]^2}, {-Sin[\[Theta]]^2, 
+    0}}}, {{{0, -1}, {1, 0}}, {{0, 0}, {0, 0}}}} *)
+{% endraw %}
+{% endhighlight %}
+
+Or, in pretty format:
+
+$$
+\left(
+\begin{array}{cc}
+ \left(
+\begin{array}{cc}
+ 0 & 0 \\
+ 0 & 0 \\
+\end{array}
+\right) & \left(
+\begin{array}{cc}
+ 0 & \sin^2 \theta  \\
+ -\sin^2 \theta & 0 \\
+\end{array}
+\right) \\
+ \left(
+\begin{array}{cc}
+ 0 & -1 \\
+ 1 & 0 \\
+\end{array}
+\right) & \left(
+\begin{array}{cc}
+ 0 & 0 \\
+ 0 & 0 \\
+\end{array}
+\right) \\
+\end{array}
+\right)
+$$
