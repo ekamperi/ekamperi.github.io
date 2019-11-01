@@ -251,7 +251,15 @@ R = \left(
 $$
 
 Therefore, $$R_{\phi\theta\phi}^\theta = \sin^2\theta$$. Sometimes it's more convenient to write the covariant version of the Riemann tensor, e.g.
+
 $$
-R_{\rho\sigma\mu\nu} = g_{\rho \xi} R_{\sigma\mu\nu}^\xi \Rightarrow
-R_{\theta\phi\theta\phi} = g_{\theta \xi} R_{\phi\theta\phi}^\xi
+\begin{align*}
+R_{\rho\sigma\mu\nu} &= g_{\rho \xi} R_{\sigma\mu\nu}^\xi \Rightarrow\\
+R_{\theta\phi\theta\phi} &= g_{\theta \xi} R_{\phi\theta\phi}^\xi
+= \sum_{\xi=1}^2 g_{\theta \xi} R_{\phi\theta\phi}^\xi
+= g_{\theta \theta} R_{\phi\theta\phi}^\theta + g_{\theta \phi} R_{\phi\theta\phi}^\phi
+= R^2 \sin^2\theta
+\end{align*}
 $$
+
+since $$g_{\theta\theta} = R^2$$ and $$g_{\theta\phi} = 0$$.
