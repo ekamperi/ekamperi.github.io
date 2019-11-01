@@ -209,7 +209,7 @@ RiemannTensor[g_, xx_] :=
 {% endraw %}
 {% endhighlight %}
 
-Let us calculate the componenent $$R_{\phi\theta\phi}^\theta$$ for example.
+Let us calculate the component $$R_{\phi\theta\phi}^\theta$$ for example.
 
 {% highlight mathematica %}
 {% raw %}
@@ -222,7 +222,7 @@ RiemannTensor[gmn, {\[Theta], \[CurlyPhi]}]
 Or, in pretty format:
 
 $$
-\left(
+R = \left(
 \begin{array}{cc}
  \left(
 \begin{array}{cc}
@@ -248,4 +248,10 @@ $$
 \right) \\
 \end{array}
 \right)
+$$
+
+Therefore, $$R_{\phi\theta\phi}^\theta = \sin^2\theta$$. Sometimes it's more convenient to write the covariant version of the Riemann tensor, e.g.
+$$
+R_{\rho\sigma\mu\nu} = g_{\rho \xi} R_{\sigma\mu\nu}^\xi \Rightarrow
+R_{\theta\phi\theta\phi} = g_{\theta \xi} R_{\phi\theta\phi}^\xi
 $$
