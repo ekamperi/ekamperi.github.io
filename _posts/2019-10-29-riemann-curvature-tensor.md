@@ -57,7 +57,7 @@ $$
 
 Meaning that you take the ordinary partial derivative of the tensor and then add $$+{\Gamma^{a_i}}_{\lambda \mu}$$ for every upper index $$a_i$$ and $$-{\Gamma^\lambda}_{b_i \mu}$$ for every lower index $$b_i$$.
 
-* There are generalized Riemannian geometries that have *torsion*, in which the symmetry $$\Gamma_{\mu\nu}^\lambda = \Gamma_{\nu \mu}^\lambda$$ does *not* hold. Those geometries are not widely used in ordinary gravitational theory. The geometry of general relativity is the *Minkowski-Einstein* geometry which is an extension of Riemannian geometry with a non-positive definite metric, but *it doesn’t involve torsion*.
+* There are generalized Riemannian geometries that have *[torsion](https://en.wikipedia.org/wiki/Torsion_tensor)*, in which the symmetry $$\Gamma_{\mu\nu}^\lambda = \Gamma_{\nu \mu}^\lambda$$ does *not* hold. Those geometries are not widely used in ordinary gravitational theory. The geometry of general relativity is the *Minkowski-Einstein* geometry which is an extension of Riemannian geometry with a non-positive definite metric, but *it doesn’t involve torsion*.
 
 * Quantities that have different summation indices, but otherwise have the same symbols, are equal and cancel each other. For instance, $$\Gamma_{\mu\lambda}^\rho \partial_\nu V^\lambda$$ is equal to $$\Gamma_{\mu\sigma}^\rho \partial_\nu V^\sigma$$, because indices $$\lambda$$ and $$\sigma$$ are used just as dummy indices for the summation.
 
@@ -185,9 +185,11 @@ $$
 Let us remind ourselves of what the Christoffel symbol $$\Gamma_{\mu\nu}^\lambda$$ means:
 
 <p align="center">
- <img style="width: 80%; height: 80%" src="{{ site.url }}/images/Christoffel_explained.png" alt="Explanation of indices in Christofell symbol">
+ <img style="width: 80%; height: 80%" src="{{ site.url }}/images/Christoffel_explained.png" alt="Explanation of indices in Christofell symbol" alt="The meaning of Christoffel symbols indices">
 </p>
 Image taken from [here](http://einsteinrelativelyeasy.com/index.php/dictionary/25-christoffel-symbol).
+
+Now we are onto the calculation of the Riemann curvature tensor:
 
 {% highlight mathematica %}
 {% raw %}
@@ -250,7 +252,7 @@ R = \left(
 \right)
 $$
 
-Therefore, $$R_{\phi\theta\phi}^\theta = \sin^2\theta$$. Sometimes it's more convenient to write the covariant version of the Riemann tensor, e.g.
+Therefore, $$R_{\phi\theta\phi}^\theta = \sin^2\theta$$. Sometimes it's more convenient to write the fully covariant version of the Riemann tensor (that is the tensor with all indices lowered), e.g.
 
 $$
 \begin{align*}
