@@ -141,7 +141,7 @@ And here are the same graphs superimposed.
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/lp_norms_optimization_2.png" alt="The lp norm for various values of p in three dimensions">
 </p>
 
-In $$\ell_1$$ regularization, our optimization constraint (the line $$5x + 6y = 7$$) intersects with our optimization objective (minimization of the $$\lVert w \rVert_1$$ norm) on the $$y$$ axis. Therefore, the model's parameter $$y$$ is "forced" to become zero. This is not the case for $$\ell_2$$ where the constraint meets the objective outside the $$x$$ and $$y$$ axes.
+In $$\ell_1$$ regularization, our optimization constraint (the line $$5x + 6y = 7$$) intersects with our optimization objective (minimization of the $$\lVert w \rVert_1$$ norm) on the $$y$$ axis. Therefore, the model's parameter $$x$$ is "forced" to become zero, since the intersection point lies on the $$y$$ axis. This is not the case for $$\ell_2$$ where the constraint meets the objective outside the $$x$$ and $$y$$ axes.
 
 #### Convexity of the norms
 
