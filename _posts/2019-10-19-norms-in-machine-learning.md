@@ -129,7 +129,7 @@ And here you can see how LASSO regularization invokes sparsity by driving some o
 </p>
 
 #### Feature selection
-Suppose that we would like to minimize $${\lVert x \rVert}_p$$ subject to the constraint $$5x + 6y = 7$$, for various values of $$p$$. We would start from the center of the axes and we would "blow up" our norm until its boundary intersected with the line $$5x + 6y = 7$$. As you can see from the following pictures, for different norms, the optimal point (that is the point of the intersection) in $$\mathbb{R}^2$$ is different.
+Suppose that we would like to minimize $${\lVert x \rVert}_p$$ subject to the constraint $$5x + 6y = 7$$, for various values of $$p$$. We would start from the center of the axes and we would "blow up" our norm until its boundary intersected with the line $$5x + 6y = 7$$. As you can see from the following pictures, for different norms, the optimal point (i.e. the point of the intersection) in $$\mathbb{R}^2$$ is different.
 
 <p align="center">
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/lp_norms_optimization.png" alt="Convex vs non-convex function">
@@ -141,7 +141,7 @@ And here are the same graphs superimposed.
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/lp_norms_optimization_2.png" alt="The lp norm for various values of p in three dimensions">
 </p>
 
-Οur optimization constraint (the line $$5x + 6y = 7$$) intersects with our optimization objective (minimization of the $$\lVert w \rVert_1$$ norm) on the $$y$$ axis. I hope it is evident now how $$\ell_1$$ regularization forces some of the model's parameters to become zero, due to the geometry of the $$\ell_1$$ norm.
+In $$\el_1$$ regularization, our optimization constraint (the line $$5x + 6y = 7$$) intersects with our optimization objective (minimization of the $$\lVert w \rVert_1$$ norm) on the $$y$$ axis. Therefore, the model's parameter $$y$$ is "forced" to become zero. This is not the case for $$\ell_2$$ where the constraint meets the objective outside the $$x$$ and $$y$$ axes.
 
 #### Convexity of the norms
 
