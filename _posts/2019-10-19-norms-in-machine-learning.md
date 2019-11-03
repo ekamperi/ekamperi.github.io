@@ -70,7 +70,7 @@ And this is the boundary for $$\ell_p = 1$$ in $$\mathbb{R}^3$$, that is the set
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/lp_norms_3d.png" alt="The lp norm for various values of p in three dimensions">
 </p>
 
-At this point the careful reader might have noticed that $$p$$ should be a real number greater than or equal to 1. So is $$\ell_{1/2}$$ a norm? The answer is no, because it violates the triangle equality. Let $$v = (x_1, y_1), w = (x_2, y_2)$$ then $$v+w=(x_1+x_2, y_1+y_2)$$.
+At this point the careful reader might have noticed that $$p$$ should be a real number greater than or equal to 1. So is $$\ell_{1/2}$$ really a norm? The answer is no, because it violates the *triangle equality*. Let $$v = (x_1, y_1), w = (x_2, y_2)$$ then $$v+w=(x_1+x_2, y_1+y_2)$$.
 
 $$
 \|v+w\| \le \|v\|+\|w\| \Leftrightarrow \left(\sqrt{x_1+x_2} + \sqrt{y_1+y_2} \right)^2 \le \left(\sqrt{x_1} + \sqrt{y_1}\right)^2 + \left( \sqrt{x2} + \sqrt{y_2}\right)^2
@@ -129,7 +129,7 @@ And here you can see how LASSO regularization invokes sparsity by driving some o
 </p>
 
 #### Feature selection
-Suppose that we would like to minimize $${\lVert x \rVert}_p$$ subject to the constraint $$5x + 6y = 7$$, for various values of $$p$$. We would start from the center of the axes and we would "blow up" our norm until its boundary intersected with the line $$5x + 6y = 7$$. As you can see from the following pictures, for different norms, the optimal point in $$\mathbb{R}^2$$ is different.
+Suppose that we would like to minimize $${\lVert x \rVert}_p$$ subject to the constraint $$5x + 6y = 7$$, for various values of $$p$$. We would start from the center of the axes and we would "blow up" our norm until its boundary intersected with the line $$5x + 6y = 7$$. As you can see from the following pictures, for different norms, the optimal point (that is the point of the intersection) in $$\mathbb{R}^2$$ is different.
 
 <p align="center">
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/lp_norms_optimization.png" alt="Convex vs non-convex function">
@@ -163,7 +163,7 @@ $$
 f(x)  \ge f(x_0) + \nabla f(x)^T (x - x_0)
 $$
 
-Now, the very definition of a norm implies that a norm is always a convex function. Let $$ f = \lVert \cdot \rVert $$, then:
+Convex functions play nicely with gradient descent. Now, the very definition of a norm implies that a norm is always a convex function. Let $$ f = \lVert \cdot \rVert $$, then:
 
 $$\underbrace{\|\alpha v+(1-\alpha)w\| \le \|\alpha v\|+\|(1-\alpha)w\|}_\text{triangle inequality} = \underbrace{\alpha\|v\|+(1- \alpha)\|w\|}_\text{scalability}$$
 
