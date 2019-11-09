@@ -1,3 +1,11 @@
+---
+layout: post
+title:  "The birthday paradox, factorial approximation and Laplace's method"
+date:   2019-11-09
+categories: [mathematics]
+tags: ['mathematics']
+---
+
 Our goal is to approximate the value of the following integral as $$\lambda \to \infty$$:
 
 $$
