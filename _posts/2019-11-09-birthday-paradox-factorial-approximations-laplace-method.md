@@ -9,7 +9,7 @@ tags: ['mathematics']
 ### The birthday paradox
 So, I was looking at the [birthday paradox](https://en.wikipedia.org/wiki/Birthday_problem) and got a little carried away. Here's how.
 
-In probability theory, the *birthday paradox* or *birthday problem* refers to the probability that, in a set of $$N$$ randomly chosen people, some pair of them will have the same birthday. This probability reaches $$50%$$ probability with $$23$$ people. On the other hand 99.9% probability is reached with just 70 people. These numbers might seem counter-intuitive (too small).
+In probability theory, the *birthday paradox* or *birthday problem* refers to the probability that, in a set of $$N$$ randomly chosen people, some pair of them will have the same birthday. This probability reaches $$50\%$$ with $$23$$ people. On the other hand $$99.9\%$$ probability is reached with just $$70$$ people. These numbers might seem counter-intuitive (too small).
 
 In order to calculate the probability of a birthday collision, it's easier to start by considering the probability of drawing $$23$$ people successively, so that each one has a birthday *not yet seen*. This is the probability of *no collision*, so the probability of a collision is its coplementary, i.e. $$1$$ minus this.
 
