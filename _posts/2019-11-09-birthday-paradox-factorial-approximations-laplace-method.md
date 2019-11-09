@@ -27,13 +27,6 @@ $$
 \begin{align*}
 &\left(\frac{365}{365}\right) \cdot \left(\frac{365-1}{365}\right) \cdot \left(\frac{365-2}{365}\right) \cdots \left(\frac{365-k+1}{365}\right)\\
 &=\frac{365 \cdot 364 \cdots (365-k+1)}{365^k}\\
-&=\frac{365! \cdot (365-k) \cdot (365-k-1) \cdots 1}{365^k}\\
-&=\frac{365!}{(365-k)!{365^k}\\
-&= \frac{365!/(365-k)!}{365^k}
-\end{align*}$$
-\begin{align*}
-&\left(\frac{365}{365}\right) \cdot \left(\frac{365-1}{365}\right) \cdot \left(\frac{365-2}{365}\right) \cdots \left(\frac{365-k+1}{365}\right)\\
-&=\frac{365 \cdot 364 \cdots (365-k+1)}{365^k}\\
 &=\frac{365 \cdot 364 \cdots (365-k+1) \cdot (365-k) \cdot(365-k-1) \cdots 1}{365^k \cdot (365-k) \cdot(365-k-1) \cdots 1}\\
 &= \frac{365!}{365^k (365-k)!}\\
 &=\frac{365!/(365-k)!}{365^k}
