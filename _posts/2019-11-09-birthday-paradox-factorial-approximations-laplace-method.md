@@ -6,6 +6,16 @@ categories: [mathematics]
 tags: ['mathematics']
 ---
 
+### The birthday paradox
+So, as was looking at the [birthday paradox](https://en.wikipedia.org/wiki/Birthday_problem) and got carried away.
+
+In probability theory, the *birthday paradox* or *birthday problem* refers to the probability that, in a set of $$N$$ randomly chosen people, some pair of them will have the same birthday. This probability reaches $$50%$$ probability with $$23$$ people. On the other hand 99.9% probability is reached with just 70 people. These numbers might seem counter-intuitive (too small).
+
+### Factorial $$n!$$ approximation and the Stirling's formula
+
+
+
+### Laplace's method for asymptotic integrals
 Our goal is to approximate the value of the following integral as $$\lambda \to \infty$$:
 
 $$
