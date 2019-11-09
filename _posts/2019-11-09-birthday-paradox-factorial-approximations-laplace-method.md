@@ -21,6 +21,10 @@ $$
 \end{align*}
 $$
 
+$$
+\text{Prob} = 1- \frac{N!/(N-k)!}{N^k}
+$$
+
 ### Factorial $$n!$$ approximation and the Stirling's formula
 
 
