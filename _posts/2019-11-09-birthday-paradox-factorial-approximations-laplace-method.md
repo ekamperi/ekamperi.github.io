@@ -6,6 +6,12 @@ categories: [mathematics]
 tags: ['mathematics', 'integrals', 'Laplace', 'probabilities']
 ---
 
+### Contents
+{:.no_toc}
+
+* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
+{:toc}
+
 ### The birthday paradox
 So, I was looking at the [birthday paradox](https://en.wikipedia.org/wiki/Birthday_problem) and got a little carried away. Here's how.
 
@@ -114,6 +120,7 @@ I(\lambda) &\simeq f(x_0) e^{-\lambda \varphi(x_0)} \sqrt{\frac{\pi}{\frac{\lamb
 \end{align*}
 $$
 
+#### Laplace's method for deriving Stirling's approximation
 Alright, so the idea is to bring the integral $$I(n) = \int_0^\infty x^n e^{-x}\mathrm{d}x$$ to the form $$I(n) = \int_0^\infty f(x) e^{-n \varphi(x)}\mathrm{d}x$$, because we already have a formula for the latter. So
 
 $$
@@ -148,4 +155,28 @@ $$
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/stirling_approximation.png">
 </p>
+
+#### Another example of Laplace's method
+
+Suppose we would like to calculate the value of the following integral:
+
+$$
+I(\lambda)
+= \int_0^{\pi/2}  \frac{e^{\lambda \cos x}}{x^4+4} \mathrm{d}x 
+= \frac{1}{2} \int_{-\pi/2}^{\pi/2}  \frac{e^{-\lambda \overbrace{(-\cos x)}^{\varphi(x)} }}{x^4+4} \mathrm{d}x = 
+$$
+
+Since the function we integrate is symmetric, i.e. $$g(x) = g(-x)$$ it follows that $$\int_{-a}^{a} g(x)\mathrm{d} x = 2 \int_0^a g(x) \mathrm{d}x$$. Why did we change the interval of integration from $$[0, \pi/2]$$ to $$[-\pi/2, \pi/2]$$? Well, because we want $$\varphi(x)$$ to have a local minimum in the interior of the integral upon which we integrate.
+
+Therefore:
+
+$$
+I(\lambda) = f(x_0) e^{-\lambda \varphi(x_0)} \sqrt{\frac{2\pi}{\lambda \varphi''(x_0)}}
+$$
+
+In our case $$f(x) = \frac{1}{x^2+4}$$ and $$\varphi(x) = -\cos x$$. It is $$\varphi'(x) = \sin x \Rightarrow x_0 = 0$$  and $$\varphi''(x_0) = cos x_0 = 1 > 0$$. So
+
+$$
+I(\lambda) = \frac{1}{2} \frac{1}{x_0^2 + 4} e^{-\lambda (-\cos x_0)} \sqrt{\frac{2\pi}{\lambda \cos x_0}} = \sqrt{\frac{\pi}{32\lambda}} e^{\lambda}
+$$
 
