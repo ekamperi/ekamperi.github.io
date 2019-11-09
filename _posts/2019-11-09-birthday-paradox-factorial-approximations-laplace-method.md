@@ -9,13 +9,13 @@ tags: ['mathematics']
 ### The birthday paradox
 So, I was looking at the [birthday paradox](https://en.wikipedia.org/wiki/Birthday_problem) and got a little carried away. Here's how.
 
-In probability theory, the *birthday paradox* or *birthday problem* refers to the probability that, in a set of $$N$$ randomly chosen people, some pair of them will have the same birthday. This probability reaches $$50\%$$ with $$23$$ people. On the other hand $$99.9\%$$ probability is reached with just $$70$$ people. These numbers might seem counter-intuitive (too small).
+In probability theory, the *birthday paradox* or *birthday problem* refers to the probability that, in a set of $$N$$ randomly chosen people, some pair of them will have birthday the same day. This probability reaches $$50\%$$ with $$23$$ people and  $$99.9\%$$ probability with just $$70$$ people. It's called a paradox because many people find these numbers too small and counter-intuitive.
 
 <p align="center">
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/birthday_paradox.png">
 </p>
 
-In order to calculate the probability of a birthday collision, it's easier to start by considering the probability of "drawing" $$23$$ people successively, so that each one has a birthday *not yet seen*. This is the probability of *no collision*, so the probability of a collision is its complementary, i.e. $$1$$ minus this.
+In order to calculate the probability of a birthday collision, it's easier to start by considering the probability of "drawing" $$23$$ people successively, so that each one has a birthday *not yet seen*. This is the probability of *no collision*, so the probability of at least one collision is its complementary, i.e. $$1$$ minus this.
 
 $$
 \begin{align*}
@@ -45,7 +45,7 @@ $$
 
 ### Factorial $$n!$$ approximation and the Stirling's formula
 
-Since the calculation of birthday collision probability requires factorials of big numbers, naturally we would like to come up with a method to calculate them effortlessly. In the context of mathematics, [Stirling's formula](https://en.wikipedia.org/wiki/Stirling%27s_approximation) is an approximation for computing the factorial $$n$$. It is a decent approximation, giving accurate results even for small values of $$n$$. It is named after James Stirling, a Scottish mathematician.
+Since the calculation of birthday collision probability requires factorials of large numbers, naturally we would like to come up with a method to calculate them effortlessly. In this context, [Stirling's formula](https://en.wikipedia.org/wiki/Stirling%27s_approximation) is an approximation for computing the factorial $$n!$$. It is a decent approximation, giving accurate results even for small values of $$n$$ and is named after James Stirling, a Scottish mathematician.
 
 The formula that is usually referenced is the following:
 
@@ -59,7 +59,7 @@ $$
 n! = \int_0^\infty x^n e^{-x} \mathrm{d}x
 $$
 
-It is pretty straightforward to prove it by applying repeatedly *integration by parts*. E.g.:
+This is pretty straightforward to prove, just by applying repeatedly *integration by parts*. E.g.:
 
 $$
 \begin{align*}
@@ -69,10 +69,10 @@ I_1
 \end{align*}
 $$
 
-Similarly $$I_2 = n(n-1) \int_0^\infty x^{n-2} e^{-x} \mathrm{d}x$$, and eventually the $$x^n$$ will be exhausted and the factorial $$n!$$ will have built up.
+Similarly $$I_2 = n(n-1) \int_0^\infty x^{n-2} e^{-x} \mathrm{d}x$$, and eventually the $$x^n$$ will be exhausted and the factorial $$n!$$ will have built up. So as long as we can approximate the value of the above integral, we can approximate the value of $$n!$$. Well, let us summon Pierre-Simon, marquis de Laplace.
 
 ### Laplace's method for asymptotic integrals
-Our goal is to approximate the value of the following integral as $$\lambda \to \infty$$:
+The Laplace's method enables us to approximate the value of the following integral as $$\lambda \to \infty$$:
 
 $$
 I(\lambda) = \int_a^b f(x) e^{-\lambda \varphi(x)} \mathrm{d}x
