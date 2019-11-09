@@ -86,3 +86,52 @@ I(\lambda) &\simeq f(x_0) e^{-\lambda \varphi(x_0)} \sqrt{\frac{\pi}{\frac{\lamb
 &= f(x_0) e^{-\lambda \varphi(x_0)} \sqrt{\frac{2\pi}{\lambda \varphi''(x_0)}} 
 \end{align*}
 $$
+
+We start with the formula:
+
+$$
+n! = \int_0^\infty x^n e^{-x} \mathrm{d}x
+$$
+
+It is straightforward to prove it by applying repeatedly integration by parts to the $$f(x) = x^n e^{-x}\mathrm{d}x$$. E.g.:
+
+$$
+\begin{align*}
+I_1
+&= -\int_0^\infty x^n \left(e^{-x}\right)' \mathrm{d}x = -\left[x^n e^{-x}\right]_0^\infty + \int_0^\infty n x^{n-1} e^{-x}\mathrm{d}x\\
+&= n \int_0^\infty x^{n-1} e^{-x} \mathrm{d}x
+\end{align*}
+$$
+
+Similarly $$I_2 = n(n-1) \int_0^\infty x^{n-2} e^{-x} \mathrm{d}x$$, and eventually the $$x^n$$ will be exhausted and the factorial $$n!$$ will have built up.
+
+Alright, so the idea is to bring the integral $$I(n) = \int_0^\infty x^n e^{-x}\mathrm{d}x$$ to the form $$I(n) = \int_0^\infty f(x) e^{-n \varphi(x)}\mathrm{d}x$$, because we already have a formula for the latter. So
+
+$$
+I(n)
+= \int_0^\infty x^n e^{-x}\mathrm{d}x
+= \int_0^\infty e^{\ln x^n} e^{-x}\mathrm{d}x
+= \int_0^\infty e^{n \ln x} e^{-x}\mathrm{d}x
+= \int_0^\infty e^{n \ln x -x}\mathrm{d}x
+$$
+
+We are close, but not quite yet. If only we could write $$x$$ as a multiple of $$n$$, then we could factor out $$n$$ and be done. Therefore, let's try to substitute $$x = n z \Rightarrow \mathrm{d}x = n \mathrm{d}z$$:
+
+$$
+I(n)
+= n\int_0^\infty e^{n \ln (n z) - n z}\mathrm{d}z
+= n\int_0^\infty e^{n \ln n} e^{n \ln z - n z}\mathrm{d}z
+= n^{n+1} \int_0^\infty e^{-n \overbrace{\left(z - \ln{z}\right)}^{\varphi(z)}}\mathrm{d}z
+$$
+
+Yes! We are exactly where we would like to be since $$ f(z) = 1, \varphi(z) = z - \ln{z}$$ and $$\varphi'(z) = 1 - 1/z \Rightarrow z_0 = 1, \varphi'(z_0) = 0$$ and $$\varphi''(z) = 1/z^2 \Rightarrow \varphi''(z_0) = 1$$.
+
+Finally:
+
+$$
+\begin{align*}
+n! &\simeq n^{n+1} f(z_0) e^{-n \varphi(z_0)} \sqrt{\frac{2\pi}{n \varphi''(z_0)}}\\
+&= n^{n+1} e^{-n} \sqrt{\frac{2\pi}{n}}\\
+&= \sqrt{2\pi} n^{n+1/2} e^{-n}
+\end{align*}
+$$
