@@ -46,7 +46,7 @@ Since the calculation of birthday collision probability requires the calculation
 The formula that is usually referenced is the following:
 
 $$
-\ln n! = n\ln{n} - n + \mathcal{O}(\ln n)}
+\ln n! = n \ln{n} - n + \mathcal{O} (\ln n)
 $$
 
 We start with the formula:
