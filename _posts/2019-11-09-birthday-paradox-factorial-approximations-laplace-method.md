@@ -84,7 +84,7 @@ $$
 I(\lambda) = \int_a^b f(x) e^{-\lambda \varphi(x)} \mathrm{d}x
 $$
 
-Our assumptions include the convergence of $$I(\lambda)$$ for sufficiently large $$\lambda$$, that $$f(x)$$ and $$\varphi(x)$$ are smooth enough to be replaced by their local Taylor expansions of appropriate degree. Also $$\varphi'(x_0) = 0, \varphi''(x_0)>0, f(x_0)\ne0$$.
+Our assumptions include the convergence of $$I(\lambda)$$ for sufficiently large $$\lambda$$, that $$f(x)$$ and $$\varphi(x)$$ are smooth enough to be replaced by their local Taylor expansions of appropriate degree. Also $$\varphi'(x_0) = 0, \varphi''(x_0) > 0 (therefore $$\varphi(x_0)$$ is a minimum and $$-\lambda \varphi(x_0)$$ a maximum and $$f(x_0)\ne0$$.
 
 We linearize $$f(x)$$ and $$\varphi(x)$$ we expand it into a second order Taylor series around the point $$x=x_0$$:
 
@@ -166,7 +166,7 @@ I(\lambda)
 = \frac{1}{2} \int_{-\pi/2}^{\pi/2}  \frac{e^{-\lambda \overbrace{(-\cos x)}^{\varphi(x)} }}{x^4+4} \mathrm{d}x = 
 $$
 
-Since the function we integrate is symmetric, i.e. $$g(x) = g(-x)$$ it follows that $$\int_{-a}^{a} g(x)\mathrm{d} x = 2 \int_0^a g(x) \mathrm{d}x$$. Why did we change the interval of integration from $$[0, \pi/2]$$ to $$[-\pi/2, \pi/2]$$? Well, because we want $$\varphi(x)$$ to have a local minimum in the interior of the interval upon which we integrate.
+Since the function we integrate is symmetric, i.e. $$g(x) = g(-x)$$ it follows that $$\int_{-a}^{a} g(x)\mathrm{d} x = 2 \int_0^a g(x) \mathrm{d}x$$. Why did we change the interval of integration from $$[0, \pi/2]$$ to $$[-\pi/2, \pi/2]$$? Well, because we want $$\varphi(x)$$ to have a local minimum in the *interior* of the interval upon which we integrate.
 
 Therefore:
 
