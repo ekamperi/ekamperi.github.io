@@ -60,8 +60,8 @@ It is straightforward to prove it by applying repeatedly integration by parts to
 $$
 \begin{align*}
 I_1
-&= -\int_0^\infty x^n \left(e^{-x}\right)' \mathrm{d}x = -\left[x^n e^{-x}\right]_0^\infty + \int_0^\infty n x^{n-1} e^{-x}\mathrm{d}x\\
-&= n \int_0^\infty x^{n-1} e^{-x} \mathrm{d}x
+&= -\int_0^\infty x^n \left(e^{-x}\right)' \mathrm{d}x = -\left[x^n e^{-x}\right]_0^\infty + \int_0^\infty n x^{n-1} e^{-x}\mathrm{d}x
+= n \int_0^\infty x^{n-1} e^{-x} \mathrm{d}x
 \end{align*}
 $$
 
