@@ -184,7 +184,7 @@ And here is the function we integrated for increasing values of $$\lambda$$:
 
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/laplace_example.png">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/laplace_integral.png">
 </p>
 
 
