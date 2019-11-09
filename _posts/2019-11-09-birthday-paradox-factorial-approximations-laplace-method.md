@@ -146,6 +146,6 @@ n! &\simeq n^{n+1} f(z_0) e^{-n \varphi(z_0)} \sqrt{\frac{2\pi}{n \varphi''(z_0)
 $$
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/stirling_approximation.png">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/stirling_approximation.png">
 </p>
 
