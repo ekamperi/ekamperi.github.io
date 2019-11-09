@@ -3,7 +3,7 @@ layout: post
 title:  "The birthday paradox, factorial approximation and Laplace's method"
 date:   2019-11-09
 categories: [mathematics]
-tags: ['mathematics']
+tags: ['mathematics', 'integrals', 'Laplace', 'probabilities']
 ---
 
 ### The birthday paradox
