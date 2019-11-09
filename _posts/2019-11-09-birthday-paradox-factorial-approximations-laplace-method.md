@@ -22,6 +22,7 @@ $$
 $$
 
 Since:
+
 $$
 \begin{align*}
 &\left(\frac{365}{365}\right) \cdot \left(\frac{365-1}{365}\right) \cdot \left(\frac{365-2}{365}\right) \cdots \left(\frac{365-k+1}{365}\right)\\
@@ -33,6 +34,7 @@ $$
 $$
 
 It follows that in a set of $$N$$ randomly chosen items, the probability of some collision after $$k$$ "draws" is:
+
 $$
 \text{Prob} = 1- \frac{N!/(N-k)!}{N^k}
 $$
