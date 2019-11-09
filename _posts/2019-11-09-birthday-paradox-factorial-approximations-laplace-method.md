@@ -74,8 +74,7 @@ $$
 I(\lambda) = \int_a^b f(x) e^{-\lambda \varphi(x)} \mathrm{d}x
 $$
 
-Our assumptions include the convergence of $$I(\lambda)$$ for $$\lambda$$ sufficiently
-large, that $$f(x)$$ and $$\varphi(x)$$ are smooth enough to be replaced by their local Taylor expansions of appropriate degree. Also $$\varphi'(x_0) = 0, \varphi''(x_0)>0, f(x_0)\ne0$$.
+Our assumptions include the convergence of $$I(\lambda)$$ for sufficiently large $$\lambda$$, that $$f(x)$$ and $$\varphi(x)$$ are smooth enough to be replaced by their local Taylor expansions of appropriate degree. Also $$\varphi'(x_0) = 0, \varphi''(x_0)>0, f(x_0)\ne0$$.
 
 We linearize $$f(x)$$ and $$\varphi(x)$$ we expand it into a second order Taylor series around the point $$x=x_0$$:
 
