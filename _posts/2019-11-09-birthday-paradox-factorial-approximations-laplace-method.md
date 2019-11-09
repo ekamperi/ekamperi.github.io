@@ -182,10 +182,12 @@ $$
 
 And here is the function we integrated for increasing values of $$\lambda$$:
 
-
 <p align="center">
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/laplace_integral.png">
 </p>
 
+And here you can see the effect of raising $$\cos{x}$$ in $$e$$. In specific, you can see how the exponentiation makes the function to approximate a Gaussian function.
 
-
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/laplace_idea.png">
+</p>
