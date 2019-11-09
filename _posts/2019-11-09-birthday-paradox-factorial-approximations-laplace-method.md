@@ -33,7 +33,7 @@ $$
 \end{align*}
 $$
 
-It follows that in a set of $$N$$ randomly chosen items, the probability of some collision after $$k$$ "draws" is:
+It follows that in a set of $$n$$ randomly chosen items, the probability of some collision after $$k$$ "draws" is:
 
 $$
 \text{Prob(collision)} = 1 - \frac{n!/(n-k)!}{n^k}
