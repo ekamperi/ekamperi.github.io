@@ -11,7 +11,7 @@ So, I was looking at the [birthday paradox](https://en.wikipedia.org/wiki/Birthd
 
 In probability theory, the *birthday paradox* or *birthday problem* refers to the probability that, in a set of $$N$$ randomly chosen people, some pair of them will have the same birthday. This probability reaches $$50\%$$ with $$23$$ people. On the other hand $$99.9\%$$ probability is reached with just $$70$$ people. These numbers might seem counter-intuitive (too small).
 
-In order to calculate the probability of a birthday collision, it's easier to start by considering the probability of drawing $$23$$ people successively, so that each one has a birthday *not yet seen*. This is the probability of *no collision*, so the probability of a collision is its complementary, i.e. $$1$$ minus this.
+In order to calculate the probability of a birthday collision, it's easier to start by considering the probability of "drawing" $$23$$ people successively, so that each one has a birthday *not yet seen*. This is the probability of *no collision*, so the probability of a collision is its complementary, i.e. $$1$$ minus this.
 
 $$
 \begin{align*}
@@ -41,7 +41,7 @@ $$
 
 ### Factorial $$n!$$ approximation and the Stirling's formula
 
-Since the calculation of birthday collision probability requires the calculation of factorial of big numbers, naturally we would like to come up with such a method. In the context of mathematics, Stirling's formula is an approximation for computing the factorial $$n$$. It is a decent approximation, giving accurate results even for small values of $$n$$. It is named after James Stirling, a Scottish mathematician.
+Since the calculation of birthday collision probability requires factorials of big numbers, naturally we would like to come up with a method to calculate them effortlessly. In the context of mathematics, [Stirling's formula](https://en.wikipedia.org/wiki/Stirling%27s_approximation) is an approximation for computing the factorial $$n$$. It is a decent approximation, giving accurate results even for small values of $$n$$. It is named after James Stirling, a Scottish mathematician.
 
 The formula that is usually referenced is the following:
 
@@ -49,13 +49,13 @@ $$
 \ln n! = n \ln{n} - n + \mathcal{O} (\ln n)
 $$
 
-We start with the formula:
+In order to derive the above relation, we start with recognizing that:
 
 $$
 n! = \int_0^\infty x^n e^{-x} \mathrm{d}x
 $$
 
-It is straightforward to prove it by applying repeatedly integration by parts to the $$f(x) = x^n e^{-x}\mathrm{d}x$$. E.g.:
+It is pretty straightforward to prove it by applying repeatedly *integration by parts*. E.g.:
 
 $$
 \begin{align*}
