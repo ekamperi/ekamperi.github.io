@@ -166,7 +166,7 @@ I(\lambda)
 = \frac{1}{2} \int_{-\pi/2}^{\pi/2}  \frac{e^{-\lambda \overbrace{(-\cos x)}^{\varphi(x)} }}{x^4+4} \mathrm{d}x = 
 $$
 
-Since the function we integrate is symmetric, i.e. $$g(x) = g(-x)$$ it follows that $$\int_{-a}^{a} g(x)\mathrm{d} x = 2 \int_0^a g(x) \mathrm{d}x$$. Why did we change the interval of integration from $$[0, \pi/2]$$ to $$[-\pi/2, \pi/2]$$? Well, because we want $$\varphi(x)$$ to have a local minimum in the interior of the integral upon which we integrate.
+Since the function we integrate is symmetric, i.e. $$g(x) = g(-x)$$ it follows that $$\int_{-a}^{a} g(x)\mathrm{d} x = 2 \int_0^a g(x) \mathrm{d}x$$. Why did we change the interval of integration from $$[0, \pi/2]$$ to $$[-\pi/2, \pi/2]$$? Well, because we want $$\varphi(x)$$ to have a local minimum in the interior of the interval upon which we integrate.
 
 Therefore:
 
@@ -179,4 +179,13 @@ In our case $$f(x) = \frac{1}{x^2+4}$$ and $$\varphi(x) = -\cos x$$. It is $$\va
 $$
 I(\lambda) = \frac{1}{2} \frac{1}{x_0^2 + 4} e^{-\lambda (-\cos x_0)} \sqrt{\frac{2\pi}{\lambda \cos x_0}} = \sqrt{\frac{\pi}{32\lambda}} e^{\lambda}
 $$
+
+And here is the function we integrated for increasing values of $$\lambda$$:
+
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/laplace_example.png">
+</p>
+
+
 
