@@ -3,7 +3,7 @@ layout: post
 title:  What does it really mean for a machine to learn mathematics?
 date:   2019-09-27
 categories: math
-tags: ['machine learning', math, 'neural networks']
+tags: ['machine learning', mathematics, 'neural networks']
 ---
 
 ### Contents
