@@ -180,14 +180,14 @@ $$
 I(\lambda) = \frac{1}{2} \frac{1}{x_0^2 + 4} e^{-\lambda (-\cos x_0)} \sqrt{\frac{2\pi}{\lambda \cos x_0}} = \sqrt{\frac{\pi}{32\lambda}} e^{\lambda}
 $$
 
-And here is the function we integrated for increasing values of $$\lambda$$:
+Here is the function we integrated for increasing values of $$\lambda$$:
 
 <p align="center">
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/laplace_integral.png">
 </p>
 
-And here you can see the effect of raising $$\cos{x}$$ in $$e$$. In specific, you can see how the exponentiation makes the function to approximate a Gaussian function.
+And here you can see the effect of raising $$\lambda \cos{x}$$ in $$e$$. In specific, you can see how the exponentiation makes the function to approximate a Gaussian function and how the value of the integral is dominated by a small region around the maximum point of $$\lambda \cos{x}$$.
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/laplace_idea.png">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/laplace_idea.png">
 </p>
