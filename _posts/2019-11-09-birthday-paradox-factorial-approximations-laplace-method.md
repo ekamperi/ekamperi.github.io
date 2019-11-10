@@ -77,7 +77,7 @@ $$
 
 Similarly $$I_2 = n(n-1) \int_0^\infty x^{n-2} e^{-x} \mathrm{d}x$$, and eventually the $$x^n$$ will be exhausted and the factorial $$n!$$ will have built up.
 
-It turns out that there's another one method to do the calculation that is perhaps more slick and elegant. It was popularized by Richard Feynman, so sometimes is called "Feynman integration", although he did not invent it. The other name this method is known as is *differentiation under the integral sign* and it deserves a post on its own, but anyway. Here is how it goes for this particular case.
+It turns out that there's another method to do the calculation that is perhaps more slick and elegant. It was popularized by Richard Feynman, so it is often referred to as "Feynman integration", although he did not invent it. The other name this method is known as is *differentiation under the integral sign* and it deserves a post on its own, but anyway. Here is how it goes for this particular case.
 
 We define the following parameterized version of our integral:
 
