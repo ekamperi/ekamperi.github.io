@@ -202,7 +202,7 @@ $$
 I(\lambda) = f(x_0) e^{-\lambda \varphi(x_0)} \sqrt{\frac{2\pi}{\lambda \varphi''(x_0)}}
 $$
 
-In our case $$f(x) = \frac{1}{x^2+4}$$ and $$\varphi(x) = -\cos x$$. It is $$\varphi'(x) = \sin x \Rightarrow x_0 = 0$$  and $$\varphi''(x_0) = cos x_0 = 1 > 0$$. So
+In our case $$f(x) = \frac{1}{x^2+4}$$ and $$\varphi(x) = -\cos x$$. It is $$\varphi'(x) = \sin x \Rightarrow x_0 = 0$$  and $$\varphi''(x_0) = \cos x_0 = 1 > 0$$. So
 
 $$
 I(\lambda) = \frac{1}{2} \frac{1}{x_0^2 + 4} e^{-\lambda (-\cos x_0)} \sqrt{\frac{2\pi}{\lambda \cos x_0}} = \sqrt{\frac{\pi}{32\lambda}} e^{\lambda}
