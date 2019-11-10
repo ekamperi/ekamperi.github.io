@@ -97,7 +97,11 @@ g(k) &= \frac{1}{(-1)^n} \int_0^\infty \frac{\mathrm{\partial}^n}{\mathrm{\parti
 \end{align*}
 $$
 
-Finally, $$g(1) = \int_0^\infty x^n e^{-x} \mathrm{d} x = \frac{n!}{1^{n+1}} = n!$$
+Finally:
+
+$$
+g(1) = \int_0^\infty x^n e^{-x} \mathrm{d} x = \frac{n!}{1^{n+1}} = n!
+$$
 
 So as long as we can approximate the value of the above integral, we can approximate the value of $$n!$$. Well, let us summon Pierre-Simon, marquis de Laplace.
 
