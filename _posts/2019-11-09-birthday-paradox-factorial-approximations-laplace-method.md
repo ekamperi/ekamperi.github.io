@@ -75,14 +75,17 @@ I_1
 \end{align*}
 $$
 
-Similarly $$I_2 = n(n-1) \int_0^\infty x^{n-2} e^{-x} \mathrm{d}x$$, and eventually the $$x^n$$ will be exhausted and the factorial $$n!$$ will have built up. It turns out that there's another one method to do the calculation that is perhaps more slick and elegant. It was popularized by Richard Feynman, so sometimes is called "Feynman integration", although he did not invent it. The other name this method is known as is *differentiation under the integral sign* and it deserves a post on its own, but anyway. Here is how it goes for this particular integral.
+Similarly $$I_2 = n(n-1) \int_0^\infty x^{n-2} e^{-x} \mathrm{d}x$$, and eventually the $$x^n$$ will be exhausted and the factorial $$n!$$ will have built up.
 
-We define this parameterized version of our integral
+It turns out that there's another one method to do the calculation that is perhaps more slick and elegant. It was popularized by Richard Feynman, so sometimes is called "Feynman integration", although he did not invent it. The other name this method is known as is *differentiation under the integral sign* and it deserves a post on its own, but anyway. Here is how it goes for this particular case.
+
+We define the following parameterized version of our integral:
+
 $$
 g(k) = \int_0^\infty x^n e^{-k x} \mathrm{d}x
 $$
 
-and we are interested in the value of $$g(1)$$. As it will turn out, it will be easier to solve this *more general* problem and then set $$k=1$$, than the original problem! So:
+We are interested in the value of $$g(1)$$. As it will turn out, it'll be easier to solve this *more general* problem and then set $$k=1$$, than the original one! So:
 
 $$
 \begin{align*}
@@ -95,7 +98,6 @@ g(k) &= \frac{1}{(-1)^n} \int_0^\infty \frac{\mathrm{\partial}^n}{\mathrm{\parti
 $$
 
 Finally, $$g(1) = \int_0^\infty x^n e^{-x} \mathrm{d} x = \frac{n!}{1^{n+1}} = n!$$
-
 
 So as long as we can approximate the value of the above integral, we can approximate the value of $$n!$$. Well, let us summon Pierre-Simon, marquis de Laplace.
 
