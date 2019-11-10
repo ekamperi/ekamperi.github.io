@@ -190,8 +190,8 @@ Suppose we would like to calculate the value of the following integral:
 
 $$
 I(\lambda)
-= \int_0^{\pi/2}  \frac{e^{\lambda \cos x}}{x^4+4} \mathrm{d}x 
-= \frac{1}{2} \int_{-\pi/2}^{\pi/2}  \frac{e^{-\lambda \overbrace{(-\cos x)}^{\varphi(x)} }}{x^4+4} \mathrm{d}x = 
+= \int_0^{\pi/2}  \frac{e^{\lambda \cos x}}{x^2+4} \mathrm{d}x 
+= \frac{1}{2} \int_{-\pi/2}^{\pi/2}  \frac{e^{-\lambda \overbrace{(-\cos x)}^{\varphi(x)} }}{x^2+4} \mathrm{d}x = 
 $$
 
 Since the function we integrate is symmetric, i.e. $$g(x) = g(-x)$$ it follows that $$\int_{-a}^{a} g(x)\mathrm{d} x = 2 \int_0^a g(x) \mathrm{d}x$$. Why did we change the interval of integration from $$[0, \pi/2]$$ to $$[-\pi/2, \pi/2]$$? Well, because we want $$\varphi(x)$$ to have a local minimum in the *interior* of the interval upon which we integrate.
