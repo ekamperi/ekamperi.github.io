@@ -90,9 +90,9 @@ We are interested in the value of $$g(1)$$. As it will turn out, it'll be easier
 $$
 \begin{align*}
 g(k) &= \frac{1}{(-1)^n} \int_0^\infty \frac{\mathrm{\partial}^n}{\mathrm{\partial} k^n} e^{-k x}\mathrm{d}x
-= \frac{1}{(-1)^n} \frac{\mathrm{d}^n}{\mathrm{dk^n}} \int_0^\infty e^{-k x}\mathrm{d}x
-= \frac{1}{(-1)^n} \frac{\mathrm{d}^n}{\mathrm{dk^n}} \left( \left.\frac{e^{-k x}}{-k}\right|_0^\infty \right)\\
-&= \frac{1}{(-1)^n} \frac{\mathrm{d}^n}{\mathrm{dk^n}} \left( \frac{1}{k} \right)
+= \frac{1}{(-1)^n} \frac{\mathrm{d}^n}{\mathrm{d}k^n} \int_0^\infty e^{-k x}\mathrm{d}x
+= \frac{1}{(-1)^n} \frac{\mathrm{d}^n}{\mathrm{d}k^n} \left( \left.\frac{e^{-k x}}{-k}\right|_0^\infty \right)\\
+&= \frac{1}{(-1)^n} \frac{\mathrm{d}^n}{\mathrm{d}k^n} \left( \frac{1}{k} \right)
 = \frac{1}{(-1)^n} (-1)^n \frac{n!}{k^{n+1}} = \frac{n!}{k^{n+1}}
 \end{align*}
 $$
