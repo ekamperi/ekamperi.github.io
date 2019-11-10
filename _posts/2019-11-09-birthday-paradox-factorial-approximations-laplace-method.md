@@ -3,7 +3,7 @@ layout: post
 title:  "The birthday paradox, factorial approximation and Laplace's method"
 date:   2019-11-09
 categories: [mathematics]
-tags: ['mathematics', 'integrals', 'Laplace', 'probabilities']
+tags: ['mathematics', 'Feynman integration', 'integrals', 'Laplace', 'probabilities']
 ---
 
 ### Contents
@@ -75,7 +75,29 @@ I_1
 \end{align*}
 $$
 
-Similarly $$I_2 = n(n-1) \int_0^\infty x^{n-2} e^{-x} \mathrm{d}x$$, and eventually the $$x^n$$ will be exhausted and the factorial $$n!$$ will have built up. So as long as we can approximate the value of the above integral, we can approximate the value of $$n!$$. Well, let us summon Pierre-Simon, marquis de Laplace.
+Similarly $$I_2 = n(n-1) \int_0^\infty x^{n-2} e^{-x} \mathrm{d}x$$, and eventually the $$x^n$$ will be exhausted and the factorial $$n!$$ will have built up. It turns out that there's another one method to do the calculation that is perhaps more slick and elegant. It was popularized by Richard Feynman, so sometimes is called "Feynman integration", although he did not invent it. The other name this method is known as is *differentiation under the integral sign* and it deserves a post on its own, but anyway. Here is how it goes for this particular integral.
+
+We define this parameterized version of our integral
+$$
+g(k) = \int_0^\infty x^n e^{-k x} \mathrm{d}x
+$$
+
+and we are interested in the value of $$g(1)$$. As it will turn out, it will be easier to solve this *more general* problem and then set $$k=1$$, than the original problem! So:
+
+$$
+\begin{align*}
+g(k) &= \frac{1}{(-1)^n} \int_0^\infty \frac{\mathrm{\partial}^n}{\mathrm{\partial} k^n} e^{-k x}\mathrm{d}x
+= \frac{1}{(-1)^n} \frac{\mathrm{d}^n}{\mathrm{dk^n}} \int_0^\infty e^{-k x}\mathrm{d}x
+= \frac{1}{(-1)^n} \frac{\mathrm{d}^n}{\mathrm{dk^n}} \left( \left.\frac{e^{-k x}}{-k}\right|_0^\infty \right)\\
+&= \frac{1}{(-1)^n} \frac{\mathrm{d}^n}{\mathrm{dk^n}} \left( \frac{1}{k} \right)
+= \frac{1}{(-1)^n} (-1)^n \frac{n!}{k^{n+1}} = \frac{n!}{k^{n+1}}
+\end{align*}
+$$
+
+Finally, $$g(1) = \int_0^\infty x^n e^{-x} \mathrm{d} x = \frac{n!}{1^{n+1}} = n!$$
+
+
+So as long as we can approximate the value of the above integral, we can approximate the value of $$n!$$. Well, let us summon Pierre-Simon, marquis de Laplace.
 
 ### Laplace's method for asymptotic integrals
 The Laplace's method enables us to approximate the value of the following integral as $$\lambda \to \infty$$:
