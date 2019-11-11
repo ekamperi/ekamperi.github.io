@@ -112,7 +112,7 @@ $$
 I(\lambda) = \int_a^b f(x) e^{-\lambda \varphi(x)} \mathrm{d}x
 $$
 
-The idea behind this method is that the value of the integral is dominated by the values of $$e^{-\lambda \varphi{x})$$ around the minimum point of $$\varphi{x}$$ (therefore, around the maximum point of $$-\lambda \varphi{x}$$. Here you can see the effect of raising $$\lambda \cos{x}$$ in $$e$$. In specific, you can see how the exponentiation makes the function to approximate a Gaussian function and how the value of the integral is dominated by a small region around the maximum point of $$\lambda \cos{x}$$, in specific around $$x_0 = 0$$.
+The idea behind this method is that the value of the integral is dominated by the values of $$e^{-\lambda \varphi(x)}$$ around the minimum point of $$\varphi(x)$$ (therefore, around the maximum point of $$-\lambda \varphi(x)$$. Here you can see the effect of raising $$\lambda \cos{x}$$ in $$e$$. In specific, you can see how the exponentiation makes the function to approximate a Gaussian function and how the value of the integral is dominated by a small region around the maximum point of $$\lambda \cos{x}$$, in specific around $$x_0 = 0$$.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/laplace_idea.png">
