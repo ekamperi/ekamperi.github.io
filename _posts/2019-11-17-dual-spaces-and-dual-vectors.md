@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Dual spaces, dual basis, dual vectors"
+title:  "Dual spaces, dual vectors and dual basis"
 date:   2019-11-17
 categories: [mathematics]
 tags: ['general relativity', 'linear algebra', 'mathematics']
