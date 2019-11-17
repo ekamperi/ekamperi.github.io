@@ -25,4 +25,6 @@ $$
 * <ins>Example 4</ins>: Let $$V = C([0,1])$$ (the set of all continuous function on the interval $$[0,1]$$) and $$\varphi: C[(0,1)] \to \mathbb{R}$$, then $$\varphi(g) = \int_0^1 g(x) \mathrm{d}x$$ is a member of $$V^*$$. For instance, $$\varphi(e^x) = \int_0^1 e^x \mathrm{d}x = e^1 - 1 = e -1$$.
 
 ### Dual basis example
-If $$b = \{v_1, v_2, \ldots, v_n\}$$ is a basis of vector space $$V$$, then $$b^* = \{ \varphi_1, \varphi_2, \ldots, \varphi_n\}$$ is a basis of $$V*$$. So, how do you calculate the dual basis vectors? You set $$\varphi_i(v_j) = \delta_{ij}$$. Then any functional $$\varphi$$ can be written as a linear combination of the dual basis vector, i.e. $$\varphi = \varphi(v_1) \varphi_1 + \varphi(v_2) + \ldots + \varphi(v_n) \varphi_n$$.
+If $$b = \{v_1, v_2, \ldots, v_n\}$$ is a basis of vector space $$V$$, then $$b^* = \{ \varphi_1, \varphi_2, \ldots, \varphi_n\}$$ is a basis of $$V*$$. So, how do you calculate the dual basis vectors? You set $$\varphi_i(v_j) = \delta_{ij}$$. Then any functional $$\varphi$$ can be written as a linear combination of the dual basis vector, i.e. $$\varphi = \varphi(v_1) \varphi_1 + \varphi(v_2) \varphi_2 + \ldots + \varphi(v_n) \varphi_n$$.
+
+Let's see a concrete example. Assume $$V = \mathrm{R}^2$$ and a vector basis $$b = \{ (2,1), (3,1) \}, then what is the dual basis $$b^*$$? 
