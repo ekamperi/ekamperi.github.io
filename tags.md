@@ -30,7 +30,7 @@ Here we generate all the tags.
 {% endfor %}
 
 <h1 class="page-title">
-  <a href="/blog">Blog</a> | {{ page.title }}
+  <a href="">Blog</a> | {{ page.title }}
 </h1>
 <br/>
 
