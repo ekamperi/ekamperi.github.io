@@ -7,7 +7,9 @@ tags: ['general relativity', 'linear algebra', 'mathematics']
 ---
 
 ### Dual spaces
-Given a vector space $$V$$, we define its dual space $$V^*$$ to be the set of all *linear transformations* $$\varphi: V \to \mathbb{F}$$, where $$\varphi$$ is a linear functional. Here is a list of examples:
+So, it turns out that *dual spaces* and *dual vectors* sneak into general relativity and, therefore, I decided to take a closer look at them. The videos from Dr Peyam on YouTube are also very informative.
+
+Given a vector space $$V$$, we define its dual space $$V^*$$ to be the set of all *linear transformations* $$\varphi: V \to \mathbb{F}$$, where $$\varphi$$ is a linear functional. In other words, $$\varphi$$ is something that eats vectors $$v \in V$$ and spits out elements of $$\mathbb{F}$$ (let just assume that $$\mathbb{F} = \mathbb{R}$$, that is it spits out real numbers. If you take all the possible (linear) ways that a $$\varphi$$ can eat these vectors, you get $$V^*$$. Here is a list of examples of dual spaces:
 
 * <ins>Example 1</ins>: Let $$V = \mathbb{R}^3$$ and $$\varphi: \mathbb{R}^3 \to \mathbb{R}$$, then $$\varphi(x,y,z) = 2x+3y+4z$$ is a member of $$V^*$$.
 
