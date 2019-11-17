@@ -103,6 +103,6 @@ $$
 
 ### The dual of a dual space
 
-Recall that the dual of space is a vector space on its own right, since the linear functionals $$\varphi$$ satisfy the axioms of a vector space. Since $$V^*$$ is a vector space then, it is legitimate to think of its dual space just like any other vector space. This might feel too recursive, but hold on. The double dual space is $$(V^*)^* = V^{**}$$.
+Recall that the dual of space is a vector space on its own right, since the linear functionals $$\varphi$$ satisfy the axioms of a vector space. But if $$V^*$$ is a vector space, then it is perfectly legitimate to think of its dual space, just like we do with any other vector space. This might feel too recursive, but hold on. The double dual space is $$(V^*)^* = V^{**}$$.
 
 The double dual space is the set of all *linear transformations* $$\varphi: V^* \to \mathbb{F}$$. In other words, $$\varphi$$ is something that accepts a vector $$\hat{v} \in V^*$$ as input and spits out an element of $$\mathbb{F}$$ (again, we just assume that $$\mathbb{F} = \mathbb{R}$$, meaning that it spits out a real number). In plain English language a double dual vector is something that eats "things that eat vectors and spit a real number" and spits a real number.
