@@ -29,7 +29,7 @@ $$
 As it turns out, the elements of $$V^*$$ satisfy the axioms of a vector space and therefore $$V^*$$ is indeed a vector space itself.
 
 ### Dual basis example
-If $$b = \{\mathbf{v_1}, \mathbf{v_2}, \ldots, \mathbf{v_n}\}$$ is a basis of vector space $$V$$, then $$b^* = \{ \varphi_1, \varphi_2, \ldots, \varphi_n\}$$ is a basis of $$V^*$$. If you defined the $$\varphi$$ via the following relations, then the basis you get is called the *dual basis*:
+If $$b = \{\mathbf{v_1}, \mathbf{v_2}, \ldots, \mathbf{v_n}\}$$ is a basis of vector space $$V$$, then $$b^* = \{ \varphi_1, \varphi_2, \ldots, \varphi_n\}$$ is a basis of $$V^*$$. If you define $$\varphi$$ via the following relations, then the basis you get is called the *dual basis*:
 
 $$
 \varphi_i \underbrace{(a_1 \mathbf{v_1} + \cdots + a_n \mathbf{v_n})}_{\text{A vector } \mathbf{v}\in V, a_i \in \mathbb{F}} = a_i, \quad i=1,\ldots,n
