@@ -9,7 +9,7 @@ tags: ['general relativity', 'linear algebra', 'mathematics']
 So, it turns out that *dual spaces* and *dual vectors* sneak into general relativity and, therefore, I decided to take a closer look at them. The videos from Dr Peyam on YouTube are also very informative and the examples I'm listing here are from his lectures. First, we will go through the math and then we will invoke some intuition to make sense of all these.
 
 ### Dual spaces
-Given a vector space $$V$$, we define its dual space $$V^*$$ to be the set of all *linear transformations* $$\varphi: V \to \mathbb{F}$$. The $$\varphi$$ is called a *linear functional*. In other words, $$\varphi$$ is something that accepts a vector $$v \in V$$ as input and spits out an element of $$\mathbb{F}$$ (lets just assume that $$\mathbb{F} = \mathbb{R}$$, meaning that it spits out real numbers). If you take all the possible (linear) ways that a $$\varphi$$ can eat such vectors and produce real numbers, you get $$V^*$$. Here is a list of examples of dual spaces:
+Given a vector space $$V$$, we define its dual space $$V^*$$ to be the set of all *linear transformations* $$\varphi: V \to \mathbb{F}$$. The $$\varphi$$ is called a *linear functional*. In other words, $$\varphi$$ is something that accepts a vector $$v \in V$$ as input and spits out an element of $$\mathbb{F}$$ (lets just assume that $$\mathbb{F} = \mathbb{R}$$, meaning that it spits out a  real number). If you take all the possible (linear) ways that a $$\varphi$$ can eat such vectors and produce real numbers, you get $$V^*$$. Here is a list of examples of dual spaces:
 
 * <ins>Example 1</ins>: Let $$V = \mathbb{R}^3$$ and $$\varphi: \mathbb{R}^3 \to \mathbb{R}$$, then $$\varphi(x,y,z) = 2x+3y+4z$$ is a member of $$V^*$$.
 
@@ -103,6 +103,8 @@ $$
 
 ### The dual of a dual space
 
-Recall that the dual of space is a vector space on its own right, since the linear functionals $$\varphi$$ satisfy the axioms of a vector space. But if $$V^*$$ is a vector space, then it is perfectly legitimate to think of its dual space, just like we do with any other vector space. This might feel too recursive, but hold on. The double dual space is $$(V^*)^* = V^{**}$$.
+Recall that the dual of space is a vector space on its own right, since the linear functionals $$\varphi$$ satisfy the axioms of a vector space. But if $$V^*$$ is a vector space, then it is perfectly legitimate to think of its dual space, just like we do with any other vector space. This might feel too recursive, but hold on. The double dual space is $$(V^*)^* = V^{**}$$ and is the set of all *linear transformations* $$\varphi: V^* \to \mathbb{F}$$.
 
-The double dual space is the set of all *linear transformations* $$\varphi: V^* \to \mathbb{F}$$. In other words, $$\varphi$$ is something that accepts a vector $$\hat{v} \in V^*$$ as input and spits out an element of $$\mathbb{F}$$ (again, we just assume that $$\mathbb{F} = \mathbb{R}$$, meaning that it spits out a real number). In plain English language a double dual vector is something that eats "things that eat vectors and spit a real number" and spits a real number.
+In other words, $$\varphi$$ is something that accepts a vector $$\hat{v} \in V^*$$ as input and spits out an element of $$\mathbb{F}$$ (again, we just assume that $$\mathbb{F} = \mathbb{R}$$, meaning that it spits out a real number). In plain English language, a double dual vector is a creature that eats another "creature that eats a vector and spits a real number" and spits a real number. It is as the carnivore animals (double dual vectors) eating herbivore animals (dual vectors) that eat plants (vectors) and they both produce feces (real numbers).
+
+
