@@ -73,17 +73,13 @@ $$
 \end{bmatrix}
 $$
 
-$$
-\varphi_1(1,0) = -1, \quad \varphi_1(0,1) = 3
-$$
-
-Therefore:
+You get $$ \varphi_1(1,0) = -1, \quad \varphi_1(0,1) = 3$$. Therefore:
 
 $$
 \varphi_1(x, y) = x \varphi_1(1,0) + y\varphi_1(0,1) = -x + 3y
 $$
 
-Similarly one can prove that
+Similarly one can prove that:
 
 $$
 \varphi_2(x, y) = x \varphi_2(1,0) + y\varphi_2(0,1) = x - 2y
