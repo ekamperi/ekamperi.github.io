@@ -13,9 +13,8 @@
 
 // Import partials.
 @import
-  "minima/base",
-  "minima/layout",
-  "minima/syntax-highlighting"
+  "minima/minima-classic",
+  "minima/_layout"
 ;
 
 pre,
@@ -110,13 +109,6 @@ div.codinfox-index-bg>img {
     max-width: 40%;
     height: auto;
 }
-
-/* Category List */
-/*.related {
-padding-top: 2rem;
-padding-bottom: 2rem;
-border-top: 1px solid #eee;
-}*/
 
 .codinfox-category-list {
     padding-left: 1rem;
