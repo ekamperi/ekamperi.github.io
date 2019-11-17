@@ -6,7 +6,7 @@ categories: [mathematics]
 tags: ['general relativity', 'linear algebra', 'mathematics']
 ---
 
-So, it turns out that *dual spaces* and *dual vectors* sneak into general relativity and, therefore, I decided to take a closer look at them. The videos from Dr Peyam on YouTube are also very informative and the examples I'm listing here are from his lectures.
+So, it turns out that *dual spaces* and *dual vectors* sneak into general relativity and, therefore, I decided to take a closer look at them. The videos from Dr Peyam on YouTube are also very informative and the examples I'm listing here are from his lectures. First, we will go through the math and then we will invoke some intuition to make sense of all these.
 
 ### Dual spaces
 Given a vector space $$V$$, we define its dual space $$V^*$$ to be the set of all *linear transformations* $$\varphi: V \to \mathbb{F}$$. The $$\varphi$$ is called a *linear functional*. In other words, $$\varphi$$ is something that accepts a vector $$v \in V$$ as input and spits out an element of $$\mathbb{F}$$ (lets just assume that $$\mathbb{F} = \mathbb{R}$$, meaning that it spits out real numbers). If you take all the possible (linear) ways that a $$\varphi$$ can eat such vectors and produce real numbers, you get $$V^*$$. Here is a list of examples of dual spaces:
@@ -100,3 +100,7 @@ $$
 8x - 7y &= 8x -7y
 \end{align*}
 $$
+
+### The dual of a dual space
+
+Recall that the dual of space is a vector space on its own right, since the linear functionals $$\varphi$$ satisfy the axioms of a vector space. Since $$V^*$$ is a vector space then, it is legitimate to think of its dual space just like any other vector space. This might feel too recursive, but hold on. The double dual space is $$(V^*)^* = V^{**}$$.
