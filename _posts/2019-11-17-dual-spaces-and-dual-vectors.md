@@ -43,8 +43,9 @@ $$
 
 It is as if the functional $$\varphi_i$$ acts on a vector $$\mathbf{v}\in V$$ and returns the $$i$$-th component $$a_i$$. Another way to write the above relations is if you set $$\varphi_i(\mathbf{v_j}) = \delta_{ij}$$.
 
-<p style="border:2px; border-style:solid; border-color:#1C6EA4; border-radius: 5px;">
 Then any functional $$\varphi$$ can be written as a linear combination of the dual basis vector, i.e.
+
+<p style="border:2px; border-style:solid; border-color:#1C6EA4; border-radius: 5px; padding: 20px;">
 $$
 \varphi = \varphi(\mathbf{v_1}) \varphi_1 + \varphi(\mathbf{v_2}) \varphi_2 + \ldots + \varphi(\mathbf{v_n}) \varphi_n
 $$
