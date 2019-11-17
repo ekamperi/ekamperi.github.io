@@ -37,10 +37,54 @@ $$
 
 It is as if the functional $$\varphi_i$$ acts on a vector $$\mathbf{v}\in V$$ and returns the $$i$$-th component $$a_i$$. Another way to write the above relations is if you set $$\varphi_i(\mathbf{v_j}) = \delta_{ij}$$.
 
-Then any functional $$\varphi$$ can be written as a linear combination of the dual basis vector, i.e. $$\varphi = \varphi(\mathbf{v_1}) \varphi_1 + \varphi(\mathbf{v_2}) \varphi_2 + \ldots + \varphi(\mathbf{v_n}) \varphi_n$$.
+Then any functional $$\varphi$$ can be written as a linear combination of the dual basis vector, i.e.
+
+$$\varphi = \varphi(\mathbf{v_1}) \varphi_1 + \varphi(\mathbf{v_2}) \varphi_2 + \ldots + \varphi(\mathbf{v_n}) \varphi_n$$.
 
 Let's see a concrete example. Assume $$V = \mathbb{R}^2$$ and a vector basis $$b = \{ (2,1), (3,1) \}$$, then what is the dual basis $$b^*$$?
 
+By definition, it's $$\varphi_i(\mathbf{v_j}) = \delta_{ij}$$, therefore:
+
 $$
-\varphi_1(
+\varphi_1 (\mathbf{v_1}) = \delta_{11} = 1 \Leftrightarrow \varphi_1 (2,1) = 1 \Leftrightarrow \varphi_1 \left[ 2(1,0) + 1(0,1) \right] = 1 \Leftrightarrow 2\varphi_1(1,0) + 1\varphi_1(0,1) = 1
 $$
+
+Similarly:
+$$
+\varphi_1 (\mathbf{v_2}) = \delta_{12} = 0 \Leftrightarrow \varphi_1 (3,1) = 0 \Leftrightarrow \varphi_1 \left[ 3(1,0) + 1(0,1) \right] = 0 \Leftrightarrow 3\varphi_1(1,0) + 1\varphi_1(0,1) = 0
+$$
+
+If you solve the system:
+
+$$
+\begin{bmatrix}
+2 & 1 \\
+3 & 1
+\end{bmatrix}
+\begin{bmatrix}
+\varphi_1(1,0)\\
+\varphi_1(0,1)
+\end{bmatrix}=
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
+$$
+
+$$
+\varphi_1(1,0) = -1, \quad \varphi_1(0,1) = 3
+$$
+
+Therefore:
+
+$$
+\varphi_1(x, y) = x \varphi_1(1,0) + y\varphi_1(0,1) = -x + 3y
+$$
+
+Similarly one can prove that
+
+$$
+\varphi_2(x, y) = x \varphi_2(1,0) + y\varphi_2(0,1) = x - 2y
+$$
+
+Therefore the dual basis $$b^*$$ is equal to $$\{ \varphi_1, \varphi_2 \} = \{ -x + 3y, x - 2y\}$$.
