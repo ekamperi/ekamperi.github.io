@@ -48,12 +48,10 @@ Let's see a concrete example. Assume $$V = \mathbb{R}^2$$ and a vector basis $$b
 By definition, it's $$\varphi_i(\mathbf{v_j}) = \delta_{ij}$$, therefore:
 
 $$
-\varphi_1 (\mathbf{v_1}) = \delta_{11} = 1 \Leftrightarrow \varphi_1 (2,1) = 1 \Leftrightarrow \varphi_1 \left[ 2(1,0) + 1(0,1) \right] = 1 \Leftrightarrow 2\varphi_1(1,0) + 1\varphi_1(0,1) = 1
-$$
-
-Similarly:
-$$
-\varphi_1 (\mathbf{v_2}) = \delta_{12} = 0 \Leftrightarrow \varphi_1 (3,1) = 0 \Leftrightarrow \varphi_1 \left[ 3(1,0) + 1(0,1) \right] = 0 \Leftrightarrow 3\varphi_1(1,0) + 1\varphi_1(0,1) = 0
+\begin{alig*}
+\varphi_1 (\mathbf{v_1}) &= \delta_{11} = 1 \Leftrightarrow \varphi_1 (2,1) = 1 \Leftrightarrow \varphi_1 \left[ 2(1,0) + 1(0,1) \right] = 1 \Leftrightarrow 2\varphi_1(1,0) + 1\varphi_1(0,1) = 1 \\
+\varphi_1 (\mathbf{v_2}) &= \delta_{12} = 0 \Leftrightarrow \varphi_1 (3,1) = 0 \Leftrightarrow \varphi_1 \left[ 3(1,0) + 1(0,1) \right] = 0 \Leftrightarrow 3\varphi_1(1,0) + 1\varphi_1(0,1) = 0
+\end{align*}
 $$
 
 If you solve the system:
@@ -85,4 +83,19 @@ $$
 \varphi_2(x, y) = x \varphi_2(1,0) + y\varphi_2(0,1) = x - 2y
 $$
 
-Therefore the dual basis $$b^*$$ is equal to $$\{ \varphi_1, \varphi_2 \} = \{ -x + 3y, x - 2y\}$$.
+Therefore the dual basis $$b^*$$ is equal to $$\{ \varphi_1, \varphi_2 \} = \{ -x + 3y, x - 2y\}$$. Now here comes the magic. Suppose that you have a function $$\varphi = 8x - 7y$$ and you would like to write it as a linear combination of the dual basis. How would you do? 
+
+$$
+\varphi = \varphi(\mathbf{v_1}) \varphi_1 + \varphi(\mathbf{v_2}) \varphi_2 + \ldots + \varphi(\mathbf{v_n}) \varphi_n
+$$
+
+Where $$\mathbf{v_1} = (2,1)$$ and $$\mathbf{v_2} = (3,1)$$. Let us do the math:
+
+$$
+\begin{align*}
+8x - 7y &= \overbrace{\varphi(2,1)}^{\varphi(\mathbf{v_1})} \cdot \underbrace{(-x + 3y)}_{\varphi_1} + \overbrace{\varphi(3,1)}^{\varphi(\mathbf{v_2})} \cdot \underbrace{(x-2y)}_{\varphi_2}\\
+8x - 7y &= (8 \cdot 2 - 7\cdot 1) \cdot (-x + 3y) + (8 \cdot 3 - 7\cdot 1) \cdot (x-2y)\\
+8x - 7y &= 9 (-x + 3y) + 17 (x-2y)\\
+8x - 7y &= 8x -7y
+\end{align*}
+$$
