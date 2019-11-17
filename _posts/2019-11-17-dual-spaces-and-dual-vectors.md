@@ -41,7 +41,7 @@ Then any functional $$\varphi$$ can be written as a linear combination of the du
 
 $$
 \varphi = \varphi(\mathbf{v_1}) \varphi_1 + \varphi(\mathbf{v_2}) \varphi_2 + \ldots + \varphi(\mathbf{v_n}) \varphi_n
-$$.
+$$
 
 Let's see a concrete example. Assume $$V = \mathbb{R}^2$$ and a vector basis $$b = \{ (2,1), (3,1) \}$$, then what is the dual basis $$b^*$$?
 
