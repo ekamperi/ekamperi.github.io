@@ -115,5 +115,7 @@ Recall that the dual of space is a vector space on its own right, since the line
 
 In other words, $$\varphi$$ is something that accepts a vector $$\hat{v} \in V^*$$ as input and spits out an element of $$\mathbb{F}$$ (again, we just assume that $$\mathbb{F} = \mathbb{R}$$, meaning that it spits out a real number). In plain English language, a double dual vector is a creature that eats "a creature that eats a vector and spits a real number" and spits a real number. Think about them as carnivore animals (double dual vectors) eating herbivore animals (dual vectors) eating plants (vectors), while at the same time they both produce feces (real numbers).
 
-In several areas of mathematics *isomorphism* appears as a very general concept. The word derives from the Greek *iso*, meaning "equal", and *morphosis*, meaning "to form" or "to shape." Informally, an isomorphism is a map that preserves sets and relations among elements. When this map or this correspondence is established with no choices involved, it is called *canonical isomorphism*.
+In several areas of mathematics *isomorphism* appears as a very general concept. The word derives from the Greek *iso*, meaning "equal", and *morphosis*, meaning "to form" or "to shape." Informally, an isomorphism is a map that preserves sets and relations among elements. When this map or this correspondence is established with no choices involved, it is called *canonical isomorphism*. 
+
+When we defined $$V^*$$ from $$V$$ we did so by picking a special basis (the dual basis), therefore the isomorphism from $$V$$ to $$V^*$$ is not canonical. It turns out that the isomorphism between the initial vetor space $$V$$ and its double dual, $$V^{**}$$, is canonical because it does not require or involve any choices. 
 
