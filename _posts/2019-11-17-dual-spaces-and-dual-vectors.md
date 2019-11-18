@@ -117,5 +117,10 @@ In other words, $$\varphi$$ is something that accepts a vector $$\hat{v} \in V^*
 
 In several areas of mathematics *isomorphism* appears as a very general concept. The word derives from the Greek *iso*, meaning "equal", and *morphosis*, meaning "to form" or "to shape." Informally, an isomorphism is a map that preserves sets and relations among elements. When this map or this correspondence is established with no choices involved, it is called *canonical isomorphism*. 
 
-When we defined $$V^*$$ from $$V$$ we did so by picking a special basis (the dual basis), therefore the isomorphism from $$V$$ to $$V^*$$ is not canonical. It turns out that the isomorphism between the initial vetor space $$V$$ and its double dual, $$V^{**}$$, is canonical because it does not require or involve any choices. 
+When we defined $$V^*$$ from $$V$$ we did so by picking a special basis (the dual basis), therefore the isomorphism from $$V$$ to $$V^*$$ is not canonical. It turns out that the isomorphism between the initial vetor space $$V$$ and its double dual, $$V^{**}$$, is canonical as we shall see right away. Let $$v \in V, \varphi \in V^*$$ and $$\hat{v} \in V^{**}$$. We can now define a linear map:
 
+$$
+\hat{u}(\varphi) = \varphi(u)
+$$
+
+This is a canonical isomorphism between $$V$$ and $$V^{**}$$.
