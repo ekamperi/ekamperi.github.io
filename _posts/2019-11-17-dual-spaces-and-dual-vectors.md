@@ -15,6 +15,7 @@ tags: ['general relativity', 'linear algebra', 'mathematics']
 So, it turns out that *dual spaces* and *dual vectors* sneak into general relativity and, therefore, I decided to take a closer look at them. The videos from Dr Peyam on YouTube are also very informative and the examples I'm listing here are from his lectures. First, we will go through the math and then we will invoke some intuition to make sense of all these.
 
 ### Dual spaces
+#### Definition
 Given a vector space $$V$$, we define its dual space $$V^*$$ to be the set of all *linear transformations* $$\varphi: V \to \mathbb{F}$$. The $$\varphi$$ is called a *linear functional*. In other words, $$\varphi$$ is something that accepts a vector $$v \in V$$ as input and spits out an element of $$\mathbb{F}$$ (lets just assume that $$\mathbb{F} = \mathbb{R}$$, meaning that it spits out a  real number). If you take all the possible (linear) ways that a $$\varphi$$ can eat such vectors and produce real numbers, you get $$V^*$$.
 
 #### Examples of dual spaces
@@ -127,4 +128,5 @@ $$
 \hat{u}(\varphi) = \varphi(u)
 $$
 
-This is a canonical isomorphism between $$V$$ and $$V^{**}$$.
+This is a canonical isomorphism between $$V$$ and $$V^{**}$$. Mind that we are talking about finite dimensional vector spaces $$V$$, i.e. $$\text{dim}(V) < \infty$$.
+
