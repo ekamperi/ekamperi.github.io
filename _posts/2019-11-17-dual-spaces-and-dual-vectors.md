@@ -151,7 +151,16 @@ This is the intuition behind the relation we wrote earlier: $$\hat{u}(\varphi) =
 
 Disclaimer: The following may be absolutely wrong.
 
-Consider a vector space with basis
+Consider the space of partial derivative operators. How do we know that this is a vector space? Let's check:
+
+$$
+\frac{\partial}{\partial x^k} \left(a f + b g\right) = 
+\frac{\partial(a f + b g)}{\partial x^k} =
+a \frac{\partial f}{\partial x^k} + b \frac{\partial g}{\partial x^k} =
+a \frac{\partial }{\partial x^k}(f) + b \frac{\partial }{\partial x^k}(g)
+$$
+
+Then let us pick up a basis:
 
 $$b = \left\{\frac{\partial}{\partial x^1}, \frac{\partial}{\partial x^2}, \ldots, \frac{\partial}{\partial x^n}\right\}$$
 
