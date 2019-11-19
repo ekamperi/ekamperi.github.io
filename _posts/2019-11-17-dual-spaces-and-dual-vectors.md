@@ -130,3 +130,18 @@ $$
 
 This is a canonical isomorphism between $$V$$ and $$V^{**}$$. Mind that we are talking about finite dimensional vector spaces $$V$$, i.e. $$\text{dim}(V) < \infty$$.
 
+#### The mind blowing intuition behind dual and double dual spaces
+
+I'm basically copy/paste'ing the answer of Aloizio Macedo [from here](https://math.stackexchange.com/questions/3749/why-do-we-care-about-dual-spaces):
+
+> The dual is intuitively the space of "rulers" (or measurement-instruments) of our vector space. Its elements measure vectors. This is
+> what makes the dual space and its relatives so important in Differential Geometry, for instance. This immediately motivates the study
+> of the dual space.
+
+> This also happens to explain intuitively some facts. For instance, the fact that there is no canonical isomorphism between a vector
+> space and its dual can then be seen as a consequence of the fact that rulers need scaling, and there is no canonical way to provide
+> one scaling for space. However, if we were to measure the measure-instruments, how could we proceed? Is there a canonical way to do
+> so? Well, if we want to measure our measures, why not measure them by how they act on what they are supposed to measure? We need no
+> bases for that. This justifies intuitively why there is a natural embedding of the space on its bidual. (Note, however, that this
+> fails to justify why it is an isomorphism in the finite-dimensional case).
+
