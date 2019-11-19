@@ -164,7 +164,7 @@ Then let us pick up a basis:
 
 $$b = \left\{\frac{\partial}{\partial x^1}, \frac{\partial}{\partial x^2}, \ldots, \frac{\partial}{\partial x^n}\right\}$$
 
-And then let us define its dual space $$b^* = \left\{ \mathrm{d} x^1, \mathrm{d} x^2,\ldots, \mathrm{d} x^n\right\} $$. By definition the functionals $$dx^i$$ must fulfill the following relations:
+And then let us define its dual space $$b^* = \left\{ \mathrm{d} x^1, \mathrm{d} x^2,\ldots, \mathrm{d} x^n\right\} $$. By definition the functionals $$\mathrm{d} x^i$$ must fulfill the following relations:
 
 $$
 \mathrm{d}x^i \left( \frac{\partial}{\partial x^j} \right) = \delta_j^i
