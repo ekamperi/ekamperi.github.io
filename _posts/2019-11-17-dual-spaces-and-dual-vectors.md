@@ -145,6 +145,4 @@ I'm basically copy/paste'ing the answer of Aloizio Macedo [from here](https://ma
 > bases for that. This justifies intuitively why there is a natural embedding of the space on its bidual. (Note, however, that this
 > fails to justify why it is an isomorphism in the finite-dimensional case).
 
-This is the intuition behind the relation we wrote earlier: $$\hat{u}(\varphi) = \varphi(u)$$. Here $$\hat{u}$$ is the "ruler" by which we "measure" elements of the dual space $$V^*$$. And we "calilbrate" that ruler by taking into account how $$\varphi$$ (the "ruler" of $$V$$ measures elements $$u$$ of $$V$$).
-
-
+This is the intuition behind the relation we wrote earlier: $$\hat{u}(\varphi) = \varphi(u)$$. Here $$\hat{u}$$ is the "ruler" by which we "measure" elements of the dual space $$V^*$$. And we "calilbrate" that ruler by taking into account how $$\varphi$$ (the "ruler" of $$V$$) measures elements $$u$$ of $$V$$.
