@@ -145,4 +145,38 @@ I'm basically copy/paste'ing the answer of Aloizio Macedo [from here](https://ma
 > bases for that. This justifies intuitively why there is a natural embedding of the space on its bidual. (Note, however, that this
 > fails to justify why it is an isomorphism in the finite-dimensional case).
 
-This is the intuition behind the relation we wrote earlier: $$\hat{u}(\varphi) = \varphi(u)$$. Here $$\hat{u}$$ is the "ruler" by which we "measure" elements of the dual space $$V^*$$. And we "calilbrate" that ruler by taking into account how $$\varphi$$ (the "ruler" of $$V$$) measures elements $$u$$ of $$V$$.
+This is the intuition behind the relation we wrote earlier: $$\hat{u}(\varphi) = \varphi(u)$$. Here $$\hat{u}$$ is the "ruler" by which we "measure" elements of the dual space $$V^*$$. And we "calilbrate" that ruler by taking into account how $$\varphi$$ (the "ruler" of $$V$$) "measures" elements $$u$$ of $$V$$.
+
+### Connection to general relativity
+
+Disclaimer: The following may be absolutely wrong.
+
+Consider a vector space with basis
+
+$$b = \left\{\frac{\partial}{\partial x^1}, \frac{\partial}{\partial x^2}, \ldots, \frac{\partial}{\partial x^n}\right\}$$
+
+And then let us define its dual space $$b^* = \left\{ \mathrm{d} x^1, \mathrm{d} x^2,\ldots, \mathrm{d} x^n\right\} $$. By definition the functionals $$dx^i$$ must fulfill the following relations:
+
+$$
+\mathrm{d}x^i \left( \frac{\partial}{\partial x^j} \right) = \delta_j^i
+$$
+
+So, $$\mathrm{d}x$$'s in reality are linear functionals that act on elements of the partial derivatives vector space. They are not be thought as scalars, i.e. as infinitesimal displacements along the coordinate axis.
+
+Now suppose we have a scalar function $$f(x)$$ and we define its total differential as:
+
+$$
+\mathrm{d}f = \frac{\partial f}{\partial x^1} \mathrm{d} x^1 + \frac{\partial f}{\partial x^2} \mathrm{d} x^2 + \ldots + \frac{\partial f}{\partial x^n} \mathrm{d}x^n
+$$
+
+And we would like to calculate the directional derivative of $$f(x)$$ along the direction of some vector $$v \in V$$, that is calculate the rate of change of $$f(x)$$ along $$v$$.
+
+$$
+\mathrm{d}f(v) = \frac{\mathrm{d}f}{\partial x^i} \mathrm{d}x^i \left(v^j \frac{\partial}{\partial x^j}\right)
+$$
+
+Recall now that the basis vectors $$\mathrm{d}x$$'s were chosen in such a way that when act upon $$\frac{\partial}{\partial x^j}$$ they "select" the $$i$$-th component. Therefore:
+
+$$
+\mathrm{d}f(u) = \frac{\partial f}{\partial x^i} v^i
+$$
