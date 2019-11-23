@@ -181,7 +181,7 @@ $$
 And we would like to calculate the directional derivative of $$f(x)$$ along the direction of some vector $$v \in V$$, that is calculate the rate of change of $$f(x)$$ along $$v$$.
 
 $$
-\mathrm{d}f(v) = \frac{\mathrm{d}f}{\partial x^i} \mathrm{d}x^i \left(v^j \frac{\partial}{\partial x^j}\right)
+\mathrm{d}f(v) = \frac{\partial f}{\partial x^i} \mathrm{d}x^i \left(v^j \frac{\partial}{\partial x^j}\right)
 $$
 
 Recall now that the basis vectors $$\mathrm{d}x$$'s were chosen in such a way that when act upon $$\frac{\partial}{\partial x^j}$$ they "select" the $$i$$-th component. Therefore:
