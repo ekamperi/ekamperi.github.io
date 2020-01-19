@@ -22,7 +22,7 @@ $$
 
 So, an $$LR > 1$$ indicates that the test result is associated with the disease. If a test has an $$LR = 1$$ it hardly has any practical significance since the post-test probability (odds) is pretty much the same as the pre-test probability. In summary, the pre-test probability refers to the chance that an individual has a disorder or condition prior to the use of a diagnostic test.
 
-Let's see how likelihood ratio $$LR^+$$ affects our prior credence on whether our patient has indeed the disease. When we want to calculate the probability of an event based on prior knowledge of conditions that might be related to the event, we invoke the [Bayes theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem). Let's use $$P(D^+|T^+)$$ for the probability that the patient has the disease and the diagnostic test is positive. Also, $$P(D^+)$$ and $$P(T^+)$$ are the probabilities.
+Let's see how likelihood ratio $$LR^+$$ affects our prior credence on whether our patient has indeed the disease. When we want to calculate the probability of an event based on prior knowledge of conditions that might be related to the event, we invoke the [Bayes theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem). Let's use for the probability that the patient has the disease and the diagnostic test is positive.
 
 Then:
 
