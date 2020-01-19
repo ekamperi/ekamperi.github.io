@@ -21,7 +21,7 @@ $$
 
 And for negative tests:
 $$
-LR^- = \frac{1-\text{sensitivity}}{\text{specificity}} = \frac{\text{FNrate}}{\text{TNrate}} = \frac{P(T^+|D^+)}{P(T^+|D^-)}
+LR^- = \frac{1-\text{sensitivity}}{\text{specificity}} = \frac{\text{FNrate}}{\text{TNrate}} = \frac{P(T^-|D^+)}{P(T^-|D^-)}
 $$
 
 $$
