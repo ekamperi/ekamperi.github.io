@@ -13,13 +13,6 @@ tags: ['medicine', 'mathematics', 'statisticis']
 {:toc}
 
 
-### Contents
-{:.no_toc}
-
-* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
-{:toc}
-
-
 $$
 \begin{align*}
 P(D^+|T^+) &= \frac{P(T^+|D^+) P(D^+)}{P(T^+)} \\
