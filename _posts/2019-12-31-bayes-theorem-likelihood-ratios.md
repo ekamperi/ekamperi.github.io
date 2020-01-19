@@ -15,6 +15,14 @@ tags: ['medicine', 'mathematics', 'statisticis']
 I was taking a look at a course in medical research methodology and I stumbled upon the following problem. Suppose that the probability of a patient having a disease is 0.1 in the general population. Suppose also that the likelihood ratio for positive result for some diagnostic test is 2. What is then the probability of the patient having the disease if the patient tested positive for this diagnostic test?
 
 $$
+LR^+ = \frac{\text{specificity}}{1-\text{sensitivity}} = \frac{\text{TPrate}}{\text{FPrate}} = \frac{P(T^+|D^+)}{P(T^+|D^-)}
+$$
+
+$$
+LR^- = \frac{1-\text{sensitivity}}{\text{specificity}} = \frac{\text{FNrate}}{\text{TNrate}} = \frac{P(T^+|D^+)}{P(T^+|D^-)}
+$$
+
+$$
 \begin{align*}
 P(D^+|T^+) &= \frac{P(T^+|D^+) P(D^+)}{P(T^+)} \\
 &=\frac{P(T^+|D^+) P(D^+)}{P(T^+|D^+)P(D^+) + P(T^+|D^-)P(D^-)} =\\
