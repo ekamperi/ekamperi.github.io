@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Bayes theorem and likelihood ratios for diagnostic tests"
-date:   2020-01-219 19:00:00 +0000
+date:   2020-01-19
 categories: [mathematics]
 tags: ['medicine', 'mathematics', 'statisticis']
 ---
