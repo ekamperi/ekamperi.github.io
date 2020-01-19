@@ -1,10 +1,17 @@
 ---
 layout: post
 title:  "Bayes theorem and likelihood ratios for diagnostic tests"
-date:   2020-01-219
+date:   2020-01-219 19:00:00 +0000
 categories: [mathematics]
 tags: ['medicine', 'mathematics', 'statisticis']
 ---
+
+### Contents
+{:.no_toc}
+
+* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
+{:toc}
+
 
 ### Contents
 {:.no_toc}
