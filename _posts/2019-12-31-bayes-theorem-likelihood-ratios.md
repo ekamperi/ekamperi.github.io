@@ -1,3 +1,18 @@
+---
+layout: post
+title:  "Bayes theorem and likelihood ratios for diagnostic tests"
+date:   2020-01-219
+categories: [mathematics]
+tags: ['medicine', 'mathematics', 'statisticis']
+---
+
+### Contents
+{:.no_toc}
+
+* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
+{:toc}
+
+
 $$
 \begin{align*}
 P(D^+|T^+) &= \frac{P(T^+|D^+) P(D^+)}{P(T^+)} \\
