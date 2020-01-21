@@ -6,7 +6,7 @@ categories: [mathematics]
 tags: ['Bayes', 'mathematics', 'medicine', 'statistics']
 ---
 
-I was taking a look at a course in medical research methodology and I stumbled upon the following problem. Suppose that the probability of a patient having a disease is 0.1 in the general population. Suppose also that the likelihood ratio (LR) for positive result for some diagnostic test is 2. What is then the probability of a patient having the disease if he tested positive for this diagnostic test?
+I was taking a look at a course in medical research methodology and I stumbled upon the following problem. Suppose that the probability of a patient having a disease is 0.1 in the general population. Suppose also that the likelihood ratio (LR) for positive result for some diagnostic test is 1.8. What is then the probability of a patient having the disease if he tested positive for this diagnostic test?
 
 The likelikood ratio in the context of a diagnostic test is defined in the following way. For positive tests:
 
@@ -32,6 +32,6 @@ P(D^+|T^+) &= \frac{P(T^+|D^+) P(D^+)}{P(T^+)} \\
 &=\frac{P(T^+|D^+) P(D^+)}{P(T^+|D^+)P(D^+) + P(T^+|D^-)P(D^-)} =\\
 &= \frac{P(D^+)}{P(D^+) + \frac{P(T^+|D^-)}{P(T^+|D^+)}P(D^-)}\\
 &= \frac{P(D^+)}{P(D^+) + \frac{P(D^-)}{LR^+}}\\
-&= \frac{0.1}{0.1 + \frac{0.9}{2}}
+&= \frac{0.1}{0.1 + \frac{0.9}{1.8}} = 1/6
 \end{align*}
 $$
