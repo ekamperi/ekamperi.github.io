@@ -44,7 +44,7 @@ Here is a plot of the post-test probability (%) as a function of LR for various 
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/likelihoodratio.png" alt="Post-test probability as a function of likelihood ratio for various values of prior-test probability">
 </p>
 
-And here is another plot of the post-test probability as a function of prior-test probability for various values of LR. Notice how for and LR equal to 1, the line is $$y=x$$, since the probability does not change.
+And here is another plot of the post-test probability as a function of prior-test probability for various values of LR. Notice how for an LR equal to 1, the line is $$y=x$$, since the probability does not change.
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/likelihoodratio2.png" alt="Post-test probability as a function of likelihood ratio for various values of prior-test probability">
