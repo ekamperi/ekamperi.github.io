@@ -3,7 +3,7 @@ layout: post
 title:  "Bayes theorem and likelihood ratios for diagnostic tests"
 date:   2020-01-19
 categories: [mathematics]
-tags: ['Bayes', 'mathematics', 'medicine', 'statistics']
+tags: ['Bayes theorem', 'medicine', 'statistics']
 ---
 
 I was taking a look at a course in medical research methodology and I stumbled upon the following problem. Suppose that the probability of a patient having a disease is 0.1 in the general population. Suppose also that the likelihood ratio (LR) for positive result for some diagnostic test is 1.8. What is then the probability of a patient having the disease if he tested positive for this diagnostic test?
@@ -50,7 +50,7 @@ And here is another plot of the post-test probability as a function of prior-tes
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/likelihoodratio2.png" alt="Post-test probability as a function of likelihood ratio for various values of prior-test probability">
 </p>
 
-The Fagan nomogram is a graphical tool for estimating how much the result of a diagnostic test changes the probability that a patient has the disease in question. See also "Fagan TJ. Letter: Nomogram for Bayes theorem. N Engl J Med. 1975;293(5):257". To use Fagan nomogram, you need to have an estimate of the probability of the disease prior to testing. This estimate can be based on the prevalence of the disease modified accordingly by considering other risk factors. You also need to know the likelihood ratio for the diagnostic test (obviously).
+The *Fagan nomogram* is a graphical tool for estimating how much the result of a diagnostic test changes the probability that a patient has the disease in question. See also "Fagan TJ. Letter: Nomogram for Bayes theorem. N Engl J Med. 1975;293(5):257". To use the  nomogram, you need to have an estimate of the probability of the disease _prior to testing_. This estimate can be based on the prevalence of the disease modified accordingly by considering other risk factors your patient has. You also need to know the likelihood ratio for the diagnostic test (obviously). So, if you know these two numbers and connect them with a line on the nomogram, the point at which this line intersects with post-test probability is the updated probability of your patient having the disease after having bee tested positive for this diagnostic test.
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/fagan_nomogram.png" alt="Fagan nomogram">
