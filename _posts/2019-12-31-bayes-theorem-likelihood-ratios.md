@@ -20,7 +20,7 @@ $$
 LR^- = \frac{1-\text{sensitivity}}{\text{specificity}} = \frac{\text{FNrate}}{\text{TNrate}} = \frac{P(T^-|D^+)}{P(T^-|D^-)}
 $$
 
-So, an $$LR^+ > 1$$ indicates that the test result is associated with the disease. If a test has an $$LR^+ = 1$$ it hardly has any practical significance since the post-test probability is pretty much the same as the pre-test probability.
+So, an $$LR^+ > 1$$ indicates that the test result is associated with the disease. If a test has an $$LR^+ = 1$$ it hardly has any practical significance, since the post-test probability is pretty much the same as the pre-test probability. The likelihood ratio, in the latter case, does not add any extra information on what we already know for our patient's risk.
 
 Let's see how likelihood ratio $$LR^+$$ affects our prior credence on whether our patient has indeed the disease. When we want to calculate the probability of an event based on prior knowledge of conditions that might be related to the event, we invoke the [Bayes theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem). Let's use for the probability that the patient has the disease and the diagnostic test is positive.
 
