@@ -38,12 +38,22 @@ $$
 
 So, we started with a prior probability of $$10\%$$ and when we took into consideration the likelihood ratio for this particular diagnostic test that our patient tested positive for, we updated the probability into $$\sim 17\%$$.
 
-Here is a plot of the post-test probability (%) as a function of LR for various values of prior-test probability":
+Here is a plot of the post-test probability (%) as a function of LR for various values of prior-test probability:
+
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/likelihoodratio.png" alt="Post-test probability as a function of likelihood ratio for various values of prior-test probability">
 </p>
 
-And here is anotjher plot of the post-test probability as a function of prior-test probability for various values of LR. Notice how for and LR equal to 1, the line is $$y=x$$, since the probability does not change.
+And here is another plot of the post-test probability as a function of prior-test probability for various values of LR. Notice how for and LR equal to 1, the line is $$y=x$$, since the probability does not change.
+
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/likelihoodratio2.png" alt="Post-test probability as a function of likelihood ratio for various values of prior-test probability">
 </p>
+
+The Fagan nomogram is a graphical tool for estimating how much the result of a diagnostic test changes the probability that a patient has the disease in question. See also "Fagan TJ. Letter: Nomogram for Bayes theorem. N Engl J Med. 1975;293(5):257". To use Fagan nomogram, you need to have an estimate of the probability of the disease prior to testing. This estimate can be based on the prevalence of the disease modified accordingly by considering other risk factors. You also need to know the likelihood ratio for the diagnostic test (obviously).
+
+<p align="center">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/fagan_nomogram.png" alt="Fagan nomogram">
+</p>
+
+
