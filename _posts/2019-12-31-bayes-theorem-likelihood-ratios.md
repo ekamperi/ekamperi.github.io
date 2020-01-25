@@ -38,7 +38,12 @@ $$
 
 So, we started with a prior probability of $$10\%$$ and when we took into consideration the likelihood ratio for this particular diagnostic test that our patient tested positive for, we updated the probability into $$\sim 17\%$$.
 
+Here is a plot of the post-test probability (%) as a function of LR for various values of prior-test probability":
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/likelihoodratio.png" alt="Post-test probability as a function of likelihood ratio for various values of prior-test probability">
 </p>
 
+And here is anotjher plot of the post-test probability as a function of prior-test probability for various values of LR. Notice how for and LR equal to 1, the line is $$y=x$$, since the probability does not change.
+<p align="center">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/likelihoodratio2.png" alt="Post-test probability as a function of likelihood ratio for various values of prior-test probability">
+</p>
