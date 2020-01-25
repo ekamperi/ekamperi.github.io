@@ -56,4 +56,3 @@ The *Fagan nomogram* is a graphical tool for estimating how much the result of a
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/fagan_nomogram.png" alt="Fagan nomogram">
 </p>
 
-
