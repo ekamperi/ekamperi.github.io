@@ -6,7 +6,7 @@ categories: [mathematics]
 tags: ['Bayes theorem', 'medicine', 'statistics']
 ---
 
-I was taking a look at a course in medical research methodology and I stumbled upon the following problem. Suppose that the probability of a patient having a disease is $$10\%$$ in the general population. Suppose also that the likelihood ratio (LR) for positive result for some diagnostic test is $$1.8$$. What is then the probability of a patient having the disease if he tested positive for this diagnostic test?
+I was taking a look at a course in medical research methodology and I stumbled upon the following problem. Suppose that the probability of a patient having a certain disease is $$10\%$$ in the general population. Suppose also that the likelihood ratio (LR) for positive result for some diagnostic test is $$1.8$$. What is then the probability of a patient having the disease if he tested positive for this diagnostic test?
 
 The likelikood ratio in the context of a diagnostic test is defined in the following way. For positive tests:
 
@@ -22,7 +22,7 @@ $$
 
 So, an $$LR^+ > 1$$ indicates that the test result is associated with the disease. If $$LR^+ = 1$$ the post-test probability is the same as the pre-test probability. The likelihood ratio, in the latter case, does not add any extra information on what we already know regarding our patient's risk.
 
-Let's see how likelihood ratio $$LR^+$$ affects our prior credence on whether our patient has indeed the disease. When we want to calculate the probability of an event based on prior knowledge of conditions that might be related to the event, we invoke the [Bayes theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem). Let's use for the probability that the patient has the disease and the diagnostic test is positive.
+Let's see how likelihood ratio $$LR^+$$ affects our prior credence on whether our patient has indeed the disease. When we want to calculate the probability of an event based on prior knowledge of conditions that might be related to the event, we invoke the [Bayes theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem). Let's calculate the probability that the patient has the disease ($$D^+$$$) and the diagnostic test is positive ($$T^+$$).
 
 Then:
 
@@ -36,7 +36,7 @@ P(D^+|T^+) &= \frac{P(T^+|D^+) P(D^+)}{P(T^+)} \\
 \end{align*}
 $$
 
-So, we started with a prior probability of $$10\%$$ and when we took into consideration the likelihood ratio for this particular diagnostic test that our patient tested positive for, we updated the probability into $$\sim 17\%$$.
+So, we started with a prior probability of $$10\%$$ and when we took into account the likelihood ratio for this particular diagnostic test that our patient tested positive for, we updated the probability into $$\sim 17\%$$.
 
 Here is a plot of the post-test probability (%) as a function of LR for various values of prior-test probability:
 
