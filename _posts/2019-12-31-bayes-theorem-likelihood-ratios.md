@@ -6,7 +6,11 @@ categories: [mathematics]
 tags: ['Bayes theorem', 'medicine', 'statistics']
 ---
 
-I was taking a look at a course in medical research methodology and I stumbled upon the following problem. Suppose that the probability of a patient having a certain disease is $$10\%$$ in the general population. Suppose also that the likelihood ratio (LR) for positive result for some diagnostic test is $$1.8$$. What is then the probability of a patient having the disease if he tested positive for this diagnostic test?
+I was taking a look at a course in medical research methodology and I stumbled upon the following problem.
+
+<p style="border:2px; border-style:solid; border-color:#1C6EA4; border-radius: 5px; padding: 20px;">
+Suppose that the probability of a patient having a certain disease is $$10\%$$ in the general population. Suppose also that the likelihood ratio (LR) for positive result for some diagnostic test is $$1.8$$. What is then the probability of a patient having the disease if he tested positive for this diagnostic test?
+ </p>
 
 The likelikood ratio in the context of a diagnostic test is defined in the following way. For positive tests:
 
