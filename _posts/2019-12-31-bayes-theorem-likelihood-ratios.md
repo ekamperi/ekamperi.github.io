@@ -22,7 +22,7 @@ $$
 
 So, an $$LR^+ > 1$$ indicates that the test result is associated with the disease. If $$LR^+ = 1$$ the post-test probability is the same as the pre-test probability. The likelihood ratio, in the latter case, does not add any extra information on what we already know regarding our patient's risk.
 
-Let's see how likelihood ratio $$LR^+$$ affects our prior credence on whether our patient has indeed the disease. When we want to calculate the probability of an event based on prior knowledge of conditions that might be related to the event, we invoke the [Bayes theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem). Let's calculate the probability that the patient has the disease ($$D^+$$$) and the diagnostic test is positive ($$T^+$$).
+Let's see how likelihood ratio $$LR^+$$ affects our prior credence on whether our patient has indeed the disease. When we want to calculate the probability of an event based on prior knowledge of conditions that might be related to the event, we invoke the [Bayes theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem). Let's calculate the probability that the patient has the disease ($$D^+$$) and the diagnostic test is positive ($$T^+$$).
 
 Then:
 
