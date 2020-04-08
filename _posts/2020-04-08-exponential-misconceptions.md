@@ -23,8 +23,8 @@ $$
 \exp(\lambda x) = 1 + \lambda x + \frac{1}{2}\lambda^2 x^2 + \frac{1}{6}\lambda^3 x^3 + \ldots
 $$
 
-Depending on the value of $$\lambda$$, the exponential function may trick us for a short or long time to think that it's linear.
+Depending on the value of $$\lambda$$, the exponential function may trick us for a short or long time to think that it's linear. In the following image you may see how for $$\lambda \ll 1$$ various exponential function hide their exponential nature for longer "time" (for larger values of $$x$$).
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/exp_linear1.png">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/exp_linear1.png" alt="Linear approximation of exponential function">
 </p>
