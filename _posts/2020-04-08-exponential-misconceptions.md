@@ -30,9 +30,11 @@ Depending on the value of $$\lambda$$, the exponential function may trick us, fo
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/exp_linear1.png" alt="Linear approximation of exponential function">
 </p>
 
-Another example of an exponential change, that may span a very large amount of time, is the radioactive decay of Uranium-238. U-238 is the most common isotope of uranium found in nature and has a half-life of ~4.5 *billion years*. This decay is exponential and described by the following formula:
+Another example of an exponential change, that may span a very large amount of time, is the radioactive decay of Uranium-238. U-238 is the most common isotope of uranium found in nature and has a half-life of ~4.5 *billion years*. This means that the quantity of U-238 you have, will reduced to its half after ~4.5 billion years. The mathematical formula describing this physical process is:
 
 $$
 N(t) = N_0 \exp(-\lambda t)
 $$
+
+Where $$t$$ is the time, $$N_0$$ is the initial quantity of the radioactive material, $$\lambda$$ is the decay parameter (affecting how fast or how slow the process takes place) and $$N(t)$$ is the quantity after time $$t$$ has elapsed.
 
