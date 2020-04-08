@@ -21,7 +21,7 @@ $$
 For "small" values of $$x$$, the contributions of higher order terms (those containing $$x^2$$, $$x^3$$, ...) are minuscule. Therefore, in this case, the approximation $$\exp(x) \simeq 1 + x$$ holds. Similarly, if we take a look at $$\exp(\lambda x)$$, where the constant $$\lambda$$ tunes the growth rate, its McLaurin series is:
 
 $$
-\exp(\lambda x) = 1 + \lambda x + \frac{1}{2}\lambda^2 x^2 + \frac{1}{6}\lambda^3 x^3 + \ldots
+\exp(\lambda x) = 1 + \lambda x + \underbrace{\frac{1}{2}\lambda^2 x^2 + \frac{1}{6}\lambda^3 x^3 + \ldots}_{\text{Negligible for } \lambda\ll 1\text{ and small } x }
 $$
 
 Depending on the value of $$\lambda$$, the exponential function may trick us, for an extended period of time, into thinking that it's linear. In the following image you may see how for different values of $$\lambda < 1$$, the respective functions hide their exponential nature for longer time (for larger values of $$x$$).
