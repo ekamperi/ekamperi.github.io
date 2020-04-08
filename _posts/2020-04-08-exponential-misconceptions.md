@@ -14,5 +14,5 @@ For "small" values of $$x$$, an exponential function can be approximated by a li
 Recall that $$exp(x)$$ can be expressed as a McLaurin series:
 
 $$
-exp(x) = 1 + x + (1/2)*x^2 + (1/6)*x^3 + \ldots
+\exp(x) = 1 + x + (1/2)x^2 + (1/6)x^3 + \ldots
 $$ 
