@@ -12,13 +12,13 @@ Coronavirus disease 2019 (COVID-19) is an infectious disease caused by Severe Ac
 Many people think that exponential increase is a synonym for explosive, fast, immense growth. This may be true *eventually*, but
 for "small" values of $$x$$, an exponential function can be, *initially*, approximated by a linear function. This means that an exponential growth may masquerade as a linear function during the early phase of the phenomenon.
 
-Why is that? Recall how $$\exp(x)$$ can be expressed as a McLaurin series:
+Why is that? Recall how $$\exp(x)$$ can be expressed as a Maclaurin series:
 
 $$
 \exp(x) = 1 + x + \frac{1}{2}x^2 + \frac{1}{6}x^3 + \ldots
 $$
 
-For "small" values of $$x$$, the contributions of higher order terms (those containing $$x^2$$, $$x^3$$, ...) are minuscule. Therefore, in this case, the approximation $$\exp(x) \simeq 1 + x$$ holds. Similarly, if we take a look at $$\exp(\lambda x)$$, where the constant $$\lambda$$ tunes the growth rate, its McLaurin series is:
+For "small" values of $$x$$, the contributions of higher order terms (those containing $$x^2$$, $$x^3$$, ...) are minuscule. Therefore, in this case, the approximation $$\exp(x) \simeq 1 + x$$ holds. Similarly, if we take a look at $$\exp(\lambda x)$$, where the constant $$\lambda$$ tunes the growth rate, its Maclaurin series is:
 
 $$
 \exp(\lambda x) = 1 + \lambda x + \underbrace{\frac{1}{2}\lambda^2 x^2 + \frac{1}{6}\lambda^3 x^3 + \ldots}_{\text{Negligible for } \lambda\ll 1\text{ and small } x }
