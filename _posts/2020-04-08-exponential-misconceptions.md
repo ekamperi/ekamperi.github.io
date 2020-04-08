@@ -29,3 +29,4 @@ Depending on the value of $$\lambda$$, the exponential function may trick us, fo
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/exp_linear1.png" alt="Linear approximation of exponential function">
 </p>
+
