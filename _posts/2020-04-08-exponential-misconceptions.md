@@ -14,5 +14,12 @@ For "small" values of $$x$$, an exponential function can be approximated by a li
 Recall that $$exp(x)$$ can be expressed as a McLaurin series:
 
 $$
-\exp(x) = 1 + x + (1/2)x^2 + (1/6)x^3 + \ldots
-$$ 
+\exp(x) = 1 + x + \frac{1}{2}x^2 + \frac{1}{6}x^3 + \ldots
+$$
+
+For "small" values of $$x$$, the contributions of higher order terms (those containing $$x^2$$, $$x^3$$, ...) are small. Therefore, in this case $$\exp(x) \simeq 1 + x$$. Similarly, if we take a look at $$exp(\lambda x)$$, where the constant $$\lambda$$ affects the growth rate, its McLaurin series is:
+
+$$
+\exp(\lambda x) = 1 + \lambda x + \frac{1}{2}\lambda^2 x^2 + \frac{1}{6}\lambda^3 x^3 + \ldots
+$$
+
