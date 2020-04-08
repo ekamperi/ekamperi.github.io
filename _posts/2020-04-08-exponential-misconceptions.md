@@ -10,21 +10,21 @@ Coronavirus disease 2019 (COVID-19) is an infectious disease caused by Severe Ac
 #### Misconception 1: Lack of fast growth, rules out exponential dynamics.
 
 Many people think that exponential increase is a synonym for explosive, fast, immense growth. This may be true *eventually*, but
-for "small" values of $$x$$, an exponential function can be, *initially*, approximated by a linear function. This means that an exponential growth can masquerade as a linear function during the initial phase of the phenomenon.
+for "small" values of $$x$$, an exponential function can be, *initially*, approximated by a linear function. This means that an exponential growth may masquerade as a linear function during the early phase of the phenomenon.
 
-Recall that $$\exp(x)$$ can be expressed as a McLaurin series:
+Why is that? Recall how $$\exp(x)$$ can be expressed as a McLaurin series:
 
 $$
 \exp(x) = 1 + x + \frac{1}{2}x^2 + \frac{1}{6}x^3 + \ldots
 $$
 
-For "small" values of $$x$$, the contributions of higher order terms (those containing $$x^2$$, $$x^3$$, ...) are minuscule. Therefore, in this case, the approximation $$\exp(x) \simeq 1 + x$$ holds. Similarly, if we take a look at $$\exp(\lambda x)$$, where the constant $$\lambda$$ affects the growth rate, its McLaurin series is:
+For "small" values of $$x$$, the contributions of higher order terms (those containing $$x^2$$, $$x^3$$, ...) are minuscule. Therefore, in this case, the approximation $$\exp(x) \simeq 1 + x$$ holds. Similarly, if we take a look at $$\exp(\lambda x)$$, where the constant $$\lambda$$ tunes the growth rate, its McLaurin series is:
 
 $$
 \exp(\lambda x) = 1 + \lambda x + \frac{1}{2}\lambda^2 x^2 + \frac{1}{6}\lambda^3 x^3 + \ldots
 $$
 
-Depending on the value of $$\lambda$$, the exponential function may trick us for a long time to think that it's linear. In the following image you may see how for different values of $$\lambda < 1$$, the respective functions hide their exponential nature for longer time (for larger values of $$x$$).
+Depending on the value of $$\lambda$$, the exponential function may trick us, for an extended period of time, into thinking that it's linear. In the following image you may see how for different values of $$\lambda < 1$$, the respective functions hide their exponential nature for longer time (for larger values of $$x$$).
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/exp_linear1.png" alt="Linear approximation of exponential function">
