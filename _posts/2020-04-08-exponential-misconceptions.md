@@ -11,15 +11,20 @@ Coronavirus disease 2019 (COVID-19) is an infectious disease caused by Severe Ac
 
 For "small" values of $$x$$, an exponential function can be approximated by a linear function. This means that it can masquerade as a linear function.
 
-Recall that $$exp(x)$$ can be expressed as a McLaurin series:
+Recall that $$\exp(x)$$ can be expressed as a McLaurin series:
 
 $$
 \exp(x) = 1 + x + \frac{1}{2}x^2 + \frac{1}{6}x^3 + \ldots
 $$
 
-For "small" values of $$x$$, the contributions of higher order terms (those containing $$x^2$$, $$x^3$$, ...) are small. Therefore, in this case $$\exp(x) \simeq 1 + x$$. Similarly, if we take a look at $$exp(\lambda x)$$, where the constant $$\lambda$$ affects the growth rate, its McLaurin series is:
+For "small" values of $$x$$, the contributions of higher order terms (those containing $$x^2$$, $$x^3$$, ...) are small. Therefore, in this case $$\exp(x) \simeq 1 + x$$. Similarly, if we take a look at $$\exp(\lambda x)$$, where the constant $$\lambda$$ affects the growth rate, its McLaurin series becomes:
 
 $$
 \exp(\lambda x) = 1 + \lambda x + \frac{1}{2}\lambda^2 x^2 + \frac{1}{6}\lambda^3 x^3 + \ldots
 $$
 
+Depending on the value of $$\lambda$$, the exponential function may trick us for a short or long time to think that it's linear.
+
+<p align="center">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/exp_linear1.png">
+</p>
