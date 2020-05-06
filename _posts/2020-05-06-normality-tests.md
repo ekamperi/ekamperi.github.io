@@ -23,7 +23,7 @@ For small sample sizes, the histograms rarely resemble the shape of a normal dis
 {% highlight R %}
 {% raw %}
 ################################################################################
-# NORMAL DISTRIBUTION
+#                                 NORMAL DISTRIBUTION
 ################################################################################
 plot_sample <- function(sample_size) {
     sample_dist <- rnorm(sample_size, mean = 0, sd = 1)
@@ -50,9 +50,10 @@ So, the rule of thumb I follow is this: if histograms & Shapiro disagree, for sm
 
 If you'd like to play with some simulations, feel free to use the following code snippets:
 
-```
+{% highlight R %}
+{% raw %}
 ################################################################################
-# SKEWED NORMAL DISTRIBUTION
+#                             SKEWED NORMAL DISTRIBUTION
 ################################################################################
 library(fGarch)
 
@@ -69,4 +70,5 @@ plot_sample2 <- function(skewness_param) {
 }
 par(mfrow = c(2, 2))
 lapply(c(1, 1.05, 1.1, 1.15), plot_sample2)
-```
+{% endraw %}
+{% endhighlight %}
