@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Normality tests"
-date:   2019-07-28
+date:   2020-05-06
 categories: [math]
 tags: [mathematics, statistics]
 ---
