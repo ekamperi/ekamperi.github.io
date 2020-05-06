@@ -24,6 +24,7 @@ For *small sample sizes*, the histograms rarely resemble the shape of a normal d
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/shapiro1.png" alt="Shapiro Wilk test">
 </p>
 
+Here is the *R* code that generates the above plots:
 {% highlight R %}
 {% raw %}
 ################################################################################
@@ -50,6 +51,7 @@ Shapiro-Wilk test begins to behave in a problematic manner when the *sample size
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/shapiro2.png" alt="Shapiro Wilk test">
 </p>
 
+And the *R* code:
 {% highlight R %}
 {% raw %}
 ################################################################################
