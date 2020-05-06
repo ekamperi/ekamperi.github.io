@@ -13,12 +13,12 @@ tags: [mathematics, Shapiro-Wilk, statistics]
 {:toc}
 
 ### Introduction
-Some statistical tests (e.g. t-test for independent samples) assume that the data in question are modelled by a normal distribution. Therefore, before using such a test, one must first confirm that the data do not deviate much from a normal distribution. There are many ways to do this and ideally one should combine them together, such as looking at the **mean/median** (should be approximately equal), **skewness** (should be approximately zero), **histograms** (should be approximately bell-shaped), **Q-Q plots** (should approximately form a line)  and, ultimately, running a **normality test**, such as Shapiro-Wilk.
+Some statistical tests (e.g., t-test for independent samples) assume that the data in question are modeled by a normal distribution. Therefore, before using such a test, one must first confirm that the data do not deviate much from a normal distribution. There are many ways to do this, and ideally one should combine them, such as looking at the **mean/median** (should be approximately equal), **skewness** (should be approximately zero), **histograms** (should be approximately bell-shaped), **Q-Q plots** (should approximately form a line)  and, ultimately, running a **normality test**, such as Shapiro-Wilk.
 
 ### Disagreement between plots and Shapiro-Wilk test
-So, what happens when the plots say that the data aren't normally distributed but Shapiro-Wilk test? Or vice versa?
+So, what happens when the plots say that the data aren't normally distributed, but Shapiro-Wilk test disagree? Or vice versa?
 
-For *small sample sizes*, the histograms rarely resemble the shape of a normal distribution and that's fine. As soon as one increases the sample size, the shape of the distribution converges to that of the underlying distribution. On the other hand, the Shapiro-Wilk test correctly implies normality, as you can see in the p-values of the following plot.
+For *small sample sizes*, the histograms rarely resemble the shape of a normal distribution, and that's fine. As soon as one increases the sample size, the shape of the distribution converges to that of the underlying distribution. On the other hand, the Shapiro-Wilk test correctly implies normality, as you can see in the p-values of the following plot.
 
 <p align="center">
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/shapiro1.png" alt="Shapiro Wilk test">
