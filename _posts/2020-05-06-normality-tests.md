@@ -3,7 +3,7 @@ layout: post
 title:  "Normality tests"
 date:   2020-05-06
 categories: [math]
-tags: [mathematics, statistics]
+tags: [mathematics, Shapiro-Wilk, statistics]
 ---
 
 ### Contents
