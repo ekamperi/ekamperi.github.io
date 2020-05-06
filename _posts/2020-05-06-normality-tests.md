@@ -13,10 +13,12 @@ tags: [mathematics, statistics]
 {:toc}
 
 ### Introduction
-Some statistical tests (e.g. t-test for independent samples) assume that the data in question are modelled by a normal distribution. Therefore, before using such a test, one must first confirm that the data do not deviate much from a normal distribution. There are many ways to do this and ideally one should combine them together, such as looking at the **mean/median** (should be approximately equal), **skewness** (should be approximately zero), **histograms** (should be approximately bell-shaped), **Q-Q plots** (should apprroximately form a line)  and, ultimately, running a **normality test**, such as Shapiro-Wilk.
+Some statistical tests (e.g. t-test for independent samples) assume that the data in question are modelled by a normal distribution. Therefore, before using such a test, one must first confirm that the data do not deviate much from a normal distribution. There are many ways to do this and ideally one should combine them together, such as looking at the **mean/median** (should be approximately equal), **skewness** (should be approximately zero), **histograms** (should be approximately bell-shaped), **Q-Q plots** (should approximately form a line)  and, ultimately, running a **normality test**, such as Shapiro-Wilk.
 
 ### Disagreement between plots and Shapiro-Wilk test
-For small sample sizes, the histograms rarely resemble the shape of a normal distribution. But as one increases the sample size, the shape of the distribution converges to what the expected (assuming your underlying distribution is indeed normal!). On the other hand, the Shapiro test correctly implies normality, as you can see in the p-values at the 1st plot.
+So, what happens when the plots say that the data aren't normally distributed but Shapiro-Wilk test? Or vice versa?
+
+For *small sample sizes*, the histograms rarely resemble the shape of a normal distribution and that's fine. As soon as one increases the sample size, the shape of the distribution converges to that of the underlying distribution. On the other hand, the Shapiro-Wilk test correctly implies normality, as you can see in the p-values of the following plot.
 
 <p align="center">
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/shapiro1.png" alt="Shapiro Wilk test">
@@ -42,9 +44,7 @@ lapply(c(30, 50, 200, 5000), plot_sample)
 {% endraw %}
 {% endhighlight %}
 
-Shapiro test begins to behave in a problematic manner when the sample size is considerable. In the following plots, I've fixed the sample size equal to 5000 (this is the largest allowed value for shapiro.test() anyway). Notice how the test rejects normality even with slightly skewed normal distributions. On the other hand, histograms look pretty good.
-
-So, the rule of thumb I follow is this: if histograms & Shapiro disagree, for small sample size, I go with Shapiro (of course, you check mean/median, etc.). For a large sample size, I go with the histograms.
+Shapiro-Wilk test begins to behave in a problematic manner when the *sample size is large*. In the following plots, I've fixed the sample size equal to 5000 (this is the largest allowed value for R's `shapiro.test()` anyway). Notice how the test rejects normality even for *slightly skewed normal distributions*. On the other hand, histograms look pretty good!
 
 <p align="center">
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/shapiro2.png" alt="Shapiro Wilk test">
@@ -72,3 +72,5 @@ par(mfrow = c(2, 2))
 lapply(c(1, 1.05, 1.1, 1.15), plot_sample2)
 {% endraw %}
 {% endhighlight %}
+
+So, the rule of thumb I follow is this: if histograms and Shapiro-Wilk disagree, for small sample size, I go with Shapiro (of course, I check mean/median, etc.). For a large sample size, I go with the histograms.
