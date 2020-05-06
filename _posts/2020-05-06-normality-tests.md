@@ -17,7 +17,7 @@ Some statistical tests (e.g. t-test for independent samples) assume that the dat
 For small sample sizes, the histograms rarely resemble the shape of a normal distribution. But as one increases the sample size, the shape of the distribution converges to what the expected (assuming your underlying distribution is indeed normal!). On the other hand, the Shapiro test correctly implies normality, as you can see in the p-values at the 1st plot.
 
 <p align="center">
-<img style="width: 100%; height: 100%" src="{{ site.url }}/images/shapiro1.png" alt="Shapiro Wilk test">
+<img style="width: 100%; height: 80%" src="{{ site.url }}/images/shapiro1.png" alt="Shapiro Wilk test">
 </p>
 
 ```
@@ -43,7 +43,7 @@ Shapiro test begins to behave in a problematic manner when the sample size is co
 So, the rule of thumb I follow is this: if histograms & Shapiro disagree, for small sample size, I go with Shapiro (of course, you check mean/median, etc.). For a large sample size, I go with the histograms.
 
 <p align="center">
-<img style="width: 100%; height: 100%" src="{{ site.url }}/images/shapiro2.png" alt="Shapiro Wilk test">
+<img style="width: 100%; height: 80%" src="{{ site.url }}/images/shapiro2.png" alt="Shapiro Wilk test">
 </p>
 
 If you'd like to play with some simulations, feel free to use the following code snippets:
