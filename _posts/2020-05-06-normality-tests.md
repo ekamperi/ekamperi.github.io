@@ -20,7 +20,8 @@ For small sample sizes, the histograms rarely resemble the shape of a normal dis
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/shapiro1.png" alt="Shapiro Wilk test">
 </p>
 
-```
+{% highlight R %}
+{% raw %}
 ################################################################################
 # NORMAL DISTRIBUTION
 ################################################################################
@@ -36,7 +37,8 @@ plot_sample <- function(sample_size) {
 }
 par(mfrow = c(2, 2))
 lapply(c(30, 50, 200, 5000), plot_sample)
-```
+{% endraw %}
+{% endhighlight %}
 
 Shapiro test begins to behave in a problematic manner when the sample size is considerable. In the following plots, I've fixed the sample size equal to 5000 (this is the largest allowed value for shapiro.test() anyway). Notice how the test rejects normality even with slightly skewed normal distributions. On the other hand, histograms look pretty good.
 
