@@ -12,7 +12,7 @@ tags: [mathematics, statistics]
 * A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
 {:toc}
 
-Some statistical tests (e.g. t-test for independent samples) assume that the data in question are modelled by a normal distribution. Therefore, before using such a test, one must first confirm that the data do not deviate much from a normal distribution. There are many ways to do this and ideally one should combine them together, such as looking at the mean/median (should be approximately equal), skewness (should be approximately zero), histograms (should be approximately bell-shaped), Q-Q plots (should apprroximately form a line)  and, ultimately, running a normality test, such as Shapiro-Wilk.
+Some statistical tests (e.g. t-test for independent samples) assume that the data in question are modelled by a normal distribution. Therefore, before using such a test, one must first confirm that the data do not deviate much from a normal distribution. There are many ways to do this and ideally one should combine them together, such as looking at the **mean/median** (should be approximately equal), **skewness** (should be approximately zero), **histograms** (should be approximately bell-shaped), **Q-Q plots** (should apprroximately form a line)  and, ultimately, running a **normality test**, such as Shapiro-Wilk.
 
 For small sample sizes, the histograms rarely resemble the shape of a normal distribution. But as one increases the sample size, the shape of the distribution converges to what the expected (assuming your underlying distribution is indeed normal!). On the other hand, the Shapiro test correctly implies normality, as you can see in the p-values at the 1st plot.
 
