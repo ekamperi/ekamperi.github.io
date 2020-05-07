@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Normality tests"
+title:  "Normality tests in statistics"
 date:   2020-05-06
 categories: [math]
 tags: [mathematics, Shapiro-Wilk, statistics]
