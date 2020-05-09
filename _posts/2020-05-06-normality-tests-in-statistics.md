@@ -80,7 +80,7 @@ df %>%
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/qqplot_normality.png">
 </p>
 
-Consistent with whatever have seen so far, the data points of the males Q-Q plot fall into a straight line. On the other hand, in females, the data points deviate a lot at the tail. 
+Consistent with whatever have seen so far, the data points of the males Q-Q plot fall onto a straight line. On the other hand, in females, the data points deviate a lot at the tail. 
 
 The final step is to actually run a normality test, such as Shapiro-Wilk's:
 
