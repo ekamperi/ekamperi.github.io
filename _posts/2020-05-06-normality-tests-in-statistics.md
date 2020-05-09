@@ -95,7 +95,7 @@ df %>%
 
 # A tibble: 2 x 4
   gender variable         statistic       p
-  <chr>  <chr>                <dbl>   <dbl>
+  <fct>  <chr>                <dbl>   <dbl>
 1 F      sodium.excretion     0.847 0.00123
 2 M      sodium.excretion     0.947 0.200  
 > 
