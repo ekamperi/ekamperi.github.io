@@ -13,8 +13,21 @@ tags: [mathematics, 'R language', Shapiro-Wilk, statistics]
 {:toc}
 
 ### Introduction
-Some statistical tests (e.g., [t-test for independent samples](https://en.wikipedia.org/wiki/Student%27s_t-test) or [ANOVA](https://en.wikipedia.org/wiki/Analysis_of_variance)) assume that the data in question are modeled by a normal distribution. Therefore, before using such a test, one must first confirm that the data do not deviate much from a normal distribution. There are many ways to do this, and ideally one should combine them, such as looking at the **mean/median** (should be approximately equal), **skewness** (should be approximately zero), **histograms** (should be approximately bell-shaped), **Q-Q plots** (should approximately form a line)  and, ultimately, running a **normality test**, such as [Shapiro-Wilk](https://en.wikipedia.org/wiki/Shapiro%E2%80%93Wilk_test).
+Some statistical tests (e.g., [t-test for independent samples](https://en.wikipedia.org/wiki/Student%27s_t-test) or [ANOVA](https://en.wikipedia.org/wiki/Analysis_of_variance)) assume that the data in question are modeled by a normal distribution. Therefore, before using such a test, one must first confirm that the data do not deviate much from a normal distribution. There are many ways to do this, and ideally one should combine them, such as looking at the **mean/median** (should be approximately equal), **skewness** (should be approximately zero), **kurtosis** (should be approximately three), **histograms** (should be approximately bell-shaped), **Q-Q plots** (should approximately form a line)  and, ultimately, running a **normality test**, such as [Shapiro-Wilk](https://en.wikipedia.org/wiki/Shapiro%E2%80%93Wilk_test).
 
+### An example
+
+{% highlight R %}
+{% raw %}
+# A tibble: 2 x 11
+  gender     n   min    q1 median    q3   max  mean    sd skewness kurtosis
+  <chr>  <int> <dbl> <dbl>  <dbl> <dbl> <dbl> <dbl> <dbl>    <dbl>    <dbl>
+1 F         26   0.2  131.   157.  172.  242.  139.  58.1  -1.23      1.29 
+2 M         26  95.9  136.   152.  174.  201.  157.  26.6   0.0430   -0.301
+>
+{% endraw %}
+{% endhighlight %}
+   
 ### Disagreement between plots and Shapiro-Wilk test
 So, what happens when the plots say that the data aren't normally distributed, but Shapiro-Wilk test disagree? Or vice versa?
 
