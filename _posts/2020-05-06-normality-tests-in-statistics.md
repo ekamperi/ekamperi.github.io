@@ -44,7 +44,7 @@ df %>%
 {% endraw %}
 {% endhighlight %}
    
-Notice that for males (M) the median and mean are close to each other (subjectively), whereas for females (F) the difference is large. Also, skewness is close to zero for M's and smaller than -1 for F's. Last, the kurtosis for M's is approximately equal to 3, as ought to be for the distribution to be normal. On the contrary, kurtosis in F's dataset is well beyond 3. Taking these into consideration, we hypothesize that M's sodium excretion values are sampled from a normal distribution, whereas F's values are not.
+Notice that for males (M), the median and mean are close to each other (subjectively), whereas for females (F), the difference is large. Also, skewness is close to zero for M's and smaller than -1 for F's. Last, the kurtosis for M's is approximately equal to 3, as ought to be for the distribution to be normal. On the contrary, kurtosis in F's dataset is well beyond 3. Taking these into consideration, we hypothesize that M's sodium excretion values are sampled from a normal distribution, whereas F's values are not.
 
 We proceed by taking a look at the data:
 
@@ -64,7 +64,7 @@ df %>%
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/hist_normality.png">
 </p>
 
-Well, for curve of sodium excretion in male individuals is what you'd expect for an histogram of small sample size, more or less. The curve of the females, though, has some fat tail at the left. That's a hint that perhaps it deviates from normality. Let's take a look at the Q-Q plots broken down by the gender factor variable:
+The curve of sodium excretion in male individuals is what you'd expect for an histogram of small sample size, more or less. The curve of the females, though, has some fat tail at the left. That's a hint that perhaps it deviates from normality. Let's take a look at the Q-Q plots broken down by the gender factor variable:
 
 {% highlight R %}
 {% raw %}
@@ -80,7 +80,7 @@ df %>%
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/qqplot_normality.png">
 </p>
 
-Consistent with whatever have seen so far, the data points of the males Q-Q plot fall into a straight line. On the other hand, in females the data points deviate a lot at the tail. 
+Consistent with whatever have seen so far, the data points of the males Q-Q plot fall into a straight line. On the other hand, in females, the data points deviate a lot at the tail. 
 
 The final step is to actually run a normality test, such as Shapiro-Wilk's:
 
@@ -99,7 +99,7 @@ df %>%
 {% endraw %}
 {% endhighlight %}
 
-The results are consonant with our previous findings. The p-value of the Shapiro-Wilk test in the females group is $p = 0.00123$, whereas for the males is $p = 0.2$. Therefore, assuming a confidence level $a = 0.05$, we reject the null hypothesis for the females (i.e., that data are normally distributed), and accept it for the males group (i.e., data are normally distributed). This was a pretty straightforward example, **but what happens when plots and Shapiro-Wilk test disagree?**
+The results are consonant with our previous findings. The p-value of the Shapiro-Wilk test in the females group is $p = 0.00123$, whereas for the males is $p = 0.2$. Therefore, assuming a confidence level $a = 0.05$, we reject the null hypothesis for the females (i.e., that data are normally distributed) and accept it for the males' group (i.e., data are normally distributed). This was a pretty straightforward example, **but what happens when plots and Shapiro-Wilk test disagree?**
 
 ### Disagreement between plots and Shapiro-Wilk test
 So, what happens when the plots say that the data aren't normally distributed, but Shapiro-Wilk test disagree? Or vice versa?
