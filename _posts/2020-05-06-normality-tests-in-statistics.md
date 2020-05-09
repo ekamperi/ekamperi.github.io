@@ -64,8 +64,23 @@ df %>%
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/hist_normality.png">
 </p>
 
-Well, for curve of sodium excretion in male individuals is what you'd expect for an histogram of small sample size, more or less. The curve of the females, though, has some fat tail at the left. That's a hint that perhaps it deviates from normality. Let's take a look at the Q-Q plots:
+Well, for curve of sodium excretion in male individuals is what you'd expect for an histogram of small sample size, more or less. The curve of the females, though, has some fat tail at the left. That's a hint that perhaps it deviates from normality. Let's take a look at the Q-Q plots broken down by the gender factor variable:
 
+{% highlight R %}
+{% raw %}
+df %>%
+  ggplot(aes(sample = sodium.excretion, col = gender)) +
+  stat_qq() + stat_qq_line() +
+  labs(x = "Theoretical Quantiles", y = "Sample Quantiles", col = "Gender") +
+  theme_bw()
+{% endraw %}
+{% endhighlight %}
+
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/qqplot_normality.png">
+</p>
+
+Consistent with whatever have seen so far, the data points of the males Q-Q plot fall into a straight line. On the other hand, in females the data points deviate a lot at the tail. 
 
 ### Disagreement between plots and Shapiro-Wilk test
 So, what happens when the plots say that the data aren't normally distributed, but Shapiro-Wilk test disagree? Or vice versa?
