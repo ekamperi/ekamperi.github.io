@@ -54,7 +54,7 @@ We proceed by taking a look at the data:
 {% raw %}
 df %>%
     ggplot(aes(x = sodium.excretion, fill = gender)) +
-    geom_density(alpha = 0.5) + facet_wrap(vars(gender)) +
+    geom_density(alpha = 0.5) + facet_wrap(~ gender) +
     theme_bw() +
     labs(x = "Sodium excretion (mmol/day)", y = "Density",
          title = "Sodium excretion",
