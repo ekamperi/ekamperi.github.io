@@ -48,6 +48,18 @@ Notice that for males (M) the median and mean are close to each other (subjectiv
 
 We proceed by taking a look at the data:
 
+{% highlight R %}
+{% raw %}
+df %>%
+    ggplot(aes(x = sodium.excretion, fill = gender)) +
+    geom_density(alpha = 0.5) + facet_wrap(vars(gender)) +
+    theme_bw() +
+    labs(x = "Sodium excretion (mmol/day)", y = "Density",
+         title = "Sodium excretion",
+         subtitle = "By gender", fill = "Group")
+{% endraw %}
+{% endhighlight %}
+
 
 ### Disagreement between plots and Shapiro-Wilk test
 So, what happens when the plots say that the data aren't normally distributed, but Shapiro-Wilk test disagree? Or vice versa?
