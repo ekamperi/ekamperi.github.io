@@ -99,7 +99,7 @@ df %>%
 {% endraw %}
 {% endhighlight %}
 
-The results are consonant with our previous findings. The p-value of the Shapiro-Wilk test in the females group is $$\text{p} = 0.00123$$, whereas for the males is $$p = 0.2$$. Therefore, assuming a confidence level $$a = 0.05$$, we reject the null hypothesis for the females (i.e., that data are normally distributed) and accept it for the males' group (i.e., data are normally distributed). This was a pretty straightforward example, **but what happens when plots and Shapiro-Wilk test disagree?**
+The results are consonant with our previous findings. The p-value of the Shapiro-Wilk test in the females group is $$p = 0.00123$$, whereas for the males is $$p = 0.2$$. Therefore, assuming a confidence level $$a = 0.05$$, we reject the null hypothesis for the females (i.e., that data are normally distributed) and accept it for the males' group (i.e., data are normally distributed). This was a pretty straightforward example, **but what happens when plots and Shapiro-Wilk test disagree?**
 
 ### Disagreement between plots and Shapiro-Wilk test
 So, what happens when the plots say that the data aren't normally distributed, but Shapiro-Wilk test disagree? Or vice versa?
