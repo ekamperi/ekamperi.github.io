@@ -13,12 +13,13 @@ tags: [mathematics, 'R language', Shapiro-Wilk, statistics]
 {:toc}
 
 ### Introduction
-Some statistical tests (e.g., [t-test for independent samples](https://en.wikipedia.org/wiki/Student%27s_t-test) or [ANOVA](https://en.wikipedia.org/wiki/Analysis_of_variance)) assume that the data in question are modeled by a normal distribution. Therefore, before using such a test, one must first confirm that the data do not deviate much from a normal distribution. There are many ways to do this, and ideally one should combine them, such as looking at the **mean/median** (should be approximately equal), **skewness** (should be approximately zero), **kurtosis** (should be approximately three), **histograms** (should be approximately bell-shaped), **Q-Q plots** (should approximately form a line)  and, ultimately, running a **normality test**, such as [Shapiro-Wilk](https://en.wikipedia.org/wiki/Shapiro%E2%80%93Wilk_test).
+Some statistical tests (e.g., [t-test for independent samples](https://en.wikipedia.org/wiki/Student%27s_t-test) or [ANOVA](https://en.wikipedia.org/wiki/Analysis_of_variance)) assume that the data in question are modeled by a normal distribution. Therefore, before using such a test, one must first confirm that the data do not deviate much from a normality. There are many ways to do this, and ideally one should combine them. These include looking at the **mean/median** (should be approximately equal), **skewness** (should be approximately zero), **kurtosis** (should be approximately three), **histograms** (should be approximately bell-shaped), **Q-Q plots** (should approximately form a line)  and, ultimately, running a **normality test**, such as [Shapiro-Wilk](https://en.wikipedia.org/wiki/Shapiro%E2%80%93Wilk_test).
 
 ### A typical example
-So, we are given a [dataset]({{ site.url }}/data/intersalt.xlsx) with sodium excretion values between some male and female individuals. And we'd like to perform, say, a t-test to see whether their means differ significantly. First, we need to check whether our data follow a normal distribution.
+So, suppose we are given a [dataset]({{ site.url }}/data/intersalt.xlsx) with sodium excretion values between some male and female individuals. And we'd like to perform, say, a t-test to see whether their means differ significantly. First, we need to check whether our data follow a normal distribution.
 
-We start by printing some summary statistics:
+#### Descriptive statistics
+We start by printing some summary descriptive statistics:
 {% highlight R %}
 {% raw %}
 df %>%
@@ -46,6 +47,7 @@ df %>%
    
 Notice that for males (M), the median and mean are close to each other (subjectively), whereas for females (F), the difference is large. Also, skewness is close to zero for M's and smaller than -1 for F's. Last, the kurtosis for M's is approximately equal to 3, as ought to be for the distribution to be normal. On the contrary, kurtosis in F's dataset is well beyond 3. Taking these into consideration, we hypothesize that M's sodium excretion values are sampled from a normal distribution, whereas F's values are not.
 
+#### Visualisation
 We proceed by taking a look at the data:
 
 {% highlight R %}
@@ -82,6 +84,7 @@ df %>%
 
 Consistent with whatever have seen so far, the data points of the males Q-Q plot fall onto a straight line. On the other hand, in females, the data points deviate a lot at the tail. 
 
+#### Shapiro-Wilk test
 The final step is to actually run a normality test, such as Shapiro-Wilk's:
 
 {% highlight R %}
