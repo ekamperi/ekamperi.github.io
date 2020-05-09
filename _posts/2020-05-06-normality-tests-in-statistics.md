@@ -60,6 +60,9 @@ df %>%
 {% endraw %}
 {% endhighlight %}
 
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/hist_normality.png">
+</p>
 
 ### Disagreement between plots and Shapiro-Wilk test
 So, what happens when the plots say that the data aren't normally distributed, but Shapiro-Wilk test disagree? Or vice versa?
