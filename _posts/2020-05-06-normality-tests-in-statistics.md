@@ -45,7 +45,7 @@ df %>%
 {% endraw %}
 {% endhighlight %}
    
-Notice that for males (M), the median and mean are close to each other (subjectively), whereas for females (F), the difference is large. Also, skewness is close to zero for M's and smaller than -1 for F's. Last, the kurtosis for M's is approximately equal to 3, as ought to be for the distribution to be normal. On the contrary, kurtosis in F's dataset is well beyond 3. Taking these into consideration, we hypothesize that M's sodium excretion values are sampled from a normal distribution, whereas F's values are not.
+Notice that for males (M), the **median and mean** are close to each other (subjectively), whereas for females (F), the difference is large. Also, **skewness** is close to zero for M's and smaller than -1 for F's. Last, the **kurtosis** for M's is approximately equal to 3, as ought to be for the distribution to be normal. On the contrary, kurtosis in F's dataset is well beyond 3. Taking these into consideration, *we hypothesize that M's sodium excretion values are sampled from a normal distribution, whereas F's values are not*.
 
 #### Visualisation
 We proceed by taking a look at the data:
@@ -66,7 +66,7 @@ df %>%
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/hist_normality.png">
 </p>
 
-The curve of sodium excretion in male individuals is what you'd expect for an histogram of small sample size, more or less. The curve of the females, though, has some fat tail at the left. That's a hint that perhaps it deviates from normality. Let's take a look at the Q-Q plots broken down by the gender factor variable:
+The curve of sodium excretion in male individuals is what you'd expect for an histogram of small sample size, more or less. The curve of the females, though, has some fat tail at the left. *That's a hint that perhaps it deviates from normality*. Let's take a look at the Q-Q plots broken down by the `gender` factor variable:
 
 {% highlight R %}
 {% raw %}
