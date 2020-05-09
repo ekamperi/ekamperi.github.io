@@ -161,4 +161,4 @@ lapply(c(1, 1.05, 1.1, 1.15), plot_sample2)
 {% endraw %}
 {% endhighlight %}
 
-So, the rule of thumb I follow is this: if histograms and Shapiro-Wilk disagree, for small sample size, I go with Shapiro (of course, I check mean/median, etc.). For a large sample size, I go with the histograms.
+So, the rule of thumb I follow is this: if histograms and Shapiro-Wilk disagree, for small sample size, I go with Shapiro-Wilk (of course, I consider mean/median, etc.). For a large sample size, though, I go with the histograms.
