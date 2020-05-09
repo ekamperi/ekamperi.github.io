@@ -36,5 +36,5 @@ $$
 N(t) = N_0 \exp(-\lambda t)
 $$
 
-Where $$t$$ is the elapsed time, $$N_0$$ is the initial quantity of the radioactive material (the material at $$t=0$$), $$\lambda$$ is the decay parameter (affecting how fast or slow the process is) and $$N(t)$$ is the quantity after time $$t$$ has elapsed. Fpr U-238 the decay constant $$\lambda$$ is equal to $$\approx 1.54 \times 10^{-10} \text{year}^-1$$.
+Where $$t$$ is the elapsed time, $$N_0$$ is the initial quantity of the radioactive material (the material at $$t=0$$), $$\lambda$$ is the decay parameter (affecting how fast or slow the process is) and $$N(t)$$ is the quantity after time $$t$$ has elapsed. Fpr U-238 the decay constant $$\lambda$$ is approximately equal to $$1.54 \times 10^{-10} \text{year}^{-1}$$.
 
