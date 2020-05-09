@@ -66,7 +66,7 @@ df %>%
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/hist_normality.png">
 </p>
 
-The curve of sodium excretion in male individuals is what you'd expect for an histogram of small sample size, more or less. The curve of the females, though, has some fat tail at the left. *That's a hint that perhaps it deviates from normality*. Let's take a look at the Q-Q plots broken down by the `gender` factor variable:
+The curve of sodium excretion in male individuals is what you'd expect for an histogram of small sample size, more or less. The curve of the females, though, has some fat tail at the left. *That's a hint that perhaps it deviates from normality*. Let's take a look at the **Q-Q** plots broken down by the gender factor variable:
 
 {% highlight R %}
 {% raw %}
@@ -82,10 +82,10 @@ df %>%
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/qqplot_normality.png">
 </p>
 
-Consistent with whatever have seen so far, the data points of the males Q-Q plot fall onto a straight line. On the other hand, in females, the data points deviate a lot at the tail. 
+Consistent with whatever have seen so far, the data points of the males Q-Q plot fall onto a straight line. On the other hand, in females, the data points deviate a lot at the tail. Again, this builds up on the hypothesis that M's distribution is normal, and F's is not.
 
 #### Shapiro-Wilk test
-The final step is to actually run a normality test, such as Shapiro-Wilk's:
+The final step is to actually run a **normality test**, such as Shapiro-Wilk's:
 
 {% highlight R %}
 {% raw %}
@@ -102,7 +102,9 @@ df %>%
 {% endraw %}
 {% endhighlight %}
 
-The results are consonant with our previous findings. The p-value of the Shapiro-Wilk test in the females group is $$p = 0.00123$$, whereas for the males is $$p = 0.2$$. Therefore, assuming a confidence level $$a = 0.05$$, we reject the null hypothesis for the females (i.e., that data are normally distributed) and accept it for the males' group (i.e., data are normally distributed). This was a pretty straightforward example, **but what happens when plots and Shapiro-Wilk test disagree?**
+The results are consonant with our previous findings. The *p*-value of the Shapiro-Wilk test in the females group is $$p = 0.00123$$, whereas for the males is $$p = 0.2$$. Therefore, assuming a confidence level $$a = 0.05$$, we reject the null hypothesis for the females (i.e., we reject that data are normally distributed) and accept it for the males' group (i.e., we accept that data are normally distributed). This was a pretty straightforward example, given that all the results of our exploratory analysis agreed with each other.
+
+**But what happens when, for example, plots and Shapiro-Wilk test disagree?**
 
 ### Disagreement between plots and Shapiro-Wilk test
 So, what happens when the plots say that the data aren't normally distributed, but Shapiro-Wilk test disagree? Or vice versa?
