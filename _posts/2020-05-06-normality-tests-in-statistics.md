@@ -136,7 +136,7 @@ lapply(c(30, 50, 200, 5000), plot_sample)
 {% endraw %}
 {% endhighlight %}
 
-Shapiro-Wilk test begins to behave in a problematic manner when the *sample size is large*. In the following plots, I've fixed the sample size equal to 5000 (this is the largest allowed value for R's `shapiro.test()` anyway). Notice how the test rejects normality even for *slightly skewed normal distributions*. On the other hand, histograms look pretty good!
+Shapiro-Wilk test begins to behave in a "problematic" manner when the *sample size is large*. In the following plots, I've fixed the sample size equal to 5000 (this is the largest allowed value for R's `shapiro.test()` anyway). Notice how the test rejects normality even for *slightly skewed normal distributions*. On the other hand, histograms look pretty good! To be fair, Shapiro-Wilk test isn't at fault here. It's just that it does its job so well, by detecting even tiny deviations from normality, that it no longer serves our purpose: to detect *large* deviations from normal distribution.
 
 <p align="center">
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/shapiro2.png" alt="Shapiro Wilk test">
