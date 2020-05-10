@@ -44,7 +44,7 @@ The difference between an exponential function and a geometric sequence is that 
 
 #### Misconception 3: The cumulative number of cases may be exponential, but the daily number need not.
 
-Consider that the cumulative number of cases up until time `t` is of the exponential form $$\text{cum}(t) = \exp(t)$$. Then:
+Consider that the cumulative number of cases up until time $$t$$ is of the exponential form $$\text{cum}(t) = \exp(t)$$. Then:
 
 $$
 \begin{align*}
