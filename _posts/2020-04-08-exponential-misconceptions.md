@@ -40,16 +40,18 @@ Where $$t$$ is the elapsed time, $$N_0$$ is the initial quantity of the radioact
 
 #### Misconception 2: Exponential is "faster" than geometric
 
-The difference between an exponential function and a geometric sequence is that the first takes continuous values, whereas the latter discrete.
+The difference between an exponential function and a geometric sequence is that the first takes continuous values, whereas the latter discrete. It doesn't have to do with the rate of change.
 
 #### Misconception 3: The cumulative number of cases may be exponential, but the daily number need not.
 
+Consider that the cumulative number of cases up until time `t` is of the exponential form $$\text{cum}(t) = \exp(t)$$. Then:
+
 $$
 \begin{align*}
-\text{cum}(x) = \exp(x) \Rightarrow \text{daily}(x) &=
-\text{cum}(x)-\text{cum}(x-1)\\
-&= \exp(x) - \exp(x-1)\\
-&= e^x \left(1 - \frac{1}{e}\right)
+\text{cum}(t) = \exp(t) \Rightarrow \text{daily}(t) &=
+\text{cum}(t)-\text{cum}(t-1)\\
+&= \exp(t) - \exp(t-1)\\
+&= e^t \left(1 - \frac{1}{e}\right)
 \end{align*}
 $$
 
