@@ -36,10 +36,22 @@ $$
 N(t) = N_0 \exp(-\lambda t)
 $$
 
-Where $$t$$ is the elapsed time, $$N_0$$ is the initial quantity of the radioactive material (the material at $$t=0$$), $$\lambda$$ is the decay parameter (affecting how fast or slow the process is) and $$N(t)$$ is the quantity after time $$t$$ has elapsed. Fpr U-238 the decay constant $$\lambda$$ is approximately equal to $$1.54 \times 10^{-10} \text{year}^{-1}$$.
+Where $$t$$ is the elapsed time, $$N_0$$ is the initial quantity of the radioactive material (the material at $$t=0$$), $$\lambda$$ is the decay parameter (affecting how fast or slow the process is) and $$N(t)$$ is the quantity after time $$t$$ has elapsed. For U-238 the decay constant $$\lambda$$ is approximately equal to $$1.54 \times 10^{-10} \text{year}^{-1}$$.
 
 #### Misconception 2: Exponential is "faster" than geometric
 
 The difference between an exponential function and a geometric sequence is that the first takes continuous values, whereas the latter discrete.
+
+#### Misconception 3: The cumulative number of cases may be exponential, but the daily number need not.
+
+$$
+\begin{align*}
+\text{cum}(x) = \exp(x) \Rightarrow \text{daily}(x) &=
+\text{cum}(x)-\text{cum}(x-1)\\
+&= \exp(x) - \exp(x-1)\\
+&= e^x \left(1 - \frac{1}{e}\right)
+\end{align*}
+$$
+
 
 
