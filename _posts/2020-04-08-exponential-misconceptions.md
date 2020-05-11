@@ -42,18 +42,25 @@ Where $$t$$ is the elapsed time, $$N_0$$ is the initial quantity of the radioact
 
 The difference between an exponential function and a geometric sequence is that the first takes continuous values, whereas the latter discrete. It doesn't have to do with the rate of change.
 
-#### Misconception 3: The cumulative number of cases may be exponential, but the daily number need not.
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/exp_vs_geometric.png" alt="Exponential function vs geometric sequence">
+</p>
 
-Consider that the cumulative number of cases up until time $$t$$ is of the exponential form $$\text{cum}(t) = \exp(t)$$. Then:
+#### Misconception 3: The cumulative number of cases may be exponential, but the daily number of cases need not be exponential.
+
+Let us assume that the cumulative number of cases up until time $$t$$ is given by the exponential formula: $$\text{cum}(t) = \exp(t)$$. Then, the number of daily cases at time $$t$$ can be calculated via the following logic:
 
 $$
 \begin{align*}
 \text{cum}(t) = \exp(t) \Rightarrow \text{daily}(t) &=
 \text{cum}(t)-\text{cum}(t-1)\\
 &= \exp(t) - \exp(t-1)\\
-&= e^t \left(1 - \frac{1}{e}\right)
+&= e^t \left(1 - \frac{1}{e}\right) = a e^t
 \end{align*}
 $$
 
+So, the number of daily new cases is given by an exponential form as well.
 
-
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/cumulative_exp.png" alt="Cumulative exponential growth">
+</p>
