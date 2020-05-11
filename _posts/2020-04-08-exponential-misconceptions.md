@@ -40,7 +40,7 @@ Where $$t$$ is the elapsed time, $$N_0$$ is the initial quantity of the radioact
 
 #### Misconception 2: Exponential is "faster" than geometric
 
-The difference between an exponential function and a geometric sequence is that the first takes continuous values, whereas the latter discrete. It doesn't have to do with the rate of change.
+The difference between an exponential function and a geometric sequence is that the first takes continuous values, whereas the latter discrete. It doesn't have anything to do with the rate of change.
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/exp_vs_geometric.png" alt="Exponential function vs geometric sequence">
@@ -59,7 +59,7 @@ $$
 \end{align*}
 $$
 
-So, the number of daily new cases is given by an exponential form as well.
+So, the number of daily new cases is given by an exponential form as well. You can't have exponentially increasing cumulative number of cases, without having exponential daily new cases.
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/cumulative_exp.png" alt="Cumulative exponential growth">
