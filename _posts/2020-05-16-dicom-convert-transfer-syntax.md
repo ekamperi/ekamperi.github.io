@@ -8,9 +8,12 @@ tags: ['DICOM', 'radiotherapy']
 
 This post is going to be very esoterical, but anyway. I was trying to import an MRI into Varian Eclipse treatment planning system version 15.1. But the import failed with tons of errors of the form:
 
+```
 > Unsupported 'Transfer Syntax UID' (0002,0010) 'Explicit Big Endian'.
 > Could not convert DICOM stream: SOP Instance UID: 1.2.840.113619.2.134.... [MRI]
+```
 
+```
 > stathis@laptop:~/dicom/SE1$ ls
 > 1.dcm   11.dcm  13.dcm  15.dcm  17.dcm  19.dcm  20.dcm  22.dcm  24.dcm  26.dcm  28.dcm  3.dcm  5.dcm  7.dcm  9.dcm
 > 10.dcm  12.dcm  14.dcm  16.dcm  18.dcm  2.dcm   21.dcm  23.dcm  25.dcm  27.dcm  29.dcm  4.dcm  6.dcm  8.dcm
@@ -27,5 +30,6 @@ This post is going to be very esoterical, but anyway. I was trying to import an 
 > # Used TransferSyntax: 1.2.840.10008.1.2.2                    | # Used TransferSyntax: 1.2.840.10008.1.2.1
 > stathis@laptop:~/dicom/SE1$ rm *.dcm
 > stathis@laptop:~/dicom/SE1$                                                                                                 
+```
 
 T
