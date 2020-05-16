@@ -20,8 +20,9 @@ So, apparently Varian Eclipse does not like *Explicit Big Endian* transfer synta
 {% highlight R %}
 {% raw %}
 ~/dicom/SE1$ ls
-1.dcm   11.dcm  13.dcm  15.dcm  17.dcm  19.dcm  20.dcm  22.dcm  24.dcm  26.dcm  28.dcm  3.dcm  5.dcm  7.dcm  9.dcm
-10.dcm  12.dcm  14.dcm  16.dcm  18.dcm  2.dcm   21.dcm  23.dcm  25.dcm  27.dcm  29.dcm  4.dcm  6.dcm  8.dcm
+1.dcm  11.dcm  13.dcm  15.dcm  17.dcm  19.dcm  20.dcm  22.dcm  24.dcm  26.dcm  28.dcm  3.dcm  5.dcm  7.dcm
+9.dcm  10.dcm  12.dcm  14.dcm  16.dcm  18.dcm  2.dcm   21.dcm  23.dcm  25.dcm  27.dcm  29.dcm  4.dcm  6.dcm
+8.dcm
 ~/dicom/SE1$
 ~/dicom/SE1$ for f in *.dcm; do gdcmconv -w -i "$f" -o "$f".decomp; done
 ~/dicom/SE1$
