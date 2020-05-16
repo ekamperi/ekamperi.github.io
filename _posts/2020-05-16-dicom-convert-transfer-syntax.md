@@ -19,14 +19,14 @@ So, apparently Varian Eclipse does not like *Explicit Big Endian* transfer synta
 
 {% highlight R %}
 {% raw %}
-~/dicom/SE1$ ls
+~/dicom$ ls
 1.dcm  11.dcm  13.dcm  15.dcm  17.dcm  19.dcm  20.dcm  22.dcm  24.dcm  26.dcm  28.dcm  3.dcm  5.dcm  7.dcm
 9.dcm  10.dcm  12.dcm  14.dcm  16.dcm  18.dcm  2.dcm   21.dcm  23.dcm  25.dcm  27.dcm  29.dcm  4.dcm  6.dcm
 8.dcm
-~/dicom/SE1$
-~/dicom/SE1$ for f in *.dcm; do gdcmconv -w -i "$f" -o "$f".decomp; done
-~/dicom/SE1$
-~/dicom/SE1$ sdiff -s <(gdcmdump 1.dcm) <(gdcmdump 1.dcm.decomp)
+~/dicom$
+~/dicom$ for f in *.dcm; do gdcmconv -w -i "$f" -o "$f".decomp; done
+~/dicom$
+~/dicom$ sdiff -s <(gdcmdump 1.dcm) <(gdcmdump 1.dcm.decomp)
 (0002,0000) UL 196                            | (0002,0000) UL 226
 (0002,0001) OB 00\00                          | (0002,0001) OB 00\01
 (0002,0010) UI [1.2.840.10008.1.2.2]          | (0002,0010) UI [1.2.840.10008.1.2.1]
@@ -34,8 +34,8 @@ So, apparently Varian Eclipse does not like *Explicit Big Endian* transfer synta
 (0002,0013) SH [DICOM 3.0 ]                   | (0002,0013) SH [GDCM 2.8.4]
 (0002,0016) AE [MR1 ]                         | (0002,0016) AE [gdcmconv]
 # Used TransferSyntax: 1.2.840.10008.1.2.2    | # Used TransferSyntax: 1.2.840.10008.1.2.1
-~/dicom/SE1$
-~/dicom/SE1$ rm *.dcm
-~/dicom/SE1$                                                         
+~/dicom$
+~/dicom$ rm *.dcm
+~/dicom$                                                         
 {% endraw %}
 {% endhighlight %}
