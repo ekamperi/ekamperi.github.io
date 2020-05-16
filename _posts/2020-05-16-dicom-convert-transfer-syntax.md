@@ -13,21 +13,23 @@ This post is going to be very esoterical, but anyway. I was trying to import an 
 > Could not convert DICOM stream: SOP Instance UID: 1.2.840.113619.2.134.... [MRI]
 ```
 
-```bash
-> stathis@laptop:~/dicom/SE1$ ls
-> 1.dcm   11.dcm  13.dcm  15.dcm  17.dcm  19.dcm  20.dcm  22.dcm  24.dcm  26.dcm  28.dcm  3.dcm  5.dcm  7.dcm  9.dcm
-> 10.dcm  12.dcm  14.dcm  16.dcm  18.dcm  2.dcm   21.dcm  23.dcm  25.dcm  27.dcm  29.dcm  4.dcm  6.dcm  8.dcm
-> stathis@laptop:~/dicom/SE1$
-> stathis@laptop:~/dicom/SE1$ for f in *.dcm; do gdcmconv -w -i "$f" -o "$f".decomp; done
-> stathis@laptop:~/dicom/SE1$
-> stathis@laptop:~/dicom/SE1$ sdiff -s <(gdcmdump 1.dcm) <(gdcmdump 1.dcm.decomp)
-> (0002,0000) UL 196                                            | (0002,0000) UL 226
-> (0002,0001) OB 00\00                                          | (0002,0001) OB 00\01
-> (0002,0010) UI [1.2.840.10008.1.2.2]                          | (0002,0010) UI [1.2.840.10008.1.2.1]
-> (0002,0012) UI [1.2.840.114257.1123456]                       | (0002,0012) UI [1.2.826.0.1.3680043.2.1143.107.104.103.115.2.
-> (0002,0013) SH [DICOM 3.0 ]                                   | (0002,0013) SH [GDCM 2.8.4]
-> (0002,0016) AE [MR1 ]                                         | (0002,0016) AE [gdcmconv]
-> # Used TransferSyntax: 1.2.840.10008.1.2.2                    | # Used TransferSyntax: 1.2.840.10008.1.2.1
-> stathis@laptop:~/dicom/SE1$ rm *.dcm
-> stathis@laptop:~/dicom/SE1$                                                                                                 
-```
+{% highlight R %}
+{% raw %}
+stathis@laptop:~/dicom/SE1$ ls
+1.dcm   11.dcm  13.dcm  15.dcm  17.dcm  19.dcm  20.dcm  22.dcm  24.dcm  26.dcm  28.dcm  3.dcm  5.dcm  7.dcm  9.dcm
+10.dcm  12.dcm  14.dcm  16.dcm  18.dcm  2.dcm   21.dcm  23.dcm  25.dcm  27.dcm  29.dcm  4.dcm  6.dcm  8.dcm
+stathis@laptop:~/dicom/SE1$
+stathis@laptop:~/dicom/SE1$ for f in *.dcm; do gdcmconv -w -i "$f" -o "$f".decomp; done
+stathis@laptop:~/dicom/SE1$
+stathis@laptop:~/dicom/SE1$ sdiff -s <(gdcmdump 1.dcm) <(gdcmdump 1.dcm.decomp)
+(0002,0000) UL 196                                            | (0002,0000) UL 226
+(0002,0001) OB 00\00                                          | (0002,0001) OB 00\01
+(0002,0010) UI [1.2.840.10008.1.2.2]                          | (0002,0010) UI [1.2.840.10008.1.2.1]
+(0002,0012) UI [1.2.840.114257.1123456]                       | (0002,0012) UI [1.2.826.0.1.3680043.2.1143.107.104.103.115.2.
+(0002,0013) SH [DICOM 3.0 ]                                   | (0002,0013) SH [GDCM 2.8.4]
+(0002,0016) AE [MR1 ]                                         | (0002,0016) AE [gdcmconv]
+# Used TransferSyntax: 1.2.840.10008.1.2.2                    | # Used TransferSyntax: 1.2.840.10008.1.2.1
+stathis@laptop:~/dicom/SE1$ rm *.dcm
+stathis@laptop:~/dicom/SE1$                                                                                                 
+{% endraw %}
+{% endhighlight %}
