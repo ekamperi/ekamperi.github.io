@@ -6,16 +6,16 @@ categories: [radiotherapy]
 tags: ['DICOM', 'radiotherapy']
 ---
 
-This post is going to be very esoterical, yet I'm writing it for my future self and perhaps for you. So, I was trying to import the MRI of a patient with locally advanced tongue cancer into Varian Eclipse treatment planning system (version 15.1). Sadly, the import failed with tons of errors of the form:
+This post is going to be very esoterical, yet I'm writing it for my future self and perhaps for you. So, I was trying to import the MRI of a patient with locally advanced tongue cancer into the Varian Eclipse treatment planning system (version 15.1). Sadly, the import failed with tons of errors of the form:
 
 {% raw %}
 > Unsupported 'Transfer Syntax UID' (0002,0010) 'Explicit Big Endian'.<br>
 > Could not convert DICOM stream: SOP Instance UID: 1.2.840.113619.2.134.... [MRI]
 {% endraw %}
 
-Copying from the DICOM standard documentation, *Transfer Syntax* is a set of encoding rules able to unambiguously represent one or more Abstract Syntaxes. In particular, it allows communicating Application Entities to negotiate common encoding techniques they both support (e.g., byte ordering, compression, etc.).
+Copying from the DICOM standard documentation, *Transfer Syntax* is a set of encoding rules able to represent one or more abstract syntaxes unambiguously. In particular, it allows communicating applications to negotiate common encoding techniques they both support (e.g., byte ordering, compression, etc.).
 
-So, apparently Varian Eclipse does not like *Explicit Big Endian* transfer syntax. I tried to convert it with `dcmconv`, but the latter would output other errors. I finally gave up and tried `gdcmconv`. The option `-w` that is supposed to decompress a DICOM file, rewrote my files in `Explicit VR Little Endian`:
+So, apparently Varian Eclipse does not like *Explicit Big Endian* transfer syntax. I tried to convert it with `dcmconv`, but the latter would output other errors. I finally gave up and tried `gdcmconv`. The option `-w`, that is supposed to decompress a DICOM file, rewrote my files in `Explicit VR Little Endian` format:
 
 {% highlight R %}
 {% raw %}
@@ -24,9 +24,9 @@ So, apparently Varian Eclipse does not like *Explicit Big Endian* transfer synta
 9.dcm  10.dcm  12.dcm  14.dcm  16.dcm  18.dcm  2.dcm   21.dcm  23.dcm  25.dcm  27.dcm  29.dcm  4.dcm  6.dcm
 8.dcm
 ~/dicom$
-~/dicom$ for f in *.dcm; do gdcmconv -w -i "$f" -o "$f".decomp; done
+~/dicom$ for f in *.dcm; do gdcmconv -w -i "$f" -o "$f".converted; done
 ~/dicom$
-~/dicom$ sdiff -s <(gdcmdump 1.dcm) <(gdcmdump 1.dcm.decomp)
+~/dicom$ sdiff -s <(gdcmdump 1.dcm) <(gdcmdump 1.dcm.converted)
 (0002,0000) UL 196                            | (0002,0000) UL 226
 (0002,0001) OB 00\00                          | (0002,0001) OB 00\01
 (0002,0010) UI [1.2.840.10008.1.2.2]          | (0002,0010) UI [1.2.840.10008.1.2.1]
@@ -39,3 +39,5 @@ So, apparently Varian Eclipse does not like *Explicit Big Endian* transfer synta
 ~/dicom$                                                         
 {% endraw %}
 {% endhighlight %}
+
+I tried again to import the converted MRI DICOM files and the import succeeded with no errors whatsoever. The MRI images appeared perfectly fine and the simulation CT/MRI image registration process was performed unproblematically.
