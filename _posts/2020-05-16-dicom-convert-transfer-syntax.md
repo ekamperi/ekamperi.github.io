@@ -9,7 +9,7 @@ tags: ['DICOM', 'radiotherapy']
 This post is going to be very esoterical, yet I'm writing it for my future self and perhaps for you. So, I was trying to import the MRI of a patient with locally tongue cancer into Varian Eclipse treatment planning system (version 15.1). Sadly, the import failed with tons of errors of the form:
 
 {% raw %}
-> Unsupported 'Transfer Syntax UID' (0002,0010) 'Explicit Big Endian'.
+> Unsupported 'Transfer Syntax UID' (0002,0010) 'Explicit Big Endian'.<br>
 > Could not convert DICOM stream: SOP Instance UID: 1.2.840.113619.2.134.... [MRI]
 {% endraw %}
 
@@ -22,13 +22,13 @@ This post is going to be very esoterical, yet I'm writing it for my future self 
 ~/dicom/SE1$ for f in *.dcm; do gdcmconv -w -i "$f" -o "$f".decomp; done
 ~/dicom/SE1$
 ~/dicom/SE1$ sdiff -s <(gdcmdump 1.dcm) <(gdcmdump 1.dcm.decomp)
-(0002,0000) UL 196                                            | (0002,0000) UL 226
-(0002,0001) OB 00\00                                          | (0002,0001) OB 00\01
-(0002,0010) UI [1.2.840.10008.1.2.2]                          | (0002,0010) UI [1.2.840.10008.1.2.1]
-(0002,0012) UI [1.2.840.114257.1123456]                       | (0002,0012) UI [1.2.826.0.1.3680043.2.1143.107.104.103.115.2.
-(0002,0013) SH [DICOM 3.0 ]                                   | (0002,0013) SH [GDCM 2.8.4]
-(0002,0016) AE [MR1 ]                                         | (0002,0016) AE [gdcmconv]
-# Used TransferSyntax: 1.2.840.10008.1.2.2                    | # Used TransferSyntax: 1.2.840.10008.1.2.1
+(0002,0000) UL 196                                       | (0002,0000) UL 226
+(0002,0001) OB 00\00                                     | (0002,0001) OB 00\01
+(0002,0010) UI [1.2.840.10008.1.2.2]                     | (0002,0010) UI [1.2.840.10008.1.2.1]
+(0002,0012) UI [1.2.840.114257.1123456]                  | (0002,0012) UI [1.2.826.0.1.3680043.2.1143.107.104.103.115.2.
+(0002,0013) SH [DICOM 3.0 ]                              | (0002,0013) SH [GDCM 2.8.4]
+(0002,0016) AE [MR1 ]                                    | (0002,0016) AE [gdcmconv]
+# Used TransferSyntax: 1.2.840.10008.1.2.2               | # Used TransferSyntax: 1.2.840.10008.1.2.1
 ~/dicom/SE1$ rm *.dcm
 ~/dicom/SE1$                                                                                                 
 {% endraw %}
