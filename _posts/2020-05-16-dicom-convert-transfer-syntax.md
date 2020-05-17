@@ -15,13 +15,13 @@ This post is going to be very esoterical, yet I'm writing it for my future self 
 
 Copying from the DICOM standard documentation, *Transfer Syntax* is a set of encoding rules able to represent one or more abstract syntaxes unambiguously. In particular, it allows communicating applications to negotiate common encoding techniques they both support (e.g., byte ordering, compression, etc.).
 
-So, apparently Varian Eclipse does not like *Explicit Big Endian* transfer syntax. In order to figure out the supported transfer syntaxes, I exported a course from a patient, and in the export's options dialog there valid transfer syntaxes were listed:
+So, apparently Varian Eclipse does not like *Explicit Big Endian* transfer syntax. In order to figure out the supported transfer syntaxes, I exported the treatment course a random patient, and, in the export's options dialog, the valid transfer syntaxes were listed as below:
 
 <p align="center">
- <img style="width: 50%; height: 50%" src="{{ site.url }}/images/Varian_Eclipse_Export.png">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/Varian_Eclipse_Export.png">
 </p>
 
-I tried to convert the DICOM files with `dcmconv`, but the latter would output other errors. I finally gave up on dcmconv and tried `gdcmconv`. The option `-w`, that is supposed to decompress a DICOM file, rewrote my files in `Explicit VR Little Endian` format:
+I then tried to convert my patient's DICOM files with `dcmconv`, but the latter would output other errors. I finally gave up on dcmconv and tried `gdcmconv`. The option `-w`, that is supposed to decompress a DICOM file, rewrote my files in `Explicit VR Little Endian` format:
 
 {% highlight R %}
 {% raw %}
