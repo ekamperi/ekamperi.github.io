@@ -15,7 +15,7 @@ This post is going to be very esoterical, yet I'm writing it for my future self 
 
 Copying from the DICOM standard documentation, *Transfer Syntax* is a set of encoding rules able to represent one or more abstract syntaxes unambiguously. In particular, it allows communicating applications to negotiate common encoding techniques they both support (e.g., byte ordering, compression, etc.).
 
-So, apparently Varian Eclipse does not like *Explicit Big Endian* transfer syntax. I tried to convert it with `dcmconv`, but the latter would output other errors. I finally gave up and tried `gdcmconv`. The option `-w`, that is supposed to decompress a DICOM file, rewrote my files in `Explicit VR Little Endian` format:
+So, apparently Varian Eclipse does not like *Explicit Big Endian* transfer syntax. I tried to convert the DICOM files with `dcmconv`, but the latter would output other errors. I finally gave up on dcmconv and tried `gdcmconv`. The option `-w`, that is supposed to decompress a DICOM file, rewrote my files in `Explicit VR Little Endian` format:
 
 {% highlight R %}
 {% raw %}
