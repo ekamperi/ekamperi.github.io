@@ -13,9 +13,9 @@ This post is going to be very esoterical, yet I'm writing it for my future self 
 > Could not convert DICOM stream: SOP Instance UID: 1.2.840.113619.2.134.... [MRI]
 {% endraw %}
 
-Copying from the DICOM standard documentation, *Transfer Syntax* is a set of encoding rules able to represent one or more abstract syntaxes unambiguously. In particular, it allows communicating applications to negotiate common encoding techniques they both support (e.g., byte ordering, compression, etc.).
+Quoting from the DICOM standard documentation, *Transfer Syntax* is a set of encoding rules able to represent one or more abstract syntaxes unambiguously. In particular, it allows communicating applications to negotiate common encoding techniques they both support (e.g., byte ordering, compression, etc.).
 
-So, apparently Varian Eclipse does not like *Explicit Big Endian* transfer syntax. In order to figure out the supported transfer syntaxes, I exported the treatment course a random patient, and, in the export's options dialog, the valid transfer syntaxes were listed as below:
+So, apparently Varian Eclipse does not like *Explicit Big Endian* transfer syntax. For the non-tech savvy, when we write the number "123", we write the most significant digit (e.g. 1) first. This is a big endian representation. If we'd like to write the "123" number in little endian format, we'd write "321". In order to figure out the supported transfer syntaxes oF Eclipse, I exported the treatment course a random patient, and, in the export's options dialog, the valid transfer syntaxes were listed as below:
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/Varian_Eclipse_Export.png">
