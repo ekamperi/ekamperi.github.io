@@ -42,10 +42,12 @@ I tried to do the conversion with `dcmconv`, but it failed with some not so desc
 (0002,0013) SH [DICOM 3.0 ]                  | (0002,0013) SH [GDCM 2.8.4]
 (0002,0016) AE [MR1 ]                        | (0002,0016) AE [gdcmconv]
 # Used TransferSyntax: 1.2.840.10008.1.2.2   | # Used TransferSyntax: 1.2.840.10008.1.2.1
-~/dicom$
-~/dicom$ rm *.dcm
-~/dicom$                                                         
 {% endraw %}
 {% endhighlight %}
 
-I tried again to import the converted MRI DICOM files and the import succeeded with no errors whatsoever. The MRI images appeared perfectly fine and the simulation CT/MRI image registration process was performed unproblematically.
+Here you can verify that the `1.2.840.10008.1.2.1` identifier corresponds to little endian format.
+<p align="center">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/dicom_transfer_syntaxes.png">
+</p>
+
+Finally, I tried again to import the converted MRI DICOM files and the import succeeded with no errors whatsoever. The MRI images appeared perfectly fine and the simulation CT/MRI image registration process was performed unproblematically.
