@@ -21,7 +21,9 @@ So, apparently Varian Eclipse does not like *Explicit Big Endian* transfer synta
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/Varian_Eclipse_Export.png">
 </p>
 
-I then tried to convert my patient's DICOM files with `dcmconv`, but the latter would output other errors. I finally gave up on dcmconv and tried `gdcmconv`. The option `-w`, that is supposed to decompress a DICOM file, rewrote my files in `Explicit VR Little Endian` format:
+In layman's terms, the MRI data are written in big-endian format (e.g. "123"), but Eclipse can only read data written in little-endian format (e.g. "321"). Therefore, we need to convert from big-endian to little-endian.
+
+I tried to do the conversion of my patient's DICOM files with `dcmconv`, but the latter would output other errors. I finally gave up on dcmconv and tried `gdcmconv`. The option `-w`, that is supposed to decompress a DICOM file, rewrote my files in `Explicit VR Little Endian` format:
 
 {% highlight R %}
 {% raw %}
