@@ -100,7 +100,10 @@ f[e_] = ans[e] /. Flatten@Table[g[k], {k, 1, Length@vars}]
 {% endraw %}
 {% endhighlight %}
 
-For instance, you could add some more terms in the power series expansion with `vars = {a, b, c, p, q, r}` and see what you get:
+For instance, you could add some more terms in the power series expansion with `vars = {a,b,c,p,q,r}` and get:
+
 $$
 x(\epsilon) = 1 -\frac{\epsilon}{5} - \frac{\epsilon^2}{25} - \frac{\epsilon^3}{125} + \frac{21 \epsilon^5}{15625} + \frac{78 \epsilon^6}{78125} 
 $$
+
+Which gives $$x = x(1) = 0.754342$$.
