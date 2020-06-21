@@ -34,7 +34,8 @@ $$
 x(\epsilon) = a_0 + a_1 \epsilon + a_2 \epsilon^2 + a_3 \epsilon^3 = 1 + a_1 \epsilon + a_2 \epsilon^2 + a_3 \epsilon^3
 $$
 
-Why did we set $$a_0 = 1$$? Well, $$x(0) = a_0$$ and we already established that $$x(0) = 1$$ when we solved the unperturbed problem. Since $$x(\epsilon)$$ is a solution to the perturbed problem, then it must satisfy the initial equation that we are solving:
+Why did we set $$a_0 = 1$$? Well, $$x(0) = a_0$$ and we already established that $$x(0) = 1$$ when we solved the unperturbed problem. Now, since $$x(\epsilon)$$ is a solution to the perturbed problem, then it must satisfy the initial equation that we are solving:
+
 $$
 x(\epsilon)^5 + x(\epsilon) = 1 \Leftrightarrow
 (1+a_1\epsilon + a_2\epsilon^2 + a_3 \epsilon^3)^5 + \epsilon (1+a_1\epsilon+a_2 \epsilon^2 + a_3 \epsilon^3) = 1
