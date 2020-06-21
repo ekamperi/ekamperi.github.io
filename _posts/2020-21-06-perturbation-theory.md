@@ -1,3 +1,17 @@
+---
+layout: post
+title:  "A simple example of perturbation theory"
+date:   2020-06-21
+categories: [mathematics]
+tags: ['maths', 'perturbation theory']
+---
+
+### Contents
+{:.no_toc}
+
+* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
+{:toc}
+
 Suppose that we want to solve the following quintic equation:
 $$
 x^5 + x = 1
