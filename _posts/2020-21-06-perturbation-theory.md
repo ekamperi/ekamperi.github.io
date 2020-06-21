@@ -12,13 +12,15 @@ tags: ['mathematics', 'perturbation theory']
 * A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
 {:toc}
 
-I was looking at the video lectures of Carl Bender at YouTube on mamthematical physics. What a great teacher Carl Bender is! The first lectures are an introduction to the perturbation theory. They start with a really simple problem, where we want to find the real root of the following quintic equation:
+I was looking at the video lectures of Carl Bender at YouTube on mathematical physics. What a great teacher Carl Bender is! The first lectures are an introduction to the perturbation theory. They start with a straightforward problem, where we want to find the real root of the following quintic equation:
 
 $$
 x^5 + x = 1
 $$
 
-This equation cannot be solved exactly, like the quadratic, cubic or quartic equations. However, we will see how perturbation theory allows us to solve it with arbitratily high precision. The **first step** when doing perturbation theory is to introduce the perturbation factor $$\epsilon$$ into our problem. This is to some degree an art, but the general rule to follow is this. We put $$\epsilon$$ into our problem in such a way, that when we set $$\epsilon = 0$$, that is when we consider the unperturbed problem, we are able to solve it exactly.
+This equation cannot be solved exactly, like the quadratic, cubic, or quartic equations. However, we will see how the perturbation theory allows us to solve it with arbitrarily high precision.
+
+The **first step** when doing perturbation theory is to introduce the perturbation factor $$\epsilon$$ into our problem. This is, to some degree, an art, but the general rule to follow is this. We put $$\epsilon$$ into our problem in such a way, that when we set $$\epsilon = 0$$, that is when we consider the unperturbed problem, we can solve it exactly.
 
 For instance, if we put $$\epsilon$$ as $$x^5 + \epsilon x = 1$$, then for $$\epsilon = 0$$, we get $$x^5 + 1 = 0$$, that we can solve exactly.
 
