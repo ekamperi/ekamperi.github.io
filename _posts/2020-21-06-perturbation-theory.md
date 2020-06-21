@@ -59,18 +59,20 @@ $$
 \end{align*}
 $$
 
-$$1 + 5 a_1 = 0 \Rightarrow a_1 = -\frac{1}{5}$$
-
-$$a_1 + 5a_2 + 10a_1^2 = 0 \Rightarrow
+$$
+\begin{align*}
+1 + 5 a_1 = 0 \Rightarrow a_1 &= -\frac{1}{5}\\
+a_1 + 5a_2 + 10a_1^2 = 0 \Rightarrow
 a_2 = \frac{1}{5} \left[-10\left(-\frac{1}{5}\right)^2 - \left(-\frac{1}{5}\right)\right] \Rightarrow
-a_2 = -\frac{1}{25}
+a_2 &= -\frac{1}{25}
+\end{align*}
 $$
 
-Therefore:
+Similarly, we get $$a_3 = -\frac{1}{125}$$. Therefore:
 
 $$
 x(\epsilon) = 1 + a_1 \epsilon + a_2 \epsilon^2 + a_3 \epsilon^3 =
-1 - \frac{\epsilon}{5} - \frac{\epsilon^2}{25}
+1 - \frac{\epsilon}{5} - \frac{\epsilon^2}{25} - \frac{\epsilon^3}{125}
 $$
 
 So, instead of solving one hard problem, $$x^5 + x = 1$$, we solved infinite many hard problems, $$x^5 + \epsilon x = 1$$. The **final step** involves setting $$e = 1$$ in order to extract the particular solution to our particular problem:
