@@ -6,13 +6,7 @@ categories: [mathematics]
 tags: ['mathematics', 'perturbation theory']
 ---
 
-### Contents
-{:.no_toc}
-
-* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
-{:toc}
-
-I was looking at the video lectures of Carl Bender at YouTube on mathematical physics. What a great teacher Carl Bender is! The first lectures are an introduction to the perturbation theory. They start with a straightforward problem, where we want to find the real root of the following quintic equation:
+I was looking at the video lectures of [Carl Bender](https://en.wikipedia.org/wiki/Carl_M._Bender) at YouTube on mathematical physics. What a great teacher Carl Bender is! The first lectures are an introduction to the perturbation theory. They start with a straightforward problem, where we want to find the real root of the following quintic equation:
 
 $$
 x^5 + x = 1
