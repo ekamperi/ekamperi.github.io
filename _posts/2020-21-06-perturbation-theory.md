@@ -47,7 +47,7 @@ $$
 (1 + s)^5 = 1 + 5s + 10s^2 + 10 s^3 + \ldots
 $$
 
-And he let $s = a_1\epsilon + a_2\epsilon^2 + a_3 \epsilon^3$
+And he let $$s = a_1\epsilon + a_2\epsilon^2 + a_3 \epsilon^3$$
 
 Therefore:
 
