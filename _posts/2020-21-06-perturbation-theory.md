@@ -53,6 +53,8 @@ $$
 \end{align*}
 $$
 
+In the left hand side we have a polynomial of $$\epsilon$$ and in the right hand size we also have a polynomial of $$\epsilon$$ where all of its coefficients are zero, except for the constant term which is equal to 1. By invoking the uniqueness of the power series expansion, we require that the terms 
+
 $$
 \begin{align*}
 1 + 5 a_1 = 0 \Rightarrow a_1 &= -\frac{1}{5}\\
