@@ -82,3 +82,21 @@ x = x(1) = 1 - \frac{1}{5} - \frac{1}{25} -\frac{1}{125} = 0.752
 $$
 
 The precise solution is $$x = 0.754878$$. So, with just a couple of terms we did a pretty good approximation!
+
+Mathematica code:
+{% highlight mathematica %}
+{% raw %}
+ClearAll["Global`*"];
+f[x_] := x^5 + e*x
+vars = {a, b, c};
+ans[e_] = 1 + Sum[vars[[k]]*e^k, {k, 1, Length@vars}]
+expanded = f[ans[e]] // Expand
+getCoeff[n_] := CoefficientList[expanded, e][[n]]
+nsolve[n_] := Solve[getCoeff[n] == 0, vars[[n - 1]]][[1]]
+sols = Table[nsolve[k], {k, 2, 1 + Length@vars}]
+g[n_] := If[n > 1, sols[[n]] /. Flatten@Table[g[k], {k, 1, n - 1}], 
+  sols[[1]]]
+f[e_] = ans[e] /. Flatten@Table[g[k], {k, 1, Length@vars}]
+{% endraw %}
+{% endhighlight %}
+
