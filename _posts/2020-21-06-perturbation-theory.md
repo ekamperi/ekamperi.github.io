@@ -41,14 +41,16 @@ x(\epsilon)^5 + x(\epsilon) = 1 \Leftrightarrow
 (1+a_1\epsilon + a_2\epsilon^2 + a_3 \epsilon^3)^5 + \epsilon (1+a_1\epsilon+a_2 \epsilon^2 + a_3 \epsilon^3) = 1
 $$
 
-Recall also that:
+At this point I'd probaby fire up a Mathematica instance and let it handle the calculations, but Professor Carl Bender proceeded boldly by reminding us of the following identity:
+
 $$
-(1+s)^5 = 1 + 5s + 10s^2 + 10 s^3 + \ldots
+(1 + s)^5 = 1 + 5s + 10s^2 + 10 s^3 + \ldots
 $$
 
-and let us set $s = a_1\epsilon + a_2\epsilon^2 + a_3 \epsilon^3$
+And he let $s = a_1\epsilon + a_2\epsilon^2 + a_3 \epsilon^3$
 
 Therefore:
+
 $$
 \begin{align*}
 &1 + 5a_1\epsilon + 5a_2\epsilon^2 + 5a_3\epsilon^3 + 10(a_1^2\epsilon^2 + 2a_1 a_2 \epsilon^3 + \ldots) + \ldots\\
@@ -61,7 +63,8 @@ $$1 + 5 a_1 = 0 \Rightarrow a_1 = -\frac{1}{5}$$
 
 $$a_1 + 5a_2 + 10a_1^2 = 0 \Rightarrow
 a_2 = \frac{1}{5} \left[-10\left(-\frac{1}{5}\right)^2 - \left(-\frac{1}{5}\right)\right] \Rightarrow
-a_2 = -\frac{1}{25}$$
+a_2 = -\frac{1}{25}
+$$
 
 Therefore:
 
