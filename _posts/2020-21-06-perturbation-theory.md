@@ -83,7 +83,8 @@ $$
 
 The precise solution is $$x = 0.754878$$. So, with just a couple of terms we did a pretty good approximation!
 
-Mathematica code:
+You can play with the following Mathematica code:
+
 {% highlight mathematica %}
 {% raw %}
 ClearAll["Global`*"];
@@ -94,9 +95,12 @@ expanded = f[ans[e]] // Expand
 getCoeff[n_] := CoefficientList[expanded, e][[n]]
 nsolve[n_] := Solve[getCoeff[n] == 0, vars[[n - 1]]][[1]]
 sols = Table[nsolve[k], {k, 2, 1 + Length@vars}]
-g[n_] := If[n > 1, sols[[n]] /. Flatten@Table[g[k], {k, 1, n - 1}], 
-  sols[[1]]]
+g[n_] := If[n > 1, sols[[n]] /. Flatten@Table[g[k], {k, 1, n - 1}], sols[[1]]]
 f[e_] = ans[e] /. Flatten@Table[g[k], {k, 1, Length@vars}]
 {% endraw %}
 {% endhighlight %}
 
+For instance, you could add some more terms in the power series expansion with `vars = {a, b, c, p, q, r}` and see what you get:
+$$
+x(\epsilon) = 1 -\frac{\epsilon}{5} - \frac{\epsilon^2}{25} - \frac{\epsilon^3}{125} + \frac{21 \epsilon^5}{15625} + \frac{78 \epsilon^6}{78125} 
+$$
