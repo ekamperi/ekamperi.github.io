@@ -49,7 +49,15 @@ $$
 \begin{align*}
 &1 + 5a_1\epsilon + 5a_2\epsilon^2 + 5a_3\epsilon^3 + 10(a_1^2\epsilon^2 + 2a_1 a_2 \epsilon^3 + \ldots) + \ldots\\
 &=1 + 5a_1\epsilon + \epsilon^2(5a_2+10a_1^2 ) + \epsilon^3(5a_3 + 20a_1 a_2) + \ldots\\
-&\epsilon + a_1 \epsilon^2 + a_2 \epsilon^3 + \ldots
+\end{align*}
+$$
+
+We also need to add the expansion of $$\epsilon(1+a_1\epsilon + a_2\epsilon^2 + a_3\epsilon^3)$$. Finally, we get:
+
+$$
+\begin{align*}
+1 + 5a_1\epsilon + \epsilon^2(5a_2+10a_1^2 ) + \epsilon^3(5a_3 + 20a_1 a_2) + \ldots\\
+\epsilon + a_1 \epsilon^2 + a_2 \epsilon^3 + \ldots = 1
 \end{align*}
 $$
 
