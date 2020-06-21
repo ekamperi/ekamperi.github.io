@@ -78,7 +78,7 @@ $$
 So, instead of solving one hard problem, $$x^5 + x = 1$$, we solved infinite many hard problems, $$x^5 + \epsilon x = 1$$. The **final step** involves setting $$e = 1$$ in order to extract the particular solution to our particular problem:
 
 $$
-x = x(1) = 1 - \frac{1}{5} - \frac{1}{25} = 0.76
+x = x(1) = 1 - \frac{1}{5} - \frac{1}{25} -\frac{1}{125} = 0.752
 $$
 
 The precise solution is $$x = 0.754878$$. So, with just a couple of terms we did a pretty good approximation!
