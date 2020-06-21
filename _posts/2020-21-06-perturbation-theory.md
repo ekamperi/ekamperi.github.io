@@ -20,7 +20,7 @@ $$
 
 This equation cannot be solved exactly, like the quadratic, cubic, or quartic equations. However, we will see how the perturbation theory allows us to solve it with arbitrarily high precision.
 
-The **first step** when doing perturbation theory is to introduce the perturbation factor $$\epsilon$$ into our problem. This is, to some degree, an art, but the general rule to follow is this. We put $$\epsilon$$ into our problem in such a way, that when we set $$\epsilon = 0$$, that is when we consider the unperturbed problem, we can solve it exactly. For instance, if we put $$\epsilon$$ as $$x^5 + \epsilon x = 1$$, then for $$\epsilon = 0$$, we get $$x^5 + 1 = 0$$, that we can solve exactly.
+The **first step** when doing perturbation theory is to introduce the perturbation factor $$\epsilon$$ into our problem. This is, to some degree, an art, but the general rule to follow is this. We put $$\epsilon$$ into our problem in such a way, that when we set $$\epsilon = 0$$, that is when we consider the unperturbed problem, we can solve it exactly. For instance, if we put $$\epsilon$$ as $$x^5 + \epsilon x = 1$$, then for $$\epsilon = 0$$, we get $$x^5 = 1$$, that we can solve exactly ($$x = 1$$).
 
 The **second step** is to assume that the solution to the perturbed problem can be described by an infinite power series of $$\epsilon$$:
 
@@ -34,9 +34,9 @@ $$
 x(\epsilon) = a_0 + a_1 \epsilon + a_2 \epsilon^2 + a_3 \epsilon^3 = 1 + a_1 \epsilon + a_2 \epsilon^2 + a_3 \epsilon^3
 $$
 
-Since $$x(\epsilon)$$ is a solution to the perturbed problem, then if 
-
+Why did we set $$a_0 = 1$$? Well, $$x(0) = a_0$$ and we already established that $$x(0) = 1$$ when we solved the unperturbed problem. Since $$x(\epsilon)$$ is a solution to the perturbed problem, then it must satisfy the initial equation that we are solving:
 $$
+x(\epsilon)^5 + x(\epsilon) = 1 \Leftrightarrow
 (1+a_1\epsilon + a_2\epsilon^2 + a_3 \epsilon^3)^5 + \epsilon (1+a_1\epsilon+a_2 \epsilon^2 + a_3 \epsilon^3) = 1
 $$
 
