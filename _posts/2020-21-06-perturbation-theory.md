@@ -12,20 +12,15 @@ tags: ['maths', 'perturbation theory']
 * A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
 {:toc}
 
-Suppose that we want to solve the following quintic equation:
+I was looking at the video lectures of Carl Bender at YouTube on mamthematical physics. What a great teacher Carl Bender is! The first lectures are an introduction the perturbation theory. They start with a really simple problem, where we want to solve the following quintic equation:
+
 $$
 x^5 + x = 1
 $$
 
-We insert the perturbation factor $\epsilon$:
-$$
-x^5 + \epsilon x = 1
-$$
+This equation cannot be solved exactly, like the quadratic equation. However, we will see how perturbation theory allows us to solve it with arbitratily high precision. The first step when doing perturbation theory is to introduce the perturbation factor $$\epsilon$$ into our problem. This is to some degree an art, but the rule to follow is this. We put $$\epsilon$$ into our problem in such a way, that when we set $$\epsilon = 0$$, that is when we consider the unperturbed problem, we are able to solve it exactly.
 
-The unperturbed problem is when $\epsilon = 0$:
-$$
-\epsilon = 0: x^5 = 1 \Rightarrow x = 1
-$$
+For instance, if we put $$\epsilon$$ as $$x^5 + \epsilon x = 1$$, then for $$\epsilon = 0$$ we get $$x^5 + 1 = 0$$ that we can solve exactly.
 
 $$
 x(\epsilon) = \sum_{n=0}^\infty a_n \epsilon^n
