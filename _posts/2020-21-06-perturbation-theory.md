@@ -25,11 +25,13 @@ The **first step** when doing perturbation theory is to introduce the perturbati
 For instance, if we put $$\epsilon$$ as $$x^5 + \epsilon x = 1$$, then for $$\epsilon = 0$$, we get $$x^5 + 1 = 0$$, that we can solve exactly.
 
 The **second step** is to write the solution to the perturbed problem as an infinite power series of $$\epsilon$$:
+
 $$
 x(\epsilon) = \sum_{n=0}^\infty a_n \epsilon^n
 $$
 
 In this particular example, let us consider only the first 4 terms:
+
 $$
 x(\epsilon) = a_0 + a_1 \epsilon + a_2 \epsilon^2 + a_3 \epsilon^3 = 1 + a_1 \epsilon + a_2 \epsilon^2 + a_3 \epsilon^3
 $$
