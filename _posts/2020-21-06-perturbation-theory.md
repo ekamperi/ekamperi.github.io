@@ -69,6 +69,7 @@ In the left hand side we have a polynomial of $$\epsilon$$ and in the right hand
 
 $$
 \begin{align*}
+a_0 &= 1\\
 1 + 5 a_1 = 0 \Rightarrow a_1 &= -\frac{1}{5}\\
 a_1 + 5a_2 + 10a_1^2 = 0 \Rightarrow
 a_2 = \frac{1}{5} \left[-10\left(-\frac{1}{5}\right)^2 - \left(-\frac{1}{5}\right)\right] \Rightarrow
