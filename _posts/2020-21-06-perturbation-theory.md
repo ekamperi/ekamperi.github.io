@@ -16,13 +16,17 @@ This equation cannot be solved exactly, like the quadratic, cubic, or quartic eq
 
 The **first step** when doing perturbation theory is to introduce the perturbation factor $$\epsilon$$ into our problem. This is, to some degree, an art, but the general rule to follow is this. We put $$\epsilon$$ into our problem in such a way, that when we set $$\epsilon = 0$$, that is when we consider the unperturbed problem, we can solve it exactly. For instance, if we put $$\epsilon$$ as $$x^5 + \epsilon x = 1$$, then for $$\epsilon = 0$$, we get $$x^5 = 1$$, that we can solve exactly ($$x = 1$$).
 
+<p align="center">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/perturb1.png" alt="Plot of perturbed functions for various values of epsilon">
+</p>
+
 The **second step** is to assume that the solution to the perturbed problem can be described by an infinite power series of $$\epsilon$$:
 
 $$
 x(\epsilon) = \sum_{n=0}^\infty a_n \epsilon^n
 $$
 
-In this particular example, let us consider only the first 4 terms:
+In this particular example, let us consider only the first 4 terms $$a_0, a_1, a_2, a_3$$:
 
 $$
 x(\epsilon) = a_0 + a_1 \epsilon + a_2 \epsilon^2 + a_3 \epsilon^3 = 1 + a_1 \epsilon + a_2 \epsilon^2 + a_3 \epsilon^3
