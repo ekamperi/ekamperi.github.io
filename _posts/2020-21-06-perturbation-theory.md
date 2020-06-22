@@ -84,7 +84,7 @@ x(\epsilon) = 1 + a_1 \epsilon + a_2 \epsilon^2 + a_3 \epsilon^3 =
 1 - \frac{\epsilon}{5} - \frac{\epsilon^2}{25} - \frac{\epsilon^3}{125}
 $$
 
-So, instead of solving one hard problem, $$x^5 + x = 1$$, we solved infinite many hard problems, $$x^5 + \epsilon x = 1$$. The **final step** involves setting $$\epsilon = 1$$ in order to extract the particular solution to our particular problem:
+So, instead of solving one hard problem, $$x^5 + x = 1$$, we solved infinite many hard problems, $$x^5 + \epsilon x = 1$$. The **final step** involves setting $$\epsilon = 1$$ in order to extract the solution to our particular problem:
 
 $$
 x = x(1) = 1 - \frac{1}{5} - \frac{1}{25} -\frac{1}{125} = 0.752
