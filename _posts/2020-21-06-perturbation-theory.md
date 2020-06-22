@@ -35,7 +35,7 @@ x(\epsilon)^5 + x(\epsilon) = 1 \Leftrightarrow
 (1+a_1\epsilon + a_2\epsilon^2 + a_3 \epsilon^3)^5 + \epsilon (1+a_1\epsilon+a_2 \epsilon^2 + a_3 \epsilon^3) = 1
 $$
 
-At this point I'd probaby fire up a Mathematica instance and let it handle the calculations, but Professor Carl Bender proceeded boldly by reminding us of the following identity:
+At this point I'd probably fire up a Mathematica instance and let it handle the calculations, but Professor Carl Bender proceeded boldly by reminding us of the following identity:
 
 $$
 (1 + s)^5 = 1 + 5s + 10s^2 + 10 s^3 + \ldots
