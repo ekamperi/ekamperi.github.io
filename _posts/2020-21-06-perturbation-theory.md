@@ -123,11 +123,15 @@ $$
 a_n = -\frac{\Gamma\left[(4n-1)/5\right]}{5\Gamma\left[(4-n)/5\right] n!}
 $$
 
-$$
-\text{an}(\text{n$\_$})\text{:=}-\frac{\Gamma \left(\frac{1}{5} (4 n-1)\right)}{5 n! \Gamma \left(\frac{4-n}{5}\right)};
+{% highlight mathematica %}
+{% raw %}
+ClearAll["Global`*"];
+an[n_] := -(Gamma[(4 n - 1)/5]/(5 Gamma[(4 - n)/5]*n!));
+Table[an[n], {n, 0, 10}] // FullSimplify
+{% endraw %}
+{% endhighlight %}
 
-\text{FullSimplify}[\text{Table}[\text{an}(n),\{n,0,10\}]]
-$$
+And the result is:
 
 $$
 \left\{1,-\frac{1}{5},-\frac{1}{25},-\frac{1}{125},0,\frac{21}{15625},\frac{78}{78125},\frac{187}{390625},\frac{286}{1953125},0,-\frac{9367}{244140625}\right\}
