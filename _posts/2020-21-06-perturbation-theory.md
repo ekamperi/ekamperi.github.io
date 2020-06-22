@@ -120,7 +120,7 @@ Which gives $$x = x(1) = 0.754342$$.
 By the way, I've stumbled upon the formula for the general term $$a_n$$:
 
 $$
-a_n = -\frac{\Gamma\left[(4n-1)/5\right]}{5\Gamma\left[(4-n)/5\right] n!}
+a_n = -\frac{\Gamma\left[(4n-1)/5\right]}{5\Gamma\left[(4-n)/5\right] \Gamma(n+1)}
 $$
 
 {% highlight mathematica %}
