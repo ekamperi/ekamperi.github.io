@@ -116,3 +116,12 @@ x(\epsilon) = 1 -\frac{\epsilon}{5} - \frac{\epsilon^2}{25} - \frac{\epsilon^3}{
 $$
 
 Which gives $$x = x(1) = 0.754342$$.
+
+By the way, I've found the formula for the general term $$an_n$$:
+
+$$
+a_n = -\frac{\Gamma\left[(4n-1)/5\right]}{5\Gamma\left[(4-n)/5\right] n!}
+$$
+
+
+
