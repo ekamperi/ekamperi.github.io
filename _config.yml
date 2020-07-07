@@ -17,6 +17,7 @@ kramdown:
 url: "https://ekamperi.github.io"
 
 minima:
+  skin: dark
   date_format: "%b %-d, %Y"
   social_links:
     twitter: stathisktw
@@ -42,7 +43,4 @@ google_analytics: UA-145393080-1
 
 disqus:
     shortname: https-ekamperi-github-io
-
-minima:
-  skin: dark
 
