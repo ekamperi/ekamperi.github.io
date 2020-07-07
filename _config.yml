@@ -43,3 +43,6 @@ google_analytics: UA-145393080-1
 disqus:
     shortname: https-ekamperi-github-io
 
+minima:
+  skin: dark
+
