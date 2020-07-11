@@ -6,7 +6,7 @@ categories: [mathematics]
 tags: ['mathematics', 'perturbation theory']
 ---
 
-I was looking at the video lectures of [Carl Bender](https://en.wikipedia.org/wiki/Carl_M._Bender) at YouTube on mathematical physics. What a great teacher Carl Bender is! The first lectures are an introduction to the perturbation theory. They start with a straightforward problem, where we are asked to find the real root of the following quintic equation:
+I was looking at the video lectures of [Carl Bender](https://en.wikipedia.org/wiki/Carl_M._Bender) on mathematical physics at YouTube. What a great teacher Carl Bender is! The first lectures are an introduction to the perturbation theory. They start with a straightforward problem, where we are asked to find the real root of the following quintic equation:
 
 $$
 x^5 + x = 1
@@ -39,7 +39,7 @@ x(\epsilon)^5 + x(\epsilon) = 1 \Leftrightarrow
 (1+a_1\epsilon + a_2\epsilon^2 + a_3 \epsilon^3)^5 + \epsilon (1+a_1\epsilon+a_2 \epsilon^2 + a_3 \epsilon^3) = 1
 $$
 
-At this point I'd probably fire up a Mathematica instance and let it handle the calculations, but Professor Carl Bender proceeded boldly by reminding us of the following identity:
+At this point, I'd probably fire up a *Mathematica* instance and let it handle the calculations, but Professor Carl Bender proceeded boldly by reminding us of the following identity:
 
 $$
 (1 + s)^5 = 1 + 5s + 10s^2 + 10 s^3 + \ldots
@@ -90,9 +90,9 @@ $$
 x = x(1) = 1 - \frac{1}{5} - \frac{1}{25} -\frac{1}{125} = 0.752
 $$
 
-The precise solution is $$x = 0.754878$$. So, with just a couple of terms we did a pretty good approximation!
+The precise solution is $$x = 0.754878$$. So, with just a couple of terms, we made a pretty good approximation!
 
-You can play with the following Mathematica code:
+You can play with the following *Mathematica* code:
 
 {% highlight mathematica %}
 {% raw %}
@@ -109,7 +109,7 @@ f[e_] = ans[e] /. Flatten@Table[g[k], {k, 1, Length@vars}]
 {% endraw %}
 {% endhighlight %}
 
-For instance, you could add some more terms in the power series expansion with `vars = {a,b,c,p,q,r}` and get:
+For instance, you could add some more terms in the power series expansion by modifying the list of variables with`vars = {a,b,c,p,q,r}` and get:
 
 $$
 x(\epsilon) = 1 -\frac{\epsilon}{5} - \frac{\epsilon^2}{25} - \frac{\epsilon^3}{125} + \frac{21 \epsilon^5}{15625} + \frac{78 \epsilon^6}{78125} 
@@ -139,5 +139,4 @@ $$
 
 I wasn't able to calculate the radius of convergence, but my book says that it's $$R = 5/4^{4/5} = 1.64938$$. Therefore, $$\epsilon = 1$$ is inside the radius.
 
-Naturally, one could ask "Why not put the $$\epsilon$$ parameter in front of $$x^5$$ in the equation $$x^5 + 1 = 0$$" ? That is, why not write $$\epsilon x^5 + 1 = 0$$. It turns out that if you do that, the answer, $$x(\epsilon)$$, you get is a *divergent* series. However, this is when things start to get *very* interesting. Because, contrary to what I knew until know, a divergent series may contain valueable information that can be extracted. Stay tuned! 
-
+Naturally, one could ask "Why not put the $$\epsilon$$ parameter in front of $$x^5$$ in the equation $$x^5 + 1 = 0$$" ? That is, why not write $$\epsilon x^5 + 1 = 0$$. It turns out that if you do that, the answer $$x(\epsilon)$$, you get, is a *divergent* series. However, this is when things start to get *very* interesting. Because, contrary to what I knew until know, a divergent series may contain valuable information that can be extracted by rewriting it in such a way that it converges. Stay tuned! 
