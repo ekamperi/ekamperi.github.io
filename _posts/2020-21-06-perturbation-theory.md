@@ -100,12 +100,11 @@ ClearAll["Global`*"];
 f[x_] := x^5 + e*x
 vars = {a, b, c};
 ans[e_] = 1 + Sum[vars[[k]]*e^k, {k, 1, Length@vars}]
-expanded = f[ans[e]] // Expand
+expanded = f[ans[e]] // Expand;
 getCoeff[n_] := CoefficientList[expanded, e][[n]]
 nsolve[n_] := Solve[getCoeff[n] == 0, vars[[n - 1]]][[1]]
 sols = Table[nsolve[k], {k, 2, 1 + Length@vars}]
-g[n_] := If[n > 1, sols[[n]] /. Flatten@Table[g[k], {k, 1, n - 1}], sols[[1]]]
-f[e_] = ans[e] /. Flatten@Table[g[k], {k, 1, Length@vars}]
+f[e_] = ans[e] //. Flatten@sols
 {% endraw %}
 {% endhighlight %}
 
