@@ -136,6 +136,10 @@ $$
 \left\{1,-\frac{1}{5},-\frac{1}{25},-\frac{1}{125},0,\frac{21}{15625},\frac{78}{78125},\frac{187}{390625},\frac{286}{1953125},0,-\frac{9367}{244140625}\right\}
 $$
 
-I wasn't able to calculate the radius of convergence, but my book says that it's $$R = 5/4^{4/5} = 1.64938$$. Therefore, $$\epsilon = 1$$ is inside the radius.
+I wasn't able to calculate the radius of convergence, but my book says that it's $$R = 5/4^{4/5} = 1.64938$$. Therefore, $$\epsilon = 1$$ is inside the radius. Here you can see the value of $x(\epsilon)$ for various values of $\epsilon$ and notice how it blows for $\epsilon > R$.
+
+<p align="center">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/perturb0.png" alt="Plot of power series sum vs. epsilon">
+</p>
 
 Naturally, one could ask "Why not put the $$\epsilon$$ parameter in front of $$x^5$$ in the equation $$x^5 + x = 1$$" ? That is, why not write $$\epsilon x^5 + x = 1$$. It turns out that if you do that, the answer $$x(\epsilon)$$ you get is a *divergent* series. However, this is when things start to get *very* interesting. Because, contrary to what I knew until know and contrary to my intuition, a divergent series may contain valuable information that can be extracted by rewriting it in such a way that it converges. Stay tuned! 
