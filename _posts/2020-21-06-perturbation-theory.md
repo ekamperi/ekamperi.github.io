@@ -136,7 +136,7 @@ $$
 \left\{1,-\frac{1}{5},-\frac{1}{25},-\frac{1}{125},0,\frac{21}{15625},\frac{78}{78125},\frac{187}{390625},\frac{286}{1953125},0,-\frac{9367}{244140625}\right\}
 $$
 
-I wasn't able to calculate the radius of convergence, but my book says that it's $$R = 5/4^{4/5} = 1.64938$$. Therefore, $$\epsilon = 1$$ is inside the radius. Here you can see the value of $x(\epsilon)$ for various values of $\epsilon$ and notice how it blows for $\epsilon > R$.
+I wasn't able to calculate the radius of convergence, but my book says that it's $$R = 5/4^{4/5} = 1.64938$$. Therefore, $$\epsilon = 1$$ is inside the radius. Here you can see the value of $$x(\epsilon)$$ for various values of $\epsilon$ and notice how it blows for $$\epsilon > R$$.
 
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/perturb0.png" alt="Plot of power series sum vs. epsilon">
