@@ -73,12 +73,22 @@ a_2 q_1+a_1 q_2+a_0 q_3+a_3-p_3 &= 0
 \ldots
 $$
 
-The $a_0, a_1, a_2, \ldots$$ are known, since these are the coefficients of the divergent series $$A(x)$$ that we want to re-express in a form that converges. Let's see how this goes in our example.
+The $$a_0, a_1, a_2, \ldots$$ are known, since these are the coefficients of the divergent series $$A(x)$$ that we want to re-express in a form that converges. Let's see how this goes in our example.
 
 {% highlight mathematica %}
 {% raw %}
 P[m_, x_] := Sum[Subscript[p, j]*x^j, {j, 0, m}]
 Q[n_, x_] := 1 + Sum[Subscript[q, j]*x^j, {j, 1, n}]
+R[m_, n_, x_] := P[m, x]/Q[n, x]
+A[n_, x_] := Sum[Subscript[a, j]*x^j, {j, 0, n}]
+as = Table[Subscript[a, n - 1] -> getCoeff[n], {n, 1, Length@CoefficientList[f[x], x]}]
+lhs[n_] := CoefficientList[A[Length@as, x] * Q[n, x] - P[n, x] // Expand, x]
+deg = 4;
+sol = Table[lhs[deg][[n]] == 0 /. as, {n, 1, 2*deg + 1}] // NSolve
+padeApprox[x_] = R[deg, deg, x] /. sol[[1]]
 {% endraw %}
 {% endhighlight %}
 
+$$
+x(\epsilon) = \frac{1 + 22.1451 \epsilon + 153.425 \epsilon^2 + 348.996 \epsilon^3 + 153.528 \epsilon^4}{1 + 23.1451 \epsilon + 171.57 \epsilon^2 + 439.841 \epsilon^3 + 260.596 \epsilon^4}
+$$
