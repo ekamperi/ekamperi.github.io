@@ -99,11 +99,10 @@ You can play with the following *Mathematica* code:
 ClearAll["Global`*"];
 f[x_] := x^5 + e*x
 vars = {a, b, c};
-ans[e_] = 1 + Sum[vars[[k]]*e^k, {k, 1, Length@vars}]
+ans[e_] = 1 + Sum[vars[[k]]*e^k, {k, 1, Length@vars}];
 expanded = f[ans[e]] // Expand;
 getCoeff[n_] := CoefficientList[expanded, e][[n]]
-nsolve[n_] := Solve[getCoeff[n] == 0, vars[[n - 1]]][[1]]
-sols = Table[nsolve[k], {k, 2, 1 + Length@vars}]
+sols = Table[getCoeff[k] == 0, {k, 2, Length@vars + 1}] // Solve;
 f[e_] = ans[e] //. Flatten@sols
 {% endraw %}
 {% endhighlight %}
