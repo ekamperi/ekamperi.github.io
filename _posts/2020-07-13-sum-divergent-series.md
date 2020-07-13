@@ -28,6 +28,14 @@ f[e_] = ans[e] //. Flatten@sols
 {% endraw %}
 {% endhighlight %}
 
+By running the code above, we get the following pwoer series representation of the answer $$x(\epsilon)$$:
+
 $$
 x(\epsilon) = 1 - e + 5 e^2 - 35 e^3 + 285 e^4 -2530 e^5 + 23751 e^6 -231880 e^7 + 2330445 e^8
+$$
+
+Hoever, if we proceed like before and set $$\epsilon = 1$$ to retrieve the answer to our particular problem, we get a result that is way off:
+
+$$
+x(1) = 2120041
 $$
