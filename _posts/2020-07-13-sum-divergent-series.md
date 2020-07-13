@@ -40,4 +40,14 @@ $$
 x(1) = 2120041
 $$
 
-Adding more terms to the series won't help at all and it will still diverge. How can we penetrate this barrier, if at all? Enter Pade approximation. I won't go into much detail, but the idea is to rewrite $$x(\epsilon)$$ as a ratio of two power series.
+Adding more terms to the series won't help at all and it will still diverge. How can we penetrate this barrier, if at all? Enter Pade approximation. I won't go into much detail, but the idea is to rewrite $$x(\epsilon)$$ as a ratio of two power series. In the general case where you have a power series
+
+$$
+A(x) = \sum_{n=0}^\infty a_n x^n
+$$
+
+It may be possible to approximate $$A(x)$$ with a ratio of two polynomials, $$P_L(x)$$ and $$Q_M(x)$$, of degree $$L$$ and $$M$$, respectively. Without loss of generality we let $$q_0 = 1$$. Therefore:
+
+$$
+A(x) = \frac{P_L(x)}{Q_M(x)} = \frac{\sum_{n=0}^{L}p_n}{1 + \sum_{n=0}^{M}q_n} 
+$$
