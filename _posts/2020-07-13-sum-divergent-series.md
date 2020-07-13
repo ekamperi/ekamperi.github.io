@@ -39,3 +39,5 @@ Hoever, if we proceed like before and set $$\epsilon = 1$$ to retrieve the answe
 $$
 x(1) = 2120041
 $$
+
+Adding more terms to the series won't help at all and it will still diverge. How can we penetrate this barrier, if at all? Enter Pade approximation. I won't go into much detail, but the idea is to rewrite $$x(\epsilon)$$ as a ratio of two power series.
