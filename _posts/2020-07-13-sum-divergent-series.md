@@ -20,7 +20,7 @@ ClearAll["Global`*"];
 (* Note how epsilon factor is in front of x^5 *)
 f[x_] := e*x^5 + x
 vars = {a, b, c, r, s, t, u, v};
-ans[e_] = 1 + Sum[vars[[k]]*e^k, {k, 1, Length@vars}]
+ans[e_] = 1 + Sum[vars[[k]]*e^k, {k, 1, Length@vars}];
 expanded = f[ans[e]] // Expand;
 getCoeff[n_] := CoefficientList[expanded, e][[n]]
 sols = Table[getCoeff[k] == 0, {k, 2, Length@vars + 1}] // Solve;
@@ -81,7 +81,8 @@ P[m_, x_] := Sum[Subscript[p, j]*x^j, {j, 0, m}]
 Q[n_, x_] := 1 + Sum[Subscript[q, j]*x^j, {j, 1, n}]
 R[m_, n_, x_] := P[m, x]/Q[n, x]
 A[n_, x_] := Sum[Subscript[a, j]*x^j, {j, 0, n}]
-as = Table[Subscript[a, n - 1] -> getCoeff[n], {n, 1, Length@CoefficientList[f[x], x]}]
+getACoeff[n_] := CoefficientList[f[e], e][[n]]
+as = Table[Subscript[a, n - 1] -> getACoeff[n], {n, 1, Length@CoefficientList[f[x], x]}]
 lhs[n_] := CoefficientList[A[Length@as, x] * Q[n, x] - P[n, x] // Expand, x]
 deg = 4;
 sol = Table[lhs[deg][[n]] == 0 /. as, {n, 1, 2*deg + 1}] // NSolve
