@@ -92,3 +92,9 @@ padeApprox[x_] = R[deg, deg, x] /. sol[[1]]
 $$
 x(\epsilon) = \frac{1 + 22.1451 \epsilon + 153.425 \epsilon^2 + 348.996 \epsilon^3 + 153.528 \epsilon^4}{1 + 23.1451 \epsilon + 171.57 \epsilon^2 + 439.841 \epsilon^3 + 260.596 \epsilon^4}
 $$
+
+Finally, we set $$\epsilon = 1$$ and we get:
+
+$$
+x(1) = 0.757789
+$$
