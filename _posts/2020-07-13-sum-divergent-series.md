@@ -17,8 +17,9 @@ Instead, of doing the calculations by hand, we will indulge ourselves with *Math
 {% highlight mathematica %}
 {% raw %}
 ClearAll["Global`*"];
+(* Note how epsilon factor is in front of x^5 *)
 f[x_] := e*x^5 + x
-vars = {a, b, c};
+vars = {a, b, c, r, s, t, u, v};
 ans[e_] = 1 + Sum[vars[[k]]*e^k, {k, 1, Length@vars}]
 expanded = f[ans[e]] // Expand;
 getCoeff[n_] := CoefficientList[expanded, e][[n]]
@@ -26,3 +27,7 @@ sols = Table[getCoeff[k] == 0, {k, 2, Length@vars + 1}] // Solve;
 f[e_] = ans[e] //. Flatten@sols
 {% endraw %}
 {% endhighlight %}
+
+$$
+x(\epsilon) = 1 - e + 5 e^2 - 35 e^3 + 285 e^4 -2530 e^5 + 23751 e^6 -231880 e^7 + 2330445 e^8
+$$
