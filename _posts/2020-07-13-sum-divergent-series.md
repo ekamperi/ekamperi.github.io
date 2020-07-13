@@ -52,4 +52,4 @@ $$
 A(x) = \frac{P_L(x)}{Q_M(x)} = \frac{\sum_\limits{n=0}^{L}p_n x^n}{1 + \sum_\limits{n=1}^{M}q_n x^n} 
 $$
 
-So, all we have to do is to determine the $$L + M + 1$$ coefficients of the polynomials $$P_L$$ and $$Q_M$$, i.e. to determine $$p_0, p_1, p_2, \ldots, p_n$$ and $$q_1, q_2, \ldots, q_M$$ (recall how we let $$q_0 = 1$$).
+So, all we have to do is to determine the $$L + M + 1$$ coefficients of the polynomials $$P_L$$ and $$Q_M$$, i.e. to determine the coefficients $$p_0, p_1, p_2, \ldots, p_n$$ and $$q_1, q_2, \ldots, q_M$$ (recall how we let $$q_0 = 1$$).
