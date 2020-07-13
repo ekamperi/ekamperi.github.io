@@ -52,7 +52,7 @@ $$
 A(x) = \frac{P_L(x)}{Q_M(x)} = \frac{\sum_\limits{n=0}^{L}p_n x^n}{1 + \sum_\limits{n=1}^{M}q_n x^n} 
 $$
 
-So, all we have to do is to determine the $$L + M + 1$$ coefficients of the polynomials $$P_L$$ and $$Q_M$$, i.e. to determine the coefficients $$p_0, p_1, p_2, \ldots, p_n$$ and $$q_1, q_2, \ldots, q_M$$ (recall how we let $$q_0 = 1$$):
+So, all we have to do is to determine the $$L + M + 1$$ coefficients of the polynomials $$P_L$$ and $$Q_M$$, i.e. to determine the coefficients $$p_0, p_1, p_2, \ldots, p_L$$ and $$q_1, q_2, \ldots, q_M$$ (recall how we let $$q_0 = 1$$):
 
 $$
 \begin{align*}
@@ -72,3 +72,13 @@ a_2 q_1+a_1 q_2+a_0 q_3+a_3-p_3 &= 0
 \end{align*}
 \ldots
 $$
+
+The $a_0, a_1, a_2, \ldots$$ are known, since these are the coefficients of the divergent series $$A(x)$$ that we want to re-express in a form that converges. Let's see how this goes in our example.
+
+{% highlight mathematica %}
+{% raw %}
+P[m_, x_] := Sum[Subscript[p, j]*x^j, {j, 0, m}]
+Q[n_, x_] := 1 + Sum[Subscript[q, j]*x^j, {j, 1, n}]
+{% endraw %}
+{% endhighlight %}
+
