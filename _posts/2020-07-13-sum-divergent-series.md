@@ -127,9 +127,10 @@ sol = Table[lhs[deg][[n]] == 0 /. as, {n, 1, 2*deg + 1}] // Solve
 {% endraw %}
 {% endhighlight %}
 
-The solution to the system provides us with the coefficients of polynomials $$P_L(x)$$ and $$Q_M(x)$$
+The solution to the system provides us with the coefficients of polynomials $$P_L(x)$$ and $$Q_M(x)$$:
+
 $$
-exp(x) = \frac{1 + \frac{x}{2} + \frac{x^2}{10} + \frac{x^3}{120}}{1-\frac{x}{2}+\frac{x^2}{10}-\frac{x^3}{120}}
+\text{exp}(x) = \frac{1 + \frac{x}{2} + \frac{x^2}{10} + \frac{x^3}{120}}{1-\frac{x}{2}+\frac{x^2}{10}-\frac{x^3}{120}}
 $$
 
 Here we plot the value of $$\text{exp}(x)$$ along with the Padé $$3/3$$ approximation vs. a Taylor series with 7 terms.
