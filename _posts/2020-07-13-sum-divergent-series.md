@@ -99,3 +99,20 @@ Finally, we set $$\epsilon = 1$$ and we get:
 $$
 x(1) = 0.757789
 $$
+
+Which is pretty close to the precise solution $x=0.754878$.
+
+## Pade approximation of exponential function
+Let's, for the fun of it, calculate the Pade approximation of the exponential function $$\text{exp}(x)$$! First, we need to write it as a power series $$A(x)$$:
+
+{% highlight mathematica %}
+{% raw %}
+exps = Series[Exp[x], {x, 0, 20}];
+getACoeff[n_] := CoefficientList[exps, x][[n]]
+as = Table[Subscript[a, n - 1] -> getFcoeff[n], {n, 1, Length@CoefficientList[exps, x]}]
+{% endraw %}
+{% endhighlight %}
+
+$$
+\left\{a_0\to 1,a_1\to 1,a_2\to \frac{1}{2},a_3\to \frac{1}{6},a_4\to \frac{1}{24},a_5\to \frac{1}{120},a_6\to \frac{1}{720},a_7\to \frac{1}{5040},a_8\to \frac{1}{40320},\ldots,\right\}
+$$
