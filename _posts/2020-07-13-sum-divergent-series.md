@@ -127,9 +127,12 @@ sol = Table[lhs[deg][[n]] == 0 /. as, {n, 1, 2*deg + 1}] // Solve
 {% endraw %}
 {% endhighlight %}
 
+The solution to the system provides us with the coefficients of polynomials $$P_L(x)$$ and $$Q_M(x)$$
 $$
-\frac{1 + \frac{x}{2} + \frac{x^2}{10} + \frac{x^3}{120}}{1-\frac{x}{2}+\frac{x^2}{10}-\frac{x^3}{120}}
+exp(x) = \frac{1 + \frac{x}{2} + \frac{x^2}{10} + \frac{x^3}{120}}{1-\frac{x}{2}+\frac{x^2}{10}-\frac{x^3}{120}}
 $$
+
+Here we plot the value of $$\text{exp}(x)$$ along with the Pade $$3/3$$ aproximation vs. a Taylor series with 7 terms.
 
 <p align="center">
 <img style="width: 100%; height: 100%" src="{{ site.url }}/images/exp_vs_pade_vs_taylor.png" alt="Pade vs taylor series for exponential function">
