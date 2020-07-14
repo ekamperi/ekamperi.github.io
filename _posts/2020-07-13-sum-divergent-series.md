@@ -109,7 +109,7 @@ Let's, for the fun of it, calculate the Pade approximation of the exponential fu
 {% raw %}
 exps = Series[Exp[x], {x, 0, 20}];
 getACoeff[n_] := CoefficientList[exps, x][[n]]
-as = Table[Subscript[a, n - 1] -> getFcoeff[n], {n, 1, Length@CoefficientList[exps, x]}]
+as = Table[Subscript[a, n - 1] -> getACoeff[n], {n, 1, Length@CoefficientList[exps, x]}]
 {% endraw %}
 {% endhighlight %}
 
@@ -121,13 +121,12 @@ $$
 
 {% highlight mathematica %}
 {% raw %}
-lhs[n_] := 
- CoefficientList[A[Length@as, x]*Q[n, x] - P[n, x] // Expand, x]
- deg = 3;
- sol = Table[lhs[deg][[n]] == 0 /. as, {n, 1, 2*deg + 1}] // Solve
+lhs[n_] := CoefficientList[A[Length@as, x]*Q[n, x] - P[n, x] // Expand, x]
+deg = 3;
+sol = Table[lhs[deg][[n]] == 0 /. as, {n, 1, 2*deg + 1}] // Solve
 {% endraw %}
 {% endhighlight %}
 
 $$
-\frac{\frac{x^3}{120}+\frac{x^2}{10}+\frac{x}{2}+1}{-\frac{x^3}{120}+\frac{x^2}{10}-\frac{x}{2}+1}
+\frac{1 + \frac{x}{2} + \frac{x^2}{10} + \frac{x^3}{120}}{1-\frac{x}{2}+\frac{x^2}{10}-\frac{x^3}{120}}
 $$
