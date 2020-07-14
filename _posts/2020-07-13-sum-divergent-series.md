@@ -100,10 +100,10 @@ $$
 x(1) = 0.757789
 $$
 
-Which is pretty close to the precise solution $x=0.754878$.
+Which is pretty close to the precise solution $$x=0.754878$$.
 
 ## Pade approximation of exponential function
-Let's, for the fun of it, calculate the Pade approximation of the exponential function $$\text{exp}(x)$$! First, we need to write it as a power series $$A(x)$$:
+Let's, for the fun of it, calculate the Pade approximation of the exponential function $$\text{exp}(x)$$! First, we need to write $$\text{exp}(x)$$ as a power series $$A(x)$$:
 
 {% highlight mathematica %}
 {% raw %}
@@ -113,6 +113,21 @@ as = Table[Subscript[a, n - 1] -> getFcoeff[n], {n, 1, Length@CoefficientList[ex
 {% endraw %}
 {% endhighlight %}
 
+Which gives the coefficients of the Taylor series expansion of the exponential function. Mind that the Taylor series is convergent, but we will approximate it with Pade nonetheless:
+
 $$
 \left\{a_0\to 1,a_1\to 1,a_2\to \frac{1}{2},a_3\to \frac{1}{6},a_4\to \frac{1}{24},a_5\to \frac{1}{120},a_6\to \frac{1}{720},a_7\to \frac{1}{5040},a_8\to \frac{1}{40320},\ldots,\right\}
+$$
+
+{% highlight mathematica %}
+{% raw %}
+lhs[n_] := 
+ CoefficientList[A[Length@as, x]*Q[n, x] - P[n, x] // Expand, x]
+ deg = 3;
+ sol = Table[lhs[deg][[n]] == 0 /. as, {n, 1, 2*deg + 1}] // Solve
+{% endraw %}
+{% endhighlight %}
+
+$$
+\frac{\frac{x^3}{120}+\frac{x^2}{10}+\frac{x}{2}+1}{-\frac{x^3}{120}+\frac{x^2}{10}-\frac{x}{2}+1}
 $$
