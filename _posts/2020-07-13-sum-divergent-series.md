@@ -132,5 +132,5 @@ $$
 $$
 
 <p align="center">
-<img style="width: 80%; height: 80%" src="{{ site.url }}/images/exp_vs_pade_vs_taylor.png" alt="Pade vs taylor series for exponential function">
+<img style="width: 100%; height: 100%" src="{{ site.url }}/images/exp_vs_pade_vs_taylor.png" alt="Pade vs taylor series for exponential function">
 </p>
