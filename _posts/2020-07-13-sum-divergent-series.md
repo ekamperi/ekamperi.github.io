@@ -130,3 +130,7 @@ sol = Table[lhs[deg][[n]] == 0 /. as, {n, 1, 2*deg + 1}] // Solve
 $$
 \frac{1 + \frac{x}{2} + \frac{x^2}{10} + \frac{x^3}{120}}{1-\frac{x}{2}+\frac{x^2}{10}-\frac{x^3}{120}}
 $$
+
+<p align="center">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/exp_vs_pade_vs_taylor.png" alt="Pade vs taylor series for exponential function">
+</p>
