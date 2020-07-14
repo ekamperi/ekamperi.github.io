@@ -69,8 +69,8 @@ a_0-p_0 &= 0 \\
 a_0 q_1+a_1-p_1 &= 0 \\
 a_1 q_1+a_0 q_2+a_2-p_2 &= 0\\
 a_2 q_1+a_1 q_2+a_0 q_3+a_3-p_3 &= 0
+\vdots
 \end{align*}
-\ldots
 $$
 
 The $$a_0, a_1, a_2, \ldots$$ are known since these are the coefficients of the divergent series $$A(x)$$ that we want to re-express in a form that converges. Let's see how this goes in our example.
