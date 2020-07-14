@@ -7,12 +7,12 @@ tags: ['mathematics', 'perturbation theory']
 ---
 
 So, this is a follow-up post on [my previous post](https://ekamperi.github.io/mathematics/2020/06/21/perturbation-theory.html)
-where we used perturbation theory to calculate the real root of $$x^5 + x = 1$$. In today's post we will, again, use perturbation theory, but we will introduce
-the $$\epsilon$$ factor in front of $$x^5$$. Concretely, we will try to solve $$\epsilon x^5 + x = 1$$. This change might seem smooth at first sight, but it turns
-out very "violent", because by letting $$\epsilon = 0$$ we vanish the term $$x^5$$ and, therefore, the other 4 complex roots of the equation. Our intervention
-drastically changes the underlying structure of the problem and this will show up later on.
+where we used perturbation theory to calculate the real root of $$x^5 + x = 1$$. In today's post, we will, again, use perturbation theory, but we will introduce
+the $$\epsilon$$ factor in front of $$x^5$$. Concretely, we will try to solve $$\epsilon x^5 + x = 1$$. This change might seem innocuous at first sight, but it turns
+out very "violent" because by letting $$\epsilon = 0$$, we vanish the term $$x^5$$ and, therefore, the other 4 complex roots of the equation. Our intervention
+drastically changes the underlying structure of the problem, and this will show up later on.
 
-Instead, of doing the calculations by hand, we will indulge ourselves with *Mathematica* this time.
+Instead of doing the calculations by hand, we will indulge ourselves with *Mathematica* this time.
 
 {% highlight mathematica %}
 {% raw %}
@@ -40,7 +40,7 @@ $$
 x(1) = 2120041
 $$
 
-Adding more terms to the series won't help at all and it will still diverge. How can we penetrate this barrier, if at all? Enter Pade approximation. I won't go into much detail, but the idea is to rewrite $$x(\epsilon)$$ as a ratio of two power series. In the general case where you have a power series
+Adding more terms to the series won't help at all as the sums will still diverge. How can we penetrate this barrier, if at all? Enter Padé approximation. I won't go into much detail, but the idea is to rewrite $$x(\epsilon)$$ as a ratio of two polynomials. In the general case where you have a power series
 
 $$
 A(x) = \sum_{n=0}^\infty a_n x^n
@@ -73,7 +73,7 @@ a_2 q_1+a_1 q_2+a_0 q_3+a_3-p_3 &= 0
 \ldots
 $$
 
-The $$a_0, a_1, a_2, \ldots$$ are known, since these are the coefficients of the divergent series $$A(x)$$ that we want to re-express in a form that converges. Let's see how this goes in our example.
+The $$a_0, a_1, a_2, \ldots$$ are known since these are the coefficients of the divergent series $$A(x)$$ that we want to re-express in a form that converges. Let's see how this goes in our example.
 
 {% highlight mathematica %}
 {% raw %}
@@ -102,7 +102,7 @@ $$
 
 Which is pretty close to the precise solution $$x=0.754878$$.
 
-## Pade approximation of exponential function
+## Pade approximation of the exponential function
 Let's, for the fun of it, calculate the Pade approximation of the exponential function $$\text{exp}(x)$$! First, we need to write $$\text{exp}(x)$$ as a power series $$A(x)$$:
 
 {% highlight mathematica %}
@@ -132,8 +132,9 @@ $$
 exp(x) = \frac{1 + \frac{x}{2} + \frac{x^2}{10} + \frac{x^3}{120}}{1-\frac{x}{2}+\frac{x^2}{10}-\frac{x^3}{120}}
 $$
 
-Here we plot the value of $$\text{exp}(x)$$ along with the Pade $$3/3$$ aproximation vs. a Taylor series with 7 terms.
+Here we plot the value of $$\text{exp}(x)$$ along with the Pade $$3/3$$ approximation vs. a Taylor series with 7 terms.
 
 <p align="center">
 <img style="width: 100%; height: 100%" src="{{ site.url }}/images/exp_vs_pade_vs_taylor.png" alt="Pade vs taylor series for exponential function">
 </p>
+
