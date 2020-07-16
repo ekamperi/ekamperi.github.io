@@ -7,10 +7,7 @@ tags: ['mathematics', 'perturbation theory']
 ---
 
 So, this is a follow-up post on [my previous post](https://ekamperi.github.io/mathematics/2020/06/21/perturbation-theory.html)
-where we used perturbation theory to calculate the real root of $$x^5 + x = 1$$. In today's post, we will, again, use perturbation theory, but we will introduce
-the $$\epsilon$$ factor in front of $$x^5$$. Concretely, we will try to solve $$\epsilon x^5 + x = 1$$. This change might seem innocuous at first sight, but it turns
-out very "violent" because by letting $$\epsilon = 0$$, we vanish the term $$x^5$$ and, therefore, the other 4 complex roots of the equation. Our intervention
-drastically changes the underlying structure of the problem, and this will show up later on.
+where we used perturbation theory to calculate the real root of $$x^5 + x = 1$$. In today's post, we will, again, use perturbation theory to solve the same problem, but this time we will introduce the $$\epsilon$$ factor in front of $$x^5$$. Concretely, we will try to solve $$\epsilon x^5 + x = 1$$. This change might seem innocuous at first sight, but it turns out very "violent" because by letting $$\epsilon = 0$$, we vanish the term $$x^5$$ and, therefore, the other 4 complex roots of the equation. This intervention drastically changes the underlying structure of the problem, and you shall see how it will show up later on.
 
 Instead of doing the calculations by hand, we will indulge ourselves with *Mathematica* this time.
 
@@ -40,13 +37,13 @@ $$
 x(1) = 2120041
 $$
 
-Adding more terms to the series won't help at all as the sums will still diverge. How can we penetrate this barrier, if at all? Enter Padé approximation. I won't go into much detail, but the idea is to rewrite $$x(\epsilon)$$ as a ratio of two polynomials. In the general case where you have a power series
+Adding more terms to the series won't help as the sums will still diverge. How can we penetrate this barrier, if at all? Enter Padé approximation. I won't go into much detail, but the idea is to rewrite $$x(\epsilon)$$ as a ratio of two polynomials. In the general case we have a power series:
 
 $$
 A(x) = \sum_{n=0}^\infty a_n x^n
 $$
 
-It may be possible to approximate $$A(x)$$ with a ratio of two polynomials, $$P_L(x)$$ and $$Q_M(x)$$, of degree $$L$$ and $$M$$, respectively. Without loss of generality we let $$q_0 = 1$$. Therefore:
+It may be possible to approximate $$A(x)$$ with a ratio of two polynomials, $$P_L(x)$$ and $$Q_M(x)$$, of degree $$L$$ and $$M$$, respectively, **even if $$A(x)$$ is divergent**. I'll let this sink for a moment. Even if a power series $$A(x)$ diverges, its coefficients $$a_n$$ contain information on how to rewrite $$A(x)$$ in such a way that it converges. Without loss of generality we let $$q_0 = 1$$ and, therefore:
 
 $$
 A(x) = \frac{P_L(x)}{Q_M(x)} = \frac{\sum_\limits{n=0}^{L}p_n x^n}{1 + \sum_\limits{n=1}^{M}q_n x^n} 
@@ -138,4 +135,3 @@ Here we plot the value of $$\text{exp}(x)$$ along with the Padé $$3/3$$ approxi
 <p align="center">
 <img style="width: 100%; height: 100%" src="{{ site.url }}/images/exp_vs_pade_vs_taylor.png" alt="Padé vs taylor series for exponential function">
 </p>
-
