@@ -45,7 +45,7 @@ $$
 A(x) = \sum_{n=0}^\infty a_n x^n
 $$
 
-It may be possible to approximate $$A(x)$$ with a ratio of two polynomials, $$P_L(x)$$ and $$Q_M(x)$$, of degree $$L$$ and $$M$$, respectively, **even if $$A(x)$$ is divergent**. I'll let this sink for a moment. Even if a power series $$A(x)$ diverges, its coefficients $$a_n$$ contain information on how to rewrite $$A(x)$$ in such a way that it converges. Without loss of generality we let $$q_0 = 1$$ and, therefore:
+It may be possible to approximate $$A(x)$$ with a ratio of two polynomials, $$P_L(x)$$ and $$Q_M(x)$$, of degree $$L$$ and $$M$$, respectively, **even if $$A(x)$$ is divergent**. I'll let this sink for a moment. Even if a power series $$A(x)$$ diverges, its coefficients $$a_n$$ contain information on how to rewrite $$A(x)$$ in such a way that it converges. Without loss of generality we let $$q_0 = 1$$ and, therefore:
 
 $$
 A(x) = \frac{P_L(x)}{Q_M(x)} = \frac{\sum_\limits{n=0}^{L}p_n x^n}{1 + \sum_\limits{n=1}^{M}q_n x^n} 
