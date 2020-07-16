@@ -7,9 +7,11 @@ tags: ['mathematics', 'perturbation theory']
 ---
 
 So, this is a follow-up post on [my previous post](https://ekamperi.github.io/mathematics/2020/06/21/perturbation-theory.html)
-where we used perturbation theory to calculate the real root of $$x^5 + x = 1$$. In today's post, we will, again, use perturbation theory to solve the same problem, but this time we will introduce the $$\epsilon$$ factor in front of $$x^5$$. Concretely, we will try to solve $$\epsilon x^5 + x = 1$$. This change might seem innocuous at first sight, but it turns out very "violent" because by letting $$\epsilon = 0$$, we vanish the term $$x^5$$ and, therefore, the other 4 complex roots of the equation. This intervention drastically changes the underlying structure of the problem, and you shall see how it will show up later on.
+where we used perturbation theory to calculate the real root of $$x^5 + x = 1$$. In today's post, we will, again, use perturbation theory to solve the same problem, but this time we will introduce the $$\epsilon$$ factor in front of $$x^5$$. Concretely, we will try to solve:
 
-Instead of doing the calculations by hand, we will indulge ourselves with *Mathematica* this time.
+$$\epsilon x^5 + x = 1$$.
+
+This change might seem innocuous at first sight, but it turns out very "violent" because by letting $$\epsilon = 0$$, we vanish the term $$x^5$$ and, therefore, the other 4 complex roots of the equation. This intervention drastically changes the underlying structure of the problem, and you shall see how it will show up later on. Instead of doing the calculations by hand, we will indulge ourselves with *Mathematica* this time.
 
 {% highlight mathematica %}
 {% raw %}
