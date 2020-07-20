@@ -102,7 +102,7 @@ $$
 x(1) = 0.757789
 $$
 
-Which is pretty close to the precise solution $$x=0.754878$$.
+Which is pretty close to the precise solution $$x=0.754878$$, corresponding to a relative error about $$0.4\%$$. That's quite an improvement over our first attempt that yielded $$x(1) = 2120041$$.
 
 ## Padé approximation of the exponential function
 Let's, for the fun of it, calculate the Padé approximation of the exponential function $$\text{exp}(x)$$. First, we need to write $$\text{exp}(x)$$ as a power series $$A(x)$$.
