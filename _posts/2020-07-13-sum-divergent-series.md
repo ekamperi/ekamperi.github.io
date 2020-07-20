@@ -60,7 +60,7 @@ $$
 If we expand $$A(x), Q_M(x), P_L(x)$$ we get:
 
 $$
-\underbrace{\left(a_0 + a_1 x + a_2 x^2 + \ldots \right)}_{A(x)} \underbrace{(1 + q_1 x + q_2 x^2 + \ldots + q_M x^M)}_{Q_M(x)} - \underbrace{(p_0 + p_1 x + p_2 x^2 + \ldots + p_L x^L)}_{Q_L(x)} = 0
+\underbrace{\left(a_0 + a_1 x + a_2 x^2 + \ldots \right)}_{A(x)} \underbrace{(1 + q_1 x + q_2 x^2 + \ldots + q_M x^M)}_{Q_M(x)} - \underbrace{(p_0 + p_1 x + p_2 x^2 + \ldots + p_L x^L)}_{P_L(x)} = 0
 $$
 
 If we gather the coefficients and require them to be zero, we get a system of linear equations:
