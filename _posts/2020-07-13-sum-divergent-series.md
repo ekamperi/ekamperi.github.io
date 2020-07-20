@@ -11,7 +11,7 @@ where we used perturbation theory to calculate the real root of $$x^5 + x = 1$$.
 
 $$\epsilon x^5 + x = 1$$
 
-This change might seem innocuous at first sight, but it turns out very "violent" because by letting $$\epsilon = 0$$, we vanish the term $$x^5$$ and, therefore, the other 4 complex roots of the equation. This intervention drastically changes the underlying structure of the problem, and you shall see how it will show up later on. Instead of doing the calculations by hand, we will indulge ourselves with *Mathematica* this time.
+This change might seem innocuous at first sight, but it turns out very "violent" because by letting $$\epsilon = 0$$, we vanish the term $$x^5$$ and, therefore, the other 4 complex roots of the equation. This intervention drastically changes the underlying structure of the problem, and you shall see how it will complicate things later on. Instead of doing the calculations by hand, we will indulge ourselves with *Mathematica* this time.
 
 {% highlight mathematica %}
 {% raw %}
@@ -39,13 +39,13 @@ $$
 x(1) = 2120041
 $$
 
-Adding more terms to the series won't help as the sums will still diverge. How can we penetrate this barrier, if at all? Enter Padé approximation. I won't go into much detail, but the idea is to rewrite $$x(\epsilon)$$ as a ratio of two polynomials. In the general case we have a power series:
+Adding more terms to the series won't help as the sums will continue to diverge. How can we penetrate this barrier, if at all? Enter *Padé approximation*. I won't go into much detail, but the idea is to rewrite $$x(\epsilon)$$ as a ratio of two polynomials. In the general case we have a power series:
 
 $$
 A(x) = \sum_{n=0}^\infty a_n x^n
 $$
 
-It may be possible to approximate $$A(x)$$ with a ratio of two polynomials, $$P_L(x)$$ and $$Q_M(x)$$, of degree $$L$$ and $$M$$, respectively, **even if $$A(x)$$ is divergent**. I'll let this sink for a moment. Even if a power series $$A(x)$$ diverges, its coefficients $$a_n$$ contain information on how to rewrite $$A(x)$$ in such a way that it converges. Without loss of generality we let $$q_0 = 1$$ and, therefore:
+**Even if $$A(x)$$ is divergent**, it may still be possible to approximate $$A(x)$$ with a ratio of two polynomials, $$P_L(x)$$ and $$Q_M(x)$$, of degree $$L$$ and $$M$$, respectively. I'll let this sink for a moment. Even if a power series $$A(x)$$ diverges, its coefficients $$a_n$$ contain information on how to rewrite $$A(x)$$ in a way that it converges. How awesome is that?! Without loss of generality we let $$q_0 = 1$$ and, therefore:
 
 $$
 A(x) = \frac{P_L(x)}{Q_M(x)} = \frac{\sum_\limits{n=0}^{L}p_n x^n}{1 + \sum_\limits{n=1}^{M}q_n x^n} 
@@ -54,13 +54,16 @@ $$
 So, all we have to do is to determine the $$L + M + 1$$ coefficients of the polynomials $$P_L$$ and $$Q_M$$, i.e. to determine the coefficients $$p_0, p_1, p_2, \ldots, p_L$$ and $$q_1, q_2, \ldots, q_M$$ (recall how we let $$q_0 = 1$$):
 
 $$
-\begin{align*}
-A(x) Q_M(x) - P_L(x) &= 0\\
-\left(a_0 + a_1 x + a_2 x^2 + \ldots \right) (1 + q_1 x + q_2 x^2 + \ldots + q_M x^M) - (p_0 + p_1 x + p_2 x^2 + \ldots + p_L x^L) &= 0
-\end{align*}
+A(x) Q_M(x) - P_L(x) = 0
 $$
 
-If you gather the coefficients and require them to be zero, you get a system of linear equations:
+If we expand $A(x), Q_M(x), P_L(x)$ we get:
+
+$$
+\underbrace{\left(a_0 + a_1 x + a_2 x^2 + \ldots \right)}_{A(x)} \underbrace{(1 + q_1 x + q_2 x^2 + \ldots + q_M x^M)}_{Q_M(x)} - \underbrace{(p_0 + p_1 x + p_2 x^2 + \ldots + p_L x^L)}_{Q_L(x)} = 0
+$$
+
+If we gather the coefficients and require them to be zero, we get a system of linear equations:
 
 $$
 \begin{align*}
@@ -72,7 +75,7 @@ a_2 q_1+a_1 q_2+a_0 q_3+a_3-p_3 &= 0\\
 \end{align*}
 $$
 
-The $$a_0, a_1, a_2, \ldots$$ are known since these are the coefficients of the divergent series $$A(x)$$ that we want to re-express in a form that converges. Let's see how this goes in our example.
+The $$a_0, a_1, a_2, \ldots$$ are known. They are the coefficients of the divergent series $$A(x)$$ that we want to re-express in a form that converges. Let's see how this goes in our example.
 
 {% highlight mathematica %}
 {% raw %}
@@ -102,7 +105,7 @@ $$
 Which is pretty close to the precise solution $$x=0.754878$$.
 
 ## Padé approximation of the exponential function
-Let's, for the fun of it, calculate the Padé approximation of the exponential function $$\text{exp}(x)$$! First, we need to write $$\text{exp}(x)$$ as a power series $$A(x)$$:
+Let's, for the fun of it, calculate the Padé approximation of the exponential function $$\text{exp}(x)$$. First, we need to write $$\text{exp}(x)$$ as a power series $$A(x)$$.
 
 {% highlight mathematica %}
 {% raw %}
@@ -112,7 +115,7 @@ as = Table[Subscript[a, n - 1] -> getACoeff[n], {n, 1, Length@CoefficientList[ex
 {% endraw %}
 {% endhighlight %}
 
-Which gives the coefficients of the Taylor series expansion of the exponential function. Mind that the Taylor series is convergent, but we will approximate it with Padé nonetheless:
+The code above gives the coefficients of the Taylor series expansion of the exponential function. Mind that the Taylor series is convergent, but we will approximate it with Padé nonetheless:
 
 $$
 \left\{a_0\to 1,a_1\to 1,a_2\to \frac{1}{2},a_3\to \frac{1}{6},a_4\to \frac{1}{24},a_5\to \frac{1}{120},a_6\to \frac{1}{720},a_7\to \frac{1}{5040},a_8\to \frac{1}{40320},\ldots,\right\}
