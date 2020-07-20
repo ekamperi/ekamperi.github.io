@@ -118,7 +118,7 @@ as = Table[Subscript[a, n - 1] -> getACoeff[n], {n, 1, Length@CoefficientList[ex
 The code above gives the coefficients of the Taylor series expansion of the exponential function. Mind that the Taylor series is convergent, but we will approximate it with Padé nonetheless:
 
 $$
-\left\{a_0\to 1,a_1\to 1,a_2\to \frac{1}{2},a_3\to \frac{1}{6},a_4\to \frac{1}{24},a_5\to \frac{1}{120},a_6\to \frac{1}{720},a_7\to \frac{1}{5040},a_8\to \frac{1}{40320},\ldots,\right\}
+\left\{a_0\to 1,a_1\to 1,a_2\to \frac{1}{2},a_3\to \frac{1}{6},a_4\to \frac{1}{24},a_5\to \frac{1}{120},a_6\to \frac{1}{720},a_7\to \frac{1}{5040},a_8\to \frac{1}{40320},\ldots\right\}
 $$
 
 {% highlight mathematica %}
