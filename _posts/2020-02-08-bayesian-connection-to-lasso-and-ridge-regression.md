@@ -77,3 +77,12 @@ $$
 
 Therefore:
 
+$$
+\begin{align*}
+&\arg \min_\beta \left(\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2 + \frac{|\beta|}{b}\right) =\\
+&\arg \min_\beta \left(\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2 + \frac{1}{b}\sum_{j=1}^{p}|\beta_j|\right) =\\
+&\arg \min_\beta \frac{1}{2\sigma^2}\left(\sum_{i=1}^n\epsilon_i^2 + \frac{2\sigma^2}{b}\sum_{j=1}^{p}|\beta_j|\right) =\\
+&\arg \min_\beta \left(\sum_{i=1}^n\epsilon_i^2 + \lambda\sum_{j=1}^{p}|\beta_j|\right) =\\
+&\arg \min_\beta \left(\text{RSS} + \lambda\sum_{j=1}^{p}|\beta_j| \right)
+\end{align*}
+$$
