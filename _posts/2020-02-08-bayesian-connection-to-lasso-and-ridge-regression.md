@@ -50,7 +50,7 @@ In statistics, the *mode* of a set of numbers is the number that appears most of
 $$
 \begin{align*}
 \mathcal{L}(Y|X,\beta) p(\beta) &=
-\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n \exp\left(-\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2\right) \left[\frac{1}{2b}\exp\left(-\frac{|\beta|}{b} \right)\right] &=\\
+\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n \exp\left(-\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2\right) \left[\frac{1}{2b}\exp\left(-\frac{|\beta|}{b} \right)\right] =\\
 \left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n \left(\frac{1}{2b}\right)\exp\left(-\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2 - \frac{|\beta|}{b}\right) 
 \end{align*}
 $$
