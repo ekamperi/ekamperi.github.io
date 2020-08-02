@@ -6,7 +6,7 @@ categories: [mathematics]
 tags: ['Bayes theorem', 'machine learning', 'mathematics', 'statistics']
 ---
 
-So, I was reading "An introduction to Statistical Learning with Applications in R", which by the way is freely available here. In page 227 the authors
+So, I was reading *"An introduction to Statistical Learning with Applications in R"*, which by the way is [freely available here](http://faculty.marshall.usc.edu/gareth-james/ISL/). In page 227 the authors
 provide a Bayesian point of view to both Ridge and LASSO regression. However, the mathematical proof is left an exercise, in page 262. Concretely,
 the idea is to assume the usual linear model with normal errors and combine it with a specific prior distribution for the parameters $$\beta$$.
 For ridge regression, the prior is a Gaussian with mean zero and standard deviation a function of $$\lambda$$, whereas for LASSO, the distribution
