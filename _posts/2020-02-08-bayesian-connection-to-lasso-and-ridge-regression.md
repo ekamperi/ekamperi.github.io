@@ -29,7 +29,7 @@ $$
 **(b) Assume the following prior for $$\beta: \beta_1, \beta_2, \ldots, \beta_p$$ are i.i.d. according to a double-exponential distribution with mean 0 and common scale parameter according to a double-exponential distribution with mean 0 and common scale parameter $$\beta$$: i.e.,
 $$p(\beta) = (1/2b)\exp(-|\beta|/b)$$. Write out the posterior for $$\beta$$ in this setting.**
 
-Multiplying the prior distribution $$p(\beta\|X)$$ with the likelihood $$\mathcal{L}(Y\|X,\beta)$$ we get the *posterior distribution*, up to a proporionality constant:
+Multiplying the prior distribution with the likelihood we get the *posterior distribution*, up to a proporionality constant:
 
 $$
 p(\beta|X,Y) \propto \mathcal{L}(Y|X,\beta) p(\beta|X) =
@@ -39,6 +39,17 @@ $$
 Substituting we get:
 
 $$
-\mathcal{L}(Y|X,\beta) p(\beta)=
+\mathcal{L}(Y|X,\beta) p(\beta) =
 \left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n \exp\left(-\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2\right) \left( \frac{1}{2b}\exp\left(-\frac{|\beta|}{b} \right)\right)
+$$
+
+**(c) Argue that the LASSO estimate is the *mode* for $$\beta$$ under the posterior distribution.**
+
+In statistics, the *mode* of a set of numbers is the number that appears most often. In a normal distribution mean, median and mode coincide. However, in skewed distributions they are different. Anyway, to show that LASSO estimate is the *mode* for $$\beta$$ under the posterior distribution, we need to show that the most likely value for $$\beta$$ is given by the LASSO solution. Here is how we do that. First, we rearrange the expression a bit:
+
+$$
+\begin{align*}
+\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n \exp\left(-\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2\right) \left[\frac{1}{2b}\exp\left(-\frac{|\beta|}{b} \right)\right] &=\\
+\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n \left(\frac{1}{2b}\right)\exp\left(-\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2 - \frac{|\beta|}{b}\right) 
+\end{align*}
 $$
