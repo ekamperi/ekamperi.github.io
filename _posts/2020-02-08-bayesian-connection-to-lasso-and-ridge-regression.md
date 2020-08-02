@@ -87,4 +87,4 @@ $$
 \end{align*}
 $$
 
-But that is precisely the optimization problem of LASSO, with $$\lambda = \frac{2\sigma^2}{b}$$. Recall how in least squares we choose $$\beta_j$$ such that we minimize RSS. And then by adding the penalty factor $$\sum_{j=1}^p \| \beta_j \|$$ we gοt LASSO regression. Therefore, by solving the LASSO optimization problem, we get such values for $$\beta$$ that maximize the posterior distribution.
+But that is precisely the optimization problem of LASSO, with $$\lambda = \frac{2\sigma^2}{b}$$. Recall how in least squares we choose $$\beta_j$$ such that we minimize RSS. And then by adding the penalty factor $$\sum_{j=1}^p \vert \beta_j \vert$$ we gοt LASSO regression. Therefore, by solving the LASSO optimization problem, we get such values for $$\beta$$ that maximize the posterior distribution.
