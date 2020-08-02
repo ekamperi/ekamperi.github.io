@@ -29,4 +29,16 @@ $$
 **(b) Assume the following prior for $$\beta: \beta_1, \beta_2, \ldots, \beta_p$$ are i.i.d. according to a double-exponential distribution with mean 0 and common scale parameter according to a double-exponential distribution with mean 0 and common scale parameter $$\beta$$: i.e.,
 $$p(\beta) = (1/2b)\exp(-|\beta|/b)$$. Write out the posterior for $$\beta$$ in this setting.**
 
-Test
+Multiplying the prior distribution $$p(\beta|X)$$ with the likelihood $$\mathcal{L}(Y|X,\beta)$$ we get the *posterior distribution*, up to a proporionality constant:
+
+$$
+p(\beta|X,Y) \propto \mathcal{L}(Y|X,\beta) p(\beta|X) =
+\mathcal{L}(Y|X,\beta) p(\beta)
+$$
+
+Substituting we get:
+
+$$
+\mathcal{L}(Y|X,\beta) p(\beta)=
+\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n \exp\left(-\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2\right) \left( \frac{1}{2b}\exp\left(-\frac{|\beta|}{b} \right)\right)
+$$
