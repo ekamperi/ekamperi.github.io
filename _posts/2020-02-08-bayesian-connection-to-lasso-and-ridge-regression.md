@@ -1,4 +1,4 @@
----
+  ---
 layout: post
 title:  "Bayesian connection to LASSO and ridge regression"
 date:   2020-08-02
@@ -87,5 +87,4 @@ $$
 \end{align*}
 $$
 
-But that is precisely the optimization problem of LASSO! Recall how in least squares we choose $$\beta_j$$ such that we minimize RSS. And then by adding the penalty factor $$\lambda \sum_{j=1}^p |\beta_j|$$, we get LASSO regression. Therefore, by solving the LASSO optimization problem, we get such values for $$\beta$$ that maximize the posterior distribution.
-
+But that is precisely the optimization problem of LASSO, with $$\lambda = \frac{2\sigma^2}{b}$$! Recall how in least squares we choose $$\beta_j$$ such that we minimize RSS. And then by adding the penalty factor $$\lambda \sum_{j=1}^p |\beta_j|$$, we get LASSO regression. Therefore, by solving the LASSO optimization problem, we get such values for $$\beta$$ that maximize the posterior distribution.
