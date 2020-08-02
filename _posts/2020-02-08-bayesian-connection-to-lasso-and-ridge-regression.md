@@ -14,7 +14,9 @@ Concretely, the idea is to assume the usual linear model with normal errors and 
  <img style="width: 90%; height: 90%" src="{{ site.url }}/images/bayesian_lasso_ridge.png" alt="Bayesian connection to lasso and ridge regression">
 </p>
 
-(a) Suppose that $$y_i = \beta_0 + \sum_{j=1}^{p}b_j x_{ij} + \epsilon_i$$, where $$\epsilon_i \sim \mathcal{N}(0, \sigma^2)$$. Write out the likelihood
+We shall solve the exercise and establish the connection between Bayesian point of view and the two regularization techniques.
+
+**(a) Suppose that $$y_i = \beta_0 + \sum_{j=1}^{p}b_j x_{ij} + \epsilon_i$$, where $$\epsilon_i \sim \mathcal{N}(0, \sigma^2)$$. Write out the likelihood
 for the data.
 
 The likelihood for the data is:
@@ -23,3 +25,6 @@ $$
 \mathcal{L}(Y|X,\beta) = \prod_{i=1}^{n} \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{\epsilon_i^2}{2\sigma^2}\right) =
 \left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n \exp\left(-\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2\right)
 $$
+
+**(b) Assume the following prior for $$\beta: \beta_1, \beta_2, \ldots, \beta_p$$ are i.i.d. according to a double-exponential distribution with mean 0 and common scale parameter $$\beta$$: i.e., $$p(\beta) = \frac{1}{2b} \exp(-|\beta|/b)$$. Write out the posterior for $$\beta$$ in this setting.
+
