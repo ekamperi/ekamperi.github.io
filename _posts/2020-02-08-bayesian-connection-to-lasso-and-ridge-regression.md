@@ -15,8 +15,14 @@ following image, for LASSO the prior distribution peaks at zero, therefore LASSO
 equal to zero. On the other hand, for ridge regression the prior distribution is flatter at zero, therefore it expects coefficients to be normally 
 distributed around zero.
 
-(a) Suppose that
+(a) Suppose that $y_i = \beta_0 + \sum_{j=1}^{p}b_j x_{ij} + \epsilon_i$, where $\epsilon_i \sim \mathcal{N}(0, \sigma^2)$. Write out the likelihood
+for the data.
+
+The likelihood for the data is:
 
 $$
-y_i = \beta_0 + \sum_{j=1}^{p}b_j x_{ij} + \epsilon_i
+\mathcal{L}(Y|X,\beta) = \prod_{i=1}^{n} \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{\epsilon_i^2}{2\sigma^2}\right) =
+\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n \exp\left(-\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2\right)
 $$
+
+
