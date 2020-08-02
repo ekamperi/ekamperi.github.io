@@ -53,3 +53,27 @@ $$
 &=\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n \left(\frac{1}{2b}\right)\exp\left(-\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2 - \frac{|\beta|}{b}\right) 
 \end{align*}
 $$
+
+Then we take the logarithm of the product, to simplify the expression:
+
+$$
+\ln\left[\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n \left(\frac{1}{2b}\right)\right] -\left(\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2 + \frac{|\beta|}{b}\right) 
+$$
+
+Therefore, our goal can be formulated as this:
+
+$$
+\arg \max_\beta \left\{
+\ln\left[\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n \left(\frac{1}{2b}\right)\right] -\left(\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2 + \frac{|\beta|}{b}\right) \right\}
+$$
+
+But notice that:
+
+$$
+\underbrace{\left\{
+\ln\left[\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n \left(\frac{1}{2b}\right)\right] -
+\underbrace{\left(\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2 + \frac{|\beta|}{b}\right)}_{\text{Minimize this}} \right\}}_\text{In order to maximize this}
+$$
+
+Therefore:
+
