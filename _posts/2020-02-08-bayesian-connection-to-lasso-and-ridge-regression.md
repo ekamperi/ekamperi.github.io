@@ -19,7 +19,7 @@ distributed around zero.
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/bayesian_lasso_ridge.png" alt="Bayesian connection to lasso and ridge regression">
 </p>
 
-(a) Suppose that $y_i = \beta_0 + \sum_{j=1}^{p}b_j x_{ij} + \epsilon_i$, where $\epsilon_i \sim \mathcal{N}(0, \sigma^2)$. Write out the likelihood
+(a) Suppose that $$y_i = \beta_0 + \sum_{j=1}^{p}b_j x_{ij} + \epsilon_i$$, where $$\epsilon_i \sim \mathcal{N}(0, \sigma^2)$$. Write out the likelihood
 for the data.
 
 The likelihood for the data is:
