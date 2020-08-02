@@ -6,17 +6,12 @@ categories: [mathematics]
 tags: ['Bayes theorem', 'machine learning', 'mathematics', 'statistics']
 ---
 
-So, I was reading *"An introduction to Statistical Learning with Applications in R"*, which by the way is [freely available here](http://faculty.marshall.usc.edu/gareth-james/ISL/). In page 227 the authors
-provide a Bayesian point of view to both Ridge and LASSO regression. However, the mathematical proof is left an exercise, in page 262. Concretely,
-the idea is to assume the usual linear model with normal errors and combine it with a specific prior distribution for the parameters $$\beta$$.
-For ridge regression, the prior is a Gaussian with mean zero and standard deviation a function of $$\lambda$$, whereas for LASSO, the distribution
-is a double exponential (known also as Laplace distribution) with mean zero and a scale parameter a function of $$\lambda$$. As you can see in the
-following image, for LASSO the prior distribution peaks at zero, therefore LASSO expects (a priori) that many of the coefficients $$\beta$$ are exactly
-equal to zero. On the other hand, for ridge regression the prior distribution is flatter at zero, therefore it expects coefficients to be normally 
-distributed around zero.
+So, I was reading *"An introduction to Statistical Learning with Applications in R"*, which by the way is [freely available here](http://faculty.marshall.usc.edu/gareth-james/ISL/). In page 227 the authors provide a Bayesian point of view to both Ridge and LASSO regression. However, the mathematical proof is left as an exercise, in page 262.
+
+Concretely, the idea is to assume the usual linear model with normal errors and combine it with a specific prior distribution for the parameters $$\beta$$. For *ridge regression*, the prior is a Gaussian with mean zero and standard deviation a function of $$\lambda$$, whereas for *LASSO*, the distribution is a double exponential (known also as Laplace distribution) with mean zero and a scale parameter a function of $$\lambda$$. As you can see in the following image, taken from the book of Gareth James et al, for LASSO, the prior distribution peaks at zero, therefore LASSO expects (a priori) many of the coefficients $$\beta$$ to be exactly equal to zero. On the other hand, for ridge regression the prior distribution is flatter at zero, therefore it expects coefficients to be normally distributed around zero.
 
 <p align="center">
- <img style="width: 60%; height: 90%" src="{{ site.url }}/images/bayesian_lasso_ridge.png" alt="Bayesian connection to lasso and ridge regression">
+ <img style="width: 90%; height: 90%" src="{{ site.url }}/images/bayesian_lasso_ridge.png" alt="Bayesian connection to lasso and ridge regression">
 </p>
 
 (a) Suppose that $$y_i = \beta_0 + \sum_{j=1}^{p}b_j x_{ij} + \epsilon_i$$, where $$\epsilon_i \sim \mathcal{N}(0, \sigma^2)$$. Write out the likelihood
