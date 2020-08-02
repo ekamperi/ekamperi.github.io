@@ -1,4 +1,4 @@
-  ---
+---
 layout: post
 title:  "Bayesian connection to LASSO and ridge regression"
 date:   2020-08-02
