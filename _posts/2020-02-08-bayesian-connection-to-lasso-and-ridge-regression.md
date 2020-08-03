@@ -91,6 +91,30 @@ But that is precisely the optimization problem of LASSO, with $$\lambda = \frac{
 
 **(d) Now assume the following prior for $$\beta: \beta_1,\ldots,\beta_p$$ are i.i.d. according to a normal distribution with mean zero and variance $$c$$. Write out the posterior for $$\beta$$ in this setting.**
 
+Same as before, by multiplying the prior distribution with the likelihood we get the *posterior distribution*, up to a proporionality constant:
+
+$$
+p(\beta|X,Y) \propto \mathcal{L}(Y|X,\beta) p(\beta|X) =
+\mathcal{L}(Y|X,\beta) p(\beta)
+$$
+
+Therefore, we first need to calculate $$p(\beta)$$:
+
 $$
 p(\beta) = \prod_{i=1}^p p(\beta_i) = \prod_{i=1}^p \frac{1}{\sqrt{2\pi c}} \exp\left(-\frac{\beta_i^2}{2c}\right) = \left( \frac{1}{\sqrt{2\pi c}} \right)^p \exp\left(-\frac{1}{2c} \sum_{i=1}^p \beta_i^2\right)
+$$
+
+Then, the posterior for $$\beta$$ in this setting is:
+
+$$
+p(\beta) = \prod_{i=1}^p p(\beta_i) = \prod_{i=1}^p \frac{1}{\sqrt{2\pi c}} \exp\left(-\frac{\beta_i^2}{2c}\right) = \left( \frac{1}{\sqrt{2\pi c}} \right)^p \exp\left(-\frac{1}{2c} \sum_{i=1}^p \beta_i^2\right)
+$$
+
+$$
+\begin{align*}
+\mathcal{L}(Y|X,\beta) p(\beta)
+&=
+\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n \exp\left(-\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2\right) \left( \frac{1}{\sqrt{2\pi c}} \right)^p \exp\left(-\frac{1}{2c} \sum_{i=1}^p \beta_i^2\right)\\
+&=\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n \left( \frac{1}{\sqrt{2\pi c}} \right)^p \exp\left(-\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2 -\frac{1}{2c}\sum_{i=1}^p \beta_i^2\right)
+\end{align*}
 $$
