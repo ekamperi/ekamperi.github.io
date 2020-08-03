@@ -136,5 +136,5 @@ $$
 \end{align*}
 $$
 
-But that is precisely the formulation of ridge optimization, with $$\lambda = \frac{2\sigma^2}{2c}$$. Recall how in least squares we choose $$\beta_j$$ such that we minimize RSS. And then by adding the penalty factor $$\sum_{j=1}^p \vert \beta_j^2 \vert$$ we gοt ridge regression.
+But that is precisely the formulation of ridge optimization, with $$\lambda = \frac{\sigma^2}{c}$$. Recall how in least squares we choose $$\beta_j$$ such that we minimize RSS. And then by adding the penalty factor $$\sum_{j=1}^p \vert \beta_j \vert^2$$ we gοt ridge regression.
 
