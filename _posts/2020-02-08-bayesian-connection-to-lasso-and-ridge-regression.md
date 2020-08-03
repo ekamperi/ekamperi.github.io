@@ -63,7 +63,7 @@ $$
 Therefore, our goal can be formulated as this:
 
 $$
-\arg \max_\beta \left\{
+\underset{\beta}{\text{maximize}} \left\{
 \ln\left[\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n \left(\frac{1}{2b}\right)\right] -\left(\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2 + \frac{|\beta|}{b}\right) \right\}
 $$
 
