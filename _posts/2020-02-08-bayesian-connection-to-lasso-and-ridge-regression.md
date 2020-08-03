@@ -118,6 +118,7 @@ $$
 **(e) Argue that the ridge regression estimate is both the mode and the mean for $$\beta$$ under this posterior distribution.**
 
 By the same logic, as before, first we take the logarithm:
+
 $$
 \begin{align*}
 &\ln\left[\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n \left( \frac{1}{\sqrt{2\pi c}} \right)^p \right] -\left(\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2 + \frac{1}{2c}\sum_{i=1}^p \beta_i^2\right)
