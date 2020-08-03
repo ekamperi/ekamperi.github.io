@@ -6,7 +6,7 @@ categories: [mathematics]
 tags: ['Bayes theorem', 'machine learning', 'mathematics', 'statistics']
 ---
 
-So, I was reading *"An introduction to Statistical Learning with Applications in R"*, which by the way is [freely available here](http://faculty.marshall.usc.edu/gareth-james/ISL/). In page 227 the authors provide a Bayesian point of view to both Ridge and LASSO regression. However, the mathematical proof is left as an exercise, in page 262.
+So, I was reading *"An introduction to Statistical Learning with Applications in R"*, which by the way is [freely available here](http://faculty.marshall.usc.edu/gareth-james/ISL/). In page 227 the authors provide a Bayesian point of view to both ridge and LASSO regression. However, the mathematical proof is left as an exercise, in page 262.
 
 Concretely, the idea is to assume the usual linear model with normal errors and combine it with a specific prior distribution for the parameters $$\beta$$. For *ridge regression*, the prior is a Gaussian with mean zero and standard deviation a function of $$\lambda$$, whereas for *LASSO*, the distribution is a double exponential (known also as Laplace distribution) with mean zero and a scale parameter a function of $$\lambda$$. As you can see in the following image, taken from the book of Gareth James et al, for LASSO, the prior distribution peaks at zero, therefore LASSO expects (a priori) many of the coefficients $$\beta$$ to be exactly equal to zero. On the other hand, for ridge regression the prior distribution is flatter at zero, therefore it expects coefficients to be normally distributed around zero.
 
@@ -114,3 +114,26 @@ $$
 &=\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n \left( \frac{1}{\sqrt{2\pi c}} \right)^p \exp\left(-\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2 -\frac{1}{2c}\sum_{i=1}^p \beta_i^2\right)
 \end{align*}
 $$
+
+**(e) Argue that the ridge regression estimate is both the mode and the mean for $$\beta$$ under this posterior distribution.**
+
+By the same logic, as before, first we take the logarithm:
+$$
+\begin{align*}
+&\ln\left[\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n \left( \frac{1}{\sqrt{2\pi c}} \right)^p \right] -\left(\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2 + \frac{1}{2c}\sum_{i=1}^p \beta_i^2\right)
+\end{align*}
+$$
+
+Then, we recall that to show that rigdge estimate is the *mode* for $$\beta$$ under the posterior distribution, we need to show that the most likely value for $$\beta$$ is given by that solution of the ridge optimization problem:
+
+$$
+\begin{align*}
+&\arg\min_\beta \left(\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2 + \frac{1}{2c}\sum_{i=1}^p \beta_i^2\right) =
+\arg\min_\beta \frac{1}{2\sigma^2} \left(\sum_{i=1}^n\epsilon_i^2 + \frac{2\sigma^2}{2c}\sum_{i=1}^p \beta_i^2\right) =\\
+&\arg\min_\beta \left(\sum_{i=1}^n\epsilon_i^2 + \lambda\sum_{i=1}^p \beta_i^2\right) =
+\arg\min_\beta \left(\text{RSS} + \lambda\sum_{i=1}^p \beta_i^2\right)
+\end{align*}
+$$
+
+But that is precisely the formulation of ridge optimization, with $$\lambda = \frac{2\sigma^2}{2c}$$. Recall how in least squares we choose $$\beta_j$$ such that we minimize RSS. And then by adding the penalty factor $$\sum_{j=1}^p \vert \beta_j^2 \vert$$ we gοt ridge regression.
+
