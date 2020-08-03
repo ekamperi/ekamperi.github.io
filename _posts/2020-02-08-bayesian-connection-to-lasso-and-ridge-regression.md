@@ -107,10 +107,6 @@ $$
 Then, the posterior for $$\beta$$ in this setting is:
 
 $$
-p(\beta) = \prod_{i=1}^p p(\beta_i) = \prod_{i=1}^p \frac{1}{\sqrt{2\pi c}} \exp\left(-\frac{\beta_i^2}{2c}\right) = \left( \frac{1}{\sqrt{2\pi c}} \right)^p \exp\left(-\frac{1}{2c} \sum_{i=1}^p \beta_i^2\right)
-$$
-
-$$
 \begin{align*}
 \mathcal{L}(Y|X,\beta) p(\beta)
 &=
