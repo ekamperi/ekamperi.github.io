@@ -88,3 +88,9 @@ $$
 $$
 
 But that is precisely the optimization problem of LASSO, with $$\lambda = \frac{2\sigma^2}{b}$$. Recall how in least squares we choose $$\beta_j$$ such that we minimize RSS. And then by adding the penalty factor $$\sum_{j=1}^p \vert \beta_j \vert$$ we gοt LASSO regression. Therefore, by solving the LASSO optimization problem, we get such values for $$\beta$$ that maximize the posterior distribution.
+
+**(d) Now assume the following prior for $$\beta: \beta_1,\ldots,\beta_p$$ are i.i.d. according to a normal distribution with mean zero and variance $$c$$. Write out the posterior for $$\beta$$ in this setting.**
+
+$$
+p(\beta) = \prod_{i=1}^p p(\beta_i) = \prod_{i=1}^p \frac{1}{\sqrt{2\pi c}} \exp\left(-\frac{\beta_i^2}{2c}\right) = \left( \frac{1}{\sqrt{2\pi c}} \right)^p \exp\left(-\frac{1}{2c} \sum_{i=1}^p \beta_i^2\right)
+$$
