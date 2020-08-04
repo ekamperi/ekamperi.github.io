@@ -49,13 +49,13 @@ $$
 
 **(c) Argue that the LASSO estimate is the *mode* for $$\beta$$ under the posterior distribution.**
 
-In statistics, the *mode* of a set of numbers is the number that appears most often. The concept can be extended to continuous values. In a normal distribution mean, median and mode coincide. However, in skewed distributions they are different. 
+In statistics, the *mode* of a set of numbers is the number that appears most often. For instance, in the set $$S = {1, 99, 5, 7, 5, 2, 0}$$ the mode is 5, because 5 appears twice in the set and all the other numbers once. This concept can be extended to continuous values as well. In a normal distribution mean, median and mode coincide. However, in skewed distributions they are different. 
 
 <p align="center">
  <img style="width: 90%; height: 90%" src="{{ site.url }}/images/mode_median_mean.png" alt="Mode vs mean vs median of distribution">
 </p>
 
-Anyway, to show that LASSO estimate is the *mode* for $$\beta$$ under the posterior distribution, we need to show that the most likely value for $$\beta$$ is given by the LASSO solution. Here is how we do that. First, we rearrange the expression a bit:
+Anyway, to show that LASSO estimate is the *mode* for $$\beta$$ under the posterior distribution, we need to show that the most likely value for $$\beta$$ is given when the LASSO solution is fulfilled. Here is how we do that. First, we rearrange the expression a bit:
 
 $$
 \begin{align*}
@@ -64,7 +64,7 @@ $$
 \end{align*}
 $$
 
-Then we take the logarithm of the product, to simplify the expression:
+Then we take the logarithm of the product, to simplify the expression (it doesn't matter if you maximize something or the $$log$$ of something):
 
 $$
 \ln\left[\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n \left(\frac{1}{2b}\right)\right] -\left(\frac{1}{2\sigma^2}\sum_{i=1}^n\epsilon_i^2 + \frac{|\beta|}{b}\right) 
