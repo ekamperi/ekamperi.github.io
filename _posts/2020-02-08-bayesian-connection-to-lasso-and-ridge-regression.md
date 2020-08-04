@@ -6,19 +6,19 @@ categories: [mathematics]
 tags: ['Bayes theorem', 'machine learning', 'mathematics', 'statistics']
 ---
 
-So, I was reading *"An introduction to Statistical Learning with Applications in R"*, which by the way is [freely available here](http://faculty.marshall.usc.edu/gareth-james/ISL/). In page 227 the authors provide a Bayesian point of view to both ridge and LASSO regression. We have already discussed [in a previous post](https://ekamperi.github.io/machine%20learning/2019/10/19/norms-in-machine-learning.html), how LASSO regularization invokes sparsity by driving some of the model’s parameters to become zero, for increasing values of $$\lambda$$. As opposed to ridge regression which keeps every parameter of the model small without forcing it to become precisely zero. Here is a list of regression models, fitted on the same data points, as a function of increasing $$\lambda$$:
+So, I was reading *"An Introduction to Statistical Learning with Applications in R"*, which by the way, is [freely available here](http://faculty.marshall.usc.edu/gareth-james/ISL/). On page 227 the authors provide a Bayesian point of view to both ridge and LASSO regression. We have already discussed [in a previous post](https://ekamperi.github.io/machine%20learning/2019/10/19/norms-in-machine-learning.html), how LASSO regularization invokes sparsity by driving some of the model’s parameters to become zero, for increasing values of $$\lambda$$. As opposed to ridge regression, which keeps every parameter of the model small without forcing it to become precisely zero. Here is a list of regression models, fitted on the same data points, as a function of increasing $$\lambda$$:
 
 <p align="center">
  <img style="width: 90%; height: 90%" src="{{ site.url }}/images/lasso_vs_ridge.png" alt="LASSO vs ridge regularization">
 </p>
 
-In order to approach the issue from a Bayesian standpoint, we will assume the usual linear model with normal errors and combine it with **a specific prior distribution for the parameters $$\beta$$**. For *ridge regression*, the prior is a Gaussian with mean zero and standard deviation a function of $$\lambda$$, whereas for *LASSO*, the distribution is a double exponential (known also as Laplace distribution) with mean zero and a scale parameter a function of $$\lambda$$. As you can see in the following image, taken from the book of Gareth James et al, for LASSO, the prior distribution peaks at zero, therefore LASSO expects (a priori) many of the coefficients $$\beta$$ to be exactly equal to zero. On the other hand, for ridge regression the prior distribution is flatter at zero, therefore it expects coefficients to be normally distributed around zero.
+To approach the issue from a Bayesian standpoint, we will assume the usual linear model with normal errors and combine it with **a specific prior distribution for the parameters $$\beta$$**. For *ridge regression*, the prior is a Gaussian with mean zero and standard deviation a function of $$\lambda$$, whereas, for *LASSO*, the distribution is a double-exponential (also known as Laplace distribution) with mean zero and a scale parameter a function of $$\lambda$$. As you can see in the following image, taken from the book of Gareth James et al., for LASSO, the prior distribution peaks at zero, therefore LASSO expects (a priori) many of the coefficients $$\beta$$ to be exactly equal to zero. On the other hand, for ridge regression, the prior distribution is flatter at zero. Therefore it expects coefficients to be normally distributed around zero.
 
 <p align="center">
  <img style="width: 90%; height: 90%" src="{{ site.url }}/images/bayesian_lasso_ridge.png" alt="Bayesian connection to lasso and ridge regression">
 </p>
 
-In the book, the mathematical proof is left as an exercise, in page 262. We shall solve this excercise and establish the connection between Bayesian point of view and the two regularization techniques. Here it comes!
+In the book, the mathematical proof is left as an exercise on page 262. We shall solve this exercise and establish the connection between the Bayesian point of view and the two regularization techniques. Here it comes!
 
 **(a) Suppose that $$y_i = \beta_0 + \sum_{j=1}^{p}\beta_j x_{ij} + \epsilon_i$$, where $$\epsilon_i \sim \mathcal{N}(0, \sigma^2)$$. Write out the likelihood
 for the data.**
@@ -141,4 +141,3 @@ $$
 $$
 
 But that is precisely the formulation of ridge optimization, with $$\lambda = \frac{\sigma^2}{c}$$. Recall how in least squares we choose $$\beta_j$$ such that we minimize RSS. And then by adding the penalty factor $$\sum_{j=1}^p \vert \beta_j \vert^2$$ we gοt ridge regression.
-
