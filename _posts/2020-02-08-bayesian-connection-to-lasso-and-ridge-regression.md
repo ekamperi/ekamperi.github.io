@@ -14,6 +14,12 @@ Concretely, the idea is to assume the usual linear model with normal errors and 
  <img style="width: 90%; height: 90%" src="{{ site.url }}/images/bayesian_lasso_ridge.png" alt="Bayesian connection to lasso and ridge regression">
 </p>
 
+We have already discussed in a previous post, how how LASSO regularization invokes sparsity by driving some of the model’s parameters to become zero, for increasing values of $$\lambda$$. As opposed to ridge regression which keeps every parameter of the model small without forcing it to become precisely zero. Here is a list of linear models as a function of increasing $$\lambda$$:
+
+<p align="center">
+ <img style="width: 90%; height: 90%" src="{{ site.url }}/images/lasso_vs_ridge.png" alt="LASSO vs ridge regularization">
+</p>
+
 We shall solve the exercise and establish the connection between Bayesian point of view and the two regularization techniques.
 
 **(a) Suppose that $$y_i = \beta_0 + \sum_{j=1}^{p}\beta_j x_{ij} + \epsilon_i$$, where $$\epsilon_i \sim \mathcal{N}(0, \sigma^2)$$. Write out the likelihood
