@@ -49,7 +49,7 @@ $$
 
 **(c) Argue that the LASSO estimate is the *mode* for $$\beta$$ under the posterior distribution.**
 
-In statistics, the *mode* of a set of numbers is the number that appears most often. For instance, in the set $$S = {1, 99, 5, 7, 5, 2, 0}$$ the mode is 5, because 5 appears twice in the set and all the other numbers once. This concept can be extended to continuous values as well. In a normal distribution mean, median and mode coincide. However, in skewed distributions they are different. 
+In statistics, the *mode* of a set of numbers is the number that appears most often. For instance, in the set $$S = \{1, 99, 5, 7, 5, 2, 0\}$$ the mode is 5, because 5 appears twice in the set and all the other numbers once. This concept can be extended to continuous values as well. In a normal distribution mean, median and mode coincide. However, in skewed distributions they are different. 
 
 <p align="center">
  <img style="width: 90%; height: 90%" src="{{ site.url }}/images/mode_median_mean.png" alt="Mode vs mean vs median of distribution">
