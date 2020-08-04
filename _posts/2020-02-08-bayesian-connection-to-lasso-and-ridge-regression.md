@@ -49,7 +49,13 @@ $$
 
 **(c) Argue that the LASSO estimate is the *mode* for $$\beta$$ under the posterior distribution.**
 
-In statistics, the *mode* of a set of numbers is the number that appears most often. In a normal distribution mean, median and mode coincide. However, in skewed distributions they are different. Anyway, to show that LASSO estimate is the *mode* for $$\beta$$ under the posterior distribution, we need to show that the most likely value for $$\beta$$ is given by the LASSO solution. Here is how we do that. First, we rearrange the expression a bit:
+In statistics, the *mode* of a set of numbers is the number that appears most often. The concept can be extended to continuous values. In a normal distribution mean, median and mode coincide. However, in skewed distributions they are different. 
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/mode_mean_median.png" alt="Mode vs mean vs median of distribution">
+</p>
+
+Anyway, to show that LASSO estimate is the *mode* for $$\beta$$ under the posterior distribution, we need to show that the most likely value for $$\beta$$ is given by the LASSO solution. Here is how we do that. First, we rearrange the expression a bit:
 
 $$
 \begin{align*}
