@@ -30,7 +30,16 @@ that the distribution of numbers in the 1st and 2nd most significant position of
 theoretical distribution of Benford's law (dotted red line), so we can not assume that someone "cooked" the data,
 within the confidence interval the statistics imply.
 
+{% highlight R %}
+{% raw %}
 us <- read_csv("C:\\Users\\stath\\Downloads\\us-states.csv")
 covid19 <- us[us$state == "Washington",]
 bfd.cp2 <- benford(covid19$cases, number.of.digits = 1)
 plot(bfd.cp2)
+{% endraw %}
+{% endhighlight %}
+
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/covid19_benford_law.png">
+</p>
+
