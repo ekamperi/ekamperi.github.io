@@ -43,3 +43,6 @@ plot(bfd.cp2)
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/covid19_benford_law.png">
 </p>
 
+In [this article](https://www.nature.com/articles/d41586-020-01565-5?fbclid=IwAR1FG9iAmGUuJhmgCNTZMHMdJuH4nJ3D2SGCw26lg1CjEPoHzXh4qzrjr40)
+the authors performed a thorough analysis and found that records of cumulative infections and deaths from the United States, Japan,
+Indonesia and most European nations adhered well to the Benford's law, consistent with accurate reporting. The results can be [found here](go.nature.com/2kqtut2).
