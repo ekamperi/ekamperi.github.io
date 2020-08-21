@@ -32,10 +32,11 @@ within the confidence interval the statistics imply.
 
 {% highlight R %}
 {% raw %}
+library(benford.analysis)
 us <- read_csv("C:\\Users\\stath\\Downloads\\us-states.csv")
 covid19 <- us[us$state == "Washington",]
-bfd.cp2 <- benford(covid19$cases, number.of.digits = 1)
-plot(bfd.cp2)
+bfd.cp <- benford(covid19$cases, number.of.digits = 1)
+plot(bfd.cp)
 {% endraw %}
 {% endhighlight %}
 
