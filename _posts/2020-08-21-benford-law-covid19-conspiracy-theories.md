@@ -33,7 +33,7 @@ within the confidence interval the statistics imply.
 {% highlight R %}
 {% raw %}
 library(benford.analysis)
-us <- read_csv("C:\\Users\\stath\\Downloads\\us-states.csv")
+us <- read_csv("C:\\Users\\stathis\\Downloads\\us-states.csv")
 covid19 <- us[us$state == "Washington",]
 bfd.cp <- benford(covid19$cases, number.of.digits = 1)
 plot(bfd.cp)
@@ -46,4 +46,4 @@ plot(bfd.cp)
 
 In [this article](https://www.nature.com/articles/d41586-020-01565-5?fbclid=IwAR1FG9iAmGUuJhmgCNTZMHMdJuH4nJ3D2SGCw26lg1CjEPoHzXh4qzrjr40)
 the authors performed a thorough analysis and found that records of cumulative infections and deaths from the United States, Japan,
-Indonesia and most European nations adhered well to the Benford's law, consistent with accurate reporting. The results can be [found here](go.nature.com/2kqtut2).
+Indonesia and most European nations adhered well to the Benford's law, consistent with accurate reporting. Their results can be [found here](go.nature.com/2kqtut2).
