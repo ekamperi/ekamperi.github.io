@@ -18,7 +18,7 @@ lists of numbers produced by a natural process (e.g., number of coronavirus infe
 digit is likely to be small.
 
 The number "1" appears as the most significant digit in about 30% of cases, while "9" appears in less than 5% of
-cases. If the digits were evenly distributed, we would encounter each with a frequency of about 11.1% ($$f=1/9 \cdot 100\%$$).
+cases. If the digits were evenly distributed, we would encounter each with a frequency of about 11.1% (f=1/9 * 100%).
 The law also makes predictions for the distribution of second digits, third digits, combinations of digits, etc.
 
 People who do not know Benford's law, when making up numbers tend to distribute their digits evenly. Thus, a simple
