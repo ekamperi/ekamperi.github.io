@@ -6,7 +6,7 @@ categories: [mathematics]
 tags: ['covid-19', 'mathematics', 'statistics']
 ---
 
-How do we know if a list of numbers is made up or has come up in a "natural" way? 
+How do we know if a list of numbers is made up or has come up in a "natural" way?
 
 This question may sound indifferent at first, but it has several applications. In the 2016 film, "The Accountant",
 Ben Affleck's character uses Benford's law, which we'll talk about today, to expose fraud in a robotics company.
@@ -28,7 +28,7 @@ In the figure below, we have plotted how often the various digits appear in the 
 Washington state. We got the data from the link [1], and we can not guarantee their authenticity. However, it seems
 that the distribution of numbers in the 1st and 2nd most significant position of the number of cases approaches the
 theoretical distribution of Benford's law (dotted red line), so we can not assume that someone "cooked" the data,
-within the confidence interval the statistics imply.
+within the confidence interval the statistics provide.
 
 {% highlight R %}
 {% raw %}
