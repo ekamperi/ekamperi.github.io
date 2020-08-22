@@ -84,8 +84,8 @@ p1 = ListPlot[
 Show[
  Histogram[
   digits[[All, 1, 1]], Automatic, "PDF", 
-  Frame -> {True, True, False, False}, FrameLabel -> {"Digits", "Probability"}, FrameTicks -> {Range[1, 9], Automatic},
-  PlotTheme -> "Monochrome"],
+  Frame -> {True, True, False, False}, FrameLabel -> {"Digits", "Probability"},
+  FrameTicks -> {Range[1, 9], Automatic}, PlotTheme -> "Monochrome"],
  p1]
 {% endraw %}
 {% endhighlight %}
