@@ -41,7 +41,7 @@ plot(bfd.cp)
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/covid19_benford_law.png">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/covid19_benford_law.png" alt="Benford law in covid-19 numbers">
 </p>
 
 In [this article](https://www.nature.com/articles/d41586-020-01565-5?fbclid=IwAR1FG9iAmGUuJhmgCNTZMHMdJuH4nJ3D2SGCw26lg1CjEPoHzXh4qzrjr40)
@@ -97,11 +97,11 @@ Show[
 This is the evolution of the SIR model:
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/sir_model.png">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/sir_model.png" alt="SIR model of the covid-19 pandemic">
 </p>
 
 And this is the frequency distribution of the first digits superimposed with the theoretical Benford's distribution (dotted red line):
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/sir_benford_distrib.png">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/sir_benford_distrib.png" alt="SIR model and Benford law in covid-19 numbers">
 </p>
