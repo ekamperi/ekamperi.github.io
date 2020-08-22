@@ -63,8 +63,7 @@ b = 0.5; gamma = 1/14.0;
 
 solution =
   NDSolve[
-   {eqS, eqI, eqR, s[0] == 1, i[0] == 0.0001, r[0] == 0},
-   {s, i, r}, {t, 1000}];
+   {eqS, eqI, eqR, s[0] == 1, i[0] == 0.0001, r[0] == 0}, {s, i, r}, {t, 1000}];
 
 solS = s /. solution[[1, 1]];
 solI = i /. solution[[1, 2]];
@@ -72,8 +71,7 @@ solR = r /. solution[[1, 3]];
 
 Plot[{100*solS[t], 100*solI[t], 100*solR[t]}, {t, 0, 100}, 
  PlotLegends -> {"Susceptible", "Infected", "Recovered"}, 
- Frame -> {True, True, False, False}, 
- FrameLabel -> {"Time", "Population [%]"}, Filling -> Bottom]
+ Frame -> {True, True, False, False}, FrameLabel -> {"Time", "Population [%]"}, Filling -> Bottom]
 
 numbers = Table[solI[t], {t, 0, 200}];
 
@@ -86,9 +84,7 @@ p1 = ListPlot[
 Show[
  Histogram[
   digits[[All, 1, 1]], Automatic, "PDF", 
-  Frame -> {True, True, False, False}, 
-  FrameLabel -> {"Digits", "Probability"}, 
-  FrameTicks -> {Range[1, 9], Automatic},
+  Frame -> {True, True, False, False}, FrameLabel -> {"Digits", "Probability"}, FrameTicks -> {Range[1, 9], Automatic},
   PlotTheme -> "Monochrome"],
  p1]
 {% endraw %}
