@@ -25,7 +25,7 @@ People who do not know Benford's law, when making up numbers tend to distribute 
 comparison of the first or second digit frequency distribution could easily show "abnormal" results.
 
 In the figure below, we have plotted how often the various digits appear in the number of coronavirus cases of
-Washington state. We got the data from the link [1], and we can not guarantee their authenticity. However, it seems
+Washington state. We got the data from [this link](https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv?fbclid=IwAR0JqCoCT-VjqyyPm4WVd7IVwt7DYKD5O4jG1c2NaHpRL98zbkRSKmEZEKw), and we can not guarantee their authenticity. However, it seems
 that the distribution of numbers in the 1st and 2nd most significant position of the number of cases approaches the
 theoretical distribution of Benford's law (dotted red line), so we can not assume that someone "cooked" the data,
 within the confidence interval the statistics provide.
@@ -47,3 +47,57 @@ plot(bfd.cp)
 In [this article](https://www.nature.com/articles/d41586-020-01565-5?fbclid=IwAR1FG9iAmGUuJhmgCNTZMHMdJuH4nJ3D2SGCw26lg1CjEPoHzXh4qzrjr40)
 the authors performed a thorough analysis and found that records of cumulative infections and deaths from the United States, Japan,
 Indonesia and most European nations adhered well to the Benford's law, consistent with accurate reporting. Their results can be [found here](go.nature.com/2kqtut2).
+
+For the fun of it, the following *Mathematica* code solves a simple SIR model and draw the frequency distribution of the first digit in the
+number of infected people.
+
+{% highlight R %}
+{% raw %}
+ClearAll["Global`*"];
+
+eqS = s'[t] == -b*s[t]*i[t];
+eqI = i'[t] == b*s[t]*i[t] - \[Gamma]*i[t];
+eqR = r'[t] == \[Gamma]*i[t];
+
+b = 0.5; \[Gamma] = 1/14.0;
+
+solution =
+  NDSolve[
+   {eqS, eqI, eqR, s[0] == 1, i[0] == 0.0001, r[0] == 0},
+   {s, i, r}, {t, 1000}];
+
+solS = s /. solution[[1, 1]];
+solI = i /. solution[[1, 2]];
+solR = r /. solution[[1, 3]];
+
+Plot[{100*solS[t], 100*solI[t], 100*solR[t]}, {t, 0, 100}, 
+ PlotLegends -> {"Susceptible", "Infected", "Recovered"}, 
+ Frame -> {True, True, False, False}, 
+ FrameLabel -> {"Time", "Population [%]"}, Filling -> Bottom]
+
+numbers = Table[solI[t], {t, 0, 200}];
+
+digits = RealDigits /@ numbers;
+
+p1 = ListPlot[
+   Table[PDF[BenfordDistribution[10], x], {x, 1, 9}],
+   Joined -> True, PlotRange -> All, PlotStyle -> {Red, Dashed}];
+
+Show[
+ Histogram[
+  digits[[All, 1, 1]], Automatic, "PDF", 
+  Frame -> {True, True, False, False}, 
+  FrameLabel -> {"Digits", "Probability"}, 
+  FrameTicks -> {Range[1, 9], Automatic},
+  PlotTheme -> "Monochrome"],
+ p1]
+{% endraw %}
+{% endhighlight %}
+
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/sir_model.png">
+</p>
+
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/sir_benford_distrib.png">
+</p>
