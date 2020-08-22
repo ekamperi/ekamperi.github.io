@@ -56,10 +56,10 @@ number of infected people.
 ClearAll["Global`*"];
 
 eqS = s'[t] == -b*s[t]*i[t];
-eqI = i'[t] == b*s[t]*i[t] - \[Gamma]*i[t];
-eqR = r'[t] == \[Gamma]*i[t];
+eqI = i'[t] == b*s[t]*i[t] - gamma*i[t];
+eqR = r'[t] == gamma*i[t];
 
-b = 0.5; \[Gamma] = 1/14.0;
+b = 0.5; gamma = 1/14.0;
 
 solution =
   NDSolve[
@@ -94,9 +94,13 @@ Show[
 {% endraw %}
 {% endhighlight %}
 
+This is the evolution of the SIR model:
+
 <p align="center">
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/sir_model.png">
 </p>
+
+And this is the frequency distribution of the first digits superimposed with the theoretical Benford's distribution (dotted red line):
 
 <p align="center">
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/sir_benford_distrib.png">
