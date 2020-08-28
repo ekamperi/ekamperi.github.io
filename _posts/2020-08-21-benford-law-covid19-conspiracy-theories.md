@@ -12,6 +12,10 @@ This question may sound indifferent at first, but it has several applications. I
 Ben Affleck's character uses Benford's law, which we'll talk about today, to expose fraud in a robotics company.
 In particular, he notes that the digit "3" appears more often than expected in some financial numerical data.
 
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/the_accountant.png" alt="Benford law in The Accountant movie">
+</p>
+
 Benford's law also called the law of "irregular numbers" or law of "the first digit", is an observation about how often
 different numbers appear as digits in real numbers. The law states that in many cases (but not all!) when we have
 lists of numbers produced by a natural process (e.g., number of coronavirus infections 😉), the most significant
