@@ -25,6 +25,12 @@ The number "1" appears as the most significant digit in about 30% of cases, whil
 cases. If the digits were evenly distributed, we would encounter each with a frequency of about 11.1% (f=1/9 * 100%).
 The law also makes predictions for the distribution of second digits, third digits, combinations of digits, etc.
 
+
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/Benford_distribution.png" alt="Benford distribution">
+</p>
+
+
 People who do not know Benford's law, when making up numbers tend to distribute their digits evenly. Thus, a simple
 comparison of the first or second digit frequency distribution could easily show "abnormal" results.
 
