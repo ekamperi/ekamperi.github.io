@@ -61,7 +61,17 @@ In [this article](https://www.nature.com/articles/d41586-020-01565-5?fbclid=IwAR
 the authors performed a thorough analysis and found that records of cumulative infections and deaths from the United States, Japan,
 Indonesia and most European nations adhered well to the Benford's law, consistent with accurate reporting. Their results can be [found here](http://go.nature.com/2kqtut2).
 
-For the fun of it, the following *Mathematica* code solves a simple SIR model and draw the frequency distribution of the first digit in the number of infected people.
+For the fun of it, the following *Mathematica* code solves a simple SIR model and draws the frequency distribution of the first digit in the number of infected people. In short a SIR model is described by the following set of differential equations:
+
+$$
+\left\{
+\frac{\mathrm{d}S}{\mathrm{d}t}=-\beta S I, \hspace{0.75cm}\frac{\mathrm{d}I}{\mathrm{d}t}=\beta S I - \gamma I, \hspace{0.75cm}\frac{\mathrm{d}R}{\mathrm{d}t}=\gamma I
+\right\}
+$$
+
+Where $t$ is the time, $S$ is the number of susceptible people, $I$ is the number of people infected, and $R$ is the number of people who have recovered and developed immunity to the infection (thus they are no longer susceptible to re-infection). The parameter $\beta$ is the infection rate, and $\gamma$ is the recovery rate.
+
+The key value governing the time evolution of these equations is the so-called epidemiological threshold,
 
 {% highlight R %}
 {% raw %}
