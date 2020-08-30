@@ -80,7 +80,7 @@ $$
 
 Where $$t$$ is the time, $$S$$ is the number of susceptible people, $$I$$ is the number of people infected, and $$R$$ is the number of people who have recovered and developed immunity to the infection (thus they are no longer susceptible to re-infection). The parameter $$\beta$$ is the infection rate, and $$\gamma$$ is the recovery rate.
 
-{% highlight R %}
+{% highlight Mathematica %}
 {% raw %}
 ClearAll["Global`*"];
 
@@ -109,13 +109,7 @@ digits = RealDigits /@ numbers;
 p1 = ListPlot[
    Table[PDF[BenfordDistribution[10], x], {x, 1, 9}],
    Joined -> True, PlotRange -> All, PlotStyle -> {Red, Dashed}];
-
-Show[
- Histogram[
-  digits[[All, 1, 1]], Automatic, "PDF", 
-  Frame -> {True, True, False, False}, FrameLabel -> {"Digits", "Probability"},
-  FrameTicks -> {Range[1, 9], Automatic}, PlotTheme -> "Monochrome"],
- p1]
+p1
 {% endraw %}
 {% endhighlight %}
 
@@ -126,6 +120,19 @@ This is the evolution of the SIR model:
 </p>
 
 And this is the frequency distribution of the first digits superimposed with the theoretical Benford's distribution (dotted red line):
+
+{% highlight Mathematica %}
+{% raw %}
+Show[
+ Histogram[
+  digits[[All, 1, 1]], Automatic, "PDF", 
+  Frame -> {True, True, False, False}, FrameLabel -> {"Digits", "Probability"},
+  FrameTicks -> {Range[1, 9], Automatic}, PlotTheme -> "Monochrome"],
+ p1]
+{% endraw %}
+{% endhighlight %}
+
+
 
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/sir_benford_distrib.png" alt="SIR model and Benford law in covid-19 numbers">
