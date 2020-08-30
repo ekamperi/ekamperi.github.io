@@ -6,9 +6,9 @@ categories: [mathematics]
 tags: ['covid-19', 'mathematics', 'statistics']
 ---
 
-How do we know if a list of numbers is made up or has come up in a "natural" way?
+How can we know if a list of numbers is made up or has come up in a "natural" way?
 
-This question may sound indifferent at first, but it has several applications. In the 2016 film, "The Accountant",
+This question may sound distant at first, but it has several applications. In the 2016 film, "The Accountant",
 Ben Affleck's character uses Benford's law, which we'll talk about today, to expose fraud in a robotics company.
 In particular, he notes that the digit "3" appears more often than expected in some financial numerical data.
 
@@ -16,7 +16,7 @@ In particular, he notes that the digit "3" appears more often than expected in s
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/the_accountant.png" alt="Benford law in The Accountant movie">
 </p>
 
-Benford's law also called the law of "irregular numbers" or law of "the first digit", is an observation about how often
+Benford's law, also called the law of "irregular numbers" or law of "the first digit", is an observation about how often
 different numbers appear as digits in real numbers. The law states that in many cases (but not all!) when we have
 lists of numbers produced by a natural process (e.g., number of coronavirus infections 😉), the most significant
 digit is likely to be small.
@@ -24,7 +24,6 @@ digit is likely to be small.
 The number "1" appears as the most significant digit in about 30% of cases, while "9" appears in less than 5% of
 cases. If the digits were evenly distributed, we would encounter each with a frequency of about 11.1% (f=1/9 * 100%).
 The law also makes predictions for the distribution of second digits, third digits, combinations of digits, etc.
-
 
 <p align="center">
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/Benford_distribution.png" alt="Benford distribution">
@@ -36,14 +35,13 @@ $$
 \text{Prob}(d) = \text{log}_{10} \left( 1 + \frac{1}{d}\right)
 $$
 
-People who do not know Benford's law, when making up numbers tend to distribute their digits evenly. Thus, a simple
+When making up numbers, people who are unaware of Benford's law tend to distribute their digits evenly. Thus, a mere
 comparison of the first or second digit frequency distribution could easily show "abnormal" results.
 
-In the figure below, we have plotted how often the various digits appear in the number of coronavirus cases of
-Washington state. We got the data from [this link](https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv?fbclid=IwAR0JqCoCT-VjqyyPm4WVd7IVwt7DYKD5O4jG1c2NaHpRL98zbkRSKmEZEKw), and we can not guarantee their authenticity. However, it seems
+In the figure below, we have plotted how often the various digits appear in the number of coronavirus cases of the USA's Washington state. We got the data from [this link](https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv?fbclid=IwAR0JqCoCT-VjqyyPm4WVd7IVwt7DYKD5O4jG1c2NaHpRL98zbkRSKmEZEKw), and we can not guarantee their authenticity. However, it appears
 that the distribution of numbers in the 1st and 2nd most significant position of the number of cases approaches the
 theoretical distribution of Benford's law (dotted red line), so we can not assume that someone "cooked" the data,
-within the confidence interval the statistics provide.
+within the confidence interval, the statistics provide.
 
 {% highlight R %}
 {% raw %}
@@ -63,8 +61,7 @@ In [this article](https://www.nature.com/articles/d41586-020-01565-5?fbclid=IwAR
 the authors performed a thorough analysis and found that records of cumulative infections and deaths from the United States, Japan,
 Indonesia and most European nations adhered well to the Benford's law, consistent with accurate reporting. Their results can be [found here](http://go.nature.com/2kqtut2).
 
-For the fun of it, the following *Mathematica* code solves a simple SIR model and draw the frequency distribution of the first digit in the
-number of infected people.
+For the fun of it, the following *Mathematica* code solves a simple SIR model and draw the frequency distribution of the first digit in the number of infected people.
 
 {% highlight R %}
 {% raw %}
