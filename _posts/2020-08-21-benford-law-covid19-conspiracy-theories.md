@@ -69,9 +69,7 @@ $$
 \right\}
 $$
 
-Where $t$ is the time, $S$ is the number of susceptible people, $I$ is the number of people infected, and $R$ is the number of people who have recovered and developed immunity to the infection (thus they are no longer susceptible to re-infection). The parameter $\beta$ is the infection rate, and $\gamma$ is the recovery rate.
-
-The key value governing the time evolution of these equations is the so-called epidemiological threshold,
+Where $$t$$ is the time, $$S$$ is the number of susceptible people, $$I$$ is the number of people infected, and $$R$$ is the number of people who have recovered and developed immunity to the infection (thus they are no longer susceptible to re-infection). The parameter $$\beta$$ is the infection rate, and $$\gamma$$ is the recovery rate.
 
 {% highlight R %}
 {% raw %}
