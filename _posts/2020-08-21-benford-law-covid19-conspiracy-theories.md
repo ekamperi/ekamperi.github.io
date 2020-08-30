@@ -61,7 +61,7 @@ In [this article](https://www.nature.com/articles/d41586-020-01565-5?fbclid=IwAR
 the authors performed a thorough analysis and found that records of cumulative infections and deaths from the United States, Japan,
 Indonesia and most European nations adhered well to the Benford's law, consistent with accurate reporting. Their results can be [found here](http://go.nature.com/2kqtut2).
 
-For the fun of it, the following *Mathematica* code solves a simple SIR model and draws the frequency distribution of the first digit in the number of infected people. In short a SIR model is described by the following set of differential equations:
+For the fun of it, the following *Mathematica* code solves [a simple SIR model](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SIR_model) and draws the frequency distribution of the first digit in the number of infected people. In short a SIR model is described by the following set of differential equations:
 
 $$
 \left\{
