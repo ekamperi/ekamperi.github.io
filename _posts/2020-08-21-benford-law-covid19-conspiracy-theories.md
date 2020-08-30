@@ -6,6 +6,13 @@ categories: [mathematics]
 tags: ['covid-19', 'mathematics', 'statistics']
 ---
 
+### Contents
+{:.no_toc}
+
+* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
+{:toc}
+
+### Introduction
 How can we know if a list of numbers is made up or has come up in a "natural" way?
 
 This question may sound distant at first, but it has several applications. In the 2016 film, "The Accountant",
@@ -38,6 +45,7 @@ $$
 When making up numbers, people who are unaware of Benford's law tend to distribute their digits evenly. Thus, a mere
 comparison of the first or second digit frequency distribution could easily show "abnormal" results.
 
+### Benford's law on Covid-19 data
 In the figure below, we have plotted how often the various digits appear in the number of coronavirus cases of the USA's Washington state. We got the data from [this link](https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv?fbclid=IwAR0JqCoCT-VjqyyPm4WVd7IVwt7DYKD5O4jG1c2NaHpRL98zbkRSKmEZEKw), and we can not guarantee their authenticity. However, it appears
 that the distribution of numbers in the 1st and 2nd most significant position of the number of cases approaches the
 theoretical distribution of Benford's law (dotted red line), so we can not assume that someone "cooked" the data,
@@ -61,6 +69,7 @@ In [this article](https://www.nature.com/articles/d41586-020-01565-5?fbclid=IwAR
 the authors performed a thorough analysis and found that records of cumulative infections and deaths from the United States, Japan,
 Indonesia and most European nations adhered well to the Benford's law, consistent with accurate reporting. Their results can be [found here](http://go.nature.com/2kqtut2).
 
+### Benford's law on SIR data
 For the fun of it, the following *Mathematica* code solves [a simple SIR model](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SIR_model) and draws the frequency distribution of the first digit in the number of infected people. In short a SIR model is described by the following set of differential equations:
 
 $$
