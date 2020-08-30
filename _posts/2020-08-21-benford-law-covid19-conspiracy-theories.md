@@ -30,6 +30,11 @@ The law also makes predictions for the distribution of second digits, third digi
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/Benford_distribution.png" alt="Benford distribution">
 </p>
 
+The formula for calculating the probabilities of various digits is this:
+
+$$
+\text{Prob}(d) = \text{log}_{10} \left( 1 + \frac{1}{d}\right)
+$$
 
 People who do not know Benford's law, when making up numbers tend to distribute their digits evenly. Thus, a simple
 comparison of the first or second digit frequency distribution could easily show "abnormal" results.
