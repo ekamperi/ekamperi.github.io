@@ -101,15 +101,6 @@ solR = r /. solution[[1, 3]];
 Plot[{100*solS[t], 100*solI[t], 100*solR[t]}, {t, 0, 100}, 
  PlotLegends -> {"Susceptible", "Infected", "Recovered"}, 
  Frame -> {True, True, False, False}, FrameLabel -> {"Time", "Population [%]"}, Filling -> Bottom]
-
-numbers = Table[solI[t], {t, 0, 200}];
-
-digits = RealDigits /@ numbers;
-
-p1 = ListPlot[
-   Table[PDF[BenfordDistribution[10], x], {x, 1, 9}],
-   Joined -> True, PlotRange -> All, PlotStyle -> {Red, Dashed}];
-p1
 {% endraw %}
 {% endhighlight %}
 
@@ -123,6 +114,13 @@ And this is the frequency distribution of the first digits superimposed with the
 
 {% highlight Mathematica %}
 {% raw %}
+numbers = Table[solI[t], {t, 0, 200}];
+digits = RealDigits /@ numbers;
+
+p1 = ListPlot[
+   Table[PDF[BenfordDistribution[10], x], {x, 1, 9}],
+   Joined -> True, PlotRange -> All, PlotStyle -> {Red, Dashed}];
+
 Show[
  Histogram[
   digits[[All, 1, 1]], Automatic, "PDF", 
@@ -131,8 +129,6 @@ Show[
  p1]
 {% endraw %}
 {% endhighlight %}
-
-
 
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/sir_benford_distrib.png" alt="SIR model and Benford law in covid-19 numbers">
