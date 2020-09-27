@@ -45,7 +45,7 @@ $$
 When making up numbers, people who are unaware of Benford's law tend to distribute their digits evenly. Thus, a mere
 comparison of the first or second digit frequency distribution could easily show "abnormal" results.
 
-### Benford's law on Covid-19 data
+### Benford's law on COVID-19 data
 In the figure below, we have plotted how often the various digits appear in the number of coronavirus cases of the USA's Washington state. We got the data from [this link](https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv?fbclid=IwAR0JqCoCT-VjqyyPm4WVd7IVwt7DYKD5O4jG1c2NaHpRL98zbkRSKmEZEKw), and we can not guarantee their authenticity. However, it appears
 that the distribution of numbers in the 1st and 2nd most significant position of the number of cases approaches the
 theoretical distribution of Benford's law (dotted red line), so we can not assume that someone "cooked" the data,
@@ -133,3 +133,6 @@ Show[
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/sir_benford_distrib.png" alt="SIR model and Benford law in covid-19 numbers">
 </p>
+
+### Similar work
+If you are interested in the topic of verifying COVID-19 epidemiological data, you should really check the following paper by the team of Nicholas Christakis: "Jia, J. S. et al. Population flow drives spatio-temporal distribution of COVID-19 in China. Nature 582, 389–394 (2020)". In this work, the researchers used geolocation data from mobile phones in China and generated aggregate population movements from Wuhan to mainland China. People's geographical flow was on par with the subsequent outbreaks in the rest of mainland China in terms of location, intensity, and timing.
