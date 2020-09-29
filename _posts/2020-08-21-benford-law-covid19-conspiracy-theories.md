@@ -69,6 +69,7 @@ Legended[
 </p>
 
 Or, the **factorials**:
+
 {% highlight Mathematica %}
 {% raw %}
 Legended[
@@ -91,6 +92,7 @@ Legended[
 </p>
 
 Or, the **distances of stars from Earth**:
+
 {% highlight Mathematica %}
 {% raw %}
 starsData = EntityValue["Star", "DistanceFromEarth"];
