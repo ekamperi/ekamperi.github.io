@@ -62,6 +62,7 @@ Legended[
   Plot[Log10[1 + 1/d], {d, 1, 9}, PlotStyle -> {Black, Dashed}]], 
  Placed[LineLegend[{Black, Orange}, {"Benford's law", 
     "1st digit distribution"}], {.8, .6}]]
+{% endraw %}
 {% endhighlight %}
 
 <p align="center">
@@ -85,6 +86,7 @@ Legended[
   Plot[Log10[1 + 1/d], {d, 1, 9}, PlotStyle -> {Black, Dashed}]],
  Placed[LineLegend[{Black, Orange}, {"Benford's law", 
     "1st digit distribution"}], {.8, .6}]]
+{% endraw %}
 {% endhighlight %}
 
 <p align="center">
@@ -110,7 +112,8 @@ Legended[
    PlotLabel -> "N=100.000 stars", ChartBaseStyle -> EdgeForm[White]],
   Plot[Log10[1 + 1/d], {d, 1, 9}, PlotStyle -> {Black, Dashed}]],
  Placed[LineLegend[{Black, Orange}, {"Benford's law", 
-    "1st digit distribution"}], {.8, .6}]]{% endraw %}
+    "1st digit distribution"}], {.8, .6}]]
+{% endraw %}
 {% endhighlight %}
 
 <p align="center">
