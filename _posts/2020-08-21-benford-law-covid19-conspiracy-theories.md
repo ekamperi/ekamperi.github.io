@@ -45,6 +45,76 @@ $$
 When making up numbers, people who are unaware of Benford's law tend to distribute their digits evenly. Thus, a mere
 comparison of the first or second digit frequency distribution could easily show "abnormal" results.
 
+It's amazing how many numerical distributions follow this law, like the **Fibonacci numbers**:
+
+{% highlight Mathematica %}
+{% raw %}
+Legended[
+ Show[
+  Histogram[
+   First /@ IntegerDigits /@ Table[Fibonacci[k], {k, 1, 1000}], 
+   Automatic, "PDF",
+   Frame -> {True, True, False, False}, 
+   FrameLabel -> {"First Digit", "Probability"}, 
+   FrameTicks -> {Range[1, 9], Automatic}, 
+   PlotLabel -> "First 100.000 Fibonacci Numbers", 
+   ChartBaseStyle -> EdgeForm[White]],
+  Plot[Log10[1 + 1/d], {d, 1, 9}, PlotStyle -> {Black, Dashed}]], 
+ Placed[LineLegend[{Black, Orange}, {"Benford's law", 
+    "1st digit distribution"}], {.8, .6}]]
+{% endhighlight %}
+
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/fib_benford _distrib.png" alt="First digit distribution of Fibonacci numbers">
+</p>
+
+Or, the **factorials**:
+{% highlight Mathematica %}
+{% raw %}
+Legended[
+ Show[
+  Histogram[
+   First /@ IntegerDigits /@ Table[Factorial[k], {k, 1, 10000}], 
+   Automatic, "PDF",
+   Frame -> {True, True, False, False}, 
+   FrameLabel -> {"First Digit", "Probability"}, 
+   FrameTicks -> {Range[1, 9], Automatic}, 
+   PlotLabel -> "Factorials up to 10.000!", 
+   ChartBaseStyle -> EdgeForm[White]],
+  Plot[Log10[1 + 1/d], {d, 1, 9}, PlotStyle -> {Black, Dashed}]],
+ Placed[LineLegend[{Black, Orange}, {"Benford's law", 
+    "1st digit distribution"}], {.8, .6}]]
+{% endhighlight %}
+
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/factorial_benford _distrib.png" alt="First digit distribution of factorials">
+</p>
+
+Or, the **distances of stars from Earth**:
+{% highlight Mathematica %}
+{% raw %}
+starsData = EntityValue["Star", "DistanceFromEarth"];
+Legended[
+ Show[
+  Histogram[
+   First /@ First /@ RealDigits /@
+      Select[
+       QuantityMagnitude /@ 
+        UnitConvert[Take[stardat, 100000], "meters"],
+       NumberQ],
+   Automatic, "PDF", Frame -> {True, True, False, False}, 
+   FrameLabel -> {"First Digit", "Probability"}, 
+   FrameTicks -> {Range[1, 9], Automatic}, 
+   PlotLabel -> "N=100.000 stars", ChartBaseStyle -> EdgeForm[White]],
+  Plot[Log10[1 + 1/d], {d, 1, 9}, PlotStyle -> {Black, Dashed}]],
+ Placed[LineLegend[{Black, Orange}, {"Benford's law", 
+    "1st digit distribution"}], {.8, .6}]]{% endraw %}
+{% endhighlight %}
+
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/stars_benford _distrib.png" alt="First digit distribution in stars distances from Earth">
+</p>
+
 ### Benford's law on COVID-19 data
 In the figure below, we have plotted how often the various digits appear in the number of coronavirus cases of the USA's Washington state. We got the data from [this link](https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv?fbclid=IwAR0JqCoCT-VjqyyPm4WVd7IVwt7DYKD5O4jG1c2NaHpRL98zbkRSKmEZEKw), and we can not guarantee their authenticity. However, it appears
 that the distribution of numbers in the 1st and 2nd most significant position of the number of cases approaches the
