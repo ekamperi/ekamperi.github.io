@@ -66,7 +66,7 @@ Legended[
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/fib_benford _distrib.png" alt="First digit distribution of Fibonacci numbers">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/fib_benford_distrib.png" alt="First digit distribution of Fibonacci numbers">
 </p>
 
 Or, the **factorials**:
@@ -90,7 +90,7 @@ Legended[
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/factorial_benford _distrib.png" alt="First digit distribution of factorials">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/factorial_benford_distrib.png" alt="First digit distribution of factorials">
 </p>
 
 Or, the **distances of stars from Earth**:
@@ -117,7 +117,7 @@ Legended[
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/stars_benford _distrib.png" alt="First digit distribution in stars distances from Earth">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/stars_benford_distrib.png" alt="First digit distribution in stars distances from Earth">
 </p>
 
 ### Benford's law on COVID-19 data
