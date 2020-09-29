@@ -52,7 +52,7 @@ It's amazing how many numerical distributions follow this law, like the **Fibona
 Legended[
  Show[
   Histogram[
-   First /@ IntegerDigits /@ Table[Fibonacci[k], {k, 1, 1000}], 
+   First /@ IntegerDigits /@ Table[Fibonacci[k], {k, 1, 100000}], 
    Automatic, "PDF",
    Frame -> {True, True, False, False}, 
    FrameLabel -> {"First Digit", "Probability"}, 
