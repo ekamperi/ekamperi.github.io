@@ -40,6 +40,6 @@ header_pages:
 
 google_analytics: UA-145393080-1
 
-disqus:
-    shortname: https-ekamperi-github-io
+#disqus:
+#    shortname: https-ekamperi-github-io
 
