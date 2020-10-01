@@ -60,8 +60,7 @@ Legended[
    PlotLabel -> "First 100.000 Fibonacci Numbers", 
    ChartBaseStyle -> EdgeForm[White]],
   Plot[Log10[1 + 1/d], {d, 1, 9}, PlotStyle -> {Black, Dashed}]], 
- Placed[LineLegend[{Black, Orange}, {"Benford's law", 
-    "1st digit distribution"}], {.8, .6}]]
+ Placed[LineLegend[{Black, Orange}, {"Benford's law", "1st digit distribution"}], {.8, .6}]]
 {% endraw %}
 {% endhighlight %}
 
@@ -84,8 +83,7 @@ Legended[
    PlotLabel -> "Factorials up to 10.000!", 
    ChartBaseStyle -> EdgeForm[White]],
   Plot[Log10[1 + 1/d], {d, 1, 9}, PlotStyle -> {Black, Dashed}]],
- Placed[LineLegend[{Black, Orange}, {"Benford's law", 
-    "1st digit distribution"}], {.8, .6}]]
+ Placed[LineLegend[{Black, Orange}, {"Benford's law", "1st digit distribution"}], {.8, .6}]]
 {% endraw %}
 {% endhighlight %}
 
@@ -111,8 +109,7 @@ Legended[
    FrameTicks -> {Range[1, 9], Automatic}, 
    PlotLabel -> "N=100.000 stars", ChartBaseStyle -> EdgeForm[White]],
   Plot[Log10[1 + 1/d], {d, 1, 9}, PlotStyle -> {Black, Dashed}]],
- Placed[LineLegend[{Black, Orange}, {"Benford's law", 
-    "1st digit distribution"}], {.8, .6}]]
+ Placed[LineLegend[{Black, Orange}, {"Benford's law", "1st digit distribution"}], {.8, .6}]]
 {% endraw %}
 {% endhighlight %}
 
