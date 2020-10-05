@@ -3,7 +3,7 @@ layout: post
 title:  "Gradient descent"
 date:   2019-07-28
 categories: [machine learning]
-tags: [algorithms, 'gradient descent', 'newton method', optimization]
+tags: [algorithms, 'gradient descent', 'machine learning', 'newton method', optimization]
 ---
 
 ### Contents
