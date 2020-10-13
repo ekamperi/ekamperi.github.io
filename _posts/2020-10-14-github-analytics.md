@@ -6,16 +6,28 @@ categories: [programming]
 tags: ['Mathematica', 'programming', 'REST API']
 ---
 
-This is a test
+## Introduction
 
 {% highlight mathematica %}
 {% raw %}
 ClearAll["Global`*"];
 resp = URLRead@HTTPRequest["https://api.github.com/users/ekamperi"]
+{% endraw %}
+{% endhighlight %}
+
+Mathematica will respond with something like:
+
+<p align="center">
+<img style="width: 100%; height: 100%" src="{{ site.url }}/images/http_resposne.png" alt="HTTPResponse Mathematica">
+</p>
+
+{% highlight mathematica %}
+{% raw %}
 resp["Properties"]
 (* {"Body", "BodyByteArray", "BodyBytes", "CharacterEncoding", \
 "ContentType", "Headers", "StatusCode", "StatusCodeDescription", \
 "Version"} *)
+
 resp[{"StatusCode", "StatusCodeDescription"}]
 (* <|"StatusCode" -> 200, "StatusCodeDescription" -> "OK"|> *)
 
@@ -36,7 +48,3 @@ informatics). *)
 {% endraw %}
 {% endhighlight %}
 
-
-<p align="center">
-<img style="width: 100%; height: 100%" src="{{ site.url }}/images/exp_vs_pade_vs_taylor.png" alt="Padé vs taylor series for exponential function">
-</p>
