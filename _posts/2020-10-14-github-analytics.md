@@ -18,7 +18,7 @@ resp = URLRead@HTTPRequest["https://api.github.com/users/ekamperi"]
 Mathematica will respond with something like:
 
 <p align="center">
-<img style="width: 100%; height: 100%" src="{{ site.url }}/images/http_response.png" alt="HTTPResponse Mathematica">
+<img style="width: 75%; height: 75%" src="{{ site.url }}/images/http_response.png" alt="HTTPResponse Mathematica">
 </p>
 
 {% highlight mathematica %}
@@ -85,3 +85,27 @@ ListLogPlot[{#} & /@ (Transpose@{Range@Length@langs, res[[All, 2]]}),
 <p align="center">
 <img style="width: 100%; height: 100%" src="{{ site.url }}/images/days_since_commit.png" alt="Github analytics commits">
 </p>
+
+
+## GraphQL
+
+{% highlight mathematica %}
+{% raw %}
+gql[accessToken_] :=
+ URLRead[
+  HTTPRequest[
+   "https://api.github.com/graphql",
+   <|
+    "Method" -> "POST",
+    "Body" -> "{
+     		\"query\": \"query { viewer { login } }\"
+     	}",
+    "Headers" -> {"Authorization" -> "Bearer " <> accessToken}|>
+   ]
+  ]
+
+res = gql[gqlAccessToken];
+res["Body"]
+(* {"data":{"viewer":{"login":"ekamperi"}}} *)
+{% endraw %}
+{% endhighlight %}
