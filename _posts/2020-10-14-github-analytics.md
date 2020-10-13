@@ -3,10 +3,13 @@ layout: post
 title:  "Github analytics with Mathematica"
 date:   2020-10-14
 categories: [programming]
-tags: ['Mathematica', 'programming', 'REST API']
+tags: ['Github', 'GraphQL', 'JSON', 'Mathematica', 'Programming', 'REST API']
 ---
 
 ## Introduction
+
+## Authorization
+In order to experiment with Github's REST API, we need to authenticate to the service. User-to-server requests are rate-limited at 5.000 requests per hour and per authenticated user. For unauthenticated requests, only up to 60 requests per hour per originating IP are allowed. The best way to proceed is to create a personal access token (PAT), as an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line.
 
 {% highlight mathematica %}
 {% raw %}
@@ -18,7 +21,7 @@ resp = URLRead@HTTPRequest["https://api.github.com/users/ekamperi"]
 Mathematica will respond with something like:
 
 <p align="center">
-<img style="width: 75%; height: 75%" src="{{ site.url }}/images/http_response.png" alt="HTTPResponse Mathematica">
+<img style="width: 65%; height: 65%" src="{{ site.url }}/images/http_response.png" alt="HTTPResponse Mathematica">
 </p>
 
 {% highlight mathematica %}
