@@ -1,10 +1,12 @@
 ---
 layout: post
 title:  "Github analytics with Mathematica"
-date:   2020-07-13
+date:   2020-10-14
 categories: [programming]
 tags: ['Mathematica', 'programming', 'REST API']
 ---
+
+This is a test
 
 {% highlight mathematica %}
 {% raw %}
