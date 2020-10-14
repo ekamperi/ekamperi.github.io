@@ -96,6 +96,7 @@ getWeeklyCommitCount[owner_, repo_, accessToken_] :=
 resp = getWeeklyCommitCount["ekamperi", "rteval", accessToken]
 rj = ImportString[resp["Body"], "RawJSON"]
 
+Grid[{
 ListPlot[First@#, FrameLabel -> {"Week #", Last@#}, Frame -> {True, True, False, False},
    FrameTicks -> {Range[1, 52, 3], Automatic}, Joined -> True, InterpolationOrder -> 1,
    GridLines -> Automatic, Filling -> {1 -> {2}}, ImageSize -> Medium,
@@ -103,6 +104,7 @@ ListPlot[First@#, FrameLabel -> {"Week #", Last@#}, Frame -> {True, True, False,
    ] & /@ {
   {{rj[[1]], rj[[2]]}, "# of commits"},
   {Accumulate /@ {rj[[1]], rj[[2]]}, "Cumulative # of commits"}}
+}]
 {% endraw %}
 {% endhighlight %}
 
