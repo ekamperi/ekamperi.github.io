@@ -3,7 +3,7 @@ layout: post
 title:  "Github analytics with Mathematica"
 date:   2020-10-14
 categories: [programming]
-tags: ['Github', 'GraphQL', 'JSON', 'Mathematica', 'Programming', 'REST API']
+tags: ['Github', 'GraphQL', 'git', 'JSON', 'Mathematica', 'Programming', 'REST API']
 ---
 
 ## Introduction
@@ -11,7 +11,7 @@ tags: ['Github', 'GraphQL', 'JSON', 'Mathematica', 'Programming', 'REST API']
 REST API stands for "Representational State Transfer Application Programming Interface". In simple terms, it's a set of agreed rules on how to retrieve data when you link to a specific URL. To make a REST API call, you need to know the following ingredients of such a request:
 
 1. The **endpoint**, which is basically the URL you request for. For example, GitHub's endpoint is *https://api.github.com*.
-    + The **path** that determines the specific resource you are asking for. For example, in the URL *https://api.github.com/user/repos*, the endpoint is *https://api.github.com*, and the path is */user/repos*, which expresses our intention to have the user's repositories returned. When you read in a doc an expression like */repos/:owner/:repo/*, the *owner* and *repo* are variables. You need to replace them with the actual value of that variable. E.g., write */repos/ekamperi/rteval*, if you want the repository named *eval* of the user *ekamperi*.
+    + The **path** that determines the specific resource you are asking for. For example, in the URL *https://api.github.com/user/repos*, the endpoint is *https://api.github.com*, and the path is */user/repos*, which expresses our intention to have the user's repositories returned. When you read in a doc an expression like */repos/:owner/:repo/*, the *owner* and *repo* are variables. You need to replace them with the actual value of that variable. E.g., write */repos/ekamperi/rteval*, if you want the repository named *rteval* of the user *ekamperi*.
     + **Query parameters**. Sometimes a request is accompanied by a list of parameters that modify the request. They always begin with a question mark "?" and each *parameter=value* pair is delimited by an ampersand "&". E.g., in */repos/ekamperi/rteval/commits&per_page=100&sha=master* we inform the server that we want 100 commits per page and we want the listing of commits to start from the *HEAD* of the *master* branch.
 2. The **method**, which defines the kind of request that we are submitting to the server. It may be one of *GET*, *POST*, *PUT*, *PATCH*, *DELETE*. They allow the following operations: *Create*, *Read*, *Update*, and *Delete* (the so called CRUD). In short, *GET* performs the READ operation (we ask the server to send us back some data). *POST* performs the CREATE operation (we ask the server to create a new resource in it). *PUT* and *PATCH* perform an UPDATE operation, and *DELETE*, well, you know what *DELETE* does.
 3. The **headers** are used to exchange metadata between client and server. For example, they are used to perform authentication or information regarding the body's content.
@@ -101,8 +101,10 @@ Table[{i, rj[[i]]["name"]}, {i, 1, Length@rj}] // Dataset
 <img style="width: 25%; height: 25%" src="{{ site.url }}/images/list_of_repos.png" alt="Github analytics commits">
 </p>
 
+## How to get the size of all repositories broken down by language
 
-## How to get the size of each repository broken down by language
+We start by creating a function that talks to the */repos/:owner/:repo/languages* path. Same as before,
+we pass our personal access token to the header of the request:
 
 {% highlight mathematica %}
 {% raw %}
@@ -113,6 +115,7 @@ getLanguages[owner_, repo_, accessToken_] :=
 {% endraw %}
 {% endhighlight %}
 
+Let's test what data the server returns:
 
 {% highlight mathematica %}
 {% raw %}
@@ -122,6 +125,8 @@ lang["Body"]
 {% endraw %}
 {% endhighlight %}
 
+So, the repository named *rteval* of the user *ekamperi* contains 6440911 bytes of Python, 28787 bytes of R, 1800 bytes of CSS and 1096 bytes of MATLAB code.
+Let's collect the data for all languages:
 
 {% highlight mathematica %}
 {% raw %}
@@ -141,7 +146,13 @@ res = KeyValueMap[g, ass]
   26289}, {"Perl", 25314}, {"Python", 6457462}, {"QMake", 2353}, {"R",
    28787}, {"Ruby", 30036}, {"SCSS", 11062}, {"Shell", 
   126919}, {"TeX", 109175}, {"XSLT", 13518}} *)
-  
+{% endraw %}
+{% endhighlight %}
+
+And then plot the results:
+
+{% highlight mathematica %}
+{% raw %}
 ListLogPlot[{#} & /@ (Transpose@{Range@Length@langs, res[[All, 2]]}), 
  Filling -> Axis, Joined -> False, PlotRange -> All, 
  PlotLegends -> langs, FillingStyle -> {Thickness[0.005]},
