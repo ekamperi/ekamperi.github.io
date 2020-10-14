@@ -64,6 +64,33 @@ informatics). *)
 {% endraw %}
 {% endhighlight %}
 
+## How to get the list of repositories
+
+In order to get the list of repositories, we send a request to the https://api.github.com/user/repos endpoint.
+However, we need to pass our personal access token to the list of headers that will be sent to the server.
+The string that we will send must be of the form "Authorization token <access token>":
+
+{% highlight mathematica %}
+{% raw %}
+getRepos[accessToken_] :=
+ URLRead@HTTPRequest["https://api.github.com/user/repos",
+   <|"Headers" -> {"Authorization" -> "token " <> accessToken}|>]
+{% endraw %}
+{% endhighlight %}
+
+We send a request to the url, read back the response, interpret the body message as JSON and then display the results:
+{% highlight mathematica %}
+{% raw %}
+resp = getRepos[accessToken];
+rj = ImportString[resp["Body"], "RawJSON"];
+repoNames = rj[[All, "name"]];
+Table[{i, rj[[i]]["name"]}, {i, 1, Length@rj}] // Dataset
+{% endraw %}
+{% endhighlight %}
+
+<p align="center">
+<img style="width: 100%; height: 100%" src="{{ site.url }}/images/list_of_repos.png" alt="Github analytics commits">
+</p>
 
 {% highlight mathematica %}
 {% raw %}
