@@ -24,7 +24,12 @@ REST API stands for "Representational State Transfer Application Programming Int
 4. The **data** or **body** hold the information that the client sends to the server, and it is used with *POST*, *PUT*, *PATCH*, and *DELETE* methods.
 
 ### Authorization
-In order to experiment with GitHub's REST API, we need to authenticate to the service. User-to-server requests are rate-limited at 5.000 requests per hour and per authenticated user. For unauthenticated requests, only up to 60 requests per hour per originating IP are allowed. The best way to proceed is to create a [personal access token (PAT)](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token), as an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line. Once we cre
+In order to experiment with GitHub's REST API, we need to authenticate to the service. User-to-server requests are rate-limited at 5.000 requests per hour and per authenticated user. For unauthenticated requests, only up to 60 requests per hour per originating IP are allowed. The best way to proceed is to create a [personal access token (PAT)](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token), as an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line. Here is how you could authenticate via *curl*:
+
+<p align="center">
+<img style="width: 100%; height: 100%" src="{{ site.url }}/images/github_cmd.png" alt="GitHub authenticate via curl">
+</p>
+
 
 ### A simple example of a REST API call
 {% highlight mathematica %}
@@ -34,7 +39,7 @@ resp = URLRead@HTTPRequest["https://api.github.com/users/ekamperi"]
 {% endraw %}
 {% endhighlight %}
 
-Mathematica will respond with something like:
+*Mathematica* will respond with something like:
 
 <p align="center">
 <img style="width: 50%; height: 50%" src="{{ site.url }}/images/http_response.png" alt="HTTPResponse Mathematica">
