@@ -63,7 +63,7 @@ We extract the data from HTTP Message Body (the data bytes transmitted immediate
 
 {% highlight mathematica %}
 {% raw %}
-rj = ImportString[ur["Body"], "RawJSON"];
+rj = ImportString[resp["Body"], "RawJSON"];
 rj // Keys
 (* {"login", "id", "node_id", "avatar_url", "gravatar_id", "url", \
 "html_url", "followers_url", "following_url", "gists_url", \
@@ -80,7 +80,37 @@ informatics). *)
 {% endraw %}
 {% endhighlight %}
 
-## How to get the list of repositories
+## More involved examples
+### How to get the weekly commit count
+We will issue a *GET /repos/:owner/:repo:/stats/participation* request, that returns the total commit
+counts for the owner and total commit counts in all (all is everyone combined, including the owner in the last 52 weeks). 
+The array order is oldest week (index 0) to most recent week.
+
+{% highlight mathematica %}
+{% raw %}
+getWeeklyCommitCount[owner_, repo_, accessToken_] :=
+ URLRead[HTTPRequest[
+   "https://api.github.com/repos/" <> owner <> "/" <> repo <> "/stats/participation",
+   <|"Headers" -> {"Authorization" -> "token " <> accessToken}|>]]
+
+resp = getWeeklyCommitCount["ekamperi", "rteval", accessToken]
+rj = ImportString[resp["Body"], "RawJSON"]
+
+ListPlot[First@#, FrameLabel -> {"Week #", Last@#}, Frame -> {True, True, False, False},
+   FrameTicks -> {Range[1, 52, 3], Automatic}, Joined -> True, InterpolationOrder -> 1,
+   GridLines -> Automatic, Filling -> {1 -> {2}}, ImageSize -> Medium,
+   PlotRange -> All, PlotLegends -> Placed[Style[#, 11] & /@ {"All", "Owner"}, Below] 
+   ] & /@ {
+  {{rj[[1]], rj[[2]]}, "# of commits"},
+  {Accumulate /@ {rj[[1]], rj[[2]]}, "Cumulative # of commits"}}
+{% endraw %}
+{% endhighlight %}
+
+<p align="center">
+<img style="width: 27%; height: 75%" src="{{ site.url }}/images/weekly_commits.png" alt="Github weekly commits">
+</p>
+
+### How to get the list of repositories
 
 In order to get the list of repositories, we send a request to the https://api.github.com/user/repos endpoint.
 However, we need to pass our personal access token to the list of headers that will be sent to the server.
@@ -108,7 +138,7 @@ Table[{i, rj[[i]]["name"]}, {i, 1, Length@rj}] // Dataset
 <img style="width: 25%; height: 25%" src="{{ site.url }}/images/list_of_repos.png" alt="Github analytics commits">
 </p>
 
-## How to get the size of all repositories broken down by language
+### How to get the size of all repositories broken down by language
 
 We start by creating a function that talks to the */repos/:owner/:repo/languages* path. Same as before,
 we pass our personal access token to the header of the request:
@@ -198,6 +228,8 @@ ListLogPlot[{#} & /@ (Transpose@{Range@Length@langs, res[[All, 2]]}),
 <p align="center">
 <img style="width: 100%; height: 100%" src="{{ site.url }}/images/languages.png" alt="Github analytics programming languages">
 </p>
+
+### How to get the dates of the commits in a repository
 
 <p align="center">
 <img style="width: 100%; height: 100%" src="{{ site.url }}/images/days_since_commit.png" alt="Github analytics commits">
