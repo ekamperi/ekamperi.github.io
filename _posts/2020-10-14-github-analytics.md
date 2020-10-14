@@ -107,7 +107,7 @@ ListPlot[First@#, FrameLabel -> {"Week #", Last@#}, Frame -> {True, True, False,
 {% endhighlight %}
 
 <p align="center">
-<img style="width: 27%; height: 75%" src="{{ site.url }}/images/weekly_commits.png" alt="Github weekly commits">
+<img style="width: 75%; height: 75%" src="{{ site.url }}/images/weekly_commits.png" alt="Github weekly commits">
 </p>
 
 ### How to get the list of repositories
