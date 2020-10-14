@@ -105,6 +105,8 @@ ListLogPlot[{#} & /@ (Transpose@{Range@Length@langs, res[[All, 2]]}),
 
 ## GraphQL
 
+GraphQL is a data query and a manipulation language for APIs. Initially, it was developed by Facebook for internal use, and then release to public. GraphQL provides an approach to developing web APIs similar to REST, yet it is different from REST. Its difference is that it allows clients to describe the structure of the data required. Other features include a type system, a query language and type introspection.
+
 {% highlight mathematica %}
 {% raw %}
 gql[accessToken_] :=
