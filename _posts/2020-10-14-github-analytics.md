@@ -13,7 +13,7 @@ tags: ['Github', 'GraphQL', 'git', 'JSON', 'Mathematica', 'Programming', 'REST A
 {:toc}
 
 ## Introduction
-
+### REST API
 REST API stands for "Representational State Transfer Application Programming Interface". In simple terms, it's a set of agreed rules on how to retrieve data when you link to a specific URL. To make a REST API call, you need to know the following ingredients of such a request:
 
 1. The **endpoint**, which is basically the URL you request for. For example, GitHub's endpoint is *https://api.github.com*.
@@ -24,8 +24,9 @@ REST API stands for "Representational State Transfer Application Programming Int
 4. The **data** or **body** hold the information that the client sends to the server, and it is used with *POST*, *PUT*, *PATCH*, and *DELETE* methods.
 
 ### Authorization
-In order to experiment with GitHub's REST API, we need to authenticate to the service. User-to-server requests are rate-limited at 5.000 requests per hour and per authenticated user. For unauthenticated requests, only up to 60 requests per hour per originating IP are allowed. The best way to proceed is to create a [personal access token (PAT)](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token), as an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line.
+In order to experiment with GitHub's REST API, we need to authenticate to the service. User-to-server requests are rate-limited at 5.000 requests per hour and per authenticated user. For unauthenticated requests, only up to 60 requests per hour per originating IP are allowed. The best way to proceed is to create a [personal access token (PAT)](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token), as an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line. Once we cre
 
+### A simple example of a REST API call
 {% highlight mathematica %}
 {% raw %}
 ClearAll["Global`*"];
