@@ -6,6 +6,12 @@ categories: [programming]
 tags: ['Github', 'GraphQL', 'git', 'JSON', 'Mathematica', 'Programming', 'REST API']
 ---
 
+### Contents
+{:.no_toc}
+
+* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
+{:toc}
+
 ## Introduction
 
 REST API stands for "Representational State Transfer Application Programming Interface". In simple terms, it's a set of agreed rules on how to retrieve data when you link to a specific URL. To make a REST API call, you need to know the following ingredients of such a request:
