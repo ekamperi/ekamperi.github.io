@@ -8,6 +8,20 @@ tags: ['Github', 'GraphQL', 'JSON', 'Mathematica', 'Programming', 'REST API']
 
 ## Introduction
 
+REST API stands for "Representational State Transfer Application Programming Interface". In simple terms, it's a set of agreed rules on how to retrieve data when you link to a specific URL. To make a REST API call, you need to know the following ingredients of such a request:
+
+1. The **endpoint**, which is basically the URL you request for. For example, Github's endpoint is https://api.github.com
+
+The path that determines the specific resource you are asking for. For example, in the URL https://api.github.com/user/repos, the endpoint is https://api.github.com, and the path is /user/repos, which specifies that we want the user's repositories to be returned. When you read in a doc /repos/:owner/:repo/, the owner and repo are variables. You need to replace them with the actual value of that variable. E.g., /repos/ekamperi/rteval.
+
+Query parameters. Sometimes a request is accompanied by a list of parameters that modify the request. They always begin with a question mark "?" and each parameter=value pair is delimited by an ampersand "&". E.g., /repos/ekamperi/rteval/commits&per_page=100&sha=master
+
+2. The **method**, which defines the kind of request that we are submitting to the server. It may be one of GET, POST, PUT, PATCH, DELETE. They allow the following operations: Create, Read, Update, and Delete (CRUD). In short, GET performs the READ operation (we ask the server to send us back some data). POST performs the CREATE operation (we ask the server to create a new resource in it). PUT and PATCH perform an UPDATE operation, and DELETE, well, you know what DELETE does.
+
+3. The **headers** are used to exchange metadata between client and server. For example, they are used to perform authentication or information regarding the body's content.
+
+4. The **data** or **body** hold the information that the client sends to the server, and it is used with POST, PUT, PATCH, and DELETE methods.
+
 ### Authorization
 In order to experiment with Github's REST API, we need to authenticate to the service. User-to-server requests are rate-limited at 5.000 requests per hour and per authenticated user. For unauthenticated requests, only up to 60 requests per hour per originating IP are allowed. The best way to proceed is to create a [personal access token (PAT)](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token), as an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line.
 
