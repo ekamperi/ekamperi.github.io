@@ -8,8 +8,8 @@ tags: ['Github', 'GraphQL', 'JSON', 'Mathematica', 'Programming', 'REST API']
 
 ## Introduction
 
-## Authorization
-In order to experiment with Github's REST API, we need to authenticate to the service. User-to-server requests are rate-limited at 5.000 requests per hour and per authenticated user. For unauthenticated requests, only up to 60 requests per hour per originating IP are allowed. The best way to proceed is to create a personal access token (PAT), as an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line.
+### Authorization
+In order to experiment with Github's REST API, we need to authenticate to the service. User-to-server requests are rate-limited at 5.000 requests per hour and per authenticated user. For unauthenticated requests, only up to 60 requests per hour per originating IP are allowed. The best way to proceed is to create a [personal access token (PAT)](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token), as an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line.
 
 {% highlight mathematica %}
 {% raw %}
@@ -21,19 +21,32 @@ resp = URLRead@HTTPRequest["https://api.github.com/users/ekamperi"]
 Mathematica will respond with something like:
 
 <p align="center">
-<img style="width: 65%; height: 65%" src="{{ site.url }}/images/http_response.png" alt="HTTPResponse Mathematica">
+<img style="width: 50%; height: 50%" src="{{ site.url }}/images/http_response.png" alt="HTTPResponse Mathematica">
 </p>
 
+We can request the properties of the response object returned by `URLRead[]`:
 {% highlight mathematica %}
 {% raw %}
 resp["Properties"]
 (* {"Body", "BodyByteArray", "BodyBytes", "CharacterEncoding", \
 "ContentType", "Headers", "StatusCode", "StatusCodeDescription", \
 "Version"} *)
+{% endraw %}
+{% endhighlight %}
 
+And then print the value of some property:
+
+{% highlight mathematica %}
+{% raw %}
 resp[{"StatusCode", "StatusCodeDescription"}]
 (* <|"StatusCode" -> 200, "StatusCodeDescription" -> "OK"|> *)
+{% endraw %}
+{% endhighlight %}
 
+We extract the data from HTTP Message Body (the data bytes transmitted immediately after the HTTP headers), import it as a JSON string and list the associated keys:
+
+{% highlight mathematica %}
+{% raw %}
 rj = ImportString[ur["Body"], "RawJSON"];
 rj // Keys
 (* {"login", "id", "node_id", "avatar_url", "gravatar_id", "url", \
