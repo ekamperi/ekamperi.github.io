@@ -231,10 +231,74 @@ ListLogPlot[{#} & /@ (Transpose@{Range@Length@langs, res[[All, 2]]}),
 
 ### How to get the dates of the commits in a repository
 
+First, we create a function that given an SHA sum, it returns a list of {{commit, date}, ...}:
+
+{% highlight mathematica %}
+{% raw %}
+getNextCommitsWithDate[owner_, repo_, sha_, accessToken_] :=
+ Module[{bodyJ, commits = {}, resp},
+  resp = URLRead[
+    HTTPRequest[
+     "https://api.github.com/repos/" <> owner <> "/" <> repo <> "/commits",
+     <|"Query" -> {"per_page" -> 100, "sha" -> First@Last@sha},
+      "Headers" -> {"Authorization" -> "token " <> accessToken}|>]];
+  bodyJ = ImportString[resp["Body"], "RawJSON"];
+  commits = 
+   Append[commits, {#["sha"], #["commit"]["author"]["date"]} & /@ 
+     bodyJ];
+  Return[commits[[1]]]
+  ]
+{% endraw %}
+{% endhighlight %}
+
+We then apply the function above *repeatedly* (via `FixedPointList`) and accumulate the results:
+
+{% highlight mathematica %}
+{% raw %}
+getAllCommitsWithDate[owner_, repo_, accessToken_] :=
+ Union@
+    Flatten[#, 1] &@
+  FixedPointList[
+   getNextCommitsWithDate[owner, repo, #, accessToken] &,
+   {{"master", ""}}]
+{% endraw %}
+{% endhighlight %}
+
+We sort the commits by their date:
+
+{% highlight mathematica %}
+{% raw %}
+sortedCommits =
+  DateString[#, {"Year", "-", "Month", "-", "Day", "T", "Time", "Z"}] & /@
+   Sort[
+    AbsoluteTime[
+       {#, {"Year", "-", "Month", "-", "Day", "T", "Time", "Z"}}] & /@
+     acs[[All, 2]]
+    ];
+{% endraw %}
+{% endhighlight %}
+
+Take their difference and plot the results:
+
+{% highlight mathematica %}
+{% raw %}
+dds = DateDifference[First@#, Last@#] & /@ Partition[sortedDates, 2, 1];
+
+Grid[{
+  #[{MovingAverage[dds, 7], MovingAverage[dds, 14]}, Joined -> True, 
+     InterpolationOrder -> 0, PlotRange -> All, Filling -> {1 -> Bottom, 2 -> None}, 
+     Frame -> {True, True, False, False}, PlotStyle -> {Automatic, Red}, 
+     FrameLabel -> {"Commit #", "Day passed since\nprevious commit"}, 
+     PlotLegends -> Placed[Style[#, 9] & /@ {"Weekly moving average", 
+         "Biweekly moving average"}, Below],
+     ImageSize -> Medium] & /@ {ListPlot, ListLogPlot}
+  }]
+{% endraw %}
+{% endhighlight %}
+
 <p align="center">
 <img style="width: 100%; height: 100%" src="{{ site.url }}/images/days_since_commit.png" alt="Github analytics commits">
 </p>
-
 
 ## GraphQL
 
