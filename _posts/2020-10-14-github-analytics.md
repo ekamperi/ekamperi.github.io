@@ -233,7 +233,7 @@ ListLogPlot[{#} & /@ (Transpose@{Range@Length@langs, res[[All, 2]]}),
 
 ### How to get the dates of the commits in a repository
 
-First, we create a function that given an SHA sum, it returns a list of {{commit, date}, ...}:
+First, we create a function that given an SHA sum, it returns a list of (commit, date) tuples.
 
 {% highlight mathematica %}
 {% raw %}
