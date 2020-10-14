@@ -89,7 +89,7 @@ Table[{i, rj[[i]]["name"]}, {i, 1, Length@rj}] // Dataset
 {% endhighlight %}
 
 <p align="center">
-<img style="width: 50%; height: 50%" src="{{ site.url }}/images/list_of_repos.png" alt="Github analytics commits">
+<img style="width: 25%; height: 25%" src="{{ site.url }}/images/list_of_repos.png" alt="Github analytics commits">
 </p>
 
 {% highlight mathematica %}
