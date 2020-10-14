@@ -130,16 +130,41 @@ Let's collect the data for all languages:
 
 {% highlight mathematica %}
 {% raw %}
-ass = <|# -> {} & /@ langs|>
+rv = getLanguages["ekamperi", #, accessToken] & /@ repoNames;
+allLangs = ImportString[#["Body"], "RawJSON"] & /@ rv
+(* {<|"Ruby" -> 9797, "CSS" -> 6146, 
+  "HTML" -> 2536|>, <||>, <|"Shell" -> 1729|>, <|"C++" -> 165097, 
+  "QMake" -> 2353, "Shell" -> 923|>, <||>, <|"Java" -> 291551, 
+  "Shell" -> 512|>, <|"Java" -> 347734|>, <|"HTML" -> 268483, 
+  "SCSS" -> 11094, "Shell" -> 1772|>, <|"C" -> 140177, 
+  "Makefile" -> 2994, "Shell" -> 1139|>, <||>, <|"TeX" -> 99290, 
+  "Shell" -> 60209, "C" -> 27165, "Perl" -> 20520, "Ruby" -> 3912, 
+  "ANTLR" -> 139, "Makefile" -> 116, 
+  "Awk" -> 88|>, <|"HTML" -> 3515565, "C" -> 489306, 
+  "Objective-C" -> 26289, "Makefile" -> 25493, "XSLT" -> 13518, 
+  "M4" -> 4315, "CSS" -> 3484, "Shell" -> 3050, 
+  "C++" -> 2240|>, <|"C" -> 696634, "Shell" -> 57585, 
+  "Makefile" -> 55266, "Python" -> 16551, "Ruby" -> 16327, 
+  "Perl" -> 4794|>, <|"Python" -> 6440911, "R" -> 28787, 
+  "CSS" -> 1800, "MATLAB" -> 1096|>, <|"TeX" -> 9885|>} *)
+{% endraw %}
+{% endhighlight %}
+
+Now we'd like to calculate the aggregate data:
+
+{% highlight mathematica %}
+{% raw %}
+langs = Union@Flatten[Keys /@ allLangs]
+assoc = <|# -> {} & /@ langs|>
 (* <|"ANTLR" -> {}, "Awk" -> {}, "C" -> {}, "C++" -> {}, "CSS" -> {}, 
  "HTML" -> {}, "Java" -> {}, "M4" -> {}, "Makefile" -> {}, 
  "MATLAB" -> {}, "Objective-C" -> {}, "Perl" -> {}, "Python" -> {}, 
  "QMake" -> {}, "R" -> {}, "Ruby" -> {}, "SCSS" -> {}, "Shell" -> {}, 
  "TeX" -> {}, "XSLT" -> {}|> *)
  
-f[key_, val_] := AppendTo[ass[key], val]
+f[key_, val_] := AppendTo[assoc[key], val]
 g[lang_, values_] := {lang, Total@values}
-res = KeyValueMap[g, ass]
+res = KeyValueMap[g, assoc]
 (* {{"ANTLR", 139}, {"Awk", 88}, {"C", 1353282}, {"C++", 167337}, {"CSS",
    11430}, {"HTML", 3786584}, {"Java", 639285}, {"M4", 
   4315}, {"Makefile", 83869}, {"MATLAB", 1096}, {"Objective-C", 
