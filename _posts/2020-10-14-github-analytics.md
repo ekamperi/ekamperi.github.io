@@ -92,6 +92,28 @@ Table[{i, rj[[i]]["name"]}, {i, 1, Length@rj}] // Dataset
 <img style="width: 25%; height: 25%" src="{{ site.url }}/images/list_of_repos.png" alt="Github analytics commits">
 </p>
 
+
+## How to get the size of each repository broken down by language
+
+{% highlight mathematica %}
+{% raw %}
+getLanguages[owner_, repo_, accessToken_] :=
+ URLRead[HTTPRequest[
+   "https://api.github.com/repos/" <> owner <> "/" <> repo <>  "/languages",
+   <|"Headers" -> {"Authorization" -> "token " <> accessToken}|>]]
+{% endraw %}
+{% endhighlight %}
+
+
+{% highlight mathematica %}
+{% raw %}
+lang = getLanguages["ekamperi", "rteval", accessToken]
+lang["Body"]
+(* "Python":6440911, "R":28787, "CSS":1800, "MATLAB":1096} *)
+{% endraw %}
+{% endhighlight %}
+
+
 {% highlight mathematica %}
 {% raw %}
 ass = <|# -> {} & /@ langs|>
