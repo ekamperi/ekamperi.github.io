@@ -13,7 +13,7 @@ tags: ['GitHub', 'GraphQL', 'git', 'JSON', 'Mathematica', 'Programming', 'REST A
 {:toc}
 
 ## Introduction
-Why *Mathematica* and not *Python*? Well, for starters, there is a not of examples in *Python*, so adding one more to the pile wouldn't make any difference. Plus, although I do program in *Python*, I don't enjoy it as much as I enjoy *Mathematica*. Also, *Jupyter* notebooks are nowhere near as polished as *Mathematica*'s.
+Why *Mathematica* and not *Python*? Well, for starters, there is a ton of examples in *Python*, so adding one more to the pile wouldn't make any difference. Plus, although I do program in *Python*, I don't enjoy it as much as I enjoy *Mathematica*. Also, *Jupyter* notebooks are nowhere near as polished as *Mathematica*'s.
 
 ### REST API
 REST API stands for "Representational State Transfer Application Programming Interface". In simple terms, it's a set of agreed rules on how to retrieve data when you connect to a specific URL. To make a REST API call, you need to know the following ingredients of such a request:
