@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Github analytics with Mathematica"
+title:  "GitHub analytics with Mathematica"
 date:   2020-10-14
 categories: [programming]
-tags: ['Github', 'GraphQL', 'git', 'JSON', 'Mathematica', 'Programming', 'REST API']
+tags: ['GitHub', 'GraphQL', 'git', 'JSON', 'Mathematica', 'Programming', 'REST API']
 ---
 
 ### Contents
@@ -13,23 +13,24 @@ tags: ['Github', 'GraphQL', 'git', 'JSON', 'Mathematica', 'Programming', 'REST A
 {:toc}
 
 ## Introduction
+Why *Mathematica* and not *Python*? Well, for starters, there is a not of examples in *Python*, so adding one more to the pile wouldn't make any difference. Plus, although I do program in *Python*, I don't enjoy it as much as I enjoy *Mathematica*. Also, *Jupyter* notebooks are nowhere near as polished as *Mathematica*'s.
+
 ### REST API
-REST API stands for "Representational State Transfer Application Programming Interface". In simple terms, it's a set of agreed rules on how to retrieve data when you link to a specific URL. To make a REST API call, you need to know the following ingredients of such a request:
+REST API stands for "Representational State Transfer Application Programming Interface". In simple terms, it's a set of agreed rules on how to retrieve data when you connect to a specific URL. To make a REST API call, you need to know the following ingredients of such a request:
 
 1. The **endpoint**, which is basically the URL you request for. For example, GitHub's endpoint is *https://api.github.com*.
-    + The **path** that determines the specific resource you are asking for. For example, in the URL *https://api.github.com/user/repos*, the endpoint is *https://api.github.com*, and the path is */user/repos*, which expresses our intention to have the user's repositories returned. When you read in a doc an expression like */repos/:owner/:repo/*, the *owner* and *repo* are variables. You need to replace them with the actual value of that variable. E.g., write */repos/ekamperi/rteval*, if you want the repository named *rteval* of the user *ekamperi*.
-    + **Query parameters**. Sometimes a request is accompanied by a list of parameters that modify the request. They always begin with a question mark "?" and each *parameter=value* pair is delimited by an ampersand "&". E.g., in */repos/ekamperi/rteval/commits&per_page=100&sha=master* we inform the server that we want 100 commits per page and we want the listing of commits to start from the *HEAD* of the *master* branch.
-2. The **method**, which defines the kind of request that we are submitting to the server. It may be one of *GET*, *POST*, *PUT*, *PATCH*, *DELETE*. They allow the following operations: *Create*, *Read*, *Update*, and *Delete* (the so called CRUD). In short, *GET* performs the READ operation (we ask the server to send us back some data). *POST* performs the CREATE operation (we ask the server to create a new resource in it). *PUT* and *PATCH* perform an UPDATE operation, and *DELETE*, well, you know what *DELETE* does.
-3. The **headers** are used to exchange metadata between client and server. For example, they are used to perform authentication or information regarding the body's content.
-4. The **data** or **body** hold the information that the client sends to the server, and it is used with *POST*, *PUT*, *PATCH*, and *DELETE* methods.
+    + The **path** that determines the specific resource you are asking for. For example, in the URL *https://api.github.com/user/repos*, the path is */user/repos*, which captures our intention to have the user's repositories returned. When you read in a doc an expression like */repos/:owner/:repo/*, the *owner* and *repo* are variables. You need to replace them with the actual value of that variable. E.g., write */repos/ekamperi/rteval*, if you are interested in the repository named *rteval* of the user *ekamperi*.
+    + **Query parameters**. Sometimes a request is accompanied by a list of parameters that modify the request. These always begin with a question mark "?" and each *parameter=value* pair is delimited by an ampersand "&". E.g., in */repos/ekamperi/rteval/commits&per_page=100&sha=master*, we inform the server that we want 100 commits to be returned, and we want the listing of commits to start from the *HEAD* of the *master* branch.
+2. The **method** defines the kind of request that we are submitting to the server. It may be one of *GET*, *POST*, *PUT*, *PATCH*, *DELETE*. They allow the following operations: *Create*, *Read*, *Update*, and *Delete* (the so-called CRUD). In short, *GET* performs the READ operation (we ask the server to send us back some data). *POST* performs the CREATE operation (we ask the server to create a new resource in it). *PUT* and *PATCH* perform an UPDATE operation, and *DELETE*, well, you know what *DELETE* does.
+3. The **headers** are used to exchange metadata between client and server. For example, they are used to perform authentication by injecting some authorization token into the HTTP header.
+4. The **data** or **body** hold the client's information to the server, and it is used with *POST*, *PUT*, *PATCH*, and *DELETE* methods.
 
-### Authorization
-In order to experiment with GitHub's REST API, we need to authenticate to the service. User-to-server requests are rate-limited at 5.000 requests per hour and per authenticated user. For unauthenticated requests, only up to 60 requests per hour per originating IP are allowed. The best way to proceed is to create a [personal access token (PAT)](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token), as an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line. Here is how you could authenticate via *curl*:
+### Authentication
+To experiment with GitHub's REST API, we need to authenticate to the service. User-to-server requests are rate-limited at 5.000 requests per hour and per authenticated user. However, for unauthenticated requests, only up to 60 requests per hour per originating IP are allowed. So, for any serious experimentation, authentication is a must. The best way to proceed is to create a [personal access token (PAT)](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token), as an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line. Here is how you could authenticate via *curl*:
 
 <p align="center">
 <img style="width: 100%; height: 100%" src="{{ site.url }}/images/github_cmd.png" alt="GitHub authenticate via curl">
 </p>
-
 
 ### A simple example of a REST API call
 {% highlight mathematica %}
@@ -114,7 +115,7 @@ ListPlot[First@#, FrameLabel -> {"Week #", Last@#}, Frame -> {True, True, False,
 {% endhighlight %}
 
 <p align="center">
-<img style="width: 100%; height: 100%" src="{{ site.url }}/images/weekly_commits.png" alt="Github weekly commits">
+<img style="width: 100%; height: 100%" src="{{ site.url }}/images/weekly_commits.png" alt="GitHub weekly commits">
 </p>
 
 ### How to get the list of repositories
@@ -142,7 +143,7 @@ Table[{i, rj[[i]]["name"]}, {i, 1, Length@rj}] // Dataset
 {% endhighlight %}
 
 <p align="center">
-<img style="width: 25%; height: 25%" src="{{ site.url }}/images/list_of_repos.png" alt="Github analytics commits">
+<img style="width: 25%; height: 25%" src="{{ site.url }}/images/list_of_repos.png" alt="GitHub analytics commits">
 </p>
 
 ### How to get the size of all repositories broken down by language
@@ -233,12 +234,12 @@ ListLogPlot[{#} & /@ (Transpose@{Range@Length@langs, res[[All, 2]]}),
 
 
 <p align="center">
-<img style="width: 100%; height: 100%" src="{{ site.url }}/images/languages.png" alt="Github analytics programming languages">
+<img style="width: 100%; height: 100%" src="{{ site.url }}/images/languages.png" alt="GitHub analytics programming languages">
 </p>
 
 ### How to get the dates of the commits in a repository
 
-First, we create a function that given an SHA sum, it returns a list of (commit, date) tuples.
+First, we create a function that, given an SHA sum, it returns a list of (commit, date) tuples.
 
 {% highlight mathematica %}
 {% raw %}
@@ -304,12 +305,12 @@ Grid[{
 {% endhighlight %}
 
 <p align="center">
-<img style="width: 100%; height: 100%" src="{{ site.url }}/images/days_since_commit.png" alt="Github analytics commits">
+<img style="width: 100%; height: 100%" src="{{ site.url }}/images/days_since_commit.png" alt="GitHub analytics commits">
 </p>
 
 ## GraphQL
 
-GraphQL is a data query and a manipulation language for APIs. Initially, it was developed by Facebook for internal use, and then release to public. GraphQL provides an approach to developing web APIs similar to REST, yet it is different from REST. Its difference is that it allows clients to describe the structure of the data required. Other features include a type system, a query language and type introspection.
+GraphQL is a data query and a manipulation language for APIs. Initially, it was developed by Facebook for internal use and then released to the public. GraphQL provides an approach to developing web APIs similar to REST, yet it is different from REST. Its difference is that it allows clients to describe the structure of the data required. Other features include a type system, a query language, and type introspection.
 
 {% highlight mathematica %}
 {% raw %}
