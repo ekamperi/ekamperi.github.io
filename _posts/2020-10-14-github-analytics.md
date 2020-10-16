@@ -310,7 +310,7 @@ Grid[{
 
 ## GraphQL
 
-GraphQL is a data query and a manipulation language for APIs. Initially, it was developed by Facebook for internal use and then released to the public. GraphQL provides an approach to developing web APIs similar to REST, yet it is different from REST. Its difference is that it allows clients to describe the structure of the data required. Other features include a type system, a query language, and type introspection.
+GraphQL is a data query and a manipulation language for APIs. Initially developed by Facebook for internal use was then released to the public. GraphQL provides an approach to developing web APIs similar to REST, yet it is different from REST. Its difference lies in that it allows clients to describe the structure of the data required. Other features include a type system, a query language, and type introspection. In GraphQL there is ony one endpoint, here https://api.github.com/graphql. The user submits a JSON formatted query describing what data exactly wants the server to return. For instance, in order to get the currently authenticated user, we need to issue a JSON query of the form `"query": "query { viewer { login } }"`. Note however that we must escape the **"**.
 
 {% highlight mathematica %}
 {% raw %}
@@ -332,3 +332,8 @@ res["Body"]
 (* {"data":{"viewer":{"login":"ekamperi"}}} *)
 {% endraw %}
 {% endhighlight %}
+
+<p align="center">
+<img style="width: 75%; height: 75%" src="{{ site.url }}/images/graphiql.png" alt="GraphiQL screenshot">
+</p>
+
