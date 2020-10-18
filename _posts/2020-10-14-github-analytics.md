@@ -13,7 +13,7 @@ tags: ['GitHub', 'GraphQL', 'git', 'JSON', 'Mathematica', 'Programming', 'REST A
 {:toc}
 
 ## Introduction
-Why *Mathematica* and not *Python*? Well, for starters, there is a ton of examples in *Python*, so adding one more to the pile wouldn't make any difference. Plus, although I do program in *Python*, I don't enjoy it as much as I enjoy *Mathematica*. Also, *Jupyter* notebooks are nowhere near as polished as *Mathematica*'s.
+Why *Mathematica* and not *Python*? Well, for starters, there is a ton of examples in *Python*, so adding one more to the pile wouldn't make any difference. Plus, although I do program in *Python*, I don't enjoy it as much as I enjoy *Mathematica*. Finally, *Jupyter* notebooks are nowhere near as polished as *Mathematica*'s.
 
 ### REST API
 REST API stands for "Representational State Transfer Application Programming Interface". In simple terms, it's a set of agreed rules on how to retrieve data when you connect to a specific URL. To make a REST API call, you need to know the following ingredients of such a request:
@@ -26,7 +26,7 @@ REST API stands for "Representational State Transfer Application Programming Int
 4. The **data** or **body** hold the client's information to the server, and it is used with *POST*, *PUT*, *PATCH*, and *DELETE* methods.
 
 ### Authentication
-To experiment with GitHub's REST API, we need to authenticate to the service. User-to-server requests are rate-limited at 5.000 requests per hour and per authenticated user. However, for unauthenticated requests, only up to 60 requests per hour per originating IP are allowed. So, for any serious experimentation, authentication is a must. The best way to proceed is to create a [personal access token (PAT)](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token), as an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line. Here is how you could authenticate via *curl*:
+To experiment with GitHub's REST API, we need to authenticate to the service. User-to-server requests are rate-limited at 5.000 requests per hour and per authenticated user. However, for unauthenticated requests, only up to 60 requests per hour per originating IP are allowed. So, for any serious experimentation, authentication is a must. The best way to proceed is to create a [personal access token (PAT)](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token), as an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line. Here is how you could authenticate via *curl*, by including the authorization token as an extra header to the HTTP request with the "-H" flag.
 
 <p align="center">
 <img style="width: 100%; height: 100%" src="{{ site.url }}/images/github_cmd.png" alt="GitHub authenticate via curl">
@@ -88,9 +88,7 @@ informatics). *)
 
 ## More involved examples
 ### How to get the weekly commit count
-We will issue a *GET /repos/:owner/:repo:/stats/participation* request, that returns the total commit
-counts for the owner and total commit counts in all (all is everyone combined, including the owner in the last 52 weeks). 
-The array order is oldest week (index 0) to most recent week.
+We will issue a *GET /repos/:owner/:repo:/stats/participation* request, that returns the total commit counts for the owner and total commit counts in all (all is everyone combined, including the owner in the last 52 weeks). The array order is the oldest week (index 0) to the most recent week.
 
 {% highlight mathematica %}
 {% raw %}
@@ -170,8 +168,7 @@ lang["Body"]
 {% endraw %}
 {% endhighlight %}
 
-So, the repository named *rteval* of the user *ekamperi* contains 6440911 bytes of Python, 28787 bytes of R, 1800 bytes of CSS and 1096 bytes of MATLAB code.
-Let's collect the data for all languages:
+So, the repository named *rteval* of the user *ekamperi* contains 6440911 bytes of Python, 28787 bytes of R, 1800 bytes of CSS and 1096 bytes of MATLAB code. Let's collect the data for all languages:
 
 {% highlight mathematica %}
 {% raw %}
@@ -231,7 +228,6 @@ ListLogPlot[{#} & /@ (Transpose@{Range@Length@langs, res[[All, 2]]}),
  AxesOrigin -> {0, 0}]  
 {% endraw %}
 {% endhighlight %}
-
 
 <p align="center">
 <img style="width: 100%; height: 100%" src="{{ site.url }}/images/languages.png" alt="GitHub analytics programming languages">
@@ -310,7 +306,13 @@ Grid[{
 
 ## GraphQL
 
-GraphQL is a data query and a manipulation language for APIs. Initially developed by Facebook for internal use was then released to the public. GraphQL provides an approach to developing web APIs similar to REST, yet it is different from REST. Its difference lies in that it allows clients to describe the structure of the data required. Other features include a type system, a query language, and type introspection. In GraphQL there is ony one endpoint, here https://api.github.com/graphql. The user submits a JSON formatted query describing what data exactly wants the server to return. For instance, in order to get the currently authenticated user, we need to issue a JSON query of the form `"query": "query { viewer { login } }"`. Note however that we must escape the **"**.
+GraphQL is a data query and a manipulation language for APIs. Initially developed by Facebook for internal use was then released to the public. GraphQL provides an approach to developing web APIs similar to REST, yet it is different from REST. Its difference lies in that it allows clients to describe the structure of the data required. Other features include a type system, a query language, and type introspection. In GraphQL, there is only one endpoint, here https://api.github.com/graphql. The user submits a JSON formatted query describing what data exactly wants the server to return. We can experiment with GraphiQL, a graphical user interface for submitting GraphQL requests and getting back the answers. For instance, to get the currently authenticated user, we need to issue the following JSON query:
+
+<p align="center">
+<img style="width: 75%; height: 75%" src="{{ site.url }}/images/graphiql.png" alt="GraphiQL screenshot">
+</p>
+
+Should you want to do the same thing programmatically, you'd have to escape the **"** by writing: `"query": "query { viewer { login } }"`:
 
 {% highlight mathematica %}
 {% raw %}
@@ -332,8 +334,3 @@ res["Body"]
 (* {"data":{"viewer":{"login":"ekamperi"}}} *)
 {% endraw %}
 {% endhighlight %}
-
-<p align="center">
-<img style="width: 75%; height: 75%" src="{{ site.url }}/images/graphiql.png" alt="GraphiQL screenshot">
-</p>
-
