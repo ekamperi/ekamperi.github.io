@@ -168,7 +168,7 @@ lang["Body"]
 {% endraw %}
 {% endhighlight %}
 
-So, the repository named *rteval* of the user *ekamperi* contains 6440911 bytes of Python, 28787 bytes of R, 1800 bytes of CSS and 1096 bytes of MATLAB code. Let's collect the data for all languages:
+So, the repository named *rteval* of the user *ekamperi* contains 6440911 bytes of *Python*, 28787 bytes of *R*, 1800 bytes of *CSS* and 1096 bytes of *MATLAB* code. Let's collect the data for all languages:
 
 {% highlight mathematica %}
 {% raw %}
@@ -306,7 +306,7 @@ Grid[{
 
 ## GraphQL
 
-GraphQL is a data query and a manipulation language for APIs. Initially developed by Facebook for internal use was then released to the public. GraphQL provides an approach to developing web APIs similar to REST, yet it is different from REST. Its difference lies in that it allows clients to describe the structure of the data required. Other features include a type system, a query language, and type introspection. In GraphQL, there is only one endpoint, here https://api.github.com/graphql. The user submits a JSON formatted query describing what data exactly wants the server to return. We can experiment with GraphiQL, a graphical user interface for submitting GraphQL requests and getting back the answers. For instance, to get the currently authenticated user, we need to issue the following JSON query:
+GraphQL is a data query and a manipulation language for APIs. Initially developed by Facebook for internal use was then released to the public. GraphQL provides an approach to developing web APIs similar to REST, yet it is different from REST. Its difference lies in that it allows clients to describe the structure of the data required. Other features include a type system, a query language, and type introspection. In GraphQL, there is only one endpoint, here *https://api.github.com/graphql*. The user submits a JSON formatted query describing what data exactly wants the server to return. We can experiment with GraphiQL, a graphical user interface for submitting GraphQL requests and getting back the answers. For instance, to get the currently authenticated user, we need to issue the following JSON query:
 
 <p align="center">
 <img style="width: 75%; height: 75%" src="{{ site.url }}/images/graphiql.png" alt="GraphiQL screenshot">
