@@ -6,6 +6,8 @@ categories: [mathematics]
 tags: ['machine learning', 'mathematics', 'optimization', 'statistics']
 ---
 
+Suppose that we have $$\mathbf{x}_1,\mathbf{x}_2,…,\mathbf{x}_n$$ centered points in $$m$$ dimensional space. Let $$q$$ denote the unit vector along which we project our $$\mathbf{x}$$'s. The length of the projection $$y_i$$ of $$\mathbf{x}_i$$ is $$y_i = x_i^⊤ q$$. The mean squared projection is the variance $$V$$ summed over all points $$\mathbf{x}_i$$:
+
 $$
 y_i = \mathbf{x}_i^T \mathbf{q}
 $$
@@ -42,10 +44,10 @@ $$
 $$
 
 <p align="center">
-<img style="width: 100%; height: 60%" src="{{ site.url }}/images/pca_many_vecs.png" alt="Principal component analysis">
+<img style="width: 100%; height: 40%" src="{{ site.url }}/images/pca_many_vecs.png" alt="Principal component analysis">
 </p>
 
 <p align="center">
-<img style="width: 100%; height: 60%" src="{{ site.url }}/images/pca_single_vec.png" alt="Principal component analysis">
+<img style="width: 100%; height: 40%" src="{{ site.url }}/images/pca_single_vec.png" alt="Principal component analysis">
 </p>
 
