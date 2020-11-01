@@ -40,3 +40,12 @@ $$
 $$
 \frac{\partial \mathcal{L}}{\partial \lambda}
 $$
+
+<p align="center">
+<img style="width: 100%; height: 100%" src="{{ site.url }}/images/pca_many_vecs.png" alt="Principal component analysis">
+</p>
+
+<p align="center">
+<img style="width: 100%; height: 100%" src="{{ site.url }}/images/pca_single_vec.png" alt="Principal component analysis">
+</p>
+
