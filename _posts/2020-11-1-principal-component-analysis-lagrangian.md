@@ -6,11 +6,7 @@ categories: [mathematics]
 tags: ['machine learning', 'mathematics', 'optimization', 'statistics']
 ---
 
-Suppose that we have $$\mathbf{x}_1,\mathbf{x}_2,…,\mathbf{x}_n$$ centered points in $$m$$ dimensional space. Let $$q$$ denote the unit vector along which we project our $$\mathbf{x}$$'s. The length of the projection $$y_i$$ of $$\mathbf{x}_i$$ is $$y_i = x_i^⊤ q$$. The mean squared projection is the variance $$V$$ summed over all points $$\mathbf{x}_i$$:
-
-$$
-y_i = \mathbf{x}_i^T \mathbf{q}
-$$
+Suppose that we have $$\mathbf{x}_1,\mathbf{x}_2,…,\mathbf{x}_n$$ centered points in $$m$$ dimensional space. Let $$q$$ denote the unit vector along which we project our $$\mathbf{x}$$'s. The length of the projection $$y_i$$ of $$\mathbf{x}_i$$ is $$y_i = x_i^⊤ mathbf{q}$$. The mean squared projection is the variance $$V$$ summed over all points $$\mathbf{x}_i$$:
 
 $$
 \begin{align*}
