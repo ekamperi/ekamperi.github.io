@@ -21,7 +21,7 @@ Var &= \frac{1}{n} \sum_{i=1}^n y_i^2 = \frac{1}{n}\sum_{i=1}^n\left(\mathbf{x}_
 \end{align*}
 $$
 
-Maximize Variance $Var$ subject to the constraint $\|\mathbf{q}\|=1$:
+Maximize Variance $$Var$$ subject to the constraint $$\|\mathbf{q}\|=1$$:
 
 $$
 \mathcal{L}(\mathbf{x},\lambda) = f(\mathbf{x})+\lambda(g(\mathbf{x})-c)
@@ -44,10 +44,10 @@ $$
 $$
 
 <p align="center">
-<img style="width: 100%; height: 40%" src="{{ site.url }}/images/pca_many_vecs.png" alt="Principal component analysis">
+<img style="width: 100%; height: 30%" src="{{ site.url }}/images/pca_many_vecs.png" alt="Principal component analysis">
 </p>
 
 <p align="center">
-<img style="width: 100%; height: 40%" src="{{ site.url }}/images/pca_single_vec.png" alt="Principal component analysis">
+<img style="width: 100%; height: 30%" src="{{ site.url }}/images/pca_single_vec.png" alt="Principal component analysis">
 </p>
 
