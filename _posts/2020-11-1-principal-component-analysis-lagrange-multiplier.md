@@ -3,7 +3,7 @@ layout: post
 title:  "Principal component analysis with Lagrange multiplier"
 date:   2020-11-01 20:47:56 +0000
 categories: [mathematics]
-tags: ['machine learning', 'Lagrange multiplier', 'mathematics', 'optimization', 'statistics']
+tags: ['Lagrange multiplier', 'machine learning', 'mathematics', 'optimization', 'statistics']
 ---
 
 ## The motivation
@@ -18,18 +18,18 @@ This transformation of data from a high-dimensional space into a low-dimensional
 </p>
 
 ## The formulation
-Suppose that we have $$\mathbf{x}_1,\mathbf{x}_2,…,\mathbf{x}_n$$ centered points in $$m$$ dimensional space. Let $$\mathbf{q}$$ denote the unit vector along which we project our $$\mathbf{x}$$'s. The length of the projection $$y_i$$ of $$\mathbf{x}_i$$ is $$y_i = \mathbf{x}_i^⊤ \mathbf{q}$$. The mean squared projection is the variance $$V$$ summed over all points $$\mathbf{x}_i$$:
+Suppose that we have $$\mathbf{x}_1,\mathbf{x}_2,…,\mathbf{x}_n$$ centered points in $$m$$ dimensional space. Let $$\mathbf{v}$$ denote the unit vector along which we project our $$\mathbf{x}$$'s. The length of the projection $$y_i$$ of $$\mathbf{x}_i$$ is $$y_i = \mathbf{x}_i^⊤ \mathbf{v}$$. The mean squared projection is the variance $$V$$ summed over all points $$\mathbf{x}_i$$:
 
 $$
 \begin{align*}
-Var &= \frac{1}{n} \sum_{i=1}^n y_i^2 = \frac{1}{n}\sum_{i=1}^n\left(\mathbf{x}_i^⊤ \mathbf{q}\right)^2\\ 
-&=\frac{1}{n}\sum_{i=1} \mathbf{x}_i^⊤ \mathbf{q} \cdot\mathbf{x}_i^⊤ \mathbf{q} = 
-\frac{1}{n}\sum_{i=1} \mathbf{q}^⊤ \mathbf{x}_i \cdot\mathbf{x}_i^⊤ \mathbf{q}\\
-&= \mathbf{q}^⊤ \underbrace{\left(\frac{1}{n}\sum_{i=1}^n \mathbf{x}_i \mathbf{x}_i^⊤\right)}_{\text{Covariance matrix}}\mathbf{q} = \mathbf{q}^⊤ C \mathbf{q}
+Var &= \frac{1}{n} \sum_{i=1}^n y_i^2 = \frac{1}{n}\sum_{i=1}^n\left(\mathbf{x}_i^⊤ \mathbf{v}\right)^2\\ 
+&=\frac{1}{n}\sum_{i=1} \mathbf{x}_i^⊤ \mathbf{v} \cdot\mathbf{x}_i^⊤ \mathbf{v} = 
+\frac{1}{n}\sum_{i=1} \mathbf{v}^⊤ \mathbf{x}_i \cdot\mathbf{x}_i^⊤ \mathbf{v}\\
+&= \mathbf{v}^⊤ \underbrace{\left(\frac{1}{n}\sum_{i=1}^n \mathbf{x}_i \mathbf{x}_i^⊤\right)}_{\text{Covariance matrix}}\mathbf{v} = \mathbf{v}^⊤ C \mathbf{v}
 \end{align*}
 $$
 
-Our objective is to maximize Variance $$Var$$ subject to the constraint $$\|\mathbf{q}\|=1$$. Such problems of constrained optimization might be reformulated as unconstrained optimization problems via the use of Lagrangian multipliers. If we'd like to maximize $$f(\mathbf{x})$$ subject to $$g(\mathbf{x})=c$$, we introduce the Lagrange multiplier $$\lambda$$ and construct the Lagrangian $$\mathcal{L}(\mathbf{x},\lambda)$$:
+Our objective is to maximize Variance $$Var$$ subject to the constraint $$\|\mathbf{v}\|=1$$. Such problems of constrained optimization might be reformulated as unconstrained optimization problems via the use of Lagrangian multipliers. If we'd like to maximize $$f(\mathbf{x})$$ subject to $$g(\mathbf{x})=c$$, we introduce the Lagrange multiplier $$\lambda$$ and construct the Lagrangian $$\mathcal{L}(\mathbf{x},\lambda)$$:
 
 $$
 \mathcal{L}(\mathbf{x},\lambda) = f(\mathbf{x})+\lambda(g(\mathbf{x})-c)
@@ -41,27 +41,27 @@ $$
 \frac{\partial\mathcal{L} (\mathbf{x}, \lambda)}{\partial \mathbf{x}} = 0, \, \frac{\partial \mathcal{L}(\mathbf{x}, \lambda)}{\partial \lambda} = 0
 $$
 
-In our case, we want to maximize Variance $$V$$ subject to the constraint $$\|\mathbf{q}\|=1$$. Our Lagrangian is:
+In our case, we want to maximize Variance $$V$$ subject to the constraint $$\|\mathbf{v}\|=1$$. Our Lagrangian is:
 
 $$
-\mathcal{L}(\mathbf{q},\lambda) = \mathbf{q}^⊤ C \mathbf{q} +\lambda(\mathbf{q}^⊤ \mathbf{q}-1)
+\mathcal{L}(\mathbf{v},\lambda) = \mathbf{v}^⊤ C \mathbf{v} +\lambda(\mathbf{v}^⊤ \mathbf{v}-1)
 $$
 
 We solve for the stationary points:
 
 $$
-\frac{\partial \mathcal{L}}{\partial \mathbf{q}} = 2\mathbf{q}^⊤ \mathbf{C} \mathbf{q} - \lambda\left(\mathbf{q}^⊤\mathbf{q} - 1\right) = 0
+\frac{\partial \mathcal{L}}{\partial \mathbf{v}} = 2\mathbf{v}^⊤ \mathbf{C} \mathbf{v} - \lambda\left(\mathbf{v}^⊤\mathbf{v} - 1\right) = 0
 $$
 
 $$
-\frac{\partial \mathcal{L}}{\partial \lambda} = \mathbf{q}^⊤ \mathbf{q} - 1 = 0
+\frac{\partial \mathcal{L}}{\partial \lambda} = \mathbf{v}^⊤ \mathbf{v} - 1 = 0
 $$
 
 
 $$
 C \mathbf{v} = \lambda \mathbf{v}
 $$
-We drew various candidate vectors $$\mathbf{q}$$ pointing into different directions in the following image. Which is the one vector $$\mathbf{q}$$ that when our 2D data points are projected on the line it defines, their variance is maximized? I.e., they are as much spread out as possible?
+We drew various candidate vectors $$\mathbf{v}$$ pointing into different directions in the following image. Which is the one vector $$\mathbf{v}$$ that when our 2D data points are projected on the line it defines, their variance is maximized? I.e., they are as much spread out as possible?
 
 <p align="center">
 <img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_many_vecs.png" alt="Principal component analysis">
