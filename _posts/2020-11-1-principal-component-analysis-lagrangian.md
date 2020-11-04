@@ -7,7 +7,7 @@ tags: ['machine learning', 'mathematics', 'optimization', 'statistics']
 ---
 
 ## The motivation
-We often come up with datasets consisting of many variables because our ability to measure things has improved significantly over the years. The ultmate goal though it to distill meaning, knowledge, and insights out of the data. In this context, many of the variables might be correlated with each other, allowing us to exploit their relations and reduce their number needed to describe the data. In the following plots, we see a set of data points that span the whole 3D space uniformly in the first row. In this case, there are no correlations between the $$x,y,z$$ variables to exploit. Hence, we could not possibly compress our description of the dataset and get away using only two variables. However, in the second row, we see a set of points that are lying, more or less, on a plane. In this case, we could use just two variables and still locate the points in the 3D space without losing much accuracy. The intrinsic dimension of our data is the plane, not the 3D space. This transformation of data from a high-dimensional space into a low-dimensional one, which preserves some essential qualities of the original data, is the so-called **dimensionality reduction**. Working with fewer dimensions has many advantages, such as being able to create visualizations in 2 or 3 dimensions, that we are comfortably with.
+We often come up with datasets consisting of many variables because our ability to measure things has improved significantly over the years. The ultimate goal, though, is to distill meaning, knowledge, and insights out of the data. In this context, many of the variables might be correlated with each other, allowing us to exploit their relations and reduce their number needed to describe the data. In the following plots, we see a set of data points that span the whole 3D space uniformly in the first row. In this case, there are no correlations between the $$x,y,z$$ variables to exploit. Hence, we could not possibly compress our description of the dataset and get away using only two variables. However, in the second row, we see a set of points that are lying, more or less, on a plane. In this case, we could use just two variables and still locate the points in the 3D space without losing much accuracy. The intrinsic dimension of our data is the plane, not the 3D space. This transformation of data from a high-dimensional space into a low-dimensional one, which preserves some essential qualities of the original data, is the so-called **dimensionality reduction**. Working with fewer dimensions has many advantages, such as being able to create visualizations in 2 or 3 dimensions that we are comfortable to work with.
 
 <p align="center">
 <img style="width: 100%; height: 100%" src="{{ site.url }}/images/pca_motivation.png" alt="Principal component analysis">
@@ -25,7 +25,7 @@ Var &= \frac{1}{n} \sum_{i=1}^n y_i^2 = \frac{1}{n}\sum_{i=1}^n\left(\mathbf{x}_
 \end{align*}
 $$
 
-Our objective is to maximize Variance $$Var$$ subject to the constraint $$\|\mathbf{q}\|=1$$. Such problems of constrained optimization might be reformulated as problems of unconstrained optimization via the use of Lagrangian multipliers.
+Our objective is to maximize Variance $$Var$$ subject to the constraint $$\|\mathbf{q}\|=1$$. Such problems of constrained optimization might be reformulated as unconstrained optimization problems via the use of Lagrangian multipliers.
 
 $$
 \mathcal{L}(\mathbf{x},\lambda) = f(\mathbf{x})+\lambda(g(\mathbf{x})-c)
