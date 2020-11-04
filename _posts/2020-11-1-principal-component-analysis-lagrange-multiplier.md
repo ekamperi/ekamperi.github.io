@@ -11,7 +11,7 @@ We often come up with datasets consisting of many variables because our ability 
 
 In the following plots, we see a set of data points that span the whole 3D space uniformly in the first row. In this case, there are no correlations between the $$x,y,z$$ variables to exploit. Hence, we could not possibly compress our description of the dataset and get away using only two variables. However, in the second row, we see a set of points that are lying, more or less, on a plane. In this case, we could use just two variables and still locate the points in the 3D space without losing much accuracy. The intrinsic dimension of our data is the plane, not the 3D space.
 
-This transformation of data from a high-dimensional space into a low-dimensional one, which preserves some essential qualities of the original data, is the so-called **[dimensionality reduction]**(https://en.wikipedia.org/wiki/Dimensionality_reduction). Working with fewer dimensions has many advantages, such as being able to create visualizations in 2 or 3 dimensions that we are comfortable to work with.
+This transformation of data from a high-dimensional space into a low-dimensional one, which preserves some essential qualities of the original data, is the so-called [**dimensionality reduction**](https://en.wikipedia.org/wiki/Dimensionality_reduction). Working with fewer dimensions has many advantages, such as being able to create visualizations in 2 or 3 dimensions that we are comfortable to work with.
 
 <p align="center">
 <img style="width: 100%; height: 100%" src="{{ site.url }}/images/pca_motivation.png" alt="Principal component analysis">
