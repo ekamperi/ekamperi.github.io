@@ -7,8 +7,10 @@ tags: ['machine learning', 'mathematics', 'optimization', 'statistics']
 ---
 
 ## The motivation
+Quite often we come up with datasets consisting of many variables. But since many variables might be correlated with each other, we may exploit this and reduce the number of variables that are needed to describe our data. In the following plots, in the first row, we see a set of data points that span the whole 3D space uniformly. In this case, there are no correlations between the $x,y,z$ variables to exploit. However, in the second row, we see a set of points that are lying, more or less, on a plane. In this case, we could use 2 variables and still be able to locate them without losing much accuracy.
+
 <p align="center">
-<img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_motivation.png" alt="Principal component analysis">
+<img style="width: 100%; height: 100%" src="{{ site.url }}/images/pca_motivation.png" alt="Principal component analysis">
 </p>
 
 Suppose that we have $$\mathbf{x}_1,\mathbf{x}_2,…,\mathbf{x}_n$$ centered points in $$m$$ dimensional space. Let $$q$$ denote the unit vector along which we project our $$\mathbf{x}$$'s. The length of the projection $$y_i$$ of $$\mathbf{x}_i$$ is $$y_i = x_i^⊤ mathbf{q}$$. The mean squared projection is the variance $$V$$ summed over all points $$\mathbf{x}_i$$:
