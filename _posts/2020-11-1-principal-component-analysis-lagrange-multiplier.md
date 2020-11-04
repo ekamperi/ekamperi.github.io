@@ -51,7 +51,7 @@ We solve for the stationary points:
 
 $$
 \begin{align*}
-\frac{\partial \mathcal{L}}{\partial \mathbf{v}} &= 2\mathbf{v}^⊤ \mathbf{C} \mathbf{v} - \lambda\left(\mathbf{v}^⊤\mathbf{v} - 1\right) = 0\\
+\frac{\partial \mathcal{L}}{\partial \mathbf{v}} &= 2\mathbf{v}^⊤ \mathbf{C} \mathbf{v} - 2\lambda v^⊤ = 0\\
 \frac{\partial \mathcal{L}}{\partial \lambda} &= \mathbf{v}^⊤ \mathbf{v} - 1 = 0
 \end{align*}
 $$
