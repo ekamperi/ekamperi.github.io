@@ -41,7 +41,7 @@ $$
 \left\{\frac{\partial\mathcal{L} (\mathbf{x}, \lambda)}{\partial \mathbf{x}} = 0, \, \frac{\partial \mathcal{L}(\mathbf{x}, \lambda)}{\partial \lambda} = 0\right\}
 $$
 
-In our case, we want to maximize Variance $$V$$ subject to the constraint $$\|\mathbf{v}\|=1 \Leftrightarrow \mathbf{v}^T\mathbf{v} = 1$$. Our Lagrangian is:
+In our case, we want to maximize Variance $$V$$ subject to the constraint $$\|\mathbf{v}\|=1 \Leftrightarrow \mathbf{v}^⊤\mathbf{v} = 1$$. Our Lagrangian is:
 
 $$
 \mathcal{L}(\mathbf{v},\lambda) = \mathbf{v}^⊤ C \mathbf{v} +\lambda(\mathbf{v}^⊤ \mathbf{v}-1)
