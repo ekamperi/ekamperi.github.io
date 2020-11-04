@@ -6,6 +6,11 @@ categories: [mathematics]
 tags: ['machine learning', 'mathematics', 'optimization', 'statistics']
 ---
 
+## The motivation
+<p align="center">
+<img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_motivation.png" alt="Principal component analysis">
+</p>
+
 Suppose that we have $$\mathbf{x}_1,\mathbf{x}_2,…,\mathbf{x}_n$$ centered points in $$m$$ dimensional space. Let $$q$$ denote the unit vector along which we project our $$\mathbf{x}$$'s. The length of the projection $$y_i$$ of $$\mathbf{x}_i$$ is $$y_i = x_i^⊤ mathbf{q}$$. The mean squared projection is the variance $$V$$ summed over all points $$\mathbf{x}_i$$:
 
 $$
