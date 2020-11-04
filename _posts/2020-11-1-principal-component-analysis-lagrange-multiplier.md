@@ -32,7 +32,7 @@ $$
 Our objective is to maximize Variance $$Var$$ subject to the constraint $$\|\mathbf{v}\|=1$$. Such problems of constrained optimization might be reformulated as unconstrained optimization problems via the use of [Lagrangian multipliers](https://en.wikipedia.org/wiki/Lagrange_multiplier). If we'd like to maximize $$f(\mathbf{x})$$ subject to $$g(\mathbf{x})=c$$, we introduce the Lagrange multiplier $$\lambda$$ and construct the Lagrangian $$\mathcal{L}(\mathbf{x},\lambda)$$:
 
 $$
-\mathcal{L}(\mathbf{x},\lambda) = f(\mathbf{x})+\lambda(g(\mathbf{x})-c)
+\mathcal{L}(\mathbf{x},\lambda) = f(\mathbf{x}) - \lambda(g(\mathbf{x})-c)
 $$
 
 The sign of $$\lambda$$ doesn't make any difference. We then solve the system of equations:
@@ -44,7 +44,7 @@ $$
 In our case, we want to maximize Variance $$V$$ subject to the constraint $$\|\mathbf{v}\|=1 \Leftrightarrow \mathbf{v}^⊤\mathbf{v} = 1$$. Our Lagrangian is:
 
 $$
-\mathcal{L}(\mathbf{v},\lambda) = \mathbf{v}^⊤ C \mathbf{v} +\lambda(\mathbf{v}^⊤ \mathbf{v}-1)
+\mathcal{L}(\mathbf{v},\lambda) = \mathbf{v}^⊤ C \mathbf{v} - \lambda(\mathbf{v}^⊤ \mathbf{v}-1)
 $$
 
 We solve for the stationary points:
