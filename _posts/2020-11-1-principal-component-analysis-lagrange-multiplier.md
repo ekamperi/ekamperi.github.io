@@ -41,20 +41,26 @@ $$
 \frac{\partial\mathcal{L} (\mathbf{x}, \lambda)}{\partial \mathbf{x}} = 0, \, \frac{\partial \mathcal{L}(\mathbf{x}, \lambda)}{\partial \lambda} = 0
 $$
 
-Maximize Variance $$Var$$ subject to the constraint $$\|\mathbf{q}\|=1$$:
+In our case, we want to maximize Variance $$V$$ subject to the constraint $$\|\mathbf{q}\|=1$$. Our Lagrangian is:
 
 $$
 \mathcal{L}(\mathbf{q},\lambda) = \mathbf{q}^⊤ C \mathbf{q} +\lambda(\mathbf{q}^⊤ \mathbf{q}-1)
 $$
 
+We solve for the stationary points:
+
 $$
-\frac{\partial \mathcal{L}}{\partial \mathbf{q}} = 2\mathbf{q}^⊤ \mathbf{C} \mathbf{q} - \lambda\left(\mathbf{q}^⊤\mathbf{q} - 1\right)
+\frac{\partial \mathcal{L}}{\partial \mathbf{q}} = 2\mathbf{q}^⊤ \mathbf{C} \mathbf{q} - \lambda\left(\mathbf{q}^⊤\mathbf{q} - 1\right) = 0
 $$
 
 $$
-\frac{\partial \mathcal{L}}{\partial \lambda}
+\frac{\partial \mathcal{L}}{\partial \lambda} = \mathbf{q}^⊤ \mathbf{q} - 1 = 0
 $$
 
+
+$$
+C \mathbf{v} = \lambda \mathbf{v}
+$$
 We drew various candidate vectors $$\mathbf{q}$$ pointing into different directions in the following image. Which is the one vector $$\mathbf{q}$$ that when our 2D data points are projected on the line it defines, their variance is maximized? I.e., they are as much spread out as possible?
 
 <p align="center">
