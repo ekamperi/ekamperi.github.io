@@ -41,7 +41,7 @@ $$
 \left\{\frac{\partial\mathcal{L} (\mathbf{x}, \lambda)}{\partial \mathbf{x}} = 0, \, \frac{\partial \mathcal{L}(\mathbf{x}, \lambda)}{\partial \lambda} = 0\right\}
 $$
 
-In our case, we want to maximize Variance $$V$$ subject to the constraint $$\|\mathbf{v}\|=1$$. Our Lagrangian is:
+In our case, we want to maximize Variance $$V$$ subject to the constraint $$\|\mathbf{v}\|=1 \Leftrightarrow \mathbf{v}^T\mathbf{v} = 1$$. Our Lagrangian is:
 
 $$
 \mathcal{L}(\mathbf{v},\lambda) = \mathbf{v}^⊤ C \mathbf{v} +\lambda(\mathbf{v}^⊤ \mathbf{v}-1)
@@ -60,6 +60,7 @@ $$
 $$
 C \mathbf{v} = \lambda \mathbf{v}
 $$
+
 We drew various candidate vectors $$\mathbf{v}$$ pointing into different directions in the following image. Which is the one vector $$\mathbf{v}$$ that when our 2D data points are projected on the line it defines, their variance is maximized? I.e., they are as much spread out as possible?
 
 <p align="center">
