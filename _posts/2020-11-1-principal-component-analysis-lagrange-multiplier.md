@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Principal component analysis with lagrangian multiplier"
+title:  "Principal component analysis with Lagrange multiplier"
 date:   2020-11-01 20:47:56 +0000
 categories: [mathematics]
-tags: ['machine learning', 'mathematics', 'optimization', 'statistics']
+tags: ['machine learning', 'Lagrange multiplier', 'mathematics', 'optimization', 'statistics']
 ---
 
 ## The motivation
