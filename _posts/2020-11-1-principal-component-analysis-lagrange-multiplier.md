@@ -77,6 +77,13 @@ Let us play with the simplest possible scenario, where we have two variables, $$
 <img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_many_vecs.png" alt="Principal component analysis">
 </p>
 
+
+If we plot the variance as a function of angle of $$v$$ with the $$x$$ axis, we get the following:
+
+<p align="center">
+<img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_variance_vs_angle.png" alt="Principal component analysis">
+</p>
+
 In the following image, we see the values of variance $$V$$ as a function of the angle of vector $$v$$ and the $$x$$ axis.
 
 <p align="center">
