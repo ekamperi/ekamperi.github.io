@@ -7,7 +7,7 @@ tags: ['Lagrange multiplier', 'machine learning', 'mathematics', 'optimization',
 ---
 
 ## The motivation
-We often come up with datasets consisting of many variables because our ability to measure things has improved significantly over the years. The ultimate goal, though, is to distill meaning, knowledge, and insights out of the data. In this context, many of the variables might be correlated with each other, allowing us to exploit their relations and reduce their number needed to describe the data. We do so by constructing new variables, called principal components, that are linear combinations of the original ones.
+We often come up with datasets consisting of many variables because our ability to measure things has improved significantly over the years. The ultimate goal, though, is to distill meaning, knowledge, and insights out of the data. In this context, we seek for variables that are linearly correlated with each other, to exploit their relations and reduce their number needed to describe the data. We do so by constructing new variables, called *principal components*, that are linear combinations of the original ones.
 
 In the following plots, we see a set of data points that span the whole 3D space uniformly in the first row. In this case, there are no correlations between the $$x,y,z$$ variables to exploit. Hence, we could not possibly compress our description of the dataset and get away using only two variables. However, in the second row, we see a set of points that are lying, more or less, on a plane. In this case, we could use just two variables and still locate the points in the 3D space without losing much accuracy. The intrinsic dimension of our data is the plane, not the 3D space.
 
@@ -37,7 +37,7 @@ $$
 
 Where $$m$$ is the mean of $$\mathbf{x}_i, i = 1,2,\ldots,n$$. Which is why we asked for the variables $$\mathbf{x}_i$$ to be centered. So that $$m=0$$ and the formula for covariance simplifies to $$C = \frac{1}{n} \sum_{i=1}^n \mathbf{x}_i \mathbf{x}_i^T$$.
 
-Our objective is to maximize Variance $$Var$$ subject to the constraint $$\|\mathbf{v}\|=1$$. Such problems of constrained optimization might be reformulated as unconstrained optimization problems via the use of [Lagrangian multipliers](https://en.wikipedia.org/wiki/Lagrange_multiplier). If we'd like to maximize $$f(\mathbf{x})$$ subject to $$g(\mathbf{x})=c$$, we introduce the Lagrange multiplier $$\lambda$$ and construct the Lagrangian $$\mathcal{L}(\mathbf{x},\lambda)$$:
+Our objective is to maximize Variance $$Var$$ subject to the constraint $$\|\mathbf{v}\|=1$$. Such problems of constrained optimization might be reformulated as unconstrained optimization problems via the use of [**Lagrangian multipliers**](https://en.wikipedia.org/wiki/Lagrange_multiplier). If we'd like to maximize $$f(\mathbf{x})$$ subject to $$g(\mathbf{x})=c$$, we introduce the Lagrange multiplier $$\lambda$$ and construct the Lagrangian $$\mathcal{L}(\mathbf{x},\lambda)$$:
 
 $$
 \mathcal{L}(\mathbf{x},\lambda) = f(\mathbf{x}) - \lambda(g(\mathbf{x})-c)
