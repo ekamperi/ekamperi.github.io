@@ -90,7 +90,7 @@ If we plot the variance as a function of angle of $$\mathbf{v}$$ with the $$x$$ 
 <img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_variance_vs_angle.png" alt="Principal component analysis">
 </p>
 
-In the image above, we see the values of variance $$V$$ as a function of the angle of vector $$v$$ and the $$x$$ axis. $$V$$ reaches a maximum when the vector aligns with the elongated axis of the data. Then it is reduced until it reaches a minimum when the vector orientates vertically to the elongated axis. In total, two vectors maximize variance, and they are opposite to each other. But the sign of $$\mathbf{v}$$ doesn't really matter. 
+In the image above, we see that $$V$$ reaches a maximum when the vector aligns with the data's elongated axis. Then it is reduced until it reaches a minimum when the vector orientates vertically to the elongated axis. In total, two vectors maximize variance, and they are opposite to each other. But the sign of $$\mathbf{v}$$ doesn't really matter. 
 
 <p align="center">
 <img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_single_vec.png" alt="Principal component analysis">
