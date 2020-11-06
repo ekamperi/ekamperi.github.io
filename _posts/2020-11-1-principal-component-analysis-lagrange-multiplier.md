@@ -89,7 +89,7 @@ If we plot the variance as a function of angle of $$\mathbf{v}$$ with the $$x$$ 
 <img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_variance_vs_angle.png" alt="Principal component analysis">
 </p>
 
-In the image above, we see that $$V$$ reaches a maximum when the vector aligns with the data's elongated axis. Then it is reduced until it reaches a minimum when the vector orientates vertically to the elongated axis. In total, two vectors maximize variance, and they are opposite to each other. But the sign of $$\mathbf{v}$$ doesn't really matter. 
+In the image above, we see that $$V$$ reaches a maximum when the vector aligns with the data's elongated axis. Then it is reduced until it reaches a minimum when the vector orientates vertically to the elongated axis. In total, two vectors maximize variance, and they are opposite to each other, but the sign of $$\mathbf{v}$$ doesn't really matter. 
 
 <p align="center">
 <img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_single_vec.png" alt="Principal component analysis">
@@ -110,5 +110,14 @@ varvs = var /@ vs;
 maxpos = Ordering[varvs, -1][[1]];
 vs[[maxpos]]
 (*{-0.707107,-0.707107}*)
+{% endraw %}
+{% endhighlight %}
+
+You could also solve the eigenvector equation $$C\mathbf{v} = \lambda\mathbf{v}$$:
+
+{% highlight mathematica %}
+{% raw %}
+Eigenvectors[Correlation[pts]][[1]]
+(* {0.707107, 0.707107} *)
 {% endraw %}
 {% endhighlight %}
