@@ -24,11 +24,11 @@ Suppose that we have $$\mathbf{x}_1,\mathbf{x}_2,…,\mathbf{x}_n$$ centered poi
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/pca_variance_intro.png" alt="Principal component analysis">
 </p>
 
-The mean squared projection is the variance $$V$$ summed over all points $$\mathbf{x}_i$$:
+The mean squared projections summed over all points $$\mathbf{x}_i$$ is the variance $$V$$:
 
 $$
 \begin{align*}
-Var &= \frac{1}{n} \sum_{i=1}^n y_i^2 = \frac{1}{n}\sum_{i=1}^n\left(\mathbf{x}_i^⊤ \mathbf{v}\right)^2\\ 
+V &= \frac{1}{n} \sum_{i=1}^n y_i^2 = \frac{1}{n}\sum_{i=1}^n\left(\mathbf{x}_i^⊤ \mathbf{v}\right)^2\\ 
 &=\frac{1}{n}\sum_{i=1} \mathbf{x}_i^⊤ \mathbf{v} \cdot\mathbf{x}_i^⊤ \mathbf{v} = 
 \frac{1}{n}\sum_{i=1} \mathbf{v}^⊤ \mathbf{x}_i \cdot\mathbf{x}_i^⊤ \mathbf{v}\\
 &= \mathbf{v}^⊤ \underbrace{\left(\frac{1}{n}\sum_{i=1}^n \mathbf{x}_i \mathbf{x}_i^⊤\right)}_{\text{Covariance matrix}}\mathbf{v} = \mathbf{v}^⊤ C \mathbf{v}
@@ -38,12 +38,12 @@ $$
 Mind that the covariance matrix is defined as:
 
 $$
-C = \frac{1}{n} \sum_{i=1}^n \left(\mathbf{x}_i - m\right)\left(\mathbf{x}_i -m\right)^⊤
+C = \frac{1}{n} \sum_{i=1}^n \left(\mathbf{x}_i - \mu\right)\left(\mathbf{x}_i -\mu\right)^⊤
 $$
 
-Where $$m$$ is the mean of $$\mathbf{x}_i, i = 1,2,\ldots,n$$. Which is why we asked for the variables $$\mathbf{x}_i$$ to be centered. So that $$m=0$$ and the formula for covariance simplifies to $$C = \frac{1}{n} \sum_{i=1}^n \mathbf{x}_i \mathbf{x}_i^T$$.
+Where $$\mu$$ is the mean of $$\mathbf{x}_i, i = 1,2,\ldots,n$$. Which is why we asked for the variables $$\mathbf{x}_i$$ to be centered. So that $$\mu=0$$ and the formula for covariance would simplify to $$C = \frac{1}{n} \sum_{i=1}^n \mathbf{x}_i \mathbf{x}_i^T$$.
 
-Our objective is to maximize Variance $$Var$$ subject to the constraint $$\|\mathbf{v}\|=1$$. Such problems of constrained optimization might be reformulated as unconstrained optimization problems via the use of [**Lagrangian multipliers**](https://en.wikipedia.org/wiki/Lagrange_multiplier). If we'd like to maximize $$f(\mathbf{x})$$ subject to $$g(\mathbf{x})=c$$, we introduce the Lagrange multiplier $$\lambda$$ and construct the Lagrangian $$\mathcal{L}(\mathbf{x},\lambda)$$:
+Our objective is to maximize variance $$V$$ subject to the constraint $$\|\mathbf{v}\|=1$$. Such problems of constrained optimization might be reformulated as unconstrained optimization problems via the use of [**Lagrangian multipliers**](https://en.wikipedia.org/wiki/Lagrange_multiplier). If we'd like to maximize $$f(\mathbf{x})$$ subject to $$g(\mathbf{x})=c$$, we introduce the Lagrange multiplier $$\lambda$$ and construct the Lagrangian $$\mathcal{L}(\mathbf{x},\lambda)$$:
 
 $$
 \mathcal{L}(\mathbf{x},\lambda) = f(\mathbf{x}) - \lambda(g(\mathbf{x})-c)
