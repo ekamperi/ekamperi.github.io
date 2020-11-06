@@ -99,22 +99,16 @@ You could play with the following code to reproduce the experiment:
 
 {% highlight mathematica %}
 {% raw %}
-In[84]:= ClearAll["Global`*"];
-
-(* Create some random points from a bivariate normal distribution *)
+ClearAll["Global`*"];
+(*Create some random points from a bivariate normal distribution*)
 npts = 10000;
 pts = RandomVariate[BinormalDistribution[{0, 0}, {1, 1}, 0.85], npts];
-var[q_] := (1/npts) Sum[(pts[[i]].q)^2, {i, npts}]
-
-(* Create some candidate vectors *)
+var[v_] := (1/npts) Sum[(pts[[i]].v)^2, {i, npts}]
 angleStep = Pi/20.;
 vs = Table[{Cos[theta], Sin[theta]}, {theta, 0, 2 Pi, angleStep}];
-varqs = var /@ vs;
-
-(* Find the one that maximizes variance *)
-maxpos = Ordering[varqs, -1][[1]];
+varvs = var /@ vs;
+maxpos = Ordering[varvs, -1][[1]];
 vs[[maxpos]]
-
 (*{-0.707107,-0.707107}*)
 {% endraw %}
 {% endhighlight %}
