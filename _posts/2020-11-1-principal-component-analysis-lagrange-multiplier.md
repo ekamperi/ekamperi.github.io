@@ -7,11 +7,11 @@ tags: ['Lagrange multiplier', 'machine learning', 'mathematics', 'optimization',
 ---
 
 ## The motivation
-We often come up with datasets consisting of many variables because our ability to measure things has improved significantly over the years. The ultimate goal, though, is to distill meaning, knowledge, and insights out of the data. In this context, we seek for variables that are linearly correlated with each other, to exploit their relations and reduce their number needed to describe the data. We do so by constructing new variables, called *principal components*, that are linear combinations of the original ones.
+It is often the case that we are given a dataset with many variables to analyze. The ultimate goal is to distill meaning, knowledge, and insights out of the data. In this context, we seek variables linearly correlated with each other to exploit their relations and reduce their number needed to describe the data. We do so by constructing new variables, called *principal components*, that are linear combinations of the original ones.
 
-In the following plots, we see a set of data points that span the whole 3D space uniformly in the first row. In this case, there are no correlations between the $$x,y,z$$ variables to exploit. Hence, we could not possibly compress our description of the dataset and get away using only two variables. However, in the second row, we see a set of points that are lying, more or less, on a plane. In this case, we could use just two variables and still locate the points in the 3D space without losing much accuracy. The intrinsic dimension of our data is the plane, not the 3D space.
+In the first row of the following plots, we examine a set of data points that span the whole 3D space uniformly. Since there are no correlations between the $$x,y,z$$ variables, we could not possibly compress our description of the dataset and get away using only two variables. However, in the second row, we see a set of points lying, more or less, on a plane. In this case, we could use just two variables and still locate them in the 3D space with decent accuracy. The intrinsic dimension of our data is the 2D plane, not the 3D space.
 
-This transformation of data from a high-dimensional space into a low-dimensional one, which preserves some essential qualities of the original data, is the so-called [**dimensionality reduction**](https://en.wikipedia.org/wiki/Dimensionality_reduction). Working with fewer dimensions has many advantages, such as being able to create visualizations in 2 or 3 dimensions that we are comfortable to work with.
+This transformation of data from a high-dimensional space into a low-dimensional one, which preserves some essential qualities of the original data, is called [**dimensionality reduction**](https://en.wikipedia.org/wiki/Dimensionality_reduction). Working with fewer dimensions has many advantages, such as being able to create visualizations in 2 or 3 dimensions that humans are comfortable to work with.
 
 <p align="center">
 <img style="width: 100%; height: 100%" src="{{ site.url }}/images/pca_motivation.png" alt="Principal component analysis">
@@ -84,13 +84,13 @@ Let us play with the simplest possible scenario, where we have two variables, $$
 </p>
 
 
-If we plot the variance as a function of angle of $$v$$ with the $$x$$ axis, we get the following:
+If we plot the variance as a function of angle of $$\mathbf{v}$$ with the $$x$$ axis, we get the following:
 
 <p align="center">
 <img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_variance_vs_angle.png" alt="Principal component analysis">
 </p>
 
-In the following image, we see the values of variance $$V$$ as a function of the angle of vector $$v$$ and the $$x$$ axis.
+In the following image, we see the values of variance $$V$$ as a function of the angle of vector $$v$$ and the $$x$$ axis. $$V$$ reaches a maximum when the vector aligns with the elongated axis of the data. Then it is reduced until it reaches a minimum when the vector orientates vertically to the elongated axis. In total, two vectors maximize variance, and they are opposite to each other. But the sign of $$\mathbf{v}$$ doesn't really matter. 
 
 <p align="center">
 <img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_single_vec.png" alt="Principal component analysis">
