@@ -21,7 +21,7 @@ This transformation of data from a high-dimensional space into a low-dimensional
 Suppose that we have $$\mathbf{x}_1,\mathbf{x}_2,…,\mathbf{x}_n$$ centered points in $$m$$ dimensional space. Let $$\mathbf{v}$$ denote the unit vector along which we project our $$\mathbf{x}$$'s. The length of the projection $$y_i$$ of $$\mathbf{x}_i$$ is $$y_i = \mathbf{x}_i^⊤ \mathbf{v}$$.
 
 <p align="center">
-<img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_variance_intro.png" alt="Principal component analysis">
+<img style="width: 80%; height: 80%" src="{{ site.url }}/images/pca_variance_intro.png" alt="Principal component analysis">
 </p>
 
 The mean squared projection is the variance $$V$$ summed over all points $$\mathbf{x}_i$$:
