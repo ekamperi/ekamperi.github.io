@@ -7,7 +7,7 @@ tags: ['Lagrange multiplier', 'machine learning', 'mathematics', 'optimization',
 ---
 
 ## The motivation
-It is often the case that we are given a dataset with many variables to analyze. Our goal is to distill meaning, knowledge, and insights out of the data. In this context, we seek linearly correlated variables to exploit. We do so by replacing them with new variables, called *principal components*, that are linear combinations of the original ones.
+It is often the case that we are given a dataset with many variables to analyze. One of the widely used methods is to seek linearly correlated variables in the dataset. Once we have identified these variables, we replace them with new ones, called *principal components*, that are linear combinations of the original variables.
 
 In the first row of the following plots, we examine a set of data points that span the whole 3D space uniformly. Since there are no correlations between the $$x,y,z$$ variables, we could not possibly compress our description of the dataset and get away using only two variables. However, in the second row, we see a set of points lying, more or less, on a plane. In this case, we could use just two variables and still locate them in the 3D space with decent accuracy. The intrinsic dimension of our data is the 2D plane, not the 3D space.
 
