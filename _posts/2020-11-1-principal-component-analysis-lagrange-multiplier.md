@@ -47,7 +47,7 @@ $$
 C = \frac{1}{n} \sum_{i=1}^n \left(\mathbf{x}_i - \mu\right)\left(\mathbf{x}_i -\mu\right)^⊤
 $$
 
-Where $$\mu$$ is the mean of $$\mathbf{x}_i, i = 1,2,\ldots,n$$. Which is why we asked for the variables $$\mathbf{x}_i$$ to be centered. So that $$\mu=0$$ and the formula for covariance would simplify to $$C = \frac{1}{n} \sum_{i=1}^n \mathbf{x}_i \mathbf{x}_i^T$$.
+Where $$\mu$$ is the mean of $$\mathbf{x}_i, i = 1,2,\ldots,n$$. Which is why we asked for the variables $$\mathbf{x}_i$$ to be centered. So that $$\mu=0$$ and the formula for covariance would simplify to $$C = \frac{1}{n} \sum_{i=1}^n \mathbf{x}_i \mathbf{x}_i^⊤$$.
 
 Our objective is to maximize variance $$V$$ subject to the constraint $$\|\mathbf{v}\|=1$$. Such problems of constrained optimization might be reformulated as unconstrained optimization problems via the use of [**Lagrangian multipliers**](https://en.wikipedia.org/wiki/Lagrange_multiplier). If we'd like to maximize $$f(\mathbf{x})$$ subject to $$g(\mathbf{x})=c$$, we introduce the Lagrange multiplier $$\lambda$$ and construct the Lagrangian $$\mathcal{L}(\mathbf{x},\lambda)$$:
 
@@ -85,7 +85,7 @@ $$
 Note: In case you don't recall it, as I did not, the derivative of quadratic form $$\mathbf{x}^⊤ \mathbf{A} \mathbf{x}$$ is $$\mathbf{x}^⊤(\mathbf{A} + \mathbf{A}^⊤)$$. And since the covariance matrix $$C$$ is symmetric, i.e. $$\mathbf{C}=\mathbf{C}^⊤$$, it follows that:
 
 $$
-\frac{\partial}{\partial\mathbf{x}} \left( \mathbf{x}^⊤ \mathbf{C} \mathbf{x}\right) = \mathbf{x}^⊤\left(\mathbf{C} + \mathbf{C}^⊤\right)=2\mathbf{x}^⊤\mathbf{C}
+\frac{\partial}{\partial\mathbf{v}} \left( \mathbf{v}^⊤ \mathbf{C} \mathbf{v}\right) = \mathbf{v}^⊤\left(\mathbf{C} + \mathbf{C}^⊤\right)=2\mathbf{v}^⊤\mathbf{C}
 $$
 
 ## Example with one principal component
