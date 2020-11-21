@@ -82,6 +82,8 @@ $$
 C \mathbf{v} = \lambda \mathbf{v}
 $$
 
+Note: In case you don't recall it, as I did not, the derivative of quadratix form $$\mathbf{x}^⊤ \mathbf{A} \mathbf{x}$$ is $$\mathbf{x}^⊤(\mathbf{A} + \mathbf{A}^⊤$$. And since the covariance matrix $$C$$ is symmetric, i.e. $$\mathbf{C}=\mathbf{C}^⊤$$, it follows that $$\frac{\partial}{\partial\mathbf{x}} \left( \mathbf{x}^⊤ \mathbf{C} \mathbf{x}\right) = \mathbf{x}^⊤\left(\mathbf{C} + \mathbf{C}^⊤\right)=2\mathbf{x}^⊤\mathbf{C}$$.
+
 ## Example with one principal component
 ### Strong linear correlation case
 Let us play with the simplest possible scenario, where we have two variables, $$x_1$$ and $$x_2$$, and we'd like to calculate a single principal component. In the graph below, we plot the data along with various candidate vectors $$\mathbf{v}$$ pointing in different directions. Our goal is to find the one vector $$\mathbf{v}$$, which will maximize the data points' variance when projected on the line the vector defines.
