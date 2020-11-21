@@ -6,6 +6,12 @@ categories: [mathematics]
 tags: ['Lagrange multiplier', 'machine learning', 'mathematics', 'optimization', 'statistics']
 ---
 
+### Contents
+{:.no_toc}
+
+* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
+{:toc}
+
 ## The motivation
 It is often the case that we are given a dataset with many variables to analyze. One of the widely used methods is to seek linearly correlated variables in the dataset. Once we have identified these variables, we replace them with new ones, called *principal components*, that are linear combinations of the original variables.
 
