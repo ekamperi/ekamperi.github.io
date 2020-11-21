@@ -124,7 +124,7 @@ You could also solve the eigenvector equation $$C\mathbf{v} = \lambda\mathbf{v}$
 
 {% highlight mathematica %}
 {% raw %}
-Eigenvectors[Correlation[pts]][[1]]
+Eigenvectors[Covariance[pts]][[1]]
 (* {0.707107, 0.707107} *)
 {% endraw %}
 {% endhighlight %}
