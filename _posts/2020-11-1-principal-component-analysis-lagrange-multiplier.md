@@ -124,7 +124,7 @@ Eigenvectors[Correlation[pts]][[1]]
 {% endhighlight %}
 
 ### Weak linear correlation
-Let us now repeat the experiment, but this time $x_1$ and $x_2$ will have a weak linear correlation. Same as before, we draw many vectors along different orientations:
+Let us now repeat the experiment, but this time $$x_1$$ and $$x_2$$ will have a weak linear correlation. Same as before, we draw many vectors along different orientations:
 
 <p align="center">
 <img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_many_vecs2.png" alt="Principal component analysis">
