@@ -77,7 +77,8 @@ C \mathbf{v} = \lambda \mathbf{v}
 $$
 
 ## Example with one principal component
-Let us play with the simplest possible scenario, where we have two variables, $$x_1$$ and $$x_2$$, and we'd like to calculate a single principal component. In the graph below, we plot the data along with various candidate vectors $$\mathbf{v}$$ pointing into different directions. Our goal is to find the one vector $$\mathbf{v}$$, which will maximize the variance of the data points when projected on the line the vector defines.
+### Strong linear correlation case
+Let us play with the simplest possible scenario, where we have two variables, $$x_1$$ and $$x_2$$, and we'd like to calculate a single principal component. In the graph below, we plot the data along with various candidate vectors $$\mathbf{v}$$ pointing in different directions. Our goal is to find the one vector $$\mathbf{v}$$, which will maximize the data points' variance when projected on the line the vector defines.
 
 <p align="center">
 <img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_many_vecs.png" alt="Principal component analysis">
@@ -121,3 +122,18 @@ Eigenvectors[Correlation[pts]][[1]]
 (* {0.707107, 0.707107} *)
 {% endraw %}
 {% endhighlight %}
+
+### Weak linear correlation
+Let us now repeat the experiment, but this time $x_1$ and $x_2$ will have a weak linear correlation. Same as before, we draw many vectors along different orientations:
+
+<p align="center">
+<img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_single_vec2.png" alt="Principal component analysis">
+</p>
+
+We then calculate the variance of our projected data onto the various vectors and plot the results as a function of angle:
+
+<p align="center">
+<img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_variance_vs_angle2.png" alt="Principal component analysis">
+</p>
+
+In the image above, we see that $$V$$'s amplitude was reduced when we transitioned from variables with strong correlation ($\rho = 0.85$) to variables with weak correlation ($\rho = 0.3$). It's getting clear that as $x_1$ and $x_2$ become less (linearly) correlated, PCA has a hard time to find a *unique* direction in space along which variance is maximized. In the limit where $\rho = 0$, any direction would do!
