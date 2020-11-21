@@ -82,7 +82,7 @@ $$
 C \mathbf{v} = \lambda \mathbf{v}
 $$
 
-Note: In case you don't recall it, as I did not, the derivative of quadratic form $$\mathbf{x}^⊤ \mathbf{A} \mathbf{x}$$ is $$\mathbf{x}^⊤(\mathbf{A} + \mathbf{A}^⊤)$$. And since the covariance matrix $$C$$ is symmetric, i.e. $$\mathbf{C}=\mathbf{C}^⊤$$, it follows that:
+Note: In case you don't recall it, as I did not, the derivative of quadratic form $$\mathbf{x}^⊤ \mathbf{A} \mathbf{x}$$ with respect to vector $$\mathbf{x}$$ is $$\mathbf{x}^⊤(\mathbf{A} + \mathbf{A}^⊤)$$. And since the covariance matrix $$C$$ is symmetric, i.e. $$\mathbf{C}=\mathbf{C}^⊤$$, it follows that:
 
 $$
 \frac{\partial}{\partial\mathbf{v}} \left( \mathbf{v}^⊤ \mathbf{C} \mathbf{v}\right) = \mathbf{v}^⊤\left(\mathbf{C} + \mathbf{C}^⊤\right)=2\mathbf{v}^⊤\mathbf{C}
