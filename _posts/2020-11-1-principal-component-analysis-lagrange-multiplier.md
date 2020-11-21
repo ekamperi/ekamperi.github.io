@@ -136,4 +136,4 @@ We then calculate the variance of our projected data onto the various vectors an
 <img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_variance_vs_angle2.png" alt="Principal component analysis">
 </p>
 
-In the image above, we see that $$V$$'s amplitude was reduced when we transitioned from variables with strong correlation ($$\rho = 0.85$$) to variables with weak correlation ($$\rho = 0.3$$). It's getting clear that as $$x_1$$ and $$x_2$$ become less (linearly) correlated, PCA has a hard time to find a *unique* direction in space along which variance is maximized. In the limit where $$\rho = 0$$, any direction would do!
+In the image above, we see that $$V$$'s amplitude was reduced when we transitioned from variables with strong correlation ($$\rho = 0.85$$) to variables with weak correlation ($$\rho = 0.3$$). It's getting clear that as $$x_1$$ and $$x_2$$ become less (linearly) correlated, we have a hard time to find a *unique* direction in space along which variance is maximized. In the limit where $$\rho = 0$$, any direction would do!
