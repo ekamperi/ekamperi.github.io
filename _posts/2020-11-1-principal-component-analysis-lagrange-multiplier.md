@@ -127,7 +127,7 @@ Eigenvectors[Correlation[pts]][[1]]
 Let us now repeat the experiment, but this time $x_1$ and $x_2$ will have a weak linear correlation. Same as before, we draw many vectors along different orientations:
 
 <p align="center">
-<img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_single_vec2.png" alt="Principal component analysis">
+<img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_many_vecs2.png" alt="Principal component analysis">
 </p>
 
 We then calculate the variance of our projected data onto the various vectors and plot the results as a function of angle:
