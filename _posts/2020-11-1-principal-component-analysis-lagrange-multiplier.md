@@ -82,7 +82,11 @@ $$
 C \mathbf{v} = \lambda \mathbf{v}
 $$
 
-Note: In case you don't recall it, as I did not, the derivative of quadratix form $$\mathbf{x}^⊤ \mathbf{A} \mathbf{x}$$ is $$\mathbf{x}^⊤(\mathbf{A} + \mathbf{A}^⊤$$. And since the covariance matrix $$C$$ is symmetric, i.e. $$\mathbf{C}=\mathbf{C}^⊤$$, it follows that $$\frac{\partial}{\partial\mathbf{x}} \left( \mathbf{x}^⊤ \mathbf{C} \mathbf{x}\right) = \mathbf{x}^⊤\left(\mathbf{C} + \mathbf{C}^⊤\right)=2\mathbf{x}^⊤\mathbf{C}$$.
+Note: In case you don't recall it, as I did not, the derivative of quadratic form $$\mathbf{x}^⊤ \mathbf{A} \mathbf{x}$$ is $$\mathbf{x}^⊤(\mathbf{A} + \mathbf{A}^⊤)$$. And since the covariance matrix $$C$$ is symmetric, i.e. $$\mathbf{C}=\mathbf{C}^⊤$$, it follows that:
+
+$$
+\frac{\partial}{\partial\mathbf{x}} \left( \mathbf{x}^⊤ \mathbf{C} \mathbf{x}\right) = \mathbf{x}^⊤\left(\mathbf{C} + \mathbf{C}^⊤\right)=2\mathbf{x}^⊤\mathbf{C}
+$$
 
 ## Example with one principal component
 ### Strong linear correlation case
