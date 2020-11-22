@@ -2,7 +2,7 @@
 layout: post
 title:  "Normality tests in statistics"
 date:   2020-05-06
-categories: [math]
+categories: mathematics
 tags: [mathematics, 'R language', Shapiro-Wilk, statistics]
 ---
 
