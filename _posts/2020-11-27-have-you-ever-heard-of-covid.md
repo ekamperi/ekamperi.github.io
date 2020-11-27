@@ -1,3 +1,12 @@
+---
+layout: post
+title:  "Have you ever heard of anyone who became will with Covid-19?"
+date:   2020-27-23 15:28:56 +0000
+categories: [mathematics]
+tags: ['Covid-19', 'graphcs', 'mathematics', 'social networks']
+---
+
+
 While Newton stayed home, during the outbreak of plague, he discovered (or invented?) calculus, gravity, and optics laws. His work, however, remained incomplete, as he did not address the burning question, "Do you know anyone who became seriously ill with Covid-19?" I don't know where you come from, but here in Greece, this question has been asked rhetorically, often by conspiracists.
 
 For fun, I constructed dozens of toy models of social networks with different topologies (Barabási – Albert, Watts – Strogatz, Price, and random), with various parameterizations. Even with favorable assumptions about the transmission of the virus (and, therefore, its message), the vast majority of plots had a tail at their origin.
