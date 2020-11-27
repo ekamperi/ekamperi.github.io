@@ -7,7 +7,7 @@ tags: ['covid-19', 'graphs', 'mathematics', 'social networks']
 ---
 
 
-While Newton stayed home, during the outbreak of plague, he discovered (or invented?) calculus, gravity, and optics laws. His work, however, remained incomplete, as he did not address the burning question, "Do you know anyone who became seriously ill with Covid-19?" I don't know where you come from, but here in Greece, this question has been asked rhetorically, often by conspiracists.
+While Newton stayed home, during the outbreak of plague, he discovered (or invented?) calculus, gravity, and optics laws. His work, however, remained incomplete, as he did not address the burning question, “Do you know anyone who became seriously ill with Covid-19?” I don’t know where you come from, but this question has often been asked by conspiracists here in Greece (always in a rhetorical manner).
 
 For fun, I constructed dozens of toy models of social networks with different topologies (Barabási – Albert, Watts – Strogatz, Price, and random), with various parameterizations. Even with favorable assumptions about the transmission of the virus (and, therefore, its message), the vast majority of plots had a tail at their origin.
 
@@ -17,10 +17,13 @@ For fun, I constructed dozens of toy models of social networks with different to
 
 This reflects the fact that initially, the disease has a low prevalence in the general population and that most people have relatively few acquaintances. Some have an intermediate number and just a tiny fraction many. For people to have heard of some of their friends being ill during the first stage of the pandemic, either the disease should have had a very high prevalence from day 1, or the social network should have been exceptionally densely connected (basically everyone being friends with anyone).
 
+In the following plot you can see various social network topologies that I tried:
+
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/heard_of_covid2.png" alt="Covid-19 transmission in a social network">
 </p>
 
+And here you can see the transmission of the virus in a sample network:
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/heard_of_covid3.png" alt="Social networks with various topologies">
 </p>
