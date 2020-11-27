@@ -18,7 +18,7 @@ For fun, I constructed dozens of toy models of social networks with different to
 This reflects the fact that initially, the disease has a low prevalence in the general population and that most people have relatively few acquaintances. Some have an intermediate number and just a tiny fraction many. For people to have heard of some of their friends being ill during the first stage of the pandemic, either the disease should have had a very high prevalence from day 1, or the social network should have been exceptionally densely connected (basically everyone being friends with anyone). Just like the following complete graph:
 
 <p align="center">
- <img style="width: 70%; height: 70%" src="{{ site.url }}/images/complete_graph.png" alt="Covid-19 complete graph">
+ <img style="width: 30%; height: 30%" src="{{ site.url }}/images/complete_graph.png" alt="Covid-19 complete graph">
 </p>
 
 However, real social netowrks are more likely to resemble the following topologies:
