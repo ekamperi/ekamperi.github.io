@@ -15,7 +15,7 @@ Being in lockdown, I decided to stand on the shoulders of the giant Newton and s
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/heard_of_covid1.png" alt="Covid-19 transmission in a social network">
 </p>
 
-This reflects the fact that initially, the disease has a low prevalence in the general population and that most people have relatively few acquaintances. Some have an intermediate number and just a tiny fraction many. For people to have heard of some of their friends being ill during the first stage of the pandemic, either the disease should have had a very high prevalence from day 1, or the social network should have been exceptionally densely connected (basically everyone being friends with anyone). Just like the following complete graph:
+This reflects the fact that initially, the disease has a low prevalence in the general population and that most people have relatively few acquaintances. Some have an intermediate number and just a tiny fraction many. For people to have heard of some of their friends being ill during the first stage of the pandemic, either the disease should have had a very high prevalence from day 1, or the social network should have been exceptionally densely connected (basically everyone being friends with anyone). Just like the following [complete graph](https://en.wikipedia.org/wiki/Complete_graph):
 
 <p align="center">
  <img style="width: 30%; height: 30%" src="{{ site.url }}/images/complete_graph.png" alt="Covid-19 complete graph">
