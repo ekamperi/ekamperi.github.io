@@ -3,7 +3,7 @@ layout: post
 title:  "Have you ever heard of anyone who became will with Covid-19?"
 date:   2020-11-27 20:23:00 +0000
 categories: [mathematics]
-tags: ['Covid-19', 'graphs', 'mathematics', 'social networks']
+tags: ['covid-19', 'graphs', 'mathematics', 'social networks']
 ---
 
 
