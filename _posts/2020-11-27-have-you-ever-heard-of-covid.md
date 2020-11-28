@@ -7,9 +7,9 @@ tags: ['covid-19', 'graphs', 'mathematics', 'social networks']
 ---
 
 
-While Newton stayed home, during the outbreak of plague, he discovered (invented?) calculus, gravity, and optics laws. His work, however, remained incomplete, as he did not address the burning question, **“Do you know anyone who became seriously ill with Covid-19?”** I don’t know where you come from, but this question has often been asked by conspiracists here in Greece (always in a rhetorical manner).
+While Newton stayed home, during the outbreak of the plague, he discovered (invented?) calculus, gravity, and optics laws. Being in lockdown myself, I decided to stand on the shoulders of the giant Newton and sketch the answer to a burning question, “Do you know anyone who became seriously ill with Covid-19?” I don’t know where you come from, but this question has often been asked by conspiracists here in Greece (always in a rhetorical manner).
 
-Being in lockdown, I decided to stand on the shoulders of the giant Newton and sketch the answer to the question above. For fun, I constructed dozens of toy models of social networks with different topologies ([Barabási – Albert](https://en.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model), [Watts – Strogatz](https://en.wikipedia.org/wiki/Watts%E2%80%93Strogatz_model), [Price](https://en.wikipedia.org/wiki/Price%27s_model), and random), with various parameterizations. Even with favorable assumptions about the transmission of the virus (and, therefore, its message), the vast majority of plots had a tail at their origin.
+For fun, I constructed dozens of toy models of social networks with different topologies ([Barabási – Albert](https://en.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model), [Watts – Strogatz](https://en.wikipedia.org/wiki/Watts%E2%80%93Strogatz_model), [Price](https://en.wikipedia.org/wiki/Price%27s_model), and random), with various parameterizations. Even with favorable assumptions about the transmission of the virus (and, therefore, its message), the vast majority of plots had a tail at their origin.
 
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/heard_of_covid1.png" alt="Covid-19 transmission in a social network">
