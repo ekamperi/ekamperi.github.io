@@ -12,7 +12,7 @@ While Newton stayed home, during the outbreak of the plague, he discovered (inve
 For fun, I constructed dozens of toy models of social networks with different topologies ([Barabási – Albert](https://en.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model), [Watts – Strogatz](https://en.wikipedia.org/wiki/Watts%E2%80%93Strogatz_model), [Price](https://en.wikipedia.org/wiki/Price%27s_model), and random), with various parameterizations. Even with favorable assumptions about the transmission of the virus (and, therefore, its message), the vast majority of plots had a tail at their origin.
 
 <p align="center">
- <img style="width: 70%; height: 70%" src="{{ site.url }}/images/heard_of_covid1.png" alt="Covid-19 transmission in a social network">
+ <img style="width: 80%; height: 80%" src="{{ site.url }}/images/heard_of_covid1.png" alt="Covid-19 transmission in a social network">
 </p>
 
 This reflects the fact that initially, the disease has a low prevalence in the general population and that most people have relatively few acquaintances. Some have an intermediate number and just a tiny fraction many. For people to have heard of some of their friends being ill during the first stage of the pandemic, either the disease should have had a very high prevalence from day 1, or the social network should have been exceptionally densely connected (basically everyone being friends with anyone). Just like the following [complete graph](https://en.wikipedia.org/wiki/Complete_graph):
