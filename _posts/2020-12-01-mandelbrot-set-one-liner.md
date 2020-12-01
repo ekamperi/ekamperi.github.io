@@ -28,12 +28,12 @@ $$
 So for every point in the complex plane $$\mathbb{C}$$, we assume the complex number $$c = a + b i$$ and then we calculate the infinite series:
 
 $$
-\underbrace{c}_{z_0}, \,\,\underbrace{c^2+c}_{z_1}, \,\,\underbrace{(c^2+c)^2+c}_{z_2}, \,\,\underbrace{((c^2+c)^2+c)^2+c}_{z_3}, \ldots
+\underbrace{c}_{z_1}, \,\,\underbrace{c^2+c}_{z_2}, \,\,\underbrace{(c^2+c)^2+c}_{z_3}, \,\,\underbrace{((c^2+c)^2+c)^2+c}_{z_4}, \ldots
 $$
 
 If this series doesn't diverge, then $$c$$ belongs to the Mandelbrot set. If it diverges, then it does not belong. In practice, we only calculate a finite number of terms, e.g., 256 or whatever. And we color the point $$c$$ according to the number of iterations that we had to go through before we knew that it diverged or not.
 
-For example, let us check whether $$c=1+i$$ is an element of the Mandelbrot set or not. We calculate the sequence $$z_0, z_1, \ldots$$ and notice that $$z_0 = 1+i$$, and $$\|1+i\|=\sqrt{1^2+1^2}=\sqrt{2} < 2$$. We proceed to the next term of the sequence, with $$z_1 = (1+i)^2 + (1+i) = 1 + 2i + i^2 + 1 + i = 1 + 3i$$. But, $$\|1+3i\|= \sqrt{1^2+3^2} = \sqrt{10} > 2$$. Therefore, the series diverges, and the complex number $$1+i$$ does not belong to the set. We figured this out with only 2 iteration2, therefore we would color this point of complex plane with the "2nd color" of our palette.
+For example, let us check whether $$c=1+i$$ is an element of the Mandelbrot set or not. We calculate the sequence $$z_1, z_2, \ldots$$ and notice that $$z_1 = 1+i$$, and $$\|1+i\|=\sqrt{1^2+1^2}=\sqrt{2} < 2$$. We proceed to the next term of the sequence, with $$z_2 = (1+i)^2 + (1+i) = 1 + 2i + i^2 + 1 + i = 1 + 3i$$. But, $$\|1+3i\|= \sqrt{1^2+3^2} = \sqrt{10} > 2$$. Therefore, the series diverges, and the complex number $$1+i$$ does not belong to the set. We figured this out with only 2 iteration2, therefore we would color this point of complex plane with the "2nd color" of our palette.
 
 ## The almost one-liner
 In the following code, $$f[c\_]$$ checks whether $$c$$ belongs to the Mandelbrot set or not. If it does not, it returns the number of iterations needed to reach this conclusion. If we perform 255 iterations, we assume that the series doesn't diverge, and we take $$c$$ to belong to the set.
