@@ -76,7 +76,7 @@ Nest[f,x,5]
 {% endraw %}
 {% endhighlight %}
 
-However, we would like to accumulate the intermediate results so that we can count their size to check if we have reached the maximum number of iterations. Therefore, we would need something like:
+However, we would like to accumulate the intermediate results so that we can count them and check if we have reached the maximum number of iterations. Therefore, we would need something like:
 
 {% highlight mathematica %}
 {% raw %}
@@ -107,4 +107,4 @@ With[{c = 1 + I},
 {% endraw %}
 {% endhighlight %}
 
-Now, it is evident what $$f[c\_]$$ does in the one-liner. It applies the lambda function `#^2 + c iteratively` to the previous result, starting with $$z_0 = c$$. At each iteration, it checks whether the absolute value of $$z_k$$ is less or equal to 2. If it's not, it terminates and counts the number of intermediate computations we performed with `Length[]`.
+Now, it is evident what $$f[c\_]$$ does in the one-liner. It applies the lambda function `#^2 + c` iteratively to the previous result, starting with $$z_0 = c$$. At each iteration, it checks whether the absolute value of $$z_k$$ is less or equal to 2. If it's not, it terminates and counts the number of intermediate computations we performed with `Length[]`. Isn't functional programming awesome?
