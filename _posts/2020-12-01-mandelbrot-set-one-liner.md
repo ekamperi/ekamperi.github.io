@@ -64,3 +64,47 @@ Table[
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/many_mandel.png" alt="Mandelbrot sets with Mathematica">
 </p>
+
+## The explanation
+Recall that we want to calculate the infinite series $$f(0), f(f(0)), f(f(f(0))), \ldots$$, where $$f(x) = x^2 + c$$. In Mathematica, there's the function `Nest[]` that applies iteratively a function to some given expression and returns the result:
+
+{% highlight mathematica %}
+{% raw %}
+Clear[f];
+Nest[f,x,5]
+(* f[f[f[f[f[x]]]]] *)
+{% endraw %}
+{% endhighlight %}
+
+However, we would like to accumulate the intermediate results so that we can count their size to check if we have reached the maximum number of iterations. Therefore, we would need something like:
+
+{% highlight mathematica %}
+{% raw %}
+Table[
+ Nest[f, x, k],
+ {k, 0, 3}]
+(* {x, f[x], f[f[x]], f[f[f[x]]]} *)
+{% endraw %}
+{% endhighlight %}
+
+Fortunately, Mathematica has `NestList[]` that does precisely this!
+
+{% highlight mathematica %}
+{% raw %}
+NestList[f, x, 3]
+(* {x, f[x], f[f[x]], f[f[f[x]]]} *)
+{% endraw %}
+{% endhighlight %}
+
+We are almost there, but how can we check whether in each iteration the absolute value of the complex number is less than 2? We need a `NestList[]` function that allows us to inject some sort of condition. Enter `NestListWhen[]`!
+
+{% highlight mathematica %}
+{% raw %}
+With[{c = 1 + I},
+ NestWhileList[#^2 + c &, c, Abs[#] <= 2 &, 1, 255]
+]
+(* {1 + I, 1 + 3 I} *)
+{% endraw %}
+{% endhighlight %}
+
+Now, it is evident what $$f[c\_]$$ does in the one-liner. It applies the lambda function `#^2 + c iteratively` to the previous result, starting with $$z_0 = c$$. At each iteration, it checks whether the absolute value of $$z_k$$ is less or equal to 2. If it's not, it terminates and counts the number of intermediate computations we performed with `Length[]`.
