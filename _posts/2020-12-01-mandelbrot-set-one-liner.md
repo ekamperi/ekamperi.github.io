@@ -47,7 +47,7 @@ MatrixPlot[mandel[0.01], ColorFunction -> "BrassTones"]
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 70%; height: 70%" src="{{ site.url }}/images/single_mandel.png" alt="Mandelbrot set with Mathematica">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/single_mandel.png" alt="Mandelbrot set with Mathematica">
 </p>
 
 The following code visualizes the set with increasing resolution. As we scan the complex plane $$\mathbb{C}$$ with a finer resolution, the set's boundary gets increasingly intricate.
@@ -113,5 +113,5 @@ It is now evident what $$f[c\_]$$ does in the one-liner. It applies the lambda f
 Up until know we considered the infinite series of $$z_{n+1} = z_n + c, c\in\mathbb{C}$$, where $$z_0$$ was fixed to zero and $$c$$ scanned the complex plane. What if we fix $$c$$ to some complex number and let $$z$$ scan the complex plane? This is left as an excercise to the reader, but for $$c=i$$, you should get something along the lines of the following plot:
 
 <p align="center">
- <img style="width: 70%; height: 70%" src="{{ site.url }}/images/julia_set.png" alt="Mandelbrot set and Julia set">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/julia_set.png" alt="Mandelbrot set and Julia set">
 </p>
