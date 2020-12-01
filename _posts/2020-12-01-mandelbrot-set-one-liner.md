@@ -6,6 +6,9 @@ categories: math
 tags: ['complex numbers', 'functional programming', Mathematica, mathematics, programming]
 ---
 
+## The motivation
+Benoit Mandelbrot was a mathematician best known for the discovery of fractal geometry and the famous homonymous set. Mandelbrot was born in November 1924, and I was hoping to honor his birthday by writing a short post for the Mandelbrot set. However, I missed the date because I was working on my master thesis. Anyway, even though I am off by a few days, here you are.
+
 ## Definition
 Mandelbrot set is the set of all complex numbers $$c$$ that fulfill the following condition:
 
@@ -28,7 +31,7 @@ If this series doesn't diverge, then $$c$$ belongs to the Mandelbrot set. If it 
 For example, let us check whether $$c=1+i$$ is an element of the Mandelbrot set or not. We calculate the sequence $$z_0, z_1, \ldots$$ and notice that it is $$z_1 = (1+i)^2 + (1+i) = 1 + 2i + i^2 + 1 + i = 1 + 3i$$. But, $$\|1+3i\|= \sqrt{1^2+3^2} = \sqrt{10} > 2$$. Therefore, the series diverges, and the complex number $$1+i$$ does not belong to the set. We figured this out with only 1 iteration, therefore we would color this point of complex plane with the "1st color" of our palette.
 
 ## The almost one-liner
-In the following code $$f[c\_]$$ checks whether $$c$$ belongs to the Mandelbrot set or not. If it does not, it returns the number of iterations needed to reach this conclusion. If we have reached 255 iterations, we assume that the series doesn't diverge and we take $$c$$ to belong to the set.
+In the following code, $$f[c\_]$$ checks whether $$c$$ belongs to the Mandelbrot set or not. If it does not, it returns the number of iterations needed to reach this conclusion. If we perform 255 iterations, we assume that the series doesn't diverge, and we take $$c$$ to belong to the set.
 
 {% highlight mathematica %}
 {% raw %}
