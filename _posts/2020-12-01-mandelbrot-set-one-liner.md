@@ -7,14 +7,14 @@ tags: ['complex numbers', 'functional programming', Mathematica, mathematics, pr
 ---
 
 ## The motivation
-Benoit Mandelbrot was a mathematician best known for the discovery of fractal geometry and the famous homonymous set. Mandelbrot was born in November 1924, and I was hoping to honor his birthday by writing a short post for the Mandelbrot set. However, I missed the date because I was working on my master thesis. Anyway, even though I am off by a few days, here you are.
+[Benoit Mandelbrot](https://en.wikipedia.org/wiki/Benoit_Mandelbrot) was a mathematician best known for the discovery of fractal geometry and the [famous homonymous set](https://en.wikipedia.org/wiki/Mandelbrot_set). Mandelbrot was born in 20 November 1924, and I was hoping to honor his birthday by writing a short post for the Mandelbrot set. However, I missed the date because I was working on my master thesis. Anyway, even though I am off by a few days, let's do it!.
 
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/mandelbrot.png" alt="Benoit Mandelbrot photo">
 </p>
 Source: Photo attributed to Soo Jin Lee.
 
-## Definition
+## The definition
 Mandelbrot set is the set of all complex numbers $$c$$ that fulfill the following condition:
 
 $$
@@ -33,7 +33,7 @@ $$
 
 If this series doesn't diverge, then $$c$$ belongs to the Mandelbrot set. If it diverges, then it does not belong. In practice, we only calculate a finite number of terms, e.g., 256 or whatever. And we color the point $$c$$ according to the number of iterations that we had to go through before we knew that it diverged or not.
 
-For example, let us check whether $$c=1+i$$ is an element of the Mandelbrot set or not. We calculate the sequence $$z_0, z_1, \ldots$$ and notice that it is $$z_1 = (1+i)^2 + (1+i) = 1 + 2i + i^2 + 1 + i = 1 + 3i$$. But, $$\|1+3i\|= \sqrt{1^2+3^2} = \sqrt{10} > 2$$. Therefore, the series diverges, and the complex number $$1+i$$ does not belong to the set. We figured this out with only 1 iteration, therefore we would color this point of complex plane with the "1st color" of our palette.
+For example, let us check whether $$c=1+i$$ is an element of the Mandelbrot set or not. We calculate the sequence $$z_0, z_1, \ldots$$ and notice that $z_0 = 1+i$, and $$\|1+i\|=\sqrt{1^2+1^2}=\sqrt{2} < 2$$. We proceed to the next term of the sequence, with $$z_1 = (1+i)^2 + (1+i) = 1 + 2i + i^2 + 1 + i = 1 + 3i$$. But, $$\|1+3i\|= \sqrt{1^2+3^2} = \sqrt{10} > 2$$. Therefore, the series diverges, and the complex number $$1+i$$ does not belong to the set. We figured this out with only 2 iteration2, therefore we would color this point of complex plane with the "2nd color" of our palette.
 
 ## The almost one-liner
 In the following code, $$f[c\_]$$ checks whether $$c$$ belongs to the Mandelbrot set or not. If it does not, it returns the number of iterations needed to reach this conclusion. If we perform 255 iterations, we assume that the series doesn't diverge, and we take $$c$$ to belong to the set.
