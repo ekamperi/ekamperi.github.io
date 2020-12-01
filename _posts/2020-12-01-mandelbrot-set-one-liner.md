@@ -13,10 +13,10 @@ f_c(z) = z^2 + c, \text{does not diverge for } z = 0
 $$
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/complex_grid_mandel.png" alt="Complex plan for Mandeblor set">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/complex_grid_mandel.png" alt="Complex plan for Mandeblor set">
 </p>
 
-So for every point in the complex plane $C$, we assume the complex number $c = a + b i$ and then we calculate the infinite series:
+So for every point in the complex plane $C$, we assume the complex number $$c = a + b i$$ and then we calculate the infinite series:
 
 $$
 f_c(0), f_c(f_c(0)), f_c(f_c(f_c(0))), \ldots
@@ -34,7 +34,7 @@ MatrixPlot[mandel[0.01], ColorFunction -> "BrassTones"]
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/single_mandel.png" alt="Mandelbrot set with Mathematica">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/single_mandel.png" alt="Mandelbrot set with Mathematica">
 </p>
 
 
@@ -48,6 +48,6 @@ Table[
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/many_mandel.png" alt="Mandelbrot sets with Mathematica">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/many_mandel.png" alt="Mandelbrot sets with Mathematica">
 </p>
 
