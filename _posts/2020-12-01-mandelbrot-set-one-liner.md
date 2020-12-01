@@ -6,7 +6,7 @@ categories: math
 tags: ['complex numbers', 'functional programming', Mathematica, mathematics, programming]
 ---
 
-Mandelbrot set is the set of all complex numbers $c$ that fulfill the following condition:
+Mandelbrot set is the set of all complex numbers $$c$$ that fulfill the following condition:
 
 $$
 z_{n+1} = z^2_n + c, \text{does not diverge, starting with } z_0 = 0
