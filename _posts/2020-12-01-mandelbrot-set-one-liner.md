@@ -50,6 +50,7 @@ MatrixPlot[mandel[0.01], ColorFunction -> "BrassTones"]
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/single_mandel.png" alt="Mandelbrot set with Mathematica">
 </p>
 
+The following code visualizes the set with increasing resolution:
 
 {% highlight mathematica %}
 {% raw %}
@@ -61,6 +62,5 @@ Table[
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 70%; height: 70%" src="{{ site.url }}/images/many_mandel.png" alt="Mandelbrot sets with Mathematica">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/many_mandel.png" alt="Mandelbrot sets with Mathematica">
 </p>
-
