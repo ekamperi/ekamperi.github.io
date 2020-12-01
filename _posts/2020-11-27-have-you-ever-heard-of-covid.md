@@ -32,4 +32,4 @@ And here you can see the transmission of the virus in a sample network:
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/heard_of_covid3.png" alt="Social networks with various topologies">
 </p>
 
-**Epimyth**: If you haven’t heard of any of your acquaintances being seriously ill with Covid-19 at the start of the pandemic, it’s because there weren’t many cases. If, as the days pass by, you still don’t hear of anyone, it’s because you don’t have any friends :P
+**Epimyth** (not to be taken too seriously): If you haven’t heard of any of your acquaintances being seriously ill with Covid-19 at the start of the pandemic, it’s because there weren’t many cases. If, as the days pass by, you still don’t hear of anyone, it’s because you don’t have any friends :P
