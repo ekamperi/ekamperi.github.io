@@ -11,6 +11,8 @@ tags: ['complex numbers', 'functional programming', Mathematica, mathematics, pr
 
 <p align="center">
 <img style="width: 50%; height: 50%" src="{{ site.url }}/images/mandelbrot.png" alt="Benoit Mandelbrot photo">
+</p>
+<p align="center">
 Source: Photo attributed to Soo Jin Lee.
 </p>
 
