@@ -107,13 +107,11 @@ With[{c = 1 + I},
 {% endraw %}
 {% endhighlight %}
 
-Now, it is evident what $$f[c\_]$$ does in the one-liner. It applies the lambda function `#^2 + c` iteratively to the previous result, starting with $$z_0 = c$$. At each iteration, it checks whether the absolute value of current $$z_{n+1}$$ is less or equal to 2. If it is, it continues the iterative process. If it's not, it terminates the loop and counts the number of intermediate computations we performed with `Length[]`. Isn't functional programming awesome?
+It is now evident what $$f[c\_]$$ does in the one-liner. It applies the lambda function `#^2 + c` iteratively to the previous result, starting with $$z_0 = c$$. At each iteration, it checks whether the absolute value of current $$z_{n+1}$$ is less or equal to 2. If it is, it continues the iterative process. If it's not, it terminates the loop and counts the number of intermediate computations we performed with `Length[]`. Isn't functional programming fantastic?
 
 ## The (no pun intended) plot twist
 Up until know we considered the infinite series of $$z_{n+1} = z_n + c, c\in\mathbb{C}$$, where $$z_0$$ was fixed to zero and $$c$$ scanned the complex plane. What if we fix $$c$$ to some complex number and let $$z$$ scan the complex plane? This is left as an excercise to the reader, but for $$c=i$$, you should get something along the lines of the following plot:
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/julia_set.png" alt="Mandelbrot set and Julia set">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/julia_set.png" alt="Mandelbrot set and Julia set">
 </p>
-
-
