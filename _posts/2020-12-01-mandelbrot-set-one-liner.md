@@ -10,9 +10,9 @@ tags: ['complex numbers', 'functional programming', Mathematica, mathematics, pr
 [Benoit Mandelbrot](https://en.wikipedia.org/wiki/Benoit_Mandelbrot) was a mathematician best known for the discovery of fractal geometry and the [famous homonymous set](https://en.wikipedia.org/wiki/Mandelbrot_set). Mandelbrot was born on 20 November 1924, and I was hoping to honor his birthday by writing a short post for the Mandelbrot set. However, I missed the date because I was working on my master thesis. Anyway, even though I am off by a few days, let's do it!.
 
 <p align="center">
- <img style="width: 50%; height: 50%" src="{{ site.url }}/images/mandelbrot.png" alt="Benoit Mandelbrot photo">
-</p>
+<img style="width: 50%; height: 50%" src="{{ site.url }}/images/mandelbrot.png" alt="Benoit Mandelbrot photo">
 Source: Photo attributed to Soo Jin Lee.
+</p>
 
 ## The definition
 Mandelbrot set is the set of all complex numbers $$c$$ that fulfill the following condition:
