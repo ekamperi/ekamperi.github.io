@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  An almost one-liner to construct Mandelbrot set with Mathematica
+title:  An almost one-liner to construct the Mandelbrot set with Mathematica
 date:   2020-12-01
 categories: math
 tags: ['complex numbers', 'functional programming', Mathematica, mathematics, programming]
@@ -9,7 +9,7 @@ tags: ['complex numbers', 'functional programming', Mathematica, mathematics, pr
 Mandelbrot set is the set of all complex numbers $c$ that fulfill the following condition:
 
 $$
-f_c(z) = z^2 + c, \text{does not diverge for } z = 0
+z_{n+1} = z^2_n + c, \text{does not diverge, starting with } z_0 = 0
 $$
 
 <p align="center">
@@ -19,11 +19,10 @@ $$
 So for every point in the complex plane $C$, we assume the complex number $$c = a + b i$$ and then we calculate the infinite series:
 
 $$
-f_c(0), f_c(f_c(0)), f_c(f_c(f_c(0))), \ldots
+\underbrace{c}_{z_0}, \,\,\underbrace{c^2+c}_{z_1}, \,\,\underbrace{(c^2+c)^2+c}_{z_2}, \,\,\underbrace{((c^2+c)^2+c)^2+c}_{z_3}, \ldots
 $$
 
-If this series doesn't diverge, then $c$ belongs to the mandelbrot set. If it diverges, it does not belong. In practice, we only calculate a finite number of terms,
-e.g. 256 or whatever. And we color the point $c$ according to the number of iterations that we had to go through before we knew that it diverged or not. 
+If this series doesn't diverge, then $c$ belongs to the mandelbrot set. If it diverges, it does not belong. In practice, we only calculate a finite number of terms, e.g. 256 or whatever. And we color the point $c$ according to the number of iterations that we had to go through before we knew that it diverged or not. 
 
 {% highlight mathematica %}
 {% raw %}
