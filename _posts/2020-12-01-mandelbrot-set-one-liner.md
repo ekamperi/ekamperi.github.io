@@ -7,7 +7,7 @@ tags: ['complex numbers', 'functional programming', Mathematica, mathematics, pr
 ---
 
 ## The motivation
-[Benoit Mandelbrot](https://en.wikipedia.org/wiki/Benoit_Mandelbrot) was a mathematician best known for the discovery of fractal geometry and the [famous homonymous set](https://en.wikipedia.org/wiki/Mandelbrot_set). Mandelbrot was born in 20 November 1924, and I was hoping to honor his birthday by writing a short post for the Mandelbrot set. However, I missed the date because I was working on my master thesis. Anyway, even though I am off by a few days, let's do it!.
+[Benoit Mandelbrot](https://en.wikipedia.org/wiki/Benoit_Mandelbrot) was a mathematician best known for the discovery of fractal geometry and the [famous homonymous set](https://en.wikipedia.org/wiki/Mandelbrot_set). Mandelbrot was born on 20 November 1924, and I was hoping to honor his birthday by writing a short post for the Mandelbrot set. However, I missed the date because I was working on my master thesis. Anyway, even though I am off by a few days, let's do it!.
 
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/mandelbrot.png" alt="Benoit Mandelbrot photo">
@@ -50,7 +50,7 @@ MatrixPlot[mandel[0.01], ColorFunction -> "BrassTones"]
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/single_mandel.png" alt="Mandelbrot set with Mathematica">
 </p>
 
-The following code visualizes the set with increasing resolution:
+The following code visualizes the set with increasing resolution. As we scan the complex plane $$\mathbb{C}$$ with a finer resolution, the set's boundary gets increasingly intricate.
 
 {% highlight mathematica %}
 {% raw %}
