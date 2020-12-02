@@ -33,7 +33,7 @@ cases. If the digits were evenly distributed, we would encounter each with a fre
 The law also makes predictions for the distribution of second digits, third digits, combinations of digits, etc.
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/Benford_distribution.png" alt="Benford distribution">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/Benford_distribution.png" alt="Benford distribution">
 </p>
 
 The formula for calculating the probabilities of various digits is this:
@@ -65,7 +65,7 @@ Legended[
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/fib_benford_distrib.png" alt="First digit distribution of Fibonacci numbers">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/fib_benford_distrib.png" alt="First digit distribution of Fibonacci numbers">
 </p>
 
 Or, the **factorials**:
@@ -88,7 +88,7 @@ Legended[
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/factorial_benford_distrib.png" alt="First digit distribution of factorials">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/factorial_benford_distrib.png" alt="First digit distribution of factorials">
 </p>
 
 Or, the **distances of stars from Earth**:
@@ -114,7 +114,7 @@ Legended[
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/stars_benford_distrib.png" alt="First digit distribution in stars distances from Earth">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/stars_benford_distrib.png" alt="First digit distribution in stars distances from Earth">
 </p>
 
 ### Benford's law on COVID-19 data
@@ -134,7 +134,7 @@ plot(bfd.cp)
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/covid19_benford_law.png" alt="Benford law in covid-19 numbers">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/covid19_benford_law.png" alt="Benford law in covid-19 numbers">
 </p>
 
 In [this article](https://www.nature.com/articles/d41586-020-01565-5?fbclid=IwAR1FG9iAmGUuJhmgCNTZMHMdJuH4nJ3D2SGCw26lg1CjEPoHzXh4qzrjr40)
