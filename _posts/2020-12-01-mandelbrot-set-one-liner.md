@@ -7,7 +7,7 @@ tags: ['complex numbers', 'functional programming', Mathematica, mathematics, pr
 ---
 
 ## The motivation
-[Benoit Mandelbrot](https://en.wikipedia.org/wiki/Benoit_Mandelbrot) was a mathematician best known for the discovery of fractal geometry and the [famous homonymous set](https://en.wikipedia.org/wiki/Mandelbrot_set). Mandelbrot was born on 20 November 1924, and I was hoping to honor his birthday by writing a short post for the Mandelbrot set. However, I missed the date because I was working on my master thesis. Anyway, even though I am off by a few days, let's do it!.
+[Benoit Mandelbrot](https://en.wikipedia.org/wiki/Benoit_Mandelbrot) was a mathematician best known for the discovery of fractal geometry and the [famous homonymous set](https://en.wikipedia.org/wiki/Mandelbrot_set). Mandelbrot was born on 20 November 1924, and I was hoping to honor his birthday by writing a short post for the Mandelbrot set. However, I missed the date because I was working on my master thesis. Anyway, even though I am off by a few days, let's do it!
 
 <p align="center">
 <img style="width: 50%; height: 50%" src="{{ site.url }}/images/mandelbrot.png" alt="Benoit Mandelbrot photo">
@@ -33,7 +33,7 @@ $$
 \underbrace{c}_{z_1}, \,\,\underbrace{c^2+c}_{z_2}, \,\,\underbrace{(c^2+c)^2+c}_{z_3}, \,\,\underbrace{((c^2+c)^2+c)^2+c}_{z_4}, \ldots
 $$
 
-If this series doesn't diverge, then $$c$$ belongs to the Mandelbrot set. If it diverges, then it does not belong. In practice, we only calculate a finite number of terms, e.g., 256 or whatever. And we color the point $$c$$ according to the number of iterations that we had to go through before we knew that it diverged or not.
+If this series doesn't diverge, then $$c$$ belongs to the Mandelbrot set. If it diverges, then it does not belong to the set. In practice, we only calculate a finite number of terms, e.g., 256 or whatever. And we color the point $$c$$ according to the number of iterations that we had to go through before we could tell whether it diverged or not.
 
 For example, let us check whether $$c=1+i$$ is an element of the Mandelbrot set or not. We calculate the sequence $$z_1, z_2, \ldots$$ and notice that $$z_1 = 1+i$$, and $$\|1+i\|=\sqrt{1^2+1^2}=\sqrt{2} < 2$$. We proceed to the next term of the sequence, with $$z_2 = (1+i)^2 + (1+i) = 1 + 2i + i^2 + 1 + i = 1 + 3i$$. But, $$\|1+3i\|= \sqrt{1^2+3^2} = \sqrt{10} > 2$$. Therefore, the series diverges, and the complex number $$1+i$$ does not belong to the set. We figured this out with only 2 iteration2, therefore we would color this point of complex plane with the "2nd color" of our palette.
 
@@ -112,7 +112,7 @@ With[{c = 1 + I},
 It is now evident what $$f[c\_]$$ does in the one-liner. It applies the lambda function `#^2 + c` iteratively to the previous result, starting with $$z_0 = c$$. At each iteration, it checks whether the absolute value of current $$z_{n+1}$$ is less or equal to 2. If it is, it continues the iterative process. If it's not, it terminates the loop and counts the number of intermediate computations we performed with `Length[]`. Isn't functional programming fantastic?
 
 ## The (no pun intended) plot twist
-Up until know we considered the infinite series of $$z_{n+1} = z_n^2 + c, c\in\mathbb{C}$$, where $$z_0$$ was fixed to zero and $$c$$ scanned the complex plane. What if we fix $$c$$ to some complex number and let $$z$$ scan the complex plane? This is left as an excercise to the reader, but for $$c=i$$, you should get something along the lines of the following plot:
+Up until know we considered the infinite series of $$z_{n+1} = z_n^2 + c, c\in\mathbb{C}$$, where $$z_0$$ was fixed to zero and $$c$$ scanned the complex plane. What if we fix $$c$$ to some complex number and let $$z_0$$ scan the complex plane? This is left as an excercise to the reader, but for $$c=i$$, you should get something along the lines of the following plot:
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/julia_set.png" alt="Mandelbrot set and Julia set">
