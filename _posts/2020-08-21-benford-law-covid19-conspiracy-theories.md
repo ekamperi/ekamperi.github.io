@@ -182,7 +182,7 @@ This is the evolution of the SIR model:
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/sir_model.png" alt="SIR model of the covid-19 pandemic">
 </p>
 
-And this is the frequency distribution of the first digits superimposed with the theoretical Benford's distribution (dotted red line):
+And this is the frequency distribution of the first digits superimposed with the theoretical Benford's distribution (dotted black line):
 
 {% highlight Mathematica %}
 {% raw %}
