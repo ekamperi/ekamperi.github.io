@@ -37,16 +37,16 @@ F_x & F_y & F_z \end{vmatrix}\\
 \end{align}
 $$
 
-How can it be that this plot corresponds to an irrotational field? Well, it depends on which rotation you are referring to (macroscopic vs. microscopic or global vs. local). Imagine that this vector field describes the flow of water in a pool with a sink at the bottom that sucks the water out it. If we put a small ball on the surface of the water, then the ball may move in two distinct ways:
+How can it be that this plot corresponds to an irrotational field? Well, it depends on which rotation you are referring to (macroscopic vs. microscopic or global vs. local). **Curl measures the local rotation!** Imagine that this vector field describes the flow of water in a pool with a sink at the bottom that sucks the water out it. If we put a small ball on the surface of the water, then the ball may move in two distinct ways:
 
-1. The general rotation of the flow around the z-axis (z-axis is perpendicular to your monitor) in the *counterclockwise* direction, along the direction of the stream lines.
-2. Since the arrows of the field are longer the closer we are to the z-axis, the field tends to push the ball more strongly on the side closest to the z-axis, rather than the opposite side. The "differential" push on the two sides of the ball would tend to make it rotate in the *clockwise* direction.
+1. The **general rotation of the flow around the z-axis** (z-axis is perpendicular to your monitor) in the *counterclockwise* direction, along the direction of the stream lines.
+2. Since the arrows of the field are longer the closer we are to the z-axis, the field tends to push the ball more strongly on the side closest to the z-axis, rather than the opposite side. The "differential" push on the two sides of the ball would tend to make it **rotate around itself** in the *clockwise* direction.
 
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/curl_rotation.png">
 </p>
 
-These two opposite effects may cancel out (as in our case) and then the curl is zero. The ball still moves inside the pool around the z-axis, but it doesn't rotate *around itself*, which is what the curl operator measures.
+These two opposite effects may cancel out (as in our case) and then the curl is zero. **The ball still moves inside the pool around the z-axis, but it doesn't rotate *around itself*, which is what the curl operator measures.**
 
 ### Another way to view curl
 Please mind that the image above is drawn in a large scale. In reality the green circle is *infinitestimal*. Another way to look at curl is as *the average circulation of a field in a region that shrinks around a point*, i.e.:
