@@ -67,7 +67,7 @@ Table[
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/many_mandel.png" alt="Mandelbrot sets with Mathematica">
 </p>
 
-And by tweaking the code a bit, we can visualize the Mandelbrot set for increasing number of the maximum iterations threshold.
+And by tweaking the code a bit, we can visualize the Mandelbrot set while increasing the maximum iterations threshold.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/many_mandel_thresh.png" alt="Mandelbrot sets with Mathematica">
@@ -126,6 +126,30 @@ Up until know we considered the infinite series of $$z_{n+1} = z_n^2 + c, c\in\m
 
 Congratulations! You have just discovered the [Julia set](https://en.wikipedia.org/wiki/Julia_set)!
 
+## The mind-blowing
+
+You might be thinking that keeping track of intermediate computations in `NestedWhileList[]` is a waste of resources. In some way, it is, if we only want to plot the Mandelbrot set. However, we could plot all the intermediate elements of the recursion $$z \mapsto z^2 + c$$. For many points $$c$$ in the complex plane $$\mathbb{C}$$, nothing special happens. For other points, though, some very cool patterns emerge. Here is a snapshot.
+
+{% highlight mathematica %}
+{% raw %}
+plotCourse[c_] :=
+ Module[{pts, pts2},
+  pts = NestWhileList[#^2 + c &, c, Abs[#] <= 2 &, 1, 1000];
+  pts2 = {Re@#, Im@#} & /@ pts;
+  ListPlot[pts2, PlotStyle -> {Red, PointSize[0.005]}, 
+   PlotRange -> {{-2, 1}, {-1, 1}}, Prolog -> Inset@p1, 
+   ImageSize -> Large, PlotRangeClipping -> True]
+  ]
+  
+  plotCourse[0.16 - 0.57 I]
+{% endraw %}
+{% endhighlight %}
+
+And here is a video of drawing the intermediate points in the complex plane. Every sequence starts with $$c$$ being equal to the point the mouse cursor is at.
+
+<p align="center">
 <video id="movie" width="50%" height="50%" preload controls>
    <source id="srcMp4" src="{{ site.url }}/images/output.mp4" />
 </video>
+</p>
+
