@@ -126,6 +126,6 @@ Up until know we considered the infinite series of $$z_{n+1} = z_n^2 + c, c\in\m
 
 Congratulations! You have just discovered the [Julia set](https://en.wikipedia.org/wiki/Julia_set)!
 
-<video id="movie" width="" height="" preload controls>
+<video id="movie" width="50%" height="50%" preload controls>
    <source id="srcMp4" src="{{ site.url }}/images/output.mp4" />
 </video>
