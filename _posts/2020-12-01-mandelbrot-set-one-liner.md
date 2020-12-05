@@ -132,6 +132,8 @@ You might be thinking that keeping track of intermediate computations in `Nested
 
 {% highlight mathematica %}
 {% raw %}
+p1 = MatrixPlot[mandel[0.01], ColorFunction -> "BrassTones", ImageSize -> Large, Frame -> False]
+
 plotCourse[c_] :=
  Module[{pts, pts2},
   pts = NestWhileList[#^2 + c &, c, Abs[#] <= 2 &, 1, 1000];
@@ -148,7 +150,6 @@ plotCourse[c_] :=
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/mandel_nested_snap.png" alt="Mandelbrot set and Julia set">
 </p>
-
 
 And here is a video of drawing the intermediate points in the complex plane. Every sequence starts with $$c$$ being equal to the point the mouse cursor is at.
 
