@@ -67,6 +67,12 @@ Table[
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/many_mandel.png" alt="Mandelbrot sets with Mathematica">
 </p>
 
+And by tweaking the code a bit we can visualize the Mandelbroset for increasing number of the maximum iterations threshold.
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/many_mandel_thresh.png" alt="Mandelbrot sets with Mathematica">
+</p>
+
 ## The explanation
 Recall that we want to calculate the infinite series $$f(0), f(f(0)), f(f(f(0))), \ldots$$, where $$f(x) = x^2 + c$$. In Mathematica, there's the function `Nest[]` that applies iteratively a function to some given expression and returns the result:
 
