@@ -154,7 +154,7 @@ plotCourse[c_] :=
 And here is a video of drawing the intermediate points in the complex plane. Every sequence starts with $$c$$ being equal to the point the mouse cursor is at.
 
 <p align="center">
-<video id="movie" width="50%" height="50%" preload controls>
+<video id="movie" width="60%" height="60%" preload controls>
    <source id="srcMp4" src="{{ site.url }}/images/output.mp4" />
 </video>
 </p>
