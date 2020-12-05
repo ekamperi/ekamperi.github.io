@@ -67,7 +67,7 @@ Table[
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/many_mandel.png" alt="Mandelbrot sets with Mathematica">
 </p>
 
-And by tweaking the code a bit we can visualize the Mandelbroset for increasing number of the maximum iterations threshold.
+And by tweaking the code a bit, we can visualize the Mandelbrot set for increasing number of the maximum iterations threshold.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/many_mandel_thresh.png" alt="Mandelbrot sets with Mathematica">
