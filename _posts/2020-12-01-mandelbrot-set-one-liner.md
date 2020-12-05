@@ -3,7 +3,7 @@ layout: post
 title:  An almost one-liner to construct the Mandelbrot set with Mathematica
 date:   2020-12-01
 categories: math
-tags: ['complex numbers', 'functional programming', Mathematica, mathematics, programming]
+tags: ['complex numbers', 'fractals', 'functional programming', Mathematica, mathematics, programming]
 ---
 
 ## The motivation
@@ -136,7 +136,7 @@ p1 = MatrixPlot[mandel[0.01], ColorFunction -> "BrassTones", ImageSize -> Large,
 
 plotCourse[c_] :=
  Module[{pts, pts2},
-  pts = NestWhileList[#^2 + c &, c, Abs[#] <= 2 &, 1, 1000];
+  pts = NestWhileList[#^2 + c &, c, Abs[#] <= 2 &, 1, 255];
   pts2 = {Re@#, Im@#} & /@ pts;
   ListPlot[pts2, PlotStyle -> {Red, PointSize[0.005]}, 
    PlotRange -> {{-2, 1}, {-1, 1}}, Prolog -> Inset@p1, 
