@@ -169,7 +169,7 @@ MandelbrotSetPlot[{-2 - I, 1 + I}, MaxIterations -> 50]
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 70%; height: 70%" src="{{ site.url }}/images/mandel_builtin1.png" alt="Mandelbrot set and Julia set">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/mandel_builtin1.png" alt="Mandelbrot set with Mathematica">
 </p>
 
 {% highlight mathematica %}
@@ -180,6 +180,6 @@ MandelbrotSetPlot[{-0.65 + 0.47 I, -0.4 + 0.72 I},
 {% endhighlight %}
  
  <p align="center">
- <img style="width: 70%; height: 70%" src="{{ site.url }}/images/mandel_builtin2.png" alt="Mandelbrot set and Julia set">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/mandel_builtin2.png" alt="Mandelbrot set with Mathematica">
 </p>
 
