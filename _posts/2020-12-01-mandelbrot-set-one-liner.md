@@ -151,7 +151,7 @@ plotCourse[c_] :=
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/mandel_nested_snap.png" alt="Mandelbrot set and Julia set">
 </p>
 
-And here is a video of drawing the intermediate points in the complex plane. Every sequence starts with $$c$$ being equal to the point the mouse cursor is at.
+And here is a video of drawing the intermediate points in the complex plane. Every sequence starts with $$c$$ being equal to the point the mouse cursor is at. Notice that interesting patterns arise when we hover the mouse near the boundary of the set.
 
 <p align="center">
 <video id="movie" width="60%" height="60%" preload controls>
