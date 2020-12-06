@@ -128,7 +128,7 @@ Congratulations! You have just discovered the [Julia set](https://en.wikipedia.o
 
 ## The mind-blowing
 
-You might be thinking that keeping track of intermediate computations in `NestedWhileList[]` is a waste of resources. In some way, it is, if we only want to plot the Mandelbrot set. However, we could plot all the intermediate elements of the recursion $$z \mapsto z^2 + c$$. For many points $$c$$ of the complex plane $$\mathbb{C}$$, nothing special happens. For other points, though, some very cool patterns emerge. Here is a snapshot.
+You might be thinking that keeping track of intermediate computations in `NestedWhileList[]` is a waste of resources. In some sense, it is, if we only want to plot the Mandelbrot set. However, we could plot all the intermediate elements of the recursion $$z \mapsto z^2 + c$$. For many points $$c$$ of the complex plane $$\mathbb{C}$$, nothing special happens. For other points, though, some very cool patterns emerge. Here is a snapshot.
 
 {% highlight mathematica %}
 {% raw %}
