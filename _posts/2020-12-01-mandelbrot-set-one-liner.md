@@ -159,3 +159,27 @@ And here is a video of drawing the intermediate points in the complex plane. Eve
 </video>
 </p>
 
+## The nitpicker
+There's actually a built-in command in *Mathematica 10.0* that plots the Mandelbrot set, so you could really construct it with one-line!
+
+{% highlight mathematica %}
+{% raw %}
+MandelbrotSetPlot[{-2 - I, 1 + I}, MaxIterations -> 50]
+{% endraw %}
+{% endhighlight %}
+
+<p align="center">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/mandel_builtin1.png" alt="Mandelbrot set and Julia set">
+</p>
+
+{% highlight mathematica %}
+{% raw %}
+MandelbrotSetPlot[{-0.65 + 0.47 I, -0.4 + 0.72 I}, 
+ MaxIterations -> 200, ColorFunction -> "RedBlueTones"]
+{% endraw %}
+{% endhighlight %}
+ 
+ <p align="center">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/mandel_builtin2.png" alt="Mandelbrot set and Julia set">
+</p>
+
