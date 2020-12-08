@@ -132,3 +132,9 @@ In the following animation, we plot our own kernel density estimation for varyin
 <p align="center">
 <img width="70%" height="70%" src="{{ site.url }}/images/kde_bisquare_animation.gif" /> 
 </p>
+
+Kernel density estimation has two difficulties:
+
+1. Optimal bandwidth estimation
+2. The varying data density makes regions of high data density requiring small bandwidths, and areas with sparse data needing large
+bandwidths.
