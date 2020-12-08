@@ -24,6 +24,7 @@ $$
 
 
 Here is an example:
+
 {% highlight mathematica %}
 {% raw %}
 ClearAll["Global`*"];
@@ -51,10 +52,28 @@ $$
 \end{align*}
 $$
 
+In the following animation, we plot the output of *Mathematica*'s built-in `SmoothKernelDistribution[] function along with our own kernel density estimation, for varying values of the bandwidth parameter $$h$$.
+
 <p align="center">
 <img width="70%" height="70%" src="{{ site.url }}/images/kernel_density_estimate.gif" /> 
 </p>
 
+*Mathematica* uses the Silverman's rule of thumb for bandwidth estimation, via the following formaula:
+
 $$
-h = 0.9\, \min\left(\hat{\sigma}, \frac{\text{IQR}}{1.34}\right)\, n^{-\frac{1}{5}}</math>
+h = 0.9\, \min\left(\hat{\sigma}, \frac{\text{IQR}}{1.34}\right)\, n^{-\frac{1}{5}}
 $$
+
+In our case is is:
+
+{% highlight mathematica %}
+{% raw %}
+sigma = StandardDeviation[pts];
+iqr = InterquartileRange[pts];
+n = Length[pts];
+0.9 Min[sigma, iqr/1.34]*n^(-1/5)
+
+(* 1.93513 *)
+{% endraw %}
+{% endhighlight %}
+
