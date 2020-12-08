@@ -12,7 +12,7 @@ $$
 \hat{f}(x,h) = \frac{1}{N} \sum_{i=1}^{N} K_h (x-x_i)
 $$
 
-So, basically, **in the kernel density estimation approach we center a smooth kernel function at each data point and then we take their average**. One of the most common kernels is the Gaussian kernel:
+Basically, **in the kernel density estimation approach, we center a smooth kernel function at each data point and then take their average**. One of the most common kernels is the Gaussian kernel:
 
 $$
 K(u)\text = \frac{1}{\sqrt{2 \pi}} \exp \left(-\frac{u^2}{2}\right)\\
@@ -60,7 +60,7 @@ In the following figure, we plot both the individual Gaussian kernels, along wit
 <img width="60%" height="60%" src="{{ site.url }}/images/kernel_density_sum.png" /> 
 </p>
 
-In the following animation, we plot the output of *Mathematica*'s built-in `SmoothKernelDistribution[]` function and our own kernel density estimation for varying values of the bandwidth parameter $$h$$. The red dots at the bottom represent our sample data, same as before. Notice how for small values of the bandwidth parameter $$h$$ (during the start of the animation), the KDE is rigged. But, as $$h$$ increases, the estimate gets smoother and smoother. The selection of the parameter $$h$$ is, as we have already said, very crucial.
+In the following animation, we plot the output of *Mathematica*'s built-in `SmoothKernelDistribution[]` function and our own kernel density estimation for varying values of the bandwidth parameter $$h$$. The red dots at the bottom represent our sample data, the same as before. Notice how for small values of the bandwidth parameter $$h$$ (during the start of the animation), the KDE is rigged. But, as $$h$$ increases, the estimate gets smoother and smoother. The selection of the parameter $$h$$ is, as we have already said, very crucial.
 
 <p align="center">
 <img width="70%" height="70%" src="{{ site.url }}/images/kernel_density_estimate.gif" /> 
@@ -103,9 +103,9 @@ Grid[{
 <img width="100%" height="100%" src="{{ site.url }}/images/kde_comparison.png" /> 
 </p>
 
-In principle, we could use whatever kernel we'd like, as long as it is symmetric, non-negative and integrates to 1. However, our choice should take into consideration the underlying process that generates our data. In the following example, we use a bisquare kernel on the same data as before.
+In principle, we could use whatever kernel we'd like, as long as it is symmetric, non-negative, and integrates to 1. However, our choice should take into consideration the underlying process that generates our data. In the following example, we use a bisquare kernel on the same data as before.
 
-The bisquare kernel is symmetric, non-negative and integrates to 1.
+The bisquare kernel is symmetric, non-negative, and integrates to 1.
 
 $$
 K(u) = (1-u^2)^2 |u| \mathbf{I}_{\{|u|<1\}} \hspace{2cm} K(u) \ge 0, u \in \mathbb{R} \hspace{2cm} \int_{-\infty}^{\infty} K(u) \mathrm{d}u =1
@@ -127,7 +127,7 @@ Integrate[k2[u], {u, -Infinity, Infinity}]
 <img width="50%" height="50%" src="{{ site.url }}/images/kde_bisquare_kernel.png" /> 
 </p>
 
-In the following animation, we plot our own kernel density estimation for varying values of the bandwidth parameter $$h$$. The red dots at the bottom represent our sample data, same as before.
+In the following animation, we plot our own kernel density estimation for varying bandwidth parameter values $$h$$. The red dots at the bottom represent our sample data, the same as before.
 
 <p align="center">
 <img width="70%" height="70%" src="{{ site.url }}/images/kde_bisquare_animation.gif" /> 
