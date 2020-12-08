@@ -12,19 +12,19 @@ $$
 \hat{f}(x,h) = \frac{1}{N} \sum_{i=1}^{N} K_h (x-x_i)
 $$
 
-So, basically, **in the kernel density estimation approach we center a smooth kernel function at each data point and then we take their average**. One of the most common kernel is the Gaussian kernel:
+So, basically, **in the kernel density estimation approach we center a smooth kernel function at each data point and then we take their average**. One of the most common kernels is the Gaussian kernel:
 
 $$
 K(u)\text = \frac{1}{\sqrt{2 \pi}} \exp \left(-\frac{u^2}{2}\right)\\
 $$
 
-The $$K_h$$ is the scaled version of the kernel, i.e., $$K_\text{scaled}(h, u) = \frac{1}{h} K\left(\frac{u}{h}\right)$$. The parameter $$h$$ of the kernel is called the bandwidth, and this little parameter is the most critical determinant of our estimate. Even more important than the kernel choice itself. By tweaking the parameter $$h$$, we change the width of the kernels:
+The $$K_h$$ is the scaled version of the kernel, i.e., $$K_h(u) = \frac{1}{h} K\left(\frac{u}{h}\right)$$. The parameter $$h$$ of the kernel is called the bandwidth, and this little number is the most critical determinant of our estimate's quality. Even more important than the kernel choice itself! By tweaking the its value, we change the width of the kernel as in the next figure:
 
 <p align="center">
 <img width="60%" height="60%" src="{{ site.url }}/images/gaussian_kernels_var_width.png"/> 
 </p>
 
-Here is an example:
+Here is a concrete example that sums all the above:
 
 {% highlight mathematica %}
 {% raw %}
@@ -60,8 +60,7 @@ In the following figure, we plot both the individual Gaussian kernels, along wit
 <img width="60%" height="60%" src="{{ site.url }}/images/kernel_density_sum.png" /> 
 </p>
 
-
-In the following animation, we plot the output of *Mathematica*'s built-in `SmoothKernelDistribution[]` function and our own kernel density estimation for varying values of the bandwidth parameter $$h$$. The red dots at the bottom represent our sample data, and these are the centers of our smooth kernel. Notice how for small values of the bandwidth parameter $$h$$ (during the start of the animation), the KDE is rigged. But, as $$h$$ increases, the estimate gets smoother and smoother. The selection of the parameter $$h$$ is very crucial.
+In the following animation, we plot the output of *Mathematica*'s built-in `SmoothKernelDistribution[]` function and our own kernel density estimation for varying values of the bandwidth parameter $$h$$. The red dots at the bottom represent our sample data, same as before. Notice how for small values of the bandwidth parameter $$h$$ (during the start of the animation), the KDE is rigged. But, as $$h$$ increases, the estimate gets smoother and smoother. The selection of the parameter $$h$$ is, as we have already said, very crucial.
 
 <p align="center">
 <img width="70%" height="70%" src="{{ site.url }}/images/kernel_density_estimate.gif" /> 
