@@ -88,7 +88,7 @@ Grid[{
 {% endhighlight %}
 
 <p align="center">
-<img width="70%" height="70%" src="{{ site.url }}/images/kde_comparison.png" /> 
+<img width="100%" height="100%" src="{{ site.url }}/images/kde_comparison.png" /> 
 </p>
 
 
