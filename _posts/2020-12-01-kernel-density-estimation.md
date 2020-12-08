@@ -18,7 +18,7 @@ $$
 K(u)\text = \frac{1}{\sqrt{2 \pi}} \exp \left(-\frac{u^2}{2}\right)\\
 $$
 
-The $$K_h$$ is the scaled version of the kernel, i.e., $$K_h(u) = \frac{1}{h} K\left(\frac{u}{h}\right)$$. The parameter $$h$$ of the kernel is called the bandwidth, and this little number is the most critical determinant of our estimate's quality. Even more important than the kernel choice itself! By tweaking the its value, we change the width of the kernel as in the next figure:
+The $$K_h$$ is the scaled version of the kernel, i.e., $$K_h(u) = \frac{1}{h} K\left(\frac{u}{h}\right)$$. The parameter $$h$$ of the kernel is called the bandwidth, and this little number is a very critical determinant of our estimate's quality. As important as the kernel choice itself! By tweaking its value, we change the width of the kernel as in the next figure:
 
 <p align="center">
 <img width="60%" height="60%" src="{{ site.url }}/images/gaussian_kernels_var_width.png"/> 
