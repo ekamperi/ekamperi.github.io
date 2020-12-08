@@ -21,6 +21,28 @@ $$
 k_\text{scaled}(h, u) = \frac{1}{h} k\left(\frac{u}{h}\right)
 $$
 
+Here is an example:
+{% highlight mathematica %}
+{% raw %}
+ClearAll["Global`*"];
+
+(* Assume some sample data *)
+pts = {1, 2, 3, 4, 7, 9};
+
+(* Define the kernel *)
+k[u_] := 1/Sqrt[2 Pi] Exp[-u^2/2]
+k[h_, u_] := 1/h k[u/h]
+
+(* Define the kernel density estimate *)
+f[x_, h_] := 
+ With[{n = Length@pts}, 1/n Sum[k[h, x - pts[[i]]], {i, 1, n}]] // N
+
+(* Get a kernel density estimate for bandwidth equal to one *)
+f[x, 1]
+{% endraw %}
+{% endhighlight %}
+
+And this is the output:
 $$
 \begin{align*}
 \frac{1}{6} \left(\frac{e^{-\frac{1}{2} (x-9)^2}}{\sqrt{2 \pi }}+\frac{e^{-\frac{1}{2} (x-7)^2}}{\sqrt{2 \pi }}+\frac{e^{-\frac{1}{2} (x-4)^2}}{\sqrt{2 \pi }}+\frac{e^{-\frac{1}{2} (x-3)^2}}{\sqrt{2 \pi }}+\frac{e^{-\frac{1}{2} (x-2)^2}}{\sqrt{2 \pi }}+\frac{e^{-\frac{1}{2} (x-1)^2}}{\sqrt{2 \pi }}\right)
