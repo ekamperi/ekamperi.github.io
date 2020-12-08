@@ -57,7 +57,7 @@ $$
 In the following figure, we plot both the individual gaussian kernels, along with the final kernel density estimate. The black dots are our data points and notice how they are at the center of the kernels.
 
 <p align="center">
-<img width="100%" height="100%" src="{{ site.url }}/images/kernel_density_sum.png" /> 
+<img width="70%" height="70%" src="{{ site.url }}/images/kernel_density_sum.png" /> 
 </p>
 
 
