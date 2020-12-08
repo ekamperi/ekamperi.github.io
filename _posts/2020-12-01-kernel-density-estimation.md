@@ -6,22 +6,23 @@ categories: math
 tags: [Mathematica, mathematics, 'statistics']
 ---
 
-In low dimensional data, we usually plot histograms of them to get a feeling of how they are distributed. However, some times we want to have a smooth estimation of the underlying probability density function (PDF). One of the methods to do that, is the **kernel density estimation**. In the univariate case, that is when we have only one variable, it's very straightforward. Assuming we have a set of $$N$$ samples $$x_i = \{x_1, x_2, \ldots, x_N\}$$, the kernel density estimation (KDE), $$\hat{f}$$, of the PDF is:
+In low dimensional data, we usually plot histograms of them to get a feeling of how they are distributed. However, some times we want to have a smooth estimation of the underlying probability density function (PDF). One of the methods to do that, is the **kernel density estimation** (KDE). In the univariate case, that is when we have only one variable, it's very straightforward. Here is how we'd do it. Assuming we have a set of $$N$$ samples $$x_i = \{x_1, x_2, \ldots, x_N\}$$, the KDE, $$\hat{f}$$, of the PDF is defined as:
 
 $$
 \hat{f}(x,h) = \frac{1}{N} \sum_{i=1}^{N} K_h (x-x_i)
 $$
 
-So, in the kernel density estimation approach we center a smooth kernel function at each data point and then we sum them.
+So, basically, **in the kernel density estimation approach we center a smooth kernel function at each data point and then we sum all the kernels together**. One of the most common kernels is the Gaussian kernel:
 
 $$
 k(u)\text = \frac{1}{\sqrt{2 \pi}} \exp \left(-\frac{u^2}{2}\right)\\
 $$
 
+The parameter $$h$$ of the kernel is called the bandwidth, and this little parameter is the single most important determinant of our estimate. Even more important than the kernel choice itself.
+
 $$
 k_\text{scaled}(h, u) = \frac{1}{h} k\left(\frac{u}{h}\right)
 $$
-
 
 Here is an example:
 
