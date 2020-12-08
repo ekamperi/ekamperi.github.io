@@ -47,6 +47,7 @@ f[x, 1]
 {% endhighlight %}
 
 And this is the output:
+
 $$
 \begin{align*}
 \frac{1}{6} \left(\frac{e^{-\frac{1}{2} (x-9)^2}}{\sqrt{2 \pi }}+\frac{e^{-\frac{1}{2} (x-7)^2}}{\sqrt{2 \pi }}+\frac{e^{-\frac{1}{2} (x-4)^2}}{\sqrt{2 \pi }}+\frac{e^{-\frac{1}{2} (x-3)^2}}{\sqrt{2 \pi }}+\frac{e^{-\frac{1}{2} (x-2)^2}}{\sqrt{2 \pi }}+\frac{e^{-\frac{1}{2} (x-1)^2}}{\sqrt{2 \pi }}\right)
@@ -56,7 +57,7 @@ $$
 In the following figure, we plot both the individual gaussian kernels, along with the final kernel density estimate. The black dots are our data points and notice how they are at the center of the kernels.
 
 <p align="center">
-<img width="100%" height="100%" src="{{ site.url }}/images/kde_density_sum.png" /> 
+<img width="100%" height="100%" src="{{ site.url }}/images/kernel_density_sum.png" /> 
 </p>
 
 
