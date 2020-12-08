@@ -102,3 +102,29 @@ Grid[{
 <p align="center">
 <img width="100%" height="100%" src="{{ site.url }}/images/kde_comparison.png" /> 
 </p>
+
+In principle, we could use whatever kernel we'd like, as long as it is symmetric, non-negative and integrates to 1. However, our choice should take into consideration the underlying process that generates our data. In the following example, we use a bisquare kernel on the same data as before.
+
+The bisquare kernel is symmetric, non-negative and integrates to 1.
+
+{% highlight mathematica %}
+{% raw %}
+ind[u_] := If[Abs[u] < 1, 1, 0];
+k2[u_] := 3 (1 - u^2)^2*Abs[u] ind[u]
+Plot[k2[u], {3, -2, 3}, PlotRange -> All]
+k2[h_, u_] := 1/h k2[u/h]
+
+Integrate[k2[u], {u, -Infinity, Infinity}]
+(* 1 *)
+{% endraw %}
+{% endhighlight %}
+
+<p align="center">
+<img width="100%" height="100%" src="{{ site.url }}/images/kde_bisquare_kernel.png" /> 
+</p>
+
+In the following animation, we plot our own kernel density estimation for varying values of the bandwidth parameter $$h$$. The red dots at the bottom represent our sample data, same as before.
+
+<p align="center">
+<img width="70%" height="70%" src="{{ site.url }}/images/kernel_bisquare_animation.gif" /> 
+</p>
