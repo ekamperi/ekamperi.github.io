@@ -74,6 +74,22 @@ n = Length[pts];
 0.9 Min[sigma, iqr/1.34]*n^(-1/5)
 
 (* 1.93513 *)
+
+
+Grid[{
+  Plot[Last@#, {x, 0, 10}, Frame -> {True, True, False, False}, 
+     FrameLabel -> {"x", "PDF"}, ImageSize -> Medium, 
+     PlotLabel -> First@#, Filling -> Axis] & /@ {
+    {"Mathematica's\nSmoothKernelDistribution[]", 
+     PDF[SmoothKernelDistribution[pts], 
+      x]}, {"Ours kernel density estimation\n(h=1.93513)", 
+     f[x, 1.93513]}}
+  }]
 {% endraw %}
 {% endhighlight %}
+
+<p align="center">
+<img width="70%" height="70%" src="{{ site.url }}/images/kde_comparison.png" /> 
+</p>
+
 
