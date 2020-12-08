@@ -147,5 +147,5 @@ $$
 \hat{f}(\mathbf{x}, \mathbf{H}) = \frac{1}{n}\sum_{i=1}^n K_{\mathbf{H}} \left(\mathbf{x} - \mathbf{x}_i\right)
 $$
 
-Where $$\mathbf{H}$$ is a symmetric and positive definite bandwidth matrix and $$K_{\mathbf{H}}(\mathbf{u}) = |\mathbf{H}|^{-1/2}K(\mathbf{H}^{-1/2}\mathbf{u})$$ and $$K(\mathbf{u}) = \frac{1}{\sqrt{2\pi}} \text{exp}\left(-\frac{1}{2}\mathbf{u}^T \mathbf{u}\right)$$.
+Where $$\mathbf{H}$$ is a symmetric and positive definite bandwidth matrix and $$K_{\mathbf{H}}(\mathbf{u}) = \|\mathbf{H}\|^{-1/2}K(\mathbf{H}^{-1/2}\mathbf{u})$$ and $$K(\mathbf{u}) = \frac{1}{\sqrt{2\pi}} \text{exp}\left(-\frac{1}{2}\mathbf{u}^T \mathbf{u}\right)$$.
 
