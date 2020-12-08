@@ -6,6 +6,7 @@ categories: math
 tags: [Mathematica, mathematics, 'statistics']
 ---
 
+## The univariate case
 In low dimensional data, we usually plot histograms to get a feeling of how the data are distributed. However, sometimes we want to have a smooth estimation of the underlying probability density function (PDF). One of the methods to do that is the **kernel density estimation** (KDE). In the univariate case, that is when we have only one variable, it's very straightforward. Here is how we'd do it. Assuming we have a set of $$N$$ samples $$x_i = \{x_1, x_2, \ldots, x_N\}$$, the KDE, $$\hat{f}$$, of the PDF is defined as:
 
 $$
@@ -135,6 +136,16 @@ In the following animation, we plot our own kernel density estimation for varyin
 
 Kernel density estimation has two difficulties:
 
-1. Optimal bandwidth estimation
+1. Optimal bandwidth estimation.
 2. The varying data density makes regions of high data density requiring small bandwidths, and areas with sparse data needing large
 bandwidths.
+
+## The bivariate case
+In analogy with the univariate case, the bivariate kernel density estimate is defined as:
+
+$$
+\hat{f}(\mathbf{x}, \mathbf{H}) = \frac{1}{n}\sum_{i=1}^n K_{\mathbf{H}} \left(\mathbf{x} - \mathbf{x}_i\right)
+$$
+
+Where $$\mathbf{H}$$ is a symmetric and positive definite bandwidth matrix and $$K_{\mathbf{H}}(\mathbf{u}) = |\mathbf{H}|^{-1/2}K(\mathbf{H}^{-1/2}\mathbf{u})$$ and $$K(\mathbf{u}) = \frac{1}{\sqrt{2\pi}} \text{exp}\left(-\frac{1}{2}\mathbf{u}^T \mathbf{u}\right)$$.
+
