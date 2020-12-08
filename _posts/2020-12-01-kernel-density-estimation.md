@@ -120,11 +120,11 @@ Integrate[k2[u], {u, -Infinity, Infinity}]
 {% endhighlight %}
 
 <p align="center">
-<img width="100%" height="100%" src="{{ site.url }}/images/kde_bisquare_kernel.png" /> 
+<img width="50%" height="50%" src="{{ site.url }}/images/kde_bisquare_kernel.png" /> 
 </p>
 
 In the following animation, we plot our own kernel density estimation for varying values of the bandwidth parameter $$h$$. The red dots at the bottom represent our sample data, same as before.
 
 <p align="center">
-<img width="70%" height="70%" src="{{ site.url }}/images/kernel_bisquare_animation.gif" /> 
+<img width="70%" height="70%" src="{{ site.url }}/images/kde_bisquare_animation.gif" /> 
 </p>
