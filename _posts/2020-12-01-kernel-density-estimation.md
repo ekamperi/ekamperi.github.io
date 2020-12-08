@@ -12,6 +12,7 @@ $$
 \hat{f}(x,h) = \frac{1}{N} \sum_{i=1}^{N} K_h (x-x_i)
 $$
 
+So, in the kernel density estimation approach we center a smooth kernel function at each data point and then we sum them.
 
 $$
 k(u)\text = \frac{1}{\sqrt{2 \pi}} \exp \left(-\frac{u^2}{2}\right)\\
@@ -20,6 +21,7 @@ $$
 $$
 k_\text{scaled}(h, u) = \frac{1}{h} k\left(\frac{u}{h}\right)
 $$
+
 
 Here is an example:
 {% highlight mathematica %}
