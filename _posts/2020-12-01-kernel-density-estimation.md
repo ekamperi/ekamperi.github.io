@@ -30,5 +30,5 @@ $$
 $$
 
 <p align="center">
-<img src="{{ site.url }}/images/kernel_density.gif" /> 
+<img width="70%" height="70%" src="{{ site.url }}/images/kernel_density_estimate.gif" /> 
 </p>
