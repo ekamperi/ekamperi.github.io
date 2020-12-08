@@ -52,3 +52,7 @@ $$
 <p align="center">
 <img width="70%" height="70%" src="{{ site.url }}/images/kernel_density_estimate.gif" /> 
 </p>
+
+$$
+h = 0.9\, \min\left(\hat{\sigma}, \frac{\text{IQR}}{1.34}\right)\, n^{-\frac{1}{5}}</math>
+$$
