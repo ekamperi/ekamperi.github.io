@@ -22,5 +22,5 @@ $$
 $$
 
 <p align="center">
-<img src="{{ site_url }}/kernel_density.gif" /> 
+<img src="{{ site.url }}/kernel_density.gif" /> 
 </p>
