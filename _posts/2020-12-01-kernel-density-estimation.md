@@ -61,7 +61,7 @@ In the following figure, we plot both the individual gaussian kernels, along wit
 </p>
 
 
-In the following animation, we plot the output of *Mathematica*'s built-in `SmoothKernelDistribution[] function along with our own kernel density estimation, for varying values of the bandwidth parameter $$h$$. The red dots at the bottom represent our sample data and these are the centers of our smooth kernel. Notice how for small values of the bandwidth parameter $$h$$ (during the start of the animation) the KDE is rigged. But, as $$h$$ increases the estimate gets smoother and smoother. The selection of the parameter $$h$$ is very crucial.
+In the following animation, we plot the output of *Mathematica*'s built-in `SmoothKernelDistribution[]` function along with our own kernel density estimation, for varying values of the bandwidth parameter $$h$$. The red dots at the bottom represent our sample data and these are the centers of our smooth kernel. Notice how for small values of the bandwidth parameter $$h$$ (during the start of the animation) the KDE is rigged. But, as $$h$$ increases the estimate gets smoother and smoother. The selection of the parameter $$h$$ is very crucial.
 
 <p align="center">
 <img width="70%" height="70%" src="{{ site.url }}/images/kernel_density_estimate.gif" /> 
