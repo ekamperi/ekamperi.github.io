@@ -6,19 +6,19 @@ categories: math
 tags: [Mathematica, mathematics, 'statistics']
 ---
 
-In low dimensional data, we usually plot histograms of them to get a feeling of how they are distributed. However, some times we want to have a smooth estimation of the underlying probability density function (PDF). One of the methods to do that, is the **kernel density estimation** (KDE). In the univariate case, that is when we have only one variable, it's very straightforward. Here is how we'd do it. Assuming we have a set of $$N$$ samples $$x_i = \{x_1, x_2, \ldots, x_N\}$$, the KDE, $$\hat{f}$$, of the PDF is defined as:
+In low dimensional data, we usually plot histograms to get a feeling of how the data are distributed. However, sometimes we want to have a smooth estimation of the underlying probability density function (PDF). One of the methods to do that is the **kernel density estimation** (KDE). In the univariate case, that is when we have only one variable, it's very straightforward. Here is how we'd do it. Assuming we have a set of $$N$$ samples $$x_i = \{x_1, x_2, \ldots, x_N\}$$, the KDE, $$\hat{f}$$, of the PDF is defined as:
 
 $$
 \hat{f}(x,h) = \frac{1}{N} \sum_{i=1}^{N} K_h (x-x_i)
 $$
 
-So, basically, **in the kernel density estimation approach we center a smooth kernel function at each data point and then we sum all the kernels together**. One of the most common kernels is the Gaussian kernel:
+So, basically, **in the kernel density estimation approach we center a smooth kernel function at each data point and then we take their average**. One of the most common kernel is the Gaussian kernel:
 
 $$
 k(u)\text = \frac{1}{\sqrt{2 \pi}} \exp \left(-\frac{u^2}{2}\right)\\
 $$
 
-The parameter $$h$$ of the kernel is called the bandwidth, and this little parameter is the single most important determinant of our estimate. Even more important than the kernel choice itself.
+The parameter $$h$$ of the kernel is called the bandwidth, and this little parameter is the most critical determinant of our estimate. Even more important than the kernel choice itself.
 
 $$
 k_\text{scaled}(h, u) = \frac{1}{h} k\left(\frac{u}{h}\right)
@@ -54,14 +54,14 @@ $$
 \end{align*}
 $$
 
-In the following figure, we plot both the individual Gaussian kernels, along with the kernel density estimate. The black dots are our data points and notice how they are at the center of the kernels.
+In the following figure, we plot both the individual Gaussian kernels, along with the kernel density estimate. The black dots are our data points and notice how they are at the kernels' center.
 
 <p align="center">
 <img width="60%" height="60%" src="{{ site.url }}/images/kernel_density_sum.png" /> 
 </p>
 
 
-In the following animation, we plot the output of *Mathematica*'s built-in `SmoothKernelDistribution[]` function along with our own kernel density estimation, for varying values of the bandwidth parameter $$h$$. The red dots at the bottom represent our sample data and these are the centers of our smooth kernel. Notice how for small values of the bandwidth parameter $$h$$ (during the start of the animation) the KDE is rigged. But, as $$h$$ increases the estimate gets smoother and smoother. The selection of the parameter $$h$$ is very crucial.
+In the following animation, we plot the output of *Mathematica*'s built-in `SmoothKernelDistribution[]` function and our own kernel density estimation for varying values of the bandwidth parameter $$h$$. The red dots at the bottom represent our sample data, and these are the centers of our smooth kernel. Notice how for small values of the bandwidth parameter $$h$$ (during the start of the animation), the KDE is rigged. But, as $$h$$ increases, the estimate gets smoother and smoother. The selection of the parameter $$h$$ is very crucial.
 
 <p align="center">
 <img width="70%" height="70%" src="{{ site.url }}/images/kernel_density_estimate.gif" /> 
@@ -86,7 +86,7 @@ n = Length[pts];
 {% endraw %}
 {% endhighlight %}
 
-So, unless we have screwed things up, if we pass $$h = 1.93513$$ to our KDE, we should get an identical result compared to *Mathematica*.
+Unless we have screwed things up, if we pass $$h = 1.93513$$ to our KDE, we should get an identical result compared to *Mathematica*.
 
 {% highlight mathematica %}
 {% raw %}
@@ -103,5 +103,3 @@ Grid[{
 <p align="center">
 <img width="100%" height="100%" src="{{ site.url }}/images/kde_comparison.png" /> 
 </p>
-
-
