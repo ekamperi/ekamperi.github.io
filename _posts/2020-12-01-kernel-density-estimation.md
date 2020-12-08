@@ -6,9 +6,7 @@ categories: math
 tags: [Mathematica, mathematics, 'statistics']
 ---
 
-In low dimensional data, we usually plot the histograms to get a feeling of the data's distribution. However, some times we want to come up with a smooth estimation of the underlying probability density function (PDF). One of the methods to do that, is the **kernel density estimation**.
-
-In the univariate case, that is when we have only ony variable, it's very straightforward. Assuming we have a set of $$N$$ samples $$x_i = [x_1, x_2, \ldots, x_N]$$, the kernel density estimation, $$\hat{f}$$, of the PDF is:
+In low dimensional data, we usually plot the histograms to get a feeling of how data are distributed. However, some times we want to come up with a smooth estimation of the underlying probability density function (PDF). One of the methods to do that, is the **kernel density estimation**. In the univariate case, that is when we have only ony variable, it's very straightforward. Assuming we have a set of $$N$$ samples $$x_i = (x_1, x_2, \ldots, x_N)$$, the kernel density estimation, $$\hat{f}$$, of the PDF is:
 
 $$
 \hat{f}(x,h) = \frac{1}{N} \sum_{i=1}^{N} K_h (x-x_i)
