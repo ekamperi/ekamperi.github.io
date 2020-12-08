@@ -107,6 +107,10 @@ In principle, we could use whatever kernel we'd like, as long as it is symmetric
 
 The bisquare kernel is symmetric, non-negative and integrates to 1.
 
+$$
+K(u) = (1-u^2)^2 |u| \mathbf{I}_{\{|u|<1\}} \hspace{2cm} K(u) \ge 0, u \in \mathbb{R} \hspace{2cm} \int_{-\infty}^{\infty} K(u) \mathrm{d}u =1
+$$
+
 {% highlight mathematica %}
 {% raw %}
 ind[u_] := If[Abs[u] < 1, 1, 0];
