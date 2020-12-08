@@ -86,10 +86,8 @@ Grid[{
   Plot[Last@#, {x, 0, 10}, Frame -> {True, True, False, False}, 
      FrameLabel -> {"x", "PDF"}, ImageSize -> Medium, 
      PlotLabel -> First@#, Filling -> Axis] & /@ {
-    {"Mathematica's\nSmoothKernelDistribution[]", 
-     PDF[SmoothKernelDistribution[pts], 
-      x]}, {"Ours kernel density estimation\n(h=1.93513)", 
-     f[x, 1.93513]}}
+    {"Mathematica's\nSmoothKernelDistribution[]", PDF[SmoothKernelDistribution[pts], x]},
+    {"Ours kernel density estimation\n(h=1.93513)", f[x, 1.93513]}}
   }]
 {% endraw %}
 {% endhighlight %}
