@@ -75,7 +75,13 @@ n = Length[pts];
 0.9 Min[sigma, iqr/1.34]*n^(-1/5)
 
 (* 1.93513 *)
+{% endraw %}
+{% endhighlight %}
 
+So, unless we have screwed things up, if we pass $$h = 1.93513$$ to our KDE, we should get an identical result compared to *Mathematica*.
+
+{% highlight mathematica %}
+{% raw %}
 Grid[{
   Plot[Last@#, {x, 0, 10}, Frame -> {True, True, False, False}, 
      FrameLabel -> {"x", "PDF"}, ImageSize -> Medium, 
