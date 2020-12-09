@@ -149,3 +149,47 @@ $$
 
 Where $$\mathbf{H}$$ is a symmetric and positive definite bandwidth matrix and $$K_{\mathbf{H}}(\mathbf{u}) = \|\mathbf{H}\|^{-1/2}K(\mathbf{H}^{-1/2}\mathbf{u})$$ and $$K(\mathbf{u}) = \frac{1}{2\pi} \text{exp}\left(-\frac{1}{2}\mathbf{u}^T \mathbf{u}\right)$$.
 
+Here is some data sampled from a binormal distribution:
+
+{% highlight mathematica %}
+{% raw %}
+ClearAll["Global`*"];
+pts = RandomVariate[BinormalDistribution[0.9], 500];
+Histogram3D[pts, ColorFunction -> "TemperatureMap"]
+{% endraw %}
+{% endhighlight %}
+
+<p align="center">
+<img width="70%" height="70%" src="{{ site.url }}/images/skde_2d_binormal.png" /> 
+</p>
+
+And here is the code that calculates the smooth kernel density estimate. The two plot are very similar, however they are not entirely identical. Apparently, `SmoothKernelDensity[]` calculation is more sophisticated. You may also [follow this thread on Mathematica.SE](https://mathematica.stackexchange.com/questions/236156/how-to-reproduce-smoothkerneldistribution-for-the-bivariate-case) for more information.
+
+{% highlight mathematica %}
+{% raw %}
+(* Use the built-in SmoothKernelDistribution[] *)
+p1 = Plot3D[
+  Evaluate@PDF[
+    SmoothKernelDistribution[pts, MaxMixtureKernels -> All], {x, y}], {x, -3, 3}, {y, -3, 3},
+    PlotRange -> All, ColorFunction -> "TemperatureMap"]
+
+(* Manually calculate the smooth KDE *)
+k[u_] := (1/(2 \[Pi])) * Exp[-u.u/2]
+k[h_, u_] := Det[h]^(-1/2) * k[MatrixPower[h,-1/2].u]
+f[x_, y_, h_] := 
+ With[{n = Length@pts}, (1/n)*
+    Sum[k[h, {x - First@pts[[i]], y - Last@pts[[i]]}], {i, 1, n}]] // N
+
+h = SmoothKernelDistribution[pts]["Bandwidth"];
+bw = {{First@h, 0}, {0, Last@h}};
+p2 = Plot3D[f[x, y, bw], {x, -3, 3}, {y, -3, 3}, PlotRange -> All, 
+  ColorFunction -> "TemperatureMap"]
+
+Style[Grid[{{p1, p2}}], ImageSizeMultipliers -> 1]
+{% endraw %}
+{% endhighlight %}
+
+<p align="center">
+<img width="70%" height="70%" src="{{ site.url }}/images/skde_2d_math_vs_manual.png" /> 
+</p>
+
