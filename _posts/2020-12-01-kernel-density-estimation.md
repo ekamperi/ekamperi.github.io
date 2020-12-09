@@ -146,13 +146,13 @@ Kernel density estimation has two difficulties:
 bandwidths.
 
 ## The bivariate case
-The bivariate kernel density estimate is defined as:
+The bivariate kernel density estimate is defined in a similar manner:
 
 $$
 \hat{f}(\mathbf{x}, \mathbf{H}) = \frac{1}{n}\sum_{i=1}^n K_{\mathbf{H}} \left(\mathbf{x} - \mathbf{x}_i\right)
 $$
 
-Where $$\mathbf{H}$$ is a symmetric and positive definite bandwidth matrix and $$K_{\mathbf{H}}(\mathbf{u}) = \text{det}(\mathbf{H})^{-1/2}K(\mathbf{H}^{-1/2}\mathbf{u})$$ and $$K(\mathbf{u}) = \frac{1}{2\pi} \text{exp}\left(-\frac{1}{2}\mathbf{u}^T \mathbf{u}\right)$$.
+Since we are in two dimensions know, our $$\mathbf{x}$$'s now are tuples $$(x,y)$$, and the bandwidth $$\mathbf{H}$$ is not a scalar anymore, but a matrix. In specific, $$\mathbf{H}$$ is a symmetric and positive definite bandwidth matrix. The scaled version of our kernel is $$K_{\mathbf{H}}(\mathbf{u}) = \text{det}(\mathbf{H})^{-1/2}K(\mathbf{H}^{-1/2}\mathbf{u})$$, where $$\text{det}(\mathbf{H})$$ is the determinant of the bandwidth matrix $$\mathbf{H}$$ and our kernel is $$\mathbf{ and $$K(\mathbf{u}) = \frac{1}{2\pi} \text{exp}\left(-\frac{1}{2}\mathbf{u}^⊤ \mathbf{u}\right)$$. Let's see a concrete example to clear things up!
 
 Here is some data sampled from a binormal distribution:
 
