@@ -7,9 +7,12 @@ tags: [Mathematica, mathematics, 'statistics']
 ---
 
 ## The univariate case
-In low dimensional data, we usually plot histograms to get a feeling of how the data are distributed. Histograms are nice because they provide a fast and unambiguous way to visualize our data's probability distribution. There is also *parametric* probability density estimation where we pick a common distribution (say a normal distribution), and we estimate the parameters of the distribution (e.g., mean, standard deviation) from the data sample. Last, there is *nonparametric* probability such as **kernel density estimation** (KDE).
+In low dimensional data (1 or 2 variables), we usually plot histograms to get a feeling of how the data are distributed. Histograms are nice because they provide a fast and unambiguous way to visualize our data's probability distribution. However, they are discrete and sometimes it is useful to have a smooth estimation of the underlying probability density function (PDF) at hand. There are two ways to get a smooth PDF.
 
-KDE is useful when we want to come up with a smooth estimation of the underlying probability density function (PDF). In the univariate case, that is when we have only one variable, it's very straightforward. Here is how we'd do it. Assuming we have a set of $$N$$ samples $$x_i = \{x_1, x_2, \ldots, x_N\}$$, the KDE, $$\hat{f}$$, of the PDF is defined as:
+1. The *parametric* probability density estimation where we pick a common distribution (say a normal distribution), and we estimate the parameters of the distribution (e.g., mean, standard deviation) from the data sample. 
+2. The *nonparametric* probability such as **kernel density estimation** (KDE) that we will be talking today.
+
+In the univariate case, that is when we have only one variable, KDE is very straightforward. Here is how we'd do it. Assuming we have a set of $$N$$ samples $$x_i = \{x_1, x_2, \ldots, x_N\}$$, the KDE, $$\hat{f}$$, of the PDF is defined as:
 
 $$
 \hat{f}(x,h) = \frac{1}{N} \sum_{i=1}^{N} K_h (x-x_i)
