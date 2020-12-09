@@ -27,7 +27,7 @@ The $$K_h$$ is the scaled version of the kernel, i.e., $$K_h(u) = \frac{1}{h} K\
 <img width="60%" height="60%" src="{{ site.url }}/images/gaussian_kernels_var_width.png"/> 
 </p>
 
-Here is a concrete example that sums all the above:
+Here is a concrete example that sums all of the above:
 
 {% highlight mathematica %}
 {% raw %}
@@ -75,7 +75,7 @@ $$
 h = 0.9\, \min\left(\hat{\sigma}, \frac{\text{IQR}}{1.34}\right)\, n^{-\frac{1}{5}}
 $$
 
-In our case is is:
+In our case it is:
 
 {% highlight mathematica %}
 {% raw %}
