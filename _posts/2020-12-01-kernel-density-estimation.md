@@ -7,10 +7,10 @@ tags: [Mathematica, mathematics, 'statistics']
 ---
 
 ## The univariate case
-In low dimensional data (1 or 2 variables), we usually plot histograms to get a feeling of how the data are distributed. Histograms are nice because they provide a fast and unambiguous way to visualize our data's probability distribution. However, they are discrete and sometimes it is useful to have a smooth estimation of the underlying probability density function (PDF) at hand. There are two ways to get a smooth PDF.
+In low dimensional data (1 or 2 variables), we usually plot histograms to get a feeling of how the data are distributed. Histograms are nice because they provide a fast and unambiguous way to visualize our data's probability distribution. However, they are discrete, and sometimes it is useful to have a smooth estimation of the underlying probability density function (PDF) at hand. There are two ways to get a smooth PDF.
 
-1. The *parametric* probability density estimation where we pick a common distribution (say a normal distribution), and we estimate the parameters of the distribution (e.g., mean, standard deviation) from the data sample. 
-2. The *nonparametric* probability such as **kernel density estimation** (KDE) that we will be talking today.
+1. The *parametric* probability density estimation where we pick a common distribution (say a normal distribution), and we estimate its parameters (e.g., mean, standard deviation) from the data sample. 
+2. The *nonparametric* probability such as **kernel density estimation** (KDE), that we will be discussing today.
 
 In the univariate case, that is when we have only one variable, KDE is very straightforward. Here is how we'd do it. Assuming we have a set of $$N$$ samples $$x_i = \{x_1, x_2, \ldots, x_N\}$$, the KDE, $$\hat{f}$$, of the PDF is defined as:
 
