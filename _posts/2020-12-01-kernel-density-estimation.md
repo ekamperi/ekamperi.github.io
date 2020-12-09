@@ -7,7 +7,9 @@ tags: [Mathematica, mathematics, 'statistics']
 ---
 
 ## The univariate case
-In low dimensional data, we usually plot histograms to get a feeling of how the data are distributed. However, sometimes we want to have a smooth estimation of the underlying probability density function (PDF). One of the methods to do that is the **kernel density estimation** (KDE). In the univariate case, that is when we have only one variable, it's very straightforward. Here is how we'd do it. Assuming we have a set of $$N$$ samples $$x_i = \{x_1, x_2, \ldots, x_N\}$$, the KDE, $$\hat{f}$$, of the PDF is defined as:
+In low dimensional data, we usually plot histograms to get a feeling of how the data are distributed. Histograms are nice because they provide a fast and unambiguous way to visualize our data's probability distribution. There is also *parametric* probability density estimation where we pick a common distribution (say a normal distribution), and we estimate the parameters of the distribution (e.g., mean, standard deviation) from the data sample. Last, there is *nonparametric* probability such as **kernel density estimation** (KDE).
+
+KDE is useful when we want to come up with a smooth estimation of the underlying probability density function (PDF). In the univariate case, that is when we have only one variable, it's very straightforward. Here is how we'd do it. Assuming we have a set of $$N$$ samples $$x_i = \{x_1, x_2, \ldots, x_N\}$$, the KDE, $$\hat{f}$$, of the PDF is defined as:
 
 $$
 \hat{f}(x,h) = \frac{1}{N} \sum_{i=1}^{N} K_h (x-x_i)
@@ -163,7 +165,7 @@ Histogram3D[pts, ColorFunction -> "TemperatureMap"]
 <img width="50%" height="50%" src="{{ site.url }}/images/skde_2d_binormal.png" /> 
 </p>
 
-And here is the code that calculates the smooth kernel density estimate. The two plot are very similar, however they are not entirely identical. Apparently, `SmoothKernelDensity[]` calculation is more sophisticated. You may also [follow this thread on Mathematica.SE](https://mathematica.stackexchange.com/questions/236156/how-to-reproduce-smoothkerneldistribution-for-the-bivariate-case) for more information.
+And here is the code that calculates the smooth kernel density estimate. The two plots are very similar; however, they are not entirely identical. Apparently, the `SmoothKernelDensity[]` calculation is more sophisticated. You may also [follow this thread on Mathematica.SE](https://mathematica.stackexchange.com/questions/236156/how-to-reproduce-smoothkerneldistribution-for-the-bivariate-case) for more information.
 
 {% highlight mathematica %}
 {% raw %}
@@ -192,4 +194,3 @@ Style[Grid[{{p1, p2}}], ImageSizeMultipliers -> 1]
 <p align="center">
 <img width="100%" height="100%" src="{{ site.url }}/images/skde_math_vs_manual.png" /> 
 </p>
-
