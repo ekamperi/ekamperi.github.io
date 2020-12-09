@@ -64,7 +64,7 @@ In the following figure, we plot both the individual Gaussian kernels, along wit
 In the following animation, we plot the output of *Mathematica*'s built-in `SmoothKernelDistribution[]` function and our own kernel density estimation for varying values of the bandwidth parameter $$h$$. The red dots at the bottom represent our sample data, the same as before. Notice how for small values of the bandwidth parameter $$h$$ (during the start of the animation), the KDE is rigged. But, as $$h$$ increases, the estimate gets smoother and smoother. The selection of the parameter $$h$$ is, as we have already said, very crucial.
 
 <p align="center">
-<img width="70%" height="70%" src="{{ site.url }}/images/kernel_density_estimate.gif" /> 
+<img width="60%" height="60%" src="{{ site.url }}/images/kernel_density_estimate.gif" /> 
 </p>
 
 *Mathematica* uses the Silverman's rule of thumb for bandwidth estimation, via the following formaula:
@@ -131,7 +131,7 @@ Integrate[k2[u], {u, -Infinity, Infinity}]
 In the following animation, we plot our own kernel density estimation for varying bandwidth parameter values $$h$$. The red dots at the bottom represent our sample data, the same as before.
 
 <p align="center">
-<img width="70%" height="70%" src="{{ site.url }}/images/kde_bisquare_animation.gif" /> 
+<img width="60%" height="60%" src="{{ site.url }}/images/kde_bisquare_animation.gif" /> 
 </p>
 
 Kernel density estimation has two difficulties:
@@ -160,7 +160,7 @@ Histogram3D[pts, ColorFunction -> "TemperatureMap"]
 {% endhighlight %}
 
 <p align="center">
-<img width="70%" height="70%" src="{{ site.url }}/images/skde_2d_binormal.png" /> 
+<img width="60%" height="60%" src="{{ site.url }}/images/skde_2d_binormal.png" /> 
 </p>
 
 And here is the code that calculates the smooth kernel density estimate. The two plot are very similar, however they are not entirely identical. Apparently, `SmoothKernelDensity[]` calculation is more sophisticated. You may also [follow this thread on Mathematica.SE](https://mathematica.stackexchange.com/questions/236156/how-to-reproduce-smoothkerneldistribution-for-the-bivariate-case) for more information.
@@ -190,6 +190,6 @@ Style[Grid[{{p1, p2}}], ImageSizeMultipliers -> 1]
 {% endhighlight %}
 
 <p align="center">
-<img width="70%" height="70%" src="{{ site.url }}/images/skde_2d_math_vs_manual.png" /> 
+<img width="60%" height="60%" src="{{ site.url }}/images/skde_math_vs_manual.png" /> 
 </p>
 
