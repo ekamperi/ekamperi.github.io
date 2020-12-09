@@ -152,7 +152,7 @@ $$
 \hat{f}(\mathbf{x}, \mathbf{H}) = \frac{1}{n}\sum_{i=1}^n K_{\mathbf{H}} \left(\mathbf{x} - \mathbf{x}_i\right)
 $$
 
-Since we are in two dimensions know, our $$\mathbf{x}$$'s now are tuples $$(x,y)$$, and the bandwidth $$\mathbf{H}$$ is not a scalar anymore, but a matrix. In specific, $$\mathbf{H}$$ is a symmetric and positive definite bandwidth matrix. The scaled version of our kernel is $$K_{\mathbf{H}}(\mathbf{u}) = \text{det}(\mathbf{H})^{-1/2}K(\mathbf{H}^{-1/2}\mathbf{u})$$, where $$\text{det}(\mathbf{H})$$ is the determinant of the bandwidth matrix $$\mathbf{H}$$ and our kernel is $$K(\mathbf{u}) = \frac{1}{2\pi} \text{exp}\left(-\frac{1}{2}\mathbf{u}^⊤ \mathbf{u}\right)$$. Let's see a concrete example to clear things up!
+Since we are in two dimensions, our $$\mathbf{x}$$'s are tuples $$(x,y)$$ now, and the bandwidth $$\mathbf{H}$$ is not a scalar anymore, but a matrix. In specific, $$\mathbf{H}$$ is a symmetric and positive definite bandwidth matrix. The scaled version of our kernel is $$K_{\mathbf{H}}(\mathbf{u}) = \text{det}(\mathbf{H})^{-1/2}K(\mathbf{H}^{-1/2}\mathbf{u})$$, where $$\text{det}(\mathbf{H})$$ is the determinant of the bandwidth matrix $$\mathbf{H}$$ and our kernel is $$K(\mathbf{u}) = \frac{1}{2\pi} \text{exp}\left(-\frac{1}{2}\mathbf{u}^⊤ \mathbf{u}\right)$$. Let's see a concrete example to clear things up!
 
 Here is some data sampled from a binormal distribution:
 
