@@ -4,6 +4,7 @@ title:  "How to sum a divergent series with Pade approximation"
 date:   2020-07-13
 categories: [mathematics]
 tags: ['mathematics', 'perturbation theory']
+description: How to sum a divergent series with Pade approximation using Mathematica.
 ---
 
 So, this is a follow-up post on [my previous post](https://ekamperi.github.io/mathematics/2020/06/21/perturbation-theory.html)
