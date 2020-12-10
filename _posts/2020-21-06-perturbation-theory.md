@@ -4,6 +4,7 @@ title:  "A simple example of perturbation theory"
 date:   2020-06-21
 categories: [mathematics]
 tags: ['mathematics', 'perturbation theory']
+description: A basic introduction to perturbation theory plus some Mathematica code to play with.
 ---
 
 I was looking at the video lectures of [Carl Bender](https://en.wikipedia.org/wiki/Carl_M._Bender) on mathematical physics at YouTube. What a great teacher Carl Bender is! The first lectures are an introduction to the perturbation theory. They start with a straightforward problem, where we are asked to find the real root of the following quintic equation:
