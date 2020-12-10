@@ -4,6 +4,7 @@ title:  "The birthday paradox, factorial approximation and Laplace's method"
 date:   2019-11-09
 categories: [mathematics]
 tags: ['Feynman integration', 'integrals', 'Laplace', 'mathematics', 'probabilities']
+description: A post on how to use Laplace's method for calculating a factorial approximation that is used in the birthday paradox.
 ---
 
 ### Contents
