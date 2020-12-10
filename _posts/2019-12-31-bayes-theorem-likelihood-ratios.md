@@ -4,6 +4,7 @@ title:  "Bayes theorem and likelihood ratios for diagnostic tests"
 date:   2020-01-19
 categories: [mathematics]
 tags: ['Bayes theorem', 'medicine', 'statistics']
+description: How to calculate the likelihood ratios for diagnostic tests via the Bayes theorem.
 ---
 
 I was taking a look at a course in medical research methodology and I stumbled upon the following problem.
