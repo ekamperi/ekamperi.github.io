@@ -182,7 +182,7 @@ p1 = Plot3D[
 k[u_] := (1/(2 \[Pi])) * Exp[-u.u/2]
 k[h_, u_] := Det[h]^(-1/2) * k[MatrixPower[h,-1/2].u]
 f[x_, y_, h_] := 
- With[{n = Length@pts}, (1/n)*
+ With[{n = Length@pts}, (1/n) *
     Sum[k[h, {x - First@pts[[i]], y - Last@pts[[i]]}], {i, 1, n}]] // N
 
 h = SmoothKernelDistribution[pts]["Bandwidth"];
