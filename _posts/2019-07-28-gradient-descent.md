@@ -4,6 +4,7 @@ title:  "Gradient descent"
 date:   2019-07-28
 categories: [machine learning]
 tags: [algorithms, 'gradient descent', 'machine learning', 'newton method', optimization]
+description: An introduction to the gradient descent algorithm for machine learning, along with some mathematical insights.
 ---
 
 ### Contents
