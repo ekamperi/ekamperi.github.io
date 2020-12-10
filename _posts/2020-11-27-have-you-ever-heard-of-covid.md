@@ -4,6 +4,7 @@ title:  "Have you ever heard of anyone who became ill with Covid-19?"
 date:   2020-11-27 20:23:00 +0000
 categories: [mathematics]
 tags: ['covid-19', 'graphs', 'mathematics', 'social networks']
+description: A semi-serious post on why people haven't heard of anyone becoming seriously ill with Covid-19 during the initial phase of the pandemic.
 ---
 
 
