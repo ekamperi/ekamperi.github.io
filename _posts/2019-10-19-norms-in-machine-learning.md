@@ -4,6 +4,7 @@ title:  "Norms and machine learning"
 date:   2019-10-19
 categories: [machine learning]
 tags: ['machine learning', 'mathematics', 'neural networks', 'optimization', 'regression']
+description: An introduction to norms in machine learning and optimization in general, emphasizing LASSO and ridge regression.
 ---
 
 ### Contents
