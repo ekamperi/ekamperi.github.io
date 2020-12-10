@@ -4,6 +4,7 @@ title:  "How to convert DICOM transfer syntax"
 date:   2020-05-16
 categories: [radiotherapy]
 tags: ['DICOM', 'radiotherapy']
+description: How to convert DICOM transfer syntax from big endian to little endian.
 ---
 
 This post is going to be very esoterical, yet I'm writing it for my future self and perhaps for you. So, I was trying to import the MRI of a patient with locally advanced tongue cancer into the Varian Eclipse treatment planning system (version 15.1). Sadly, the import failed with tons of errors of the form:
