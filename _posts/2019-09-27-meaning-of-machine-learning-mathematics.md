@@ -4,6 +4,7 @@ title:  What does it really mean for a machine to learn mathematics?
 date:   2019-09-27
 categories: mathematics
 tags: ['machine learning', mathematics, 'neural networks']
+description: Thoughts on what it means for a machine to learn mathematics, after reading the article "Deep learning from symbolic mathematics".
 ---
 
 ### Contents
