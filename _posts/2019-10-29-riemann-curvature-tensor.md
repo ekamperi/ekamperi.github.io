@@ -4,6 +4,7 @@ title:  "How to derive the Riemann curvature tensor"
 date:   2019-10-29
 categories: [mathematics]
 tags: ['general relativity', 'mathematics', 'physics', 'tensors']
+description: Notes on how to derive the Riemann curvature tensor using parallel transport, along with an example where we calculate the curvature of the surface of a sphere.
 ---
 
 So, I've decided to bite the bullet and study *general relativity*. I've been postponing it for quite a while, but the idea of my life ending without having studied one of the most profound and fundamental theories of physics was as much disturbing as motivating. I will be posting random stuff as I go and maybe I'll come back later to edit them, as my understanding of the theory -hopefully- deepens.
