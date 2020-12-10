@@ -4,6 +4,7 @@ title:  "Common misconceptions about exponential growth"
 date:   2020-04-08
 categories: [mathematics]
 tags: ['covid-19', 'exponential', 'medicine']
+description: Common misconceptions about exponential growth.
 ---
 Coronavirus disease 2019 (COVID-19) is an infectious disease caused by Severe Acute Respiratory Syndrome CoronaVirus 2 (SARS-CoV-2). At the time of writing Covid-19 has become a global pandemic. In many countries where lockdown was not enforced early on, coronavirus cases showed an exponential growth. After having talked to many people the last days, I came to understand that there are some common misconceptions regarding how an exponential function behaves. Here are my thoughts on this matter.
 
