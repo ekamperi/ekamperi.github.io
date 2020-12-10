@@ -4,6 +4,7 @@ title:  The meaning of curl operator
 date:   2019-08-22
 categories: math
 tags: ['mathematics', 'physics', 'vector analysis']
+description: The physical meaning of the curl operator of a vector field.
 ---
 
 ### Contents
