@@ -4,6 +4,7 @@ title:  "Principal component analysis with Lagrange multiplier"
 date:   2020-11-01 20:47:56 +0000
 categories: [mathematics]
 tags: ['Lagrange multiplier', 'machine learning', 'mathematics', 'optimization', 'Principal Component Analysis', 'statistics']
+description: How to calculate the principal components with the Lagrange multiplier optimization technique using Mathematica.
 ---
 
 ### Contents
@@ -149,4 +150,4 @@ We then calculate the variance of our projected data onto the various vectors an
 <img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_variance_vs_angle2.png" alt="Principal component analysis">
 </p>
 
-In the image above, we see that $$V$$'s amplitude was reduced when we transitioned from variables with strong correlation ($$\rho = 0.85$$) to variables with weak correlation ($$\rho = 0.3$$). It's getting clear that as $$x_1$$ and $$x_2$$ become less (linearly) correlated, we have a hard time to find a *unique* direction in space along which variance is maximized. In the limit where $$\rho = 0$$, any direction would do! That's why, before applying PCA, we usually test for the existence of linear correlations in our dataset, via scatterplots, correlation matrix or Bartlett's test of sphericity.
+In the image above, we see that $$V$$'s amplitude was reduced when we transitioned from variables with strong correlation ($$\rho = 0.85$$) to variables with weak correlation ($$\rho = 0.3$$). **It's getting clear that as $$x_1$$ and $$x_2$$ become less (linearly) correlated, we have a hard time to find a *unique* direction in space along which variance is maximized. In the limit where $$\rho = 0$$, any direction would do!** That's why, before applying PCA, we usually test for the existence of linear correlations in our dataset, via scatterplots, correlation matrix or Bartlett's test of sphericity.
