@@ -4,7 +4,7 @@ title:  "Dual spaces, dual vectors and dual basis"
 date:   2019-11-17
 categories: [mathematics]
 tags: ['general relativity', 'linear algebra', 'mathematics']
-description: Definitions and examples of dual spaces, dual vectors and dual basis.
+description: Definitions and examples of dual spaces, dual vectors and dual basis, along with some insights.
 ---
 
 ### Contents
