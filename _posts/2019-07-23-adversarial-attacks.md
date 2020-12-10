@@ -3,7 +3,8 @@ layout: post
 title:  "Adversarial attacks on neural networks"
 date:   2019-07-23 15:28:56 +0000
 categories: [machine learning]
-tags: ['lenet', 'machine learning', 'neural networks']
+tags: ['lenet', 'machine learning', 'Mathematica', 'neural networks']
+description: Theory and examples of how to generate adversarial attacks on neural networks with Mathematica and methods to mitigate them.
 ---
 
 ### Contents
