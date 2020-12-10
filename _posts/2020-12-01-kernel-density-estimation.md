@@ -121,7 +121,7 @@ $$
 {% raw %}
 ind[u_] := If[Abs[u] < 1, 1, 0];
 k2[u_] := 3 (1 - u^2)^2*Abs[u] ind[u]
-Plot[k2[u], {3, -2, 3}, PlotRange -> All]
+Plot[k2[u], {u, -3, 3}, PlotRange -> All]
 k2[h_, u_] := 1/h k2[u/h]
 
 Integrate[k2[u], {u, -Infinity, Infinity}]
