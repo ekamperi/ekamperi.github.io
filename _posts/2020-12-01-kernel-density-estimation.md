@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Kernel density estimation
+title:  A gentle introduction to kernel density estimation
 date:   2020-12-08
 categories: math
 tags: [Mathematica, mathematics, 'statistics']
