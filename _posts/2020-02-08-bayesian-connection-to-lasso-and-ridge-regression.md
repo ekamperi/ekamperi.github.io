@@ -4,6 +4,7 @@ title:  "Bayesian connection to LASSO and ridge regression"
 date:   2020-08-02
 categories: [mathematics]
 tags: ['Bayes theorem', 'machine learning', 'mathematics', 'statistics']
+description: A Bayesian view of LASSO and ridge regression. 
 ---
 
 So, I was reading *"An Introduction to Statistical Learning with Applications in R"*, which by the way, is [freely available here](http://faculty.marshall.usc.edu/gareth-james/ISL/). On page 227 the authors provide a Bayesian point of view to both ridge and LASSO regression. We have already discussed [in a previous post](https://ekamperi.github.io/machine%20learning/2019/10/19/norms-in-machine-learning.html), how LASSO regularization invokes sparsity by driving some of the model’s parameters to become zero, for increasing values of $$\lambda$$. As opposed to ridge regression, which keeps every parameter of the model small without forcing it to become precisely zero. Here is a list of regression models, fitted on the same data points, as a function of increasing $$\lambda$$:
