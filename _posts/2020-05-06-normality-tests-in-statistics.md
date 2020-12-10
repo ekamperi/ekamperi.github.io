@@ -4,6 +4,7 @@ title:  "Normality tests in statistics"
 date:   2020-05-06
 categories: mathematics
 tags: [mathematics, 'R language', Shapiro-Wilk, statistics]
+description: Normality tests in statistics with examples in R language.
 ---
 
 ### Contents
@@ -167,4 +168,5 @@ lapply(c(1, 1.05, 1.1, 1.15), plot_sample2)
 {% endhighlight %}
 
 ### Conclusion
-So, the rule of thumb I follow is this: if histograms and Shapiro-Wilk disagree, for small sample size, I go with Shapiro-Wilk. For a large sample size, I go with the histograms. Of course, either way, I take into consideration the descriptives and Q-Q plots.
+So, the rule of thumb I follow is this: if histograms and Shapiro-Wilk disagree, for small sample size, I go with Shapiro-Wilk. For a large sample size, I go with the histograms. Of course, either way, I take into consideration the descriptives and Q-Q plots. And one more thing! For many tests, it doesn't really matter whether your data are normally distributed, as long as the mean of your samples follow the normal distribution. However, this is fulfilled by the central limit theorem, assuming your samples are sufficiently large. However, this is the subject of another post!
+
