@@ -4,6 +4,7 @@ title:  An almost one-liner to construct the Mandelbrot set with Mathematica
 date:   2020-12-01
 categories: math
 tags: ['complex numbers', 'fractals', 'functional programming', Mathematica, mathematics, programming]
+description: An explanation of the Mandelbrot set, along with an almost one-liner on how to draw it with Mathematica's functional programming.
 ---
 
 ## The motivation
