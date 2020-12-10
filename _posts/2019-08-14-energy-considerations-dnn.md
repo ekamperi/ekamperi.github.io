@@ -4,6 +4,7 @@ title:  "Energy considerations for training deep neural networks"
 date:   2019-08-14
 categories: [machine learning]
 tags: ['environment', 'machine learning', 'nlp', 'self-driving cars']
+description: A short article on the environmental impact of training and running deep learning neural networks. Also, some suggestions on how to reduce this impact.
 ---
 
 The latest advances, both in hardware and theory of training neural networks, have enabled researchers to train very deep models on voluminous data (e.g. the Wikipedia corpus). The two main categories include networks that perform image recognition/classification and those that perform [natural language processing](https://en.wikipedia.org/wiki/Natural_language_processing) tasks. Training such networks and achieving a high accuracy requires unusually large computational resources. As a result, these models are costly to train, fine-tune and deploy, both *financially* (due to the cost of purchasing hardware and paying electricity bills or renting cloud computing time) and *environmentally*, due to the carbon dioxide emissions required to run modern hardware.
