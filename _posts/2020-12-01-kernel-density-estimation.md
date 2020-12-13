@@ -7,19 +7,20 @@ tags: [Mathematica, mathematics, 'statistics']
 description: A gentle introduction to kernel density estimate for univariate and bivariate data, with code excerpts in Mathematica.
 ---
 
-## The univariate case
+## Introduction
 In low dimensions (1 or 2), we usually plot histograms to get a feeling of how the data are distributed. Histograms are nice because they provide a fast and unambiguous way to visualize our data's probability distribution. However, they are discrete, and sometimes it is useful to have a smooth estimation of the underlying probability density function (PDF) at hand. There are two ways to get a smooth PDF from your data.
 
 1. The *parametric* probability density estimation where we pick a common distribution (say a normal distribution), and we estimate its parameters (e.g., mean, standard deviation) from the data sample. 
 2. The *nonparametric* probability such as **kernel density estimation** (KDE), that we will be discussing today.
 
+## The case of 1 variable
 In the univariate case, that is when we have only one variable, KDE is very straightforward. Here is how we'd do it. Assuming we have a set of $$N$$ samples $$x_i = \{x_1, x_2, \ldots, x_N\}$$, the KDE, $$\hat{f}$$, of the PDF is defined as:
 
 $$
 \hat{f}(x,h) = \frac{1}{N} \sum_{i=1}^{N} K_h (x-x_i)
 $$
 
-Basically, **in the kernel density estimation approach, we center a smooth kernel function at each data point and then take their average**. One of the most common kernels is the Gaussian kernel:
+Basically, **in the kernel density estimation approach, we center a smooth scaled kernel function at each data point and then take their average**. One of the most common kernels is the Gaussian kernel:
 
 $$
 K(u)\text = \frac{1}{\sqrt{2 \pi}} \exp \left(-\frac{u^2}{2}\right)\\
@@ -146,7 +147,7 @@ Kernel density estimation has two difficulties:
 2. The varying data density makes regions of high data density requiring small bandwidths, and areas with sparse data needing large
 bandwidths.
 
-## The bivariate case
+## The case of 2 variables
 The bivariate kernel density estimate is defined in a similar manner:
 
 $$
