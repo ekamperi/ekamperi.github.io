@@ -11,7 +11,7 @@ description: A gentle introduction to kernel density estimate for univariate and
 Suppose we have some low dimensional data (1 or 2 variables). How do we start exploring them? Usually, one of the first steps is to plot their histogram to get a feeling of how they are distributed. Histograms are nice because they provide a fast and unambiguous way to visualize our data's probability distribution. However, they are discrete, and sometimes it is useful to have a smooth estimation of the underlying probability density function (PDF) at hand.
 
 <p align="center">
-<img width="80%" height="80%" src="{{ site.url }}/images/hist_vs_smooth.png"/> 
+<img width="90%" height="90%" src="{{ site.url }}/images/hist_vs_smooth.png"/> 
 </p>
 
 There are two ways to get a smooth PDF from your data.
