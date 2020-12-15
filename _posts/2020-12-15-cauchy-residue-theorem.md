@@ -99,20 +99,23 @@ $$
 
 ## How to taint the beauty
 
-Suppose that we were only interested in an approximate value of the integral. We could then make two assumptions. First, we could integrate the function from $$[-\pi/2, \pi/2$$, because that's the part of the function that contributes most to the integral's value (see also the first figure). The second assumption is that we will approximate the cosine with it's Taylor series $$\cos\x = 1 - x^2/2 + \mathcal{O}(x)^3$$:
+Suppose that we were only interested in an approximate value of the integral. We could then make two assumptions. First, we could integrate the function from $$[-\pi/2, \pi/2$]$, because that's the part of the function that contributes most to the integral's value (see also the first figure). The second assumption is that we will approximate the cosine with it's Taylor series $$\cos x = 1 - x^2/2 + \mathcal{O}(x)^3$$:
 
 $$
-I=\int_{-\pi/2}^{\pi/2} \frac{\cos x}{(x^2+1)^2}\mathrm{d}x
+I=\int_{-\infty}^{\infty} \frac{\cos x}{(x^2+1)^2}\mathrm{d}x
+\simeq \int_{-\pi/2}^{\pi/2} \frac{\cos x}{(x^2+1)^2}\mathrm{d}x
 =2\int_{0}^{\pi/2} \frac{\cos x}{(x^2+1)^2}\mathrm{d}x
 \simeq 2\int_{0}^{\pi/2} \frac{1-\frac{x^2}{2}}{(x^2+1)^2}\mathrm{d}x
 =\int_{0}^{\pi/2} \frac{2-x^2}{(x^2+1)^2}\mathrm{d}x
 $$
 
+We make the substitution:
+
 $$
 x = \tan\theta \Rightarrow \mathrm{d}x=1/\cos^2\theta \mathrm{d}\theta
 $$
 
-And the new interval is $$[\tan^{-1}(0),\tan^{-1}(\pi/2)] = [0,\tan^{-1}(\pi/2)]$$
+And the new interval is $$[\tan^{-1}(0),\tan^{-1}(\pi/2)] = [0,\tan^{-1}(\pi/2)]$$. Then, we write:
 
 $$
 \begin{align*}
@@ -125,4 +128,17 @@ I
 \end{align*}
 $$
 
-Whereas $$\pi/e \simeq 1.156$$ 
+So we got:
+
+$$
+\int_{-\infty}^{\infty} \frac{\cos x}{(x^2+1)^2}\mathrm{d}x \simeq 1.181
+$$
+
+Whereas the precise value was:
+
+$$
+\int_{-\infty}^{\infty} \frac{\cos x}{(x^2+1)^2}\mathrm{d}x = \pi/e \simeq 1.156 
+$$
+
+That's not bad at all, given how many things we left out during our assumptions! Ugly? Perhaps, neat? Certainly!
+
