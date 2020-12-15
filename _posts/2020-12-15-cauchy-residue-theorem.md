@@ -19,6 +19,10 @@ $$
 \int_{-\infty}^{\infty} \frac{\cos{x}}{(x^2+1)^2}\mathrm{d}x = \frac{\pi}{e}
 $$
 
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/cauchy_example_f.png">
+</p>
+
 Perhaps this integral can be calculated via some substitution or with Feynman's technique of differentiation under the integral sign. However, I decided to use the nuclear bomb of integration arsenal, the Cauchy residue theorem of complex analysis.
 
 
