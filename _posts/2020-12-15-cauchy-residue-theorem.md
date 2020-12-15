@@ -68,7 +68,7 @@ We then apply Cauchy's residue theorem and take the limit as $$R\to\infty$$:
 $$
 \text{P.V.} \int_{-\infty}^{\infty} \frac{e^{i x}}{(x^2+1)^2} \mathrm{d}x =
 \lim_{R\to\infty}\left( 2\pi i \sum_{j=1}^n \operatorname{Res}(f, a_k)\right) -
-\underbrace{\lim_{R\to\infty} \int_{\gamma_R} \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z}_{\substack{\text{This is zero.}\\ \text{If cos was at the numerator,}\\ \text{it would blow up}}}
+\underbrace{\lim_{R\to\infty} \int_{\gamma_R} \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z}_{\substack{\text{This is zero.}\\ \text{If cos was at the numerator,}\\ \text{it would blow up.}}}
 $$
 
 The singular points in the complex plane are when the denominator is zero:
