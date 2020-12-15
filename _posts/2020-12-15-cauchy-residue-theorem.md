@@ -14,7 +14,7 @@ $$
 $$
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/cauchy_example_f.png">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/cauchy_example_f.png">
 </p>
 
 
