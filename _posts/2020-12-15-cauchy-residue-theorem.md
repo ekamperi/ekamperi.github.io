@@ -99,14 +99,16 @@ $$
 
 ## How to taint the beauty
 
-Suppose that we were only interested in an approximate value of the integral. We could then make two assumptions. First, we could integrate the function from $$[-\pi/2, \pi/2]$$, because that's the part of the function that contributes most to the integral's value (see also the first figure). The second assumption is that we will approximate the cosine with it's Taylor series $$\cos x = 1 - x^2/2 + \mathcal{O}(x)^3$$:
+Suppose that we were only interested in an approximate value of the integral. We could then make two assumptions. First, we could integrate the function from $$[-\pi/2, \pi/2]$$, because that's the part of the function that contributes most to the integral's value (see also the first figure). The second assumption comes from the fact that we will approximate the cosine with its Taylor series: $$\cos x = 1 - x^2/2 + \mathcal{O}(x)^3$$:
 
 $$
+\begin{align*}
 I=\int_{-\infty}^{\infty} \frac{\cos x}{(x^2+1)^2}\mathrm{d}x
-\simeq \int_{-\pi/2}^{\pi/2} \frac{\cos x}{(x^2+1)^2}\mathrm{d}x
-=2\int_{0}^{\pi/2} \frac{\cos x}{(x^2+1)^2}\mathrm{d}x
-\simeq 2\int_{0}^{\pi/2} \frac{1-\frac{x^2}{2}}{(x^2+1)^2}\mathrm{d}x
+&\simeq \int_{-\pi/2}^{\pi/2} \frac{\cos x}{(x^2+1)^2}\mathrm{d}x
+=2\int_{0}^{\pi/2} \frac{\cos x}{(x^2+1)^2}\mathrm{d}x\\
+&\simeq 2\int_{0}^{\pi/2} \frac{1-\frac{x^2}{2}}{(x^2+1)^2}\mathrm{d}x
 =\int_{0}^{\pi/2} \frac{2-x^2}{(x^2+1)^2}\mathrm{d}x
+\end{align*}
 $$
 
 We make the substitution:
