@@ -1,3 +1,12 @@
+---
+layout: post
+title:  Example of Cauchy's residue theorem
+date:   2002-12-15
+categories: math
+tags: ['mathematics']
+description: An example of Cauchy's residue theorem for the calculation of a difficult integral
+---
+
 How to compute an improper integral using the residue theorem from complex analysis. Improper integral is the limit of a definite integral where either of its endpoints go to infinity. E.g.
 
 $$
