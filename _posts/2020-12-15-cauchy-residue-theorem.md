@@ -142,4 +142,4 @@ $$
 \int_{-\infty}^{\infty} \frac{\cos x}{(x^2+1)^2}\mathrm{d}x = \pi/e \simeq 1.156 
 $$
 
-The relative error is $$\sim 2.16\%$$. That's not bad at all, given how many things we left out during our assumptions! Ugly? Perhaps, neat? Definitely!
+The relative error is $$\sim 2.16\%$$. That's not bad at all, given how many things we left out during our assumptions! Ugly? Perhaps. Neat? Definitely!
