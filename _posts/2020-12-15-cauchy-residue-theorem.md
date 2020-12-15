@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Example of Cauchy's residue theorem
-date:   2002-12-15
+date:   2020-12-15
 categories: math
 tags: ['mathematics']
 description: An example of Cauchy's residue theorem for the calculation of a difficult integral
@@ -36,8 +36,26 @@ $$
 Now here comes the tricky part. If we do a direct contour integral, it won't work because the cosine in the complex plane blows up for large imaginary numbers, in both half-planes. So we will instead calculate the contour integral of
 
 $$
+\oint_\gamma \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z
+$$
+
+Check these two 3D plots of $$abs(f)$$ colored by $$arg(f)$$ over a region of the complex plane. Notice the existence of poles, but more importantly notice
+how $$cos(z)$$ blows up on both half-planes, whereas the function with the exponential in the nominator blows up only on the negative half-plane.
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/cauchy_complex_1.png">
+</p>
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/cauchy_complex2.png">
+</p>
+
+
+
+$$
 \begin{align*}
-\oint_\gamma \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z &= 
+\oint_\gamma \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z
+&= 
 \int_{-R}^R \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z +
 \int_{\gamma_R} \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z =
 2\pi i \sum_{k=1}^n  \operatorname{Res}( f, a_k ) \Rightarrow\\
