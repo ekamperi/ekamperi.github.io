@@ -7,12 +7,6 @@ tags: ['mathematics']
 description: An example of Cauchy's residue theorem for the calculation of a difficult integral
 ---
 
-How to compute an improper integral using the residue theorem from complex analysis. Improper integral is the limit of a definite integral where either of its endpoints go to infinity. E.g.
-
-$$
-\lim_{a\to\infty} \int_{-a}^a f(x) \mathrm{d}x
-$$
-
 So, a friend of mine brought to my attention one such integral that combines $$\pi$$ and $$e$$ constants in the following elegant manner:
 
 $$
@@ -22,6 +16,13 @@ $$
 <p align="center">
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/cauchy_example_f.png">
 </p>
+
+
+How to compute an improper integral using the residue theorem from complex analysis. Improper integral is the limit of a definite integral where either of its endpoints go to infinity. E.g.
+
+$$
+\lim_{a\to\infty} \int_{-a}^a f(x) \mathrm{d}x
+$$
 
 Perhaps this integral can be calculated via some substitution or with Feynman's technique of differentiation under the integral sign. However, I decided to use the nuclear bomb of integration arsenal, the Cauchy residue theorem of complex analysis.
 
