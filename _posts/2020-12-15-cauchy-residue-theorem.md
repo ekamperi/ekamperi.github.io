@@ -19,13 +19,13 @@ Let's take a look at the function that we will be integrating:
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/cauchy_example_f.png">
 </p>
 
-Such integrals, where the endpoints go to infinity, are called [improper](https://en.wikipedia.org/wiki/Improper_integral). Perhaps this one can be calculated via some substitution or with Feynman's technique of differentiation under the integral sign. However, I decided to use the nuclear bomb of integration arsenal, the Cauchy residue theorem of complex analysis.
+Such integrals, where the endpoints go to infinity, are called [improper](https://en.wikipedia.org/wiki/Improper_integral). Perhaps this one can be calculated via some substitution or Feynman's differentiation technique under the integral sign. However, I decided to use the nuclear bomb of the integration arsenal, the Cauchy residue theorem of complex analysis.
 
 $$
 \oint_\gamma f(z)\, \mathrm{d}z = 2\pi i \sum_{k=1}^n \operatorname{I}(\gamma, a_k) \operatorname{Res}( f, a_k )
 $$
 
-Where $$I(\gamma, a_k)$$ is the winding number, which for simple curves is equal to one, and $$\operatorname{Res}(f,a_k)$$ is the k-th residue of the function $$f$$. The $$a_k$$ points must be finite and $$f$$ be holomorphic on a simply connected open subset of the complex plane. Finally, the curve $$\gamma$$ is a closed curve which does not meet any of the $$a_k$$ points.
+Where $$I(\gamma, a_k)$$ is the winding number, which for simple curves is equal to one, and $$\operatorname{Res}(f,a_k)$$ is the k-th residue of the function $$f$$. The $$a_k$$ points must be finite, and $$f$$ be holomorphic on a simply connected open subset of the complex plane. Finally, the curve $$\gamma$$ is a closed curve that does not meet any of the $$a_k$$ points.
 
 We start by considering the function:
 
@@ -33,13 +33,13 @@ $$
 f(z)=\frac{\cos{z}}{(z^2+1)^2}
 $$
 
-Now here comes the tricky part. If we try to do a direct contour integral, it won't work because the cosine in the complex plane blows up for large imaginary numbers, in both half-planes. So we will instead calculate the contour integral of:
+Now here comes the tricky part. If we try to do a direct contour integral, it won't work because the cosine in the complex plane blows up for large imaginary numbers in both half-planes. So we will instead calculate the contour integral of:
 
 $$
 \oint_\gamma \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z
 $$
 
-Check these two 3D plots of $$\operatorname{Abs}(f)$$ colored by $$\operatorname{Arg}(f)$$ over a region of the complex plane. Notice the existence of poles, but more importantly notice how $$cos(z)$$ blows up on both half-planes, whereas the one with the exponential in the nominator blows up only on the negative half-plane.
+Check these two 3D plots of $$\operatorname{Abs}(f)$$ colored by $$\operatorname{Arg}(f)$$ over a region of the complex plane. Notice the existence of poles, but more importantly, notice how $$cos(z)$$ blows up on both half-planes, whereas the one with the exponential in the nominator blows up only on the negative half-plane.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/cauchy_complex_1.png">
@@ -99,7 +99,7 @@ $$
 
 ## How to taint the beauty
 
-Suppose that we were only interested in an approximate value of the integral. We could then make two assumptions. First, we could integrate the function from $$[-\pi/2, \pi/2]$$, because that's the part of the function that contributes most to the integral's value (see also the first figure). The second assumption comes from the fact that we will approximate the cosine with its Taylor series: $$\cos x = 1 - x^2/2 + \mathcal{O}(x)^3$$:
+Suppose that we are only interested in an approximate value of the integral. We can then make two assumptions. First, we will integrate the function from $$[-\pi/2, \pi/2]$$, because that's the part of the function that contributes most to the integral's value (see also the first figure). The second assumption comes from the fact that we will approximate the cosine with its Taylor series: $$\cos x = 1 - x^2/2 + \mathcal{O}(x)^3$$:
 
 $$
 \begin{align*}
@@ -136,11 +136,10 @@ $$
 \int_{-\infty}^{\infty} \frac{\cos x}{(x^2+1)^2}\mathrm{d}x \simeq 1.181
 $$
 
-Whereas the precise value was:
+Whereas the precise value is:
 
 $$
 \int_{-\infty}^{\infty} \frac{\cos x}{(x^2+1)^2}\mathrm{d}x = \pi/e \simeq 1.156 
 $$
 
-That's not bad at all, given how many things we left out during our assumptions! Ugly? Perhaps, neat? Certainly!
-
+The relative error is $$sim 2.16\%$$. That's not bad at all, given how many things we left out during our assumptions! Ugly? Perhaps, neat? Definitely!
