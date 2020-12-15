@@ -96,3 +96,33 @@ $$
 \text{P.V.} \int_{-\infty}^{\infty} \frac{e^{i x}}{(x^2+1)^2} \mathrm{d}x =
 \lim_{R\to\infty}\left[ 2\pi i \left(-\frac{i}{2e}\right)\right] = \frac{\pi}{e}
 $$
+
+## How to taint the beauty
+
+Suppose that we were only interested in an approximate value of the integral. We could then make two assumptions. First, we could integrate the function from $$[-\pi/2, \pi/2$$, because that's the part of the function that contributes most to the integral's value (see also the first figure). The second assumption is that we will approximate the cosine with it's Taylor series $$\cos\x = 1 - x^2/2 + \mathcal{O}(x)^3$$:
+
+$$
+I=\int_{-\pi/2}^{\pi/2} \frac{\cos x}{(x^2+1)^2}\mathrm{d}x
+=2\int_{0}^{\pi/2} \frac{\cos x}{(x^2+1)^2}\mathrm{d}x
+\simeq 2\int_{0}^{\pi/2} \frac{1-\frac{x^2}{2}}{(x^2+1)^2}\mathrm{d}x
+=\int_{0}^{\pi/2} \frac{2-x^2}{(x^2+1)^2}\mathrm{d}x
+$$
+
+$$
+x = \tan\theta \Rightarrow \mathrm{d}x=1/\cos^2\theta \mathrm{d}\theta
+$$
+
+And the new interval is $$[\tan^{-1}(0),\tan^{-1}(\pi/2)] = [0,\tan^{-1}(\pi/2)]$$
+
+$$
+\begin{align*}
+I
+&= \int_{0}^{\tan^{-1}(\pi/2)} \frac{2-\tan^2\theta}{\left(\tan^2\theta + 1\right)^2} \frac{1}{\cos^2\theta}\mathrm{d}\theta
+= \int_{0}^{\tan^{-1}(\pi/2)} \frac{2-\tan^2\theta}{1/\cos^4\theta}\frac{1}{\cos^2\theta} \mathrm{d}\theta\\
+&=\int_{0}^{\tan^{-1}(\pi/2)} \left(2\cos^2\theta-\sin^2\theta \right) \mathrm{d}\theta
+= \left[\frac{\theta}{2} + \frac{3}{4}\sin(2\theta)\right]_0^{\tan^{-1}\theta}
+\simeq 1.181
+\end{align*}
+$$
+
+Whereas $$\pi/e \simeq 1.156$$ 
