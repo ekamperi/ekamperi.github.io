@@ -7,30 +7,25 @@ tags: ['mathematics']
 description: An example of Cauchy's residue theorem for the calculation of a difficult integral
 ---
 
-So, a friend of mine brought to my attention one such integral that combines $$\pi$$ and $$e$$ constants in the following elegant manner:
+So, Gianni Sarcone, an artist, author, and a designer, mostly known for his optic illusiions, brought to my attention an integral that combines $$\pi$$ and $$e$$ constants in the following elegant manner:
 
 $$
 \int_{-\infty}^{\infty} \frac{\cos{x}}{(x^2+1)^2}\mathrm{d}x = \frac{\pi}{e}
 $$
 
+Let's take a look at the function that we will be integrating:
+
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/cauchy_example_f.png">
 </p>
 
-
-How to compute an improper integral using the residue theorem from complex analysis. Improper integral is the limit of a definite integral where either of its endpoints go to infinity. E.g.
+Such integrals, where the endpoints go to infinity, are called improper. Perhaps this integral can be calculated via some substitution or with Feynman's technique of differentiation under the integral sign. However, I decided to use the nuclear bomb of integration arsenal, the Cauchy residue theorem of complex analysis.
 
 $$
-\lim_{a\to\infty} \int_{-a}^a f(x) \mathrm{d}x
+\oint_\gamma f(z)\, \mathrm{d}z = 2\pi i \sum_{k=1}^n \operatorname{I}(\gamma, a_k) \operatorname{Res}( f, a_k )
 $$
 
-Perhaps this integral can be calculated via some substitution or with Feynman's technique of differentiation under the integral sign. However, I decided to use the nuclear bomb of integration arsenal, the Cauchy residue theorem of complex analysis.
-
-
-$$\oint_\gamma f(z)\, \mathrm{d}z = 2\pi i \sum_{k=1}^n \operatorname{I}(\gamma, a_k) \operatorname{Res}( f, a_k )
-$$
-
-Where $$I(\gamma, a_k)$$ is the winding number, which for simple curves is equal to one, and $$\operatorname{Res}(f,a_k)$$ is the k-th residue of the function $$f$$. The $a_k$ points must be finite and $$f$$ be holomorphic on a simply connected open subset of the complex plane. Finally, the curve $$\gamma$$ is a closed curve which does not meet any of the $$a_k$$ points.
+Where $$I(\gamma, a_k)$$ is the winding number, which for simple curves is equal to one, and $$\operatorname{Res}(f,a_k)$$ is the k-th residue of the function $$f$$. The $$a_k$$ points must be finite and $$f$$ be holomorphic on a simply connected open subset of the complex plane. Finally, the curve $$\gamma$$ is a closed curve which does not meet any of the $$a_k$$ points.
 
 We start by considering the function:
 
@@ -38,12 +33,11 @@ $$
 f(z)=\frac{\cos{z}}{(z^2+1)^2}
 $$
 
-Now here comes the tricky part. If we do a direct contour integral, it won't work
-because the cosine in the complex plane blows up for large imaginary numbers, in both half-planes. So we will instead calculate the contour integral of
+Now here comes the tricky part. If we do a direct contour integral, it won't work because the cosine in the complex plane blows up for large imaginary numbers, in both half-planes. So we will instead calculate the contour integral of
 
 $$
 \begin{align*}
-\int_\gamma \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z &= 
+\oint_\gamma \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z &= 
 \int_{-R}^R \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z +
 \int_{\gamma_R} \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z =
 2\pi i \sum_{k=1}^n  \operatorname{Res}( f, a_k ) \Rightarrow\\
@@ -53,7 +47,7 @@ $$
 \end{align*}
 $$
 
-We then apply the residue theorem and take the limit as $$R\to\infty$$:
+We then apply Cauchy's residue theorem and take the limit as $$R\to\infty$$:
 
 $$
 \text{P.V.} \int_{-\infty}^{\infty} \frac{e^{i x}}{(x^2+1)^2} \mathrm{d}x =
@@ -70,7 +64,6 @@ $$
 
 Therefore we have a pole of second order at $$z = i$$. Its residue is:
 
-
 $$
 \begin{align*}
 \operatorname{Res}(f, z=i)
@@ -81,7 +74,7 @@ $$
 \end{align*}
 $$
 
-Therefore:
+Finally:
 
 $$
 \text{P.V.} \int_{-\infty}^{\infty} \frac{e^{i x}}{(x^2+1)^2} \mathrm{d}x =
