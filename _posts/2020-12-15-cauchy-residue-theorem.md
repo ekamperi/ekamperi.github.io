@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Example of Cauchy's residue theorem
+title:  An example of Cauchy's residue theorem
 date:   2020-12-15
 categories: math
 tags: ['mathematics']
