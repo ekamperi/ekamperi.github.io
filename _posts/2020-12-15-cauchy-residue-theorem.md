@@ -7,7 +7,7 @@ tags: ['mathematics']
 description: An example of Cauchy's residue theorem for the calculation of a difficult integral
 ---
 
-So, Gianni Sarcone, an artist, author, and a designer, mostly known for his optic illusiions, brought to my attention an integral that combines $$\pi$$ and $$e$$ constants in the following elegant manner:
+So, [Gianni Sarcone](https://en.wikipedia.org/wiki/Gianni_A._Sarcone), an artist, author, and a designer, mostly known for his optic illusions, brought to my attention an integral that combines $$\pi$$ and $$e$$ constants in the following elegant manner:
 
 $$
 \int_{-\infty}^{\infty} \frac{\cos{x}}{(x^2+1)^2}\mathrm{d}x = \frac{\pi}{e}
@@ -19,7 +19,7 @@ Let's take a look at the function that we will be integrating:
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/cauchy_example_f.png">
 </p>
 
-Such integrals, where the endpoints go to infinity, are called improper. Perhaps this integral can be calculated via some substitution or with Feynman's technique of differentiation under the integral sign. However, I decided to use the nuclear bomb of integration arsenal, the Cauchy residue theorem of complex analysis.
+Such integrals, where the endpoints go to infinity, are called [improper](https://en.wikipedia.org/wiki/Improper_integral). Perhaps this one can be calculated via some substitution or with Feynman's technique of differentiation under the integral sign. However, I decided to use the nuclear bomb of integration arsenal, the Cauchy residue theorem of complex analysis.
 
 $$
 \oint_\gamma f(z)\, \mathrm{d}z = 2\pi i \sum_{k=1}^n \operatorname{I}(\gamma, a_k) \operatorname{Res}( f, a_k )
@@ -33,14 +33,13 @@ $$
 f(z)=\frac{\cos{z}}{(z^2+1)^2}
 $$
 
-Now here comes the tricky part. If we do a direct contour integral, it won't work because the cosine in the complex plane blows up for large imaginary numbers, in both half-planes. So we will instead calculate the contour integral of
+Now here comes the tricky part. If we try to do a direct contour integral, it won't work because the cosine in the complex plane blows up for large imaginary numbers, in both half-planes. So we will instead calculate the contour integral of:
 
 $$
 \oint_\gamma \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z
 $$
 
-Check these two 3D plots of $$abs(f)$$ colored by $$arg(f)$$ over a region of the complex plane. Notice the existence of poles, but more importantly notice
-how $$cos(z)$$ blows up on both half-planes, whereas the function with the exponential in the nominator blows up only on the negative half-plane.
+Check these two 3D plots of $$\operatorname{Abs}(f)$$ colored by $$\operatorname{Arg}(f)$$ over a region of the complex plane. Notice the existence of poles, but more importantly notice how $$cos(z)$$ blows up on both half-planes, whereas the one with the exponential in the nominator blows up only on the negative half-plane.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/cauchy_complex_1.png">
@@ -50,8 +49,7 @@ how $$cos(z)$$ blows up on both half-planes, whereas the function with the expon
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/cauchy_complex_2.png">
 </p>
 
-
-
+So, we break the contour integral into two parts:
 $$
 \begin{align*}
 \oint_\gamma \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z
@@ -70,7 +68,7 @@ We then apply Cauchy's residue theorem and take the limit as $$R\to\infty$$:
 $$
 \text{P.V.} \int_{-\infty}^{\infty} \frac{e^{i x}}{(x^2+1)^2} \mathrm{d}x =
 \lim_{R\to\infty}\left( 2\pi i \sum_{j=1}^n \operatorname{Res}(f, a_k)\right) -
-\lim_{R\to\infty} \int_{\gamma_R} \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z
+\underbrace{\lim_{R\to\infty} \int_{\gamma_R} \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z}_{\text{This is zero. If cos was in the nominator,\nit would blow up.}}
 $$
 
 The singular points in the complex plane are when the denominator is zero:
