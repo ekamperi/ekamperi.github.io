@@ -68,7 +68,7 @@ We then apply Cauchy's residue theorem and take the limit as $$R\to\infty$$:
 $$
 \text{P.V.} \int_{-\infty}^{\infty} \frac{e^{i x}}{(x^2+1)^2} \mathrm{d}x =
 \lim_{R\to\infty}\left( 2\pi i \sum_{j=1}^n \operatorname{Res}(f, a_k)\right) -
-\underbrace{\lim_{R\to\infty} \int_{\gamma_R} \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z}_{\text{This is zero. If cos was in the nominator,\nit would blow up.}}
+\underbrace{\lim_{R\to\infty} \int_{\gamma_R} \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z}_{\substack{\text{This is zero.}\\ \text{If cos was at the numerator,}\\ \text{it would blow up}}}
 $$
 
 The singular points in the complex plane are when the denominator is zero:
@@ -83,9 +83,9 @@ Therefore we have a pole of second order at $$z = i$$. Its residue is:
 $$
 \begin{align*}
 \operatorname{Res}(f, z=i)
-&= \frac{\partial }{\partial z} \left[ (z-i)^2\frac{\exp (i z)}{(z+i)^2 (z-i)^2}\right]_{z=i}\\
-&= \frac{\partial }{\partial z} \left[ \frac{\exp (i z)}{(z+i)^2 }\right]_{z=i}\\
-&= \frac{i \exp(i z) (z+i)^2 - 2\exp(iz)(z+i)}{(z+i)^4}\\
+&= \frac{1}{(2-1)!}\lim_{z\to i}\frac{\partial }{\partial z} \left[ (z-i)^2\frac{\exp (i z)}{(z+i)^2 (z-i)^2}\right]\\
+&= \lim_{z\to i}\frac{\partial }{\partial z} \left[ \frac{\exp (i z)}{(z+i)^2 }\right]\\
+&= \lim_{z\to i}\frac{i \exp(i z) (z+i)^2 - 2\exp(iz)(z+i)}{(z+i)^4}\\
 &= \frac{i e^{-1}4i^2 - 2e^{-1}2i}{(2i)^4} = \frac{-4i-4i}{16e} = -\frac{i}{2e}
 \end{align*}
 $$
