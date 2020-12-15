@@ -125,7 +125,7 @@ I
 &= \int_{0}^{\tan^{-1}(\pi/2)} \frac{2-\tan^2\theta}{\left(\tan^2\theta + 1\right)^2} \frac{1}{\cos^2\theta}\mathrm{d}\theta
 = \int_{0}^{\tan^{-1}(\pi/2)} \frac{2-\tan^2\theta}{1/\cos^4\theta}\frac{1}{\cos^2\theta} \mathrm{d}\theta\\
 &=\int_{0}^{\tan^{-1}(\pi/2)} \left(2\cos^2\theta-\sin^2\theta \right) \mathrm{d}\theta
-= \left[\frac{\theta}{2} + \frac{3}{4}\sin(2\theta)\right]_0^{\tan^{-1}\pi/2}
+= \left[\frac{\theta}{2} + \frac{3}{4}\sin(2\theta)\right]_0^{\tan^{-1}(\pi/2)}
 \simeq 1.181
 \end{align*}
 $$
