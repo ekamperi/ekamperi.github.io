@@ -47,7 +47,7 @@ how $$cos(z)$$ blows up on both half-planes, whereas the function with the expon
 </p>
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/cauchy_complex2.png">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/cauchy_complex_2.png">
 </p>
 
 
