@@ -36,7 +36,7 @@ $$
 Now here comes the tricky part. If we try to do a direct contour integral, it won't work because the cosine in the complex plane blows up for large imaginary numbers in both half-planes.
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/cauchy_complex_schema.png">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/cauchy_complex_schema.png">
 </p>
 
 So we will instead calculate the contour integral of:
