@@ -33,13 +33,19 @@ $$
 f(z)=\frac{\cos{z}}{(z^2+1)^2}
 $$
 
-Now here comes the tricky part. If we try to do a direct contour integral, it won't work because the cosine in the complex plane blows up for large imaginary numbers in both half-planes. So we will instead calculate the contour integral of:
+Now here comes the tricky part. If we try to do a direct contour integral, it won't work because the cosine in the complex plane blows up for large imaginary numbers in both half-planes.
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/cauchy_complex_2.png">
+</p>
+
+So we will instead calculate the contour integral of:
 
 $$
 \oint_\gamma \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z
 $$
 
-Check these two 3D plots of $$\operatorname{Abs}(f)$$ colored by $$\operatorname{Arg}(f)$$ over a region of the complex plane. Notice the existence of poles, but more importantly, notice how $$\cos(z)$$ blows up on both half-planes, whereas the one with the exponential in the nominator blows up only on the negative half-plane.
+Check the following 3D plots of $$\operatorname{Abs}(f)$$ colored by $$\operatorname{Arg}(f)$$ over a region of the complex plane. Notice the existence of poles, but more importantly, notice how $$\cos(z)$$ blows up on both half-planes, whereas the one with the exponential in the nominator blows up only on the negative half-plane.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/cauchy_complex_1.png">
