@@ -69,6 +69,7 @@ linear_regression_layer(x_train)
 {% endraw %}
 {% endhighlight %}
 
+Here, we define our custom loss function. For this example, the mean squared error is appropriate, but conceivably we could use whatever loss function we'd like.
 
 {% highlight python %}
 {% raw %}
@@ -78,16 +79,18 @@ def MSE(y_pred, y_true):
 {% endraw %}
 {% endhighlight %}
 
+We calculate our loss function for the newly instantiated linear regression layer. At the moment the parameters $$m$$ have random values and $$b=0$$.
 
 {% highlight python %}
 {% raw %}
-# Calculate the MSE of the initial m, b values
+# Calculate the MSE for the initial m, b values
 MSE(linear_regression_layer(x_train), y_train)
 
     <tf.Tensor: shape=(), dtype=float32, numpy=6.283869>
 {% endraw %}
 {% endhighlight %}
 
+Here comes the custom training loop. The important thing to notice is the `tf.GradientTape[]` context. Every operation that is performed on the input inside this context is recorded by Tensorflow, to allow for automatic differentiation.
 
 {% highlight python %}
 {% raw %}
@@ -108,6 +111,7 @@ for i in range(epochs):
 {% endraw %}
 {% endhighlight %}
 
+We print the optimal values for the models' parameters, $$m, b$$, after the training has completed:
 
 {% highlight python %}
 {% raw %}
@@ -115,11 +119,12 @@ for i in range(epochs):
 # The ground truth values are m = 1, b = 2.
 linear_regression_layer.m, linear_regression_layer.b
 
-    (<tf.Variable 'Variable:0' shape=(1,) dtype=float32, numpy=array([1.053719], dtype=float32)>,
-     <tf.Variable 'Variable:0' shape=(1,) dtype=float32, numpy=array([1.911512], dtype=float32)>)
+#    (<tf.Variable 'Variable:0' shape=(1,) dtype=float32, numpy=array([1.053719], dtype=float32)>,
+#     <tf.Variable 'Variable:0' shape=(1,) dtype=float32, numpy=array([1.911512], dtype=float32)>)
 {% endraw %}
 {% endhighlight %}
 
+Finally, we superimpose the training data with the best linear regression model:
 
 {% highlight python %}
 {% raw %}
