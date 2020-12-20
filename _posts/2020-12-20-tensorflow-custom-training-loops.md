@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Custom training loops with tensorflow"
+title:  "Custom training loops with Tensorflow"
 date:   2020-11-20
 categories: [mathematics]
 tags: ['machine learning', 'mathematics', 'optimization', 'statistics', 'Tensorflow']
