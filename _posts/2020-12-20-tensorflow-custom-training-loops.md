@@ -146,16 +146,19 @@ plt.plot(x_train, y_train, 'b.');
 
 Likelihood measures the goodness of fit of a statistical model to a sample of data given a set of values for the unknown parameters. It is considered as a function of the parameters only, treating the random variables as fixed at the observed values.
 
-For example suppose that we are given a sample of $$x_1, x_2, \ldots, x_n$$ values and we are told what the underlying distribution is normal, but we are not given the parameters of the distribution. Our goal is to estimate the mean $$\mu$$S and standard deviation $$\sigma$$ given our data $$x_1, x_2, \ldots, x_n$$. The probability density function of the normal distribution is:
+For example suppose that we are given a sample of $$x_1, x_2, \ldots, x_n$$ values and we are not told what is the underlying distribution. So, we hypothesize that the underlying distribution is the normal distribution $$\mathcal{N}(\mu, \sigma^2)$$ with a probability density function:
 
 $$
-f(x) = \frac{1}{\sqrt{2\pi\sigma^2}\} \exp\left(-\frac {(x-\mu)^2}{2\sigma^2} \right)
+f(x\mid \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2} } \exp\left(-\frac {(x-\mu)^2}{2\sigma^2} \right)
 $$
 
-Then, the corresponding PDF for the whole sample (assuming independent identically distributed variables) will be:
+Then, the corresponding PDF for the whole sample (assuming independent identically distributed) of normal random variables is the likelihood $$\mathcal{L}$$:
 
-$$f(x_1,\ldots,x_n \mid \mu,\sigma^2) = \prod_{i=1}^n f( x_i\mid  \mu, \sigma^2) = \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^{n} \exp\left( -\frac{ \sum_{i=1}^n (x_i-\mu)^2}{2\sigma^2}\right)
 $$
+\ell(\mu,\sigma^2 \mid x_1,\ldots,x_n) = \prod_{i=1}^n f( x_i\mid  \mu, \sigma^2) = \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^{n} \exp\left( -\frac{ \sum_{i=1}^n (x_i-\mu)^2}{2\sigma^2}\right)
+$$
+
+Notice how we treat $$\ell(\mu,\sigma^2 \mid x_1,\ldots,x_n)$$ as a function of the model's parameters $$\mu, sigma^2$$, and we treat the $$x_i$$ as fixed. Let's see some example code with Python:
 
 {% highlight python %}
 {% raw %}
@@ -163,6 +166,11 @@ def pdf(x, m, s):
     """Returns the probability that x was sampled from a normal
     distribution with mean m and standard deviation s."""
     return (1/(2 * np.pi * s**2)**0.5) * math.exp(-0.5 * ((x - m)/s)**2)
+
+# Generate some random normally distributed numbers
+dat = np.random.normal(0, 1, 5)
+for x in dat:
+    print("Probability of x = {:6.3f} coming from a N(0,1) distribution = {:6.2f}%".format(x, 100 * f(x, 0, 1)))
 
 # Probability of x =  1.295 coming from a N(0,1) distribution =   6.88%
 # Probability of x = -1.276 coming from a N(0,1) distribution =   7.05%
@@ -172,6 +180,7 @@ def pdf(x, m, s):
 {% endraw %}
 {% endhighlight %}
 
+At this point we have considered every observation on its own. Now we will assume all of the $$x_i$$ and calculate the joint pdf of the whole sample:
 
 {% highlight python %}
 {% raw %}
@@ -184,7 +193,13 @@ np.prod( [f(x, 0, 1) for x in dat] )
 np.prod( [f(x, 2, 1) for x in dat] )
 
 # 3.0081558180762395e-10
+{% endraw %}
+{% endhighlight %}
 
+Since it's easier to work with logarithms, we assume the log of the likelihood:
+
+{% highlight python %}
+{% raw %}
 # Log-Likehood that all number were randomly drawn from a normal distribution with m = 0, s = 1
 math.log( np.prod( [f(x, 0, 1) for x in dat] ) )
 
