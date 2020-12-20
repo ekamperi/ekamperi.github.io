@@ -141,11 +141,22 @@ plt.plot(x_train, y_train, 'b.');
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/output_10_0.png">
 </p>
 
-
 ## Fit Gaussian curve to data with maximum likelihood estimation
 ### What is likelihood? 
 
 Likelihood measures the goodness of fit of a statistical model to a sample of data given a set of values for the unknown parameters. It is considered as a function of the parameters only, treating the random variables as fixed at the observed values.
+
+For example suppose that we are given a sample of $$x_1, x_2, \ldots, x_n$$ values and we are not told what is the underlying distribution. So, we hypothesize that the underlying distribution is the normal distribution $$\mathcal{N}(\mu, \sigma^2)$$ with a probability density function:
+
+$$
+f(x) = \frac{1}{\sqrt{2\pi\sigma^2}\ }
+                               \exp\left(-\frac {(x-\mu)^2}{2\sigma^2} \right)
+$$
+
+Then, the corresponding PDF for the whole sample (assuming independent identically distributed) of normal random variables will be:
+
+$$f(x_1,\ldots,x_n \mid \mu,\sigma^2) = \prod_{i=1}^n f( x_i\mid  \mu, \sigma^2) = \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^{n} \exp\left( -\frac{ \sum_{i=1}^n (x_i-\mu)^2}{2\sigma^2}\right)
+$$
 
 {% highlight python %}
 {% raw %}
