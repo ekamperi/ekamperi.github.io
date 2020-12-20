@@ -12,13 +12,7 @@ description: How to create custom training loops with Tensorflow
 {% raw %}
 import tensorflow as tf
 tf.__version__
-{% endraw %}
-{% endhighlight %}
 
-
-
-{% highlight python %}
-{% raw %}
     '2.4.0'
 {% endraw %}
 {% endhighlight %}
@@ -70,11 +64,6 @@ class LinearRegressionLayer(tf.keras.layers.Layer):
 
 linear_regression_layer = LinearRegressionLayer()
 linear_regression_layer(x_train)
-{% endraw %}
-{% endhighlight %}
-
-
-
 
     <tf.Tensor: shape=(100,), dtype=float32, numpy=
     array([6.32419065e-03, 1.72153376e-02, 6.32639334e-04, 5.57286246e-03,
@@ -103,8 +92,8 @@ linear_regression_layer(x_train)
            1.12893572e-02, 8.59997422e-03, 4.59470646e-03, 1.06322216e-02,
            5.68887964e-03, 1.30544147e-02, 1.70514826e-02, 9.80825396e-04],
           dtype=float32)>
-
-
+{% endraw %}
+{% endhighlight %}
 
 
 {% highlight python %}
@@ -120,15 +109,10 @@ def MSE(y_pred, y_true):
 {% raw %}
 # Calculate the MSE of the initial m, b values
 MSE(linear_regression_layer(x_train), y_train)
-{% endraw %}
-{% endhighlight %}
-
-
-
 
     <tf.Tensor: shape=(), dtype=float32, numpy=6.283869>
-
-
+{% endraw %}
+{% endhighlight %}
 
 
 {% highlight python %}
@@ -156,16 +140,11 @@ for i in range(epochs):
 # Print optimal values for the parameters m, b.
 # The ground truth values are m = 1, b = 2.
 linear_regression_layer.m, linear_regression_layer.b
-{% endraw %}
-{% endhighlight %}
-
-
-
 
     (<tf.Variable 'Variable:0' shape=(1,) dtype=float32, numpy=array([1.053719], dtype=float32)>,
      <tf.Variable 'Variable:0' shape=(1,) dtype=float32, numpy=array([1.911512], dtype=float32)>)
-
-
+{% endraw %}
+{% endhighlight %}
 
 
 {% highlight python %}
@@ -283,16 +262,11 @@ plt.ylabel('Cost function\n(Negaltive Log-Likelihood)');
 # Print optimal values for the parameters m, s.
 # The ground truth values are m = 2, s = 1.
 gaussian_fit_layer.m, gaussian_fit_layer.s
-{% endraw %}
-{% endhighlight %}
-
-
-
 
     (<tf.Variable 'Variable:0' shape=(1,) dtype=float32, numpy=array([2.0243182], dtype=float32)>,
      <tf.Variable 'Variable:0' shape=(1,) dtype=float32, numpy=array([1.0158775], dtype=float32)>)
-
-
+{% endraw %}
+{% endhighlight %}
 
 
 {% highlight python %}
