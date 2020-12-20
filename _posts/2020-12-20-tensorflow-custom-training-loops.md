@@ -44,9 +44,9 @@ x_train, y_train = generate_noisy_data(m=1, b=2)
 plt.plot(x_train, y_train, 'b.');
 ```
 
-
-![png]({{ site.url }}/images/custom_training_loops/output_4_0.png)
-
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/custom_training_loops/output_4_0.png">
+</p>
 
 
 ```python
@@ -159,8 +159,9 @@ plt.plot(x, linear_regression_layer.m * x + linear_regression_layer.b, 'r')
 plt.plot(x_train, y_train, 'b.');
 ```
 
-
-![png](custom_training_loops/output_10_0.png)
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/custom_training_loops/output_10_0.png">
+</p>
 
 
  ## Fit Gaussian curve to data with maximum likelihood estimation
@@ -187,9 +188,9 @@ plt.xlabel('x')
 plt.ylabel('y');
 ```
 
-
-![png](custom_training_loops/output_12_0.png)
-
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/custom_training_loops/output_12_0.png">
+</p>
 
 
 ```python
@@ -241,8 +242,9 @@ plt.xlabel('Epochs')
 plt.ylabel('Cost function\n(Negaltive Log-Likelihood)');
 ```
 
-
-![png](custom_training_loops/output_16_0.png)
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/custom_training_loops/output_16_0.png">
+</p>
 
 
 
@@ -280,6 +282,7 @@ plt.xlabel('x')
 plt.ylabel('y');
 ```
 
-
-![png](custom_training_loops/output_18_0.png)
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/custom_training_loops/output_18_0.png">
+</p>
 
