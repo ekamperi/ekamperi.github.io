@@ -170,7 +170,7 @@ def pdf(x, m, s):
 # Generate some random normally distributed numbers
 dat = np.random.normal(0, 1, 5)
 for x in dat:
-    print("Probability of x = {:6.3f} coming from a N(0,1) distribution = {:6.2f}%".format(x, 100 * f(x, 0, 1)))
+    print("Probability of x = {:6.3f} coming from a N(0,1) distribution = {:6.2f}%".format(x, 100 * pdf(x, 0, 1)))
 
 # Probability of x =  1.295 coming from a N(0,1) distribution =   6.88%
 # Probability of x = -1.276 coming from a N(0,1) distribution =   7.05%
@@ -185,12 +185,12 @@ At this point we have considered every observation on its own. Now we will assum
 {% highlight python %}
 {% raw %}
 # Probability that all number were randomly drawn from a normal distribution with m = 0, s = 1
-np.prod( [f(x, 0, 1) for x in dat] )
+np.prod( [pdf(x, 0, 1) for x in dat] )
 
 # 9.043067752419683e-06
 
 # Probability that all number were randomly drawn from a normal distribution with m = 2, s = 1
-np.prod( [f(x, 2, 1) for x in dat] )
+np.prod( [pdf(x, 2, 1) for x in dat] )
 
 # 3.0081558180762395e-10
 {% endraw %}
@@ -201,18 +201,45 @@ Since it's easier to work with logarithms, we assume the log of the likelihood:
 {% highlight python %}
 {% raw %}
 # Log-Likehood that all number were randomly drawn from a normal distribution with m = 0, s = 1
-math.log( np.prod( [f(x, 0, 1) for x in dat] ) )
+math.log( np.prod( [pdf(x, 0, 1) for x in dat] ) )
 
 # -11.613512087983674
 
 # Log-Likelihood that all number were randomly drawn from a normal distribution with m = 2, s = 1
-math.log( np.prod( [f(x, 2, 1) for x in dat] ) )
+math.log( np.prod( [pdf(x, 2, 1) for x in dat] ) )
 
 # -21.924523723972346
 {% endraw %}
 {% endhighlight %}
 
-Our ultimate goal is to find the optimal values for the model's parameters, $$\mu, \sigma^2$$, that maximize the log-likelihood. If they maximize the log-likelihood, they will also maximize the likelihood. Usually we define our cost function to be the negative log-likelihood, and have the optimizer minimize it. By minimizing the negative log-likelihood, we maximize the log-likelihood (and therefore the likelihood).
+Our ultimate goal is to find the optimal values for the model's parameters, $$\mu, \sigma^2$$, that maximize the log-likelihood. If they maximize the log-likelihood, they will also maximize the likelihood. However, we usually define our cost function to be the negative log-likelihood, and have the optimizer minimize it. By minimizing the negative log-likelihood, we maximize the log-likelihood (and therefore the likelihood).
+
+{% highlight python %}
+{% raw %}
+# Generate 1000 normally distributed numbers with mean = 3, std = 1
+dat = np.random.normal(3, 1, 1000)
+
+# Try a range of possible mean values and calculate the
+# log-likelihood. For brevity, we fix std to be 1.
+mus = np.linspace(0, 6, 20)
+nll = []
+for m in mus:
+    # log(a * b * c ...) = log(a) + log(b) + log(c) + ...
+    current_nll = np.sum([math.log(pdf(x, m, 1)) for x in dat])
+    nll.append([m, current_nll])
+    
+x, y = zip(*nll)
+plt.scatter(x, y)
+plt.xlabel('mean')
+plt.ylabel('log-likelihood')
+plt.grid(True)
+{% endraw %}
+{% endhighlight %}
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/custom_training_loops/ll_vs_mean.png">
+</p>
+
 
 ### A concrete example of maximum likelihood estimation
 
@@ -244,7 +271,6 @@ plt.ylabel('y');
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/custom_training_loops/output_12_0.png">
 </p>
-
 
 {% highlight python %}
 {% raw %}
