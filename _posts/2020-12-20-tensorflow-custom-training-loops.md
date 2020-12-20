@@ -45,7 +45,7 @@ plt.plot(x_train, y_train, 'b.');
 ```
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/custom_training_loops/output_4_0.png">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/output_4_0.png">
 </p>
 
 
@@ -160,7 +160,7 @@ plt.plot(x_train, y_train, 'b.');
 ```
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/custom_training_loops/output_10_0.png">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/output_10_0.png">
 </p>
 
 
@@ -189,7 +189,7 @@ plt.ylabel('y');
 ```
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/custom_training_loops/output_12_0.png">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/custom_training_loops/output_12_0.png">
 </p>
 
 
@@ -243,7 +243,7 @@ plt.ylabel('Cost function\n(Negaltive Log-Likelihood)');
 ```
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/custom_training_loops/output_16_0.png">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/output_16_0.png">
 </p>
 
 
