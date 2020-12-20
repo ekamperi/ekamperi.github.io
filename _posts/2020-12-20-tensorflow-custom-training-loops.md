@@ -12,8 +12,8 @@ description: How to create custom training loops with Tensorflow
 {% raw %}
 import tensorflow as tf
 tf.__version__
-{% endhighlight %}
 {% endraw %}
+{% endhighlight %}
 
 
 
