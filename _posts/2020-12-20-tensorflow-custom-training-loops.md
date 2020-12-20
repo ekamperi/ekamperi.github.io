@@ -3,11 +3,11 @@ layout: post
 title:  "Custom training loops with tensorflow"
 date:   2020-11-20
 categories: [mathematics]
-tags: ['Tensorflow', 'machine learning', 'mathematics', 'optimization', 'statistics']
+tags: ['machine learning', 'mathematics', 'optimization', 'statistics', 'Tensorflow']
 description: How to create custom training loops with Tensorflow
 ---
 
-The most straightforward way to train a model is to use the `model.fit()` and `model.fit_generator()` Keras functions. These functions also accept callbacks that allow for early stopping, save the model to the disk periodically, log for TensorBoard after every batch, accumulate statistics, and so on. However, it may be the case that one needs even finer control of the training loop. A central component of the training loop is automatic differentiation. Let's see a couple of examples on how to construct a custom training loop, define a custom loss function, have Tensorflow compute the gradient of the loss function with respect to the trainable parameters, and then update the latter.
+The most straightforward way to train a model is to use the `model.fit()` and `model.fit_generator()` Keras functions. These functions also accept callbacks that allow for early stopping, save the model to the disk periodically, log for TensorBoard after every batch, accumulate statistics, and so on. However, it may be the case that one needs even finer control of the training loop. A central component of the training loop is automatic differentiation. Therefore, we will see a couple of examples on how to construct a custom training loop, define a custom loss function, have Tensorflow compute the gradients of the loss function with respect to the trainable parameters, and then update the latter.
 
 {% highlight python %}
 {% raw %}
@@ -25,6 +25,7 @@ import numpy as np
 
 ## Fit linear regression model to data by minimizing MSE
 
+In the first example, we will generate some noisy data and then fit a linear regression model of the form $$y = m x + b$$. The model's parameters are $$m, b$$, and we will have Tensorflow figure out their optimal values.
 
 {% highlight python %}
 {% raw %}
