@@ -23,16 +23,19 @@ tf.__version__
 
 
 
-```python
+{% highlight python %}
+{% raw %}
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
-```
+{% endraw %}
+{% endhighlight %}
 
 ## Fit linear regression model to data by minimizing MSE
 
 
-```python
+{% highlight python %}
+{% raw %}
 def generate_noisy_data(m, b, n=100):
     """ Generate (x, y) points along the line y = m * x + b
     and add some gaussian noise in the y coordinates.
@@ -44,14 +47,16 @@ def generate_noisy_data(m, b, n=100):
 
 x_train, y_train = generate_noisy_data(m=1, b=2)
 plt.plot(x_train, y_train, 'b.');
-```
+{% endraw %}
+{% endhighlight %}
 
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/output_4_0.png">
 </p>
 
 
-```python
+{% highlight python %}
+{% raw %}
 class LinearRegressionLayer(tf.keras.layers.Layer):
     def __init__(self):
         super(LinearRegressionLayer, self).__init__()
@@ -63,7 +68,8 @@ class LinearRegressionLayer(tf.keras.layers.Layer):
 
 linear_regression_layer = LinearRegressionLayer()
 linear_regression_layer(x_train)
-```
+{% endraw %}
+{% endhighlight %}
 
 
 
@@ -99,17 +105,21 @@ linear_regression_layer(x_train)
 
 
 
-```python
+{% highlight python %}
+{% raw %}
 def MSE(y_pred, y_true):
     """Calculate Mean Squared Error between y_pred and y_true vectors"""
     return tf.reduce_mean(tf.square(y_pred - y_true))
-```
+{% endraw %}
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
+{% raw %}
 # Calculate the MSE of the initial m, b values
 MSE(linear_regression_layer(x_train), y_train)
-```
+{% endraw %}
+{% endhighlight %}
 
 
 
@@ -119,7 +129,8 @@ MSE(linear_regression_layer(x_train), y_train)
 
 
 
-```python
+{% highlight python %}
+{% raw %}
 # Custom training loop
 learning_rate = 0.05
 epochs = 30
@@ -134,14 +145,17 @@ for i in range(epochs):
     linear_regression_layer.m.assign_sub(learning_rate * gradients[0])
     linear_regression_layer.b.assign_sub(learning_rate * gradients[1])
     mse_loss.append(current_mse_loss)
-```
+{% endraw %}
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
+{% raw %}
 # Print optimal values for the parameters m, b.
 # The ground truth values are m = 1, b = 2.
 linear_regression_layer.m, linear_regression_layer.b
-```
+{% endraw %}
+{% endhighlight %}
 
 
 
@@ -152,14 +166,16 @@ linear_regression_layer.m, linear_regression_layer.b
 
 
 
-```python
+{% highlight python %}
+{% raw %}
 # Generate evenly spaced numbers over the initial x interval plus some margin
 x = np.linspace(min(min(x_train), -0.15), max(max(x_train), 1.15), 50)
 
 # Plot the optimal y = m * x + b regression line superimposed with the data
 plt.plot(x, linear_regression_layer.m * x + linear_regression_layer.b, 'r')
 plt.plot(x_train, y_train, 'b.');
-```
+{% endraw %}
+{% endhighlight %}
 
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/output_10_0.png">
@@ -169,7 +185,8 @@ plt.plot(x_train, y_train, 'b.');
  ## Fit Gaussian curve to data with maximum likelihood estimation
 
 
-```python
+{% highlight python %}
+{% raw %}
 def generate_gaussian_data(m, s, n=1000):
     x = tf.random.uniform(shape=(n,))
     y = tf.random.normal(shape=(len(x),), mean=m, stddev=s)
@@ -188,14 +205,16 @@ plt.subplot(1, 2, 2)
 plt.plot(x_train, y_train, 'b.')
 plt.xlabel('x')
 plt.ylabel('y');
-```
+{% endraw %}
+{% endhighlight %}
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/custom_training_loops/output_12_0.png">
 </p>
 
 
-```python
+{% highlight python %}
+{% raw %}
 class GaussianFitLayer(tf.keras.layers.Layer):
     def __init__(self, ivs):
         super(GaussianFitLayer, self).__init__()
@@ -211,18 +230,22 @@ class GaussianFitLayer(tf.keras.layers.Layer):
 m0 = 0.7 * tf.reduce_mean(y_train)
 s0 = 1.3 * tf.math.reduce_std(y_train)
 gaussian_fit_layer = GaussianFitLayer([m0, s0])
-```
+{% endraw %}
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
+{% raw %}
 def LL(y_true, params):
     N = len(y_true)
     m, s = params
     return (N/2.) * tf.math.log(2. * np.pi * s**2) + (1./(2.*s**2)) * tf.math.reduce_sum((y_true - m)**2)
-```
+{% endraw %}
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
+{% raw %}
 # Custom training loop
 learning_rate = 0.0005
 epochs = 50
@@ -235,14 +258,17 @@ for i in range(epochs):
     gaussian_fit_layer.m.assign_sub(learning_rate * gradients[0])
     gaussian_fit_layer.s.assign_sub(learning_rate * gradients[1])
     nll_loss.append(current_nll_loss)
-```
+{% endraw %}
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
+{% raw %}
 plt.plot(nll_loss)
 plt.xlabel('Epochs')
 plt.ylabel('Cost function\n(Negaltive Log-Likelihood)');
-```
+{% endraw %}
+{% endhighlight %}
 
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/output_16_0.png">
@@ -250,11 +276,13 @@ plt.ylabel('Cost function\n(Negaltive Log-Likelihood)');
 
 
 
-```python
+{% highlight python %}
+{% raw %}
 # Print optimal values for the parameters m, s.
 # The ground truth values are m = 2, s = 1.
 gaussian_fit_layer.m, gaussian_fit_layer.s
-```
+{% endraw %}
+{% endhighlight %}
 
 
 
@@ -265,7 +293,8 @@ gaussian_fit_layer.m, gaussian_fit_layer.s
 
 
 
-```python
+{% highlight python %}
+{% raw %}
 fig = plt.figure(figsize=(15, 4))
 fig.suptitle('Training data vs. generated data after fitting')
 
@@ -282,7 +311,8 @@ plt.plot(x_train, y_train, 'r.')
 plt.plot(x, y, 'b.');
 plt.xlabel('x')
 plt.ylabel('y');
-```
+{% endraw %}
+{% endhighlight %}
 
 <p align="center">
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/custom_training_loops/output_18_0.png">
