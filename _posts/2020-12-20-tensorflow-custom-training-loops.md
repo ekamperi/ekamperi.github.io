@@ -158,7 +158,7 @@ $$
 \ell(\mu,\sigma^2 \mid x_1,\ldots,x_n) = \prod_{i=1}^n f( x_i\mid  \mu, \sigma^2) = \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^{n} \exp\left( -\frac{ \sum_{i=1}^n (x_i-\mu)^2}{2\sigma^2}\right)
 $$
 
-Notice how we treat $$\ell(\mu,\sigma^2 \mid x_1,\ldots,x_n)$$ as a function of the model's parameters $$\mu, sigma^2$$, and we treat the $$x_i$$ as fixed. Let's see some example code with Python:
+Notice how we treat $$\ell(\mu,\sigma^2 \mid x_1,\ldots,x_n)$$ as a function of the model's parameters $$\mu, \sigma^2$$, and we treat the $$x_i$$ as fixed. Let's see some example code with Python:
 
 {% highlight python %}
 {% raw %}
