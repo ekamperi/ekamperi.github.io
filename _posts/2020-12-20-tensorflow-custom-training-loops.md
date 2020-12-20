@@ -237,7 +237,7 @@ plt.grid(True)
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/custom_training_loops/ll_vs_mean.png">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/ll_vs_mean.png">
 </p>
 
 
