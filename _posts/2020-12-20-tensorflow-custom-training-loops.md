@@ -143,6 +143,9 @@ plt.plot(x_train, y_train, 'b.');
 
 
 ## Fit Gaussian curve to data with maximum likelihood estimation
+### What is likelihood? 
+
+Likelihood measures the goodness of fit of a statistical model to a sample of data given a set of values for the unknown parameters. It is considered as a function of the parameters only, treating the random variables as fixed at the observed values.
 
 {% highlight python %}
 {% raw %}
