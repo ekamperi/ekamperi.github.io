@@ -33,8 +33,8 @@ import numpy as np
 {% highlight python %}
 {% raw %}
 def generate_noisy_data(m, b, n=100):
-    """ Generate (x, y) points along the line y = m * x + b
-    and add some gaussian noise in the y coordinates.
+    """ Generates (x, y) points along the line y = m * x + b
+    and adds some gaussian noise in the y coordinates.
     """
     x = tf.random.uniform(shape=(n,))
     noise = tf.random.normal(shape=(len(x),), stddev=0.15)
@@ -99,7 +99,7 @@ linear_regression_layer(x_train)
 {% highlight python %}
 {% raw %}
 def MSE(y_pred, y_true):
-    """Calculate Mean Squared Error between y_pred and y_true vectors"""
+    """Calculates the Mean Squared Error between y_pred and y_true vectors"""
     return tf.reduce_mean(tf.square(y_pred - y_true))
 {% endraw %}
 {% endhighlight %}
@@ -217,7 +217,8 @@ gaussian_fit_layer = GaussianFitLayer([m0, s0])
 
 {% highlight python %}
 {% raw %}
-def LL(y_true, params):
+def NLL(y_true, params):
+    """Calculates the Negative Log-Likelihood for a given set of parameters"""
     N = len(y_true)
     m, s = params
     return (N/2.) * tf.math.log(2. * np.pi * s**2) + (1./(2.*s**2)) * tf.math.reduce_sum((y_true - m)**2)
@@ -234,7 +235,7 @@ epochs = 50
 nll_loss = []
 for i in range(epochs):
     with tf.GradientTape() as tape:
-        current_nll_loss = LL(y_train, [gaussian_fit_layer.m, gaussian_fit_layer.s])
+        current_nll_loss = NLL(y_train, [gaussian_fit_layer.m, gaussian_fit_layer.s])
     gradients = tape.gradient(current_nll_loss, gaussian_fit_layer.trainable_variables)
     gaussian_fit_layer.m.assign_sub(learning_rate * gradients[0])
     gaussian_fit_layer.s.assign_sub(learning_rate * gradients[1])
