@@ -146,14 +146,13 @@ plt.plot(x_train, y_train, 'b.');
 
 Likelihood measures the goodness of fit of a statistical model to a sample of data given a set of values for the unknown parameters. It is considered as a function of the parameters only, treating the random variables as fixed at the observed values.
 
-For example suppose that we are given a sample of $$x_1, x_2, \ldots, x_n$$ values and we are not told what is the underlying distribution. So, we hypothesize that the underlying distribution is the normal distribution $$\mathcal{N}(\mu, \sigma^2)$$ with a probability density function:
+For example suppose that we are given a sample of $$x_1, x_2, \ldots, x_n$$ values and we are told what the underlying distribution is normal, but we are not given the parameters of the distribution. Our goal is to estimate the mean $$\mu$$S and standard deviation $$\sigma$$ given our data $$x_1, x_2, \ldots, x_n$$. The probability density function of the normal distribution is:
 
 $$
-f(x) = \frac{1}{\sqrt{2\pi\sigma^2}\ }
-                               \exp\left(-\frac {(x-\mu)^2}{2\sigma^2} \right)
+f(x) = \frac{1}{\sqrt{2\pi\sigma^2}\} \exp\left(-\frac {(x-\mu)^2}{2\sigma^2} \right)
 $$
 
-Then, the corresponding PDF for the whole sample (assuming independent identically distributed) of normal random variables will be:
+Then, the corresponding PDF for the whole sample (assuming independent identically distributed variables) will be:
 
 $$f(x_1,\ldots,x_n \mid \mu,\sigma^2) = \prod_{i=1}^n f( x_i\mid  \mu, \sigma^2) = \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^{n} \exp\left( -\frac{ \sum_{i=1}^n (x_i-\mu)^2}{2\sigma^2}\right)
 $$
