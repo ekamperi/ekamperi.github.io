@@ -146,7 +146,7 @@ plt.plot(x_train, y_train, 'b.');
 
 Likelihood measures the goodness of fit of a statistical model to a sample of data given a set of values for the unknown parameters. It is considered a function of the parameters only, treating the random variables as fixed at the observed values.
 
-For example suppose that we are given a sample of $$x_1, x_2, \ldots, x_n$$ values and we are not told what is the underlying distribution. So, we hypothesize that the underlying distribution is the normal distribution $$\mathcal{N}(\mu, \sigma^2)$$ with a probability density function:
+For example suppose that we are given a sample of $$x_1, x_2, \ldots, x_n$$ values and we are told that the underlying distribution is normal, but the model's parameters, $$\mu, \sigma^2$$, are unknown. Our goal is to estimate those parameters. We start by considering the PDF of the normal distribution:
 
 $$
 f(x\mid \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2} } \exp\left(-\frac {(x-\mu)^2}{2\sigma^2} \right)
@@ -212,7 +212,11 @@ math.log( np.prod( [f(x, 2, 1) for x in dat] ) )
 {% endraw %}
 {% endhighlight %}
 
+Our ultimate goal is to find the optimal values for the model's parameters, $$\mu, \sigma^2$$, that maximize the log-likelihood. If they maximize the log-likelihood, they will also maximize the likelihood. Usually we define our cost function to be the negative log-likelihood, and have the optimizer minimize it. By minimizing the negative log-likelihood, we maximize the log-likelihood (and therefore the likelihood).
 
+### A concrete example of maximum likelihood estimation
+
+In the second example, we will generate some data sampled from a normal distribution. We will then use Tensorflow figure out the optimal model's parameters, that maximize the negative log-likelihood of our data.
 
 {% highlight python %}
 {% raw %}
