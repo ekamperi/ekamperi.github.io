@@ -9,11 +9,6 @@ description: How to create custom training loops with Tensorflow
 
 
 ```python
-!jt -t grade3 -tf firacode -tfs 9 -mathfs 110 -fs 9 -N -T
-```
-
-
-```python
 import tensorflow as tf
 tf.__version__
 ```
