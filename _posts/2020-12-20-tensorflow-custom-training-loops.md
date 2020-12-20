@@ -90,7 +90,7 @@ MSE(linear_regression_layer(x_train), y_train)
 {% endraw %}
 {% endhighlight %}
 
-Here comes the custom training loop. The important thing to notice is the `tf.GradientTape[]` context. Every operation that is performed on the input inside this context is recorded by Tensorflow, to allow for automatic differentiation.
+Here comes the custom training loop. The important thing to notice is the `tf.GradientTape[]` context. Every operation that is performed on the input inside this context is recorded by Tensorflow for automatic differentiation purposes.
 
 {% highlight python %}
 {% raw %}
@@ -142,9 +142,9 @@ plt.plot(x_train, y_train, 'b.');
 </p>
 
 ## Fit Gaussian curve to data with maximum likelihood estimation
-### What is likelihood? 
+### What is the likelihood? 
 
-Likelihood measures the goodness of fit of a statistical model to a sample of data given a set of values for the unknown parameters. It is considered as a function of the parameters only, treating the random variables as fixed at the observed values.
+Likelihood measures the goodness of fit of a statistical model to a sample of data given a set of values for the unknown parameters. It is considered a function of the parameters only, treating the random variables as fixed at the observed values.
 
 For example suppose that we are given a sample of $$x_1, x_2, \ldots, x_n$$ values and we are not told what is the underlying distribution. So, we hypothesize that the underlying distribution is the normal distribution $$\mathcal{N}(\mu, \sigma^2)$$ with a probability density function:
 
