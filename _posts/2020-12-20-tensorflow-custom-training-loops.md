@@ -1,3 +1,13 @@
+---
+layout: post
+title:  "Custom training loops with tensorflow"
+date:   2020-11-20
+categories: [mathematics]
+tags: ['Tensorflow', 'machine learning', 'mathematics', 'optimization', 'statistics']
+description: How to create custom training loops with Tensorflow
+---
+
+
 ```python
 !jt -t grade3 -tf firacode -tfs 9 -mathfs 110 -fs 9 -N -T
 ```
