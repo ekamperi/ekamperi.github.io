@@ -7,7 +7,7 @@ tags: ['Tensorflow', 'machine learning', 'mathematics', 'optimization', 'statist
 description: How to create custom training loops with Tensorflow
 ---
 
-The most straight-forward way to train a model is to use the `model.fit()` and `model.fit_generator()` keras functions. These functions also accept callbacks that allow for early stoppng, save the model to the disk periodically, log for TensorBoard after every batch, accumulate statistics, and so on. However, it may be the case that one needs even finer control of the training loop. A central component of the training loop is automatic differentiation. Let's see a couple of examples on how to construct a custom training loop, define a custom loss function, have Tensorflow compute the gradient of the loss function with respect the trainable parameters and then update the latter.
+The most straightforward way to train a model is to use the `model.fit()` and `model.fit_generator()` Keras functions. These functions also accept callbacks that allow for early stopping, save the model to the disk periodically, log for TensorBoard after every batch, accumulate statistics, and so on. However, it may be the case that one needs even finer control of the training loop. A central component of the training loop is automatic differentiation. Let's see a couple of examples on how to construct a custom training loop, define a custom loss function, have Tensorflow compute the gradient of the loss function with respect to the trainable parameters, and then update the latter.
 
 {% highlight python %}
 {% raw %}
