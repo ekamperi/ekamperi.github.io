@@ -86,7 +86,7 @@ We calculate our loss function for the newly instantiated linear regression laye
 # Calculate the MSE for the initial m, b values
 MSE(linear_regression_layer(x_train), y_train)
 
-    <tf.Tensor: shape=(), dtype=float32, numpy=6.283869>
+#    <tf.Tensor: shape=(), dtype=float32, numpy=6.283869>
 {% endraw %}
 {% endhighlight %}
 
@@ -111,7 +111,7 @@ for i in range(epochs):
 {% endraw %}
 {% endhighlight %}
 
-We print the optimal values for the models' parameters, $$m, b$$, after the training has completed:
+We print the optimal values for the models' parameters, $$m, b$$, after the training has completed. Indeed, $$m_\text{opt} = 1.05, b_\text{opt} = 1.91$$ are very close to the ground truth values (minus the noise we added).
 
 {% highlight python %}
 {% raw %}
