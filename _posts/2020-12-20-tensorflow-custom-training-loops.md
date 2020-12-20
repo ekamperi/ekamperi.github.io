@@ -13,14 +13,8 @@ description: How to create custom training loops with Tensorflow
 import tensorflow as tf
 tf.__version__
 
-    '2.4.0'
-{% endraw %}
-{% endhighlight %}
+# '2.4.0'
 
-
-
-{% highlight python %}
-{% raw %}
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
