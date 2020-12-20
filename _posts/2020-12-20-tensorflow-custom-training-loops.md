@@ -27,6 +27,7 @@ import numpy as np
 {% endraw %}
 {% endhighlight %}
 
+
 ## Fit linear regression model to data by minimizing MSE
 
 
@@ -163,7 +164,7 @@ plt.plot(x_train, y_train, 'b.');
 </p>
 
 
- ## Fit Gaussian curve to data with maximum likelihood estimation
+## Fit Gaussian curve to data with maximum likelihood estimation
 
 
 {% highlight python %}
