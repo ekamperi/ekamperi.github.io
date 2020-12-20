@@ -1,13 +1,17 @@
 ---
 layout: post
-title:  "Custom training loops with Tensorflow"
+title:  "Custom training loops and subclassing with Tensorflow"
 date:   2020-11-20
 categories: [mathematics]
 tags: ['machine learning', 'mathematics', 'optimization', 'statistics', 'Tensorflow']
-description: How to create custom training loops with Tensorflow
+description: How to create custom training loops and use subclassing with Tensorflow
 ---
 
-The most straightforward way to train a model is to use the `model.fit()` and `model.fit_generator()` Keras functions. These functions also accept callbacks that allow for early stopping, save the model to the disk periodically, log for TensorBoard after every batch, accumulate statistics, and so on. However, it may be the case that one needs even finer control of the training loop. A central component of the training loop is automatic differentiation. Therefore, we will see a couple of examples on how to construct a custom training loop, define a custom loss function, have Tensorflow compute the gradients of the loss function with respect to the trainable parameters, and then update the latter.
+The most straightforward way to train a model is to use the `model.fit()` and `model.fit_generator()` Keras functions. These functions also accept callbacks that allow for early stopping, save the model to the disk periodically, log for TensorBoard after every batch, accumulate statistics, and so on. However, it may be the case that one needs even finer control of the training loop. A central component of the training loop is automatic differentiation. In this post, we will see a couple of examples on how to construct a custom training loop, define a custom loss function, have Tensorflow compute the gradients of the loss function with respect to the trainable parameters, and then update the latter.
+
+## Fit linear regression model to data by minimizing MSE
+
+In the first example, we will generate some noisy data and then fit a linear regression model of the form $$y = m x + b$$. The model's parameters are $$m, b$$, and we will have Tensorflow figure out their optimal values.
 
 {% highlight python %}
 {% raw %}
@@ -19,16 +23,7 @@ tf.__version__
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
-{% endraw %}
-{% endhighlight %}
 
-
-## Fit linear regression model to data by minimizing MSE
-
-In the first example, we will generate some noisy data and then fit a linear regression model of the form $$y = m x + b$$. The model's parameters are $$m, b$$, and we will have Tensorflow figure out their optimal values.
-
-{% highlight python %}
-{% raw %}
 def generate_noisy_data(m, b, n=100):
     """ Generates (x, y) points along the line y = m * x + b
     and adds some gaussian noise in the y coordinates.
@@ -47,6 +42,7 @@ plt.plot(x_train, y_train, 'b.');
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/output_4_0.png">
 </p>
 
+We then proceed by subclassing the `tf.keras.layers.Layer` class to create a new layer. The new layer accepts as input a one dimensional tensor of $$x$$'s and outputs a tensor of $$y$$'s, after mapping the input to $$m x + b$$. This layer's trainable parameters are $$m, b$$, which are initialized to random values drawn from the normal distribution and to zeros, respectively. 
 
 {% highlight python %}
 {% raw %}
