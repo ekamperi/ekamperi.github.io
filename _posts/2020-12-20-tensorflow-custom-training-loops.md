@@ -50,7 +50,7 @@ plt.plot(x_train, y_train, 'b.');
 ```
 
 
-![png](custom_training_loops/output_4_0.png)
+![png]({{ site.url }}/images/custom_training_loops/output_4_0.png)
 
 
 
