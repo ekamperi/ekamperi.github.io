@@ -17,9 +17,11 @@ tf.__version__
 
 
 
-
+{% highlight python %}
+{% raw %}
     '2.4.0'
-
+{% endraw %}
+{% endhighlight %}
 
 
 
@@ -315,6 +317,6 @@ plt.ylabel('y');
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/custom_training_loops/output_18_0.png">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/custom_training_loops/output_18_0.png">
 </p>
 
