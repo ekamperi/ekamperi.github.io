@@ -144,6 +144,47 @@ plt.plot(x_train, y_train, 'b.');
 
 ## Fit Gaussian curve to data with maximum likelihood estimation
 
+{% highlight python %}
+{% raw %}
+def pdf(x, m, s):
+    """Returns the probability that x was sampled from a normal
+    distribution with mean m and standard deviation s."""
+    return (1/(2 * np.pi * s**2)**0.5) * math.exp(-0.5 * ((x - m)/s)**2)
+
+# Probability of x =  1.295 coming from a N(0,1) distribution =   6.88%
+# Probability of x = -1.276 coming from a N(0,1) distribution =   7.05%
+# Probability of x = -0.084 coming from a N(0,1) distribution =  15.86%
+# Probability of x =  0.830 coming from a N(0,1) distribution =  11.28%
+# Probability of x = -0.920 coming from a N(0,1) distribution =  10.42%
+{% endraw %}
+{% endhighlight %}
+
+
+{% highlight python %}
+{% raw %}
+# Probability that all number were randomly drawn from a normal distribution with m = 0, s = 1
+np.prod( [f(x, 0, 1) for x in dat] )
+
+# 9.043067752419683e-06
+
+# Probability that all number were randomly drawn from a normal distribution with m = 2, s = 1
+np.prod( [f(x, 2, 1) for x in dat] )
+
+# 3.0081558180762395e-10
+
+# Log-Likehood that all number were randomly drawn from a normal distribution with m = 0, s = 1
+math.log( np.prod( [f(x, 0, 1) for x in dat] ) )
+
+# -11.613512087983674
+
+# Log-Likelihood that all number were randomly drawn from a normal distribution with m = 2, s = 1
+math.log( np.prod( [f(x, 2, 1) for x in dat] ) )
+
+# -21.924523723972346
+{% endraw %}
+{% endhighlight %}
+
+
 
 {% highlight python %}
 {% raw %}
@@ -273,4 +314,3 @@ plt.ylabel('y');
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/custom_training_loops/output_18_0.png">
 </p>
-
