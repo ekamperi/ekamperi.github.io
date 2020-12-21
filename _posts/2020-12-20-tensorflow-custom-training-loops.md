@@ -166,7 +166,19 @@ $$
 \mathcal{L}(\mu,\sigma^2 \mid x_1,\ldots,x_n) = \prod_{i=1}^n f( x_i\mid  \mu, \sigma^2) = \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^{n} \exp\left( -\frac{ \sum_{i=1}^n (x_i-\mu)^2}{2\sigma^2}\right)
 $$
 
-Notice how we treat $$\mathcal{L}(\mu,\sigma^2 \mid x_1,\ldots,x_n)$$ as a function of the model's parameters $$\mu, \sigma^2$$, and the $$x_i$$ as fixed. Therefore, given a set of observations and a candidate model parameterized by some parameters (here $$mu,\sigma^2$$), likelihood measures how well the model accounts for the observation of these data.  Let's see some example code with Python:
+Notice how we treat $$\mathcal{L}(\mu,\sigma^2 \mid x_1,\ldots,x_n)$$ as a function of the model's parameters $$\mu, \sigma^2$$, and the $$x_i$$ as fixed. Therefore, given a set of observations and a candidate model parameterized by some parameters (here $$mu,\sigma^2$$), likelihood measures how well the model accounts for the observation of these data.  
+
+A more concrete example is this. Suppose we observe just three values: 0.5, 2, and 1. Assuming the underlying distributions is Gaussian, what would then be $$\mathcal{L}$$ equal to?
+
+$$
+\mathcal{L}(\mu,\sigma ^2\mid x=0.5, 2, 1) =
+\frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(0.5 -\mu)^2}{2 \sigma^2}}\times
+\frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(2 -\mu)^2}{2 \sigma^2}}\times
+\frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(1 -\mu)^2}{2 \sigma^2}}
+$$
+
+
+Now that we have a formula for $$\mathcal{L}$$, we can plug in different values of $$\mu, \sigma^2$$ and calculate the likelihood. Ok, let's see do some experimentaion with Python now:
 
 {% highlight python %}
 {% raw %}
@@ -178,7 +190,8 @@ def pdf(x, m, s):
 # Generate some random normally distributed numbers
 dat = np.random.normal(0, 1, 5)
 for x in dat:
-    print("Probability of x = {:6.3f} coming from a N(0,1) distribution = {:6.2f}%".format(x, 100 * pdf(x, 0, 1)))
+    print("Probability of x = {:6.3f} coming from a N(0,1) distribution = {:6.2f}%".
+          format(x, 100 * pdf(x, 0, 1)))
 
 # Probability of x =  1.295 coming from a N(0,1) distribution =   6.88%
 # Probability of x = -1.276 coming from a N(0,1) distribution =   7.05%
