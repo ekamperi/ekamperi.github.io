@@ -365,8 +365,8 @@ plt.ylabel('Cost function\n(Negaltive Log-Likelihood)');
 # The ground truth values are m = 2, s = 1.
 gaussian_fit_layer.m, gaussian_fit_layer.s
 
-    (<tf.Variable 'Variable:0' shape=(1,) dtype=float32, numpy=array([2.0243182], dtype=float32)>,
-     <tf.Variable 'Variable:0' shape=(1,) dtype=float32, numpy=array([1.0158775], dtype=float32)>)
+#    (<tf.Variable 'Variable:0' shape=(1,) dtype=float32, numpy=array([2.0243182], dtype=float32)>,
+#     <tf.Variable 'Variable:0' shape=(1,) dtype=float32, numpy=array([1.0158775], dtype=float32)>)
 {% endraw %}
 {% endhighlight %}
 
