@@ -398,6 +398,25 @@ In a future blog post we will discuss how to structure our custom training loops
 
 ## How is mean squared error related to  log-likelihood?
 
+There is a fundamental mind-blowing connection between MSE and log-likelihood on a linear Gaussian model. Let us assume that our data are modelled by the linear model $$\mathbf{Y} = \mathbf{X} \mathbf{\Theta}  + \epsilon$$, where $$\epsilon_i \sim N(0,\sigma_e^2)$$. Therefore:
+
+$$
+\mathbf{Y} -  \mathbf{X}\mathbf{\Theta} = \epsilon
+$$
+
+And the log-likelihood is:
+
+$$
+\begin{align*}
+\log \mathcal{L}(\mathbf{\Theta} \mid \mathbf{Y}, \mathbf{X}) &= \log\prod_{i=1}^N \text{PDF}(\epsilon_i)=
+\sum_{i=1}^N \log \text{PDF}(\epsilon_i)\\
+&= \sum_{i=1}^N \log \left[ \frac{1}{\sqrt{2\pi \sigma_e^2}} \exp\left(-\frac{(\mathbf{Y}_i - \mathbf{X}_i \mathbf{\Theta})^2}{2\sigma_e^2}\right)\right]\\
+&=-\frac{N}{2} \log \left( 2\pi \sigma_e^2 \right) - \sum_{i=1}^{N} \left( -\frac{(\mathbf{Y}_i - \mathbf{X}_i \mathbf{\Theta})^2}{2\sigma_e^2}\right)
+\end{align*}
+$$
+
+In order to maximize $$\log \mathcal{L}(\mathbf{\Theta} \mid \mathbf{Y}, \mathbf{X})$$, we need to minimize $$\sum_{i=1}^{N} \left( -\frac{(\mathbf{Y}_i - \mathbf{X}_i \mathbf{\Theta})^2}{2\sigma_e^2}\right)$$, but this is equivalent to MSE.
+
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/ll_vs_mse.png">
 </p>
