@@ -217,7 +217,7 @@ np.prod( [pdf(x, 2, 1) for x in dat] )
 {% endraw %}
 {% endhighlight %}
 
-Since it's easier to work with logarithms when we study a product, as we do in this case, we take the log of the likelihood:
+Since it's easier to work with logarithms every time we deal with a product, as we are in this case, we take the log of the likelihood:
 
 {% highlight python %}
 {% raw %}
@@ -396,4 +396,4 @@ plt.ylabel('y');
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/custom_training_loops/output_18_0.png">
 </p>
 
-In a future blog post we will discuss how to structure our custom training loops and how to use the `tf.function` decorator to speed things up!
+In a future blog post we will discuss how to structure our custom training loops so that we can use the `tf.function` decorator to speed things up!
