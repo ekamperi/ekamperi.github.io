@@ -292,6 +292,8 @@ plt.ylabel('y');
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/custom_training_loops/output_12_0.png">
 </p>
 
+The same as before, we subclass the `tf.keras.layers.Layer` and add our model's parameters as weights. We initialize their values to whatever value the user supplies. We then instantiate a new layer with some estimated values for the parameters that are purposely off.
+
 {% highlight python %}
 {% raw %}
 class GaussianFitLayer(tf.keras.layers.Layer):
@@ -312,6 +314,7 @@ gaussian_fit_layer = GaussianFitLayer([m0, s0])
 {% endraw %}
 {% endhighlight %}
 
+We then define a function that calculates the negative log-likelihood, given some observed values and a set of parameters.
 
 {% highlight python %}
 {% raw %}
@@ -323,6 +326,7 @@ def NLL(y_true, params):
 {% endraw %}
 {% endhighlight %}
 
+Here comes the custom training loop. The code is almost identical to the previous case. It's just the loss function that differs.
 
 {% highlight python %}
 {% raw %}
@@ -341,6 +345,7 @@ for i in range(epochs):
 {% endraw %}
 {% endhighlight %}
 
+We confirm that the algorithm converged, and also we print the best estimates for the model's parameters.
 
 {% highlight python %}
 {% raw %}
@@ -353,8 +358,6 @@ plt.ylabel('Cost function\n(Negaltive Log-Likelihood)');
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/output_16_0.png">
 </p>
-
-
 
 {% highlight python %}
 {% raw %}
