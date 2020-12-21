@@ -163,7 +163,7 @@ $$
 Then, we define as likelihood $$\mathcal{L}$$ the corresponding PDF **for the whole sample** (assuming independent identically distributed) of normal random variables:
 
 $$
-\mathcal{L}(\mu,\sigma^2 \mid x_1,\ldots,x_n) = \prod_{i=1}^n f( x_i\mid  \mu, \sigma^2) = \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^{n} \exp\left( -\frac{ \sum_{i=1}^n (x_i-\mu)^2}{2\sigma^2}\right)
+\mathcal{L}(\mu,\sigma^2 \mid x_1,\ldots,x_n) = \prod_{i=1}^n f(x_i) = \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^{n} \exp\left( -\frac{ \sum_{i=1}^n (x_i-\mu)^2}{2\sigma^2}\right)
 $$
 
 Notice how we treat $$\mathcal{L}(\mu,\sigma^2 \mid x_1,\ldots,x_n)$$ as a function of the model's parameters $$\mu, \sigma^2$$, and the $$x_i$$ as fixed. Therefore, given a set of observations and a candidate model parameterized by some parameters (here $$\mu,\sigma^2$$), likelihood measures how well the model accounts for the observation of these data.  
