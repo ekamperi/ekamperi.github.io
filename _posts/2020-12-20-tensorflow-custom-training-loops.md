@@ -395,3 +395,9 @@ plt.ylabel('y');
 </p>
 
 In a future blog post we will discuss how to structure our custom training loops so that we can use the `tf.function` decorator to speed things up!
+
+## How is mean squared error related to maximum likelihood estimate?
+
+<p align="center">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/ll_vs_mse.png">
+</p>
