@@ -395,3 +395,5 @@ plt.ylabel('y');
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/custom_training_loops/output_18_0.png">
 </p>
+
+In a future blog post we will discuss how to structure our custom training loops and how to use the `tf.function` decorator to speed things up!
