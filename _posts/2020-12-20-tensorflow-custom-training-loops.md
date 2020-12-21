@@ -177,8 +177,7 @@ $$
 \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(1 -\mu)^2}{2 \sigma^2}}
 $$
 
-
-Now that we have a formula for $$\mathcal{L}$$, we can plug in different values of $$\mu, \sigma^2$$ and calculate the likelihood. Ok, let's do some experimentaion with Python now:
+Now that we have a formula for $$\mathcal{L}$$, we can plug in different values of $$\mu, \sigma^2$$ and calculate the likelihood. The combination of $$\mu,\sigma^2$$ that yields the largest likelihood will constitute our best estimate. Ok, let's do some experimentaion with Python now:
 
 {% highlight python %}
 {% raw %}
@@ -369,7 +368,6 @@ gaussian_fit_layer.m, gaussian_fit_layer.s
 #     <tf.Variable 'Variable:0' shape=(1,) dtype=float32, numpy=array([1.0158775], dtype=float32)>)
 {% endraw %}
 {% endhighlight %}
-
 
 {% highlight python %}
 {% raw %}
