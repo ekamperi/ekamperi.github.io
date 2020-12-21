@@ -178,7 +178,7 @@ $$
 $$
 
 
-Now that we have a formula for $$\mathcal{L}$$, we can plug in different values of $$\mu, \sigma^2$$ and calculate the likelihood. Ok, let's see do some experimentaion with Python now:
+Now that we have a formula for $$\mathcal{L}$$, we can plug in different values of $$\mu, \sigma^2$$ and calculate the likelihood. Ok, let's do some experimentaion with Python now:
 
 {% highlight python %}
 {% raw %}
