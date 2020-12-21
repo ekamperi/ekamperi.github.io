@@ -1,17 +1,24 @@
 ---
 layout: post
 title:  "Custom training loops and subclassing with Tensorflow"
-date:   2020-11-20
+date:   2020-12-20
 categories: [mathematics]
 tags: ['machine learning', 'mathematics', 'optimization', 'statistics', 'Tensorflow']
 description: How to create custom training loops and use subclassing with Tensorflow
 ---
 
-The most straightforward way to train a model is to use the `model.fit()` and `model.fit_generator()` Keras functions. These functions also accept callbacks that allow for early stopping, save the model to the disk periodically, log for TensorBoard after every batch, accumulate statistics, and so on. However, it may be the case that one needs even finer control of the training loop. A central component of the training loop is automatic differentiation. In this post, we will see a couple of examples on how to construct a custom training loop, define a custom loss function, have Tensorflow compute the gradients of the loss function with respect to the trainable parameters, and then update the latter.
+### Contents
+{:.no_toc}
+
+* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
+{:toc}
+
+## Introduction
+The most straightforward way to train a model is to use the `model.fit()` and `model.fit_generator()` [Keras](https://keras.io/) functions. These functions may seem opaque at first, but they accept callbacks that make them versatile. Such callbacks enable early stopping, saving the model to the disk periodically, writing logs for TensorBoard after every batch, accumulating statistics, and so on. However, it may be the case that one needs even finer control of the training loop. In this post, we will see a couple of examples on how to construct a custom training loop, define a custom loss function, have Tensorflow automatically compute the gradients of the loss function with respect to the trainable parameters, and then update the model.
 
 ## Fit linear regression model to data by minimizing MSE
 
-In the first example, we will generate some noisy data and then fit a linear regression model of the form $$y = m x + b$$. The model's parameters are $$m, b$$, and we will have Tensorflow figure out their optimal values.
+The "Hello World" of data science is arguably fitting a linear regression model. Indeed, in the first example, we will first generate some noisy data, and then we will fit a linear regression model of the form $$y = m x + b$$. The model's parameters are the scalars $$m, b$$, and their optimal values will be figured out by Tensorflow.
 
 {% highlight python %}
 {% raw %}
@@ -42,7 +49,7 @@ plt.plot(x_train, y_train, 'b.');
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/output_4_0.png">
 </p>
 
-We then proceed by subclassing the `tf.keras.layers.Layer` class to create a new layer. The new layer accepts as input a one dimensional tensor of $$x$$'s and outputs a tensor of $$y$$'s, after mapping the input to $$m x + b$$. This layer's trainable parameters are $$m, b$$, which are initialized to random values drawn from the normal distribution and to zeros, respectively. 
+We then subclass the `tf.keras.layers.Layer` class to create a new layer. The new layer accepts as input a one dimensional tensor of $$x$$'s and outputs a one dimensional tensor of $$y$$'s, after mapping the input to $$m x + b$$. This layer's trainable parameters are $$m, b$$, which are initialized to random values drawn from the normal distribution and to zeros, respectively. 
 
 {% highlight python %}
 {% raw %}
@@ -55,6 +62,7 @@ class LinearRegressionLayer(tf.keras.layers.Layer):
     def call(self, inputs):
         return self.m * inputs + self.b
 
+# Instantiate a LinearRegressionLayer and call it on our x_train tensor
 linear_regression_layer = LinearRegressionLayer()
 linear_regression_layer(x_train)
 
@@ -69,7 +77,7 @@ linear_regression_layer(x_train)
 {% endraw %}
 {% endhighlight %}
 
-Here, we define our custom loss function. For this example, the mean squared error is appropriate, but conceivably we could use whatever loss function we'd like.
+Here, we define our custom loss function. For this particular case, the mean squared error (MSE) is appropriate, but conceivably we could use whatever loss function we'd like.
 
 {% highlight python %}
 {% raw %}
@@ -79,7 +87,7 @@ def MSE(y_pred, y_true):
 {% endraw %}
 {% endhighlight %}
 
-We calculate our loss function for the newly instantiated linear regression layer. At the moment the parameters $$m$$ have random values and $$b=0$$.
+We calculate our loss function for the newly instantiated linear regression layer. At the moment, the parameters $$m$$ have random values and $$b=0$$, so we expect MSE to be high.
 
 {% highlight python %}
 {% raw %}
@@ -90,7 +98,7 @@ MSE(linear_regression_layer(x_train), y_train)
 {% endraw %}
 {% endhighlight %}
 
-Here comes the custom training loop. The important thing to notice is the `tf.GradientTape[]` context. Every operation that is performed on the input inside this context is recorded by Tensorflow for automatic differentiation purposes.
+Here comes the custom training loop. What is essential in the following code is the `tf.GradientTape[]` context. Every operation that is performed on the input inside this context is recorded by Tensorflow. We will then use this record for automatic differentiation.
 
 {% highlight python %}
 {% raw %}
@@ -124,7 +132,7 @@ linear_regression_layer.m, linear_regression_layer.b
 {% endraw %}
 {% endhighlight %}
 
-Finally, we superimpose the training data with the best linear regression model:
+Finally, we superimpose the training data with the best linear regression model Tensorflow converged to:
 
 {% highlight python %}
 {% raw %}
@@ -142,23 +150,23 @@ plt.plot(x_train, y_train, 'b.');
 </p>
 
 ## Fit Gaussian curve to data with maximum likelihood estimation
-### What is the likelihood? 
+### What is likelihood? 
 
-Likelihood measures the goodness of fit of a statistical model to a sample of data given a set of values for the unknown parameters. It is considered a function of the parameters only, treating the random variables as fixed at the observed values.
+Likelihood measures how good a statistical model fits a sample of data given a set of values for the unknown parameters. **It is considered a function of the parameters only, treating the random variables as fixed at their observed values**.
 
-For example suppose that we are given a sample of $$x_1, x_2, \ldots, x_n$$ values and we are told that the underlying distribution is normal, but the model's parameters, $$\mu, \sigma^2$$, are unknown. Our goal is to estimate those parameters. We start by considering the PDF of the normal distribution:
+For instance, suppose that we are given a sample $$x_1, x_2, \ldots, x_n$$ and we are told that the underlying distribution is normal, but the model's parameters, $$\mu, \sigma^2$$, are unknown to us. How could we estimate those parameters? We start by considering the [probability density function (PDF)](https://en.wikipedia.org/wiki/Probability_density_function) of the normal distribution:
 
 $$
 f(x\mid \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2} } \exp\left(-\frac {(x-\mu)^2}{2\sigma^2} \right)
 $$
 
-Then, the corresponding PDF for the whole sample (assuming independent identically distributed) of normal random variables is the likelihood $$\mathcal{L}$$:
+Then, we define as likelihood $$\mathcal{L}$$ the corresponding PDF **for the whole sample** (assuming independent identically distributed) of normal random variables:
 
 $$
-\ell(\mu,\sigma^2 \mid x_1,\ldots,x_n) = \prod_{i=1}^n f( x_i\mid  \mu, \sigma^2) = \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^{n} \exp\left( -\frac{ \sum_{i=1}^n (x_i-\mu)^2}{2\sigma^2}\right)
+\mathcal{L}(\mu,\sigma^2 \mid x_1,\ldots,x_n) = \prod_{i=1}^n f( x_i\mid  \mu, \sigma^2) = \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^{n} \exp\left( -\frac{ \sum_{i=1}^n (x_i-\mu)^2}{2\sigma^2}\right)
 $$
 
-Notice how we treat $$\ell(\mu,\sigma^2 \mid x_1,\ldots,x_n)$$ as a function of the model's parameters $$\mu, \sigma^2$$, and we treat the $$x_i$$ as fixed. Let's see some example code with Python:
+Notice how we treat $$\mathcal{L}(\mu,\sigma^2 \mid x_1,\ldots,x_n)$$ as a function of the model's parameters $$\mu, \sigma^2$$, and the $$x_i$$ as fixed. Therefore, given a set of observations and a candidate model parameterized by some parameters (here $$mu,\sigma^2$$), likelihood measures how well the model accounts for the observation of these data.  Let's see some example code with Python:
 
 {% highlight python %}
 {% raw %}
@@ -180,7 +188,7 @@ for x in dat:
 {% endraw %}
 {% endhighlight %}
 
-At this point we have considered every observation on its own. Now we will assume all of the $$x_i$$ and calculate the joint pdf of the whole sample:
+At this point we have considered every observation on its own. Now we will view the sample as a whole and calculate the joint PDF of all $$x_i$$:
 
 {% highlight python %}
 {% raw %}
@@ -196,11 +204,11 @@ np.prod( [pdf(x, 2, 1) for x in dat] )
 {% endraw %}
 {% endhighlight %}
 
-Since it's easier to work with logarithms, we assume the log of the likelihood:
+Since it's easier to work with logarithms when we study a product, as we do in this case, we take the log of the likelihood:
 
 {% highlight python %}
 {% raw %}
-# Log-Likehood that all number were randomly drawn from a normal distribution with m = 0, s = 1
+# Log-Likelihood that all number were randomly drawn from a normal distribution with m = 0, s = 1
 math.log( np.prod( [pdf(x, 0, 1) for x in dat] ) )
 
 # -11.613512087983674
@@ -212,7 +220,7 @@ math.log( np.prod( [pdf(x, 2, 1) for x in dat] ) )
 {% endraw %}
 {% endhighlight %}
 
-Our ultimate goal is to find the optimal values for the model's parameters, $$\mu, \sigma^2$$, that maximize the log-likelihood. If they maximize the log-likelihood, they will also maximize the likelihood. However, we usually define our cost function to be the negative log-likelihood, and have the optimizer minimize it. By minimizing the negative log-likelihood, we maximize the log-likelihood (and therefore the likelihood).
+Our ultimate goal is to find the optimal values for the model's parameters, $$\mu, \sigma^2$$, that maximize the log-likelihood. If they maximize the log-likelihood, they will also maximize the likelihood. However, it's typical for an optimizer to minimize a cost function by default rather than maximize a utility function. Therefore, we usually define our cost function to be the **negative log-likelihood**, and have our optimizer minimize it. By minimizing the negative log-likelihood, we maximize the log-likelihood (and therefore the likelihood).
 
 {% highlight python %}
 {% raw %}
@@ -240,10 +248,9 @@ plt.grid(True)
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/ll_vs_mean.png">
 </p>
 
-
 ### A concrete example of maximum likelihood estimation
 
-In the second example, we will generate some data sampled from a normal distribution. We will then use Tensorflow figure out the optimal model's parameters, that maximize the negative log-likelihood of our data.
+In the second example, we will generate some data sampled from a normal distribution with known parameters. We will then use Tensorflow to figure out the optimal model's parameters that maximize our data's negative log-likelihood.
 
 {% highlight python %}
 {% raw %}
