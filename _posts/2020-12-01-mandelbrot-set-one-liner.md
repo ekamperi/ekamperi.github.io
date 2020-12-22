@@ -168,12 +168,11 @@ In the following figure, we see the effect of starting with $$c = 0.3 + 0.25i$$ 
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/single_complex_multiplication.png" alt="Repeated complex multiplication">
 </p>
 
-In this figure, we do the same as before, but we superimpose the orbis of hundrends starting points in the complex plane, corresponding to many different $$c$$ numbers.
+In this figure, we do the same as before, but we superimpose the orbits of hundreds starting points in the complex plane, corresponding to many different $$c$$ numbers. You may even "see" the blueprint of the Mandelbrot set if you stare at it for a bit.
 
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/many_complex_multiplications.png" alt="Repeated complex multiplications">
 </p>
-
 
 ## The nitpicker
 There's actually a built-in command in *Mathematica 10.0* that plots the Mandelbrot set, so you could really construct it with one-line!
@@ -198,4 +197,3 @@ MandelbrotSetPlot[{-0.65 + 0.47 I, -0.4 + 0.72 I},
  <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/mandel_builtin2.png" alt="Mandelbrot set with Mathematica">
 </p>
-
