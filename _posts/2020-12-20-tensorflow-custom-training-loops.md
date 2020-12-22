@@ -255,13 +255,13 @@ dat = np.random.normal(3, 1, 1000)
 # Try a range of possible mean values and calculate the
 # log-likelihood. For brevity, we fix std to be 1.
 mus = np.linspace(0, 6, 20)
-nll = []
+ll = []
 for m in mus:
     # log(a * b * c ...) = log(a) + log(b) + log(c) + ...
-    current_nll = np.sum([math.log(pdf(x, m, 1)) for x in dat])
-    nll.append([m, current_nll])
+    current_ll = np.sum([math.log(pdf(x, m, 1)) for x in dat])
+    ll.append([m, current_nll])
     
-x, y = zip(*nll)
+x, y = zip(*ll)
 plt.scatter(x, y)
 plt.xlabel('mean')
 plt.ylabel('log-likelihood')
