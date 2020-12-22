@@ -189,7 +189,7 @@ $$
 could be viewed as an infinite sequence of scale, rotate, translate operations:
 
 $$
-\underbrace{c}_{z_1}, \,\,\underbrace{\text{scale-rotate-translate}}_{z_2}, \ldots
+\underbrace{c}_{z_1}, \,\,\underbrace{\text{scale-rotate-translate }z_1}_{z_2}, \ldots
 $$
 
 
