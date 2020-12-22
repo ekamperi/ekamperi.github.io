@@ -174,6 +174,25 @@ In this figure, we do the same as before, but we superimpose the orbits of hundr
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/many_complex_multiplications.png" alt="Repeated complex multiplications">
 </p>
 
+Let's see what happens when we square a complex number $$z$$. In this context, we will represent $$z$$ in polar form, i.e. $$z=r e^{i\theta}$$:
+
+$$
+z = r e^{i\theta} \Rightarrow z^2=(re^{i\theta})(re^{i\theta})=r^2e^{2i\theta}=r^2e^{i(2\theta)}
+$$
+
+It's evident now that squaring a complex number is equivalent to scaling its magnitude and rotating it. Also, adding a complex number $$c$$ to $$z$$, is equivalent to translating $$z$$. Therefore, the sequence:
+
+$$
+\underbrace{c}_{z_1}, \,\,\underbrace{c^2+c}_{z_2}, \,\,\underbrace{(c^2+c)^2+c}_{z_3}, \,\,\underbrace{((c^2+c)^2+c)^2+c}_{z_4}, \ldots
+$$
+
+could be viewed as an infinite sequence of scale, rotate, translate operations:
+
+$$
+\underbrace{c}_{z_1}, \,\,\underbrace{\text{scale-rotate-translate}}_{z_2}, \ldots
+$$
+
+
 ## The nitpicker
 There's actually a built-in command in *Mathematica 10.0* that plots the Mandelbrot set, so you could really construct it with one-line!
 
