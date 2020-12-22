@@ -154,7 +154,7 @@ plt.plot(x_train, y_train, 'b.');
 
 Likelihood measures how well a statistical model fits a sample of data given a set of values for the unknown parameters. **It is considered a function of the parameters only, treating the random variables as fixed at their observed values**.
 
-For instance, suppose that we are given a sample $$x_1, x_2, \ldots, x_n$$ and we are told that the underlying distribution is normal, but the model's parameters, $$\mu, \sigma^2$$, are unknown to us. How could we estimate those parameters? We start by considering the [probability density function (PDF)](https://en.wikipedia.org/wiki/Probability_density_function) of the normal distribution:
+For instance, suppose that we are given a sample $$x_1, x_2, \ldots, x_N$$ and we are told that the underlying distribution is normal, but the model's parameters, $$\mu, \sigma^2$$, are unknown to us. How could we estimate those parameters? We start by considering the [probability density function (PDF)](https://en.wikipedia.org/wiki/Probability_density_function) of the normal distribution:
 
 $$
 f(x\mid \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2} } \exp\left(-\frac {(x-\mu)^2}{2\sigma^2} \right)
@@ -163,10 +163,10 @@ $$
 Then, we define as likelihood $$\mathcal{L}$$ the corresponding PDF **for the whole sample** (assuming independent identically distributed) of normal random variables:
 
 $$
-\mathcal{L}(\mu,\sigma^2 \mid x_1,\ldots,x_n) = \prod_{i=1}^n f(x_i) = \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^{n} \exp\left( -\frac{ \sum_{i=1}^n (x_i-\mu)^2}{2\sigma^2}\right)
+\mathcal{L}(\mu,\sigma^2 \mid x_1,\ldots,x_N) = \prod_{i=1}^N f(x_i) = \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^{N} \exp\left( -\frac{ \sum_{i=1}^N (x_i-\mu)^2}{2\sigma^2}\right)
 $$
 
-Notice how we treat $$\mathcal{L}(\mu,\sigma^2 \mid x_1,\ldots,x_n)$$ as a function of the model's parameters $$\mu, \sigma^2$$, and the $$x_i$$ as fixed. Therefore, given a set of observations and a candidate model parameterized by some parameters (here $$\mu,\sigma^2$$), likelihood measures how well the model accounts for the observation of these data.  
+Notice how we treat $$\mathcal{L}(\mu,\sigma^2 \mid x_1,\ldots,x_N)$$ as a function of the model's parameters $$\mu, \sigma^2$$, and the $$x_i$$ as fixed. Therefore, given a set of observations and a candidate model parameterized by some parameters (here $$\mu,\sigma^2$$), likelihood measures how well the model accounts for the observation of these data.  
 
 A more concrete example is this. Suppose we observe just three values: 0.5, 2, and 1. Assuming the underlying distributions is Gaussian, what would then be $$\mathcal{L}$$ equal to?
 
@@ -181,9 +181,9 @@ Now that we have a formula for $$\mathcal{L}$$, we can plug in different values 
 
 $$
 \begin{align*}
-\log \mathcal{L}(\mu,\sigma^2 \mid x_1,\ldots,x_n) &= \log \prod_{i=1}^n f(x_i) \\
-&=\log\left[\left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^{n} \exp\left( -\frac{ \sum_{i=1}^n (x_i-\mu)^2}{2\sigma^2}\right)\right]\\
-&=-\frac{N}{2} \log \left( 2\pi \sigma^2 \right) - \sum_{i=1}^{n} \left( \frac{(x_i - \mu)^2}{2\sigma^2}\right)
+\log \mathcal{L}(\mu,\sigma^2 \mid x_1,\ldots,x_N) &= \log \prod_{i=1}^N f(x_i) \\
+&=\log\left[\left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^{N} \exp\left( -\frac{ \sum_{i=1}^N (x_i-\mu)^2}{2\sigma^2}\right)\right]\\
+&=-\frac{N}{2} \log \left( 2\pi \sigma^2 \right) - \sum_{i=1}^{N} \left( \frac{(x_i - \mu)^2}{2\sigma^2}\right)
 \end{align*}
 $$
 
