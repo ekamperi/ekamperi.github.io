@@ -409,7 +409,7 @@ plt.ylabel('y');
 
 In a future blog post, we will discuss how to structure our custom training loops so that we can use the `tf.function` decorator to speed things up!
 
-## How is mean squared error related to log-likelihood?
+### How is mean squared error related to log-likelihood?
 
 There is a fundamental mind-blowing connection between MSE and log-likelihood on a linear Gaussian model. Let us assume that our data are modelled by the linear model $$\mathbf{Y} = \mathbf{X} \mathbf{\Theta}  + \epsilon$$, where $$\epsilon_i \sim N(0,\sigma_e^2)$$. Therefore:
 
