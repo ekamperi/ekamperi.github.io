@@ -14,7 +14,7 @@ description: How to create custom training loops and use subclassing with Tensor
 {:toc}
 
 ## Introduction
-The most straightforward way to train a model is to use the `model.fit()` and `model.fit_generator()` [Keras](https://keras.io/) functions. These functions may seem opaque at first, but they accept callbacks that make them versatile. Such callbacks enable early stopping, saving the model to the disk periodically, writing logs for TensorBoard after every batch, accumulating statistics, and so on. However, it may be the case that one needs even finer control of the training loop. In this post, we will see a couple of examples on how to construct a custom training loop, define a custom loss function, have Tensorflow automatically compute the gradients of the loss function with respect to the trainable parameters, and then update the model.
+The most straightforward way to train a model in Tensorflow is to use the `model.fit()` and `model.fit_generator()` [Keras](https://keras.io/) functions. These functions may seem opaque at first, but they accept callbacks that make them versatile. Such callbacks enable early stopping, saving the model to the disk periodically, writing logs for TensorBoard after every batch, accumulating statistics, and so on. However, it may be the case that one needs even finer control of the training loop. In this post, we will see a couple of examples on how to construct a custom training loop, define a custom loss function, have Tensorflow automatically compute the gradients of the loss function with respect to the trainable parameters, and then update the model.
 
 ## Fit linear regression model to data by minimizing MSE
 
