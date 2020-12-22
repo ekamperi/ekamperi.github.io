@@ -46,7 +46,7 @@ plt.plot(x_train, y_train, 'b.');
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/output_4_0.png">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/output_4_0.png" alt="Linear data with Gaussian noise">
 </p>
 
 We then subclass the `tf.keras.layers.Layer` class to create a new layer. The new layer accepts as input a one dimensional tensor of $$x$$'s and outputs a one dimensional tensor of $$y$$'s, after mapping the input to $$m x + b$$. This layer's trainable parameters are $$m, b$$, which are initialized to random values drawn from the normal distribution and to zeros, respectively. 
@@ -146,7 +146,7 @@ plt.plot(x_train, y_train, 'b.');
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/output_10_0.png">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/output_10_0.png" alt="Linear regression line on noisy data">
 </p>
 
 ## Fit Gaussian curve to data with maximum likelihood estimation
@@ -267,7 +267,7 @@ plt.grid(True)
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/ll_vs_mean.png">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/ll_vs_mean.png" alt="log-likelihood curve vs mean">
 </p>
 
 ### A concrete example of maximum likelihood estimation
@@ -298,7 +298,7 @@ plt.ylabel('y');
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/custom_training_loops/output_12_0.png">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/custom_training_loops/output_12_0.png" alt="Normally distributed data">
 </p>
 
 The same as before, we subclass the `tf.keras.layers.Layer` and add our model's parameters as weights. We initialize their values to whatever value the user supplies. We then instantiate a new layer with some estimated values for the parameters that are purposely off.
@@ -428,5 +428,5 @@ $$
 In order to maximize $$\log \mathcal{L}(\mathbf{\Theta} \mid \mathbf{Y}, \mathbf{X})$$, we need to minimize $$\sum_{i=1}^{N} \left( -\frac{(\mathbf{Y}_i - \mathbf{X}_i \mathbf{\Theta})^2}{2\sigma_e^2}\right)$$, but this is equivalent to minimizing $$N \cdot \text{MSE}$$ or to minimizing MSE. In the following plot we see the values of log-likelihood and MSE for various values of the parameter $$\mu$$ in a linear regression model. Notice how the value of $$\mu$$ that minimizes MSE is the same that maximizes log-likelihood!
 
 <p align="center">
- <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/ll_vs_mse.png">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/ll_vs_mse.png" alt="MSE and log-likelihood relation">
 </p>
