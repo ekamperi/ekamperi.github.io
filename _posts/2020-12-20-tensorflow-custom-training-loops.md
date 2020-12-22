@@ -177,7 +177,17 @@ $$
 \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(1 -\mu)^2}{2 \sigma^2}}
 $$
 
-Now that we have a formula for $$\mathcal{L}$$, we can plug in different values of $$\mu, \sigma^2$$ and calculate the likelihood. The combination of $$\mu,\sigma^2$$ that yields the largest likelihood will constitute our best estimate. Ok, let's do some experimentaion with Python now:
+Now that we have a formula for $$\mathcal{L}$$, we can plug in different values of $$\mu, \sigma^2$$ and calculate the likelihood. The combination of $$\mu,\sigma^2$$ that yields the largest likelihood will constitute our best estimate. By the way, it's easier to work with logarithms every time we deal with a product, and this is how the log-likelihood concept emerges:
+
+$$
+\begin{align*}
+\log \mathcal{L}(\mu,\sigma^2 \mid x_1,\ldots,x_n) &= \log \prod_{i=1}^n f(x_i) \\
+&=\log\left[\left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^{n} \exp\left( -\frac{ \sum_{i=1}^n (x_i-\mu)^2}{2\sigma^2}\right)\right]\\
+&=-\frac{N}{2} \log \left( 2\pi \sigma^2 \right) - \sum_{i=1}^{n} \left( \frac{(x_i - \mu)^2}{2\sigma^2}\right)
+\end{align*}
+$$
+
+Ok, let's do some experimentaion with Python now:
 
 {% highlight python %}
 {% raw %}
@@ -411,7 +421,7 @@ $$
 \log \mathcal{L}(\mathbf{\Theta} \mid \mathbf{Y}, \mathbf{X}) &= \log\prod_{i=1}^N \text{PDF}(\epsilon_i)=
 \sum_{i=1}^N \log \text{PDF}(\epsilon_i)\\
 &= \sum_{i=1}^N \log \left[ \frac{1}{\sqrt{2\pi \sigma_e^2}} \exp\left(-\frac{(\mathbf{Y}_i - \mathbf{X}_i \mathbf{\Theta})^2}{2\sigma_e^2}\right)\right]\\
-&=-\frac{N}{2} \log \left( 2\pi \sigma_e^2 \right) - \sum_{i=1}^{N} \left( -\frac{(\mathbf{Y}_i - \mathbf{X}_i \mathbf{\Theta})^2}{2\sigma_e^2}\right)
+&=-\frac{N}{2} \log \left( 2\pi \sigma_e^2 \right) - \sum_{i=1}^{N} \left( \frac{(\mathbf{Y}_i - \mathbf{X}_i \mathbf{\Theta})^2}{2\sigma_e^2}\right)
 \end{align*}
 $$
 
