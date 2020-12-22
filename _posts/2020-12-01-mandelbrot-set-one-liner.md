@@ -28,7 +28,7 @@ $$
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/complex_grid_mandel.png" alt="Complex plan for Mandeblor set">
 </p>
 
-So for every point in the complex plane $$\mathbb{C}$$, we assume the complex number $$c = a + b i$$ and then we calculate the infinite series:
+So for every point in the complex plane $$\mathbb{C}$$, we assume the complex number $$c = a + b i, \, a,b\in\mathbb{R}$$ and then we calculate the infinite series:
 
 $$
 \underbrace{c}_{z_1}, \,\,\underbrace{c^2+c}_{z_2}, \,\,\underbrace{(c^2+c)^2+c}_{z_3}, \,\,\underbrace{((c^2+c)^2+c)^2+c}_{z_4}, \ldots
