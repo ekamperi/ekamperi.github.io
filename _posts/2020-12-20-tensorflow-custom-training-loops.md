@@ -259,7 +259,7 @@ ll = []
 for m in mus:
     # log(a * b * c ...) = log(a) + log(b) + log(c) + ...
     current_ll = np.sum([math.log(pdf(x, m, 1)) for x in dat])
-    ll.append([m, current_nll])
+    ll.append([m, current_ll])
     
 x, y = zip(*ll)
 plt.scatter(x, y)
