@@ -17,7 +17,7 @@ description: How to create custom training loops and use subclassing with Tensor
 The most straightforward way to train a model in Tensorflow is to use the `model.fit()` and `model.fit_generator()` [Keras](https://keras.io/) functions. These functions may seem opaque at first, but they accept callbacks that make them versatile. Such callbacks enable early stopping, saving the model to the disk periodically, writing logs for TensorBoard after every batch, accumulating statistics, and so on. However, it may be the case that one needs even finer control of the training loop. In this post, we will see a couple of examples on how to construct a custom training loop, define a custom loss function, have Tensorflow automatically compute the gradients of the loss function with respect to the trainable parameters, and then update the model.
 
 ## Fit linear regression model to data by minimizing MSE
-
+### Generate training data
 The "Hello World" of data science is arguably fitting a linear regression model. Indeed, in the first example, we will first generate some noisy data, and then we will fit a linear regression model of the form $$y = m x + b$$. The model's parameters are the scalars $$m, b$$, and their optimal values will be figured out by Tensorflow.
 
 {% highlight python %}
@@ -49,6 +49,7 @@ plt.plot(x_train, y_train, 'b.');
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/output_4_0.png" alt="Linear data with Gaussian noise">
 </p>
 
+### Create a custom Keras layer
 We then subclass the `tf.keras.layers.Layer` class to create a new layer. The new layer accepts as input a one dimensional tensor of $$x$$'s and outputs a one dimensional tensor of $$y$$'s, after mapping the input to $$m x + b$$. This layer's trainable parameters are $$m, b$$, which are initialized to random values drawn from the normal distribution and to zeros, respectively. 
 
 {% highlight python %}
@@ -77,6 +78,7 @@ linear_regression_layer(x_train)
 {% endraw %}
 {% endhighlight %}
 
+### Define a custom loss function
 Here, we define our custom loss function. For this particular case, the mean squared error (MSE) is appropriate, but conceivably we could use whatever loss function we'd like.
 
 {% highlight python %}
@@ -98,6 +100,7 @@ MSE(linear_regression_layer(x_train), y_train)
 {% endraw %}
 {% endhighlight %}
 
+### Train the model with a custom training loop
 Here comes the custom training loop. What is essential in the following code is the `tf.GradientTape[]` context. Every operation that is performed on the input inside this context is recorded by Tensorflow. We will then use this record for automatic differentiation.
 
 {% highlight python %}
