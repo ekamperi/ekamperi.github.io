@@ -162,9 +162,13 @@ And here is a video of drawing the intermediate points in the complex plane. Eve
 
 ## The intuition
 
+In the following figure, we see the effect of starting with $$c = 0.3 + 0.25i$$ and calculating the series $$z_{n+1} = z_n^2 + c$$. Every red plot is a complex number corresponding to $$z_1, z_2, z_3, \ldots, z_20$$.
+
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/single_complex_multiplication.png" alt="Repeated complex multiplication">
 </p>
+
+In this figure, we do the same as before, but we superimpose the orbis of hundrends starting points in the complex plane, corresponding to many different $$c$$ numbers.
 
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/many_complex_multiplications.png" alt="Repeated complex multiplications">
