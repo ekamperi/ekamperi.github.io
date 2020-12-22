@@ -152,7 +152,7 @@ plt.plot(x_train, y_train, 'b.');
 ## Fit Gaussian curve to data with maximum likelihood estimation
 ### What is likelihood? 
 
-Likelihood measures how good a statistical model fits a sample of data given a set of values for the unknown parameters. **It is considered a function of the parameters only, treating the random variables as fixed at their observed values**.
+Likelihood measures how well a statistical model fits a sample of data given a set of values for the unknown parameters. **It is considered a function of the parameters only, treating the random variables as fixed at their observed values**.
 
 For instance, suppose that we are given a sample $$x_1, x_2, \ldots, x_n$$ and we are told that the underlying distribution is normal, but the model's parameters, $$\mu, \sigma^2$$, are unknown to us. How could we estimate those parameters? We start by considering the [probability density function (PDF)](https://en.wikipedia.org/wiki/Probability_density_function) of the normal distribution:
 
@@ -204,12 +204,12 @@ At this point we have considered every observation on its own. Now we will view 
 
 {% highlight python %}
 {% raw %}
-# Probability that all number were randomly drawn from a normal distribution with m = 0, s = 1
+# Probability that all numbers were randomly drawn from a normal distribution with m = 0, s = 1
 np.prod( [pdf(x, 0, 1) for x in dat] )
 
 # 9.043067752419683e-06
 
-# Probability that all number were randomly drawn from a normal distribution with m = 2, s = 1
+# Probability that all numbers were randomly drawn from a normal distribution with m = 2, s = 1
 np.prod( [pdf(x, 2, 1) for x in dat] )
 
 # 3.0081558180762395e-10
@@ -220,12 +220,12 @@ Since it's easier to work with logarithms every time we deal with a product, as 
 
 {% highlight python %}
 {% raw %}
-# Log-Likelihood that all number were randomly drawn from a normal distribution with m = 0, s = 1
+# Log-likelihood that all numbers were randomly drawn from a normal distribution with m = 0, s = 1
 math.log( np.prod( [pdf(x, 0, 1) for x in dat] ) )
 
 # -11.613512087983674
 
-# Log-Likelihood that all number were randomly drawn from a normal distribution with m = 2, s = 1
+# Log-likelihood that all numbers were randomly drawn from a normal distribution with m = 2, s = 1
 math.log( np.prod( [pdf(x, 2, 1) for x in dat] ) )
 
 # -21.924523723972346
@@ -394,9 +394,9 @@ plt.ylabel('y');
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/custom_training_loops/output_18_0.png">
 </p>
 
-In a future blog post we will discuss how to structure our custom training loops so that we can use the `tf.function` decorator to speed things up!
+In a future blog post, we will discuss how to structure our custom training loops so that we can use the `tf.function` decorator to speed things up!
 
-## How is mean squared error related to  log-likelihood?
+## How is mean squared error related to log-likelihood?
 
 There is a fundamental mind-blowing connection between MSE and log-likelihood on a linear Gaussian model. Let us assume that our data are modelled by the linear model $$\mathbf{Y} = \mathbf{X} \mathbf{\Theta}  + \epsilon$$, where $$\epsilon_i \sim N(0,\sigma_e^2)$$. Therefore:
 
