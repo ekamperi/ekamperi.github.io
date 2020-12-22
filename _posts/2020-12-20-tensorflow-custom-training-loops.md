@@ -415,7 +415,7 @@ $$
 \end{align*}
 $$
 
-In order to maximize $$\log \mathcal{L}(\mathbf{\Theta} \mid \mathbf{Y}, \mathbf{X})$$, we need to minimize $$\sum_{i=1}^{N} \left( -\frac{(\mathbf{Y}_i - \mathbf{X}_i \mathbf{\Theta})^2}{2\sigma_e^2}\right)$$, but this is equivalent to minimizing $$N \text{MSE}$$ or to minimizing MSE. In the following plot we see the values of log-likelihood and MSE for various values of the parameter $$\mu$$ in a linear regression model. Notice how the value of $$\mu$$ that minimizes MSE is the same that maximizes log-likelihood!
+In order to maximize $$\log \mathcal{L}(\mathbf{\Theta} \mid \mathbf{Y}, \mathbf{X})$$, we need to minimize $$\sum_{i=1}^{N} \left( -\frac{(\mathbf{Y}_i - \mathbf{X}_i \mathbf{\Theta})^2}{2\sigma_e^2}\right)$$, but this is equivalent to minimizing $$N \cdot \text{MSE}$$ or to minimizing MSE. In the following plot we see the values of log-likelihood and MSE for various values of the parameter $$\mu$$ in a linear regression model. Notice how the value of $$\mu$$ that minimizes MSE is the same that maximizes log-likelihood!
 
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/ll_vs_mse.png">
