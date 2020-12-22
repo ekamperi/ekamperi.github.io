@@ -186,10 +186,10 @@ $$
 \underbrace{c}_{z_1}, \,\,\underbrace{c^2+c}_{z_2}, \,\,\underbrace{(c^2+c)^2+c}_{z_3}, \,\,\underbrace{((c^2+c)^2+c)^2+c}_{z_4}, \ldots
 $$
 
-could be viewed as an infinite sequence of scale, rotate, translate operations:
+could be viewed as an infinite series of scale, rotate, translate operations:
 
 $$
-\underbrace{c}_{z_1}, \,\,\underbrace{\text{scale-rotate-translate }z_1}_{z_2}, \ldots
+\underbrace{c}_{z_1}, \,\,\underbrace{\text{scale-rotate-translate }z_1}_{z_2}, \,\,\underbrace{\text{scale-rotate-translate }z_2}_{z_3},\ldots
 $$
 
 
