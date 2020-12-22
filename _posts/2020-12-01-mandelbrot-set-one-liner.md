@@ -160,6 +160,17 @@ And here is a video of drawing the intermediate points in the complex plane. Eve
 </video>
 </p>
 
+## The intuition
+
+<p align="center">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/single_complex_multiplication.png" alt="Repeated complex multiplication">
+</p>
+
+<p align="center">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/many_complex_multiplications.png" alt="Repeated complex multiplications">
+</p>
+
+
 ## The nitpicker
 There's actually a built-in command in *Mathematica 10.0* that plots the Mandelbrot set, so you could really construct it with one-line!
 
