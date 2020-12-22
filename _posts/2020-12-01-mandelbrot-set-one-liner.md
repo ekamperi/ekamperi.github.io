@@ -162,7 +162,7 @@ And here is a video of drawing the intermediate points in the complex plane. Eve
 
 ## The intuition
 
-In the following figure, we see the effect of starting with $$c = 0.3 + 0.25i$$ and calculating the series $$z_{n+1} = z_n^2 + c$$. Every red plot is a complex number corresponding to $$z_1, z_2, z_3, \ldots, z_20$$.
+In the following figure, we see the effect of starting with $$c = 0.3 + 0.25i$$ and calculating the series $$z_{n+1} = z_n^2 + c$$. Every red plot is a complex number corresponding to $$z_1, z_2, z_3, \ldots, z_{20}$$. In this case, the series converges spiraling towards a vanishing polygon.
 
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/single_complex_multiplication.png" alt="Repeated complex multiplication">
