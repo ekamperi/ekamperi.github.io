@@ -204,7 +204,7 @@ $$
 \end{align*}
 $$
 
-Ok, let's do some experimentaion with Python now:
+Ok, let's do some experimentation with Python now:
 
 {% highlight python %}
 {% raw %}
