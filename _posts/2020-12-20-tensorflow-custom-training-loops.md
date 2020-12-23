@@ -122,6 +122,20 @@ for i in range(epochs):
 {% endraw %}
 {% endhighlight %}
 
+We confirm that the algorithm converged by looking at the MSE vs. epoch:
+
+{% highlight python %}
+{% raw %}
+plt.plot(mse_loss)
+plt.xlabel('Epochs')
+plt.ylabel('Cost function\n(Mean Squared Error)');
+{% endraw %}
+{% endhighlight %}
+
+<p align="center">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/custom_training_loops/mse_vs_epoch.png" alt="MSE vs epoch">
+</p>
+
 We print the optimal values for the models' parameters, $$m, b$$, after the training has completed. Indeed, $$m_\text{opt} = 1.05, b_\text{opt} = 1.91$$ are very close to the ground truth values (minus the noise we added).
 
 {% highlight python %}
