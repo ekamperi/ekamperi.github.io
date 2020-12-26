@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Trainable probability distributions with Tensorflow"
-date:   2020-12-20
+date:   2020-12-26
 categories: [mathematics]
 tags: ['machine learning', 'mathematics', 'optimization', 'statistics', 'Tensorflow']
 description: How to create trainable probability distributions with Tensorflow
