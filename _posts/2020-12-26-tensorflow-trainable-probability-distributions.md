@@ -55,7 +55,7 @@ plt.ylabel('y');
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/trainable_distributions/gaussian.png" alt="Normally distributed data">
 </p>
 
-We now use a `tensorflow_probability.Normal` distribution, with trainable parameters for loc and scale. We do assign some random values to them, which will be updated during the training loop. The initial values we assign are purposely off, to test whether the gradient descent optimizer will converge. Also, notice how the two distributions (ground truth *vs.* predicted with random parameters) are misaligned.
+We now use a `tensorflow_probability.Normal` distribution, with trainable parameters for loc and scale. We do assign some random values to them, which will be updated during the training loop. The initial values we give are purposely off to test whether the gradient descent optimizer will converge. Also, notice how the two distributions (ground truth *vs.* predicted with random parameters) are misaligned.
 
 {% highlight python %}
 {% raw %}
@@ -111,7 +111,7 @@ plt.ylabel('Cost function\n(Negaltive Log-Likelihood)');
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/trainable_distributions/nll_vs_epoch.png" alt="Negative log-likelihood vs epoch">
 </p>
 
-Compare the following figure with the previous one, and see how well-aligned is the predicted distribution with the ground truth distribution.
+Compare the following figure with the previous one, and see how well-aligned the predicted distribution is with the ground truth distribution.
 
 {% highlight python %}
 {% raw %}
@@ -136,4 +136,3 @@ normal_dist.loc, normal_dist.scale
 #     <tf.Variable 'scale:0' shape=() dtype=float32, numpy=1.0020323>)
 {% endraw %}
 {% endhighlight %}
-
