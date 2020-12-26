@@ -73,7 +73,7 @@ plt.ylabel('Count');
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/trainable_distributions/gaussian_initial_vs_target.png" alt="Normally distributed data">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/trainable_distributions/gaussian_initial_vs_target.png" alt="Normally distributed data">
 </p>
 
 {% highlight python %}
@@ -108,7 +108,7 @@ plt.ylabel('Cost function\n(Negaltive Log-Likelihood)');
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/trainable_distributions/nll_vs_epoch.png" alt="Negative log-likelihood vs epoch">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/trainable_distributions/nll_vs_epoch.png" alt="Negative log-likelihood vs epoch">
 </p>
 
 {% highlight python %}
@@ -122,7 +122,7 @@ plt.ylabel('Count');
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/trainable_distributions/predicted_vs_target.png" alt="Negative log-likelihood vs epoch">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/trainable_distributions/predicted_vs_target.png" alt="Negative log-likelihood vs epoch">
 </p>
 
 We print the final estimates for the distribution's parameters, and we see that they are pretty close to the ones we used when we generated our training data.
