@@ -7,7 +7,7 @@ tags: ['machine learning', 'mathematics', 'optimization', 'statistics', 'Tensorf
 description: How to create trainable probability distributions with Tensorflow
 ---
 
-In [the previous post](https://ekamperi.github.io/mathematics/2020/12/20/tensorflow-custom-training-loops.html), we fit a Gaussian curve to data with [maximum likelihood estimation (MLE)](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation). For that, we subclassed `tf.keras.layers.Layer` and wrapped up the model's parameters in our custom layer. Then, we used negative log-likelihood minimization to have Tensorflow figure out the optimal values for the distribution's parameters. In today's short post, we will again fit a Gaussian curve to normally distributed data with MLE. However, we will use Tensorflow's trainable probability distributions rather than using a custom layer. The [TensorFlow Probability](https://www.tensorflow.org/probability) is a separate library for probabilistic reasoning and statistical analysis.
+In [the previous post](https://ekamperi.github.io/mathematics/2020/12/20/tensorflow-custom-training-loops.html), we fit a Gaussian curve to data with [maximum likelihood estimation (MLE)](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation). For that, we subclassed `tf.keras.layers.Layer` and wrapped up the model's parameters in our custom layer. Then, we used negative log-likelihood minimization to have Tensorflow figure out the optimal values for the distribution's parameters. In today's short post, we will again fit a Gaussian curve to normally distributed data with MLE. However, we will use Tensorflow's trainable probability distributions rather than a custom layer. The [TensorFlow Probability](https://www.tensorflow.org/probability) is a separate library for probabilistic reasoning and statistical analysis.
 
 {% highlight python %}
 {% raw %}
@@ -94,6 +94,7 @@ def get_loss_and_grads(dist, x_train):
 # Instantiate a stochastic gradient descent optimizer
 optimizer = tf.keras.optimizers.SGD(learning_rate=0.05)
 
+# Custom training loop
 epochs = 300
 nll_loss = []
 for _ in range(epochs):
@@ -151,6 +152,15 @@ And then solve the following set of equations that maximize log-likelihood (and,
 
 $$
 \left\{\frac{\partial \log\mathcal{L}}{\partial \mu}=0, \frac{\partial \log\mathcal{L}}{\partial \sigma}=0\right\}
+$$
+
+I.e., solve for $$\mu, \sigma$$ the:
+
+$$
+\begin{align*}
+\frac{\partial \log\mathcal{L}}{\partial\mu} &= \sum _{i=1}^n \frac{2 x_i - 2\mu}{2 \sigma^2}=0\\
+\frac{\partial \log\mathcal{L}}{\partial\sigma} &=-\frac{N}{\sigma} + \sum_{i=1}^{N} \frac{(x_i-\mu)^2}{\sigma^3}=0
+\end{align*}
 $$
 
 The solutions are the mean value and standard deviation of the sample:
