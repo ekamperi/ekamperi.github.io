@@ -137,7 +137,7 @@ normal_dist.loc, normal_dist.scale
 {% endraw %}
 {% endhighlight %}
 
-Of course, for the normal distribution there exist analytic solutions to the optimal parameters. You just assume the log-likelihood:
+Of course, for the normal distribution there exist analytic solutions yielding the optimal parameters. You just assume the log-likelihood:
 
 $$
 \begin{align*}
@@ -147,12 +147,14 @@ $$
 \end{align*}
 $$
 
-And then solve for:
+And then solve the following set of equations that maximize log-likelihood (and, therefore, the likelihood):
+
 $$
 \left\{\frac{\partial \log\mathcal{L}}{\partial \mu}=0, \frac{\partial \log\mathcal{L}}{\partial \sigma}=0\right\}
 $$
 
 The solutions are the mean value and standard deviation of the sample:
+
 $$
 \begin{align*}
 \mu_\text{MLE} &= \frac{1}{N} \sum_{i=1}^{N} x_i\\
