@@ -162,4 +162,15 @@ $$
 \end{align*}
 $$
 
+Indeed:
+
+{% highlight python %}
+{% raw %}
+(tf.reduce_mean(y_train), tf.math.reduce_std(y_train))
+
+#    (<tf.Tensor: shape=(), dtype=float32, numpy=1.9556075>,
+#     <tf.Tensor: shape=(), dtype=float32, numpy=1.0020313>)
+{% endraw %}
+{% endhighlight %}
+ 
 However, in most cases, this optimization problem cannot be solved analytically, and therefore we need to attack it numerically.
