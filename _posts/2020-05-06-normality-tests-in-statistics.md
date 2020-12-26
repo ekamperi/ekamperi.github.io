@@ -14,7 +14,7 @@ description: Normality tests in statistics with examples in R language.
 {:toc}
 
 ### Introduction
-Some statistical tests (e.g., [t-test for independent samples](https://en.wikipedia.org/wiki/Student%27s_t-test) or [ANOVA](https://en.wikipedia.org/wiki/Analysis_of_variance)) assume that the data in question are modeled by a normal distribution. Therefore, before using such a test, one must first confirm that the data do not deviate much from normality. There are many ways to do this, and ideally one should combine them. These include looking at the **mean/median** (should be approximately equal), **skewness** (should be approximately zero), **kurtosis** (should be approximately three), **histograms** (should be approximately bell-shaped), **Q-Q plots** (should approximately form a line)  and, ultimately, running a **normality test**, such as [Shapiro-Wilk](https://en.wikipedia.org/wiki/Shapiro%E2%80%93Wilk_test).
+Some statistical tests (e.g., [t-test for independent samples](https://en.wikipedia.org/wiki/Student%27s_t-test) or [ANOVA](https://en.wikipedia.org/wiki/Analysis_of_variance)) assume that the data in question are modeled by a normal distribution. Therefore, before using such a test, one must first confirm that the data do not deviate much from normality. There are many ways to do this, and ideally, one should combine them. These include looking at the **mean/median** (should be approximately equal), **skewness** (should be approximately zero), **kurtosis** (should be around three), **histograms** (should be approximately bell-shaped), **Q-Q plots** (should roughly form a line)  and, ultimately, running a **normality test**, such as [Shapiro-Wilk](https://en.wikipedia.org/wiki/Shapiro%E2%80%93Wilk_test).
 
 ### A typical example
 So, suppose we are given a [dataset]({{ site.url }}/data/intersalt.xlsx) with sodium excretion values of some male and female individuals. We'd like to perform, say, a t-test to see whether their means differ significantly. First, we need to check whether our data follow a normal distribution.
@@ -46,7 +46,7 @@ df %>%
 {% endraw %}
 {% endhighlight %}
    
-Notice that for males (M), the **median and mean** are close to each other (subjectively), whereas for females (F), the difference is large. Also, **skewness** is close to zero for M's and smaller than -1 for F's. Last, the **kurtosis** for M's is approximately equal to 3, as ought to be for the distribution to be normal. On the contrary, kurtosis in F's dataset is well beyond 3. Taking these into consideration, *we hypothesize that M's sodium excretion values are sampled from a normal distribution, whereas F's values are not*.
+Notice that for males (M), the **median and mean** are close to each other (subjectively), whereas, for females (F), the difference is considerable. Also, **skewness** is close to zero for M's and smaller than -1 for F's. Last, the **kurtosis** for M's is approximately equal to 3, as ought to be for the distribution to be normal. On the contrary, kurtosis in F's dataset is well beyond 3. Considering these, *we hypothesize that M's sodium excretion values are sampled from a normal distribution, whereas F's values are not*.
 
 #### Visualisation
 We proceed by taking a look at the data:
@@ -83,7 +83,7 @@ df %>%
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/qqplot_normality.png">
 </p>
 
-Consistent with whatever have seen so far, the data points of the males Q-Q plot fall onto a straight line. On the other hand, in females, the data points deviate a lot at the tail. Again, this builds up on the hypothesis that M's distribution is normal, and F's is not.
+Consistent with whatever has been seen so far, the male Q-Q plot's data points fall onto a straight line. On the other hand, in females, the data points deviate a lot at the tail. Again, this builds upon the hypothesis that M's distribution is normal, and F's is not.
 
 #### Shapiro-Wilk test
 The final step is to actually run a **normality test**, such as Shapiro-Wilk's:
@@ -108,7 +108,7 @@ The results are consonant with our previous findings. The *p*-value of the Shapi
 **But what happens when, for example, plots and Shapiro-Wilk test disagree?**
 
 ### Disagreement between plots and Shapiro-Wilk test
-So, what happens when the plots say that the data aren't normally distributed, but Shapiro-Wilk test disagree? Or vice versa?
+What happens when the plots say that the data aren't normally distributed, but the Shapiro-Wilk test disagrees? Or vice versa?
 
 For *small sample sizes*, the histograms rarely resemble the shape of a normal distribution, and that's fine. As soon as one increases the sample size, the shape of the distribution converges to that of the underlying distribution. On the other hand, the Shapiro-Wilk test correctly implies normality, as you can see in the *p*-values of the following plot.
 
@@ -137,7 +137,7 @@ lapply(c(30, 50, 200, 5000), plot_sample)
 {% endraw %}
 {% endhighlight %}
 
-Shapiro-Wilk test begins to behave in a "problematic" manner when the *sample size is large*. In the following plots, I've fixed the sample size equal to 5000 (this is the largest allowed value for R's `shapiro.test()` anyway). Notice how the test rejects normality even for *slightly skewed normal distributions*. On the other hand, histograms look pretty good! To be fair, Shapiro-Wilk test isn't at fault here. It's just that it does its job so well, by detecting even tiny deviations from normality, that it no longer serves our purpose: to detect *large* deviations from normal distribution.
+Shapiro-Wilk test begins to behave in a "problematic" manner when the *sample size is large*. In the following plots, I've fixed the sample size equal to 5000 (this is the largest allowed value for R's `shapiro.test()` anyway). Notice how the test rejects normality even for *slightly skewed normal distributions*. On the other hand, histograms look pretty good! To be fair, the Shapiro-Wilk test isn't at fault here. It's just that it does its job so well, by detecting even tiny deviations from normality, that it no longer serves our purpose: to detect *large* deviations from a normal distribution.
 
 <p align="center">
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/shapiro2.png" alt="Shapiro Wilk test">
@@ -168,5 +168,4 @@ lapply(c(1, 1.05, 1.1, 1.15), plot_sample2)
 {% endhighlight %}
 
 ### Conclusion
-So, the rule of thumb I follow is this: if histograms and Shapiro-Wilk disagree, for small sample size, I go with Shapiro-Wilk. For a large sample size, I go with the histograms. Of course, either way, I take into consideration the descriptives and Q-Q plots. And one more thing! For many tests, it doesn't really matter whether your data are normally distributed, as long as the mean of your samples follow the normal distribution. However, this is fulfilled by the central limit theorem, assuming your samples are sufficiently large. However, this is the subject of another post!
-
+So, the rule of thumb I follow is this: if histograms and Shapiro-Wilk disagree, for a small sample size, I go with Shapiro-Wilk. For a large sample size, I go with the histograms. Of course, either way, I take into consideration the descriptives and Q-Q plots. And one more thing! **For many tests, it doesn't really matter whether your data are normally distributed, as long as your samples' mean follows the normal distribution.** However, this is fulfilled by the central limit theorem, assuming your samples are sufficiently large. This is the subject of another post!
