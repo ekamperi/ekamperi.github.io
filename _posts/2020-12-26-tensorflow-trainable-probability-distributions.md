@@ -136,3 +136,28 @@ normal_dist.loc, normal_dist.scale
 #     <tf.Variable 'scale:0' shape=() dtype=float32, numpy=1.0020323>)
 {% endraw %}
 {% endhighlight %}
+
+Of course, for the normal distribution there exist analytic solutions to the optimal parameters. You just assume the log-likelihood:
+
+$$
+\begin{align*}
+\log \mathcal{L}(\mu,\sigma^2 \mid x_1,\ldots,x_N) &= \log \prod_{i=1}^N f(x_i) \\
+&=\log\left[\left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^{N} \exp\left( -\frac{ \sum_{i=1}^N (x_i-\mu)^2}{2\sigma^2}\right)\right]\\
+&=-\frac{N}{2} \log \left( 2\pi \sigma^2 \right) - \sum_{i=1}^{N} \left( \frac{(x_i - \mu)^2}{2\sigma^2}\right)
+\end{align*}
+$$
+
+And then solve for:
+$$
+\left\{\frac{\partial \log\mathcal{L}}{\partial \mu}=0, \frac{\partial \log\mathcal{L}}{\partial \sigma}=0\right\}
+$$
+
+The solutions are the mean value and standard deviation of the sample:
+$$
+\begin{align*}
+\mu_\text{MLE} &= \frac{1}{N} \sum_{i=1}^{N} x_i\\
+\sigma_\text{MLE} &= \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2
+\end{align*}
+$$
+
+However, in most cases, this optimization problem cannot be solved analytically, and therefore we need to attack it numerically.
