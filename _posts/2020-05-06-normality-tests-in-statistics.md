@@ -3,7 +3,7 @@ layout: post
 title:  "Normality tests in statistics"
 date:   2020-05-06
 categories: mathematics
-tags: [mathematics, 'R language', Shapiro-Wilk, statistics]
+tags: [mathematics, 'R language', statistics]
 description: Normality tests in statistics with examples in R language.
 ---
 
