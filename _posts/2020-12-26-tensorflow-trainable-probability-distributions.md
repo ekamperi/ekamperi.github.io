@@ -166,7 +166,7 @@ Indeed:
 
 {% highlight python %}
 {% raw %}
-(tf.reduce_mean(y_train), tf.math.reduce_std(y_train))
+tf.reduce_mean(y_train), tf.math.reduce_std(y_train)
 
 #    (<tf.Tensor: shape=(), dtype=float32, numpy=1.9556075>,
 #     <tf.Tensor: shape=(), dtype=float32, numpy=1.0020313>)
