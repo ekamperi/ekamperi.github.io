@@ -7,7 +7,7 @@ tags: ['machine learning', 'mathematics', 'optimization', 'statistics', 'Tensorf
 description: How to create trainable probability distributions with Tensorflow
 ---
 
-In the previous post, we fit a Gaussian curve to data with [maximum likelihood estimation (MLE)](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation). For that, we subclassed `tf.keras.layers.Layer` and wrapped up the model's parameters in our custom layer. Then, we used negative log-likelihood minimization to have Tensorflow figure out the optimal values for the distribution's parameters. In today's short post, we will again fit a Gaussian curve to normally distributed data with MLE. However, we will use Tensorflow's trainable probability distributions rather than using a custom layer.
+In [the previous post](https://ekamperi.github.io/mathematics/2020/12/20/tensorflow-custom-training-loops.html), we fit a Gaussian curve to data with [maximum likelihood estimation (MLE)](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation). For that, we subclassed `tf.keras.layers.Layer` and wrapped up the model's parameters in our custom layer. Then, we used negative log-likelihood minimization to have Tensorflow figure out the optimal values for the distribution's parameters. In today's short post, we will again fit a Gaussian curve to normally distributed data with MLE. However, we will use Tensorflow's trainable probability distributions rather than using a custom layer. The [TensorFlow Probability](https://www.tensorflow.org/probability) is a separate library for probabilistic reasoning and statistical analysis.
 
 {% highlight python %}
 {% raw %}
