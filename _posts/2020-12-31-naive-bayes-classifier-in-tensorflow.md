@@ -19,7 +19,7 @@ C_\text{predicted} &= \underset{c_k \in \mathcal{C}}{\text{arg max}} \,P(C_k | x
 \end{align*}
 $$
 
-The estimation of $$P(C_k)$$ is straightforward; we just compute the relative frequency of each class in the training set. However, the calculation of $$P(x_1, x_2, \ldots, x_n\|C_k)$$ is more demanding. Here comes the "naive" part of the Naive Bayes classifier. We make the assumption that $$x_1, x_2, \ldots, x_n$$ features are independent. Then, it holds that $$P(x_1, x_2, \ldots, x_n\mid C_k) = P(x_1\|C_k)P(x_2\|C_k)\ldots P(x_n\|C_k) = \prod_{i=1}^n P(x_i\|C_k)$$. This greatly reduces the number of model's parameters and simplifies their estimation. So, to sum up the Naive Bayes classifier is the solution to:
+The estimation of $$P(C_k)$$ is straightforward; we just compute the relative frequency of each class in the training set. However, the calculation of $$P(x_1, x_2, \ldots, x_n\mid C_k)$$ is more demanding. Here comes the "naive" part of the Naive Bayes classifier. We make the assumption that $$x_1, x_2, \ldots, x_n$$ features are independent. Then, it holds that $$P(x_1, x_2, \ldots, x_n\mid C_k) = P(x_1\mid C_k)P(x_2\mid C_k)\ldots P(x_n\mid C_k) = \prod_{i=1}^n P(x_i\mid C_k)$$. This greatly reduces the number of model's parameters and simplifies their estimation. So, to sum up the Naive Bayes classifier is the solution to:
 
 $$
 C_\text{predicted} = \underset{c_k \in \mathcal{C}}{\text{arg max}} \, P(C_k) \prod_{i=1}^n P(x_i|C_k)
