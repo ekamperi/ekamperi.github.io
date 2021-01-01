@@ -13,6 +13,9 @@ description: Implementation of a Naive Bayes classifier with Tensorflow's traina
 A Naive Bayes classifier is a simple probabilistic classifier based on the Bayes theorem along with some strong (naive) assumptions regarding the independence of features. Others have suggested the name "independent feature model" as more fit. For example, a pet may be considered a dog if it has 4 legs, a tail, and barks. These features (presence of 4 legs, a tail, and barking) may depend on each other. However, the naive Bayes classifier assumes that these properties contribute independently to the probability that a pet is a dog. Naive Bayes classifier is used heavily in text classification, e.g., assigning topics on text, detecting spam, identifying age/gender from text, performing sentiment analysis. Given that there are many well-written introductory articles on this topic, we won't spend much time in theory. 
 
 ## The mathematical formulation
+
+Given a set of features $$x_1, x_2, \ldots, x_n$$ and a set of classes $$C$$, we want to build a model that yields the value of $$P(C_k\mid x_1, x_2, \ldots, x_n)$$. Then, by taking the maximum probability over this range of probabilities, we come up with our best estimate for the correct class:
+
 $$
 \begin{align*}
 C_\text{predicted} &= \underset{c_k \in \mathcal{C}}{\text{arg max}} \,P(C_k | x_1, x_2, \ldots, x_n)\\
