@@ -109,7 +109,7 @@ plt.show()
 
 ### Construct the custom training loop
 
-This code block is probably the most important of the classifier. We create trainable Gaussian distributions with `tfd.MultivariateNormalDiag()`, whose parameters will be estimated by minimizing the negative log-likelihood.
+This code block is probably the single most important of the classifier. Here, we create trainable Gaussian distributions for the data set's features with `tfd.MultivariateNormalDiag()`. The distributions' parameters will be estimated by minimizing the negative log-likelihood, which is equivalent to maximizing the log-likelihood.
 
 {% highlight python %}
 {% raw %}
