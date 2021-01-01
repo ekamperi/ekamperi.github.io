@@ -60,7 +60,7 @@ Disadvantages
 * More sophisticated models outperform them.
 
 ## Tensorflow example with the iris dataset
-
+### Load and preprocess the data
 First we load the iris dataset, select the features that we will be using, creeate a training and a test set, and plot the data to get a sense of it.
 
 {% highlight python %}
@@ -100,6 +100,7 @@ plt.show()
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/naive_bayes/iris_training_set.png" alt="Iris training set">
 </p>
 
+### Define the loss function, the trainable distributions, and the custom training loop
 {% highlight python %}
 {% raw %}
 def learn_parameters(x, y, mus, scales, optimiser, epochs):
@@ -138,6 +139,7 @@ def learn_parameters(x, y, mus, scales, optimiser, epochs):
 {% endraw %}
 {% endhighlight %}
 
+### Train the model
 Next, we assign some initial values to the model's parameters, instantiate an Adam optimizer, and call `learn_parameters()` function.
 
 {% highlight python %}
