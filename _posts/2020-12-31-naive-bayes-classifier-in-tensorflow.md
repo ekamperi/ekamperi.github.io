@@ -176,7 +176,7 @@ plt.show()
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 50%; height: 50%" src="{{ site.url }}/images/naive_bayes/loss_vs_epoch.png" alt="Loss vs. epoch plot">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/naive_bayes/loss_vs_epoch.png" alt="Loss vs. epoch plot">
 </p>
 
 We print the model's parameters:
