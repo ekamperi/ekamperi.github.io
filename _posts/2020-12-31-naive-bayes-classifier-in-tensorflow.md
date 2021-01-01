@@ -51,6 +51,8 @@ All the model parameters (the priors for each class and the feature probability 
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/naive_bayes/naive_bayes_piecewise.png" alt="Naive Bayes classifier with piecewise-constant feature distributions">
 </p>
 
+Another example is when the features are assumed to be a binary-valued variable (True/False). In that case, the samples would be represented as binary-valued feature vectors, and we would use a Bernoulli distribution instead of Gaussian. No matter what distribution we use to model our features, maximum likelihood estimation can be applied to estimate the distribution's parameters (let it be $$p$$ in Bernoulli, $$\lambda$$ in Poisson, $$\mu, sigma$$ in Gaussian, etc.)
+
 ## Tensorflow example with the iris dataset
 ### Load and preprocess the data
 The iris data set consists of 50 samples from Iris' three species (Iris setosa, Iris virginica, and Iris versicolor). Four features were measured from each sample: the length and the width of the sepals and petals, in centimeters. For further information, the reader may refer to *R. A. Fisher. "The use of multiple measurements in taxonomic problems". Annals of Eugenics. 7 (2): 179–188, 1936.* Our goal is to construct a Naive Bayes classifier model that predicts the correct class from the sepal length and sepal width features (so, just 2 out of 4 features).
