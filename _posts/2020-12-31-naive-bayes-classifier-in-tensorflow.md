@@ -98,7 +98,9 @@ plt.show()
 {% endraw %}
 {% endhighlight %}
 
-
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/naive_bayes/iris_training_set.png" alt="Iris training set">
+</p>
 
 {% highlight python %}
 {% raw %}
