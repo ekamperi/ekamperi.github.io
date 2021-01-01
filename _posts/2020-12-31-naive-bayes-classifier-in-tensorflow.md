@@ -57,7 +57,7 @@ Another example is when the features are assumed to be a binary-valued variable 
 
 ## Tensorflow example with the iris dataset
 ### Load and preprocess the data
-The iris data set consists of 50 samples from Iris' three species (Iris setosa, Iris virginica, and Iris versicolor). Four features were measured from each sample: the length and the width of the sepals and petals, in centimeters. For further information, the reader may refer to *R. A. Fisher. "The use of multiple measurements in taxonomic problems". Annals of Eugenics. 7 (2): 179–188, 1936.* Our goal is to construct a Naive Bayes classifier model that predicts the correct class from the sepal length and sepal width features (so, just 2 out of 4 features).
+The iris data set consists of 50 samples from Iris' three species (Iris setosa, Iris virginica, and Iris versicolor). Four features were measured from each sample: the length and the width of the sepals and petals, in centimeters. For further information, the reader may refer to *R. A. Fisher. "The use of multiple measurements in taxonomic problems". Annals of Eugenics. 7 (2): 179–188, 1936.* Our goal is to construct a Naive Bayes classifier model that predicts the correct class from the sepal length and sepal width features (so, just 2 out of 4 features). This blog post is inspired by a weekly assignment of the course "Probabilistic Deep Learning with TensorFlow 2" from Imperial College London.
 
 First, we load the iris dataset, select the features that we will be using, create a training and a test set, and plot the data to get a sense of it.
 
@@ -195,6 +195,8 @@ plt.show()
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/naive_bayes/loss_vs_epoch.png" alt="Loss vs. epoch plot">
 </p>
 
+Indeed, our training loop achieved convergence, and the model's parameters settled on their best estimates, even if all started with the same initial conditions. The following code plots the three bivariate Gaussian distributions for the three classes.
+
 {% highlight python %}
 {% raw %}
 def get_meshgrid(x0_range, x1_range, n_points=100):
@@ -254,7 +256,7 @@ $$
 C_\text{predicted} = \underset{c_k \in \mathcal{C}}{\text{arg max}} \, P(C_k) \prod_{i=1}^n P(x_i|C_k)
 $$
 
-Up until now, we have calculated the feature distributions $$P(C_k)$$, which is the hardest part. We will now calculate the priors as the relative frequencies of each class in the data set.
+Up until now, we have calculated the feature distributions $$P(C_k)$$, which is the hardest part. We will now estimate the priors as the relative frequencies of each class in the data set.
 
 {% highlight python %}
 {% raw %}
@@ -304,6 +306,8 @@ print("Test accuracy: {:.4f}".format(accuracy))
 So, our model achieved an accuracy of 0.8667 on the test set, which is pretty good!
 
 ### Plot the decision regions
+
+In a classification problem with $$N$$ classes, a decision boundary is a hypersurface partitioning the feature space into $$N$$ sets, one for each class. All the points on the same side of the decision boundary are taken to belong to the same category. In our case, we had 2 features and 3 classes; therefore, the classifier partitions the 2D plane into 3 regions. The decision boundary is the area where the predicted label becomes ambiguous.
 
 {% highlight python %}
 {% raw %}
