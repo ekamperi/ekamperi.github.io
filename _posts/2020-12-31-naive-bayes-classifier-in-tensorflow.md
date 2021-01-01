@@ -45,7 +45,7 @@ $$
 
 Finally, we would compare the two calculated probabilities to infer whether the pet was a dog or a monkey. Believe it or not, monkeys may bark as well!
 
-All the model parameters (the priors for each class and the feature probability distributions) need to be estimated from the training set. The priors can be calculated by the relative frequency of each class in the training set, e.g. $$P(C_k) = \frac{\text{# of samples in class }C_k}{\text{total # of samples}}$$. The feature probability distributions (or class conditionals) can be approximated with [maximum likelihood estimation](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation).
+All the model's parameters (the priors for each class and the feature probability distributions) need to be estimated from the training set. The priors can be calculated by the relative frequency of each class in the training set, e.g. $$P(C_k) = \frac{\text{# of samples in class }C_k}{\text{total # of samples}}$$. The feature probability distributions (or class conditionals) can be approximated with [maximum likelihood estimation](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation).
 
 In this post, we will create some trainable Gaussian distributions for the iris data set's features. We will then have Tensorflow estimate their parameters ($$\mu, \sigma$$) by minimizing the negative log-likelihood, which is equivalent to maximizing of log-likelihood. We have already done this in [a previous post](https://ekamperi.github.io/mathematics/2020/12/26/tensorflow-trainable-probability-distributions.html). Note though, that the feature distributions need not be Gaussian. For instance, in *Mathematica*'s current implementation, the feature distributions are modeled using a piecewise-constant function:
 
