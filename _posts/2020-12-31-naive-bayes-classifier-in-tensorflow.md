@@ -43,17 +43,17 @@ P\left(\text{monkey} \mid \text{4-legs}, \text{tail}, \text{barks}\right) &= \un
 \end{align*}
 $$
 
-Finally, we would compare the two calculated probabilities to infer whether the pet was a dog or a monkey.
+Finally, we would compare the two calculated probabilities to infer whether the pet was a dog or a monkey. Believe it or not, monkeys may bark as well!
 
 All the model parameters (the priors for each class and the feature probability distributions) need to be estimated from the training set. The priors can be calculated by the relative frequency of each class in the training set, e.g. $$P(C_k) = \frac{\text{# of samples in class }C_k}{\text{total # of samples}}$$. The feature probability distributions (or class conditionals) can be approximated with [maximum likelihood estimation](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation).
 
-In this post, we will create some trainable Gaussian distributions for the features of the iris data set. We will then have Tensorflow estimate their parameters ($$\mu, \sigma$$) by minimizing the negative log-likelihood, which is equivalent to maximizing of log-likelihood. We have already done this in [a previous post](https://ekamperi.github.io/mathematics/2020/12/26/tensorflow-trainable-probability-distributions.html). Note though, that the feature distributions need not be Gaussian. For instance, in *Mathematica*'s current implementation, the feature distributions are modeled using a piecewise-constant function:
+In this post, we will create some trainable Gaussian distributions for the iris data set's features. We will then have Tensorflow estimate their parameters ($$\mu, \sigma$$) by minimizing the negative log-likelihood, which is equivalent to maximizing of log-likelihood. We have already done this in [a previous post](https://ekamperi.github.io/mathematics/2020/12/26/tensorflow-trainable-probability-distributions.html). Note though, that the feature distributions need not be Gaussian. For instance, in *Mathematica*'s current implementation, the feature distributions are modeled using a piecewise-constant function:
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/naive_bayes/naive_bayes_piecewise.png" alt="Naive Bayes classifier with piecewise-constant feature distributions">
 </p>
 
-Another example is when the features are assumed to be a binary-valued variable (True/False). In that case, the samples would be represented as binary-valued feature vectors, and we would use a Bernoulli distribution instead of Gaussian. No matter what distribution we use to model our features, maximum likelihood estimation can be applied to estimate the distribution's parameters (let it be $$p$$ in Bernoulli, $$\lambda$$ in Poisson, $$\mu, \sigma$$ in Gaussian, etc.)
+Another example is when the features are assumed to be a binary-valued variable (True/False). In this case, the samples would be represented as binary-valued feature vectors, and we would use a Bernoulli distribution instead of Gaussian. **The bottom line is that no matter what distribution we use to model our features, maximum likelihood estimation can be applied to estimate the distribution's parameters (let it be $$p$$ in Bernoulli, $$\lambda$$ in Poisson, $$\mu, \sigma$$ in Gaussian, etc.).**
 
 ## Tensorflow example with the iris dataset
 ### Load and preprocess the data
