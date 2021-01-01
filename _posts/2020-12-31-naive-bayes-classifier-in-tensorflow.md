@@ -91,7 +91,7 @@ plt.show()
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 50%; height: 50%" src="{{ site.url }}/images/naive_bayes/iris_training_set.png" alt="Iris training set">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/naive_bayes/iris_training_set.png" alt="Iris training set">
 </p>
 
 ### Construct the custom training loop
