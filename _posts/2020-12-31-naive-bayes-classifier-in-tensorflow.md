@@ -173,6 +173,49 @@ plt.show()
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/naive_bayes/loss_vs_epoch.png" alt="Loss vs. epoch plot">
 </p>
 
+## Measure model's accuracy
+
+{% highlight python %}
+{% raw %}
+def get_prior(y):
+    """
+    This function takes training labels as a numpy array y of shape (num_samples,) as an input,
+    and builds a Categorical Distribution object with empty batch shape and event shape,
+    with the probability of each class.
+    """
+    counts = np.bincount(y)
+    dist = tfd.Categorical(probs=counts/len(y))
+    return dist
+
+# Run your function to get the prior
+prior = get_prior(y_train)
+prior.probs
+
+#    <tf.Tensor: shape=(3,), dtype=float64, numpy=array([0.34166667, 0.33333333, 0.325     ])>
+
+def predict_class(prior, class_conditionals, x):
+    def predict_fn(myx):
+        class_probs = class_conditionals.prob(tf.cast(myx, dtype=tf.float32))
+        prior_probs = tf.cast(prior.probs, dtype=tf.float32)
+        class_times_prior_probs = class_probs * prior_probs
+        Q = tf.reduce_sum(class_times_prior_probs)
+        P = tf.math.divide(class_times_prior_probs, Q)
+        Y = tf.cast(tf.argmax(P), dtype=tf.float64)
+        return Y
+    y = tf.map_fn(predict_fn, x)
+    return y
+
+# Get the class predictions
+# Evaluate the model accuracy on the test set
+predictions = predict_class(prior, class_conditionals, x_test)
+accuracy = accuracy_score(y_test, predictions)
+print("Test accuracy: {:.4f}".format(accuracy))
+
+#    Test accuracy: 0.8667
+{% endraw %}
+{% endhighlight %}
+
+
 We print the model's parameters:
 
 {% highlight python %}
