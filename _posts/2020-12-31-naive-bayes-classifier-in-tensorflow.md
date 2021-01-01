@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to implement a Naive Bayes classifier with Tensorflow"
-date:   2020-12-01
+date:   2020-12-31
 categories: [machine learning]
 tags: [algorithms, 'machine learning', Python, Tensorflow]
 description: Implementation of a Naive Bayes classifier with Tensorflow's trainable distributions for the iris dataset
