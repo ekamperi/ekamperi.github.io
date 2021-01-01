@@ -197,6 +197,18 @@ plt.show()
 
 {% highlight python %}
 {% raw %}
+def get_meshgrid(x0_range, x1_range, n_points=100):
+    x0 = np.linspace(x0_range[0], x0_range[1], n_points)
+    x1 = np.linspace(x1_range[0], x1_range[1], n_points)
+    return np.meshgrid(x0, x1)
+
+x0_range = x_train[:, 0].min(), x_train[:, 0].max()
+x1_range = x_train[:, 1].min(), x_train[:, 1].max()
+X0, X1 = get_meshgrid(x0_range, x1_range, n_points=300)
+x_v = np.expand_dims(np.array([X0.ravel(), X1.ravel()]).T, axis=1)
+Z = class_conditionals.prob(x_v)
+Z = np.array(Z).T.reshape(3, *X0.shape)
+
 from mpl_toolkits.mplot3d import Axes3D
 fig = plt.figure(figsize=(12, 6))
 ax = fig.gca(projection='3d')
@@ -206,8 +218,7 @@ ax.set_xlabel('Sepal length (cm)')
 ax.set_ylabel('Sepal width (cm)')
 ax.set_zlabel('Probability');
 ax.elev = 35
-ax.azim = 45
-{% endraw %}
+ax.azim = 45{% endraw %}
 {% endhighlight %}
 
 <p align="center">
