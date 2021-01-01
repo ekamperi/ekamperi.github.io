@@ -10,7 +10,7 @@ description: Implementation of a Naive Bayes classifier with Tensorflow's traina
 ** WORK IN PROGRESS **
 
 ## Introduction
-A Naive Bayes classifier is a simple probabilistic classifier based on the Bayes theorem along with some strong (naive) assumptions regarding the independence of features. Others have suggested the name "independent feature model" as more fit. For example, a pet may be considered a dog if it has 4 legs, a tail, and barks. These features (presence of 4 legs, a tail, and barking) may depend on each other. However, the naive Bayes classifier assumes that these properties contribute independently to the probability that a pet is a dog. Given that there are many well-written introductory articles on this topic, we won't spend much time in theory.
+A Naive Bayes classifier is a simple probabilistic classifier based on the Bayes theorem along with some strong (naive) assumptions regarding the independence of features. Others have suggested the name "independent feature model" as more fit. For example, a pet may be considered a dog if it has 4 legs, a tail, and barks. These features (presence of 4 legs, a tail, and barking) may depend on each other. However, the naive Bayes classifier assumes that these properties contribute independently to the probability that a pet is a dog. Naive Bayes classifier is used heavily in text classification, e.g., assigning topics on text, detecting spam, identifying age/gender from text, performing sentiment analysis. Given that there are many well-written introductory articles on this topic, we won't spend much time in theory. 
 
 ## The mathematical formulation
 $$
@@ -42,4 +42,4 @@ Disadvantages
 * More sophisticated models outperform them
 
 ## Tensorflow example with the iris dataset
-
+All the model parameters (the priors for each class and the feature probability distributions) need to be approximated from the training set. The priors can be calculated by the relative frequency of each class in the training set, e.g. $$P(C_k) = \frac{\text{# of samples in class }C_k}{\text{total # of samples}}$$. The feature probability distributions can be approximated with **maximum likelihood estimation**. Concretely, we will create some trainable Gaussian distributions for the features and have Tensorflow estimate their parameters ($$\mu, \sigma$$) by minimizing the negative log-likelihood, which is equivalent to maximizing of log-likelihood.
