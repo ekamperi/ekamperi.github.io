@@ -30,11 +30,16 @@ $$
 C_\text{predicted} = \underset{c_k \in \mathcal{C}}{\text{arg max}} \, P(C_k) \prod_{i=1}^n P(x_i|C_k)
 $$
 
-In the pet example, we would write:
+In the pet example, assuming we had two classes, $$C_\text{dog}$$ and $$C_\text{monkey}$$, we would write:
 
 $$
-P\left(\text{dog} \mid \text{4-legs}, \text{tail}, \text{barks}\right) = \underbrace{P(\text{4-legs}) P(\text{tail}) P(\text{barks})}_{\text{feature distributions}} \,\, \underbrace{P(C_\text{dog})}_{\text{prior}}
+\begin{align*}
+P\left(\text{dog} \mid \text{4-legs}, \text{tail}, \text{barks}\right) &= P(\text{4-legs}) P(\text{tail}) P(\text{barks}) \,\, P(C_\text{dog})\\
+P\left(\text{monkey} \mid \text{4-legs}, \text{tail}, \text{barks}\right) &= \underbrace{P(\text{4-legs}) P(\text{tail}) P(\text{barks})}_{\text{feature distributions}} \,\, \underbrace{P(C_\text{monkey})}_{\text{prior}}
+\end{align*}
 $$
+
+Finally, we would compare the two calculated probabilities to infer whether the pet was a dog or a monkey.
 
 ## Pros and cons of naive Bayes classifier
 Advantages of naive Bayes classifier:
