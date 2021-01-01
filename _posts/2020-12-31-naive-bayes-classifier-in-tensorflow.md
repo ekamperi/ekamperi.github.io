@@ -39,7 +39,7 @@ P\left(\text{monkey} \mid \text{4-legs}, \text{tail}, \text{barks}\right) &= \un
 \end{align*}
 $$
 
-Finally, we would compare the two calculated probabilities to infer whether the pet was a dog or a monkey.
+Finally, we would compare the two calculated probabilities to infer whether the pet was a dog or a monkey. All the model parameters (the priors for each class and the feature probability distributions) need to be approximated from the training set. The priors can be calculated by the relative frequency of each class in the training set, e.g. $$P(C_k) = \frac{\text{# of samples in class }C_k}{\text{total # of samples}}$$. The feature probability distributions can be approximated with [maximum likelihood estimation](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation). Concretely, we will create some trainable Gaussian distributions for the features and have Tensorflow estimate their parameters ($$\mu, \sigma$$) by minimizing the negative log-likelihood, which is equivalent to maximizing of log-likelihood. We already did this in [a previous minimal post](https://ekamperi.github.io/mathematics/2020/12/26/tensorflow-trainable-probability-distributions.html).
 
 ## Pros and cons of naive Bayes classifier
 Advantages of naive Bayes classifier:
@@ -56,5 +56,5 @@ Disadvantages
 * More sophisticated models outperform them.
 
 ## Tensorflow example with the iris dataset
-All the model parameters (the priors for each class and the feature probability distributions) need to be approximated from the training set. The priors can be calculated by the relative frequency of each class in the training set, e.g. $$P(C_k) = \frac{\text{# of samples in class }C_k}{\text{total # of samples}}$$. The feature probability distributions can be approximated with (maximum likelihood estimation)[https://en.wikipedia.org/wiki/Maximum_likelihood_estimation]. Concretely, we will create some trainable Gaussian distributions for the features and have Tensorflow estimate their parameters ($$\mu, \sigma$$) by minimizing the negative log-likelihood, which is equivalent to maximizing of log-likelihood. We already did this in [a previous minimal post](https://ekamperi.github.io/mathematics/2020/12/26/tensorflow-trainable-probability-distributions.html).
+
 
