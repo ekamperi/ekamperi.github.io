@@ -284,8 +284,8 @@ def predict_class(prior, class_conditionals, x):
         class_probs = class_conditionals.prob(tf.cast(myx, dtype=tf.float32))
         prior_probs = tf.cast(prior.probs, dtype=tf.float32)
         class_times_prior_probs = class_probs * prior_probs
-        Q = tf.reduce_sum(class_times_prior_probs)
-        P = tf.math.divide(class_times_prior_probs, Q)
+        Q = tf.reduce_sum(class_times_prior_probs)       # Technically, this step
+        P = tf.math.divide(class_times_prior_probs, Q)   # and this one, are not necessary.
         Y = tf.cast(tf.argmax(P), dtype=tf.float64)
         return Y
     y = tf.map_fn(predict_fn, x)
