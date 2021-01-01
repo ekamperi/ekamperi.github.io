@@ -188,13 +188,13 @@ plt.show()
 
 ### Measure model's accuracy
 
-To measure the model's accuracy, we need to be able to make some predictions, which in turn means that we must be able to calculate 
+To measure the model's accuracy, we need to be able to make some predictions, which in turn means that we must be able to calculate: 
 
 $$
 C_\text{predicted} = \underset{c_k \in \mathcal{C}}{\text{arg max}} \, P(C_k) \prod_{i=1}^n P(x_i|C_k)
 $$
 
-Up until now, we have calculated the feature distributions $$P(C_k)$$, which is the hardest part. We will now calculate the priors:
+Up until now, we have calculated the feature distributions $$P(C_k)$$, which is the hardest part. We will now calculate the priors as the relative frequencies of each class in the data set.
 
 {% highlight python %}
 {% raw %}
@@ -208,7 +208,6 @@ def get_prior(y):
     dist = tfd.Categorical(probs=counts/len(y))
     return dist
 
-# Run our function to get the prior
 prior = get_prior(y_train)
 prior.probs
 
@@ -262,6 +261,21 @@ print(class_conditionals.stddev().numpy())
 # [[0.34675348 0.37855995]
 # [0.5309426  0.31796226]
 # [0.5808357  0.28025055]]
+{% endraw %}
+{% endhighlight %}
+
+{% highlight python %}
+{% raw %}
+from mpl_toolkits.mplot3d import Axes3D
+fig = plt.figure(figsize=(12, 6))
+ax = fig.gca(projection='3d')
+for k in [0,1,2]:
+    ax.plot_surface(X0, X1, Z[k,:,:], alpha=.8)
+ax.set_xlabel('Sepal length (cm)')
+ax.set_ylabel('Sepal width (cm)')
+ax.set_zlabel('Probability');
+ax.elev = 35
+ax.azim = 45
 {% endraw %}
 {% endhighlight %}
 
