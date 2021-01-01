@@ -51,7 +51,7 @@ All the model parameters (the priors for each class and the feature probability 
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/naive_bayes/naive_bayes_piecewise.png" alt="Naive Bayes classifier with piecewise-constant feature distributions">
 </p>
 
-Another example is when the features are assumed to be a binary-valued variable (True/False). In that case, the samples would be represented as binary-valued feature vectors, and we would use a Bernoulli distribution instead of Gaussian. No matter what distribution we use to model our features, maximum likelihood estimation can be applied to estimate the distribution's parameters (let it be $$p$$ in Bernoulli, $$\lambda$$ in Poisson, $$\mu, sigma$$ in Gaussian, etc.)
+Another example is when the features are assumed to be a binary-valued variable (True/False). In that case, the samples would be represented as binary-valued feature vectors, and we would use a Bernoulli distribution instead of Gaussian. No matter what distribution we use to model our features, maximum likelihood estimation can be applied to estimate the distribution's parameters (let it be $$p$$ in Bernoulli, $$\lambda$$ in Poisson, $$\mu, \sigma$$ in Gaussian, etc.)
 
 ## Tensorflow example with the iris dataset
 ### Load and preprocess the data
