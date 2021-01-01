@@ -208,6 +208,10 @@ print(class_conditionals.stddev().numpy())
 {% endraw %}
 {% endhighlight %}
 
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/naive_bayes/feauture_distributions.png" alt="Feature distributions in Naive Bayes classifier">
+</p>
+
 ### Plot the decision regions
 
 {% highlight python %}
@@ -244,5 +248,5 @@ plt.show()
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/naive_bayes/boundary_regions.png" alt="Decision regions in Naive Bayes classifier">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/naive_bayes/boundary_regions.png" alt="Decision regions in Naive Bayes classifier">
 </p>
