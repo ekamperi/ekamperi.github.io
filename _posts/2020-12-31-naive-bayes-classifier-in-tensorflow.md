@@ -173,7 +173,15 @@ plt.show()
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/naive_bayes/loss_vs_epoch.png" alt="Loss vs. epoch plot">
 </p>
 
-## Measure model's accuracy
+### Measure model's accuracy
+
+In order to measure the model's accuracy, we need to be able to make some predictions, which in turn means that we must be able to calculate 
+
+$$
+C_\text{predicted} = \underset{c_k \in \mathcal{C}}{\text{arg max}} \, P(C_k) \prod_{i=1}^n P(x_i|C_k)
+$$
+
+Up until now, we have calculated the feature distributions $$P(C_k)$$, which is the hardest part. We will now calculate the priors:
 
 {% highlight python %}
 {% raw %}
@@ -187,12 +195,18 @@ def get_prior(y):
     dist = tfd.Categorical(probs=counts/len(y))
     return dist
 
-# Run your function to get the prior
+# Run our function to get the prior
 prior = get_prior(y_train)
 prior.probs
 
 #    <tf.Tensor: shape=(3,), dtype=float64, numpy=array([0.34166667, 0.33333333, 0.325     ])>
+{% endraw %}
+{% endhighlight %}
 
+Since we have 3 classes in the data set, we calculated 3 priors: $$P(C_1) = 0.342, P(C_2) = 0.333, P(C_3) = 0.325$$. Next, we will setup a `predict_class()`, that will act as the $$\text{arg max}$$ opetator.
+
+{% highlight python %}
+{% raw %}
 def predict_class(prior, class_conditionals, x):
     def predict_fn(myx):
         class_probs = class_conditionals.prob(tf.cast(myx, dtype=tf.float32))
@@ -215,6 +229,7 @@ print("Test accuracy: {:.4f}".format(accuracy))
 {% endraw %}
 {% endhighlight %}
 
+So, our model achieved an accuracy of 0.8667 on the test set, which is pretty good.
 
 We print the model's parameters:
 
