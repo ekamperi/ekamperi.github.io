@@ -137,6 +137,40 @@ def learn_parameters(x, y, mus, scales, optimiser, epochs):
         scales_values.append(scales.numpy())
     nll_loss, mu_values, scales_values = np.array(nll_loss), np.array(mu_values), np.array(scales_values)
     return (nll_loss, mu_values, scales_values, dist)
-
 {% endraw %}
 {% endhighlight %}
+
+Next, we assign some initial values to the model's parameters, instantiate an Adam optimizer, and call `learn_parameters()` function.
+
+{% highlight python %}
+{% raw %}
+# Assign initial values for the model's parameters
+mus = tf.Variable([[1., 1.], [1., 1.], [1., 1.]])
+scales = tf.Variable([[1., 1.], [1., 1.], [1., 1.]])
+opt = tf.keras.optimizers.Adam(learning_rate=0.005)
+epochs = 10000
+nlls, mu_arr, scales_arr, class_conditionals = learn_parameters(x_train, y_train, mus, scales, opt, epochs)
+{% endraw %}
+{% endhighlight %}
+
+We print the model's parameters
+
+{% highlight python %}
+{% raw %}
+# View the distribution parameters
+print("Class conditional means:")
+print(class_conditionals.loc.numpy())
+print("\nClass conditional standard deviations:")
+print(class_conditionals.stddev().numpy())
+# Class conditional means:
+# [[5.002439  3.42439  ]
+# [5.89      2.78     ]
+# [6.5179486 2.9307692]]
+
+# Class conditional standard deviations:
+# [[0.34675348 0.37855995]
+# [0.5309426  0.31796226]
+# [0.5808357  0.28025055]]
+{% endraw %}
+{% endhighlight %}
+
