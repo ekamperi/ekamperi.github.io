@@ -208,3 +208,41 @@ print(class_conditionals.stddev().numpy())
 {% endraw %}
 {% endhighlight %}
 
+### Plot the decision regions
+
+{% highlight python %}
+{% raw %}
+# Plot the training data with the class-conditional density contours
+def get_meshgrid(x0_range, x1_range, n_points=100):
+    x0 = np.linspace(x0_range[0], x0_range[1], n_points)
+    x1 = np.linspace(x1_range[0], x1_range[1], n_points)
+    return np.meshgrid(x0, x1)
+
+def contour_plot(x0_range, x1_range, prob_fn, batch_shape, levels=None, n_points=100):
+    X0, X1 = get_meshgrid(x0_range, x1_range, n_points=n_points)
+    # X0.shape = (100, 100)
+    # X1.shape = (100, 100)
+    x_values = np.expand_dims(np.array([X0.ravel(), X1.ravel()]).T, axis=1)
+    # x_values.shape = (1000, 1, 2)
+    Z = prob_fn(x_values)
+    # Z.shape = (10000, 3)
+    Z = np.array(Z).T.reshape(batch_shape, *X0.shape)
+    # Z.shape = (3, 100, 100)
+    for batch in np.arange(batch_shape):
+        plt.contourf(X0, X1, Z[batch], alpha=0.3, levels=levels)
+
+plt.figure(figsize=(10, 6))
+plot_data(x_train, y_train, labels=labels, colours=label_colours)
+x0_min, x0_max = x_train[:, 0].min(), x_train[:, 0].max()
+x1_min, x1_max = x_train[:, 1].min(), x_train[:, 1].max()
+contour_plot((x0_min, x0_max), (x1_min, x1_max),
+             lambda x: predict_class(prior, class_conditionals, x), 
+             1, n_points=300, levels=[-0.5, 0.5, 1.5, 2])
+plt.title("Training set with decision regions")
+plt.show()
+{% endraw %}
+{% endhighlight %}
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/naive_bayes/boundary_regions.png" alt="Decision regions in Naive Bayes classifier">
+</p>
