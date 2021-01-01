@@ -32,17 +32,17 @@ $$
 
 ## Pros and cons of naive Bayes classifier
 Advantages of naive Bayes classifier:
-* Works quite well in real-world applications
-* Requires only a small amount of training data
-* With each training example, prior and likelihood can be updated in real-time
-* Since it assumes independent variables, only the variances of the class variables need to be estimated and not the entire covariance matrix (i.e., there are fewer parameters to estimate)
-* Fast training and fast inference
-* It gives a probability distribution over all classes (i.e., not just a classification)
-* Multiple classifiers may be combined, e.g., by taking the product of their predicted probabilities
-* May be used as a first-line "punching bag" before other smarter algorithms kick in the problem
+* Works quite well in real-world applications.
+* Requires only a small amount of training data.
+* With each training example, prior and likelihood can be updated in real-time.
+* Since it assumes independent variables, only the variances of the class variables need to be estimated and not the entire covariance matrix (i.e., there are fewer parameters to estimate).
+* Fast training and fast inference.
+* It gives a probability distribution over all classes (i.e., not just a classification).
+* Multiple classifiers may be combined, e.g., by taking the product of their predicted probabilities.
+* May be used as a first-line "punching bag" before other smarter algorithms kick in the problem.
 
 Disadvantages
-* More sophisticated models outperform them
+* More sophisticated models outperform them.
 
 ## Tensorflow example with the iris dataset
-All the model parameters (the priors for each class and the feature probability distributions) need to be approximated from the training set. The priors can be calculated by the relative frequency of each class in the training set, e.g. $$P(C_k) = \frac{\text{# of samples in class }C_k}{\text{total # of samples}}$$. The feature probability distributions can be approximated with **maximum likelihood estimation**. Concretely, we will create some trainable Gaussian distributions for the features and have Tensorflow estimate their parameters ($$\mu, \sigma$$) by minimizing the negative log-likelihood, which is equivalent to maximizing of log-likelihood.
+All the model parameters (the priors for each class and the feature probability distributions) need to be approximated from the training set. The priors can be calculated by the relative frequency of each class in the training set, e.g. $$P(C_k) = \frac{\text{# of samples in class }C_k}{\text{total # of samples}}$$. The feature probability distributions can be approximated with (**maximum likelihood estimation**)[https://en.wikipedia.org/wiki/Maximum_likelihood_estimation]. Concretely, we will create some trainable Gaussian distributions for the features and have Tensorflow estimate their parameters ($$\mu, \sigma$$) by minimizing the negative log-likelihood, which is equivalent to maximizing of log-likelihood.
