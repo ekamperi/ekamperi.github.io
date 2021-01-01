@@ -51,23 +51,9 @@ All the model parameters (the priors for each class and the feature probability 
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/naive_bayes/naive_bayes_piecewise.png" alt="Naive Bayes classifier with piecewise-constant feature distributions">
 </p>
 
-## Pros and cons of naive Bayes classifier
-Advantages of naive Bayes classifier:
-* Works quite well in real-world applications.
-* Requires only a small amount of training data.
-* With each training example, prior and likelihood can be updated in real-time.
-* Since it assumes independent variables, only the class variables' variances need to be estimated and not the entire covariance matrix (i.e., fewer parameters to calculate).
-* Fast training and fast inference.
-* It gives a probability distribution over all classes (i.e., not just a classification).
-* Multiple classifiers may be combined, e.g., by taking the product of their predicted probabilities.
-* May be used as a first-line "punching bag" before other smarter algorithms kick in the problem.
-
-Disadvantages
-* More sophisticated models outperform them.
-
 ## Tensorflow example with the iris dataset
 ### Load and preprocess the data
-First we load the iris dataset, select the features that we will be using, creeate a training and a test set, and plot the data to get a sense of it.
+First, we load the iris dataset, select the features that we will be using, create a training and a test set, and plot the data to get a sense of it.
 
 {% highlight python %}
 {% raw %}
@@ -250,3 +236,19 @@ plt.show()
 <p align="center">
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/naive_bayes/boundary_regions.png" alt="Decision regions in Naive Bayes classifier">
 </p>
+
+## Pros and cons of naive Bayes classifier
+Advantages of naive Bayes classifier:
+* Works quite well in real-world applications.
+* Requires only a small amount of training data.
+* With each training example, prior and likelihood can be updated in real-time.
+* Since it assumes independent variables, only the class variables' variances need to be estimated and not the entire covariance matrix (i.e., fewer parameters to calculate).
+* Fast training and fast inference.
+* It gives a probability distribution over all classes (i.e., not just a classification).
+* Multiple classifiers may be combined, e.g., by taking the product of their predicted probabilities.
+* May be used as a first-line "punching bag" before other smarter algorithms kick in the problem.
+
+Disadvantages
+* More sophisticated models outperform them.
+
+
