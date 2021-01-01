@@ -349,7 +349,7 @@ $$
 \end{align}
 $$
 
-Note that the above are just the means and standard deviations of the sample data points for each class.
+Where the superscript $$(n)$$ denotes the $$n$$-th example of the data set, $$\delta(y^{(n)}=y_k) = 1$$ if $$y^{(n)}=y_k$$ and 0 otherwise, and $$N$$ is the total number of examples. Note that the above are just the means and standard deviations of the sample data points for each class.
 
 {% highlight python %}
 {% raw %}
