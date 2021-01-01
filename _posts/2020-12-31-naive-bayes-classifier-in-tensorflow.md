@@ -10,7 +10,7 @@ description: Implementation of a Naive Bayes classifier with Tensorflow's traina
 ** WORK IN PROGRESS **
 
 ## Introduction
-A Naive Bayes classifier is a simple probabilistic classifier based on the Bayes theorem along with some strong (naive) assumptions regarding the independence of features. Others have suggested the name "independent feature model" as more fit. For example, a pet may be considered a dog if it has 4 legs, a tail, and barks. These features (presence of 4 legs, a tail, and barking) may depend on each other. However, the naive Bayes classifier assumes that these properties contribute independently to the probability that a pet is a dog. Naive Bayes classifier is used heavily in text classification, e.g., assigning topics on text, detecting spam, identifying age/gender from text, performing sentiment analysis. Given that there are many well-written introductory articles on this topic, we won't spend much time in theory. 
+A [Naive Bayes classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) is a simple probabilistic classifier based on the [Bayes' theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem) along with some strong (naive) assumptions regarding the independence of features. Others have suggested the name "independent feature model" as more fit. For example, a pet may be considered a dog if it has 4 legs, a tail, and barks. These features (presence of 4 legs, a tail, and barking) may depend on each other. However, the naive Bayes classifier assumes that these properties contribute independently to the probability that a pet is a dog. Naive Bayes classifier is used heavily in text classification, e.g., assigning topics on text, detecting spam, identifying age/gender from text, performing sentiment analysis. Given that there are many well-written introductory articles on this topic, we won't spend much time in theory. 
 
 ## The mathematical formulation
 
@@ -24,7 +24,7 @@ C_\text{predicted} &= \underset{c_k \in \mathcal{C}}{\text{arg max}} \,P(C_k | x
 \end{align*}
 $$
 
-In the second line we applied the Bayes theorem $$P(A\mid B) = P(B\mid A) P(A) / P(B)$$. In the last line, we omitted the denominator since it is the same across all classes, i.e., acts merely as a scaling factor. The estimation of $$P(C_k)$$ is straightforward; we just compute each class's relative frequency in the training set. However, the calculation of $$P(x_1, x_2, \ldots, x_n\mid C_k)$$ is more demanding. Here comes the "naive" part of the Naive Bayes classifier. We make the assumption that $$x_1, x_2, \ldots, x_n$$ features are independent. Then, it holds that $$P(x_1, x_2, \ldots, x_n\mid C_k) = P(x_1\mid C_k)P(x_2\mid C_k)\ldots P(x_n\mid C_k)$$ or just $$\prod_{i=1}^n P(x_i\mid C_k)$$. This greatly reduces the number of the model's parameters and simplifies their estimation. So, to sum up, the naive Bayes classifier is the solution to the following optimization problem:
+In the second line we applied the [Bayes' theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem) $$P(A\mid B) = P(B\mid A) P(A) / P(B)$$. In the last line, we omitted the denominator since it is the same across all classes, i.e., acts merely as a scaling factor. The estimation of $$P(C_k)$$ is straightforward; we just compute each class's relative frequency in the training set. However, the calculation of $$P(x_1, x_2, \ldots, x_n\mid C_k)$$ is more demanding. Here comes the "naive" part of the Naive Bayes classifier. We make the assumption that $$x_1, x_2, \ldots, x_n$$ features are independent. Then, it holds that $$P(x_1, x_2, \ldots, x_n\mid C_k) = P(x_1\mid C_k)P(x_2\mid C_k)\ldots P(x_n\mid C_k)$$ or just $$\prod_{i=1}^n P(x_i\mid C_k)$$. This greatly reduces the number of the model's parameters and simplifies their estimation. So, to sum up, the naive Bayes classifier is the solution to the following optimization problem:
 
 $$
 C_\text{predicted} = \underset{c_k \in \mathcal{C}}{\text{arg max}} \, P(C_k) \prod_{i=1}^n P(x_i|C_k)
@@ -35,7 +35,6 @@ In the pet example, we would write:
 $$
 P\left(\text{dog} \mid \text{4-legs}, \text{tail}, \text{barks}\right) = \underbrace{P(\text{4-legs}) P(\text{tail}) P(\text{barks})}_{\text{feature distributions}} \,\, \underbrace{P(C_\text{dog})}_{\text{prior}}
 $$
-
 
 ## Pros and cons of naive Bayes classifier
 Advantages of naive Bayes classifier:
