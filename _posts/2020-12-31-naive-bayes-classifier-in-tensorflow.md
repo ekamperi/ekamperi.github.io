@@ -44,7 +44,7 @@ Finally, we would compare the two calculated probabilities to infer whether the 
 All the model parameters (the priors for each class and the feature probability distributions) need to be approximated from the training set. The priors can be calculated by the relative frequency of each class in the training set, e.g. $$P(C_k) = \frac{\text{# of samples in class }C_k}{\text{total # of samples}}$$. The feature probability distributions can be approximated with [maximum likelihood estimation](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation). In this post, we will create some trainable Gaussian distributions for the features and have Tensorflow estimate their parameters ($$\mu, \sigma$$) by minimizing the negative log-likelihood, which is equivalent to maximizing of log-likelihood. We already did this in [a previous minimal post](https://ekamperi.github.io/mathematics/2020/12/26/tensorflow-trainable-probability-distributions.html). However, the feature distributions need not be Gaussian. For instance, in Mathematica's current implementation, the feature distributions are modeled using a piecewise-constant function:
 
 <p align="center">
- <img style="width: 70%; height: 70%" src="{{ site.url }}/naive_bayes/naive_bayes_piecewise.png" alt="Naive Bayes classifier with piecewise-constant feature distributions">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/naive_bayes/naive_bayes_piecewise.png" alt="Naive Bayes classifier with piecewise-constant feature distributions">
 </p>
 
 
