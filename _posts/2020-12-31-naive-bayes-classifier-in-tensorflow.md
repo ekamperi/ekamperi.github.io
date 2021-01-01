@@ -126,7 +126,8 @@ def learn_parameters(x, y, mus, scales, optimiser, epochs):
         nll_loss.append(loss)
         mu_values.append(mus.numpy())
         scales_values.append(scales.numpy())
-    nll_loss, mu_values, scales_values = np.array(nll_loss), np.array(mu_values), np.array(scales_values)
+    nll_loss, mu_values, scales_values = \
+        np.array(nll_loss), np.array(mu_values), np.array(scales_values)
     return (nll_loss, mu_values, scales_values, dist)
 {% endraw %}
 {% endhighlight %}
@@ -141,7 +142,8 @@ mus = tf.Variable([[1., 1.], [1., 1.], [1., 1.]])
 scales = tf.Variable([[1., 1.], [1., 1.], [1., 1.]])
 opt = tf.keras.optimizers.Adam(learning_rate=0.005)
 epochs = 10000
-nlls, mu_arr, scales_arr, class_conditionals = learn_parameters(x_train, y_train, mus, scales, opt, epochs)
+nlls, mu_arr, scales_arr, class_conditionals = \
+    learn_parameters(x_train, y_train, mus, scales, opt, epochs)
 {% endraw %}
 {% endhighlight %}
 
