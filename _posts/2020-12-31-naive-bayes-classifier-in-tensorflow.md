@@ -93,6 +93,9 @@ plt.show()
 </p>
 
 ### Define the loss function, the trainable distributions, and the custom training loop
+
+This code block is probably the most important of the classifier. Here we use negative log-likelihood as our loss function. We create trainable Gaussian distributions with `tfd.MultivariateNormalDiag()`, whose parameters will be estimated by minimizing the negative log-likelihood.
+
 {% highlight python %}
 {% raw %}
 def learn_parameters(x, y, mus, scales, optimiser, epochs):
@@ -133,7 +136,7 @@ def learn_parameters(x, y, mus, scales, optimiser, epochs):
 {% endhighlight %}
 
 ### Train the model
-Next, we assign some initial values to the model's parameters, instantiate an Adam optimizer, and call `learn_parameters()` function.
+Next, we assign some initial values to the model's parameters, instantiate an Adam optimizer, and call the `learn_parameters()` function to actually perform the training.
 
 {% highlight python %}
 {% raw %}
@@ -146,6 +149,8 @@ nlls, mu_arr, scales_arr, class_conditionals = \
     learn_parameters(x_train, y_train, mus, scales, opt, epochs)
 {% endraw %}
 {% endhighlight %}
+
+After the training has been completed, we plot the loss vs. epoch to ensure that our optimizer converged. We also plot for the same reasons the values of our model's parameters.
 
 {% highlight python %}
 {% raw %}
@@ -177,7 +182,7 @@ plt.show()
 
 ### Measure model's accuracy
 
-In order to measure the model's accuracy, we need to be able to make some predictions, which in turn means that we must be able to calculate 
+To measure the model's accuracy, we need to be able to make some predictions, which in turn means that we must be able to calculate 
 
 $$
 C_\text{predicted} = \underset{c_k \in \mathcal{C}}{\text{arg max}} \, P(C_k) \prod_{i=1}^n P(x_i|C_k)
@@ -310,5 +315,3 @@ Advantages of naive Bayes classifier:
 
 Disadvantages
 * More sophisticated models outperform them.
-
-
