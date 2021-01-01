@@ -260,7 +260,7 @@ print(class_conditionals.stddev().numpy())
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/naive_bayes/feauture_distributions.png" alt="Feature distributions in Naive Bayes classifier">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/naive_bayes/feature_distributions.png" alt="Feature distributions in Naive Bayes classifier">
 </p>
 
 ### Plot the decision regions
