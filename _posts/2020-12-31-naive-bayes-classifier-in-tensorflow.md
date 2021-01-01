@@ -195,7 +195,7 @@ plt.show()
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/naive_bayes/loss_vs_epoch.png" alt="Loss vs. epoch plot">
 </p>
 
-Indeed, our training loop achieved convergence, and the model's parameters settled on their best estimates, even if all started with the same initial conditions. The following code plots the three bivariate Gaussian distributions for the three classes.
+Indeed, our training loop achieved convergence, and the model's parameters settled on their best estimates, even if they all started with the same initial conditions. The following code plots the three bivariate Gaussian distributions for the three classes.
 
 {% highlight python %}
 {% raw %}
