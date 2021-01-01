@@ -186,6 +186,46 @@ plt.show()
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/naive_bayes/loss_vs_epoch.png" alt="Loss vs. epoch plot">
 </p>
 
+{% highlight python %}
+{% raw %}
+from mpl_toolkits.mplot3d import Axes3D
+fig = plt.figure(figsize=(12, 6))
+ax = fig.gca(projection='3d')
+for k in [0,1,2]:
+    ax.plot_surface(X0, X1, Z[k,:,:], alpha=.8)
+ax.set_xlabel('Sepal length (cm)')
+ax.set_ylabel('Sepal width (cm)')
+ax.set_zlabel('Probability');
+ax.elev = 35
+ax.azim = 45
+{% endraw %}
+{% endhighlight %}
+
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/naive_bayes/feature_distributions.png" alt="Feature distributions in Naive Bayes classifier">
+</p>
+
+We may also print the model's parameters:
+
+{% highlight python %}
+{% raw %}
+# View the distribution parameters
+print("Class conditional means:")
+print(class_conditionals.loc.numpy())
+print("\nClass conditional standard deviations:")
+print(class_conditionals.stddev().numpy())
+# Class conditional means:
+# [[5.002439  3.42439  ]
+# [5.89      2.78     ]
+# [6.5179486 2.9307692]]
+
+# Class conditional standard deviations:
+# [[0.34675348 0.37855995]
+# [0.5309426  0.31796226]
+# [0.5808357  0.28025055]]
+{% endraw %}
+{% endhighlight %}
+
 ### Measure model's accuracy
 
 To measure the model's accuracy, we need to be able to make some predictions, which in turn means that we must be able to calculate: 
@@ -241,47 +281,7 @@ print("Test accuracy: {:.4f}".format(accuracy))
 {% endraw %}
 {% endhighlight %}
 
-So, our model achieved an accuracy of 0.8667 on the test set, which is pretty good.
-
-We print the model's parameters:
-
-{% highlight python %}
-{% raw %}
-# View the distribution parameters
-print("Class conditional means:")
-print(class_conditionals.loc.numpy())
-print("\nClass conditional standard deviations:")
-print(class_conditionals.stddev().numpy())
-# Class conditional means:
-# [[5.002439  3.42439  ]
-# [5.89      2.78     ]
-# [6.5179486 2.9307692]]
-
-# Class conditional standard deviations:
-# [[0.34675348 0.37855995]
-# [0.5309426  0.31796226]
-# [0.5808357  0.28025055]]
-{% endraw %}
-{% endhighlight %}
-
-{% highlight python %}
-{% raw %}
-from mpl_toolkits.mplot3d import Axes3D
-fig = plt.figure(figsize=(12, 6))
-ax = fig.gca(projection='3d')
-for k in [0,1,2]:
-    ax.plot_surface(X0, X1, Z[k,:,:], alpha=.8)
-ax.set_xlabel('Sepal length (cm)')
-ax.set_ylabel('Sepal width (cm)')
-ax.set_zlabel('Probability');
-ax.elev = 35
-ax.azim = 45
-{% endraw %}
-{% endhighlight %}
-
-<p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/naive_bayes/feature_distributions.png" alt="Feature distributions in Naive Bayes classifier">
-</p>
+So, our model achieved an accuracy of 0.8667 on the test set, which is pretty good!
 
 ### Plot the decision regions
 
