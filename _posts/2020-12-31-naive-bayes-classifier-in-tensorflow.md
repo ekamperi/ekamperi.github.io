@@ -63,6 +63,42 @@ Disadvantages
 
 ## Tensorflow example with the iris dataset
 
+First we load the iris dataset, select the features that we will be using, creeate a training and a test set, and plot the data to get a sense of it.
+
+{% highlight python %}
+{% raw %}
+# Load the dataset
+iris = datasets.load_iris()
+
+# Use only the first two features: sepal length and width
+data = iris.data[:, :2]
+targets = iris.target
+
+# Randomly shuffle the data and make train and test splits
+x_train, x_test, y_train, y_test = \
+    model_selection.train_test_split(data, targets, test_size=0.2)
+
+# Plot the training data
+labels = {0: 'Setosa', 1: 'Versicolour', 2: 'Virginica'}
+label_colours = ['blue', 'red', 'green']
+
+def plot_data(x, y, labels, colours):
+    for y_class in np.unique(y):
+        index = np.where(y == y_class)
+        plt.scatter(x[index, 0], x[index, 1],
+                    label=labels[y_class], c=colours[y_class])
+    plt.title("Training set")
+    plt.xlabel("Sepal length (cm)")
+    plt.ylabel("Sepal width (cm)")
+    plt.legend()
+    
+plt.figure(figsize=(8, 5))
+plot_data(x_train, y_train, labels, label_colours)
+plt.show()
+{% endraw %}
+{% endhighlight %}
+
+
 
 {% highlight python %}
 {% raw %}
