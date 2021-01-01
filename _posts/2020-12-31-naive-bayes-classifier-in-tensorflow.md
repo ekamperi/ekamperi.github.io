@@ -44,9 +44,8 @@ Finally, we would compare the two calculated probabilities to infer whether the 
 All the model parameters (the priors for each class and the feature probability distributions) need to be approximated from the training set. The priors can be calculated by the relative frequency of each class in the training set, e.g. $$P(C_k) = \frac{\text{# of samples in class }C_k}{\text{total # of samples}}$$. The feature probability distributions can be approximated with [maximum likelihood estimation](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation). In this post, we will create some trainable Gaussian distributions for the features and have Tensorflow estimate their parameters ($$\mu, \sigma$$) by minimizing the negative log-likelihood, which is equivalent to maximizing of log-likelihood. We already did this in [a previous minimal post](https://ekamperi.github.io/mathematics/2020/12/26/tensorflow-trainable-probability-distributions.html). However, the feature distributions need not be Gaussian. For instance, in Mathematica's current implementation, the feature distributions are modeled using a piecewise-constant function:
 
 <p align="center">
- <img style="width: 70%; height: 70%" src="{{ site.url }}/images/naive_bayes/naive_bayes_piecewise.png" alt="Naive Bayes classifier with piecewise-constant feature distributions">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/naive_bayes/naive_bayes_piecewise.png" alt="Naive Bayes classifier with piecewise-constant feature distributions">
 </p>
-
 
 ## Pros and cons of naive Bayes classifier
 Advantages of naive Bayes classifier:
@@ -65,3 +64,41 @@ Disadvantages
 ## Tensorflow example with the iris dataset
 
 
+{% highlight python %}
+{% raw %}
+def learn_parameters(x, y, mus, scales, optimiser, epochs):
+    """
+    Set up the class conditional distributions as a MultivariateNormalDiag
+    object, and update the trainable variables in a custom training loop.
+    """
+    @tf.function
+    def nll(dist, x_train, y_train):
+        log_probs = dist.log_prob(x_train)
+        L = len(tf.unique(y_train)[0])
+        y_train = tf.one_hot(indices=y_train, depth=L)
+        return -tf.reduce_mean(log_probs * y_train)
+
+    @tf.function
+    def get_loss_and_grads(dist, x_train, y_train):
+        with tf.GradientTape() as tape:
+            tape.watch(dist.trainable_variables)
+            loss = nll(dist, x_train, y_train)
+            grads = tape.gradient(loss, dist.trainable_variables)
+        return loss, grads
+
+    nll_loss = []
+    mu_values = []
+    scales_values = []
+    x = tf.cast(np.expand_dims(x, axis=1), tf.float32)
+    dist = tfd.MultivariateNormalDiag(loc=mus, scale_diag=scales)
+    for epoch in range(epochs):
+        loss, grads = get_loss_and_grads(dist, x, y)
+        optimiser.apply_gradients(zip(grads, dist.trainable_variables))
+        nll_loss.append(loss)
+        mu_values.append(mus.numpy())
+        scales_values.append(scales.numpy())
+    nll_loss, mu_values, scales_values = np.array(nll_loss), np.array(mu_values), np.array(scales_values)
+    return (nll_loss, mu_values, scales_values, dist)
+
+{% endraw %}
+{% endhighlight %}
