@@ -7,8 +7,6 @@ tags: [algorithms, 'machine learning', Python, Tensorflow]
 description: Implementation of a Naive Bayes classifier with Tensorflow's trainable distributions for the iris dataset
 ---
 
-** WORK IN PROGRESS **
-
 ## Introduction
 A [Naive Bayes classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) is a simple probabilistic classifier based on the [Bayes' theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem) along with some strong (naive) assumptions regarding the independence of features. Others have suggested the name "independent feature model" as more fit. For example, a pet may be considered a dog if it has 4 legs, a tail, and barks. These features (presence of 4 legs, a tail, and barking) may depend on each other. However, the naive Bayes classifier assumes that these properties contribute independently to the probability that a pet is a dog. Naive Bayes classifier is used heavily in text classification, e.g., assigning topics on text, detecting spam, identifying age/gender from text, performing sentiment analysis. Given that there are many well-written introductory articles on this topic, we won't spend much time in theory. 
 
@@ -153,7 +151,35 @@ nlls, mu_arr, scales_arr, class_conditionals = learn_parameters(x_train, y_train
 {% endraw %}
 {% endhighlight %}
 
-We print the model's parameters
+{% highlight python %}
+{% raw %}
+# Plot the loss and convergence of the standard deviation parameters
+fig, ax = plt.subplots(1, 3, figsize=(15, 4))
+ax[0].plot(nlls)
+ax[0].set_title("Loss vs. epoch")
+ax[0].set_xlabel("Epoch")
+ax[0].set_ylabel("Average negative log-likelihood")
+for k in [0, 1, 2]:
+    ax[1].plot(mu_arr[:, k, 0])
+    ax[1].plot(mu_arr[:, k, 1])
+ax[1].set_title("ML estimates for model's\nmeans vs. epoch")
+ax[1].set_xlabel("Epoch")
+ax[1].set_ylabel("Means")
+for k in [0, 1, 2]:
+    ax[2].plot(scales_arr[:, k, 0])
+    ax[2].plot(scales_arr[:, k, 1])
+ax[2].set_title("ML estimates for model's\nscales vs. epoch")
+ax[2].set_xlabel("Epoch")
+ax[2].set_ylabel("Scales")
+plt.show()
+{% endraw %}
+{% endhighlight %}
+
+<p align="center">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/naive_bayes/loss_vs_epoch.png" alt="Loss vs. epoch plot">
+</p>
+
+We print the model's parameters:
 
 {% highlight python %}
 {% raw %}
