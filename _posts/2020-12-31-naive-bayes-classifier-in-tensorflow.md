@@ -156,7 +156,7 @@ nlls, mu_arr, scales_arr, class_conditionals = \
 {% endraw %}
 {% endhighlight %}
 
-After the training has been completed, we plot the loss vs. epoch to ensure that our optimizer converged. We also plot for the same reasons the values of our model's parameters.
+After the training has been completed, we plot the loss *vs.* epoch to ensure that our optimizer converged. We also plot for the same reasons the values of our model's parameters.
 
 {% highlight python %}
 {% raw %}
