@@ -338,6 +338,64 @@ plt.show()
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/naive_bayes/boundary_regions.png" alt="Decision regions in Naive Bayes classifier">
 </p>
 
+## A note regarding Gaussian distributions
+
+When the feature distributions are Gaussian, there exist analytic solutions for the distributions' parameters:
+
+$$
+\begin{align}
+\hat{\mu}_{ik} &= \frac{\sum_n x_i^{(n)} \delta(y^{(n)}=y_k)}{\sum_n \delta(y^{(n)}=y_k)} \\
+\hat{\sigma}_{ik} &= \sqrt{\frac{\sum_n (x_i^{(n)} - \hat{\mu}_{ik})^2 \delta(y^{(n)}=y_k)}{\sum_n \delta(y^{(n)}=y_k)}}
+\end{align}
+$$
+
+Note that the above are just the means and standard deviations of the sample data points for each class.
+
+{% highlight python %}
+{% raw %}
+def get_analytic_optimal_class_conditionals(x, y):
+    """
+    This function takes training data samples x and labels y as inputs,
+    and builds the class conditional Gaussian distributions based on
+    analytic solutions for optimal parameters. 
+    """
+    def delta(a, b):
+        return 1. if a == b else 0.
+
+    n_samples = len(y)
+    mu = []
+    sigma = []
+    for k in range(3): # Loop over every class
+        inner_mu = []
+        inner_sigma = []
+        for i in range(2): # Loop over every feature
+            dyk = [delta(y[r], k) for r in range(n_samples)]
+            xin = x[:, i]
+            mu_ik = np.dot(xin, dyk) / np.sum(dyk)
+            sigma_squared_ik = np.dot((xin - mu_ik)**2, dyk) / np.sum(dyk)
+            inner_mu.append(mu_ik)
+            inner_sigma.append(np.sqrt(sigma_squared_ik))
+        mu.append(inner_mu)
+        sigma.append(inner_sigma)
+    dist = tfd.MultivariateNormalDiag(loc=mu, scale_diag=sigma)
+    return dist
+
+class_conditionals = get_analytic_optimal_class_conditionals(x_train, y_train)
+class_conditionals.loc, class_conditionals.stddev()
+
+# (<tf.Tensor: shape=(3, 2), dtype=float64, numpy=
+#  array([[5.00930233, 3.41860465],
+#         [5.91081081, 2.78108108],
+#         [6.635     , 2.975     ]])>,
+#  <tf.Tensor: shape=(3, 2), dtype=float64, numpy=
+#  array([[0.32694068, 0.37926233],
+#         [0.53966145, 0.32201883],
+#         [0.68758636, 0.34332929]])>)
+{% endraw %}
+{% endhighlight %}
+
+Indeed, the values we got via maximum likelihood estimation are pretty close to the values derived from the analytic solutions!
+
 ## Pros and cons of naive Bayes classifier
 Advantages of naive Bayes classifier:
 * Works quite well in real-world applications.
