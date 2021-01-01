@@ -307,12 +307,6 @@ So, our model achieved an accuracy of 0.8667 on the test set, which is pretty go
 
 {% highlight python %}
 {% raw %}
-# Plot the training data with the class-conditional density contours
-def get_meshgrid(x0_range, x1_range, n_points=100):
-    x0 = np.linspace(x0_range[0], x0_range[1], n_points)
-    x1 = np.linspace(x1_range[0], x1_range[1], n_points)
-    return np.meshgrid(x0, x1)
-
 def contour_plot(x0_range, x1_range, prob_fn, batch_shape, levels=None, n_points=100):
     X0, X1 = get_meshgrid(x0_range, x1_range, n_points=n_points)
     # X0.shape = (100, 100)
@@ -328,11 +322,9 @@ def contour_plot(x0_range, x1_range, prob_fn, batch_shape, levels=None, n_points
 
 plt.figure(figsize=(10, 6))
 plot_data(x_train, y_train, labels=labels, colours=label_colours)
-x0_min, x0_max = x_train[:, 0].min(), x_train[:, 0].max()
-x1_min, x1_max = x_train[:, 1].min(), x_train[:, 1].max()
-contour_plot((x0_min, x0_max), (x1_min, x1_max),
+contour_plot(x0_range, x1_range,
              lambda x: predict_class(prior, class_conditionals, x), 
-             1, n_points=300, levels=[-0.5, 0.5, 1.5, 2])
+             1, n_points=3, levels=[-0.5, 0.5, 1.5, 2])
 plt.title("Training set with decision regions")
 plt.show()
 {% endraw %}
