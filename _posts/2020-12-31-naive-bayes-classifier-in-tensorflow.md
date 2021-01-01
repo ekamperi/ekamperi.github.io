@@ -207,8 +207,8 @@ def get_meshgrid(x0_range, x1_range, n_points=100):
 x0_range = x_train[:, 0].min(), x_train[:, 0].max()
 x1_range = x_train[:, 1].min(), x_train[:, 1].max()
 X0, X1 = get_meshgrid(x0_range, x1_range, n_points=300)
-x_v = np.expand_dims(np.array([X0.ravel(), X1.ravel()]).T, axis=1)
-Z = class_conditionals.prob(x_v)
+X_v = np.expand_dims(np.array([X0.ravel(), X1.ravel()]).T, axis=1)
+Z = class_conditionals.prob(X_v)
 Z = np.array(Z).T.reshape(3, *X0.shape)
 
 from mpl_toolkits.mplot3d import Axes3D
@@ -315,9 +315,9 @@ def contour_plot(x0_range, x1_range, prob_fn, batch_shape, levels=None, n_points
     X0, X1 = get_meshgrid(x0_range, x1_range, n_points=n_points)
     # X0.shape = (100, 100)
     # X1.shape = (100, 100)
-    x_values = np.expand_dims(np.array([X0.ravel(), X1.ravel()]).T, axis=1)
-    # x_values.shape = (1000, 1, 2)
-    Z = prob_fn(x_values)
+    X_values = np.expand_dims(np.array([X0.ravel(), X1.ravel()]).T, axis=1)
+    # X_values.shape = (1000, 1, 2)
+    Z = prob_fn(X_values)
     # Z.shape = (10000, 3)
     Z = np.array(Z).T.reshape(batch_shape, *X0.shape)
     # Z.shape = (3, 100, 100)
