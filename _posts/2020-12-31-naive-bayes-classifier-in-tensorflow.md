@@ -214,7 +214,7 @@ prior.probs
 {% endraw %}
 {% endhighlight %}
 
-Since we have 3 classes in the data set, we calculated 3 priors: $$P(C_1) = 0.342, P(C_2) = 0.333, P(C_3) = 0.325$$. Next, we will setup a `predict_class()`, that will act as the $$\text{arg max}$$ opetator.
+Since we have 3 classes in the data set, we calculated 3 priors: $$P(C_1) = 0.342, P(C_2) = 0.333$$, and $$P(C_3) = 0.325$$. Next, we will setup a `predict_class()`, that will act as the $$\text{arg max}$$ opetator.
 
 {% highlight python %}
 {% raw %}
