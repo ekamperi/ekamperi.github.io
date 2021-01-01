@@ -63,6 +63,15 @@ First, we load the iris dataset, select the features that we will be using, crea
 
 {% highlight python %}
 {% raw %}
+# Import stuff we will be needing
+import tensorflow as tf
+import tensorflow_probability as tfp
+tfd = tfp.distributions
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.metrics import accuracy_score
+from sklearn import datasets, model_selection
+
 # Load the dataset
 iris = datasets.load_iris()
 
