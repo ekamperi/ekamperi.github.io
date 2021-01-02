@@ -256,7 +256,7 @@ $$
 C_\text{predicted} = \underset{c_k \in \mathcal{C}}{\text{arg max}} \, P(C_k) \prod_{i=1}^n P(x_i|C_k)
 $$
 
-Up until now, we have calculated the feature distributions $$P(C_k)$$, which is the hardest part. We will now estimate the priors as the relative frequencies of each class in the data set.
+Up until now, we have calculated the feature distributions $$P(x_i\mid C_k)$$, which is the hardest part. We will now estimate the priors as the relative frequencies of each class in the data set.
 
 {% highlight python %}
 {% raw %}
