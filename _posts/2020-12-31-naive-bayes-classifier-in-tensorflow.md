@@ -60,7 +60,7 @@ Another example is when the features are assumed to be a binary-valued variable 
 The iris data set consists of 50 samples from Iris' three species (Iris setosa, Iris virginica, and Iris versicolor). Four features were measured from each sample: the length and the width of the sepals and petals, in centimeters. For further information, the reader may refer to *R. A. Fisher. "The use of multiple measurements in taxonomic problems". Annals of Eugenics. 7 (2): 179–188, 1936.* Our goal is to construct a Naive Bayes classifier model that predicts the correct class from the sepal length and sepal width features (so, just 2 out of 4 features). This blog post is inspired by a weekly assignment of the course "Probabilistic Deep Learning with TensorFlow 2" from Imperial College London.
 
 <p align="center">
- <img style="width: 50%; height: 50%" src="{{ site.url }}/images/naive_bayes/iris_images.png" alt="Iris data set images">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/naive_bayes/iris_images.png" alt="Iris data set images">
 </p>
 
 First, we load the iris dataset, select the features that we will be using, create a training and a test set, and plot the data to get a sense of it.
