@@ -155,8 +155,9 @@ a.codinfox-tag-mark:hover {
 
 .wrapper::before {
 	content: url("/images/assets/face.jpg");
-	display: inline-block;
-	position: relative;
-	width: 37px;
-	top: 5px;
+	  width:200px;
+	  position:absolute;
+	  bottom: 20px;
+	  left: 20px;
+	border-radius: 50%
 }
