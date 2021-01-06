@@ -156,3 +156,12 @@ a.codinfox-tag-mark:hover {
     border-color: #275c74;
     border-width: 1px;
 }
+
+
+@media screen and (max-width: 600px) {
+ a.page-link {
+  color: red !important;
+ }
+}
+
+
