@@ -153,3 +153,11 @@ a.codinfox-tag-mark:hover {
   border-radius: 50%;
 }
 
+
+.site-title::before {
+	content: url("/images/assets/face.jpg");
+	display: inline-block;
+	position: relative;
+	width: 37px;
+	top: 5px;
+}
