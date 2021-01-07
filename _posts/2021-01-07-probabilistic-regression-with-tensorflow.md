@@ -19,10 +19,9 @@ You might have heard the saying, *"If all you have is a hammer, everything looks
 
 
 # Aleatoric and epistemic uncertainty
-Sometimes uncertainty is grouped into two categories, aleatoric (also known as statistical) and epistemic (also known as systematic). Aleatoric is derived from the Latin word "alea" which means die. You might have heard the phrase "alea iact est", meaning "the die has been cast". Therefore, aleatoric uncertainty refers to the data itself and captures what differs each time we run the same experiment or perform the same task. For instance, if a person keeps drawing the number "4", it will be slightly different every time. Another example would be the presence of measurement error or noise in the data generating process. Aleatoric uncertainty is irreducible in the sense that no matter how much data we collect, there will always be there. We model aleatoric uncertainty by allowing the output of a neural network to be probabilistic.
+Sometimes uncertainty is grouped into two categories, aleatoric (also known as statistical) and epistemic (also known as systematic). **Aleatoric** is derived from the Latin word "alea" which means die. You might have heard the phrase "alea iact est", meaning "the die has been cast". Therefore, aleatoric uncertainty refers to the data itself and captures what differs each time we run the same experiment or perform the same task. For instance, if a person keeps drawing the number "4", it will be slightly different every time. Another example would be the presence of measurement error or noise in the data generating process. Aleatoric uncertainty is irreducible in the sense that no matter how much data we collect, there will always be there. We model aleatoric uncertainty by allowing the output of a neural network to be probabilistic.
 
-Epistemic uncertainty, on the other hand, refers to a model's uncertainty. I.e., there is uncertainty regarding which model's parameters accurately model the experimental data, and is decreased as we collect more data. We model epistemic uncertainty by allowing the weights of a neural network to be probabilistic.
-
+**Epistemic uncertainty**, on the other hand, refers to a model's uncertainty. I.e., there is uncertainty regarding which model's parameters accurately model the experimental data, and is decreased as we collect more data. We model epistemic uncertainty by allowing the weights of a neural network to be probabilistic.
 
 {% highlight python %}
 {% raw %}
@@ -36,7 +35,7 @@ import matplotlib.pyplot as plt
 {% endraw %}
 {% endhighlight %}
 
-We generate some training data $\mathcal{D}=(x_i, y_i)$ using the equation $$y_i = x_i^5 + 0.4 \, x_i \,\epsilon_i, \hspace{0.25cm} \epsilon_i \sim \mathcal{N}(0,1)$$. Our objective will be to construct a probabilistc regression model. This blog post is inspired by a weekly assignment of the course “Probabilistic Deep Learning with TensorFlow 2” from Imperial College London.
+We generate some training data $$\mathcal{D}=(x_i, y_i)$$ using the equation $$y_i = x_i^5 + 0.4 \, x_i \,\epsilon_i, \hspace{0.25cm} \epsilon_i \sim \mathcal{N}(0,1)$$. Our objective will be to construct a probabilistc regression model. This blog post is inspired by a weekly assignment of the course “Probabilistic Deep Learning with TensorFlow 2” from Imperial College London.
 
 {% highlight python %}
 {% raw %}
@@ -114,34 +113,31 @@ print('\nTrainable variables for posterior model: ', posterior_model.layers[0].t
 print('Sampling from the posterior distribution:\n', posterior_model.call(tf.constant(1.0)).sample(5))
 
 # Note that every time we run this cell block, we get different results for the samples
+
+#    Trainable variables for prior model:  []
+#    WARNING:tensorflow:From /home/stathis/.local/lib/python3.8/site-packages/tensorflow/python/ops/linalg/linear_operator_diag.py:167: calling #LinearOperator.__init__ (from tensorflow.python.ops.linalg.linear_operator) with graph_parents is deprecated and will be removed in a future version.
+#    Instructions for updating:
+#    Do not pass `graph_parents`.  They will  no longer be used.
+#    Sampling from the prior distribution:
+#     tf.Tensor(
+#    [[ 1.3140054   0.93301576 -2.3522265   0.5879774 ]
+#     [-2.6143072   0.39889303  0.72736305 -0.06531376]
+#     [-1.1271048   0.4480154  -1.389969    0.87443566]
+#     [-0.6140247   0.3008949   0.91000426  0.1832995 ]
+#     [ 0.39756483  0.4414646  -1.025012    0.21117625]], shape=(5, 4), dtype=float32)
+#    
+#    Trainable variables for posterior model:  [<tf.Variable 'constant:0' shape=(14,) dtype=float32, numpy=
+#    array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],
+#          dtype=float32)>]
+#    Sampling from the posterior distribution:
+#     tf.Tensor(
+#    [[-0.0099524   1.107596   -0.34787297  0.1307174 ]
+#     [-0.7565929  -0.08078367  0.1275031   0.80345786]
+#     [ 0.75810474  0.12409975  0.11558666  0.54518634]
+#     [-0.5074226   0.11740679  0.86849195 -0.33246624]
+#     [ 0.01261052  0.44296038  0.61944205  0.4496125 ]], shape=(5, 4), dtype=float32)
 {% endraw %}
 {% endhighlight %}
-
-
-    Trainable variables for prior model:  []
-    WARNING:tensorflow:From /home/stathis/.local/lib/python3.8/site-packages/tensorflow/python/ops/linalg/linear_operator_diag.py:167: calling LinearOperator.__init__ (from tensorflow.python.ops.linalg.linear_operator) with graph_parents is deprecated and will be removed in a future version.
-    Instructions for updating:
-    Do not pass `graph_parents`.  They will  no longer be used.
-    Sampling from the prior distribution:
-     tf.Tensor(
-    [[ 1.3140054   0.93301576 -2.3522265   0.5879774 ]
-     [-2.6143072   0.39889303  0.72736305 -0.06531376]
-     [-1.1271048   0.4480154  -1.389969    0.87443566]
-     [-0.6140247   0.3008949   0.91000426  0.1832995 ]
-     [ 0.39756483  0.4414646  -1.025012    0.21117625]], shape=(5, 4), dtype=float32)
-    
-    Trainable variables for posterior model:  [<tf.Variable 'constant:0' shape=(14,) dtype=float32, numpy=
-    array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],
-          dtype=float32)>]
-    Sampling from the posterior distribution:
-     tf.Tensor(
-    [[-0.0099524   1.107596   -0.34787297  0.1307174 ]
-     [-0.7565929  -0.08078367  0.1275031   0.80345786]
-     [ 0.75810474  0.12409975  0.11558666  0.54518634]
-     [-0.5074226   0.11740679  0.86849195 -0.33246624]
-     [ 0.01261052  0.44296038  0.61944205  0.4496125 ]], shape=(5, 4), dtype=float32)
-
-
 
 {% highlight python %}
 {% raw %}
@@ -165,24 +161,23 @@ def nll(y_true, y_pred):
 
 model.compile(loss=nll, optimizer=tf.keras.optimizers.RMSprop(learning_rate=0.005))
 model.summary()
+
+#    Model: "sequential_2"
+#    _________________________________________________________________
+#    Layer (type)                 Output Shape              Param #   
+#    =================================================================
+#    dense_variational (DenseVari (None, 8)                 152       
+#    _________________________________________________________________
+#    dense_variational_1 (DenseVa (None, 2)                 189       
+#    _________________________________________________________________
+#    independent_normal (Independ multiple                  0         
+#    =================================================================
+#    Total params: 341
+#    Trainable params: 341
+#    Non-trainable params: 0
+#    _________________________________________________________________
 {% endraw %}
 {% endhighlight %}
-
-    Model: "sequential_2"
-    _________________________________________________________________
-    Layer (type)                 Output Shape              Param #   
-    =================================================================
-    dense_variational (DenseVari (None, 8)                 152       
-    _________________________________________________________________
-    dense_variational_1 (DenseVa (None, 2)                 189       
-    _________________________________________________________________
-    independent_normal (Independ multiple                  0         
-    =================================================================
-    Total params: 341
-    Trainable params: 341
-    Non-trainable params: 0
-    _________________________________________________________________
-
 
 Let's calculate by hand the model's parameters. The **first dense variational layer** has 1 input, 8 outputs and 8 biases. Therefore, there are $$1\cdot 8 + 8 = 16$$ weights. Since each weight is going to be modelled by a normal distribution, we need 16 $$\mu$$'s, and $$(16^2 - 16)/2 + 16 = 136$$ $$\sigma$$'s. The latter is the number of elements of a lower triangular matrix $$8\times 8$$. Therefore, in total we need $$16 + 132 = 152$$ parameters. What about the **second variational layer**? This one has 8 inputs (since the previous had 8 outputs), 2 outputs (the $$\mu, \sigma$$ of the independent normal distribution), and 2 biases. Therefore, it has $$8\times 2 + 2 = 18$$ weights. For 18 weights, we need 18 $$\mu$$'s and $$(18^2 - 18)/2 + 18 = 171$$ $$\sigma$$'s. Therefore, in total we need $$18 + 171 = 189$$ parameters. The `tfpl.MultivariateNormalTriL.params_size(n)` static function calculates the number of parameters need to parameterize a multivariate normal distribution, so we don't have to bother with it.
 
