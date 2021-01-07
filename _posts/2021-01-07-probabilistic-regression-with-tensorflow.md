@@ -14,7 +14,11 @@ description: Implementation of probabilistic regression with Tensorflow
 {:toc}
 
 ## Introduction
-You might have heard the saying, *"If all you have is a hammer, everything looks like a nail"*. This phrase applies to many cases, including deterministic classification neural networks. Consider, for instance, a typical neural network that classifies images from the [CIFAR-10 dataset](https://en.wikipedia.org/wiki/CIFAR-10). This dataset consists of 60.000 color images, all of which belong to 10 classes: airplanes, cars, birds, cats, deer, dogs, frogs, horses, ships, and trucks. Naturally, no matter what image we feed this network, say a pencil, it will always assign it to one of the 10 known classes. It would be very useful, however, if the model conveyed its uncertainty for the predictions it made. For instance, given a "pencil" image, it would probably classify it as a bird or ship or whatever. At the same time, it would assign a large uncertainty to its prediction. To reach this inference level, we need to rethink the traditional deterministic neural network paradigm and take a leap of faith towards probabilistic ones. So, instead of having a model parameterized by its point weights, each weight will now be sampled from a posterior distribution trained during the training process. The same goes for the model's output.
+You might have heard the saying, *"If all you have is a hammer, everything looks like a nail"*. This phrase applies to many cases, including deterministic classification neural networks. Consider, for instance, a typical neural network that classifies images from the [CIFAR-10 dataset](https://en.wikipedia.org/wiki/CIFAR-10). This dataset consists of 60.000 color images, all of which belong to 10 classes: airplanes, cars, birds, cats, deer, dogs, frogs, horses, ships, and trucks. Naturally, no matter what image we feed this network, say a pencil, it will always assign it to one of the 10 known classes. However, it would be handy if the model conveyed its uncertainty for the predictions it made. For instance, given a "pencil" image, it would probably label it as a bird or ship or whatever. At the same time, it would assign a large uncertainty to this prediction. To reach such an inference level, we need to rethink the traditional deterministic neural network paradigm and take a leap of faith towards probabilistic modeling. **So, instead of having a model parameterized by its point weights, each weight will now be sampled from a posterior distribution whose parameters will be trained during the training process. The same goes for the model's output.**
+
+<p align="center">
+ <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/probabilistic_vs_deterministic.png" alt="Probabilistic vs. deterministic neural networks">
+</p>
 
 ## Aleatoric and epistemic uncertainty
 Sometimes uncertainty is grouped into two categories, aleatoric (also known as statistical) and epistemic (also known as systematic). **Aleatoric** is derived from the Latin word "alea" which means die. You might be familiar with the phrase ["alea iact est"](https://en.wikipedia.org/wiki/Alea_iacta_est), meaning "the die has been cast". Hence, aleatoric uncertainty relates to the data itself and captures what differs each time we run the same experiment or perform the same task. For instance, if a person keeps drawing the number "4", it will be slightly different every time. Another example would be the presence of measurement error or noise in the data generating process. Aleatoric uncertainty is irreducible in the sense that no matter how much data we collect, there will always be there.
@@ -58,17 +62,32 @@ plt.show();
 </p>
 
 ### Setup prior and posterior distributions
-At the core of probabilistic predictive model is the [Bayes' rule](https://en.wikipedia.org/wiki/Bayes%27_theorem). To estimate a full posterior distribution of the parameters $$\mathbf{Θ}$$, the Bayes rule would, in our case, assume the following form:
+At the core of probabilistic predictive modeling is the [Bayes' rule](https://en.wikipedia.org/wiki/Bayes%27_theorem). To estimate a full posterior distribution of the parameters $$\mathbf{Θ}$$, the Bayes rule would, in our case, assume the following form:
 
 $$
 p(\mathbf{Θ|\mathcal{D}}) = \frac{p(\mathcal{D}|\mathbf{Θ})p(\mathbf{Θ})}{p(\mathcal{D})}
 $$
 
+In the following image, you see a sketch of the various probability distributions that enter the Bayes' rule. In plain terms, it holds that $$\text{Prior beliefs} \oplus \text{Evidence} = \text{Posterior beliefs}$$, i.e., we start with some assumptions inscribed in the prior distribution, then we see the "Evidence", and we update our prior beliefs accordingly, to yield the posterior distribution. Subsequently, the posterior distribution acts as the next iteration's prior distribution, and the whole cycle is repeated.
+
 <p align="center">
  <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/prior_posterior_evidence.png" alt="Prior, posterior and evidence distributions in Bayes rule">
 </p>
 
-I haven't researched the matter a lot, but in the absence of any evidence, choosing a normal distribution as a prior is a fair way to initialize a probabilistic neural network. After all, the central limit theorem asserts that samples obtained from data will approximate a normal distribution no matter the actual underlying distribution.
+We start by defining a prior distribution for our model's weights. I haven't researched the matter a lot, but in the absence of any evidence, adopting a normal distribution as a prior is a fair way to initialize a probabilistic neural network. After all, the [central limit theorem](https://en.wikipedia.org/wiki/Central_limit_theorem) asserts that a properly normalized sum of samples obtained from data will approximate a normal distribution no matter the actual underlying distribution. We use the `DistributionLambda()` function to inject a distribution, which you can think of as the "lambda function" analog for distributions. The distribution we use is a multivariate normal with a diagonal covariance matrix:
+
+$$
+\Sigma = \left(
+\begin{matrix}
+\sigma_1^2 & 0 & 0 & \ldots \\
+0 & \sigma_2^2 & 0 & \ldots \\
+0 & 0 & \sigma_3^2 & \ldots\\
+\vdots & \vdots & \vdots & \ddots
+\end{matrix}
+\right)
+$$
+
+The mean values are initialized to zero and the $$\sigma_i^2$$ to one.
 
 {% highlight python %}
 {% raw %}
@@ -82,7 +101,7 @@ def get_prior(kernel_size, bias_size, dtype=None):
 {% endraw %}
 {% endhighlight %}
 
-Here comes the tricky part. We will use a multivariate Gaussian distribution for the posterior distribution. There are three ways for a multivariate normal distribution to be parameterized. First, in terms of a positive definite covariance matrix $$\mathbf{\Sigma}$$, second a positive definite precision matrix $$\mathbf{\Sigma}^{-1}$$, and last a lower-triangular matrix $$\mathbf{L}\mathbf{L}^⊤$$ with positive-valued diagonal entries, such that $$\mathbf{\Sigma} = \mathbf{L}\mathbf{L}^⊤$$. This triangular matrix can be obtained via, e.g., Cholesky decomposition of the covariance matrix. In our case, we are going for the last method by using `MultivariateNormalTriL()`. So, instead of parameterizing the neural network with weights $$\mathbf{w}$$, we will instead parameterize it with $$\mathbf{\mu}$$ and $$\sigma$$.
+The case of the posterior distribution is a bit more complex. We again use a multivariate Gaussian distribution, and there are three ways to parameterize it. First, in terms of a positive definite covariance matrix $$\mathbf{\Sigma}$$, second via a positive definite precision matrix $$\mathbf{\Sigma}^{-1}$$, and last with a lower-triangular matrix $$\mathbf{L}\mathbf{L}^⊤$$ with positive-valued diagonal entries, such that $$\mathbf{\Sigma} = \mathbf{L}\mathbf{L}^⊤$$. This triangular matrix can be obtained via, e.g., [Cholesky decomposition](https://en.wikipedia.org/wiki/Cholesky_decomposition) of the covariance matrix. In our case, we are going for the last method with `MultivariateNormalTriL()`. "TriL" stands for "triangular lower". So, instead of parameterizing the neural network with point weights $$\mathbf{w}$$, we will instead parameterize it with $$\mathbf{\mu}$$'s and $$\sigma$$'s.
 
 {% highlight python %}
 {% raw %}
@@ -96,13 +115,17 @@ def get_posterior(kernel_size, bias_size, dtype=None):
 {% endraw %}
 {% endhighlight %}
 
-So, just to let the above code sink. We consider the posterior distribution, which corresponds to the probability of predicting $$y$$ given an input $$\mathbf{x}$$ and the training data $$\mathcal{D}$$:
+To let the above code sink, let us elaborate on the essence of posterior distribution, by marginalizing the model's parameters. So, the probability of predicting $$y$$ given an input $$\mathbf{x}$$ and the training data $$\mathcal{D}$$ is:
 
 $$
 p(y\mid \mathbf{x},\mathcal{D})= \int p(y\mid \mathbf{x},\mathbf{Θ}) \, p(\mathbf{Θ}\mid\mathcal{D}) \mathop{\mathrm{d}\theta}
 $$
 
-This is equivalent to having an ensemble of models and taking their average weighted by the posterior probabilities of their parameters $$\mathbf{Θ}$$.There are two problems with this approach, however. First, it is computationally intractable to calculate an exact solution. Second, this averaging implies that our equation is not differentiable, which in turn means that we can't use backpropagation to update the model's parameters. The solution to both of these problems a method called variational inference.
+This is equivalent to having an ensemble of models and taking their average weighted by the posterior probabilities of their parameters $$\mathbf{Θ}$$. Neat?
+
+There are two problems with this approach, however. First, it is computationally intractable to calculate an exact solution for the posterior distribution. Second, the averaging implies that our equation is not differentiable, which means we can't use backpropagation to update the model's parameters! The solution to these obstacles is **variational inference**, a method of formulating inference as an optimization problem! We won't dive deep into the theoretical background, but the inquiring reader may google for "The Kullback-Leibler divergence".
+
+By the way, let us create some prior and posterior distributions, print th number of their trainable variables and sample from them:
 
 {% highlight python %}
 {% raw %}
@@ -142,7 +165,9 @@ print('Sampling from the posterior distribution:\n', posterior_model.call(tf.con
 {% endraw %}
 {% endhighlight %}
 
-### Define the model, loss function and optimizer
+### Define the model, loss function, and optimizer
+To define probabilistic layers in a neural network, we use the `DenseVariational()` function, specifying the input and output shape, along with the prior and posterior distributions that we have previously defined. We use a sigmoid activation function to enable the network model non-linear data, along with an `IndependentNormal()` output layer, with an event shape equal to 1 (since our $$y$$ is just a scalar). Regarding the `kl_weight` parameter, you may refer to the original paper "Weight Uncertainty in Neural Networks" for further information. For now, you may just take for granted that it is a scaling factor.
+
 {% highlight python %}
 {% raw %}
 # Define the model, negative-log likelihood as the loss function
