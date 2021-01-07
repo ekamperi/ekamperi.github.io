@@ -64,6 +64,10 @@ $$
 p(\mathbf{Θ|\mathcal{D}}) = \frac{p(\mathcal{D}|\mathbf{Θ})p(\mathbf{Θ})}{p(\mathcal{D})}
 $$
 
+<p align="center">
+ <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/prior_posterior_evidence.png" alt="Prior, posterior and evidence distributions in Bayes rule">
+</p>
+
 I haven't researched the matter a lot, but in the absence of any evidence, choosing a normal distribution as a prior is a fair way to initialize a probabilistic neural network. After all, the central limit theorem asserts that samples obtained from data will approximate a normal distribution no matter the actual underlying distribution.
 
 {% highlight python %}
