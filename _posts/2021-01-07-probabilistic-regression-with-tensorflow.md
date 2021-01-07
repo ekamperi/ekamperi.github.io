@@ -54,7 +54,7 @@ plt.show();
  <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/training_data.png" alt="Non-linear probabilistic regression data">
 </p>
 
-At the core of probabilistic predictive model is the [Bayes' rule](https://en.wikipedia.org/wiki/Bayes%27_theorem). To estimate a full posterior distribution of the parameters $\mathbf{Θ}$, the Bayes rule would, in our case, assume the following form:
+At the core of probabilistic predictive model is the [Bayes' rule](https://en.wikipedia.org/wiki/Bayes%27_theorem). To estimate a full posterior distribution of the parameters $$\mathbf{Θ}$$, the Bayes rule would, in our case, assume the following form:
 
 $$
 p(\mathbf{Θ|\mathcal{D}}) = \frac{p(\mathcal{D}|\mathbf{Θ})p(\mathbf{Θ})}{p(\mathcal{D})}
