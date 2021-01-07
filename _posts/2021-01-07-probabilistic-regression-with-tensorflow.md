@@ -123,7 +123,7 @@ $$
 
 This is equivalent to having an ensemble of models with different parameters $$\mathbf{Θ}$$, and taking their average weighted by the posterior probabilities of their parameters, $$\mathbf{Θ\mid \mathcal{D}}$$. Neat?
 
-There are two problems with this approach, however. First, it is computationally intractable to calculate an exact solution for the posterior distribution. Second, the averaging implies that our equation is not differentiable, which means we can't use backpropagation to update the model's parameters! The solution to these obstacles is **variational inference**, a method of formulating inference as an optimization problem! We won't dive deep into the theoretical background, but the inquiring reader may google for "The Kullback-Leibler divergence".
+There are two problems with this approach, however. First, it is computationally intractable to calculate an exact solution for the posterior distribution. Second, the averaging implies that our equation is not differentiable, which means we can't use backpropagation to update the model's parameters! The solution to these obstacles is **variational inference**, a method of formulating inference as an optimization problem! We won't dive deep into the theoretical background, but the inquiring reader may google for ("The Kullback-Leibler divergence")[https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence].
 
 By the way, let us create some prior and posterior distributions, print the number of their trainable variables and sample from them:
 
