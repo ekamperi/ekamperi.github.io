@@ -23,7 +23,7 @@ Sometimes uncertainty is grouped into two categories, aleatoric (also known as s
 
 ## Tensorflow example
 ### Summary objective
-We will generate some non-linear training data in the following code, and then we will develop a probabilistic regression neural network. To do so, we will define appropriate prior and posterior trainable probability distributions. This blog post is inspired by a weekly assignment of the course "Probabilistic Deep Learning with TensorFlow 2" from Imperial College London.
+In the following example, we will generate some non-linear training data, and then we will develop a probabilistic regression neural network. To do so, we will define appropriate prior and posterior trainable probability distributions. This blog post is inspired by a weekly assignment of the course "Probabilistic Deep Learning with TensorFlow 2" from Imperial College London.
 
 {% highlight python %}
 {% raw %}
@@ -38,7 +38,7 @@ import matplotlib.pyplot as plt
 {% endhighlight %}
 
 ### Data generation
-We generate some training data $$\mathcal{D}=(x_i, y_i)$$ using the equation $$y_i = x_i^5 + 0.4 \, x_i \,\epsilon_i, \hspace{0.25cm} \epsilon_i \sim \mathcal{N}(0,1)$$. Our objective is to construct a probabilistc regression model that fits these data. 
+We generate some training data $$\mathcal{D}=(x_i, y_i)$$ using the equation $$y_i = x_i^5 + 0.4 \, x_i \,\epsilon_i$ where $$\epsilon_i \sim \mathcal{N}(0,1)$$ means that $$\epsilon_i$$ is sampled from a normal distribution with zero mean and standard deviation equal to 1.
 
 {% highlight python %}
 {% raw %}
