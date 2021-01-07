@@ -217,31 +217,7 @@ plt.show()
  <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/regression1.png" alt="Non-linear probabilistic regression data">
 </p>
 
-{% highlight python %}
-{% raw %}
-plt.scatter(x_train, y_train, marker='.', alpha=0.2, label='data')
-y_hat_t = 0
-y_hat_minus_2sd = 0
-y_hat_plus_2sd = 0
-n_samples = 100
-for _ in range(n_samples):
-    y_model = model(x_train)
-    y_hat_t = y_hat_t + y_model.mean()
-    y_hat_minus_2sd = y_hat_minus_2sd + y_model.mean() - 2 * y_model.stddev()
-    y_hat_plus_2sd = y_hat_plus_2sd + y_model.mean() + 2 * y_model.stddev()
-
-y_hat_t /= n_samples
-y_hat_minus_2sd /= n_samples
-y_hat_plus_2sd /= n_samples
-plt.plot(x_train, y_hat_t, color='red', label='model $\mu$')
-plt.plot(x_train, y_hat_minus_2sd, color='blue', label='$\mu - 2SD$')
-plt.plot(x_train, y_hat_plus_2sd, color='green', label='$\mu + 2SD$')
-plt.xlabel('x')
-plt.ylabel('y')
-plt.legend()
-plt.show()
-{% endraw %}
-{% endhighlight %}
+The following plot is derived by taking the average of 100 models:
 
 <p align="center">
  <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/regression2.png" alt="Non-linear probabilistic regression data">
