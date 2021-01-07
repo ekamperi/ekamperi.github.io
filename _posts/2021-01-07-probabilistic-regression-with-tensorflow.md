@@ -13,14 +13,16 @@ description: Implementation of probabilistic regression with Tensorflow
 * A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
 {:toc}
 
-# Introduction
-You might have heard the saying, *"If all you have is a hammer, everything looks like a nail"*. This phrase applies to many cases, including deterministic classification neural networks. Consider, for instance, a typical neural network that classifies images from the [CIFAR-10 dataset](https://en.wikipedia.org/wiki/CIFAR-10). This dataset consists of 60.000 color images, all of which belong to 10 classes: airplanes, cars, birds, cats, deer, dogs, frogs, horses, ships, and trucks. Naturally, no matter what image we feed this network, say a pencil, it will always assign it to one of the 10 known classes. It would be awesome, however, if the model conveyed its uncertainty for the predictions it made. For instance, given a "pencil" image, it would probably classify it as a bird or ship or whatever. At the same time, it would assign a large uncertainty to its prediction. To reach this inference level, we need to rethink the traditional deterministic neural network paradigm and take a leap of faith towards probabilistic ones. Instead of having a model parameterized by its point weights, each weight will now be sampled from a posterior distribution trained during the training process. The same goes for the model's output.
+## Introduction
+You might have heard the saying, *"If all you have is a hammer, everything looks like a nail"*. This phrase applies to many cases, including deterministic classification neural networks. Consider, for instance, a typical neural network that classifies images from the [CIFAR-10 dataset](https://en.wikipedia.org/wiki/CIFAR-10). This dataset consists of 60.000 color images, all of which belong to 10 classes: airplanes, cars, birds, cats, deer, dogs, frogs, horses, ships, and trucks. Naturally, no matter what image we feed this network, say a pencil, it will always assign it to one of the 10 known classes. It would be very useful, however, if the model conveyed its uncertainty for the predictions it made. For instance, given a "pencil" image, it would probably classify it as a bird or ship or whatever. At the same time, it would assign a large uncertainty to its prediction. To reach this inference level, we need to rethink the traditional deterministic neural network paradigm and take a leap of faith towards probabilistic ones. So, instead of having a model parameterized by its point weights, each weight will now be sampled from a posterior distribution trained during the training process. The same goes for the model's output.
 
-# Aleatoric and epistemic uncertainty
+## Aleatoric and epistemic uncertainty
 Sometimes uncertainty is grouped into two categories, aleatoric (also known as statistical) and epistemic (also known as systematic). **Aleatoric** is derived from the Latin word "alea" which means die. You might have heard the phrase ["alea iact est"](https://en.wikipedia.org/wiki/Alea_iacta_est), meaning "the die has been cast". Hence, aleatoric uncertainty relates to the data itself and captures what differs each time we run the same experiment or perform the same task. For instance, if a person keeps drawing the number "4", it will be slightly different every time. Another example would be the presence of measurement error or noise in the data generating process. Aleatoric uncertainty is irreducible in the sense that no matter how much data we collect, there will always be there.
 
 **Epistemic uncertainty**, on the other hand, refers to a model's uncertainty. I.e., there is uncertainty regarding which model's parameters accurately model the experimental data, and it is decreased as we collect more data. We model epistemic uncertainty by enabling the weights of a neural network to be probabilistic rather than deterministic.
 
+## Tensorflow example
+### Data generation
 We will generate some non-linear training data in the following code, and then we will develop a probabilistic regression neural network. To do so, we will define appropriate prior and posterior trainable probability distributions. This blog post is inspired by a weekly assignment of the course "Probabilistic Deep Learning with TensorFlow 2" from Imperial College London.
 
 {% highlight python %}
@@ -54,6 +56,7 @@ plt.show();
  <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/training_data.png" alt="Non-linear probabilistic regression data">
 </p>
 
+### Setup prior and posterior distributions
 At the core of probabilistic predictive model is the [Bayes' rule](https://en.wikipedia.org/wiki/Bayes%27_theorem). To estimate a full posterior distribution of the parameters $$\mathbf{Θ}$$, the Bayes rule would, in our case, assume the following form:
 
 $$
@@ -134,6 +137,7 @@ print('Sampling from the posterior distribution:\n', posterior_model.call(tf.con
 {% endraw %}
 {% endhighlight %}
 
+### Define the model, loss function and optimizer
 {% highlight python %}
 {% raw %}
 # Define the model, negative-log likelihood as the loss function
@@ -176,6 +180,7 @@ model.summary()
 
 Let's calculate by hand the model's parameters. The **first dense variational layer** has 1 input, 8 outputs and 8 biases. Therefore, there are $$1\cdot 8 + 8 = 16$$ weights. Since each weight is going to be modelled by a normal distribution, we need 16 $$\mu$$'s, and $$(16^2 - 16)/2 + 16 = 136$$ $$\sigma$$'s. The latter is the number of elements of a lower triangular matrix $$8\times 8$$. Therefore, in total we need $$16 + 132 = 152$$ parameters. What about the **second variational layer**? This one has 8 inputs (since the previous had 8 outputs), 2 outputs (the $$\mu, \sigma$$ of the independent normal distribution), and 2 biases. Therefore, it has $$8\times 2 + 2 = 18$$ weights. For 18 weights, we need 18 $$\mu$$'s and $$(18^2 - 18)/2 + 18 = 171$$ $$\sigma$$'s. Therefore, in total we need $$18 + 171 = 189$$ parameters. The `tfpl.MultivariateNormalTriL.params_size(n)` static function calculates the number of parameters need to parameterize a multivariate normal distribution, so we don't have to bother with it.
 
+### Train the model and make predictions
 {% highlight python %}
 {% raw %}
 # Train the model for 1000 epochs
