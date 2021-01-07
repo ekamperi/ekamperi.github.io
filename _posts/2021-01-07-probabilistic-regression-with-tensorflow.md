@@ -125,7 +125,7 @@ This is equivalent to having an ensemble of models and taking their average weig
 
 There are two problems with this approach, however. First, it is computationally intractable to calculate an exact solution for the posterior distribution. Second, the averaging implies that our equation is not differentiable, which means we can't use backpropagation to update the model's parameters! The solution to these obstacles is **variational inference**, a method of formulating inference as an optimization problem! We won't dive deep into the theoretical background, but the inquiring reader may google for "The Kullback-Leibler divergence".
 
-By the way, let us create some prior and posterior distributions, print th number of their trainable variables and sample from them:
+By the way, let us create some prior and posterior distributions, print the number of their trainable variables and sample from them:
 
 {% highlight python %}
 {% raw %}
@@ -166,7 +166,7 @@ print('Sampling from the posterior distribution:\n', posterior_model.call(tf.con
 {% endhighlight %}
 
 ### Define the model, loss function, and optimizer
-To define probabilistic layers in a neural network, we use the `DenseVariational()` function, specifying the input and output shape, along with the prior and posterior distributions that we have previously defined. We use a sigmoid activation function to enable the network model non-linear data, along with an `IndependentNormal()` output layer, with an event shape equal to 1 (since our $$y$$ is just a scalar). Regarding the `kl_weight` parameter, you may refer to the original paper "Weight Uncertainty in Neural Networks" for further information. For now, you may just take for granted that it is a scaling factor.
+To define probabilistic layers in a neural network, we use the `DenseVariational()` function, specifying the input and output shape, along with the prior and posterior distributions that we have previously defined. We use a sigmoid activation function to enable the network model non-linear data, along with an `IndependentNormal()` output layer, with an event shape equal to 1 (since our $$y$$ is just a scalar). Regarding the `kl_weight` parameter, you may refer to the original paper "Weight Uncertainty in Neural Networks" for further information. For now, just take for granted that it is a scaling factor.
 
 {% highlight python %}
 {% raw %}
@@ -211,6 +211,8 @@ model.summary()
 Let's calculate by hand the model's parameters. The **first dense variational layer** has 1 input, 8 outputs and 8 biases. Therefore, there are $$1\cdot 8 + 8 = 16$$ weights. Since each weight is going to be modelled by a normal distribution, we need 16 $$\mu$$'s, and $$(16^2 - 16)/2 + 16 = 136$$ $$\sigma$$'s. The latter is the number of elements of a lower triangular matrix $$8\times 8$$. Therefore, in total we need $$16 + 132 = 152$$ parameters. What about the **second variational layer**? This one has 8 inputs (since the previous had 8 outputs), 2 outputs (the $$\mu, \sigma$$ of the independent normal distribution), and 2 biases. Therefore, it has $$8\times 2 + 2 = 18$$ weights. For 18 weights, we need 18 $$\mu$$'s and $$(18^2 - 18)/2 + 18 = 171$$ $$\sigma$$'s. Therefore, in total we need $$18 + 171 = 189$$ parameters. The `tfpl.MultivariateNormalTriL.params_size(n)` static function calculates the number of parameters need to parameterize a multivariate normal distribution, so we don't have to bother with it.
 
 ### Train the model and make predictions
+We train the model for 1000 epochs and plot the loss function *vs.* to confirm that the algorithm has converged.
+
 {% highlight python %}
 {% raw %}
 # Train the model for 1000 epochs
@@ -224,6 +226,8 @@ plt.ylabel('Loss');
 <p align="center">
  <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/loss_vs_epoch.png" alt="Loss vs. epochs">
 </p>
+
+Indeed RMSprop converged, and now we proceed by making some predictions:
 
 {% highlight python %}
 {% raw %}
@@ -247,7 +251,7 @@ plt.show()
  <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/regression1.png" alt="Non-linear probabilistic regression data">
 </p>
 
-The following plot is derived by taking the average of 100 models:
+The following plot was generaged by taking the average of 100 models:
 
 <p align="center">
  <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/regression2.png" alt="Non-linear probabilistic regression data">
