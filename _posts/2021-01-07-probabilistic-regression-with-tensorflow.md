@@ -36,8 +36,7 @@ import matplotlib.pyplot as plt
 {% endraw %}
 {% endhighlight %}
 
-We generate some training data $\mathcal{D}=(x_i, y_i)$ using the following equation:
-$y_i = x_i^5 + 0.4 \, x_i \,\epsilon_i, \hspace{0.25cm} \epsilon_i \sim \mathcal{N}(0,1)$. Our objective will be to construct a probabilistc regression model. This blog post is inspired by a weekly assignment of the course “Probabilistic Deep Learning with TensorFlow 2” from Imperial College London.
+We generate some training data $\mathcal{D}=(x_i, y_i)$ using the equation $$y_i = x_i^5 + 0.4 \, x_i \,\epsilon_i, \hspace{0.25cm} \epsilon_i \sim \mathcal{N}(0,1)$$. Our objective will be to construct a probabilistc regression model. This blog post is inspired by a weekly assignment of the course “Probabilistic Deep Learning with TensorFlow 2” from Imperial College London.
 
 {% highlight python %}
 {% raw %}
