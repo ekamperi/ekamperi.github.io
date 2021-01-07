@@ -44,8 +44,6 @@ n_points = 500
 x_train = np.linspace(-1, 1, n_points)[:, np.newaxis]
 y_train = np.power(x_train, 5) + 0.4 * x_train * np.random.randn(n_points)[:, np.newaxis]
 plt.scatter(x_train, y_train, alpha=0.2);
-x_train.shape, y_train.shape
-plt.scatter(x_train, y_train, alpha=0.2);
 plt.xlabel('x')
 plt.ylabel('y')
 plt.show();
