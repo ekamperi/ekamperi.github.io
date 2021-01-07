@@ -115,13 +115,13 @@ def get_posterior(kernel_size, bias_size, dtype=None):
 {% endraw %}
 {% endhighlight %}
 
-To let the above code sink, let us elaborate on the essence of posterior distribution, by marginalizing the model's parameters. So, the probability of predicting $$y$$ given an input $$\mathbf{x}$$ and the training data $$\mathcal{D}$$ is:
+To let the above code sink, let us elaborate on the essence of posterior distribution, by marginalizing the model's parameters. The probability of predicting $$y$$ given an input $$\mathbf{x}$$ and the training data $$\mathcal{D}$$ is:
 
 $$
 p(y\mid \mathbf{x},\mathcal{D})= \int p(y\mid \mathbf{x},\mathbf{Θ}) \, p(\mathbf{Θ}\mid\mathcal{D}) \mathop{\mathrm{d}\theta}
 $$
 
-This is equivalent to having an ensemble of models and taking their average weighted by the posterior probabilities of their parameters $$\mathbf{Θ}$$. Neat?
+This is equivalent to having an ensemble of models with different parameters $$\mathbf{Θ}$$, and taking their average weighted by the posterior probabilities of their parameters, $$\mathbf{Θ\mid \mathcal{D}}$$. Neat?
 
 There are two problems with this approach, however. First, it is computationally intractable to calculate an exact solution for the posterior distribution. Second, the averaging implies that our equation is not differentiable, which means we can't use backpropagation to update the model's parameters! The solution to these obstacles is **variational inference**, a method of formulating inference as an optimization problem! We won't dive deep into the theoretical background, but the inquiring reader may google for "The Kullback-Leibler divergence".
 
