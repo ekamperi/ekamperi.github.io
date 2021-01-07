@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Probabilistic regression with Tensorflow"
+title: "Probabilistic regression with Tensorflow"
 date:   2020-12-01
 categories: [machine learning]
 tags: [algorithms, 'machine learning', Python, Tensorflow]
@@ -13,15 +13,15 @@ description: Implementation of probabilistic regression with Tensorflow
 * A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
 {:toc}
 
-
 # Introduction
-You might have heard the saying, *"If all you have is a hammer, everything looks like a nail"*. This phrase also applies to deterministic classification neural networks. Consider, for instance, a typical neural network that classifies images from the CIFAR-10 dataset. This dataset consists of 60.000 color images, all of which belong to 10 classes: airplanes, cars, birds, cats, deer, dogs, frogs, horses, ships, and trucks. No matter what image we feed this network, say a pencil, it will always assign it to one of the 10 known classes. In this context, it would be awesome if the model conveyed to us its uncertainty of the predictions it made. To achieve this, we need to abandon the regular deterministic neural networks for the probabilistic ones. So, instead of having a model parameterized by its weights, now each weight will be sampled from a posterior distribution that will be trained during the training process. The same goes for the model's output.
-
+You might have heard the saying, * "If all you have is a hammer, everything looks like a nail "*. This phrase applies to many cases, including deterministic classification neural networks. Consider, for instance, a typical neural network that classifies images from the CIFAR-10 dataset. This dataset consists of 60.000 color images, all of which belong to 10 classes: airplanes, cars, birds, cats, deer, dogs, frogs, horses, ships, and trucks. Naturally, no matter what image we feed this network, say a pencil, it will always assign it to one of the 10 known classes. It would be awesome, however, if the model conveyed its uncertainty for the predictions it made. For instance, given a "pencil" image, it would probably classify it as a bird or ship or whatever. At the same time, it would assign a large uncertainty to its prediction. To reach this inference level, we need to rethink the traditional deterministic neural network paradigm and take a leap of faith towards probabilistic ones. Instead of having a model parameterized by its point weights, each weight will now be sampled from a posterior distribution trained during the training process. The same goes for the model's output.
 
 # Aleatoric and epistemic uncertainty
-Sometimes uncertainty is grouped into two categories, aleatoric (also known as statistical) and epistemic (also known as systematic). **Aleatoric** is derived from the Latin word "alea" which means die. You might have heard the phrase "alea iact est", meaning "the die has been cast". Therefore, aleatoric uncertainty refers to the data itself and captures what differs each time we run the same experiment or perform the same task. For instance, if a person keeps drawing the number "4", it will be slightly different every time. Another example would be the presence of measurement error or noise in the data generating process. Aleatoric uncertainty is irreducible in the sense that no matter how much data we collect, there will always be there. We model aleatoric uncertainty by allowing the output of a neural network to be probabilistic.
+Sometimes uncertainty is grouped into two categories, aleatoric (also known as statistical) and epistemic (also known as systematic). **Aleatoric** is derived from the Latin word "alea" which means die. You might have heard the phrase ["alea iact est"](https://en.wikipedia.org/wiki/Alea_iacta_est), meaning "the die has been cast". Hence, aleatoric uncertainty relates to the data itself and captures what differs each time we run the same experiment or perform the same task. For instance, if a person keeps drawing the number "4", it will be slightly different every time. Another example would be the presence of measurement error or noise in the data generating process. Aleatoric uncertainty is irreducible in the sense that no matter how much data we collect, there will always be there.
 
-**Epistemic uncertainty**, on the other hand, refers to a model's uncertainty. I.e., there is uncertainty regarding which model's parameters accurately model the experimental data, and is decreased as we collect more data. We model epistemic uncertainty by allowing the weights of a neural network to be probabilistic.
+**Epistemic uncertainty**, on the other hand, refers to a model's uncertainty. I.e., there is uncertainty regarding which model's parameters accurately model the experimental data, and it is decreased as we collect more data. We model epistemic uncertainty by enabling the weights of a neural network to be probabilistic rather than deterministic.
+
+We will generate some non-linear training data in the following code, and then we will develop a probabilistic regression neural network. To do so, we will define appropriate prior and posterior trainable probability distributions. This blog post is inspired by a weekly assignment of the course "Probabilistic Deep Learning with TensorFlow 2" from Imperial College London.
 
 {% highlight python %}
 {% raw %}
@@ -35,7 +35,7 @@ import matplotlib.pyplot as plt
 {% endraw %}
 {% endhighlight %}
 
-We generate some training data $$\mathcal{D}=(x_i, y_i)$$ using the equation $$y_i = x_i^5 + 0.4 \, x_i \,\epsilon_i, \hspace{0.25cm} \epsilon_i \sim \mathcal{N}(0,1)$$. Our objective will be to construct a probabilistc regression model. This blog post is inspired by a weekly assignment of the course “Probabilistic Deep Learning with TensorFlow 2” from Imperial College London.
+We generate some training data $$\mathcal{D}=(x_i, y_i)$$ using the equation $$y_i = x_i^5 + 0.4 \, x_i \,\epsilon_i, \hspace{0.25cm} \epsilon_i \sim \mathcal{N}(0,1)$$. Our objective is to construct a probabilistc regression model that fits these data. 
 
 {% highlight python %}
 {% raw %}
@@ -56,13 +56,13 @@ plt.show();
  <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/training_data.png" alt="Non-linear probabilistic regression data">
 </p>
 
-At the core of probabilistic predictive model is the Bayes rules. To estimate a full posterior distribution of the parameters $\mathbf{Θ}$, the Bayes rule would, in our case, take the following form:
+At the core of probabilistic predictive model is the [Bayes' rule](https://en.wikipedia.org/wiki/Bayes%27_theorem). To estimate a full posterior distribution of the parameters $\mathbf{Θ}$, the Bayes rule would, in our case, assume the following form:
 
 $$
 p(\mathbf{Θ|\mathcal{D}}) = \frac{p(\mathcal{D}|\mathbf{Θ})p(\mathbf{Θ})}{p(\mathcal{D})}
 $$
 
-I haven't researched the matter a lot, but in the absence of any evidence, choosing a normal distribution as a prior is a fair way to initialize a probabilistic neural network. After all, the central limit theorem asserts that samples obtained from data will approximate a normal distribution no matter the true underlying distribution.
+I haven't researched the matter a lot, but in the absence of any evidence, choosing a normal distribution as a prior is a fair way to initialize a probabilistic neural network. After all, the central limit theorem asserts that samples obtained from data will approximate a normal distribution no matter the actual underlying distribution.
 
 {% highlight python %}
 {% raw %}
@@ -76,7 +76,7 @@ def get_prior(kernel_size, bias_size, dtype=None):
 {% endraw %}
 {% endhighlight %}
 
-Here comes the tricky part. We will use a multivariate Gaussian distribution for the posterior distribution. There are three ways for a multivariate normal distribution to be parameterized. First, in terms of a positive definite covariance matrix $$\mathbf{\Sigma}$$, second a positive definite precision matrix $$\mathbf{\Sigma}^{-1}$$, and last a lower-triangular matrix $$\mathbf{L}\mathbf{L}^⊤$$ with positive-valued diagonal entries, such that $$\mathbf{\Sigma} = \mathbf{L}\mathbf{L}^⊤$$. This triangular matrix can be obtained via, e.g., Cholesky decomposition of the covariance matrix. In our case we are going for the last method by using `MultivariateNormalTriL()`. So, instead of parameterizing the neural network with weights $\mathbf{w}$, we will instead parameterize it with $$\mathbf{\mu}$$ and $$\sigma$$.
+Here comes the tricky part. We will use a multivariate Gaussian distribution for the posterior distribution. There are three ways for a multivariate normal distribution to be parameterized. First, in terms of a positive definite covariance matrix $$\mathbf{\Sigma}$$, second a positive definite precision matrix $$\mathbf{\Sigma}^{-1}$$, and last a lower-triangular matrix $$\mathbf{L}\mathbf{L}^⊤$$ with positive-valued diagonal entries, such that $$\mathbf{\Sigma} = \mathbf{L}\mathbf{L}^⊤$$. This triangular matrix can be obtained via, e.g., Cholesky decomposition of the covariance matrix. In our case, we are going for the last method by using `MultivariateNormalTriL()`. So, instead of parameterizing the neural network with weights $$\mathbf{w}$$, we will instead parameterize it with $$\mathbf{\mu}$$ and $$\sigma$$.
 
 {% highlight python %}
 {% raw %}
