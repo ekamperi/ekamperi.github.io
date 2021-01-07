@@ -17,7 +17,7 @@ description: Implementation of probabilistic regression with Tensorflow
 You might have heard the saying, *"If all you have is a hammer, everything looks like a nail"*. This phrase applies to many cases, including deterministic classification neural networks. Consider, for instance, a typical neural network that classifies images from the [CIFAR-10 dataset](https://en.wikipedia.org/wiki/CIFAR-10). This dataset consists of 60.000 color images, all of which belong to 10 classes: airplanes, cars, birds, cats, deer, dogs, frogs, horses, ships, and trucks. Naturally, no matter what image we feed this network, say a pencil, it will always assign it to one of the 10 known classes. However, it would be handy if the model conveyed its uncertainty for the predictions it made. For instance, given a "pencil" image, it would probably label it as a bird or ship or whatever. At the same time, it would assign a large uncertainty to this prediction. To reach such an inference level, we need to rethink the traditional deterministic neural network paradigm and take a leap of faith towards probabilistic modeling. **So, instead of having a model parameterized by its point weights, each weight will now be sampled from a posterior distribution whose parameters will be trained during the training process. The same goes for the model's output.**
 
 <p align="center">
- <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/probabilistic_vs_deterministic.png" alt="Probabilistic vs. deterministic neural networks">
+ <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/probabilistic_vs_deterministic_nn.png" alt="Probabilistic vs. deterministic neural networks">
 </p>
 
 ## Aleatoric and epistemic uncertainty
