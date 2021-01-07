@@ -77,7 +77,7 @@ def get_prior(kernel_size, bias_size, dtype=None):
 {% endraw %}
 {% endhighlight %}
 
-Here comes the tricky part. We will use a multivariate Gaussian distribution for the posterior distribution. There are three ways for a multivariate normal distribution to be parameterized. First, in terms of a positive definite covariance matrix $\mathbf{\Sigma}$, second a positive definite precision matrix $\mathbf{\Sigma}^{-1}$, and last a lower-triangular matrix $\mathbf{L}\mathbf{L}^⊤$ with positive-valued diagonal entries, such that $\mathbf{\Sigma} = \mathbf{L}\mathbf{L}^⊤$. This triangular matrix can be obtained via, e.g., Cholesky decomposition of the covariance matrix. In our case we are going for the last method by using `MultivariateNormalTriL()`. So, instead of parameterizing the neural network with weights $\mathbf{w}$, we will instead parameterize it with $\mathbf{\mu}$ and $\sigma$.
+Here comes the tricky part. We will use a multivariate Gaussian distribution for the posterior distribution. There are three ways for a multivariate normal distribution to be parameterized. First, in terms of a positive definite covariance matrix $$\mathbf{\Sigma}$$, second a positive definite precision matrix $$\mathbf{\Sigma}^{-1}$$, and last a lower-triangular matrix $$\mathbf{L}\mathbf{L}^⊤$$ with positive-valued diagonal entries, such that $$\mathbf{\Sigma} = \mathbf{L}\mathbf{L}^⊤$$. This triangular matrix can be obtained via, e.g., Cholesky decomposition of the covariance matrix. In our case we are going for the last method by using `MultivariateNormalTriL()`. So, instead of parameterizing the neural network with weights $\mathbf{w}$, we will instead parameterize it with $$\mathbf{\mu}$$ and $$\sigma$$.
 
 {% highlight python %}
 {% raw %}
@@ -91,10 +91,13 @@ def get_posterior(kernel_size, bias_size, dtype=None):
 {% endraw %}
 {% endhighlight %}
 
-So, just to let the above code sink. We consider the posterior distribution, which corresponds to the probability of predicting $y$ given an input $\mathbf{x}$ and the training data $\mathcal{D}$: 
-$$p(y\mid \mathbf{x},\mathcal{D})= \int p(y\mid \mathbf{x},\mathbf{Θ}) \, p(\mathbf{Θ}\mid\mathcal{D}) \mathop{\mathrm{d}\theta}$$
+So, just to let the above code sink. We consider the posterior distribution, which corresponds to the probability of predicting $$y$$ given an input $$\mathbf{x}$$ and the training data $$\mathcal{D}$$:
 
-This is equivalent to having an ensemble of models and taking their average weighted by the posterior probabilities of their parameters $\mathbf{Θ}$.There are two problems with this approach, however. First, it is computationally intractable to calculate an exact solution. Second, this averaging implies that our equation is not differentiable, which in turn means that we can't use backpropagation to update the model's parameters. The solution to both of these problems a method called variational inference.
+$$
+p(y\mid \mathbf{x},\mathcal{D})= \int p(y\mid \mathbf{x},\mathbf{Θ}) \, p(\mathbf{Θ}\mid\mathcal{D}) \mathop{\mathrm{d}\theta}
+$$
+
+This is equivalent to having an ensemble of models and taking their average weighted by the posterior probabilities of their parameters $$\mathbf{Θ}$$.There are two problems with this approach, however. First, it is computationally intractable to calculate an exact solution. Second, this averaging implies that our equation is not differentiable, which in turn means that we can't use backpropagation to update the model's parameters. The solution to both of these problems a method called variational inference.
 
 {% highlight python %}
 {% raw %}
@@ -181,7 +184,7 @@ model.summary()
     _________________________________________________________________
 
 
-Let's calculate by hand the model's parameters. The **first dense variational layer** has 1 input, 8 outputs and 8 biases. Therefore, there are $$1\cdot 8 + 8 = 16$$ weights. Since each weight is going to be modelled by a normal distribution, we need 16 $$\mu$$'s, and $$(16^2 - 16)/2 + 16 = 136$$ $$\sigma$$'s. The latter is the number of elements of a lower triangular matrix $$8\times 8$$. Therefore, in total we need $$16 + 132 = 152$$ parameters. What about the **second variational layer**? This one has 8 inputs (since the previous had 8 outputs), 2 outputs (the $$\mu, \sigma$$ of the independent normal distribution), and 2 biases. Therefore, it has $$8\times 2 + 2 = 18$$ weights. For 18 weights, we need 18 $$\mu$$'s and $$(18^2 - 18)/2 + 18 = 171$$ $$\sigma$'s. Therefore, in total we need $$18 + 171 = 189$$ parameters. The `tfpl.MultivariateNormalTriL.params_size(n)` static function calculates the number of parameters need to parameterize a multivariate normal distribution, so we don't have to bother with it.
+Let's calculate by hand the model's parameters. The **first dense variational layer** has 1 input, 8 outputs and 8 biases. Therefore, there are $$1\cdot 8 + 8 = 16$$ weights. Since each weight is going to be modelled by a normal distribution, we need 16 $$\mu$$'s, and $$(16^2 - 16)/2 + 16 = 136$$ $$\sigma$$'s. The latter is the number of elements of a lower triangular matrix $$8\times 8$$. Therefore, in total we need $$16 + 132 = 152$$ parameters. What about the **second variational layer**? This one has 8 inputs (since the previous had 8 outputs), 2 outputs (the $$\mu, \sigma$$ of the independent normal distribution), and 2 biases. Therefore, it has $$8\times 2 + 2 = 18$$ weights. For 18 weights, we need 18 $$\mu$$'s and $$(18^2 - 18)/2 + 18 = 171$$ $$\sigma$$'s. Therefore, in total we need $$18 + 171 = 189$$ parameters. The `tfpl.MultivariateNormalTriL.params_size(n)` static function calculates the number of parameters need to parameterize a multivariate normal distribution, so we don't have to bother with it.
 
 {% highlight python %}
 {% raw %}
