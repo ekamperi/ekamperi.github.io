@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Probabilistic regression with Tensorflow"
-date:   2020-12-01
+date:   2021-01-07
 categories: [machine learning]
 tags: [algorithms, 'machine learning', Python, Tensorflow]
 description: Implementation of probabilistic regression with Tensorflow
