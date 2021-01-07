@@ -115,9 +115,6 @@ print('Sampling from the posterior distribution:\n', posterior_model.call(tf.con
 # Note that every time we run this cell block, we get different results for the samples
 
 #    Trainable variables for prior model:  []
-#    WARNING:tensorflow:From /home/stathis/.local/lib/python3.8/site-packages/tensorflow/python/ops/linalg/linear_operator_diag.py:167: calling #LinearOperator.__init__ (from tensorflow.python.ops.linalg.linear_operator) with graph_parents is deprecated and will be removed in a future version.
-#    Instructions for updating:
-#    Do not pass `graph_parents`.  They will  no longer be used.
 #    Sampling from the prior distribution:
 #     tf.Tensor(
 #    [[ 1.3140054   0.93301576 -2.3522265   0.5879774 ]
