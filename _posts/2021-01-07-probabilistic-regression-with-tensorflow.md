@@ -55,7 +55,7 @@ plt.show();
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/probabilistic_regression/training_data.png" alt="Non-linear probabilistic regression data">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/probabilistic_regression/training_data.png" alt="Non-linear probabilistic regression data">
 </p>
 
 At the core of probabilistic predictive model is the Bayes rules. To estimate a full posterior distribution of the parameters $\mathbf{Θ}$, the Bayes rule would, in our case, take the following form:
@@ -195,7 +195,7 @@ plt.ylabel('Loss');
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/probabilistic_regression/loss_vs_epochs.png" alt="Loss vs. epochs">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/probabilistic_regression/loss_vs_epochs.png" alt="Loss vs. epochs">
 </p>
 
 {% highlight python %}
@@ -217,7 +217,7 @@ plt.show()
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/probabilistic_regression/regression1.png" alt="Non-linear probabilistic regression data">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/probabilistic_regression/regression1.png" alt="Non-linear probabilistic regression data">
 </p>
 
 {% highlight python %}
@@ -247,5 +247,5 @@ plt.show()
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/probabilistic_regression/regression2.png" alt="Non-linear probabilistic regression data">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/probabilistic_regression/regression2.png" alt="Non-linear probabilistic regression data">
 </p>
