@@ -19,6 +19,9 @@ You might have heard the saying, *"If all you have is a hammer, everything looks
 <p align="center">
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/probabilistic_regression/probabilistic_vs_deterministic_nn.png" alt="Probabilistic vs. deterministic neural networks">
 </p>
+<p align="center">
+Image taken from Blundell, et al. Weight Uncertainty in Neural Networks. arXiv (2015)
+</p>
 
 ## Aleatoric and epistemic uncertainty
 Sometimes uncertainty is grouped into two categories, aleatoric (also known as statistical) and epistemic (also known as systematic). **Aleatoric** is derived from the Latin word "alea" which means die. You might be familiar with the phrase ["alea iact est"](https://en.wikipedia.org/wiki/Alea_iacta_est), meaning "the die has been cast". Hence, aleatoric uncertainty relates to the data itself and captures what differs each time we run the same experiment or perform the same task. For instance, if a person keeps drawing the number "4", it will be slightly different every time. Another example would be the presence of measurement error or noise in the data generating process. Aleatoric uncertainty is irreducible in the sense that no matter how much data we collect, there will always be there.
