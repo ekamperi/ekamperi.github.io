@@ -22,7 +22,7 @@ Sometimes uncertainty is grouped into two categories, aleatoric (also known as s
 **Epistemic uncertainty**, on the other hand, refers to a model's uncertainty. I.e., there is uncertainty regarding which model's parameters accurately model the experimental data, and it is decreased as we collect more data. We model epistemic uncertainty by enabling the weights of a neural network to be probabilistic rather than deterministic.
 
 ## Tensorflow example
-### Data generation
+### Summary objective
 We will generate some non-linear training data in the following code, and then we will develop a probabilistic regression neural network. To do so, we will define appropriate prior and posterior trainable probability distributions. This blog post is inspired by a weekly assignment of the course "Probabilistic Deep Learning with TensorFlow 2" from Imperial College London.
 
 {% highlight python %}
@@ -37,6 +37,7 @@ import matplotlib.pyplot as plt
 {% endraw %}
 {% endhighlight %}
 
+### Data generation
 We generate some training data $$\mathcal{D}=(x_i, y_i)$$ using the equation $$y_i = x_i^5 + 0.4 \, x_i \,\epsilon_i, \hspace{0.25cm} \epsilon_i \sim \mathcal{N}(0,1)$$. Our objective is to construct a probabilistc regression model that fits these data. 
 
 {% highlight python %}
