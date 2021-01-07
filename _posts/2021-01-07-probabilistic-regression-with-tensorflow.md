@@ -14,7 +14,7 @@ description: Implementation of probabilistic regression with Tensorflow
 {:toc}
 
 ## Introduction
-You might have heard the saying, *"If all you have is a hammer, everything looks like a nail"*. This phrase applies to many cases, including deterministic classification neural networks. Consider, for instance, a typical neural network that classifies images from the [CIFAR-10 dataset](https://en.wikipedia.org/wiki/CIFAR-10). This dataset consists of 60.000 color images, all of which belong to 10 classes: airplanes, cars, birds, cats, deer, dogs, frogs, horses, ships, and trucks. Naturally, no matter what image we feed this network, say a pencil, it will always assign it to one of the 10 known classes. However, it would be handy if the model conveyed its uncertainty for the predictions it made. For instance, given a "pencil" image, it would probably label it as a bird or ship or whatever. At the same time, we'd like it to assign a large uncertainty to this prediction. To reach such an inference level, we need to rethink the traditional deterministic neural network paradigm and take a leap of faith towards probabilistic modeling. **So, instead of having a model parameterized by its point weights, each weight will now be sampled from a posterior distribution whose parameters will be trained during the training process.**
+You probably have heard the saying, *"If all you have is a hammer, everything looks like a nail"*. This phrase applies to many cases, including deterministic classification neural networks. Consider, for instance, a typical neural network that classifies images from the [CIFAR-10 dataset](https://en.wikipedia.org/wiki/CIFAR-10). This dataset consists of 60.000 color images, all of which belong to 10 classes: airplanes, cars, birds, cats, deer, dogs, frogs, horses, ships, and trucks. Naturally, no matter what image we feed this network, say a pencil, it will always assign it to one of the 10 known classes. However, it would be handy if the model conveyed its uncertainty for the predictions it made. For instance, given a "pencil" image, it would probably label it as a bird or ship or whatever. At the same time, we'd like it to assign a large uncertainty to this prediction. To reach such an inference level, we need to rethink the traditional deterministic neural network paradigm and take a leap of faith towards probabilistic modeling. **So, instead of having a model parameterized by its point weights, each weight will now be sampled from a posterior distribution whose parameters will be trained during the training process.**
 
 <p align="center">
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/probabilistic_regression/probabilistic_vs_deterministic_nn.png" alt="Probabilistic vs. deterministic neural networks">
@@ -24,7 +24,7 @@ Image taken from Blundell, et al. Weight Uncertainty in Neural Networks. arXiv (
 </p>
 
 ## Aleatoric and epistemic uncertainty
-Uncertainty is sometimes grouped into two categories, aleatoric (also known as statistical) and epistemic (also known as systematic). **Aleatoric** is derived from the Latin word "alea" which means die. You might be familiar with the phrase ["alea iact est"](https://en.wikipedia.org/wiki/Alea_iacta_est), meaning "the die has been cast". Hence, aleatoric uncertainty relates to the data itself and captures what differs each time we run the same experiment or perform the same task. For instance, if a person keeps drawing the number "4", it will be slightly different every time. Another example would be the presence of measurement error or noise in the data generating process. Aleatoric uncertainty is irreducible in the sense that no matter how much data we collect, there will always be there.
+We need to consider two kinds of uncertainty, aleatoric (also known as statistical) and epistemic (also known as systematic). **Aleatoric** is derived from the Latin word "alea" which means die. You might be familiar with the phrase ["alea iact est"](https://en.wikipedia.org/wiki/Alea_iacta_est), meaning "the die has been cast". Hence, aleatoric uncertainty relates to the data itself and captures what differs each time we run the same experiment or perform the same task. For instance, if a person keeps drawing the number "4", it will be slightly different every time. Another example would be the presence of measurement error or noise in the data generating process. Aleatoric uncertainty is irreducible in the sense that no matter how much data we collect, there will always be there.
 
 **Epistemic uncertainty**, on the other hand, refers to a model's uncertainty. I.e., there is uncertainty regarding which model's parameters accurately model the experimental data, and it is decreased as we collect more data. We model epistemic uncertainty by enabling the weights of a neural network to be probabilistic rather than deterministic.
 
@@ -45,7 +45,7 @@ import matplotlib.pyplot as plt
 {% endhighlight %}
 
 ### Data generation
-We generate some training data $$\mathcal{D}=(x_i, y_i)$$ using the equation $$y_i = x_i^5 + 0.4 \, x_i \,\epsilon_i$$ where $$\epsilon_i \sim \mathcal{N}(0,1)$$ means that $$\epsilon_i$$ is sampled from a normal distribution with zero mean and standard deviation equal to 1.
+We generate some training data $$\mathcal{D}=\{(x_i, y_i)\}$$ using the equation $$y_i = x_i^5 + 0.4 \, x_i \,\epsilon_i$$ where $$\epsilon_i \sim \mathcal{N}(0,1)$$ means that $$\epsilon_i$$ is sampled from a normal distribution with zero mean and standard deviation equal to 1.
 
 {% highlight python %}
 {% raw %}
@@ -65,7 +65,7 @@ plt.show();
 </p>
 
 ### Setup prior and posterior distributions
-At the core of probabilistic predictive modeling is the [Bayes' rule](https://en.wikipedia.org/wiki/Bayes%27_theorem). To estimate a full posterior distribution of the parameters $$\mathbf{Θ}$$, the Bayes rule would, in our case, assume the following form:
+At the core of probabilistic predictive modeling is the [Bayes' rule](https://en.wikipedia.org/wiki/Bayes%27_theorem). To estimate a full posterior distribution of the parameters $$\mathbf{Θ}$$, given some training data $\mathcal{D} = \{(x_i, y_y)\}$, the Bayes rule would, in our case, assume the following form:
 
 $$
 p(\mathbf{Θ|\mathcal{D}}) = \frac{p(\mathcal{D}|\mathbf{Θ})p(\mathbf{Θ})}{p(\mathcal{D})}
