@@ -14,7 +14,7 @@ description: Implementation of probabilistic regression with Tensorflow
 {:toc}
 
 ## Introduction
-You probably have heard the saying, *"If all you have is a hammer, everything looks like a nail"*. This phrase applies to many cases, including deterministic classification neural networks. Consider, for instance, a typical neural network that classifies images from the [CIFAR-10 dataset](https://en.wikipedia.org/wiki/CIFAR-10). This dataset consists of 60.000 color images, all of which belong to 10 classes: airplanes, cars, birds, cats, deer, dogs, frogs, horses, ships, and trucks. Naturally, no matter what image we feed this network, say a pencil, it will always assign it to one of the 10 known classes. However, it would be handy if the model conveyed its uncertainty for the predictions it made. For instance, given a "pencil" image, it would probably label it as a bird or ship or whatever. At the same time, we'd like it to assign a large uncertainty to this prediction. To reach such an inference level, we need to rethink the traditional deterministic neural network paradigm and take a leap of faith towards probabilistic modeling. **So, instead of having a model parameterized by its point weights, each weight will now be sampled from a posterior distribution whose parameters will be trained during the training process.**
+You probably have heard the saying, *"If all you have is a hammer, everything looks like a nail"*. This proverb applies to many cases, including deterministic classification neural networks. Consider, for instance, a typical neural network that classifies images from the [CIFAR-10 dataset](https://en.wikipedia.org/wiki/CIFAR-10). This dataset consists of 60.000 color images, all of which belong to 10 classes: airplanes, cars, birds, cats, deer, dogs, frogs, horses, ships, and trucks. Naturally, no matter what image we feed this network, say a pencil, it will always assign it to one of the 10 known classes. However, it would be handy if the model conveyed its uncertainty for the predictions it made. So, given a "pencil" image, it would probably label it as a bird or ship or whatever. At the same time, we'd like it to assign a large uncertainty to this prediction. To reach such an inference level, we need to rethink the traditional deterministic neural network paradigm and take a leap of faith towards probabilistic modeling. **So, instead of having a model parameterized by its point weights, each weight will now be sampled from a posterior distribution whose parameters will be trained during the training process.**
 
 <p align="center">
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/probabilistic_regression/probabilistic_vs_deterministic_nn.png" alt="Probabilistic vs. deterministic neural networks">
@@ -24,13 +24,20 @@ Image taken from Blundell, et al. Weight Uncertainty in Neural Networks. arXiv (
 </p>
 
 ## Aleatoric and epistemic uncertainty
-We need to consider two kinds of uncertainty, aleatoric (also known as statistical) and epistemic (also known as systematic). **Aleatoric** is derived from the Latin word "alea" which means die. You might be familiar with the phrase ["alea iact est"](https://en.wikipedia.org/wiki/Alea_iacta_est), meaning "the die has been cast". Hence, aleatoric uncertainty relates to the data itself and captures what differs each time we run the same experiment or perform the same task. For instance, if a person keeps drawing the number "4", it will be slightly different every time. Another example would be the presence of measurement error or noise in the data generating process. Aleatoric uncertainty is irreducible in the sense that no matter how much data we collect, there will always be there.
+Probabilistic modeling is intimately related to the concept of uncertainty. The latter is sometimes divided into two categories, aleatoric (also known as statistical) and epistemic (also known as systematic). **Aleatoric** is derived from the Latin word "alea" which means die. You might be familiar with the phrase ["alea iact est"](https://en.wikipedia.org/wiki/Alea_iacta_est), meaning "the die has been cast". Hence, aleatoric uncertainty relates to the data itself and captures the inherent randomness when running the same experiment or performing the same task. For instance, if a person draws the number "4" repeatedly, its shape will be slightly different every time. Aleatoric uncertainty is irreducible in the sense that no matter how much data we collect, there will always be there.
 
-**Epistemic uncertainty**, on the other hand, refers to a model's uncertainty. I.e., there is uncertainty regarding which model's parameters accurately model the experimental data, and it is decreased as we collect more data. We model epistemic uncertainty by enabling the weights of a neural network to be probabilistic rather than deterministic.
+**Epistemic uncertainty**, on the other hand, refers to a model's uncertainty. I.e., there is uncertainty regarding which model's parameters accurately model the experimental data, which is decreased as we collect increasingly more data. The modeling of epistemic uncertainty is realized by enabling a neural network's weights to be probabilistic rather than deterministic.
+
+<p align="center">
+ <img style="width: 75%; height: 75%" src="{{ site.url }}/images/probabilistic_regression/aleatoric_vs_epistemic.png" alt="Aleatoric vs. epistemic uncertainty">
+</p>
+<p align="center">
+Kendall, A. & Gal, Y. What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision? arXiv [cs.CV] (2017)
+</p>
 
 ## Tensorflow example
 ### Summary objective
-In the following example, we will generate some non-linear noisy training data, and then we will develop a probabilistic regression neural network to fit the data. To do so, we will define appropriate prior and posterior trainable probability distributions. This blog post is inspired by a weekly assignment of the course "Probabilistic Deep Learning with TensorFlow 2" from Imperial College London.
+In the following example, we will generate some non-linear noisy training data, and then we will develop a probabilistic regression neural network to fit the data. To do so, we will provide appropriate prior and posterior trainable probability distributions. This blog post is inspired by a weekly assignment of the course "Probabilistic Deep Learning with TensorFlow 2" from Imperial College London.
 
 {% highlight python %}
 {% raw %}
@@ -45,7 +52,7 @@ import matplotlib.pyplot as plt
 {% endhighlight %}
 
 ### Data generation
-We generate some training data $$\mathcal{D}=\{(x_i, y_i)\}$$ using the equation $$y_i = x_i^5 + 0.4 \, x_i \,\epsilon_i$$ where $$\epsilon_i \sim \mathcal{N}(0,1)$$ means that $$\epsilon_i$$ is sampled from a normal distribution with zero mean and standard deviation equal to 1.
+We generate some training data $$\mathcal{D}=\{(x_i, y_i)\}$$ using the equation $$y_i = x_i^5 + 0.4 \, x_i \,\epsilon_i$$ where $$\epsilon_i \sim \mathcal{N}(0,1)$$ means that the noise $$\epsilon_i$$ is sampled from a normal distribution with *zero* mean and standard deviation equal to *one*.
 
 {% highlight python %}
 {% raw %}
@@ -65,17 +72,27 @@ plt.show();
 </p>
 
 ### Setup prior and posterior distributions
-At the core of probabilistic predictive modeling is the [Bayes' rule](https://en.wikipedia.org/wiki/Bayes%27_theorem). To estimate a full posterior distribution of the parameters $$\mathbf{Θ}$$, given some training data $$\mathcal{D} = \{(x_i, y_y)\}$$, the Bayes rule would, in our case, assume the following form:
+At the core of probabilistic predictive modeling lies the [Bayes' rule](https://en.wikipedia.org/wiki/Bayes%27_theorem). To estimate a full posterior distribution of the parameters $$\mathbf{Θ}$$, given some training data $$\mathcal{D} = \{(x_i, y_y)\}$$, the Bayes rule assumes the following form:
 
 $$
 p(\mathbf{Θ|\mathcal{D}}) = \frac{p(\mathcal{D}|\mathbf{Θ})p(\mathbf{Θ})}{p(\mathcal{D})}
 $$
 
-In the following image, you see a sketch of the various probability distributions that enter the Bayes' rule. In plain terms, it holds that $$\text{Prior beliefs} \oplus \text{Evidence} = \text{Posterior beliefs}$$, i.e., we start with some assumptions inscribed in the prior distribution, then we see the "Evidence", and we update our prior beliefs accordingly, to yield the posterior distribution. Subsequently, the posterior distribution acts as the next iteration's prior distribution, and the whole cycle is repeated.
+In the following image, you see a sketch of the various probability distributions that the Bayes' rule entangles. In plain terms, it holds that $$\text{Prior beliefs} \oplus \text{Evidence} = \text{Posterior beliefs}$$, i.e., we start with some assumptions inscribed in the prior distribution, then we observe the "Evidence", and we update our prior beliefs accordingly, to yield the posterior distribution. Subsequently, the posterior distribution acts as the next iteration's prior distribution, and the whole cycle is repeated.
 
 <p align="center">
  <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/prior_posterior_evidence.png" alt="Prior, posterior and evidence distributions in Bayes rule">
 </p>
+
+To let all these sink, let us elaborate on the essence of posterior distribution, by marginalizing the model's parameters. The probability of predicting $$y$$ given an input $$\mathbf{x}$$ and the training data $$\mathcal{D}$$ is:
+
+$$
+p(y\mid \mathbf{x},\mathcal{D})= \int p(y\mid \mathbf{x},\mathbf{Θ}) \, p(\mathbf{Θ}\mid\mathcal{D}) \mathop{\mathrm{d}\theta}
+$$
+
+This is equivalent to having an ensemble of models with different parameters $$\mathbf{Θ}$$, and taking their average weighted by the posterior probabilities of their parameters, $$p(\mathbf{Θ}\mid \mathcal{D})$$. Neat?
+
+There are two problems with this approach, however. First, it is computationally intractable to calculate an exact solution for the posterior distribution. Second, the averaging implies that our equation is not differentiable, so we can't use good old backpropagation to update the model's parameters! The answer to these hindrances is **variational inference**, a method of formulating inference as an optimization problem! We won't dive deep into the theoretical background, but the inquiring reader may google for the [Kullback-Leibler divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence). I promise to blog about all the juicy mathematical details of the KL divergence concept in a future post.
 
 We start by defining a prior distribution for our model's weights. I haven't researched the matter a lot, but in the absence of any evidence, adopting a normal distribution as a prior is a fair way to initialize a probabilistic neural network. After all, the [central limit theorem](https://en.wikipedia.org/wiki/Central_limit_theorem) asserts that a properly normalized sum of samples will approximate a normal distribution no matter the actual underlying distribution. We use the `DistributionLambda()` function to inject a distribution into our model, which you can think of as the "lambda function" analog for distributions. The distribution we use is a multivariate normal with a diagonal covariance matrix:
 
@@ -118,17 +135,7 @@ def get_posterior(kernel_size, bias_size, dtype=None):
 {% endraw %}
 {% endhighlight %}
 
-To let the above code sink, let us elaborate on the essence of posterior distribution, by marginalizing the model's parameters. The probability of predicting $$y$$ given an input $$\mathbf{x}$$ and the training data $$\mathcal{D}$$ is:
-
-$$
-p(y\mid \mathbf{x},\mathcal{D})= \int p(y\mid \mathbf{x},\mathbf{Θ}) \, p(\mathbf{Θ}\mid\mathcal{D}) \mathop{\mathrm{d}\theta}
-$$
-
-This is equivalent to having an ensemble of models with different parameters $$\mathbf{Θ}$$, and taking their average weighted by the posterior probabilities of their parameters, $$p(\mathbf{Θ}\mid \mathcal{D})$$. Neat?
-
-There are two problems with this approach, however. First, it is computationally intractable to calculate an exact solution for the posterior distribution. Second, the averaging implies that our equation is not differentiable, which means we can't use backpropagation to update the model's parameters! The solution to these obstacles is **variational inference**, a method of formulating inference as an optimization problem! We won't dive deep into the theoretical background, but the inquiring reader may google for the [Kullback-Leibler divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence).
-
-By the way, let us create some prior and posterior distributions, print the number of their trainable variables and sample from them:
+By the way, let us create some prior and posterior distributions, print the number of their trainable variables, and sample from them. Note that every time we run this cell block, we get different results for the samples.
 
 {% highlight python %}
 {% raw %}
@@ -143,8 +150,6 @@ print('Sampling from the prior distribution:\n', prior_model.call(tf.constant(1.
 posterior_model = get_posterior(3, 1)
 print('\nTrainable variables for posterior model: ', posterior_model.layers[0].trainable_variables)
 print('Sampling from the posterior distribution:\n', posterior_model.call(tf.constant(1.0)).sample(5))
-
-# Note that every time we run this cell block, we get different results for the samples
 
 #    Trainable variables for prior model:  []
 #    Sampling from the prior distribution:
