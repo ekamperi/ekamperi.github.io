@@ -77,7 +77,7 @@ Notice how the data points are squeezed near $$x=0$$, and how they diverge as $$
 
 ### Setup prior and posterior distributions
 #### Bayes' rule
-At the core of probabilistic predictive modeling lies the [Bayes' rule](https://en.wikipedia.org/wiki/Bayes%27_theorem). To estimate a full posterior distribution of the parameters $$\mathbf{w}$$, given some training data $$\mathcal{D} = \{(x_i, y_i)\}$$, the Bayes' rule assumes the following form:
+At the core of probabilistic predictive modeling lies the [Bayes' rule](https://en.wikipedia.org/wiki/Bayes%27_theorem). To estimate a full posterior distribution of the parameters $$\mathbf{w}$$, i.e., to estimate $$p(\mathbf{w}\mid \mathcal{D}$$, given some training data $$\mathcal{D} = \{(x_i, y_i)\}$$, the Bayes' rule assumes the following form:
 
 $$
 p(\mathbf{\mathbf{w}|\mathcal{D}}) = \frac{p(\mathcal{D}|\mathbf{w})p(\mathbf{w})}{p(\mathcal{D})}
