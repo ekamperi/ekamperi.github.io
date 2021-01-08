@@ -80,7 +80,7 @@ Notice how the data points are squeezed near $$x=0$$, and how they diverge as $$
 At the core of probabilistic predictive modeling lies the [Bayes' rule](https://en.wikipedia.org/wiki/Bayes%27_theorem). To estimate a full posterior distribution of the parameters $$\mathbf{w}$$, i.e., to estimate $$p(\mathbf{w}\mid \mathcal{D})$$, given some training data $$\mathcal{D} = \{(x_i, y_i)\}$$, the Bayes' rule assumes the following form:
 
 $$
-p(\mathbf{\mathbf{w}|\mathcal{D}}) = \frac{p(\mathcal{D}|\mathbf{w})p(\mathbf{w})}{p(\mathcal{D})}
+P(\mathbf{\mathbf{w}|\mathcal{D}}) = \frac{P(\mathcal{D}|\mathbf{w})P(\mathbf{w})}{P(\mathcal{D})}
 $$
 
 In the following image, you see a sketch of the various probability distributions that the Bayes' rule entangles. In plain terms, it holds that $$\text{Prior beliefs} \oplus \text{Evidence} = \text{Posterior beliefs}$$, i.e., we start with some assumptions inscribed in the prior distribution, then we observe the "Evidence", and we update our prior beliefs accordingly, to yield the posterior distribution. Subsequently, the posterior distribution acts as the next iteration's prior distribution, and the whole cycle is repeated.
@@ -92,10 +92,10 @@ In the following image, you see a sketch of the various probability distribution
 To let all these sink, let us elaborate on the essence of posterior distribution, by marginalizing the model's parameters. The probability of predicting $$y$$ given an input $$\mathbf{x}$$ and the training data $$\mathcal{D}$$ is:
 
 $$
-p(y\mid \mathbf{x},\mathcal{D})= \int p(y\mid \mathbf{x},\mathbf{w}) \, p(\mathbf{w}\mid\mathcal{D}) \mathop{\mathrm{d}\theta}
+P(y\mid \mathbf{x},\mathcal{D})= \int P(y\mid \mathbf{x},\mathbf{w}) \, P(\mathbf{w}\mid\mathcal{D}) \mathop{\mathrm{d}\theta}
 $$
 
-This is equivalent to having an ensemble of models with different parameters $$\mathbf{w}$$, and taking their average weighted by the posterior probabilities of their parameters, $$p(\mathbf{w}\mid \mathcal{D})$$. Neat?
+This is equivalent to having an ensemble of models with different parameters $$\mathbf{w}$$, and taking their average weighted by the posterior probabilities of their parameters, $$P(\mathbf{w}\mid \mathcal{D})$$. Neat?
 
 There are two problems with this approach, however. First, it is computationally intractable to calculate an exact solution for the posterior distribution. Second, the averaging implies that our equation is not differentiable, so we can't use good old backpropagation to update the model's parameters! The answer to these hindrances is **variational inference**, a method of formulating inference as an optimization problem! We won't dive deep into the theoretical background, but the inquiring reader may google for the [Kullback-Leibler divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence). I promise to blog about all the juicy mathematical details of the KL divergence concept in a future post.
 
