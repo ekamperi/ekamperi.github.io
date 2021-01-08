@@ -39,7 +39,7 @@ Kendall, A. & Gal, Y. What Uncertainties Do We Need in Bayesian Deep Learning fo
 
 ## Tensorflow example
 ### Summary objective
-In the following example, we will generate some non-linear noisy training data, and then we will develop a probabilistic regression neural network to fit the data. To do so, we will provide appropriate prior and posterior trainable probability distributions. This blog post is inspired by a weekly assignment of the course "Probabilistic Deep Learning with TensorFlow 2" from Imperial College London.
+In the following example, we will generate some non-linear noisy training data, and then we will develop a probabilistic regression neural network to fit the data. To do so, we will provide appropriate prior and posterior trainable probability distributions. This blog post is inspired by a weekly assignment of the course "Probabilistic Deep Learning with TensorFlow 2" from Imperial College London. We start by importing the Python modules that we will need.
 
 {% highlight python %}
 {% raw %}
@@ -54,11 +54,11 @@ import matplotlib.pyplot as plt
 {% endhighlight %}
 
 ### Data generation
-We generate some training data $$\mathcal{D}=\{(x_i, y_i)\}$$ using the equation $$y_i = x_i^5 + 0.4 \, x_i \,\epsilon_i$$ where $$\epsilon_i \sim \mathcal{N}(0,1)$$ means that the noise $$\epsilon_i$$ is sampled from a normal distribution with *zero* mean and standard deviation equal to *one*.
+We generate some training data $$\mathcal{D}=\{(x_i, y_i)\}$$ using the quintic equation $$y_i = x_i^5 + 0.4 \, x_i \,\epsilon_i$$ where $$\epsilon_i \sim \mathcal{N}(0,1)$$ means that the noise $$\epsilon_i$$ is sampled from a normal distribution with *zero* mean and standard deviation equal to *one*.
 
 {% highlight python %}
 {% raw %}
-# Generate some non-linear training data
+# Generate some non-linear noisy training data
 n_points = 500
 x_train = np.linspace(-1, 1, n_points)[:, np.newaxis]
 y_train = np.power(x_train, 5) + 0.4 * x_train * np.random.randn(n_points)[:, np.newaxis]
@@ -72,6 +72,8 @@ plt.show();
 <p align="center">
  <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/training_data.png" alt="Non-linear probabilistic regression data">
 </p>
+
+Notice how the data points are squeezed near $$x=0$$, and how they diverge as $$x$$ deviates from zero. When aleatoric uncertainty (read: measurement noise) differs across the input points $$x$$, we call it *heteroscedastic*, from the Greek words "hetero" (different) and "scedastic" (dispersion). When it is the same for all input, we call it "homoscedastic".
 
 ### Setup prior and posterior distributions
 #### Bayes' rule
