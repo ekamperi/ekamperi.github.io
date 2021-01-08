@@ -29,7 +29,7 @@ Probabilistic modeling is intimately related to the concept of uncertainty. The 
 **Epistemic uncertainty**, on the other hand, refers to a model's uncertainty. I.e., there is uncertainty regarding which model's parameters accurately model the experimental data, which is decreased as we collect increasingly more data. The modeling of epistemic uncertainty is realized by enabling a neural network's weights to be probabilistic rather than deterministic.
 
 <p align="center">
- <img style="width: 75%; height: 75%" src="{{ site.url }}/images/probabilistic_regression/aleatoric_vs_epistemic.png" alt="Aleatoric vs. epistemic uncertainty">
+ <img style="width: 85%; height: 85%" src="{{ site.url }}/images/probabilistic_regression/aleatoric_vs_epistemic.png" alt="Aleatoric vs. epistemic uncertainty">
 </p>
 <p align="center">
 Kendall, A. & Gal, Y. What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision? arXiv [cs.CV] (2017)
