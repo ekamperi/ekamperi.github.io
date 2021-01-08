@@ -283,7 +283,7 @@ plt.ylabel('Loss');
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 30%; height: 30%" src="{{ site.url }}/images/probabilistic_regression/loss_vs_epoch.png" alt="Loss vs. epochs">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/probabilistic_regression/loss_vs_epoch.png" alt="Loss vs. epochs">
 </p>
 
 Indeed RMSprop converged, and now we proceed by making some predictions:
