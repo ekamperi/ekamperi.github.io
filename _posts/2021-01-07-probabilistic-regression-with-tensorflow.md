@@ -142,7 +142,7 @@ L_{31} & L_{32} & 0 & \ldots\\
 \right)
 $$
 
-The following parenthetical code shows how one can sample from a multinormal distribution, by setting $$\mathbf{z} = \mathbf{\mu} + \mathbf{L} \mathbf{x}$$, where $$\mathbf{\mu}$$ is the mean vector, $$\mathbf{L}$$ is the lower triangular matrix derived via $$\mathbf{\Sigma} = \mathbf{L} \mathbf{L}^⊤$$ decomposition.
+The following parenthetical code shows how one can sample from a multinormal distribution, by setting $$\mathbf{z} = \mathbf{\mu} + \mathbf{L} \mathbf{x}$$, where $$\mathbf{\mu}$$ is the mean vector, and $$\mathbf{L}$$ is the lower triangular matrix derived via $$\mathbf{\Sigma} = \mathbf{L} \mathbf{L}^⊤$$ decomposition.
 
 {% highlight python %}
 {% raw %}
