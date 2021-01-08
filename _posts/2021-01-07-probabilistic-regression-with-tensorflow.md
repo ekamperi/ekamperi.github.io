@@ -129,7 +129,20 @@ def get_prior(kernel_size, bias_size, dtype=None):
 {% endhighlight %}
 
 #### Posterior distribution
-The case of the posterior distribution is a bit more complex. We again use a multivariate Gaussian distribution, and there are three ways to parameterize it. First, in terms of a positive definite covariance matrix $$\mathbf{\Sigma}$$, second via a positive definite precision matrix $$\mathbf{\Sigma}^{-1}$$, and last with a lower-triangular matrix $$\mathbf{L}\mathbf{L}^⊤$$ with positive-valued diagonal entries, such that $$\mathbf{\Sigma} = \mathbf{L}\mathbf{L}^⊤$$. This triangular matrix can be obtained via, e.g., [Cholesky decomposition](https://en.wikipedia.org/wiki/Cholesky_decomposition) of the covariance matrix. In our case, we are going for the last method with `MultivariateNormalTriL()`. "TriL" stands for "triangular lower". The following parenthetical code shows how one can sample from a multinormal distribution, by setting $$\mathbf{z} = \mathbf{\mu} + \mathbf{L} \mathbf{x}$$, where $$\mathbf{\mu}$$ is the mean vector, $$\mathbf{L}$$ is the lower triangular matrix derived via $$\mathbf{\Sigma} = \mathbf{L} \mathbf{L}^⊤$$ decomposition.
+The case of the posterior distribution is a bit more complex. We again use a multivariate Gaussian distribution, and there are three ways to parameterize it. First, in terms of a positive definite covariance matrix $$\mathbf{\Sigma}$$, second via a positive definite precision matrix $$\mathbf{\Sigma}^{-1}$$, and last with a lower-triangular matrix $$\mathbf{L}\mathbf{L}^⊤$$ with positive-valued diagonal entries, such that $$\mathbf{\Sigma} = \mathbf{L}\mathbf{L}^⊤$$. This triangular matrix can be obtained via, e.g., [Cholesky decomposition](https://en.wikipedia.org/wiki/Cholesky_decomposition) of the covariance matrix. In our case, we are going for the last method with `MultivariateNormalTriL()`, where "TriL" stands for "triangular lower".
+
+$$
+\mathbf{L}= \left(
+\begin{matrix}
+L_{11} & 0 & 0 & \ldots\\
+L_{21} & L_{22} & 0 & \ldots\\
+L_{31} & L_{32} & 0 & \ldots\\
+\vdots & \vdots & \vdots & \ddots
+\end{matrix}
+\right)
+$$
+
+The following parenthetical code shows how one can sample from a multinormal distribution, by setting $$\mathbf{z} = \mathbf{\mu} + \mathbf{L} \mathbf{x}$$, where $$\mathbf{\mu}$$ is the mean vector, $$\mathbf{L}$$ is the lower triangular matrix derived via $$\mathbf{\Sigma} = \mathbf{L} \mathbf{L}^⊤$$ decomposition.
 
 {% highlight python %}
 {% raw %}
