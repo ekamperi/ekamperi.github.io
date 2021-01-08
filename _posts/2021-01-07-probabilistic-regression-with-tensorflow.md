@@ -93,7 +93,7 @@ In the following image, you see a sketch of the various probability distribution
 To let all these sink, let us elaborate on the essence of the posterior distribution by marginalizing the model's parameters. The probability of predicting $$y$$ given an input $$\mathbf{x}$$ and the training data $$\mathcal{D}$$ is:
 
 $$
-P(y\mid \mathbf{x},\mathcal{D})= \int P(y\mid \mathbf{x},\mathbf{w}) \, P(\mathbf{w}\mid\mathcal{D}) \mathop{\mathrm{d}\theta}
+P(y\mid \mathbf{x},\mathcal{D})= \int P(y\mid \mathbf{x},\mathbf{w}) \, P(\mathbf{w}\mid\mathcal{D}) \mathop{\mathrm{d}w}
 $$
 
 This is equivalent to having an ensemble of models with different parameters $$\mathbf{w}$$, and taking their average weighted by the posterior probabilities of their parameters, $$P(\mathbf{w}\mid \mathcal{D})$$. Neat?
