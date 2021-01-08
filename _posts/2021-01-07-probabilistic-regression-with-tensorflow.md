@@ -28,7 +28,7 @@ However, it would be handy if the model conveyed its uncertainty for the predict
 ## Aleatoric and epistemic uncertainty
 Probabilistic modeling is intimately related to the concept of uncertainty. The latter is sometimes divided into two categories, aleatoric (also known as statistical) and epistemic (also known as systematic). **Aleatoric** is derived from the Latin word "alea" which means die. You might be familiar with the phrase ["alea iact est"](https://en.wikipedia.org/wiki/Alea_iacta_est), meaning "the die has been cast". Hence, aleatoric uncertainty relates to the data itself and captures the inherent randomness when running the same experiment or performing the same task. For instance, if a person draws the number "4" repeatedly, its shape will be slightly different every time. Aleatoric uncertainty is irreducible in the sense that no matter how much data we collect, there will always be some noise in them.
 
-**Epistemic uncertainty**, on the other hand, refers to a model's uncertainty. I.e., there is uncertainty regarding which model's parameters accurately model the experimental data, and it is decreased as we collect more training examples. The modeling of epistemic uncertainty is realized by enabling a neural network's weights to be probabilistic rather than deterministic.
+**Epistemic uncertainty**, on the other hand, refers to a model's uncertainty. I.e., there is uncertainty regarding which parameters accurately model the experimental data, and it is decreased as we collect more training examples. The modeling of epistemic uncertainty is realized by enabling a neural network's weights to be probabilistic rather than deterministic.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/probabilistic_regression/aleatoric_vs_epistemic.png" alt="Aleatoric vs. epistemic uncertainty">
@@ -74,7 +74,7 @@ plt.show();
  <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/training_data.png" alt="Non-linear probabilistic regression data">
 </p>
 
-Notice how the data points are squeezed near $$x=0$$, and how they diverge as $$x$$ deviates from zero. When aleatoric uncertainty (read: measurement noise) differs across the input points $$x$$, we call it *heteroscedastic*, from the Greek words "hetero" (different) and "scedastic" (dispersion). When it is the same for all input, we call it "homoscedastic".
+Notice how the data points are squeezed near $$x=0$$, and how they diverge as $$x$$ deviates from zero. When aleatoric uncertainty (read: measurement noise) differs across the input points $$x$$, we call it *heteroscedastic*, from the Greek words "hetero" (different) and "scedastic" (dispersive). When it is the same for all input, we call it "homoscedastic".
 
 ### Setup prior and posterior distributions
 #### Bayes' rule
@@ -90,7 +90,7 @@ In the following image, you see a sketch of the various probability distribution
  <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/prior_posterior_evidence.png" alt="Prior, posterior and evidence distributions in Bayes rule">
 </p>
 
-To let all these sink, let us elaborate on the essence of posterior distribution, by marginalizing the model's parameters. The probability of predicting $$y$$ given an input $$\mathbf{x}$$ and the training data $$\mathcal{D}$$ is:
+To let all these sink, let us elaborate on the essence of the posterior distribution by marginalizing the model's parameters. The probability of predicting $$y$$ given an input $$\mathbf{x}$$ and the training data $$\mathcal{D}$$ is:
 
 $$
 P(y\mid \mathbf{x},\mathcal{D})= \int P(y\mid \mathbf{x},\mathbf{w}) \, P(\mathbf{w}\mid\mathcal{D}) \mathop{\mathrm{d}\theta}
@@ -98,7 +98,7 @@ $$
 
 This is equivalent to having an ensemble of models with different parameters $$\mathbf{w}$$, and taking their average weighted by the posterior probabilities of their parameters, $$P(\mathbf{w}\mid \mathcal{D})$$. Neat?
 
-There are two problems with this approach, however. First, it is computationally intractable to calculate an exact solution for the posterior distribution. Second, the averaging implies that our equation is not differentiable, so we can't use good old backpropagation to update the model's parameters! The answer to these hindrances is **variational inference**, a method of formulating inference as an optimization problem! We won't dive deep into the theoretical background, but the inquiring reader may google for the [Kullback-Leibler divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence). I promise to blog about all the juicy mathematical details of the KL divergence concept in a future post.
+There are two problems with this approach, however. First, it is computationally intractable to calculate an exact solution for the posterior distribution. Second, the averaging implies that our equation is not differentiable, so we can't use good old backpropagation to update the model's parameters! The answer to these hindrances is **variational inference**, a method of formulating inference as an optimization problem. We won't dive deep into the theoretical background, but the inquiring reader may google for the [Kullback-Leibler divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence). The basic idea is to approximate the true posterior with another function by using the KL divergence as a "metric" of how much the two distributions differ. I promise to blog about all the juicy mathematical details of the KL divergence concept in a future post.
 
 #### Prior distribution
 We start by defining a prior distribution for our model's weights. I haven't researched the matter a lot, but in the absence of any evidence, adopting a normal distribution as a prior is a fair way to initialize a probabilistic neural network. After all, the [central limit theorem](https://en.wikipedia.org/wiki/Central_limit_theorem) asserts that a properly normalized sum of samples will approximate a normal distribution no matter the actual underlying distribution. We use the `DistributionLambda()` function to inject a distribution into our model, which you can think of as the "lambda function" analog for distributions. The distribution we use is a multivariate normal with a diagonal covariance matrix:
