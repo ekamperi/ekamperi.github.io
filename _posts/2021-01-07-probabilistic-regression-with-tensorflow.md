@@ -22,7 +22,7 @@ However, it would be handy if the model conveyed its uncertainty for the predict
  <img style="width: 75%; height: 75%" src="{{ site.url }}/images/probabilistic_regression/probabilistic_vs_deterministic_nn.png" alt="Probabilistic vs. deterministic neural networks">
 </p>
 <p align="center">
-Image taken from Blundell, et al. Weight Uncertainty in Neural Networks. arXiv (2015)
+ <b>Left:</b> Deterministic neural network with point estimates for weights. <b>Right:</b> Probabilistic neural network with weights sampled from probability distributions. Image taken from Blundell, et al. Weight Uncertainty in Neural Networks. arXiv (2015)
 </p>
 
 ## Aleatoric and epistemic uncertainty
@@ -34,7 +34,7 @@ Probabilistic modeling is intimately related to the concept of uncertainty. The 
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/probabilistic_regression/aleatoric_vs_epistemic.png" alt="Aleatoric vs. epistemic uncertainty">
 </p>
 <p align="center">
-Kendall, A. & Gal, Y. What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision? arXiv [cs.CV] (2017)
+Image taken from Kendall, A. & Gal, Y. What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision? arXiv [cs.CV] (2017)
 </p>
 
 ## Tensorflow example
