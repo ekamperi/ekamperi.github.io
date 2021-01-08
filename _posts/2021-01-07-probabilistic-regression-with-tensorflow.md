@@ -72,6 +72,7 @@ plt.show();
 </p>
 
 ### Setup prior and posterior distributions
+#### Bayes' rule
 At the core of probabilistic predictive modeling lies the [Bayes' rule](https://en.wikipedia.org/wiki/Bayes%27_theorem). To estimate a full posterior distribution of the parameters $$\mathbf{Θ}$$, given some training data $$\mathcal{D} = \{(x_i, y_y)\}$$, the Bayes rule assumes the following form:
 
 $$
@@ -94,6 +95,7 @@ This is equivalent to having an ensemble of models with different parameters $$\
 
 There are two problems with this approach, however. First, it is computationally intractable to calculate an exact solution for the posterior distribution. Second, the averaging implies that our equation is not differentiable, so we can't use good old backpropagation to update the model's parameters! The answer to these hindrances is **variational inference**, a method of formulating inference as an optimization problem! We won't dive deep into the theoretical background, but the inquiring reader may google for the [Kullback-Leibler divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence). I promise to blog about all the juicy mathematical details of the KL divergence concept in a future post.
 
+#### Prior distribution
 We start by defining a prior distribution for our model's weights. I haven't researched the matter a lot, but in the absence of any evidence, adopting a normal distribution as a prior is a fair way to initialize a probabilistic neural network. After all, the [central limit theorem](https://en.wikipedia.org/wiki/Central_limit_theorem) asserts that a properly normalized sum of samples will approximate a normal distribution no matter the actual underlying distribution. We use the `DistributionLambda()` function to inject a distribution into our model, which you can think of as the "lambda function" analog for distributions. The distribution we use is a multivariate normal with a diagonal covariance matrix:
 
 $$
@@ -121,6 +123,7 @@ def get_prior(kernel_size, bias_size, dtype=None):
 {% endraw %}
 {% endhighlight %}
 
+#### Posterior distribution
 The case of the posterior distribution is a bit more complex. We again use a multivariate Gaussian distribution, and there are three ways to parameterize it. First, in terms of a positive definite covariance matrix $$\mathbf{\Sigma}$$, second via a positive definite precision matrix $$\mathbf{\Sigma}^{-1}$$, and last with a lower-triangular matrix $$\mathbf{L}\mathbf{L}^⊤$$ with positive-valued diagonal entries, such that $$\mathbf{\Sigma} = \mathbf{L}\mathbf{L}^⊤$$. This triangular matrix can be obtained via, e.g., [Cholesky decomposition](https://en.wikipedia.org/wiki/Cholesky_decomposition) of the covariance matrix. In our case, we are going for the last method with `MultivariateNormalTriL()`. "TriL" stands for "triangular lower". So, instead of parameterizing the neural network with point weights $$\mathbf{Θ}$$, we will instead parameterize it with $$\mathbf{\mu}$$'s and $$\sigma$$'s. Notice that for a lower triangular matrix there are $$(n^2 - n)/2 + n = n(n+1)/2$$ non-zero elements.
 
 {% highlight python %}
