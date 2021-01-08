@@ -128,7 +128,35 @@ def get_prior(kernel_size, bias_size, dtype=None):
 {% endhighlight %}
 
 #### Posterior distribution
-The case of the posterior distribution is a bit more complex. We again use a multivariate Gaussian distribution, and there are three ways to parameterize it. First, in terms of a positive definite covariance matrix $$\mathbf{\Sigma}$$, second via a positive definite precision matrix $$\mathbf{\Sigma}^{-1}$$, and last with a lower-triangular matrix $$\mathbf{L}\mathbf{L}^⊤$$ with positive-valued diagonal entries, such that $$\mathbf{\Sigma} = \mathbf{L}\mathbf{L}^⊤$$. This triangular matrix can be obtained via, e.g., [Cholesky decomposition](https://en.wikipedia.org/wiki/Cholesky_decomposition) of the covariance matrix. In our case, we are going for the last method with `MultivariateNormalTriL()`. "TriL" stands for "triangular lower". So, instead of parameterizing the neural network with point weights $$\mathbf{w}$$, we will instead parameterize it with $$\mathbf{\mu}$$'s and $$\sigma$$'s. Notice that for a lower triangular matrix there are $$(n^2 - n)/2 + n = n(n+1)/2$$ non-zero elements.
+The case of the posterior distribution is a bit more complex. We again use a multivariate Gaussian distribution, and there are three ways to parameterize it. First, in terms of a positive definite covariance matrix $$\mathbf{\Sigma}$$, second via a positive definite precision matrix $$\mathbf{\Sigma}^{-1}$$, and last with a lower-triangular matrix $$\mathbf{L}\mathbf{L}^⊤$$ with positive-valued diagonal entries, such that $$\mathbf{\Sigma} = \mathbf{L}\mathbf{L}^⊤$$. This triangular matrix can be obtained via, e.g., [Cholesky decomposition](https://en.wikipedia.org/wiki/Cholesky_decomposition) of the covariance matrix. In our case, we are going for the last method with `MultivariateNormalTriL()`. "TriL" stands for "triangular lower". The following parenthetical code shows how one can sample from a multinormal distribution, by setting $$z = \mu + L x$$, where $$\mu$$ is the mean vector, $$L$$ is the lower triangular matrix derived via $$\Sigma = L L^⊤$$.
+
+{% highlight python %}
+{% raw %}
+# Define the mean vector mu
+mu = np.array([1, 2]).reshape(2, 1)
+
+# Define the covariance matrix (it must be positive definite)
+K = np.array([[2, 1],
+              [1, 2]])
+
+# Apply Cholesky decomposition of K to LL^T
+L = np.linalg.cholesky(K)
+L = L.T
+
+n_samples = 100000
+x = np.random.normal(loc=0, scale=1, size=2*n_samples).reshape(2, n_samples)
+z = mu + np.dot(L, x)
+
+import seaborn as sns
+sns.jointplot(x=z[0], y=z[1], kind="kde", space=0);
+{% endraw %}
+{% endhighlight %}
+
+<p align="center">
+ <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/cholesky_lower_triangular.png" alt="Sampling from multinormal distribution via cholesky decomposition">
+</p>
+
+So, instead of parameterizing the neural network with point weights $$\mathbf{w}$$, we will instead parameterize it with $$\mathbf{\mu}$$'s and $$\sigma$$'s. Notice that for a lower triangular matrix there are $$(n^2 - n)/2 + n = n(n+1)/2$$ non-zero elements.
 
 {% highlight python %}
 {% raw %}
