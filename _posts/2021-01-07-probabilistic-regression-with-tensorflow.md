@@ -129,7 +129,7 @@ def get_prior(kernel_size, bias_size, dtype=None):
 {% endhighlight %}
 
 #### Posterior distribution
-The case of the posterior distribution is a bit more complex. We again use a multivariate Gaussian distribution, and there are three ways to parameterize it. First, in terms of a positive definite covariance matrix $$\mathbf{\Sigma}$$, second via a positive definite precision matrix $$\mathbf{\Sigma}^{-1}$$, and last with a lower-triangular matrix $$\mathbf{L}\mathbf{L}^⊤$$ with positive-valued diagonal entries, such that $$\mathbf{\Sigma} = \mathbf{L}\mathbf{L}^⊤$$. This triangular matrix can be obtained via, e.g., [Cholesky decomposition](https://en.wikipedia.org/wiki/Cholesky_decomposition) of the covariance matrix. In our case, we are going for the last method with `MultivariateNormalTriL()`, where "TriL" stands for "triangular lower".
+The case of the posterior distribution is a bit more complex. We again use a multivariate Gaussian distribution, but we will now allow off-diagonal elements in the covariance matrix to be non-zero. There are three ways to parameterize such a distribution. First, in terms of a positive definite covariance matrix $$\mathbf{\Sigma}$$, second via a positive definite precision matrix $$\mathbf{\Sigma}^{-1}$$, and last with a lower-triangular matrix $$\mathbf{L}\mathbf{L}^⊤$$ with positive-valued diagonal entries, such that $$\mathbf{\Sigma} = \mathbf{L}\mathbf{L}^⊤$$. This triangular matrix can be obtained via, e.g., [Cholesky decomposition](https://en.wikipedia.org/wiki/Cholesky_decomposition) of the covariance matrix. In our case, we are going for the last method with `MultivariateNormalTriL()`, where "TriL" stands for "triangular lower".
 
 $$
 \mathbf{L}= \left(
