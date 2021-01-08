@@ -78,7 +78,7 @@ plt.show();
 At the core of probabilistic predictive modeling lies the [Bayes' rule](https://en.wikipedia.org/wiki/Bayes%27_theorem). To estimate a full posterior distribution of the parameters $$\mathbf{w}$$, given some training data $$\mathcal{D} = \{(x_i, y_y)\}$$, the Bayes rule assumes the following form:
 
 $$
-p(\mathbf{Θ|\mathcal{D}}) = \frac{p(\mathcal{D}|\mathbf{w})p(\mathbf{w})}{p(\mathcal{D})}
+p(\mathbf{\mathbf{w}|\mathcal{D}}) = \frac{p(\mathcal{D}|\mathbf{w})p(\mathbf{w})}{p(\mathcal{D})}
 $$
 
 In the following image, you see a sketch of the various probability distributions that the Bayes' rule entangles. In plain terms, it holds that $$\text{Prior beliefs} \oplus \text{Evidence} = \text{Posterior beliefs}$$, i.e., we start with some assumptions inscribed in the prior distribution, then we observe the "Evidence", and we update our prior beliefs accordingly, to yield the posterior distribution. Subsequently, the posterior distribution acts as the next iteration's prior distribution, and the whole cycle is repeated.
@@ -221,7 +221,9 @@ model.summary()
 {% endraw %}
 {% endhighlight %}
 
-Let's calculate by hand the model's parameters. The **first dense variational layer** has 1 input, 8 outputs and 8 biases. Therefore, there are $$1\cdot 8 + 8 = 16$$ weights. Since each weight is going to be modelled by a normal distribution, we need 16 $$\mu$$'s, and $$(16^2 - 16)/2 + 16 = 136$$ $$\sigma$$'s. The latter is the number of elements of a lower triangular matrix $$8\times 8$$. Therefore, in total we need $$16 + 132 = 152$$ parameters. What about the **second variational layer**? This one has 8 inputs (since the previous had 8 outputs), 2 outputs (the $$\mu, \sigma$$ of the independent normal distribution), and 2 biases. Therefore, it has $$8\times 2 + 2 = 18$$ weights. For 18 weights, we need 18 $$\mu$$'s and $$(18^2 - 18)/2 + 18 = 171$$ $$\sigma$$'s. Therefore, in total we need $$18 + 171 = 189$$ parameters. The `tfpl.MultivariateNormalTriL.params_size(n)` static function calculates the number of parameters need to parameterize a multivariate normal distribution, so we don't have to bother with it.
+Let's calculate by hand the model's parameters. The **first dense variational layer** has 1 input, 8 outputs and 8 biases. Therefore, there are $$1\cdot 8 + 8 = 16$$ weights. Since each weight is going to be modelled by a normal distribution, we need 16 $$\mu$$'s, and $$(16^2 - 16)/2 + 16 = 136$$ $$\sigma$$'s. The latter is the number of elements of a lower triangular matrix $$8\times 8$$. Therefore, in total we need $$16 + 132 = 152$$ parameters.
+
+What about the **second variational layer**? This one has 8 inputs (since the previous had 8 outputs), 2 outputs (the $$\mu, \sigma$$ of the independent normal distribution), and 2 biases. Therefore, it has $$8\times 2 + 2 = 18$$ weights. For 18 weights, we need 18 $$\mu$$'s and $$(18^2 - 18)/2 + 18 = 171$$ $$\sigma$$'s. Therefore, in total we need $$18 + 171 = 189$$ parameters. The `tfpl.MultivariateNormalTriL.params_size(n)` static function calculates the number of parameters need to parameterize a multivariate normal distribution, so we don't have to bother with it.
 
 ### Train the model and make predictions
 We train the model for 1000 epochs and plot the loss function *vs.* to confirm that the algorithm has converged.
