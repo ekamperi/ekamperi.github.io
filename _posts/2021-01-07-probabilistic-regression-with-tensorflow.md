@@ -162,7 +162,7 @@ n_samples = 100000
 x = np.random.normal(loc=0, scale=1, size=2*n_samples).reshape(2, n_samples)
 z = mu + np.dot(L, x)
 
-sns.jointplot(x=z[0], y=z[1], kind="kde", space=0);
+sns.jointplot(x=z[0], y=z[1], kind="kde");
 {% endraw %}
 {% endhighlight %}
 
