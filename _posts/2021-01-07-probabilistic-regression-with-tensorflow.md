@@ -26,7 +26,7 @@ However, it would be handy if the model conveyed its uncertainty for the predict
 </p>
 
 ## Aleatoric and epistemic uncertainty
-Probabilistic modeling is intimately related to the concept of uncertainty. The latter is sometimes divided into two categories, aleatoric (also known as statistical) and epistemic (also known as systematic). **Aleatoric** is derived from the Latin word "alea" which means die. You might be familiar with the phrase ["alea iact est"](https://en.wikipedia.org/wiki/Alea_iacta_est), meaning "the die has been cast". Hence, aleatoric uncertainty relates to the data itself and captures the inherent randomness when running the same experiment or performing the same task. For instance, if a person draws the number "4" repeatedly, its shape will be slightly different every time. Aleatoric uncertainty is irreducible in the sense that no matter how much data we collect, there will always be some noise in them. We model aleatoric uncertainty by having as output a distribution where we sample from, rather than having point estimates as output values.
+Probabilistic modeling is intimately related to the concept of uncertainty. The latter is sometimes divided into two categories, aleatoric (also known as statistical) and epistemic (also known as systematic). **Aleatoric** is derived from the Latin word "alea" which means die. You might be familiar with the phrase ["alea iact est"](https://en.wikipedia.org/wiki/Alea_iacta_est), meaning "the die has been cast". Hence, aleatoric uncertainty relates to the data itself and captures the inherent randomness when running the same experiment or performing the same task. For instance, if a person draws the number "4" repeatedly, its shape will be slightly different every time. Aleatoric uncertainty is irreducible in the sense that no matter how much data we collect, there will always be some noise in them. Finally, we model aleatoric uncertainty by having our model's output be a distribution, where we sample from, rather than having point estimates as output values.
 
 **Epistemic uncertainty**, on the other hand, refers to a model's uncertainty. I.e., the uncertainty regarding which parameters (out of the set of all possible parameters) accurately model the experimental data. Epistemic uncertainty is decreased as we collect more training examples. Its modeling is realized by enabling a neural network's weights to be probabilistic rather than deterministic.
 
@@ -170,7 +170,7 @@ sns.jointplot(x=z[0], y=z[1], kind="kde");
  <img style="width: 45%; height: 45%" src="{{ site.url }}/images/probabilistic_regression/cholesky_lower_triangular.png" alt="Sampling from multinormal distribution via cholesky decomposition">
 </p>
 
-So, instead of parameterizing the neural network with point weights $$\mathbf{w}$$, we will instead parameterize it with $$\mathbf{\mu}$$'s and $$\sigma$$'s. Notice that for a lower triangular matrix there are $$(n^2 - n)/2 + n = n(n+1)/2$$ non-zero elements. Adding the $$n$$ $$\mu$$'s we end up with a distribution with $$n(n+1)/2 + n = n(n+3)/2$$ parameters.
+So, instead of parameterizing the neural network with point estimates for weights $$\mathbf{w}$$, we will instead parameterize it with $$\mathbf{\mu}$$'s and $$\sigma$$'s. Notice that for a lower triangular matrix there are $$(n^2 - n)/2 + n = n(n+1)/2$$ non-zero elements. Adding the $$n$$ $$\mu$$'s we end up with a distribution with $$n(n+1)/2 + n = n(n+3)/2$$ parameters.
 
 {% highlight python %}
 {% raw %}
@@ -223,7 +223,7 @@ print('Sampling from the posterior distribution:\n', posterior_model.call(tf.con
 {% endhighlight %}
 
 ### Define the model, loss function, and optimizer
-To define probabilistic layers in a neural network, we use the `DenseVariational()` function, specifying the input and output shape, along with the prior and posterior distributions that we have previously defined. We use a sigmoid activation function to enable the network model non-linear data, along with an `IndependentNormal()` output layer, with an event shape equal to 1 (since our $$y$$ is just a scalar). Regarding the `kl_weight` parameter, you may refer to the original paper "Weight Uncertainty in Neural Networks" for further information. For now, just take for granted that it is a scaling factor.
+To define probabilistic layers in a neural network, we use the `DenseVariational()` function, specifying the input and output shape, along with the prior and posterior distributions that we have previously defined. We use a sigmoid activation function to enable the network model non-linear data, along with an `IndependentNormal()` output layer, to capture aleatoric uncertainty, with an event shape equal to 1 (since our $$y$$ is just a scalar). Regarding the `kl_weight` parameter, you may refer to the original paper "Weight Uncertainty in Neural Networks" for further information. For now, just take for granted that it is a scaling factor.
 
 {% highlight python %}
 {% raw %}
@@ -265,9 +265,9 @@ model.summary()
 {% endraw %}
 {% endhighlight %}
 
-Let's calculate by hand the model's parameters. The **first dense variational layer** has 1 input, 8 outputs and 8 biases. Therefore, there are $$1\cdot 8 + 8 = 16$$ weights. Since each weight is going to be modelled by a normal distribution, we need 16 $$\mu$$'s, and $$(16^2 - 16)/2 + 16 = 136$$ $$\sigma$$'s. The latter is just the number of elements of a lower triangular matrix $$16\times 16$$. Therefore, in total we need $$16 + 132 = 152$$ parameters.
+Let's practice and calculate by hand the model's parameters. The **first dense variational layer** has 1 input, 8 outputs and 8 biases. Therefore, there are $$1\cdot 8 + 8 = 16$$ weights. Since each weight is going to be modelled by a normal distribution, we need 16 $$\mu$$'s, and $$(16^2 - 16)/2 + 16 = 136$$ $$\sigma$$'s. The latter is just the number of elements of a lower triangular matrix $$16\times 16$$. Therefore, in total we need $$16 + 132 = 152$$ parameters.
 
-What about the **second variational layer**? This one has 8 inputs (since the previous had 8 outputs), 2 outputs (the $$\mu, \sigma$$ of the independent normal distribution), and 2 biases. Therefore, it has $$8\times 2 + 2 = 18$$ weights. For 18 weights, we need 18 $$\mu$$'s and $$(18^2 - 18)/2 + 18 = 171$$ $$\sigma$$'s. Therefore, in total we need $$18 + 171 = 189$$ parameters. The `tfpl.MultivariateNormalTriL.params_size(n)` static function calculates the number of parameters needed to parameterize a multivariate normal distribution, so we don't have to bother with it.
+What about the **second variational layer**? This one has 8 inputs (since the previous had 8 outputs), 2 outputs (the $$\mu, \sigma$$ of the independent normal distribution), and 2 biases. Therefore, it has $$8\times 2 + 2 = 18$$ weights. For 18 weights, we need 18 $$\mu$$'s and $$(18^2 - 18)/2 + 18 = 171$$ $$\sigma$$'s. Therefore, in total we need $$18 + 171 = 189$$ parameters. The `tfpl.MultivariateNormalTriL.params_size(n)` static function calculates the number of parameters needed to parameterize a multivariate normal distribution, so that we don't have to bother with it.
 
 ### Train the model and make predictions
 We train the model for 1000 epochs and plot the loss function *vs.* to confirm that the algorithm has converged.
@@ -310,11 +310,13 @@ plt.show()
  <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/regression1.png" alt="Non-linear probabilistic regression data">
 </p>
 
-The following plot was generated by taking the average of 100 models:
+Notice how the models' outputs converge around $$x=0$$ where there is very little variation in the data, implying low epistemic uncertainty. The following plot was generated by taking the average of 100 models:
 
 <p align="center">
  <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/regression2.png" alt="Non-linear probabilistic regression data">
 </p>
+
+In the following two images, you can see how going from predictions over known inputs to extrapolating to unknown outputs "forces" our model to spread out its predictions, corresponding to high aleatoric uncertainty.
 
 Known input                                         |  Unknown input
 :--------------------------------------------------:|:-------------------------:
