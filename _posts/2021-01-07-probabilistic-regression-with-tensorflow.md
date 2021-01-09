@@ -142,7 +142,7 @@ L_{31} & L_{32} & L_{33} & \ldots\\
 \right)
 $$
 
-The following parenthetical code shows how one can sample from a multinormal distribution, by setting $$\mathbf{z} = \mathbf{\mu} + \mathbf{L} \mathbf{x}$$, where $$\mathbf{\mu}$$ is the mean vector, and $$\mathbf{L}$$ is the lower triangular matrix derived via $$\mathbf{\Sigma} = \mathbf{L} \mathbf{L}^⊤$$ decomposition.
+The following parenthetical code shows how one can sample from a multinormal distribution, by setting $$\mathbf{z} = \mathbf{\mu} + \mathbf{L} \mathbf{x}$$, where $$\mathbf{\mu}$$ is the mean vector, and $$\mathbf{L}$$ is the lower triangular matrix derived via $$\mathbf{\Sigma} = \mathbf{L} \mathbf{L}^⊤$$ decomposition. The rationale is that sampling from a univariate normal distribution (e.g., zero mean and unit variance) is easy and fast since efficient vectorized algorithms exist for doing this. Whereas sampling directly from a multinormal distribution is not as efficient. Hence, we turn the problem of sampling a multinormal distribution into sampling a univariate normal.
 
 {% highlight python %}
 {% raw %}
