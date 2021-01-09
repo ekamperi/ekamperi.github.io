@@ -170,7 +170,7 @@ sns.jointplot(x=z[0], y=z[1], kind="kde");
  <img style="width: 45%; height: 45%" src="{{ site.url }}/images/probabilistic_regression/cholesky_lower_triangular.png" alt="Sampling from multinormal distribution via cholesky decomposition">
 </p>
 
-So, instead of parameterizing the neural network with point weights $$\mathbf{w}$$, we will instead parameterize it with $$\mathbf{\mu}$$'s and $$\sigma$$'s. Notice that for a lower triangular matrix there are $$(n^2 - n)/2 + n = n(n+1)/2$$ non-zero elements. Adding the $$n$$ $$\mu$$'s we end up with $$n(n+1)/2 + n = n(n+3)/2$$.
+So, instead of parameterizing the neural network with point weights $$\mathbf{w}$$, we will instead parameterize it with $$\mathbf{\mu}$$'s and $$\sigma$$'s. Notice that for a lower triangular matrix there are $$(n^2 - n)/2 + n = n(n+1)/2$$ non-zero elements. Adding the $$n$$ $$\mu$$'s we end up with a distribution with $$n(n+1)/2 + n = n(n+3)/2$$ parameters.
 
 {% highlight python %}
 {% raw %}
