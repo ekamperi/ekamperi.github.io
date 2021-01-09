@@ -316,7 +316,7 @@ Notice how the models' outputs converge around $$x=0$$ where there is very littl
  <img style="width: 65%; height: 65%" src="{{ site.url }}/images/probabilistic_regression/regression2.png" alt="Non-linear probabilistic regression data">
 </p>
 
-In the following two images, you can see how going from predictions over known inputs to extrapolating to unknown inputs "forces" our model to spread out its predictions, corresponding to high aleatoric uncertainty.
+In the following two images, you can see how going from predictions over known inputs to extrapolating to unknown inputs "forces" our model to spread out its predictions.
 
 Known input                                         |  Unknown input
 :--------------------------------------------------:|:-------------------------:
