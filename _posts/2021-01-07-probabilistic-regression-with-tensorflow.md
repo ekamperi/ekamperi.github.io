@@ -136,7 +136,7 @@ $$
 \begin{matrix}
 L_{11} & 0 & 0 & \ldots\\
 L_{21} & L_{22} & 0 & \ldots\\
-L_{31} & L_{32} & 0 & \ldots\\
+L_{31} & L_{32} & L_{33} & \ldots\\
 \vdots & \vdots & \vdots & \ddots
 \end{matrix}
 \right)
