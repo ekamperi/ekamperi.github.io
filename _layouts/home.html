@@ -8,8 +8,6 @@ layout: default
   .selected{ background-color: magenta; }
 </style>
 
-  <div id="search-searchbar"></div>
-
 
 <div class="home">
   {%- if page.title -%}
@@ -82,7 +80,5 @@ layout: default
         <svg class="svg-icon orange"><use xlink:href="{{ 'assets/minima-social-icons.svg#rss' | relative_url }}"></use></svg><span>Subscribe</span>
       </a>
     </p>
-
-  {% include algolia.html %}
     
 </div>

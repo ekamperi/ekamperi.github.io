@@ -29,7 +29,6 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-algolia
 
 paginate: 10
 paginate_path: posts/page:num/
@@ -43,9 +42,3 @@ google_analytics: UA-145393080-1
 
 #disqus:
 #    shortname: https-ekamperi-github-io
-
-
-algolia:
-   application_id: HS5PEB5VJV
-   index_name: ekamperi_github_io
-   search_only_api_key: a4849f630ca2026df0cd91d0814d0db7
