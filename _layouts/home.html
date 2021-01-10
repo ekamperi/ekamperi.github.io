@@ -8,6 +8,9 @@ layout: default
   .selected{ background-color: magenta; }
 </style>
 
+  <div id="search-searchbar"></div>
+
+
 <div class="home">
   {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
@@ -80,4 +83,6 @@ layout: default
       </a>
     </p>
 
+  {% include algolia.html %}
+    
 </div>
