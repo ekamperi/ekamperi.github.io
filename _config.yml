@@ -29,6 +29,7 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-algolia
 
 paginate: 10
 paginate_path: posts/page:num/
