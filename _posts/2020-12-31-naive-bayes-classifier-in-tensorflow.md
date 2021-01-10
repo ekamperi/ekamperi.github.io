@@ -307,7 +307,7 @@ print("Test accuracy: {:.4f}".format(accuracy))
 {% endraw %}
 {% endhighlight %}
 
-So, our model achieved an accuracy of 0.8667 on the test set, which is pretty good!
+So, our model achieved an accuracy of 0.8667 on the test set, which is pretty good, considering that we used only 2 out of the 4 features of the dataset!
 
 ### Plot the decision regions
 
