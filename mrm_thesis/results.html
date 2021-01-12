@@ -1,0 +1,3165 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Results | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans</title>
+  <meta name="description" content="5 Results | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Results | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Results | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="methods.html"/>
+<link rel="next" href="discussion.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i><b>1</b> Abstract</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#prostate-cancer"><i class="fa fa-check"></i><b>2.1</b> Prostate Cancer</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#volumetric-modulated-arc-therapy"><i class="fa fa-check"></i><b>2.2</b> Volumetric Modulated Arc Therapy</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#inverse-treatment-planning"><i class="fa fa-check"></i><b>2.3</b> Inverse treatment planning</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#plan-complexity"><i class="fa fa-check"></i><b>2.4</b> Plan complexity</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a><ul>
+<li class="chapter" data-level="3.1" data-path="literature.html"><a href="literature.html#background"><i class="fa fa-check"></i><b>3.1</b> Background</a></li>
+<li class="chapter" data-level="3.2" data-path="literature.html"><a href="literature.html#circumferencearea-coa"><i class="fa fa-check"></i><b>3.2</b> Circumference/Area (CoA)</a></li>
+<li class="chapter" data-level="3.3" data-path="literature.html"><a href="literature.html#leaf-travel-lt"><i class="fa fa-check"></i><b>3.3</b> Leaf Travel (LT)</a></li>
+<li class="chapter" data-level="3.4" data-path="literature.html"><a href="literature.html#edge-metric-em"><i class="fa fa-check"></i><b>3.4</b> Edge Metric (EM)</a></li>
+<li class="chapter" data-level="3.5" data-path="literature.html"><a href="literature.html#equivalent-square-field-esf-and-mean-field-area-mfa"><i class="fa fa-check"></i><b>3.5</b> Equivalent Square Field (ESF) and Mean Field Area (MFA)</a></li>
+<li class="chapter" data-level="3.6" data-path="literature.html"><a href="literature.html#modulation-complexity-score-mcs-and-leaf-travel-mcs-for-vmat-ltmcsv"><i class="fa fa-check"></i><b>3.6</b> Modulation Complexity Score (MCS) and Leaf Travel MCS for VMAT (LTMCSV)</a></li>
+<li class="chapter" data-level="3.7" data-path="literature.html"><a href="literature.html#modulation-index-total-textmi_texttotal"><i class="fa fa-check"></i><b>3.7</b> Modulation Index total (<span class="math inline">\(\text{MI}_\text{total}\)</span>)</a></li>
+<li class="chapter" data-level="3.8" data-path="literature.html"><a href="literature.html#plan-irregularity-pi"><i class="fa fa-check"></i><b>3.8</b> Plan Irregularity (PI)</a></li>
+<li class="chapter" data-level="3.9" data-path="literature.html"><a href="literature.html#small-aperture-score-sas"><i class="fa fa-check"></i><b>3.9</b> Small Aperture Score (SAS)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a><ul>
+<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#dataset-curation"><i class="fa fa-check"></i><b>4.1</b> Dataset curation</a></li>
+<li class="chapter" data-level="4.2" data-path="methods.html"><a href="methods.html#dataset-description"><i class="fa fa-check"></i><b>4.2</b> Dataset description</a></li>
+<li class="chapter" data-level="4.3" data-path="methods.html"><a href="methods.html#data-analysis"><i class="fa fa-check"></i><b>4.3</b> Data analysis</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="methods.html"><a href="methods.html#summary-statistics"><i class="fa fa-check"></i><b>4.3.1</b> Summary statistics</a></li>
+<li class="chapter" data-level="4.3.2" data-path="methods.html"><a href="methods.html#principal-component-analysis-pca"><i class="fa fa-check"></i><b>4.3.2</b> Principal Component Analysis (PCA)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="methods.html"><a href="methods.html#mutual-information-analysis-mia"><i class="fa fa-check"></i><b>4.3.3</b> Mutual information analysis (MIA)</a></li>
+<li class="chapter" data-level="4.3.4" data-path="methods.html"><a href="methods.html#linear-regression-analysis"><i class="fa fa-check"></i><b>4.3.4</b> Linear regression analysis</a></li>
+<li class="chapter" data-level="4.3.5" data-path="methods.html"><a href="methods.html#logistic-regression-analysis"><i class="fa fa-check"></i><b>4.3.5</b> Logistic regression analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a><ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#summary-of-the-data"><i class="fa fa-check"></i><b>5.1</b> Summary of the data</a></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#principal-component-analysis"><i class="fa fa-check"></i><b>5.2</b> Principal Component Analysis</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="results.html"><a href="results.html#correlation-matrix"><i class="fa fa-check"></i><b>5.2.1</b> Correlation matrix</a></li>
+<li class="chapter" data-level="5.2.2" data-path="results.html"><a href="results.html#sampling-adequacy"><i class="fa fa-check"></i><b>5.2.2</b> Sampling adequacy</a></li>
+<li class="chapter" data-level="5.2.3" data-path="results.html"><a href="results.html#loading-plot"><i class="fa fa-check"></i><b>5.2.3</b> Loading plot</a></li>
+<li class="chapter" data-level="5.2.4" data-path="results.html"><a href="results.html#principal-components-extraction"><i class="fa fa-check"></i><b>5.2.4</b> Principal components extraction</a></li>
+<li class="chapter" data-level="5.2.5" data-path="results.html"><a href="results.html#communalities"><i class="fa fa-check"></i><b>5.2.5</b> Communalities</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#mutual-information-analysis"><i class="fa fa-check"></i><b>5.3</b> Mutual Information Analysis</a></li>
+<li class="chapter" data-level="5.4" data-path="results.html"><a href="results.html#linear-regression-analysis-1"><i class="fa fa-check"></i><b>5.4</b> Linear Regression Analysis</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="results.html"><a href="results.html#multicollinearity-detection"><i class="fa fa-check"></i><b>5.4.1</b> Multicollinearity detection</a></li>
+<li class="chapter" data-level="5.4.2" data-path="results.html"><a href="results.html#univariate-analysis"><i class="fa fa-check"></i><b>5.4.2</b> Univariate analysis</a></li>
+<li class="chapter" data-level="5.4.3" data-path="results.html"><a href="results.html#multivariate-analysis"><i class="fa fa-check"></i><b>5.4.3</b> Multivariate analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="results.html"><a href="results.html#logistic-regression-analysis-1"><i class="fa fa-check"></i><b>5.5</b> Logistic Regression analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a><ul>
+<li class="chapter" data-level="6.1" data-path="discussion.html"><a href="discussion.html#general"><i class="fa fa-check"></i><b>6.1</b> General</a></li>
+<li class="chapter" data-level="6.2" data-path="discussion.html"><a href="discussion.html#complexity-metrics"><i class="fa fa-check"></i><b>6.2</b> Complexity metrics</a></li>
+<li class="chapter" data-level="6.3" data-path="discussion.html"><a href="discussion.html#complexity-prediction"><i class="fa fa-check"></i><b>6.3</b> Complexity prediction</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="discussion.html"><a href="discussion.html#the-choice-of-ltmcsv"><i class="fa fa-check"></i><b>6.3.1</b> The choice of LTMCSV</a></li>
+<li class="chapter" data-level="6.3.2" data-path="discussion.html"><a href="discussion.html#linear-regression-model"><i class="fa fa-check"></i><b>6.3.2</b> Linear regression model</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="discussion.html"><a href="discussion.html#plan-classification"><i class="fa fa-check"></i><b>6.4</b> Plan classification</a></li>
+<li class="chapter" data-level="6.5" data-path="discussion.html"><a href="discussion.html#future-work"><i class="fa fa-check"></i><b>6.5</b> Future work</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>7</b> Summary</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Complexity analysis of Volumetric Modulated Arc Therapy prostate plans</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="results" class="section level1">
+<h1><span class="header-section-number">5</span> Results</h1>
+<div id="summary-of-the-data" class="section level2">
+<h2><span class="header-section-number">5.1</span> Summary of the data</h2>
+
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#svqzaebjer .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#svqzaebjer .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#svqzaebjer .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#svqzaebjer .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#svqzaebjer .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#svqzaebjer .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#svqzaebjer .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#svqzaebjer .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#svqzaebjer .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#svqzaebjer .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#svqzaebjer .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#svqzaebjer .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#svqzaebjer .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#svqzaebjer .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#svqzaebjer .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#svqzaebjer .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#svqzaebjer .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#svqzaebjer .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#svqzaebjer .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#svqzaebjer .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#svqzaebjer .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#svqzaebjer .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#svqzaebjer .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#svqzaebjer .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#svqzaebjer .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#svqzaebjer .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#svqzaebjer .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#svqzaebjer .gt_left {
+  text-align: left;
+}
+
+#svqzaebjer .gt_center {
+  text-align: center;
+}
+
+#svqzaebjer .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#svqzaebjer .gt_font_normal {
+  font-weight: normal;
+}
+
+#svqzaebjer .gt_font_bold {
+  font-weight: bold;
+}
+
+#svqzaebjer .gt_font_italic {
+  font-style: italic;
+}
+
+#svqzaebjer .gt_super {
+  font-size: 65%;
+}
+
+#svqzaebjer .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="svqzaebjer" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="5" class="gt_heading gt_title gt_font_normal" style>Summary table</th>
+    </tr>
+    <tr>
+      <th colspan="5" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style>Complexity metrics of prostate VMAT plans</th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_center gt_columns_bottom_border" rowspan="2" colspan="1"><strong>Characteristic</strong></th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="3">
+        <span class="gt_column_spanner"><strong>Field Size</strong></span>
+      </th>
+      <th class="gt_col_heading gt_center gt_columns_bottom_border" rowspan="2" colspan="1"><strong>p-value</strong><sup class="gt_footnote_marks">2</sup></th>
+    </tr>
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>PO</strong>, N = 34<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>PSV</strong>, N = 78<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>WPRT</strong>, N = 105<sup class="gt_footnote_marks">1</sup></th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">CoA (1/mm)</td>
+      <td class="gt_row gt_center">0.38 (0.05)</td>
+      <td class="gt_row gt_center">0.38 (0.10)</td>
+      <td class="gt_row gt_center">0.46 (0.06)</td>
+      <td class="gt_row gt_center" style="font-weight: bold;"><0.001</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">EM (1/mm)</td>
+      <td class="gt_row gt_center">0.268 (0.011)</td>
+      <td class="gt_row gt_center">0.267 (0.010)</td>
+      <td class="gt_row gt_center">0.266 (0.009)</td>
+      <td class="gt_row gt_center" style="font-weight: bold;">0.038</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">ESF (mm)</td>
+      <td class="gt_row gt_center">26 (6)</td>
+      <td class="gt_row gt_center">32 (10)</td>
+      <td class="gt_row gt_center">53 (8)</td>
+      <td class="gt_row gt_center" style="font-weight: bold;"><0.001</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">LT</td>
+      <td class="gt_row gt_center">0.82 (0.06)</td>
+      <td class="gt_row gt_center">0.77 (0.08)</td>
+      <td class="gt_row gt_center">0.61 (0.10)</td>
+      <td class="gt_row gt_center" style="font-weight: bold;"><0.001</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">LTMCSV</td>
+      <td class="gt_row gt_center">0.20 (0.05)</td>
+      <td class="gt_row gt_center">0.16 (0.04)</td>
+      <td class="gt_row gt_center">0.12 (0.03)</td>
+      <td class="gt_row gt_center" style="font-weight: bold;"><0.001</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">MCS</td>
+      <td class="gt_row gt_center">0.234 (0.046)</td>
+      <td class="gt_row gt_center">0.218 (0.029)</td>
+      <td class="gt_row gt_center">0.206 (0.027)</td>
+      <td class="gt_row gt_center" style="font-weight: bold;"><0.001</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">MCSV</td>
+      <td class="gt_row gt_center">0.234 (0.046)</td>
+      <td class="gt_row gt_center">0.217 (0.029)</td>
+      <td class="gt_row gt_center">0.205 (0.026)</td>
+      <td class="gt_row gt_center" style="font-weight: bold;"><0.001</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">MFA (mm²)</td>
+      <td class="gt_row gt_center">2,278 (830)</td>
+      <td class="gt_row gt_center">2,766 (1,299)</td>
+      <td class="gt_row gt_center">5,962 (1,100)</td>
+      <td class="gt_row gt_center" style="font-weight: bold;"><0.001</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">PI</td>
+      <td class="gt_row gt_center">23 (4)</td>
+      <td class="gt_row gt_center">26 (10)</td>
+      <td class="gt_row gt_center">49 (8)</td>
+      <td class="gt_row gt_center" style="font-weight: bold;"><0.001</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">SAS (5mm)</td>
+      <td class="gt_row gt_center">0.21 (0.10)</td>
+      <td class="gt_row gt_center">0.21 (0.08)</td>
+      <td class="gt_row gt_center">0.15 (0.06)</td>
+      <td class="gt_row gt_center" style="font-weight: bold;"><0.001</td>
+    </tr>
+  </tbody>
+  <tfoot class="gt_sourcenotes">
+    <tr>
+      <td class="gt_sourcenote" colspan="5">PO: Prostate Only, PSV: Prostate plus Seminal Vesicles, WPRT: Whole Pelvis Radiation Therapy</td>
+    </tr>
+  </tfoot>
+  <tfoot>
+    <tr class="gt_footnotes">
+      <td colspan="5">
+        <p class="gt_footnote">
+          <sup class="gt_footnote_marks">
+            <em>1</em>
+          </sup>
+           
+          Median (IQR)
+          <br />
+        </p>
+        <p class="gt_footnote">
+          <sup class="gt_footnote_marks">
+            <em>2</em>
+          </sup>
+           
+          Kruskal-Wallis rank sum test
+          <br />
+        </p>
+      </td>
+    </tr>
+  </tfoot>
+</table></div>
+
+<p>Fig. <a href="results.html#fig:cmDists">5.1</a> shows the probability density function distributions, based on a smooth kernel density estimate, for the various complexity metrics. The data have been standardized by subtracting the mean and dividing by the standard deviation. There are some evident similarities, e.g., among the bimodal distributions of ESF, MFA and PI. Also, MCS and MCSV are practically identical. In the next section, these correlations are exploited through the principal component analysis to yield a strong dimensionality reduction.</p>
+<div class="figure" style="text-align: center"><span id="fig:cmDists"></span>
+<img src="images/cm_dists.png" alt="Probability density function distributions for the various complexity metrics. The data have been normalized by subtracting the mean and dividing by the standard deviation." width="80%" />
+<p class="caption">
+Figure 5.1: Probability density function distributions for the various complexity metrics. The data have been normalized by subtracting the mean and dividing by the standard deviation.
+</p>
+</div>
+<p>In Table <a href="#tab:candidVars"><strong>??</strong></a> the candidate predictor variables are summarized, broken down by the field’s size. Whole pelvis radiation plans usually consist of two arcs, contrary to limited portals delivered with single arc plans. The dataset was unbalanced in terms of the treating physician, because PCa patients are treated mainly by the two senior physicians in our department. Rectum’s <span class="math inline">\(V_{50}\)</span> was larger in WPRT as opposed to PSV or PO plans. By irradiating the pelvic lymph nodes, a larger part of the rectum inevitably receives at least 50 Gy.<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> However, higher doses of radiation conform tightly to the prostate, which explains why rectum’s <span class="math inline">\(V_{70}\)</span> does not differ significantly between groups.</p>
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#wwszxbumsv .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#wwszxbumsv .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wwszxbumsv .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#wwszxbumsv .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#wwszxbumsv .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wwszxbumsv .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wwszxbumsv .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#wwszxbumsv .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#wwszxbumsv .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#wwszxbumsv .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#wwszxbumsv .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#wwszxbumsv .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#wwszxbumsv .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#wwszxbumsv .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#wwszxbumsv .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#wwszxbumsv .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#wwszxbumsv .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#wwszxbumsv .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wwszxbumsv .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#wwszxbumsv .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wwszxbumsv .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#wwszxbumsv .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#wwszxbumsv .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wwszxbumsv .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wwszxbumsv .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#wwszxbumsv .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wwszxbumsv .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#wwszxbumsv .gt_left {
+  text-align: left;
+}
+
+#wwszxbumsv .gt_center {
+  text-align: center;
+}
+
+#wwszxbumsv .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#wwszxbumsv .gt_font_normal {
+  font-weight: normal;
+}
+
+#wwszxbumsv .gt_font_bold {
+  font-weight: bold;
+}
+
+#wwszxbumsv .gt_font_italic {
+  font-style: italic;
+}
+
+#wwszxbumsv .gt_super {
+  font-size: 65%;
+}
+
+#wwszxbumsv .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="wwszxbumsv" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="5" class="gt_heading gt_title gt_font_normal" style>Summary table</th>
+    </tr>
+    <tr>
+      <th colspan="5" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style>Candidate predictor variables</th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_center gt_columns_bottom_border" rowspan="2" colspan="1"><strong>Characteristic</strong></th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="3">
+        <span class="gt_column_spanner"><strong>Field Size</strong></span>
+      </th>
+      <th class="gt_col_heading gt_center gt_columns_bottom_border" rowspan="2" colspan="1"><strong>p-value</strong><sup class="gt_footnote_marks">2</sup></th>
+    </tr>
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>PO</strong>, N = 34<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>PSV</strong>, N = 78<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>WPRT</strong>, N = 105<sup class="gt_footnote_marks">1</sup></th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">Number of arcs</td>
+      <td class="gt_row gt_center"></td>
+      <td class="gt_row gt_center"></td>
+      <td class="gt_row gt_center"></td>
+      <td class="gt_row gt_center" style="font-weight: bold;"><0.001</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+      <td class="gt_row gt_center">28 / 34 (82%)</td>
+      <td class="gt_row gt_center">47 / 78 (60%)</td>
+      <td class="gt_row gt_center">15 / 105 (14%)</td>
+      <td class="gt_row gt_center"></td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+      <td class="gt_row gt_center">6 / 34 (18%)</td>
+      <td class="gt_row gt_center">31 / 78 (40%)</td>
+      <td class="gt_row gt_center">90 / 105 (86%)</td>
+      <td class="gt_row gt_center"></td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">Total MUs</td>
+      <td class="gt_row gt_center">617 (69)</td>
+      <td class="gt_row gt_center">614 (72)</td>
+      <td class="gt_row gt_center">606 (36)</td>
+      <td class="gt_row gt_center">0.057</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">Physician</td>
+      <td class="gt_row gt_center"></td>
+      <td class="gt_row gt_center"></td>
+      <td class="gt_row gt_center"></td>
+      <td class="gt_row gt_center" style="font-weight: bold;"><0.001</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Phys1</td>
+      <td class="gt_row gt_center">3 / 34 (8.8%)</td>
+      <td class="gt_row gt_center">1 / 78 (1.3%)</td>
+      <td class="gt_row gt_center">6 / 105 (5.7%)</td>
+      <td class="gt_row gt_center"></td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Phys2</td>
+      <td class="gt_row gt_center">17 / 34 (50%)</td>
+      <td class="gt_row gt_center">51 / 78 (65%)</td>
+      <td class="gt_row gt_center">34 / 105 (32%)</td>
+      <td class="gt_row gt_center"></td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Phys3</td>
+      <td class="gt_row gt_center">2 / 34 (5.9%)</td>
+      <td class="gt_row gt_center">2 / 78 (2.6%)</td>
+      <td class="gt_row gt_center">8 / 105 (7.6%)</td>
+      <td class="gt_row gt_center"></td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Phys4</td>
+      <td class="gt_row gt_center">3 / 34 (8.8%)</td>
+      <td class="gt_row gt_center">0 / 78 (0%)</td>
+      <td class="gt_row gt_center">2 / 105 (1.9%)</td>
+      <td class="gt_row gt_center"></td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Phys5</td>
+      <td class="gt_row gt_center">3 / 34 (8.8%)</td>
+      <td class="gt_row gt_center">1 / 78 (1.3%)</td>
+      <td class="gt_row gt_center">11 / 105 (10%)</td>
+      <td class="gt_row gt_center"></td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Phys6</td>
+      <td class="gt_row gt_center">1 / 34 (2.9%)</td>
+      <td class="gt_row gt_center">5 / 78 (6.4%)</td>
+      <td class="gt_row gt_center">5 / 105 (4.8%)</td>
+      <td class="gt_row gt_center"></td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Phys7</td>
+      <td class="gt_row gt_center">5 / 34 (15%)</td>
+      <td class="gt_row gt_center">18 / 78 (23%)</td>
+      <td class="gt_row gt_center">39 / 105 (37%)</td>
+      <td class="gt_row gt_center"></td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">Dosimetrist</td>
+      <td class="gt_row gt_center"></td>
+      <td class="gt_row gt_center"></td>
+      <td class="gt_row gt_center"></td>
+      <td class="gt_row gt_center">0.075</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Dos1</td>
+      <td class="gt_row gt_center">14 / 34 (41%)</td>
+      <td class="gt_row gt_center">42 / 78 (54%)</td>
+      <td class="gt_row gt_center">66 / 105 (63%)</td>
+      <td class="gt_row gt_center"></td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Dos2</td>
+      <td class="gt_row gt_center">20 / 34 (59%)</td>
+      <td class="gt_row gt_center">36 / 78 (46%)</td>
+      <td class="gt_row gt_center">39 / 105 (37%)</td>
+      <td class="gt_row gt_center"></td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">TPS Version</td>
+      <td class="gt_row gt_center"></td>
+      <td class="gt_row gt_center"></td>
+      <td class="gt_row gt_center"></td>
+      <td class="gt_row gt_center">0.2</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">11.0.47</td>
+      <td class="gt_row gt_center">8 / 34 (24%)</td>
+      <td class="gt_row gt_center">22 / 78 (28%)</td>
+      <td class="gt_row gt_center">39 / 105 (37%)</td>
+      <td class="gt_row gt_center"></td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">15.1.52</td>
+      <td class="gt_row gt_center">26 / 34 (76%)</td>
+      <td class="gt_row gt_center">56 / 78 (72%)</td>
+      <td class="gt_row gt_center">66 / 105 (63%)</td>
+      <td class="gt_row gt_center"></td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">Conformation Number</td>
+      <td class="gt_row gt_center">0.87 (0.04)</td>
+      <td class="gt_row gt_center">0.87 (0.05)</td>
+      <td class="gt_row gt_center">0.87 (0.06)</td>
+      <td class="gt_row gt_center">0.7</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">PTV 72 Gy</td>
+      <td class="gt_row gt_center">119 (72)</td>
+      <td class="gt_row gt_center">102 (42)</td>
+      <td class="gt_row gt_center">93 (37)</td>
+      <td class="gt_row gt_center" style="font-weight: bold;">0.048</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">Bladder V65</td>
+      <td class="gt_row gt_center">8 (10)</td>
+      <td class="gt_row gt_center">8 (9)</td>
+      <td class="gt_row gt_center">8 (9)</td>
+      <td class="gt_row gt_center">0.6</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">Bladder V70</td>
+      <td class="gt_row gt_center">6.4 (7.8)</td>
+      <td class="gt_row gt_center">5.4 (6.9)</td>
+      <td class="gt_row gt_center">5.0 (7.2)</td>
+      <td class="gt_row gt_center">0.4</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">Rectum V50</td>
+      <td class="gt_row gt_center">21 (10)</td>
+      <td class="gt_row gt_center">22 (10)</td>
+      <td class="gt_row gt_center">24 (8)</td>
+      <td class="gt_row gt_center" style="font-weight: bold;">0.005</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">Rectum V60</td>
+      <td class="gt_row gt_center">9.2 (5.7)</td>
+      <td class="gt_row gt_center">9.1 (5.9)</td>
+      <td class="gt_row gt_center">10.4 (5.1)</td>
+      <td class="gt_row gt_center">0.3</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-weight: bold;">Rectum V70</td>
+      <td class="gt_row gt_center">2.90 (2.79)</td>
+      <td class="gt_row gt_center">2.22 (3.41)</td>
+      <td class="gt_row gt_center">2.92 (2.84)</td>
+      <td class="gt_row gt_center">0.062</td>
+    </tr>
+  </tbody>
+  <tfoot class="gt_sourcenotes">
+    <tr>
+      <td class="gt_sourcenote" colspan="5">PO: Prostate Only, PSV: Prostate plus Seminal Vesicles, WPRT: Whole Pelvis Radiation Therapy</td>
+    </tr>
+  </tfoot>
+  <tfoot>
+    <tr class="gt_footnotes">
+      <td colspan="5">
+        <p class="gt_footnote">
+          <sup class="gt_footnote_marks">
+            <em>1</em>
+          </sup>
+           
+          n / N (%); Median (IQR)
+          <br />
+        </p>
+        <p class="gt_footnote">
+          <sup class="gt_footnote_marks">
+            <em>2</em>
+          </sup>
+           
+          Pearson's Chi-squared test; Kruskal-Wallis rank sum test; chi-square test of independence
+          <br />
+        </p>
+      </td>
+    </tr>
+  </tfoot>
+</table></div>
+
+</div>
+<div id="principal-component-analysis" class="section level2">
+<h2><span class="header-section-number">5.2</span> Principal Component Analysis</h2>
+<p>Principal component analysis is a widely used dimensionality reduction technique. Given a set of linearly correlated variables, PCA constructs new variables, called principal components, that are linear combinations of the original ones. The rationale is to reduce a larger set of variables into a smaller one, which accounts for most of the original dataset’s variance. Before applying PCA, we verified whether our data fulfilled some basic assumptions.</p>
+<div id="correlation-matrix" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Correlation matrix</h3>
+<p>Table <a href="results.html#tab:cor-cms">5.1</a> shows the correlation matrix between different complexity indices, calculated with the Pearson method. Except for the CoA metric, all others had at least one such correlation that exceeded the above threshold. Therefore, CoA was excluded from further analysis.</p>
+<table>
+<caption>
+<span id="tab:cor-cms">Table 5.1: </span>Correlation matrix of complexity metrics calculated with Pearson method. The requirement for including a variable into PCA was to have at least one correlation with coefficient <span class="math inline">\(r \ge 0.3\)</span>. All variables except for  fulfilled the inclusion criterion.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;">
+</th>
+<th style="text-align:right;font-weight: bold;">
+coa
+</th>
+<th style="text-align:right;font-weight: bold;">
+em
+</th>
+<th style="text-align:right;font-weight: bold;">
+esf
+</th>
+<th style="text-align:right;font-weight: bold;">
+lt
+</th>
+<th style="text-align:right;font-weight: bold;">
+ltmcsv
+</th>
+<th style="text-align:right;font-weight: bold;">
+mcs
+</th>
+<th style="text-align:right;font-weight: bold;">
+mcsv
+</th>
+<th style="text-align:right;font-weight: bold;">
+mfa
+</th>
+<th style="text-align:right;font-weight: bold;">
+pi
+</th>
+<th style="text-align:right;font-weight: bold;">
+sas
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+coa
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+-0.17
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+em
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+-0.46
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+-0.32
+</td>
+<td style="text-align:right;">
+-0.32
+</td>
+<td style="text-align:right;">
+-0.52
+</td>
+<td style="text-align:right;">
+-0.41
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+esf
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+-0.46
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+-0.94
+</td>
+<td style="text-align:right;">
+-0.74
+</td>
+<td style="text-align:right;">
+-0.19
+</td>
+<td style="text-align:right;">
+-0.19
+</td>
+<td style="text-align:right;">
+0.98
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+<td style="text-align:right;">
+-0.58
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+lt
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+-0.94
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.85
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+-0.89
+</td>
+<td style="text-align:right;">
+-0.94
+</td>
+<td style="text-align:right;">
+0.52
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+ltmcsv
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+-0.74
+</td>
+<td style="text-align:right;">
+0.85
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.76
+</td>
+<td style="text-align:right;">
+0.76
+</td>
+<td style="text-align:right;">
+-0.64
+</td>
+<td style="text-align:right;">
+-0.73
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+mcs
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+-0.32
+</td>
+<td style="text-align:right;">
+-0.19
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.76
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+-0.04
+</td>
+<td style="text-align:right;">
+-0.16
+</td>
+<td style="text-align:right;">
+-0.41
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+mcsv
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+-0.32
+</td>
+<td style="text-align:right;">
+-0.19
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.76
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+-0.04
+</td>
+<td style="text-align:right;">
+-0.16
+</td>
+<td style="text-align:right;">
+-0.41
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+mfa
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+-0.52
+</td>
+<td style="text-align:right;">
+0.98
+</td>
+<td style="text-align:right;">
+-0.89
+</td>
+<td style="text-align:right;">
+-0.64
+</td>
+<td style="text-align:right;">
+-0.04
+</td>
+<td style="text-align:right;">
+-0.04
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+<td style="text-align:right;">
+-0.64
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+pi
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+-0.41
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+<td style="text-align:right;">
+-0.94
+</td>
+<td style="text-align:right;">
+-0.73
+</td>
+<td style="text-align:right;">
+-0.16
+</td>
+<td style="text-align:right;">
+-0.16
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+-0.61
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+sas
+</td>
+<td style="text-align:right;">
+-0.17
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+-0.58
+</td>
+<td style="text-align:right;">
+0.52
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+-0.41
+</td>
+<td style="text-align:right;">
+-0.41
+</td>
+<td style="text-align:right;">
+-0.64
+</td>
+<td style="text-align:right;">
+-0.61
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+</tbody>
+</table>
+<p>The reason why CoA lacks a significant correlation with the rest of the indices is obviated by looking at the plot of CoA <em>vs.</em> LT in Fig. <a href="results.html#fig:coavslt">5.2</a>. By breaking up the data based on the VMAT plan’s field size and the number of arcs, two distinct clusters of VMAT plans are emerging. The first one consists mostly of WPRT plans with two arcs, for which the two indices show a strong linear correlation. The second cluster is characterized by small CoA values and large LT, consisting of mostly small field plans delivered via one arc. Similar results may be obtained by comparing CoA <em>vs.</em> PI, EM, and the rest of the indices.</p>
+<div class="figure" style="text-align: center"><span id="fig:coavslt"></span>
+<img src="master-thesis_files/figure-html/coavslt-1.png" alt="CoA vs. LT, broken down by field size and number of beams (arcs) per plan. The data form two clusters, depending on the number of arcs." width="80%" />
+<p class="caption">
+Figure 5.2: CoA vs. LT, broken down by field size and number of beams (arcs) per plan. The data form two clusters, depending on the number of arcs.
+</p>
+</div>
+<p>Fig. <a href="results.html#fig:cmCorPlot">5.3</a> shows the correlations of Table <a href="results.html#tab:cor-cms">5.1</a> visualized in a matrix plot. The squares’ color is proportional to the Pearson correlation coefficient of the respective pair of CMs. The matrix is symmetric since correlation is commutative, i.e. <span class="math inline">\(Corr(x,y) = Corr(y,x)\)</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:cmCorPlot"></span>
+<img src="master-thesis_files/figure-html/cmCorPlot-1.png" alt="Correlation plot of complexity metrics. The threshold for including a variable into PCA was $r \ge 0.3$." width="80%" />
+<p class="caption">
+Figure 5.3: Correlation plot of complexity metrics. The threshold for including a variable into PCA was <span class="math inline">\(r \ge 0.3\)</span>.
+</p>
+</div>
+</div>
+<div id="sampling-adequacy" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Sampling adequacy</h3>
+<p>The Kaiser-Meyer-Olkin Measure of Sampling Adequacy indicates the proportion of variance in a dataset that could be caused by underlying factors. High values of KMO (close to 1.0) generally indicate that an explanatory factor analysis may be useful. The MSA values of each individual complexity metric in our dataset were the following:</p>
+
+<p>Historically, Kaiser and Rice,<span class="citation"><sup><a href="references.html#ref-Kaiser1974" role="doc-biblioref">43</a>,<a href="references.html#ref-Kaiser1974-index" role="doc-biblioref">47</a></sup></span> suggested as a rule of thumb that MSA values less than 0.5 are unacceptable. The KMO value of EM was remarkably low, and removing it from the set of variables increased the overall KMO to 0.76. However, given the edge metric’s importance, we opted to include it in the PCA, resulting in an overall KMO value of 0.66. However, Bartlett’s test of sphericity, with edge metric included, produced strong evidence in favor of the existence of adequate correlations in our dataset <span class="math inline">\((p &lt; 0.0001)\)</span>. Considering the correlation matrix, the overall KMO criterion, and Bartlett’s test of sphericity, we concluded that principal component analysis was justified.</p>
+<div class="figure" style="text-align: center"><span id="fig:loadingPlot"></span>
+<img src="master-thesis_files/figure-html/loadingPlot-1.png" alt="Loading plots of the principal component analysis. Left: Original dataset. Right: Transformed dataset so that LT, MCS, and MCSV increase in the same direction as the rest of the complexity indices, i.e., higher index value corresponds to higher plan complexity." width="100%" />
+<p class="caption">
+Figure 5.4: Loading plots of the principal component analysis. Left: Original dataset. Right: Transformed dataset so that LT, MCS, and MCSV increase in the same direction as the rest of the complexity indices, i.e., higher index value corresponds to higher plan complexity.
+</p>
+</div>
+</div>
+<div id="loading-plot" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> Loading plot</h3>
+<p>Fig. <a href="results.html#fig:loadingPlot">5.4</a> shows two loading plots<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> of the principal components analysis. In the left figure, we observe that the various complexity metrics fall into three coarse groups. The first group consists of ESF, MFA, and PI. The second group consists of EM and SAS. The last group loosely consists of MCS and MCSV, along with LT and LTMCSV. However, we keep in mind that LT, MCS, MCSV increase as plan complexity decreases. If we flip their sign for the sole purpose of comparison so that they increase in the same direction as the rest of the complexity indices, i.e., higher index value corresponds to higher plan complexity, we get the figure at the right. Now it becomes evident that LT, too, is positively correlated with ESF, MFA, and PI.</p>
+<p>In Fig. <a href="results.html#fig:psmFIG">5.5</a>, the smooth density histograms of the first cluster are shown, broken down by the number of arcs. All these indices exhibit a bimodal distribution that heavily depends on the number of arcs. However, in our opinion, an ideal complexity metric should be “arc agnostic” in the sense that its value should not be influenced much by the number of arcs consisting a plan. This fact, along with some other arguments that we discuss later in the linear regression analysis section, contributed to our decision to choose LTMCSV for further analysis.</p>
+<div class="figure" style="text-align: center"><span id="fig:psmFIG"></span>
+<img src="master-thesis_files/figure-html/psmFIG-1.png" alt="Smooth density histograms for ESF, LT, MFA, and PI. The histograms follow a bimodal distribution driven by the number of arcs." width="95%" />
+<p class="caption">
+Figure 5.5: Smooth density histograms for ESF, LT, MFA, and PI. The histograms follow a bimodal distribution driven by the number of arcs.
+</p>
+</div>
+<p>Returning to the PCA loading plot, we also notice that the edge metric contributes less to the first two principal components compared to the rest of the indices. This further supports the hypothesis that EM measures some fundamentally different complexity property of the plans, as was implied by the particularly low value of KMO for EM. Next, we will describe the extraction of principal components, and there we will see how EM requires three PCs for its variance to be explained.</p>
+</div>
+<div id="principal-components-extraction" class="section level3">
+<h3><span class="header-section-number">5.2.4</span> Principal components extraction</h3>
+<div id="eigenvalue-criterion" class="section level4">
+<h4><span class="header-section-number">5.2.4.1</span> Eigenvalue criterion</h4>
+<p>The eigenvalue-one criterion<span class="citation"><sup><a href="references.html#ref-Kaiser1960-zm" role="doc-biblioref">48</a></sup></span> is one of the most popular methods for deciding how many components to retain in the principal component analysis. An eigenvalue less than one indicates that the component explains less variance than a variable would and, therefore, should be omitted. The eigenvalue-one criterion implies that in our case, the first two principal components should be extracted.</p>
+
+</div>
+<div id="scree-plot" class="section level4">
+<h4><span class="header-section-number">5.2.4.2</span> Scree plot</h4>
+<p>In Fig. <a href="results.html#fig:screePlot">5.6</a> the explained variance is plotted against the number of principal components. The inflection point of the scree plot is realized at <span class="math inline">\(N=3\)</span>. The cumulative explained variance of the data, with 3 PCs, is 96.2%.</p>
+<div class="figure" style="text-align: center"><span id="fig:screePlot"></span>
+<img src="master-thesis_files/figure-html/screePlot-1.png" alt="Scree plot of principal components. The inflection point is located at N=3 dimensions. With the use of 3 principal components the total variance of the data that can be accounted for is 96.2\%." width="70%" />
+<p class="caption">
+Figure 5.6: Scree plot of principal components. The inflection point is located at N=3 dimensions. With the use of 3 principal components the total variance of the data that can be accounted for is 96.2%.
+</p>
+</div>
+</div>
+</div>
+<div id="communalities" class="section level3">
+<h3><span class="header-section-number">5.2.5</span> Communalities</h3>
+<p>Communality is the proportion of each variable’s variance accounted for by the principal components. For the <span class="math inline">\(i_\text{th}\)</span> variable, its communality is computed by taking the sum of the squared loadings up to <span class="math inline">\(m\)</span> principal components, i.e. <span class="math inline">\(\hat{h}_i^2=\sum_{j=1}^m \hat{\varphi}_{ij}^2\)</span>. In the following table we list the communalities of the various complexity indices, by keeping 2 principal components:</p>
+
+<p>And, by keeping 3 principal components:</p>
+
+<p>Yet again, the edge metric manifests an outlier behavior. Although most of the indices’ variances are explained by the first two principal components, only 48% of EM’s is accounted for. Instead, to explain the majority of EM’s variance, three PCs are required. SAS shows a similar behavior, albeit to a lesser degree, with 2 PCs explaining 70%, and 3 PCs 86% of its variance.</p>
+</div>
+</div>
+<div id="mutual-information-analysis" class="section level2">
+<h2><span class="header-section-number">5.3</span> Mutual Information Analysis</h2>
+<div class="figure" style="text-align: center"><span id="fig:entropyCMP"></span>
+<img src="images/Entropy_comp.png" alt="Differential entropy (in nats) of complexity metrics." width="70%" />
+<p class="caption">
+Figure 5.7: Differential entropy (in nats) of complexity metrics.
+</p>
+</div>
+<p>We calculated the differential entropy for all metrics (Fig. <a href="results.html#fig:entropyCMP">5.7</a>). For a continuous distribution with known mean, <span class="math inline">\(\mu\)</span>, and known variance, <span class="math inline">\(\sigma^2\)</span>, it can be proven that the maximum entropy distribution is the normal distribution.<span class="citation"><sup><a href="references.html#ref-Haykin2010" role="doc-biblioref">49</a></sup></span> The value of the maximum entropy is <span class="math inline">\(\frac{1}{2} \left(1 + \ln\left(2 \pi \sigma^2\right)\right)\)</span>. Assuming standardized data, as in our case, i.e. <span class="math inline">\(\sigma = 1\)</span>, it is <span class="math inline">\(h(X) \simeq 1.42\)</span>, however in Fig. <a href="results.html#fig:entropyCMP">5.7</a>, there are variables exceeding this theoretical upper limit. We hypothesize that this is an issue of numerical integration. The important to note, though, is the <em>relative</em> informational content between different complexity metrics. For instance, ESF, MFA, and PI bear a particularly low one, relative to EM, LTMCSV, or SAS.</p>
+<p>We calculated the mutual information for every pair of complexity metrics and sorted the probability density distributions by their MI value. Unlike the correlation coefficient, mutual information is more general and captures how much the pair’s joint distribution differs. In Fig. <a href="results.html#fig:miPairOf2">5.8</a>, we compare the MI of two pairs. The first pair is ESF and MFA with high MI, as opposed to the second pair of LT and MCSV, which has low MI. The particularly low mutual information of LT and MCSV provides supporting evidence in favor of the construction of the multiplicative combination, LTMCSV. In Fig. <a href="results.html#fig:miPair">5.9</a> we list the joint probability density distributions for all the pairs, sorted by ascending MI. This ranking might prove very useful in the context of creating a new complexity metric. For instance, some promising pairs with high individual entropy, low mutual information, and a strong effect on both first two principal components include EM/SAS, LTMCSV/SAS, LT/MCSV, and EM/SAS, to name a few.</p>
+<div class="figure" style="text-align: center"><span id="fig:miPairOf2"></span>
+<img src="images/mi_cmp_2.png" alt="Contour plots of the joint distributions of two complexity metric pairs, along with their MI. The left pair (ESF, MFA) has almost 12 times higher MI compared to the right pair (LT, MCSV). The construction of a multiplicative combination of two complexity metrics should take into account their MI." width="70%" />
+<p class="caption">
+Figure 5.8: Contour plots of the joint distributions of two complexity metric pairs, along with their MI. The left pair (ESF, MFA) has almost 12 times higher MI compared to the right pair (LT, MCSV). The construction of a multiplicative combination of two complexity metrics should take into account their MI.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:miPair"></span>
+<img src="images/gridslow2.png" alt="Contour plots of joint distributions of pairwise complexity metrics, sorted by ascending mutual information." width="100%" />
+<p class="caption">
+Figure 5.9: Contour plots of joint distributions of pairwise complexity metrics, sorted by ascending mutual information.
+</p>
+</div>
+</div>
+<div id="linear-regression-analysis-1" class="section level2">
+<h2><span class="header-section-number">5.4</span> Linear Regression Analysis</h2>
+<p>The choice of a complexity metric that correlates well with one department’s quality assurance and verification indices has been an elusive goal. Masi et al. <span class="citation"><sup><a href="references.html#ref-Masi2013" role="doc-biblioref">31</a></sup></span> found that LT, MCSV, and LTMCS were significantly correlated with VMAT dosimetric accuracy as expressed in gamma passing rates. In our PC analysis, LTMCSV was found to affect both the first and second principal components, presumably because it contains multidimensional information regarding a plan’s complexity. The pair LT and MCSV had low MI compared to other pairs, implying little redundance. Also, LTMCSV showed a distinct separation between plans with different field sizes, as we would expect for a well-founded complexity metric. Last, as we have already commented, it is “arcs agnostic”, in the sense that it is not heavily influenced by the number of arcs. For the reasons above, we chose LTMCSV as the complexity metric against which we developed our predictive models.</p>
+<div id="multicollinearity-detection" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Multicollinearity detection</h3>
+<p>In the following scatter plot matrix of Fig. <a href="results.html#fig:matrixSCPlot">5.10</a>, we see that there are some variables in our dataset that are highly linearly correlated (<span class="math inline">\(r &gt; 0.8\)</span>), and a couple of others that are moderately correlated.</p>
+<div class="figure"><span id="fig:matrixSCPlot"></span>
+<img src="master-thesis_files/figure-html/matrixSCPlot-1.png" alt="Matrix scatter plot of the candidate predictor variables in the initial dataset, along with the respective Pearson's correlation coefficients." width="1344" />
+<p class="caption">
+Figure 5.10: Matrix scatter plot of the candidate predictor variables in the initial dataset, along with the respective Pearson’s correlation coefficients.
+</p>
+</div>
+<p>In the same context, we considered the variance inflation factors. VIFs show how much the variance of the estimated coefficients are inflated compared to the variance when the independent variables are not correlated. Usually, a value less than 4 indicates no multicollinearity. In Table <a href="results.html#tab:vifs1">5.2</a>, we notice that <code>bladder_v65</code>, <code>bladder_v70</code> have an
+exceptionally high VIF value. Also <code>rectum_60</code> and <code>rectum_v70</code> have a <span class="math inline">\(\text{VIF}&gt;4\)</span>. Based on the VIF values and the previous correlation plots, we chose to drop <code>bladder_v70</code> and <code>rectum_v70</code>. These variables frequently assume the value of zero, and therefore we hypothesize that they contain less information than <code>bladder_v65</code> and <code>rectum_v60</code>, respectively. After removing the collinear variables, we re-ran the VIF analysis to check whether the new VIF values have settled below 4. In Table <a href="results.html#tab:vifs2">5.3</a>, we confirm that after removing the two collinear variables, the rest of the variables, although they exhibit some variance inflation, this is below the cutoff of 4.</p>
+<table>
+<caption>
+<span id="tab:vifs1">Table 5.2: </span>Table with Variance Inflation Factors in the initial dataset.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;">
+</th>
+<th style="text-align:right;font-weight: bold;">
+Est.
+</th>
+<th style="text-align:right;font-weight: bold;">
+2.5%
+</th>
+<th style="text-align:right;font-weight: bold;">
+97.5%
+</th>
+<th style="text-align:right;font-weight: bold;">
+t val.
+</th>
+<th style="text-align:right;font-weight: bold;">
+p
+</th>
+<th style="text-align:right;font-weight: bold;">
+VIF
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+11.01
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+total_mus
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+-1.64
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+1.35
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+arcs2
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+-4.85
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+2.05
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+field_sizePSV
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+-5.39
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+2.31
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+field_sizeWPRT
+</td>
+<td style="text-align:right;">
+-0.05
+</td>
+<td style="text-align:right;">
+-0.06
+</td>
+<td style="text-align:right;">
+-0.04
+</td>
+<td style="text-align:right;">
+-9.48
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+2.31
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+physicianPhys2
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+-2.14
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+2.61
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+physicianPhys3
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+<td style="text-align:right;">
+-0.14
+</td>
+<td style="text-align:right;">
+0.89
+</td>
+<td style="text-align:right;">
+2.61
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+physicianPhys4
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+-0.04
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+-0.91
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+2.61
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+physicianPhys5
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+-1.69
+</td>
+<td style="text-align:right;">
+0.09
+</td>
+<td style="text-align:right;">
+2.61
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+physicianPhys6
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+<td style="text-align:right;">
+0.53
+</td>
+<td style="text-align:right;">
+0.60
+</td>
+<td style="text-align:right;">
+2.61
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+physicianPhys7
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+-2.27
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+<td style="text-align:right;">
+2.61
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dosimetristDos2
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+1.65
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+1.40
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tps_version15.1.52
+</td>
+<td style="text-align:right;">
+-0.04
+</td>
+<td style="text-align:right;">
+-0.05
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+-10.36
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+1.74
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cn
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+-0.05
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+-2.08
+</td>
+<td style="text-align:right;">
+0.04
+</td>
+<td style="text-align:right;">
+1.15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ptv_72
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+2.46
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+1.41
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bladder_v65
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+-0.52
+</td>
+<td style="text-align:right;">
+0.60
+</td>
+<td style="text-align:right;">
+51.07
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bladder_v70
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.76
+</td>
+<td style="text-align:right;">
+0.45
+</td>
+<td style="text-align:right;">
+52.28
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rectum_v50
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+-4.28
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+3.66
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rectum_v60
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+1.56
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+7.15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rectum_v70
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.88
+</td>
+<td style="text-align:right;">
+4.39
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>
+<span id="tab:vifs2">Table 5.3: </span>Table with Variance Inflation Factors for the remaining variables in the dataset, after removing bladder V70 and rectum V70.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;">
+</th>
+<th style="text-align:right;font-weight: bold;">
+Est.
+</th>
+<th style="text-align:right;font-weight: bold;">
+2.5%
+</th>
+<th style="text-align:right;font-weight: bold;">
+97.5%
+</th>
+<th style="text-align:right;font-weight: bold;">
+t val.
+</th>
+<th style="text-align:right;font-weight: bold;">
+p
+</th>
+<th style="text-align:right;font-weight: bold;">
+VIF
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+11.04
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+total_mus
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+-1.64
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+1.35
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+arcs2
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+-4.98
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+1.94
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+field_sizePSV
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+-0.04
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+-5.61
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+2.09
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+field_sizeWPRT
+</td>
+<td style="text-align:right;">
+-0.05
+</td>
+<td style="text-align:right;">
+-0.06
+</td>
+<td style="text-align:right;">
+-0.04
+</td>
+<td style="text-align:right;">
+-10.07
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+2.09
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+physicianPhys2
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+-2.06
+</td>
+<td style="text-align:right;">
+0.04
+</td>
+<td style="text-align:right;">
+2.34
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+physicianPhys3
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+<td style="text-align:right;">
+-0.07
+</td>
+<td style="text-align:right;">
+0.95
+</td>
+<td style="text-align:right;">
+2.34
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+physicianPhys4
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+-0.80
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+2.34
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+physicianPhys5
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+-1.61
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+2.34
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+physicianPhys6
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+<td style="text-align:right;">
+0.56
+</td>
+<td style="text-align:right;">
+0.58
+</td>
+<td style="text-align:right;">
+2.34
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+physicianPhys7
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+-2.23
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+2.34
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dosimetristDos2
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+1.60
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+1.37
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tps_version15.1.52
+</td>
+<td style="text-align:right;">
+-0.04
+</td>
+<td style="text-align:right;">
+-0.05
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+-10.54
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+1.69
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cn
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+-0.05
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+-2.11
+</td>
+<td style="text-align:right;">
+0.04
+</td>
+<td style="text-align:right;">
+1.15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ptv_72
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+2.35
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+<td style="text-align:right;">
+1.37
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bladder_v65
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+1.54
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+1.27
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rectum_v50
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+-4.51
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+3.42
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rectum_v60
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+2.56
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+3.06
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="univariate-analysis" class="section level3">
+<h3><span class="header-section-number">5.4.2</span> Univariate analysis</h3>
+<p>After the removal of the collinear variables, we performed a univariate analysis on the rest of the covariates to decide which one of them would be included in the multivariate regression analysis. Any variable with <em>p&lt;0.2</em> in the univariate analysis was selected for inclusion in multivariate analysis. The results are summarized in Table 8:</p>
+<table>
+<caption>Predictor variables, along with their <em>p</em>-value in the univariate analysis, and whether they were included in the multivariate model.</caption>
+<thead>
+<tr class="header">
+<th><strong>Variable Name</strong></th>
+<th align="center"><strong>p-value</strong></th>
+<th align="center"><strong>Inclusion in multivariate model</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>total_mus</td>
+<td align="center">0.852</td>
+<td align="center">No</td>
+</tr>
+<tr class="even">
+<td><strong>arcs</strong></td>
+<td align="center">&lt;0.001</td>
+<td align="center"><strong>Yes</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>field_size</strong></td>
+<td align="center">&lt;0.001</td>
+<td align="center"><strong>Yes</strong></td>
+</tr>
+<tr class="even">
+<td>physician</td>
+<td align="center">0.546</td>
+<td align="center">No</td>
+</tr>
+<tr class="odd">
+<td><strong>dosimetrist</strong></td>
+<td align="center">0.003</td>
+<td align="center"><strong>Yes</strong></td>
+</tr>
+<tr class="even">
+<td><strong>tps_version</strong></td>
+<td align="center">&lt;0.001</td>
+<td align="center"><strong>Yes</strong></td>
+</tr>
+<tr class="odd">
+<td>cn</td>
+<td align="center">0.616</td>
+<td align="center">No</td>
+</tr>
+<tr class="even">
+<td><strong>ptv_72</strong></td>
+<td align="center">0.003</td>
+<td align="center"><strong>Yes</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>bladder_v65</strong></td>
+<td align="center">0.110</td>
+<td align="center"><strong>Yes</strong></td>
+</tr>
+<tr class="even">
+<td><strong>rectum_v50</strong></td>
+<td align="center">0.031</td>
+<td align="center"><strong>Yes</strong></td>
+</tr>
+<tr class="odd">
+<td>rectum_v60</td>
+<td align="center">0.818</td>
+<td align="center">No</td>
+</tr>
+</tbody>
+</table>
+<p>Fig. <a href="results.html#fig:categPlot1">5.11</a> shows the distribution of LTMCSV against every categorical variable that emerged as statistically significant in the univariate analysis. The difference in complexity is more prominent among plans of different field sizes. An expected result since WPRT contains 3 prescription levels (72 Gy, 57.6 Gy, and 51.2 Gy) and exposes OARs to significantly higher radiation doses, rather than PSV or PO. The differences are less noticeable, albeit present, in the number of arcs and TPS version and even less for the dosimetrist. Similarly, Fig. <a href="results.html#fig:continPlot1">5.12</a> presents plots of LTMCSV <em>vs.</em> the statistically significant continuous variables in the dataset. Regarding dose to the rectum, it appears that as <span class="math inline">\(V_{50}\)</span> increases, so does the complexity. Presumably, the presence of high doses to the rectum during the optimization process drives the dosimetrist to assign a high weight factor in the <span class="math inline">\(V_{50}\)</span> plan objective. This, in turn, leads to an increase in the plan’s modulation degree and, therefore, complexity.</p>
+<div class="figure" style="text-align: center"><span id="fig:categPlot1"></span>
+<img src="master-thesis_files/figure-html/categPlot1-1.png" alt="Categorical variables that were determined as significant during the univariate analysis. The lower the LTMCSV, the more complex the plan." width="864" />
+<p class="caption">
+Figure 5.11: Categorical variables that were determined as significant during the univariate analysis. The lower the LTMCSV, the more complex the plan.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:continPlot1"></span>
+<img src="master-thesis_files/figure-html/continPlot1-1.png" alt="Continuous variables that were determined as significant during the univariate analysis. The lower the LTMCSV, the more complex the plan." width="864" />
+<p class="caption">
+Figure 5.12: Continuous variables that were determined as significant during the univariate analysis. The lower the LTMCSV, the more complex the plan.
+</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+<div id="multivariate-analysis" class="section level3">
+<h3><span class="header-section-number">5.4.3</span> Multivariate analysis</h3>
+<div id="reduced-model" class="section level4">
+<h4><span class="header-section-number">5.4.3.1</span> Reduced model</h4>
+<p>We ran a multivariate linear model with the seven predictor variables that we selected during the univariate analysis. All variables, except for bladder’s <span class="math inline">\(V_{65}\)</span>, were statistically significant plan complexity predictors. These results are plausible since using two arcs is more common in WPRT plans, which, in turn, are inherently more complicated due to their intricate geometric relations of large treatment volumes and surrounding organs at risk. The treatment planning version effect was also expected because optimization algorithms changed from version 11 to version 15. Finally, PTV 72 Gy and rectum’s <span class="math inline">\(V_{50}\)</span> are also plausible contributors to complexity as their overlap imposes additional constraints on the plan. The difference between dosimetrists, although statistically significant, is of small magnitude, which can be explained by factoring in the common TPS, the shared plan templates, and cross-pollination of knowledge in our department.</p>
+</div>
+<div id="full-model" class="section level4">
+<h4><span class="header-section-number">5.4.3.2</span> Full model</h4>
+<p>We also ran a full model with all the predictor variables included. In Table <a href="#tab:comparisonRedVsFull"><strong>??</strong></a>, both the reduced and the full model are summarized. All variables, except for dosimetrist, retained their statistical significance in the multivariate model. Additionally, there was a statistically significant difference in the physician that contoured the plan, although marginal. Last, both the conformation number and rectum’s <span class="math inline">\(V_{60}\)</span> dose were significant. A higher conformation number implies greater modulation of dose intensity. By the same token, higher rectum’s <span class="math inline">\(V_{60}\)</span> doses imply less modulation.</p>
+<p>Since the two models were nested, we used <em>R</em>’s <code>anova()</code> function to compare them. The residual sum of squares (RSS) value of the full model (<em>RSS=0.088</em>) was smaller than the one of the reduced model (<em>RSS=0.104</em>). The partial <em>F</em>-test, which compares the RSS of the two models to see if the change in RSS due to the omission of a term is significant, reported <em>p&lt;0.001</em>. Last, the Akaike Information Criterion of the full model (<em>AIC=-1041</em>) was lower in comparison to the reduced model (<em>AIC=-1023</em>). Therefore, we concluded that the full model’s additional variables provided statistically significant extra information in predicting a plan’s complexity when the other explanatory variables have already been considered.</p>
+<div style="page-break-after: always;"></div>
+
+
+<p>In Fig. <a href="results.html#fig:lmDiagPlots">5.13</a>, we show some diagnostic plots for evaluating our model’s validity. In the “Residuals <em>vs.</em> Fitted” plot, the red line is approximately horizontal, lacking any distinct patterns. This is an indication of a linear association. In the “Normal Q-Q” plot, the standardized residuals points follow the straight line, representing the perfect percentile line, implying that residuals are normally distributed. In “Scale-Location”, an approximately horizontal line with equally spread points is a good indication of homoscedasticity. Finally, the “Residuals <em>vs.</em> Leverage” plot is used to detect influential observations. All things considered, there were no major violations of the underlying assumptions for the linear model (linearity of relationship, normality in the residuals, and equality of variances.)</p>
+<div class="figure" style="text-align: center"><span id="fig:lmDiagPlots"></span>
+<img src="master-thesis_files/figure-html/lmDiagPlots-1.png" alt="Diagnostic plots of the full linear model." width="672" height="100%" />
+<p class="caption">
+Figure 5.13: Diagnostic plots of the full linear model.
+</p>
+</div>
+<p>In Fig. <a href="results.html#fig:plRealVSPred">5.14</a> we plotted the real complexity <em>vs.</em> the predicted complexity for the two models (reduced and full). We notice how the two models perform reasonably well. The full model’s adjusted <span class="math inline">\(R^2\)</span> was 0.671 and reduced model’s adjusted <span class="math inline">\(R^2\)</span> was 0.627.</p>
+<div class="figure" style="text-align: center"><span id="fig:plRealVSPred"></span>
+<img src="master-thesis_files/figure-html/plRealVSPred-1.png" alt="Real complexity vs. predicted complexity for the reduced and full model. The dotted line represents perfect predictions." width="672" />
+<p class="caption">
+Figure 5.14: Real complexity vs. predicted complexity for the reduced and full model. The dotted line represents perfect predictions.
+</p>
+</div>
+</div>
+<div id="backward-and-forward-search" class="section level4">
+<h4><span class="header-section-number">5.4.3.3</span> Backward and forward search</h4>
+<p>We used backward and forward selection to pick the best predictor variables. Although this is usually not the case, both backward and forward selection methods converged on the same set of predictor variables, which included all covariates.</p>
+</div>
+</div>
+</div>
+<div id="logistic-regression-analysis-1" class="section level2">
+<h2><span class="header-section-number">5.5</span> Logistic Regression analysis</h2>
+<p>Instead of predicting the exact value of complexity, we considered grouping VMAT plans into <em>high</em> complexity and <em>low</em> complexity plans. Ideally, the cutoff value should be chosen based on an analysis of complexity <em>vs.</em> deliverability. However, since this was beyond the thesis’s scope, we arbitrarily defined as <em>high</em> complexity plans whose complexity exceeded the dataset’s median value (Fig. <a href="results.html#fig:ltmcsvDich">5.15</a>). We keep in mind that LTMCSV increases as plan complexity decreases. Therefore, plans with an LTMCSV value larger than the dataset’s median value were designated as “low complexity plans”.</p>
+<div class="figure" style="text-align: center"><span id="fig:ltmcsvDich"></span>
+<img src="master-thesis_files/figure-html/ltmcsvDich-1.png" alt="Histogram distribution of complexity (LTMCSV). The vertical red line represents the median complexity, which was used as a cut-off value separating high-complexity plans from low-complexity ones. LTMCSV increases as complexity decreases, therefore the area to the right of the red line corresponds to low complexity plans." width="672" height="30%" />
+<p class="caption">
+Figure 5.15: Histogram distribution of complexity (LTMCSV). The vertical red line represents the median complexity, which was used as a cut-off value separating high-complexity plans from low-complexity ones. LTMCSV increases as complexity decreases, therefore the area to the right of the red line corresponds to low complexity plans.
+</p>
+</div>
+<p>The following plots in Fig. <a href="results.html#fig:glmnetPLOTS">5.16</a> were generated with <em>glmnet</em> during the process of solving the logistic regression problem with LASSO regularization. The <em>first figure</em> shows binomial deviance as a function of the regularization parameter <span class="math inline">\(\lambda\)</span>. The optimal value of <span class="math inline">\(\lambda\)</span> was chosen that minimized the 5-fold cross-validated binomial deviance (<span class="math inline">\(\lambda_{\text{opt}}=0.0251\)</span>). The <em>second plot</em> shows the model’s coefficients’ values for increasing values of the regularization parameter <span class="math inline">\(\lambda\)</span>. It is evident that as <span class="math inline">\(\lambda\)</span> grows, LASSO is invoking sparsity to the model by forcing some of the coefficients to become zero, as opposed to ridge regression (Table <a href="results.html#tab:bestlassotbl">5.4</a>). In the limit where <span class="math inline">\(\lambda\)</span> grows large, all the coefficients of the model become zero. This is a well-known property of LASSO, and it is used as a feature selection process. The <em>last figure</em> shows percent of deviance <em>vs.</em> coefficients. Toward the end of the path, the explained deviance values are not changing much, but the coefficients start to “blow up”. This information can be used to identify the parts of the fit that matter.</p>
+<div class="figure" style="text-align: center"><span id="fig:glmnetPLOTS"></span>
+<img src="master-thesis_files/figure-html/glmnetPLOTS-1.png" alt="Binomial deviance and model coefficients along the regularization path. LASSO regression invokes sparsity by driving certain coefficients to zero, as the value of $\lambda$ increases, performing essentially feature selection." width="528" />
+<p class="caption">
+Figure 5.16: Binomial deviance and model coefficients along the regularization path. LASSO regression invokes sparsity by driving certain coefficients to zero, as the value of <span class="math inline">\(\lambda\)</span> increases, performing essentially feature selection.
+</p>
+</div>
+<p>After having trained our logistic regression model on the training set, we evaluated its performance with confusion matrices (Fig. <a href="results.html#fig:confMPlot">5.17</a>). The value of “1” corresponds to the class label “low complexity plan”, and the value of “0” corresponds to the class label “high complexity plan”. The accuracy of the model was 87.25%, and the AUC 0.906 (Fig. <a href="results.html#fig:aucTest">5.18</a>). Of particular interest is the false positive rate (FP). I.e., plans classified as “low complexity”, whereas their correct class was “high complexity”. The FP rate in the train set was 14.6%, and in the test set, 14.8%. Since FP is of greater importance than FN, one could tune the model to exhibit larger specificity at the cost of lower sensitivity.</p>
+<div class="figure" style="text-align: center"><span id="fig:confMPlot"></span>
+<img src="master-thesis_files/figure-html/confMPlot-1.png" alt="Confusion matrices of the best LASSO logistic regression model for the training set (left) and for the test set (right). Class 1 corresponds to low-complexity plans, and Class 0 to high-complexity plans." width="75%" />
+<p class="caption">
+Figure 5.17: Confusion matrices of the best LASSO logistic regression model for the training set (left) and for the test set (right). Class 1 corresponds to low-complexity plans, and Class 0 to high-complexity plans.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:aucTest"></span>
+<img src="master-thesis_files/figure-html/aucTest-1.png" alt="ROC evaluated in the training set (left) and in the test set (right). The dashed lines represent a random classifier. AUC: Area Under Curve, TPR: True Positive Rate, FPR: False Positive Rate." width="768" />
+<p class="caption">
+Figure 5.18: ROC evaluated in the training set (left) and in the test set (right). The dashed lines represent a random classifier. AUC: Area Under Curve, TPR: True Positive Rate, FPR: False Positive Rate.
+</p>
+</div>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:bestlassotbl">Table 5.4: </span>Summary table of best LASSO model. The parameter lambda corresponds to the optimal <span class="math inline">\(\lambda\)</span> that was calculated during the k-fold cross-validation.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;">
+term
+</th>
+<th style="text-align:right;font-weight: bold;">
+step
+</th>
+<th style="text-align:right;font-weight: bold;">
+estimate
+</th>
+<th style="text-align:right;font-weight: bold;">
+lambda
+</th>
+<th style="text-align:right;font-weight: bold;">
+dev.ratio
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2.779
+</td>
+<td style="text-align:right;">
+0.025
+</td>
+<td style="text-align:right;">
+0.446
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+arcs2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+-2.181
+</td>
+<td style="text-align:right;">
+0.025
+</td>
+<td style="text-align:right;">
+0.446
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+field_sizeWPRT
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+-1.490
+</td>
+<td style="text-align:right;">
+0.025
+</td>
+<td style="text-align:right;">
+0.446
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+physicianPhys3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1.243
+</td>
+<td style="text-align:right;">
+0.025
+</td>
+<td style="text-align:right;">
+0.446
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+physicianPhys4
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+-2.123
+</td>
+<td style="text-align:right;">
+0.025
+</td>
+<td style="text-align:right;">
+0.446
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+physicianPhys6
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1.483
+</td>
+<td style="text-align:right;">
+0.025
+</td>
+<td style="text-align:right;">
+0.446
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+physicianPhys7
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+-0.198
+</td>
+<td style="text-align:right;">
+0.025
+</td>
+<td style="text-align:right;">
+0.446
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dosimetristDos2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.073
+</td>
+<td style="text-align:right;">
+0.025
+</td>
+<td style="text-align:right;">
+0.446
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tps_version15.1.52
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+-2.067
+</td>
+<td style="text-align:right;">
+0.025
+</td>
+<td style="text-align:right;">
+0.446
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cn
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+-0.584
+</td>
+<td style="text-align:right;">
+0.025
+</td>
+<td style="text-align:right;">
+0.446
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ptv_72
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.006
+</td>
+<td style="text-align:right;">
+0.025
+</td>
+<td style="text-align:right;">
+0.446
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bladder_v70
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.032
+</td>
+<td style="text-align:right;">
+0.025
+</td>
+<td style="text-align:right;">
+0.446
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rectum_v70
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.075
+</td>
+<td style="text-align:right;">
+0.025
+</td>
+<td style="text-align:right;">
+0.446
+</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="6">
+<li id="fn6"><p>51.2 Gy is the elective dose pelvic lymph nodes receive at our department.<a href="results.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>A loading plot shows how strongly each variable influences a principal component.<a href="results.html#fnref7" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="methods.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="discussion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

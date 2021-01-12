@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>References | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans</title>
+  <meta name="description" content="References | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="References | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="References | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="summary.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i><b>1</b> Abstract</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#prostate-cancer"><i class="fa fa-check"></i><b>2.1</b> Prostate Cancer</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#volumetric-modulated-arc-therapy"><i class="fa fa-check"></i><b>2.2</b> Volumetric Modulated Arc Therapy</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#inverse-treatment-planning"><i class="fa fa-check"></i><b>2.3</b> Inverse treatment planning</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#plan-complexity"><i class="fa fa-check"></i><b>2.4</b> Plan complexity</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a><ul>
+<li class="chapter" data-level="3.1" data-path="literature.html"><a href="literature.html#background"><i class="fa fa-check"></i><b>3.1</b> Background</a></li>
+<li class="chapter" data-level="3.2" data-path="literature.html"><a href="literature.html#circumferencearea-coa"><i class="fa fa-check"></i><b>3.2</b> Circumference/Area (CoA)</a></li>
+<li class="chapter" data-level="3.3" data-path="literature.html"><a href="literature.html#leaf-travel-lt"><i class="fa fa-check"></i><b>3.3</b> Leaf Travel (LT)</a></li>
+<li class="chapter" data-level="3.4" data-path="literature.html"><a href="literature.html#edge-metric-em"><i class="fa fa-check"></i><b>3.4</b> Edge Metric (EM)</a></li>
+<li class="chapter" data-level="3.5" data-path="literature.html"><a href="literature.html#equivalent-square-field-esf-and-mean-field-area-mfa"><i class="fa fa-check"></i><b>3.5</b> Equivalent Square Field (ESF) and Mean Field Area (MFA)</a></li>
+<li class="chapter" data-level="3.6" data-path="literature.html"><a href="literature.html#modulation-complexity-score-mcs-and-leaf-travel-mcs-for-vmat-ltmcsv"><i class="fa fa-check"></i><b>3.6</b> Modulation Complexity Score (MCS) and Leaf Travel MCS for VMAT (LTMCSV)</a></li>
+<li class="chapter" data-level="3.7" data-path="literature.html"><a href="literature.html#modulation-index-total-textmi_texttotal"><i class="fa fa-check"></i><b>3.7</b> Modulation Index total (<span class="math inline">\(\text{MI}_\text{total}\)</span>)</a></li>
+<li class="chapter" data-level="3.8" data-path="literature.html"><a href="literature.html#plan-irregularity-pi"><i class="fa fa-check"></i><b>3.8</b> Plan Irregularity (PI)</a></li>
+<li class="chapter" data-level="3.9" data-path="literature.html"><a href="literature.html#small-aperture-score-sas"><i class="fa fa-check"></i><b>3.9</b> Small Aperture Score (SAS)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a><ul>
+<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#dataset-curation"><i class="fa fa-check"></i><b>4.1</b> Dataset curation</a></li>
+<li class="chapter" data-level="4.2" data-path="methods.html"><a href="methods.html#dataset-description"><i class="fa fa-check"></i><b>4.2</b> Dataset description</a></li>
+<li class="chapter" data-level="4.3" data-path="methods.html"><a href="methods.html#data-analysis"><i class="fa fa-check"></i><b>4.3</b> Data analysis</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="methods.html"><a href="methods.html#summary-statistics"><i class="fa fa-check"></i><b>4.3.1</b> Summary statistics</a></li>
+<li class="chapter" data-level="4.3.2" data-path="methods.html"><a href="methods.html#principal-component-analysis-pca"><i class="fa fa-check"></i><b>4.3.2</b> Principal Component Analysis (PCA)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="methods.html"><a href="methods.html#mutual-information-analysis-mia"><i class="fa fa-check"></i><b>4.3.3</b> Mutual information analysis (MIA)</a></li>
+<li class="chapter" data-level="4.3.4" data-path="methods.html"><a href="methods.html#linear-regression-analysis"><i class="fa fa-check"></i><b>4.3.4</b> Linear regression analysis</a></li>
+<li class="chapter" data-level="4.3.5" data-path="methods.html"><a href="methods.html#logistic-regression-analysis"><i class="fa fa-check"></i><b>4.3.5</b> Logistic regression analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a><ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#summary-of-the-data"><i class="fa fa-check"></i><b>5.1</b> Summary of the data</a></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#principal-component-analysis"><i class="fa fa-check"></i><b>5.2</b> Principal Component Analysis</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="results.html"><a href="results.html#correlation-matrix"><i class="fa fa-check"></i><b>5.2.1</b> Correlation matrix</a></li>
+<li class="chapter" data-level="5.2.2" data-path="results.html"><a href="results.html#sampling-adequacy"><i class="fa fa-check"></i><b>5.2.2</b> Sampling adequacy</a></li>
+<li class="chapter" data-level="5.2.3" data-path="results.html"><a href="results.html#loading-plot"><i class="fa fa-check"></i><b>5.2.3</b> Loading plot</a></li>
+<li class="chapter" data-level="5.2.4" data-path="results.html"><a href="results.html#principal-components-extraction"><i class="fa fa-check"></i><b>5.2.4</b> Principal components extraction</a></li>
+<li class="chapter" data-level="5.2.5" data-path="results.html"><a href="results.html#communalities"><i class="fa fa-check"></i><b>5.2.5</b> Communalities</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#mutual-information-analysis"><i class="fa fa-check"></i><b>5.3</b> Mutual Information Analysis</a></li>
+<li class="chapter" data-level="5.4" data-path="results.html"><a href="results.html#linear-regression-analysis-1"><i class="fa fa-check"></i><b>5.4</b> Linear Regression Analysis</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="results.html"><a href="results.html#multicollinearity-detection"><i class="fa fa-check"></i><b>5.4.1</b> Multicollinearity detection</a></li>
+<li class="chapter" data-level="5.4.2" data-path="results.html"><a href="results.html#univariate-analysis"><i class="fa fa-check"></i><b>5.4.2</b> Univariate analysis</a></li>
+<li class="chapter" data-level="5.4.3" data-path="results.html"><a href="results.html#multivariate-analysis"><i class="fa fa-check"></i><b>5.4.3</b> Multivariate analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="results.html"><a href="results.html#logistic-regression-analysis-1"><i class="fa fa-check"></i><b>5.5</b> Logistic Regression analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a><ul>
+<li class="chapter" data-level="6.1" data-path="discussion.html"><a href="discussion.html#general"><i class="fa fa-check"></i><b>6.1</b> General</a></li>
+<li class="chapter" data-level="6.2" data-path="discussion.html"><a href="discussion.html#complexity-metrics"><i class="fa fa-check"></i><b>6.2</b> Complexity metrics</a></li>
+<li class="chapter" data-level="6.3" data-path="discussion.html"><a href="discussion.html#complexity-prediction"><i class="fa fa-check"></i><b>6.3</b> Complexity prediction</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="discussion.html"><a href="discussion.html#the-choice-of-ltmcsv"><i class="fa fa-check"></i><b>6.3.1</b> The choice of LTMCSV</a></li>
+<li class="chapter" data-level="6.3.2" data-path="discussion.html"><a href="discussion.html#linear-regression-model"><i class="fa fa-check"></i><b>6.3.2</b> Linear regression model</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="discussion.html"><a href="discussion.html#plan-classification"><i class="fa fa-check"></i><b>6.4</b> Plan classification</a></li>
+<li class="chapter" data-level="6.5" data-path="discussion.html"><a href="discussion.html#future-work"><i class="fa fa-check"></i><b>6.5</b> Future work</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>7</b> Summary</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Complexity analysis of Volumetric Modulated Arc Therapy prostate plans</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+
+<div id="refs" class="references">
+<div id="ref-SEER2020">
+<p>1. National Cancer Institute, Surveillance Epidemiology, and End Results Program. Cancer of the prostate - cancer stat facts.</p>
+</div>
+<div id="ref-Otto2008">
+<p>2. Otto, K. Volumetric modulated arc therapy: IMRT in a single gantry arc. <em>Med. Phys.</em> <strong>35</strong>, 310–317 (2008).</p>
+</div>
+<div id="ref-Palma2010">
+<p>3. Palma, D. A., Verbakel, W. F. A. R., Otto, K. &amp; Senan, S. New developments in arc radiation therapy: A review. <em>Cancer Treat. Rev.</em> <strong>36</strong>, 393–399 (2010).</p>
+</div>
+<div id="ref-Jacobs2013">
+<p>4. Jacobs, B. L. <em>et al.</em> Use of advanced treatment technologies among men at low risk of dying from prostate cancer. <em>JAMA</em> <strong>309</strong>, 2587–2595 (2013).</p>
+</div>
+<div id="ref-Dawson2007-au">
+<p>5. Dawson, L. A. &amp; Jaffray, D. A. Advances in image-guided radiation therapy. <em>J. Clin. Oncol.</em> <strong>25</strong>, 938–946 (2007).</p>
+</div>
+<div id="ref-Bujold2012-le">
+<p>6. Bujold, A., Craig, T., Jaffray, D. &amp; Dawson, L. A. Image-guided radiotherapy: Has it influenced patient outcomes? <em>Semin. Radiat. Oncol.</em> <strong>22</strong>, 50–61 (2012).</p>
+</div>
+<div id="ref-Yu1995">
+<p>7. Yu, C. X. Intensity-modulated arc therapy with dynamic multileaf collimation: An alternative to tomotherapy. <em>Phys. Med. Biol.</em> <strong>40</strong>, 1435–1449 (1995).</p>
+</div>
+<div id="ref-Mackie1993">
+<p>8. Mackie, T. R. <em>et al.</em> Tomotherapy: A new concept for the delivery of dynamic conformal radiotherapy. <em>Med. Phys.</em> <strong>20</strong>, 1709–1719 (1993).</p>
+</div>
+<div id="ref-Khan2012">
+<p>9. Faiz M. Khan and Bruce J. Gerbi. <em>Treatment planning in radiation oncology</em>. (Wolters Kluwer Health, 2012).</p>
+</div>
+<div id="ref-Gramacy2012-hy">
+<p>10. Gramacy, R. B. &amp; Lee, H. K. H. Cases for the nugget in modeling computer experiments. <em>Stat. Comput.</em> <strong>22</strong>, 713–722 (2012).</p>
+</div>
+<div id="ref-Kessler2005">
+<p>11. Kessler, M. L. <em>et al.</em> Costlets: A generalized approach to cost functions for automated optimization of IMRT treatment plans. <em>Optim. Eng.</em> <strong>6</strong>, 421–448 (2005).</p>
+</div>
+<div id="ref-Shepard2002">
+<p>12. Shepard, D. M., Earl, M. A., Li, X. A., Naqvi, S. &amp; Yu, C. Direct aperture optimization: A turnkey solution for step-and-shoot IMRT. <em>Med. Phys.</em> <strong>29</strong>, 1007–1018 (2002).</p>
+</div>
+<div id="ref-Kamperis2020">
+<p>13. Kamperis, E., Kodona, C., Hatziioannou, K. &amp; Giannouzakos, V. Complexity in radiation therapy: It’s complicated. <em>Int. J. Radiat. Oncol. Biol. Phys.</em> <strong>106</strong>, 182–184 (2020).</p>
+</div>
+<div id="ref-Craft2007-rq">
+<p>14. Craft, D., Süss, P. &amp; Bortfeld, T. The tradeoff between treatment plan quality and required number of monitor units in intensity-modulated radiotherapy. <em>Int. J. Radiat. Oncol. Biol. Phys.</em> <strong>67</strong>, 1596–1605 (2007).</p>
+</div>
+<div id="ref-Mu2003">
+<p>15. Mu, X., Löfroth, P.-O., Karlsson, M. &amp; Zackrisson, B. The effect of fraction time in intensity modulated radiotherapy: Theoretical and experimental evaluation of an optimisation problem. <em>Radiother. Oncol.</em> <strong>68</strong>, 181–187 (2003).</p>
+</div>
+<div id="ref-Wang2003">
+<p>16. Wang, J. Z., Li, X. A., D’Souza, W. D. &amp; Stewart, R. D. Impact of prolonged fraction delivery times on tumor control: A note of caution for intensity-modulated radiation therapy (IMRT). <em>Int. J. Radiat. Oncol. Biol. Phys.</em> <strong>57</strong>, 543–552 (2003).</p>
+</div>
+<div id="ref-Fowler2004">
+<p>17. Fowler, J. F., Welsh, J. S. &amp; Howard, S. P. Loss of biological effect in prolonged fraction delivery. <em>Int. J. Radiat. Oncol. Biol. Phys.</em> <strong>59</strong>, 242–249 (2004).</p>
+</div>
+<div id="ref-Paganetti2005">
+<p>18. Paganetti, H. Changes in tumor cell response due to prolonged dose delivery times in fractionated radiation therapy. <em>Int. J. Radiat. Oncol. Biol. Phys.</em> <strong>63</strong>, 892–900 (2005).</p>
+</div>
+<div id="ref-Yang2009-uh">
+<p>19. Yang, W. <em>et al.</em> Tumor cell survival dependence on helical tomotherapy, continuous arc and segmented dose delivery. <em>Phys. Med. Biol.</em> <strong>54</strong>, 6635–6643 (2009).</p>
+</div>
+<div id="ref-Gotstedt2015">
+<p>20. Götstedt, J., Karlsson Hauer, A. &amp; Bäck, A. Development and evaluation of aperture-based complexity metrics using film and EPID measurements of static MLC openings. <em>Med. Phys.</em> <strong>42</strong>, 3911–3921 (2015).</p>
+</div>
+<div id="ref-Matuszak2007">
+<p>21. Matuszak, M. M., Larsen, E. W. &amp; Fraass, B. A. Reduction of IMRT beam complexity through the use of beam modulation penalties in the objective function. <em>Med. Phys.</em> <strong>34</strong>, 507–520 (2007).</p>
+</div>
+<div id="ref-Craft2007">
+<p>22. Craft, D., Süss, P. &amp; Bortfeld, T. The tradeoff between treatment plan quality and required number of monitor units in intensity-modulated radiotherapy. <em>Int. J. Radiat. Oncol. Biol. Phys.</em> <strong>67</strong>, 1596–1605 (2007).</p>
+</div>
+<div id="ref-Du2014">
+<p>23. Du, W., Cho, S. H., Zhang, X., Hoffman, K. E. &amp; Kudchadker, R. J. Quantification of beam complexity in intensity-modulated radiation therapy treatment plans. <em>Med. Phys.</em> <strong>41</strong>, 021716 (2014).</p>
+</div>
+<div id="ref-Hernandez2018">
+<p>24. Hernandez, V., Saez, J., Pasler, M., Jurado-Bruggeman, D. &amp; Jornet, N. Comparison of complexity metrics for multi-institutional evaluations of treatment plans in radiotherapy. <em>Physics and Imaging in Radiation Oncology</em> <strong>5</strong>, 37–43 (2018).</p>
+</div>
+<div id="ref-Chiavassa2019">
+<p>25. Chiavassa, S., Bessieres, I., Edouard, M., Mathot, M. &amp; Moignier, A. Complexity metrics for IMRT and VMAT plans: A review of current literature and applications. <em>Br. J. Radiol.</em> <strong>92</strong>, 20190270 (2019).</p>
+</div>
+<div id="ref-Younge2012">
+<p>26. Younge, K. C. <em>et al.</em> Penalization of aperture complexity in inversely planned volumetric modulated arc therapy. <em>Med. Phys.</em> <strong>39</strong>, 7160–7170 (2012).</p>
+</div>
+<div id="ref-Crowe2014">
+<p>27. Crowe, S. B. <em>et al.</em> Treatment plan complexity metrics for predicting IMRT pre-treatment quality assurance results. <em>Australas. Phys. Eng. Sci. Med.</em> <strong>37</strong>, 475–482 (2014).</p>
+</div>
+<div id="ref-Kairn2014-ee">
+<p>28. Kairn, T., Crowe, S. B., Kenny, J., Knight, R. T. &amp; Trapp, J. V. Predicting the likelihood of QA failure using treatment plan accuracy metrics. <em>J. Phys. Conf. Ser.</em> <strong>489</strong>, 012051 (2014).</p>
+</div>
+<div id="ref-McNiven2010">
+<p>29. McNiven, A. L., Sharpe, M. B. &amp; Purdie, T. G. A new metric for assessing IMRT modulation complexity and plan deliverability. <em>Med. Phys.</em> <strong>37</strong>, 505–515 (2010).</p>
+</div>
+<div id="ref-Sumida2017">
+<p>30. Sumida, I. <em>et al.</em> Organ-specific modulation complexity score for the evaluation of dose delivery. <em>J. Radiat. Res.</em> <strong>58</strong>, 675–684 (2017).</p>
+</div>
+<div id="ref-Masi2013">
+<p>31. Masi, L., Doro, R., Favuzza, V., Cipressi, S. &amp; Livi, L. Impact of plan parameters on the dosimetric accuracy of volumetric modulated arc therapy. <em>Med. Phys.</em> <strong>40</strong>, 071718 (2013).</p>
+</div>
+<div id="ref-Park2014-fn">
+<p>32. Park, J. M. <em>et al.</em> Modulation indices for volumetric modulated arc therapy. <em>Phys. Med. Biol.</em> <strong>59</strong>, 7315–7340 (2014).</p>
+</div>
+<div id="ref-Webb2003-nc">
+<p>33. Webb, S. Use of a quantitative index of beam modulation to characterize dose conformality: Illustration by a comparison of full beamlet IMRT, few-segment IMRT (fsIMRT) and conformal unmodulated radiotherapy. <em>Phys. Med. Biol.</em> <strong>48</strong>, 2051–2062 (2003).</p>
+</div>
+<div id="ref-Alexidis2019-a">
+<p>34. Alexidis, P. <em>et al.</em> The role of hypofractionated radiotherapy for the definitive treatment of localized prostate cancer: Early results of a randomized trial. <em>J. Cancer</em> <strong>10</strong>, 6217–6224 (2019).</p>
+</div>
+<div id="ref-Alexidis2020-b">
+<p>35. Alexidis, P. <em>et al.</em> Late results of a randomized trial on the role of mild hypofractionated radiotherapy for the treatment of localized prostate cancer. <em>J. Cancer</em> <strong>11</strong>, 1008–1016 (2020).</p>
+</div>
+<div id="ref-Bethesda1993">
+<p>36. Bethesda. <em>ICRU 50: Prescribing, recording and reporting photon beam therapy</em>. (1993).</p>
+</div>
+<div id="ref-Bethesda1999">
+<p>37. Bethesda. <em>ICRU 62: Prescribing, recording, and reporting photon beam therapy (supplement to ICRU report 50)</em>. (1999).</p>
+</div>
+<div id="ref-VantRiet1997">
+<p>38. Riet, A. van’t, Mak, A. C., Moerland, M. A., Elders, L. H. &amp; Zee, W. van der. A conformation number to quantify the degree of conformality in brachytherapy and external beam irradiation: Application to the prostate. <em>Int. J. Radiat. Oncol. Biol. Phys.</em> <strong>37</strong>, 731–736 (1997).</p>
+</div>
+<div id="ref-Mukherjee2020-pi">
+<p>39. Mukherjee, S., Hong, L., Deasy, J. O. &amp; Zarepisheh, M. Integrating soft and hard dose-volume constraints into hierarchical constrained IMRT optimization. <em>Med. Phys.</em> <strong>47</strong>, 414–421 (2020).</p>
+</div>
+<div id="ref-R-base">
+<p>40. R Core Team. <em>R: A language and environment for statistical computing</em>. (R Foundation for Statistical Computing, 2020).</p>
+</div>
+<div id="ref-bookdownManual">
+<p>41. Xie, Y. <em>Bookdown: Authoring books and technical documents with r markdown</em>. (2020).</p>
+</div>
+<div id="ref-bookdownBook">
+<p>42. Xie, Y. <em>Bookdown: Authoring books and technical documents with R markdown</em>. (Chapman; Hall/CRC, 2016).</p>
+</div>
+<div id="ref-Kaiser1974">
+<p>43. Kaiser, H. F. &amp; Rice, J. Little jiffy, mark IV. Educational and psychological measurement. <em>Educ. Psychol. Meas.</em> <strong>34</strong>, 111–117 (1974).</p>
+</div>
+<div id="ref-Riley2019">
+<p>44. Riley, R. D. <em>et al.</em> Minimum sample size for developing a multivariable prediction model: Part I - continuous outcomes. <em>Stat. Med.</em> <strong>38</strong>, 1262–1275 (2019).</p>
+</div>
+<div id="ref-Gareth">
+<p>45. Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani. <em>An introduction to statistical learning with applications in R</em>. (Springer, 2017).</p>
+</div>
+<div id="ref-glmnet-t">
+<p>46. Friedman, J., Hastie, T. &amp; Tibshirani, R. Regularization paths for generalized linear models via coordinate descent. <em>Journal of Statistical Software</em> <strong>33</strong>, 1–22 (2010).</p>
+</div>
+<div id="ref-Kaiser1974-index">
+<p>47. Kaiser, H. F. An index of factorial simplicity. <em>Psychometrika</em> <strong>39</strong>, 31–36 (1974).</p>
+</div>
+<div id="ref-Kaiser1960-zm">
+<p>48. Kaiser, H. F. The application of electronic computers to factor analysis. <em>Educ. Psychol. Meas.</em> <strong>20</strong>, 141–151 (1960).</p>
+</div>
+<div id="ref-Haykin2010">
+<p>49. Haykin, S. <em>Neural networks and learning machines</em>. (Pearson Education, 2010).</p>
+</div>
+<div id="ref-Moran2011-ja">
+<p>50. Moran, J. M. <em>et al.</em> Safety considerations for IMRT: Executive summary. <em>Pract. Radiat. Oncol.</em> <strong>1</strong>, 190–195 (2011).</p>
+</div>
+<div id="ref-Glenn2018">
+<p>51. Glenn, M. C. <em>et al.</em> Treatment plan complexity does not predict IROC houston anthropomorphic head and neck phantom performance. <em>Phys. Med. Biol.</em> <strong>63</strong>, 205015 (2018).</p>
+</div>
+<div id="ref-Tomori2018">
+<p>52. Tomori, S. <em>et al.</em> A deep learning-based prediction model for gamma evaluation in patient-specific quality assurance. <em>Med. Phys.</em> (2018).</p>
+</div>
+<div id="ref-Granville2019-df">
+<p>53. Granville, D. A., Sutherland, J. G., Belec, J. G. &amp; La Russa, D. J. Predicting VMAT patient-specific QA results using a support vector classifier trained on treatment plan characteristics and linac QC metrics. <em>Phys. Med. Biol.</em> <strong>64</strong>, 095017 (2019).</p>
+</div>
+<div id="ref-Lam2019ada">
+<p>54. Lam, D. <em>et al.</em> Predicting gamma passing rates for portal dosimetry-based IMRT QA using machine learning. <em>Med. Phys.</em> (2019).</p>
+</div>
+<div id="ref-Li2019-ls">
+<p>55. Li, J. <em>et al.</em> Machine learning for Patient-Specific quality assurance of VMAT: Prediction and classification accuracy. <em>Int. J. Radiat. Oncol. Biol. Phys.</em> (2019).</p>
+</div>
+<div id="ref-Ono2019-af">
+<p>56. Ono, T. <em>et al.</em> Prediction of dosimetric accuracy for VMAT plans using plan complexity parameters via machine learning. <em>Med. Phys.</em> <strong>46</strong>, 3823–3832 (2019).</p>
+</div>
+<div id="ref-Wang2020-md">
+<p>57. Wang, L. <em>et al.</em> Multi-task autoencoder based classification-regression model for patient-specific VMAT QA. <em>Phys. Med. Biol.</em> <strong>65</strong>, 235023 (2020).</p>
+</div>
+<div id="ref-Gilpin2018-co">
+<p>58. Gilpin, L. H. <em>et al.</em> Explaining explanations: An overview of interpretability of machine learning. (2018).</p>
+</div>
+<div id="ref-IntroToSL">
+<p>59. Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani. <em>An introduction to statistical learning with applications in R</em>. (Springer, 2017).</p>
+</div>
+<div id="ref-Santos2020-po">
+<p>60. Santos, T., Ventura, T. &amp; Lopes, M. do C. Evaluation of the complexity of treatment plans from a national IMRT/VMAT audit - towards a plan complexity score. <em>Phys. Med.</em> <strong>70</strong>, 75–84 (2020).</p>
+</div>
+<div id="ref-Low2003-mx">
+<p>61. Low, D. A. &amp; Dempsey, J. F. Evaluation of the gamma dose distribution comparison method. <em>Med. Phys.</em> <strong>30</strong>, 2455–2464 (2003).</p>
+</div>
+<div id="ref-Ezzell2009-vu">
+<p>62. Ezzell, G. A. <em>et al.</em> IMRT commissioning: Multiple institution planning and dosimetry comparisons, a report from AAPM task group 119. <em>Med. Phys.</em> <strong>36</strong>, 5359–5373 (2009).</p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="summary.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

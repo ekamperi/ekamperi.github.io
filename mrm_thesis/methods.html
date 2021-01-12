@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Methods | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans</title>
+  <meta name="description" content="4 Methods | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Methods | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Methods | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="literature.html"/>
+<link rel="next" href="results.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i><b>1</b> Abstract</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#prostate-cancer"><i class="fa fa-check"></i><b>2.1</b> Prostate Cancer</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#volumetric-modulated-arc-therapy"><i class="fa fa-check"></i><b>2.2</b> Volumetric Modulated Arc Therapy</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#inverse-treatment-planning"><i class="fa fa-check"></i><b>2.3</b> Inverse treatment planning</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#plan-complexity"><i class="fa fa-check"></i><b>2.4</b> Plan complexity</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a><ul>
+<li class="chapter" data-level="3.1" data-path="literature.html"><a href="literature.html#background"><i class="fa fa-check"></i><b>3.1</b> Background</a></li>
+<li class="chapter" data-level="3.2" data-path="literature.html"><a href="literature.html#circumferencearea-coa"><i class="fa fa-check"></i><b>3.2</b> Circumference/Area (CoA)</a></li>
+<li class="chapter" data-level="3.3" data-path="literature.html"><a href="literature.html#leaf-travel-lt"><i class="fa fa-check"></i><b>3.3</b> Leaf Travel (LT)</a></li>
+<li class="chapter" data-level="3.4" data-path="literature.html"><a href="literature.html#edge-metric-em"><i class="fa fa-check"></i><b>3.4</b> Edge Metric (EM)</a></li>
+<li class="chapter" data-level="3.5" data-path="literature.html"><a href="literature.html#equivalent-square-field-esf-and-mean-field-area-mfa"><i class="fa fa-check"></i><b>3.5</b> Equivalent Square Field (ESF) and Mean Field Area (MFA)</a></li>
+<li class="chapter" data-level="3.6" data-path="literature.html"><a href="literature.html#modulation-complexity-score-mcs-and-leaf-travel-mcs-for-vmat-ltmcsv"><i class="fa fa-check"></i><b>3.6</b> Modulation Complexity Score (MCS) and Leaf Travel MCS for VMAT (LTMCSV)</a></li>
+<li class="chapter" data-level="3.7" data-path="literature.html"><a href="literature.html#modulation-index-total-textmi_texttotal"><i class="fa fa-check"></i><b>3.7</b> Modulation Index total (<span class="math inline">\(\text{MI}_\text{total}\)</span>)</a></li>
+<li class="chapter" data-level="3.8" data-path="literature.html"><a href="literature.html#plan-irregularity-pi"><i class="fa fa-check"></i><b>3.8</b> Plan Irregularity (PI)</a></li>
+<li class="chapter" data-level="3.9" data-path="literature.html"><a href="literature.html#small-aperture-score-sas"><i class="fa fa-check"></i><b>3.9</b> Small Aperture Score (SAS)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a><ul>
+<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#dataset-curation"><i class="fa fa-check"></i><b>4.1</b> Dataset curation</a></li>
+<li class="chapter" data-level="4.2" data-path="methods.html"><a href="methods.html#dataset-description"><i class="fa fa-check"></i><b>4.2</b> Dataset description</a></li>
+<li class="chapter" data-level="4.3" data-path="methods.html"><a href="methods.html#data-analysis"><i class="fa fa-check"></i><b>4.3</b> Data analysis</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="methods.html"><a href="methods.html#summary-statistics"><i class="fa fa-check"></i><b>4.3.1</b> Summary statistics</a></li>
+<li class="chapter" data-level="4.3.2" data-path="methods.html"><a href="methods.html#principal-component-analysis-pca"><i class="fa fa-check"></i><b>4.3.2</b> Principal Component Analysis (PCA)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="methods.html"><a href="methods.html#mutual-information-analysis-mia"><i class="fa fa-check"></i><b>4.3.3</b> Mutual information analysis (MIA)</a></li>
+<li class="chapter" data-level="4.3.4" data-path="methods.html"><a href="methods.html#linear-regression-analysis"><i class="fa fa-check"></i><b>4.3.4</b> Linear regression analysis</a></li>
+<li class="chapter" data-level="4.3.5" data-path="methods.html"><a href="methods.html#logistic-regression-analysis"><i class="fa fa-check"></i><b>4.3.5</b> Logistic regression analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a><ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#summary-of-the-data"><i class="fa fa-check"></i><b>5.1</b> Summary of the data</a></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#principal-component-analysis"><i class="fa fa-check"></i><b>5.2</b> Principal Component Analysis</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="results.html"><a href="results.html#correlation-matrix"><i class="fa fa-check"></i><b>5.2.1</b> Correlation matrix</a></li>
+<li class="chapter" data-level="5.2.2" data-path="results.html"><a href="results.html#sampling-adequacy"><i class="fa fa-check"></i><b>5.2.2</b> Sampling adequacy</a></li>
+<li class="chapter" data-level="5.2.3" data-path="results.html"><a href="results.html#loading-plot"><i class="fa fa-check"></i><b>5.2.3</b> Loading plot</a></li>
+<li class="chapter" data-level="5.2.4" data-path="results.html"><a href="results.html#principal-components-extraction"><i class="fa fa-check"></i><b>5.2.4</b> Principal components extraction</a></li>
+<li class="chapter" data-level="5.2.5" data-path="results.html"><a href="results.html#communalities"><i class="fa fa-check"></i><b>5.2.5</b> Communalities</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#mutual-information-analysis"><i class="fa fa-check"></i><b>5.3</b> Mutual Information Analysis</a></li>
+<li class="chapter" data-level="5.4" data-path="results.html"><a href="results.html#linear-regression-analysis-1"><i class="fa fa-check"></i><b>5.4</b> Linear Regression Analysis</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="results.html"><a href="results.html#multicollinearity-detection"><i class="fa fa-check"></i><b>5.4.1</b> Multicollinearity detection</a></li>
+<li class="chapter" data-level="5.4.2" data-path="results.html"><a href="results.html#univariate-analysis"><i class="fa fa-check"></i><b>5.4.2</b> Univariate analysis</a></li>
+<li class="chapter" data-level="5.4.3" data-path="results.html"><a href="results.html#multivariate-analysis"><i class="fa fa-check"></i><b>5.4.3</b> Multivariate analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="results.html"><a href="results.html#logistic-regression-analysis-1"><i class="fa fa-check"></i><b>5.5</b> Logistic Regression analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a><ul>
+<li class="chapter" data-level="6.1" data-path="discussion.html"><a href="discussion.html#general"><i class="fa fa-check"></i><b>6.1</b> General</a></li>
+<li class="chapter" data-level="6.2" data-path="discussion.html"><a href="discussion.html#complexity-metrics"><i class="fa fa-check"></i><b>6.2</b> Complexity metrics</a></li>
+<li class="chapter" data-level="6.3" data-path="discussion.html"><a href="discussion.html#complexity-prediction"><i class="fa fa-check"></i><b>6.3</b> Complexity prediction</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="discussion.html"><a href="discussion.html#the-choice-of-ltmcsv"><i class="fa fa-check"></i><b>6.3.1</b> The choice of LTMCSV</a></li>
+<li class="chapter" data-level="6.3.2" data-path="discussion.html"><a href="discussion.html#linear-regression-model"><i class="fa fa-check"></i><b>6.3.2</b> Linear regression model</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="discussion.html"><a href="discussion.html#plan-classification"><i class="fa fa-check"></i><b>6.4</b> Plan classification</a></li>
+<li class="chapter" data-level="6.5" data-path="discussion.html"><a href="discussion.html#future-work"><i class="fa fa-check"></i><b>6.5</b> Future work</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>7</b> Summary</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Complexity analysis of Volumetric Modulated Arc Therapy prostate plans</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="methods" class="section level1">
+<h1><span class="header-section-number">4</span> Methods</h1>
+<div id="dataset-curation" class="section level2">
+<h2><span class="header-section-number">4.1</span> Dataset curation</h2>
+<p>Two-hundred and seventeen RT-DICOM<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> files of VMAT prostate plans were exported from the Varian ARIA (Varian Medical Systems, Palo Alto, CA) oncology information system of the Radiation Oncology Department at Papageorgiou General Hospital. All patients were treated radically during 2017-2020, with a moderately hypofractionated radiotherapy scheme.<span class="citation"><sup><a href="references.html#ref-Alexidis2019-a" role="doc-biblioref">34</a>,<a href="references.html#ref-Alexidis2020-b" role="doc-biblioref">35</a></sup></span> Depending on a patient’s risk, the irradiation field encompassed prostate only (PO), prostate plus seminal vesicles (PSV), or the whole-pelvis (WPRT) (Fig. <a href="methods.html#fig:fieldImages">4.1</a>). Target volumes and organs at risk were delineated on the reference CT image according to the International Commission of Radiation Unit and Measurement 50 and 62 recommendations.<span class="citation"><sup><a href="references.html#ref-Bethesda1993" role="doc-biblioref">36</a>,<a href="references.html#ref-Bethesda1999" role="doc-biblioref">37</a></sup></span> PTVs were derived from clinical target volumes with an anisotropic expansion (7mm towards all directions except 5mm towards the rectum).</p>
+<div class="figure" style="text-align: center"><span id="fig:fieldImages"></span>
+<img src="images/field_images.png" alt="Images of 2D dose distributions for prostate plans of various field sizes. From left to right: prostate plus seminal vesicles (PSV), prostate only (PO), and whole pelvis (WPRT). Source: Radiation Oncology Department of Papageorgiou General Hospital." width="100%" />
+<p class="caption">
+Figure 4.1: Images of 2D dose distributions for prostate plans of various field sizes. From left to right: prostate plus seminal vesicles (PSV), prostate only (PO), and whole pelvis (WPRT). Source: Radiation Oncology Department of Papageorgiou General Hospital.
+</p>
+</div>
+<p>The plans were created with the Varian Eclipse Treatment Planning System. During the study period, the TPS has undergone a major upgrade from version 11.0.47 to version 15.1.52, which affected the fluence optimization and leaf sequencing algorithms. All VMAT plans were delivered by a 6MV energy linear accelerator (DHX, Varian Medical Systems, Palo Alto, CA) equipped with a 120-leaf MLC (field size 40 <span class="math inline">\(\times\)</span> 40cm, central 20cm of field - 5mm leaf width, outer 20cm of field - 10mm leaf width), and an on-board imaging kV cone-beam CT system.</p>
+<p>The variables of interest were extracted with in-house software under the name <code>rteval</code> (<a href="http://test.ogkologia.gr/rteval" class="uri">http://test.ogkologia.gr/rteval</a>). The latter can extract a diverse set of radiotherapy parameters from RTDOSE, RTPLAN, and RTSTRUCT DICOM files, such as point dose statistics, clinical dose constraints, arbitrary dose-volume data, contour coordinates, various complexity metrics, and others. The software is written in Python 3 and uses the pydicom library (version 1.3.0). All data were fully anonymized to protect patient anonymity. The research protocol was submitted to the Institutional Review Board of Papageorgiou General Hospital.</p>
+</div>
+<div id="dataset-description" class="section level2">
+<h2><span class="header-section-number">4.2</span> Dataset description</h2>
+<p>The following data were extracted:</p>
+<table>
+<caption>Variables included in the dataset, their type, and a short description of their meaning.</caption>
+<thead>
+<tr class="header">
+<th><strong>Variable Name</strong></th>
+<th align="left"><strong>Type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>coa</td>
+<td align="left">Numerical</td>
+<td align="left">Circumference over Area (1/mm)</td>
+</tr>
+<tr class="even">
+<td>em</td>
+<td align="left">Numerical</td>
+<td align="left">Edge Metric (1/mm)</td>
+</tr>
+<tr class="odd">
+<td>esf</td>
+<td align="left">Numerical</td>
+<td align="left">Equivalent Square Field (mm)</td>
+</tr>
+<tr class="even">
+<td>lt</td>
+<td align="left">Numerical</td>
+<td align="left">Leaf Travel</td>
+</tr>
+<tr class="odd">
+<td>ltmcsv</td>
+<td align="left">Numerical</td>
+<td align="left">Leaf Travel multiplied by MCS-VMAT</td>
+</tr>
+<tr class="even">
+<td>mcs</td>
+<td align="left">Numerical</td>
+<td align="left">Modulation Complexity Score</td>
+</tr>
+<tr class="odd">
+<td>mcsv</td>
+<td align="left">Numerical</td>
+<td align="left">Modulation Complexity Score for VMAT plans</td>
+</tr>
+<tr class="even">
+<td>mfa</td>
+<td align="left">Numerical</td>
+<td align="left">Mean Field Area (<span class="math inline">\(\text{mm}^2\)</span>)</td>
+</tr>
+<tr class="odd">
+<td>pi</td>
+<td align="left">Numerical</td>
+<td align="left">Plan Irregularity</td>
+</tr>
+<tr class="even">
+<td>sas</td>
+<td align="left">Numerical</td>
+<td align="left">Small Aperture Score at 5 mm</td>
+</tr>
+<tr class="odd">
+<td>total_mus</td>
+<td align="left">Numerical</td>
+<td align="left">Total number of monitor units of the plan</td>
+</tr>
+<tr class="even">
+<td>arcs</td>
+<td align="left">Categorical</td>
+<td align="left">The number of beams (1 or 2)</td>
+</tr>
+<tr class="odd">
+<td>field_size</td>
+<td align="left">Categorical</td>
+<td align="left">Prostate Only, Prostate plus Seminal Vesicles and Whole Pelvis RT</td>
+</tr>
+<tr class="even">
+<td>physician</td>
+<td align="left">Categorical</td>
+<td align="left">The physician that delineated the tumor volume and organs at risk</td>
+</tr>
+<tr class="odd">
+<td>dosimetrist</td>
+<td align="left">Categorical</td>
+<td align="left">The dosimetrist that performed the treatment planning</td>
+</tr>
+<tr class="even">
+<td>tps_version</td>
+<td align="left">Categorical</td>
+<td align="left">The version of Treatment Planning Software</td>
+</tr>
+<tr class="odd">
+<td>cn</td>
+<td align="left">Numerical</td>
+<td align="left">Conformation number indicating how tightly dose conforms to target</td>
+</tr>
+<tr class="even">
+<td>ptv_72</td>
+<td align="left">Numerical</td>
+<td align="left">The high-dose (72 Gy) planning treatment volume</td>
+</tr>
+<tr class="odd">
+<td>bladder_v65</td>
+<td align="left">Numerical</td>
+<td align="left">The volume of bladder that receives at least 65 Gy</td>
+</tr>
+<tr class="even">
+<td>bladder_v70</td>
+<td align="left">Numerical</td>
+<td align="left">The volume of bladder that receives at least 70 Gy</td>
+</tr>
+<tr class="odd">
+<td>rectum_v60</td>
+<td align="left">Numerical</td>
+<td align="left">The volume of rectum that receives at least 60 Gy</td>
+</tr>
+<tr class="even">
+<td>rectum_v65</td>
+<td align="left">Numerical</td>
+<td align="left">The volume of rectum that receives at least 65 Gy</td>
+</tr>
+<tr class="odd">
+<td>rectum_v70</td>
+<td align="left">Numerical</td>
+<td align="left">The volume of rectum that receives at least 70 Gy</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li><strong>Complexity metrics</strong>. The complexity metrics have been described in the literature section of the thesis.</li>
+<li><strong>Total monitor units</strong>. This is the sum of the monitor units of all plan’s beams.</li>
+<li><strong>Physician</strong>. In total, seven physicians delineated tumor volumes and organs at risk. Their usernames haven been replaced by the string <span class="math inline">\(\text{Phys}_i, i = 1,\ldots,7\)</span> to protect anonymity.</li>
+<li><strong>Dosimetrist</strong>. In total, two dosimetrists optimized the plans. Their usernames have been replaced by the string <span class="math inline">\(\text{Dos}_i, i = \{1,2\}\)</span> to protect anonymity.</li>
+<li><strong>TPS version</strong>. Plans from two different versions of the Varian Eclipse TPS entered the study, version 11.0.47 and version 15.1.52.</li>
+<li><strong>Conformation Number (CN)</strong>. This index measures how tightly the dose distribution conforms around the target.<span class="citation"><sup><a href="references.html#ref-VantRiet1997" role="doc-biblioref">38</a></sup></span> It is given by the following equation:
+<span class="math display">\[
+\text{CN} = \frac{\text{TV}_{RI}}{\text{TV}} \times \frac{\text{TV}_{RI}}{\text{V}_{RI}}
+\]</span>
+where <span class="math inline">\(\text{TV}\)</span> corresponds to the target volume, <span class="math inline">\(\text{TV}_{RI}\)</span> to the target Volume covered by some reference isodose (RI), and <span class="math inline">\(\text{V}_{RI}\)</span> to the volume of the reference isodose. CN consists of two factors, with the first fraction describing the quality of target coverage, whereas the second one the volume of normal tissue receiving a dose equal or greater to a reference dose. A value of 1 represents a reference isodose covering the target volume without irradiation of normal tissues and corresponds to optimal conformation. A value of zero implies a total absence of conformation. We used 95% of the prescribed dose level for the high-dose (72 Gy) PTV as the reference dose to apply the van’t Reit’s formula.<span class="citation"><sup><a href="references.html#ref-VantRiet1997" role="doc-biblioref">38</a></sup></span></li>
+<li><strong>High-dose (72 Gy) PTV</strong>. In our department, a moderately hypofractionated scheme is used, where the prostate is receiving 72 Gy in 32 fractions with 2.25 Gy/fraction, seminal vesicles 57.6 Gy with 1.8 Gy/fraction, and pelvic lymph nodes 51.2 Gy with 1.6 Gy/fraction.</li>
+<li><strong>Dose-volume constraints</strong>. These constraints allow only a certain percentage of an organ’s volume (e.g., bladder or rectum) to receive doses above some prespecified threshold level. They have for some time been considered as a de facto standard clinical tool for plan evaluation.<span class="citation"><sup><a href="references.html#ref-Mukherjee2020-pi" role="doc-biblioref">39</a></sup></span></li>
+</ol>
+</div>
+<div id="data-analysis" class="section level2">
+<h2><span class="header-section-number">4.3</span> Data analysis</h2>
+<p>After their extraction, the data were tabulated in a Microsoft Excel spreadsheet. The statistical analysis was done in <em>R</em> language version 3.6.3.<span class="citation"><sup><a href="references.html#ref-R-base" role="doc-biblioref">40</a></sup></span> Some prototyping and exploratory analyses were performed with Wolfram Mathematica version 12.1, Python version 3.6.9, and scikit-learn version 0.23. The results of the principal component analysis were independently verified with IBM SPSS version 25. This thesis was written in Bookdown,<span class="citation"><sup><a href="references.html#ref-bookdownManual" role="doc-biblioref">41</a>,<a href="references.html#ref-bookdownBook" role="doc-biblioref">42</a></sup></span> an <em>R</em> package built on top of <em>R</em> Markdown, that allows reproducible research. Unless otherwise specified in the text, the level of statistical significance was set at <em>a=0.05</em>.</p>
+<div id="summary-statistics" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Summary statistics</h3>
+<p>We analyzed each variable via the Shapiro-Wilk normality test, descriptive statistics (mean/median, skewness, kurtosis), histograms, and Q-Q plots to generate a summary of the data. All variables deviated from normality; therefore, their values are reported in median and interquartile ranges (IQR).</p>
+</div>
+<div id="principal-component-analysis-pca" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Principal Component Analysis (PCA)</h3>
+<p>The set of all complexity metrics was analyzed with principal component analysis. The assumptions of PCA were checked with the correlation matrix, and the level of correlation that was considered worthy of a variable’s inclusion in the PCA was <span class="math inline">\(r \ge 0.3\)</span>. I.e., for a variable to be included in further analysis, it needed to have a correlation coefficient <span class="math inline">\(r \ge 0.3\)</span> with at least one of the rest variables. Sampling adequacy was checked with the Kaiser-Meyer-Olkin (KMO) measure for the overall dataset, and with the Measure of Sampling Adequacy (MSA) for each individual metric,<span class="citation"><sup><a href="references.html#ref-Kaiser1974" role="doc-biblioref">43</a></sup></span> along with Bartlett’s test of sphericity.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> For KMO and MSA calculations we used the <em>R</em> package <em>REdaS</em> version 0.9.3. All data were centered and scaled before applying PCA. The PCA results include the report of communalities<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> of the metrics. The principal components’ extraction was based on the eigenvalue criterion and the scree plots.</p>
+</div>
+<div id="mutual-information-analysis-mia" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> Mutual information analysis (MIA)</h3>
+<p>For every pair of complexity metrics the mutual information (MI), <span class="math inline">\(I(X;Y)\)</span>, was calculated via the following formula:</p>
+<p><span class="math display">\[
+\operatorname{I}(X;Y) = 
+\int_{S_{\mathcal Y}} \int_{S_{\mathcal Χ}}
+    {p_{\scriptsize{XY}}(x,y) \log{ \left(\frac{p_{\scriptsize{XY}}(x,y)}{p_{\scriptsize X}(x)\,p_{\scriptsize Y}(y)} \right) }
+} \; \mathrm{d}x \, \mathrm{d}y
+\]</span></p>
+<p>The probability density functions <span class="math inline">\(p_{\scriptsize{X}}(x),p_{\scriptsize{Y}}(y),p_{\scriptsize{XY}}(x,y)\)</span> were approximated with a smooth kernel distribution, given by a linearly interpolated version of a Gaussian kernel:</p>
+<p><span class="math display">\[
+\hat{f}(x;h)
+=\frac{1}{n}\sum_{i=1}^n \underbrace{\frac{1}{h}\frac{1}{\sqrt{2\pi}}\text{exp}\left[-\frac{1}{2}\left(\frac{x-x_i}{h}\right)^2\right]}_{K_h(x-x_i)}
+\]</span></p>
+<p>Where <span class="math inline">\(K_h\)</span> is the scaled kernel <span class="math inline">\(K_h(u) = \frac{1}{h}K\left(\frac{u}{h}\right)\)</span> and <span class="math inline">\(K(u) = \frac{1}{\sqrt{2\pi}}\text{exp}(-u^2/2)\)</span>. The bandwidth <span class="math inline">\(h\)</span> was estimated with the Silverman’s rule. In analogy with the univariate case, the bivariate kernel density estimate was calculated via:</p>
+<p><span class="math display">\[
+\hat{f}(\mathbf{x}; \mathbf{H}) = \frac{1}{n}\sum_{i=1}^n K_{\mathbf{H}} \left(\mathbf{x} - \mathbf{x}_i\right)
+\]</span></p>
+<p>Where <span class="math inline">\(\mathbf{H}\)</span> is a symmetric and positive definite bandwidth matrix and <span class="math inline">\(K_{\mathbf{H}}(\mathbf{u}) = |\mathbf{H}|^{-1/2}K(\mathbf{H}^{-1/2}\mathbf{u})\)</span> and <span class="math inline">\(K(\mathbf{u}) = \frac{1}{2\pi} \text{exp}\left(-\frac{1}{2}\mathbf{u}^⊤ \mathbf{u}\right)\)</span>.</p>
+<p>Unlike the correlation coefficient, mutual information is more general and captures how much the joint distribution of the pair <span class="math inline">\(p_{\scriptsize{XY}}(x,y)\)</span> differs to the product of the marginal distributions of <span class="math inline">\(p_{\scriptsize{X}}(x)\)</span> and <span class="math inline">\(p_{\scriptsize{Y}}(y)\)</span>. In the limit where <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are completely independent, it holds that <span class="math inline">\(p_{\scriptsize{XY}}(x,y)=p_{\scriptsize{X}}(x)\cdot p_{\scriptsize{Y}}(y)\)</span>. Therefore <span class="math inline">\(\text{log}\left(\frac{p_{\scriptsize{XY}}(x,y)}{p_{\scriptsize{X}}(x)\cdot p_{\scriptsize{Y}}(y)}\right) = \text{log}\left(\frac{p_{\scriptsize{X}}(x)\cdot p_{\scriptsize{Y}}(y)}{p_{\scriptsize{X}}(x)\cdot p_{\scriptsize{Y}}(y)}\right)=\text{log}(1)=0\)</span>.</p>
+</div>
+<div id="linear-regression-analysis" class="section level3">
+<h3><span class="header-section-number">4.3.4</span> Linear regression analysis</h3>
+<p>Traditionally, the minimum required sample size for linear regression models was ten subjects per variable or 200 subjects for any regression analysis. In a recent paper by Riley et al.[<span class="citation"><a href="references.html#ref-Riley2019" role="doc-biblioref">44</a></span>}, a methodology was proposed to calculate the minimum sample size needed to develop a prediction model using linear regression. The authors describe four criteria that need to be fulfilled: small overfitting, small absolute difference in the model’s apparent and adjusted R-squared value, precise estimation of the residual standard deviation, and precise estimation of the average outcome value. They also developed the <em>pmsampsize</em> package in <em>R</em> that we used. In our dataset the average value of complexity was <span class="math inline">\(\overline{c} = 0.150\)</span> and the standard deviation <span class="math inline">\(s_c = 0.037\)</span>. Assuming an <span class="math inline">\(R^2\)</span> of <span class="math inline">\(0.3\)</span>, and by including seven predictor parameters in the model, the necessary sample size is calculated as follows:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="methods.html#cb1-1"></a><span class="kw">library</span>(pmsampsize)</span>
+<span id="cb1-2"><a href="methods.html#cb1-2"></a><span class="kw">pmsampsize</span>(<span class="dt">type =</span> <span class="st">&quot;c&quot;</span>, <span class="dt">rsquared =</span> <span class="fl">0.3</span>, <span class="dt">parameters =</span> <span class="dv">7</span>,</span>
+<span id="cb1-3"><a href="methods.html#cb1-3"></a>           <span class="dt">shrinkage =</span> <span class="fl">0.9</span>, <span class="dt">intercept =</span> <span class="fl">0.150</span>, <span class="dt">sd =</span> <span class="fl">0.037</span>, <span class="dt">mmoe =</span> <span class="fl">1.1</span>)</span></code></pre></div>
+<pre><code>## NB: Assuming 0.05 acceptable difference in apparent &amp; adjusted R-squared 
+## NB: Assuming MMOE &lt;= 1.1 in estimation of intercept &amp; residual standard deviation 
+## SPP - Subjects per Predictor Parameter 
+##  
+##             Samp_size Shrinkage Parameter Rsq   SPP
+## Criteria 1        120     0.900         7 0.3 17.14
+## Criteria 2         99     0.883         7 0.3 14.14
+## Criteria 3        241     0.946         7 0.3 34.43
+## Criteria 4*       242     0.946         7 0.3 34.57
+## Final             242     0.946         7 0.3 34.57
+##  
+##  Minimum sample size required for new model development based on user inputs = 242  
+##  
+##  * 95% CI for intercept = (0.17, 0.13), for sample size n = 242</code></pre>
+<p>Based on this calculation, at least <span class="math inline">\(N=242\)</span> VMAT plans are needed for conducting regression analysis. The dataset’s size was <span class="math inline">\(N=217\)</span>; therefore, we recognize that our analysis might be marginally underpowered.</p>
+<p>We assessed multicollinearity, both visually via a matrix scatter plot and numerically, by calculating the variance inflation factors (VIFs).<span class="citation"><sup><a href="references.html#ref-Gareth" role="doc-biblioref">45</a></sup></span> The cutoff VIF value for omitting a variable was 4. After excluding collinear variables, we performed a univariate analysis on the rest of the covariates to decide which one would be included in the multivariate regression analysis. Any variable with <span class="math inline">\(p &lt; 0.2\)</span> in the univariate analysis was included in multivariate analysis. We also developed two models via backward and forward selection methods.</p>
+<p><em>Backward stepwise selection</em> starts with the full model containing all predictor variables. Then, the least useful predictor is iteratively removed, one at a time. The single best model at each time is selected via the Akaike information criterion (AIC). The latter is an estimator of out-of-sample prediction error and evaluates each model’s quality, relative to each of the other models. It is given by the formula <span class="math inline">\(\mathrm{AIC} \, = \, 2k - 2\ln(\hat L)\)</span>, where <span class="math inline">\(k\)</span> is the number of estimated parameters in the model and <span class="math inline">\(\hat{L}\)</span> the maximum value of the model’s likelihood function. On the contrary, <em>forward stepwise selection</em> starts with a model that contains no predictors at all. Subsequently, it adds predictors one at a time until all of the predictors have been considered. At each step, the predictor that gives the most considerable additional improvement to the fit is added. The final model’s validity was verified with the following diagnostic plots: <em>residuals vs. fitted plot</em> (linearity of relationship), <em>normal Q-Q plot</em> (normality in the residuals), <em>scale-location plot</em> (equality of variances), and the <em>residuals vs. leverage</em> plot.</p>
+</div>
+<div id="logistic-regression-analysis" class="section level3">
+<h3><span class="header-section-number">4.3.5</span> Logistic regression analysis</h3>
+<p>Instead of predicting the exact value of complexity, we dichotomized VMAT plans into high complexity and low complexity ones. Normally, the threshold choice should be based on an analysis of complexity <em>vs.</em> deliverability. Concretely, plans designated as “low complexity” should correlate with higher scores in quality assurance and verification procedures (e.g., gamma index analysis). However, the determination of the optimal cutoff value is beyond the thesis’s scope.</p>
+<p>Instead, we arbitrarily defined as “high complexity” plans, those whose complexity exceeded the dataset’s median value. After this division, the problem converted from prediction to classification and became amenable to logistic regression analysis. We modeled the probability of predicting low complexity given some values of <span class="math inline">\(X\)</span>, <span class="math inline">\(p(X)=\text{Pr}(Y=1|X)\)</span>, using the logistic function that gives outputs 0 and 1 for all <span class="math inline">\(X\)</span>:</p>
+<p><span class="math display">\[
+p(X) = \frac{e^{\beta_0 + \beta^⊤ X}}{1 + e^{\beta_0 + \beta^⊤ X}}
+\]</span></p>
+<p>The model included all candidate variables, and to fit it, we used LASSO<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> regularization that is known to invoke sparsity-based feature selection. The <em>R</em> package we used was <em>glmnet</em><span class="citation"><sup><a href="references.html#ref-glmnet-t" role="doc-biblioref">46</a></sup></span> version 4.0.2, which solves the following optimization problem:</p>
+<p><span class="math display">\[
+\min_{(\beta_0, \beta) \in \mathbb{R}^{p+1}} \overbrace{-\left[\frac{1}{N} \sum_{i=1}^N y_i (\beta_0 + x_i^⊤ \beta) - \log (1+e^{\beta_0+x_i^⊤ \beta})\right]}^{\text{negative binomial log-likehood}} + \underbrace{\lambda \big[ (1-\alpha)\|\beta\|_2^2/2 + \alpha\|\beta\|_1\big]}_{\text{elastic-net penalty}}
+\]</span></p>
+<p>over some range of <span class="math inline">\(\lambda\)</span> values. The hyperparameter <span class="math inline">\(\alpha\)</span> controls the elastic-net penalty, ranging from <span class="math inline">\(\alpha=1\)</span> for LASSO and <span class="math inline">\(\alpha = 0\)</span> for the ridge. In our case, we used <span class="math inline">\(\alpha = 1\)</span>.</p>
+<p>We split the dataset into a training set (75%) and a test set (25%). The optimal value of the regularization parameter <span class="math inline">\(\lambda\)</span> was determined through 5-fold cross-validation in the training set (Fig. <a href="methods.html#fig:gridCVsearch">4.2</a>). Subsequently, the best LASSO model, corresponding to the optimal value of <span class="math inline">\(\lambda\)</span>, was evaluated to the test set through ROC and confusion matrix analysis.</p>
+<div class="figure" style="text-align: center"><span id="fig:gridCVsearch"></span>
+<img src="images/grid_search_cross_validation.png" alt="Schematic representation of k-fold cross-validation ($k=5$). The training set is split into $k$ smaller sets. The model is trained using $k-1$ folds and validated on the remaining data. The best model is evaluated in the holdout test set. Modified from scikit documentation." width="100%" />
+<p class="caption">
+Figure 4.2: Schematic representation of k-fold cross-validation (<span class="math inline">\(k=5\)</span>). The training set is split into <span class="math inline">\(k\)</span> smaller sets. The model is trained using <span class="math inline">\(k-1\)</span> folds and validated on the remaining data. The best model is evaluated in the holdout test set. Modified from scikit documentation.
+</p>
+</div>
+
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>RT-DICOM is an extension of the DICOM standard applied to radiation therapy.<a href="methods.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Bartlett’s test checks whether a matrix is significantly different from the identity matrix. When applied to a correlation matrix, it provides a statistical probability that there exist significant correlations among at least some of the variables. For factor analysis, some relationships are necessary between variables; therefore, a significant Barlett’s test of sphericity is required, e.g., <span class="math inline">\(p &lt; 0.001\)</span>.<a href="methods.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Communality is the proportion of each variable’s variance accounted for by the principal components. Communalities for the <span class="math inline">\(i_\text{th}\)</span> variable are computed by taking the sum of the squared loadings for that variable, i.e.
+<span class="math inline">\(\hat{h}_i^2=\sum_{j=1}^m \hat{\varphi}_{ij}^2\)</span>.<a href="methods.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>LASSO stands for least absolute shrinkage and selection operator.<a href="methods.html#fnref5" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="literature.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="results.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

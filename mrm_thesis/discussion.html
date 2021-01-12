@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Discussion | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans</title>
+  <meta name="description" content="6 Discussion | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Discussion | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Discussion | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="results.html"/>
+<link rel="next" href="summary.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i><b>1</b> Abstract</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#prostate-cancer"><i class="fa fa-check"></i><b>2.1</b> Prostate Cancer</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#volumetric-modulated-arc-therapy"><i class="fa fa-check"></i><b>2.2</b> Volumetric Modulated Arc Therapy</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#inverse-treatment-planning"><i class="fa fa-check"></i><b>2.3</b> Inverse treatment planning</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#plan-complexity"><i class="fa fa-check"></i><b>2.4</b> Plan complexity</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a><ul>
+<li class="chapter" data-level="3.1" data-path="literature.html"><a href="literature.html#background"><i class="fa fa-check"></i><b>3.1</b> Background</a></li>
+<li class="chapter" data-level="3.2" data-path="literature.html"><a href="literature.html#circumferencearea-coa"><i class="fa fa-check"></i><b>3.2</b> Circumference/Area (CoA)</a></li>
+<li class="chapter" data-level="3.3" data-path="literature.html"><a href="literature.html#leaf-travel-lt"><i class="fa fa-check"></i><b>3.3</b> Leaf Travel (LT)</a></li>
+<li class="chapter" data-level="3.4" data-path="literature.html"><a href="literature.html#edge-metric-em"><i class="fa fa-check"></i><b>3.4</b> Edge Metric (EM)</a></li>
+<li class="chapter" data-level="3.5" data-path="literature.html"><a href="literature.html#equivalent-square-field-esf-and-mean-field-area-mfa"><i class="fa fa-check"></i><b>3.5</b> Equivalent Square Field (ESF) and Mean Field Area (MFA)</a></li>
+<li class="chapter" data-level="3.6" data-path="literature.html"><a href="literature.html#modulation-complexity-score-mcs-and-leaf-travel-mcs-for-vmat-ltmcsv"><i class="fa fa-check"></i><b>3.6</b> Modulation Complexity Score (MCS) and Leaf Travel MCS for VMAT (LTMCSV)</a></li>
+<li class="chapter" data-level="3.7" data-path="literature.html"><a href="literature.html#modulation-index-total-textmi_texttotal"><i class="fa fa-check"></i><b>3.7</b> Modulation Index total (<span class="math inline">\(\text{MI}_\text{total}\)</span>)</a></li>
+<li class="chapter" data-level="3.8" data-path="literature.html"><a href="literature.html#plan-irregularity-pi"><i class="fa fa-check"></i><b>3.8</b> Plan Irregularity (PI)</a></li>
+<li class="chapter" data-level="3.9" data-path="literature.html"><a href="literature.html#small-aperture-score-sas"><i class="fa fa-check"></i><b>3.9</b> Small Aperture Score (SAS)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a><ul>
+<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#dataset-curation"><i class="fa fa-check"></i><b>4.1</b> Dataset curation</a></li>
+<li class="chapter" data-level="4.2" data-path="methods.html"><a href="methods.html#dataset-description"><i class="fa fa-check"></i><b>4.2</b> Dataset description</a></li>
+<li class="chapter" data-level="4.3" data-path="methods.html"><a href="methods.html#data-analysis"><i class="fa fa-check"></i><b>4.3</b> Data analysis</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="methods.html"><a href="methods.html#summary-statistics"><i class="fa fa-check"></i><b>4.3.1</b> Summary statistics</a></li>
+<li class="chapter" data-level="4.3.2" data-path="methods.html"><a href="methods.html#principal-component-analysis-pca"><i class="fa fa-check"></i><b>4.3.2</b> Principal Component Analysis (PCA)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="methods.html"><a href="methods.html#mutual-information-analysis-mia"><i class="fa fa-check"></i><b>4.3.3</b> Mutual information analysis (MIA)</a></li>
+<li class="chapter" data-level="4.3.4" data-path="methods.html"><a href="methods.html#linear-regression-analysis"><i class="fa fa-check"></i><b>4.3.4</b> Linear regression analysis</a></li>
+<li class="chapter" data-level="4.3.5" data-path="methods.html"><a href="methods.html#logistic-regression-analysis"><i class="fa fa-check"></i><b>4.3.5</b> Logistic regression analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a><ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#summary-of-the-data"><i class="fa fa-check"></i><b>5.1</b> Summary of the data</a></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#principal-component-analysis"><i class="fa fa-check"></i><b>5.2</b> Principal Component Analysis</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="results.html"><a href="results.html#correlation-matrix"><i class="fa fa-check"></i><b>5.2.1</b> Correlation matrix</a></li>
+<li class="chapter" data-level="5.2.2" data-path="results.html"><a href="results.html#sampling-adequacy"><i class="fa fa-check"></i><b>5.2.2</b> Sampling adequacy</a></li>
+<li class="chapter" data-level="5.2.3" data-path="results.html"><a href="results.html#loading-plot"><i class="fa fa-check"></i><b>5.2.3</b> Loading plot</a></li>
+<li class="chapter" data-level="5.2.4" data-path="results.html"><a href="results.html#principal-components-extraction"><i class="fa fa-check"></i><b>5.2.4</b> Principal components extraction</a></li>
+<li class="chapter" data-level="5.2.5" data-path="results.html"><a href="results.html#communalities"><i class="fa fa-check"></i><b>5.2.5</b> Communalities</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#mutual-information-analysis"><i class="fa fa-check"></i><b>5.3</b> Mutual Information Analysis</a></li>
+<li class="chapter" data-level="5.4" data-path="results.html"><a href="results.html#linear-regression-analysis-1"><i class="fa fa-check"></i><b>5.4</b> Linear Regression Analysis</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="results.html"><a href="results.html#multicollinearity-detection"><i class="fa fa-check"></i><b>5.4.1</b> Multicollinearity detection</a></li>
+<li class="chapter" data-level="5.4.2" data-path="results.html"><a href="results.html#univariate-analysis"><i class="fa fa-check"></i><b>5.4.2</b> Univariate analysis</a></li>
+<li class="chapter" data-level="5.4.3" data-path="results.html"><a href="results.html#multivariate-analysis"><i class="fa fa-check"></i><b>5.4.3</b> Multivariate analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="results.html"><a href="results.html#logistic-regression-analysis-1"><i class="fa fa-check"></i><b>5.5</b> Logistic Regression analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a><ul>
+<li class="chapter" data-level="6.1" data-path="discussion.html"><a href="discussion.html#general"><i class="fa fa-check"></i><b>6.1</b> General</a></li>
+<li class="chapter" data-level="6.2" data-path="discussion.html"><a href="discussion.html#complexity-metrics"><i class="fa fa-check"></i><b>6.2</b> Complexity metrics</a></li>
+<li class="chapter" data-level="6.3" data-path="discussion.html"><a href="discussion.html#complexity-prediction"><i class="fa fa-check"></i><b>6.3</b> Complexity prediction</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="discussion.html"><a href="discussion.html#the-choice-of-ltmcsv"><i class="fa fa-check"></i><b>6.3.1</b> The choice of LTMCSV</a></li>
+<li class="chapter" data-level="6.3.2" data-path="discussion.html"><a href="discussion.html#linear-regression-model"><i class="fa fa-check"></i><b>6.3.2</b> Linear regression model</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="discussion.html"><a href="discussion.html#plan-classification"><i class="fa fa-check"></i><b>6.4</b> Plan classification</a></li>
+<li class="chapter" data-level="6.5" data-path="discussion.html"><a href="discussion.html#future-work"><i class="fa fa-check"></i><b>6.5</b> Future work</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>7</b> Summary</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Complexity analysis of Volumetric Modulated Arc Therapy prostate plans</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="discussion" class="section level1">
+<h1><span class="header-section-number">6</span> Discussion</h1>
+<div id="general" class="section level2">
+<h2><span class="header-section-number">6.1</span> General</h2>
+<p>VMAT radiotherapy is currently the best treatment delivery method for prostate cancer, but VMAT plans have grown inherently complex, consisting of hundreds of small, irregularly shaped apertures with varying beam intensity. When this complexity increases uncontrollably, it may become problematic in terms of, among others, of actual plan deliverability to the patient. Hence, VMAT plans need to undergo meticulous quality assurance and verification processes before being delivered to the patients.<span class="citation"><sup><a href="references.html#ref-Moran2011-ja" role="doc-biblioref">50</a></sup></span> These procedures require expensive equipment, extensive expertise by the medical physicist, and reduce the availability of the linear accelerator. Therefore, there is a genuine need to streamline the verification process.</p>
+<p>A predictive QA system based on machine-learning would benefit both radiotherapy departments’ personnel and cancer patients. The former would be disengaged from the time-consuming verification processes and direct resources to other aspects of radiotherapy’s workflow, such as QA of the linear accelerator or treatment planning. Likewise, patients would benefit from decreased waiting times. Both of these could, in principle, increase the RT department’s patient throughput and help replace conventional 3D conformal radiotherapy with state-of-the-art VMAT treatments.</p>
+<p>In the past, there have been efforts to correlate plan complexity with quality assurance indices, such as gamma passing rates. The rationale for this proposition is the following. If we managed to correlate complexity with QA outcomes, we could conceivably bypass the physical verification process merely by calculating the plan’s complexity. However, except for some sporadic positive results,<span class="citation"><sup><a href="references.html#ref-Younge2012" role="doc-biblioref">26</a>,<a href="references.html#ref-Crowe2014" role="doc-biblioref">27</a>,<a href="references.html#ref-Masi2013" role="doc-biblioref">31</a></sup></span> the correlation of these two has remained an elusive goal.<span class="citation"><sup><a href="references.html#ref-Glenn2018" role="doc-biblioref">51</a></sup></span></p>
+<p>Another path has been the development of artificial-intelligence (AI) models that predict the verification indices (Fig. <a href="discussion.html#fig:dnnarch">6.1</a>). The proof of this concept was demonstrated in 2018 by Tomori et al.<span class="citation"><sup><a href="references.html#ref-Tomori2018" role="doc-biblioref">52</a></sup></span> The researchers trained a 15 layer convolutional neural network to learn the sagittal planar dose distributions from a QA phantom and produce the 2%/2 mm, 3%/2 mm, 2%/3 mm, and 3%/3 mm gamma passing rates. The network’s input also included the planning target volume, the volume of the rectum, and their overlap region, along with the number of monitor units for each IMRT field. Since then, many other similar papers have been published.<span class="citation"><sup><a href="references.html#ref-Granville2019-df" role="doc-biblioref">53</a>–<a href="references.html#ref-Wang2020-md" role="doc-biblioref">57</a></sup></span></p>
+<div class="figure" style="text-align: center"><span id="fig:dnnarch"></span>
+<img src="images/dnn_arch.png" alt="Deep neural network architecture of a predictive QA system. Complexity metrics could be used as potential input features in an AI model." width="100%" />
+<p class="caption">
+Figure 6.1: Deep neural network architecture of a predictive QA system. Complexity metrics could be used as potential input features in an AI model.
+</p>
+</div>
+<p>This thesis examined several complexity metrics and attempted to describe a framework for selecting the best index out of the many that exist. We also constructed predictive models of complexity by considering clinical and dosimetric plan features. Our approach compares favorably to sophisticated machine learning models (e.g., neural networks) in that linear and logistic regression models are more interpretable. This is a well-known limitation of machine learning and an area of active research on how to improve them.<span class="citation"><sup><a href="references.html#ref-Gilpin2018-co" role="doc-biblioref">58</a></sup></span> Nevertheless, complexity metrics could be used in conjunction with neural networks (Fig. <a href="discussion.html#fig:dnnarch">6.1</a>) by acting as potential input features.<span class="citation"><sup><a href="references.html#ref-Wang2020-md" role="doc-biblioref">57</a></sup></span></p>
+</div>
+<div id="complexity-metrics" class="section level2">
+<h2><span class="header-section-number">6.2</span> Complexity metrics</h2>
+<p>In the present study, we dealt with prostate cancer patients undergoing radical treatment with VMAT. After extracting the plans from the oncology information system, we calculated ten complexity indices described in the literature. We then analyzed them with principal component analysis. PCA is a widely used dimensionality reduction technique that exploits linear correlations in a dataset. Through PCA, we can replace the existing variables with new ones, the so-called <em>principal components</em>, yet preserve the qualitative features of the original data.<span class="citation"><sup><a href="references.html#ref-IntroToSL" role="doc-biblioref">59</a></sup></span> Using three principal components, we accounted for 96.2% of the dataset’s variance, effectively reducing its dimensionality from 10 to 3. We also generated a loading plot and recognized the clustering of complexity metrics into three distinct groups.</p>
+<p>The first cluster consists of ESF, MFA, and PI. The second consists of EM and SAS, and the last one, the less well-defined, of MCS and MCSV, along with LT and LTMCSV. However, if we consider that LT increases as plan complexity decreases, we conclude that LT too clusters along with ESF, MFA, and PI. These findings suggest that there exists a substantial informational overlap among the various complexity metrics. Given that many of them measure similar aspects of a plan’s aspect, this outcome was expected. For instance, ESF, MFA, and PI are strongly influenced by the field’s open area.</p>
+<p>The importance of principal component analysis is bifold. First, it provides insights regarding the interconnectedness of different complexity metrics. In the literature, there are more than forty complexity metrics.<span class="citation"><sup><a href="references.html#ref-Chiavassa2019" role="doc-biblioref">25</a></sup></span> Based on our PCA and MIA analyses, we hypothesize that there is considerable overlap among them. Second, it opens up new routes to pursue an index that would show a robust correlation with QA metrics. As we have mentioned, the connection between complexity and QA metrics has not been fully realized. To overcome this, we could use a “PCA informed” linear combination of existing complexity metrics to construct a novel metric. This new index would, in principle, combine the unique informational content of all the individual indices. To the best of our knowledge, there have been only a few published papers utilizing PCA to study VMAT plans’ complexity.<span class="citation"><sup><a href="references.html#ref-Santos2020-po" role="doc-biblioref">60</a></sup></span></p>
+<p>In a similar context, we calculated the entropy of all metrics and mutual information for every complexity metric pair. For <span class="math inline">\(N=10\)</span> metrics, there were <span class="math inline">\(N(N-1)/2=45\)</span> pairs. MI is a more robust measure, compared to the correlation coefficient, and captures how much a complexity’s pair’s joint distribution differs from the product of each metric’s marginal distributions. In other words, it quantifies the informational content one obtains about a metric through the observation of another one. This information-theoretic perspective could enrich our understanding of VMAT plans’ complexity. It could also help us navigate the landscape of various complexity indices by combining those with the lowest possible mutual information. This is the case of LT and MCSV, whose MI was very low compared to other pairs (Fig. <a href="results.html#fig:miPairOf2">5.8</a>). Therefore, the construction of the multiplicative combination, LTMCSV, was sound. Likewise, the choice of LTMCSV as the response variable for the development of predictive models.</p>
+</div>
+<div id="complexity-prediction" class="section level2">
+<h2><span class="header-section-number">6.3</span> Complexity prediction</h2>
+<div id="the-choice-of-ltmcsv" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> The choice of LTMCSV</h3>
+<p>The choice of a complexity metric that correlates well with one department’s physical verification outcomes has been the “holy grail” of QA. Masi et al. found that LT, MCSV, and LTMCS were all significantly correlated with VMAT dosimetric accuracy expressed in gamma passing rates. In our PC analysis, LTMCSV was found to exert a strong effect on both the first and second principal components. We presume that this is because it carries detailed multidimensional information regarding a plan’s complexity. Also, the pair LT, MCSV had low mutual information, justifying the use of their multiplicative combination. Moreover, LTMCSV showed a clear separation between plans with different field sizes, which we would expect for a reliable complexity metric. The last argument in favor of LTMCSV is that it was “arcs agnostic”, in the sense that the number of arcs did not exert much influence on it. For these reasons, we chose to adopt LTMCSV as our response variable while developing the predictive models. However, we keep in mind that every TPS assigns different priorities when modulating a VMAT plan.<span class="citation"><sup><a href="references.html#ref-Hernandez2018" role="doc-biblioref">24</a></sup></span> Therefore, for Phillips Pinnacle or Elekta Monaco plans, perhaps <span class="math inline">\(\text{MI}_{t}\)</span> would be better suited since it accounts for variations in gantry speed, dose rate, and acceleration of the MLC.<span class="citation"><sup><a href="references.html#ref-Park2014-fn" role="doc-biblioref">32</a></sup></span></p>
+</div>
+<div id="linear-regression-model" class="section level3">
+<h3><span class="header-section-number">6.3.2</span> Linear regression model</h3>
+<p>In the second part of the thesis, we used linear regression analysis to predict the VMAT plan’s complexity from basic clinical and dosimetric features. First, we examined the candidate predictor variables for linear correlations. The latter may cause instability in the estimated coefficients, inflate standard errors and confidence intervals for the model’s parameters, hurting the model’s interpretability. For these reasons, we performed multicollinearity detection through scatter plot visualization and variance inflation factors. In the end, we identified bladder’s <span class="math inline">\(V_{70}\)</span> and rectum’s <span class="math inline">\(V_{70}\)</span> as the most significant offenders and omitted them from the list of covariates.</p>
+<p>Subsequently, we evaluated various linear regression models constructed through univariate and multivariate analysis, backward and forward selection methods. The evaluation criteria included RSS, adjusted R-squared, and the AIC criterion. The best model turned out to be the one containing all candidate predictors with an adjusted <span class="math inline">\(R^2=0.671\)</span>. The variables that were correlated with increased complexity (i.e., a lower value of LTMCSV) were plans with two arcs (<em>p&lt;0.001</em>), increasing field size (<em>p&lt;0.001</em>), the 15.1.52 treatment planning version (<em>p&lt;0.001</em>), the high dose PTV of 72 Gy (<em>p=0.02</em>), rectum’s <span class="math inline">\(V_{50}\)</span> (<em>p&lt;0.001</em>), physicians 2 and 7 (<em>p=0.041</em> and <em>p=0.027</em>, respectively), and high conformation number (<em>p=0.036</em>). The variable that correlated with decreased complexity (i.e., a higher value of LTMCSV) was rectum’s <span class="math inline">\(V_{60}\)</span> (<em>p=0.011</em>). It is noteworthy that the linear model overestimated complexity (Fig. <a href="results.html#fig:plRealVSPred">5.14</a>). In a production setup, it is preferable to characterize simple plans as complex and have them physically verified, rather than the opposite, i.e., erroneously designate a complex plan as simple and bypass the physical QA procedures. Therefore, the model erred on the right side.</p>
+</div>
+</div>
+<div id="plan-classification" class="section level2">
+<h2><span class="header-section-number">6.4</span> Plan classification</h2>
+<p>Following the development of a linear regression model, we dichotomized VMAT plans into high complexity and low complexity ones. Ideally, the threshold choice should be derived from an analysis of complexity <em>vs.</em> quality assurance metrics, such as the gamma passing rates. I.e., plans designated as “low complexity”, <em>under the chosen threshold</em>, should correlate with higher scores in verification procedures. However, this analysis was beyond the scope of this thesis. Instead, we arbitrarily defined “high complexity” plans whose complexity exceeded the dataset’s median value.</p>
+<p>After labeling every plan based on its complexity, we split the dataset into a training set (75%) and a test set (25%). We then performed a 5-fold cross-validated logistic regression analysis with LASSO regularization on the former. LASSO is known to invoke sparsity by driving some of the model’s coefficients to zero, which results in feature selection. After determining the optimal cross-validated value of the regularization parameter <span class="math inline">\(\lambda\)</span> in the training set, we evaluated the best LASSO model to the test set. The accuracy of the model in the test set was 87.25%, and the AUC 0.906. The false-positive rate<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> in the test set was 14.8%. Considering the importance of missing a complex plan, one could tune the model to exhibit larger specificity (less FP rate) at the expense of lower sensitivity (higher FN rate).</p>
+</div>
+<div id="future-work" class="section level2">
+<h2><span class="header-section-number">6.5</span> Future work</h2>
+<p>One of the most established QA tools for planar dose verification in IMRT/VMAT is the gamma index analysis, which considers the dose difference (DD) and distance to agreement (DTA) between two distributions.<span class="citation"><sup><a href="references.html#ref-Low2003-mx" role="doc-biblioref">61</a></sup></span> Concretely, for each point <span class="math inline">\(\mathbf{r}_{m}\)</span> in the measured distribution, a dimensionless “distance” metric is calculated via the formula:</p>
+<p><span class="math display">\[\begin{align*}
+\Gamma(\mathbf{r}_m, \mathbf{r}_c) = \sqrt{\frac{r^2(\mathbf{r}_m, \mathbf{r}_c)}{\Delta d_M^2} + \frac{\delta^2(\mathbf{r}_m, \mathbf{r}_c)}{\Delta D_M^2}}
+\end{align*}\]</span></p>
+<p>Where <span class="math inline">\(r(\mathbf{r}_m, \mathbf{r}_c) = \left|\mathbf{r}_c − \mathbf{r}_m\right|\)</span> is the distance to agreement and <span class="math inline">\(\delta(\mathbf{r}_m, \mathbf{r}_c) = D_c (\mathbf{r}_c) − D_m (\mathbf{r}_m)\)</span> is the dose difference. Finally, <span class="math inline">\(\gamma\)</span> at point <span class="math inline">\(\mathbf{r}_m\)</span> is defined as the minimum value:</p>
+<p><span class="math display">\[\begin{align*}
+\gamma(\mathbf{r}_m) = \text{min}\{\Gamma(\mathbf{r}_m , \mathbf{r}_c)\} \forall \mathbf{r}_c
+\end{align*}\]</span></p>
+<p>The total percentage of <span class="math inline">\(\mathbf{r}_m\)</span> points that have achieved <span class="math inline">\(\gamma(\mathbf{r}_m) \le 1\)</span>, for a given DD/DTA criteria, is calculated, and a pass/fail threshold is set to determine the verification outcome (pass or fail).</p>
+<p>Despite its limitations, this analysis is widely adopted in clinical practice and endorsed by the American Association of Physicists in Medicine in Task Group 119, where commissioning tests are described in terms of <span class="math inline">\(\gamma\)</span> index acceptability of 3% dose difference and 3-mm DTA.<span class="citation"><sup><a href="references.html#ref-Ezzell2009-vu" role="doc-biblioref">62</a></sup></span> In the future, we plan to explore whether LTMCSV and novel complexity indices, derived by considering the results of PCA and MIA analyses, could correlate with gamma passing rates in our department.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="8">
+<li id="fn8"><p>The probability of characterizing a high-complexity plan as low-complexity.<a href="discussion.html#fnref8" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="results.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="summary.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

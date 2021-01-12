@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Literature | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans</title>
+  <meta name="description" content="3 Literature | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Literature | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Literature | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction.html"/>
+<link rel="next" href="methods.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i><b>1</b> Abstract</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#prostate-cancer"><i class="fa fa-check"></i><b>2.1</b> Prostate Cancer</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#volumetric-modulated-arc-therapy"><i class="fa fa-check"></i><b>2.2</b> Volumetric Modulated Arc Therapy</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#inverse-treatment-planning"><i class="fa fa-check"></i><b>2.3</b> Inverse treatment planning</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#plan-complexity"><i class="fa fa-check"></i><b>2.4</b> Plan complexity</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a><ul>
+<li class="chapter" data-level="3.1" data-path="literature.html"><a href="literature.html#background"><i class="fa fa-check"></i><b>3.1</b> Background</a></li>
+<li class="chapter" data-level="3.2" data-path="literature.html"><a href="literature.html#circumferencearea-coa"><i class="fa fa-check"></i><b>3.2</b> Circumference/Area (CoA)</a></li>
+<li class="chapter" data-level="3.3" data-path="literature.html"><a href="literature.html#leaf-travel-lt"><i class="fa fa-check"></i><b>3.3</b> Leaf Travel (LT)</a></li>
+<li class="chapter" data-level="3.4" data-path="literature.html"><a href="literature.html#edge-metric-em"><i class="fa fa-check"></i><b>3.4</b> Edge Metric (EM)</a></li>
+<li class="chapter" data-level="3.5" data-path="literature.html"><a href="literature.html#equivalent-square-field-esf-and-mean-field-area-mfa"><i class="fa fa-check"></i><b>3.5</b> Equivalent Square Field (ESF) and Mean Field Area (MFA)</a></li>
+<li class="chapter" data-level="3.6" data-path="literature.html"><a href="literature.html#modulation-complexity-score-mcs-and-leaf-travel-mcs-for-vmat-ltmcsv"><i class="fa fa-check"></i><b>3.6</b> Modulation Complexity Score (MCS) and Leaf Travel MCS for VMAT (LTMCSV)</a></li>
+<li class="chapter" data-level="3.7" data-path="literature.html"><a href="literature.html#modulation-index-total-textmi_texttotal"><i class="fa fa-check"></i><b>3.7</b> Modulation Index total (<span class="math inline">\(\text{MI}_\text{total}\)</span>)</a></li>
+<li class="chapter" data-level="3.8" data-path="literature.html"><a href="literature.html#plan-irregularity-pi"><i class="fa fa-check"></i><b>3.8</b> Plan Irregularity (PI)</a></li>
+<li class="chapter" data-level="3.9" data-path="literature.html"><a href="literature.html#small-aperture-score-sas"><i class="fa fa-check"></i><b>3.9</b> Small Aperture Score (SAS)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a><ul>
+<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#dataset-curation"><i class="fa fa-check"></i><b>4.1</b> Dataset curation</a></li>
+<li class="chapter" data-level="4.2" data-path="methods.html"><a href="methods.html#dataset-description"><i class="fa fa-check"></i><b>4.2</b> Dataset description</a></li>
+<li class="chapter" data-level="4.3" data-path="methods.html"><a href="methods.html#data-analysis"><i class="fa fa-check"></i><b>4.3</b> Data analysis</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="methods.html"><a href="methods.html#summary-statistics"><i class="fa fa-check"></i><b>4.3.1</b> Summary statistics</a></li>
+<li class="chapter" data-level="4.3.2" data-path="methods.html"><a href="methods.html#principal-component-analysis-pca"><i class="fa fa-check"></i><b>4.3.2</b> Principal Component Analysis (PCA)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="methods.html"><a href="methods.html#mutual-information-analysis-mia"><i class="fa fa-check"></i><b>4.3.3</b> Mutual information analysis (MIA)</a></li>
+<li class="chapter" data-level="4.3.4" data-path="methods.html"><a href="methods.html#linear-regression-analysis"><i class="fa fa-check"></i><b>4.3.4</b> Linear regression analysis</a></li>
+<li class="chapter" data-level="4.3.5" data-path="methods.html"><a href="methods.html#logistic-regression-analysis"><i class="fa fa-check"></i><b>4.3.5</b> Logistic regression analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a><ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#summary-of-the-data"><i class="fa fa-check"></i><b>5.1</b> Summary of the data</a></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#principal-component-analysis"><i class="fa fa-check"></i><b>5.2</b> Principal Component Analysis</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="results.html"><a href="results.html#correlation-matrix"><i class="fa fa-check"></i><b>5.2.1</b> Correlation matrix</a></li>
+<li class="chapter" data-level="5.2.2" data-path="results.html"><a href="results.html#sampling-adequacy"><i class="fa fa-check"></i><b>5.2.2</b> Sampling adequacy</a></li>
+<li class="chapter" data-level="5.2.3" data-path="results.html"><a href="results.html#loading-plot"><i class="fa fa-check"></i><b>5.2.3</b> Loading plot</a></li>
+<li class="chapter" data-level="5.2.4" data-path="results.html"><a href="results.html#principal-components-extraction"><i class="fa fa-check"></i><b>5.2.4</b> Principal components extraction</a></li>
+<li class="chapter" data-level="5.2.5" data-path="results.html"><a href="results.html#communalities"><i class="fa fa-check"></i><b>5.2.5</b> Communalities</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#mutual-information-analysis"><i class="fa fa-check"></i><b>5.3</b> Mutual Information Analysis</a></li>
+<li class="chapter" data-level="5.4" data-path="results.html"><a href="results.html#linear-regression-analysis-1"><i class="fa fa-check"></i><b>5.4</b> Linear Regression Analysis</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="results.html"><a href="results.html#multicollinearity-detection"><i class="fa fa-check"></i><b>5.4.1</b> Multicollinearity detection</a></li>
+<li class="chapter" data-level="5.4.2" data-path="results.html"><a href="results.html#univariate-analysis"><i class="fa fa-check"></i><b>5.4.2</b> Univariate analysis</a></li>
+<li class="chapter" data-level="5.4.3" data-path="results.html"><a href="results.html#multivariate-analysis"><i class="fa fa-check"></i><b>5.4.3</b> Multivariate analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="results.html"><a href="results.html#logistic-regression-analysis-1"><i class="fa fa-check"></i><b>5.5</b> Logistic Regression analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a><ul>
+<li class="chapter" data-level="6.1" data-path="discussion.html"><a href="discussion.html#general"><i class="fa fa-check"></i><b>6.1</b> General</a></li>
+<li class="chapter" data-level="6.2" data-path="discussion.html"><a href="discussion.html#complexity-metrics"><i class="fa fa-check"></i><b>6.2</b> Complexity metrics</a></li>
+<li class="chapter" data-level="6.3" data-path="discussion.html"><a href="discussion.html#complexity-prediction"><i class="fa fa-check"></i><b>6.3</b> Complexity prediction</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="discussion.html"><a href="discussion.html#the-choice-of-ltmcsv"><i class="fa fa-check"></i><b>6.3.1</b> The choice of LTMCSV</a></li>
+<li class="chapter" data-level="6.3.2" data-path="discussion.html"><a href="discussion.html#linear-regression-model"><i class="fa fa-check"></i><b>6.3.2</b> Linear regression model</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="discussion.html"><a href="discussion.html#plan-classification"><i class="fa fa-check"></i><b>6.4</b> Plan classification</a></li>
+<li class="chapter" data-level="6.5" data-path="discussion.html"><a href="discussion.html#future-work"><i class="fa fa-check"></i><b>6.5</b> Future work</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>7</b> Summary</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Complexity analysis of Volumetric Modulated Arc Therapy prostate plans</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="literature" class="section level1">
+<h1><span class="header-section-number">3</span> Literature</h1>
+<div id="background" class="section level2">
+<h2><span class="header-section-number">3.1</span> Background</h2>
+<p>Complexity metrics can be divided into two groups, fluence map-based and aperture-based.<span class="citation"><sup><a href="references.html#ref-Du2014" role="doc-biblioref">23</a></sup></span> The former measure the variations of fluence’s intensity and have originally been described for IMRT plans with multiple static gantry angles. The latter consider MLC openings’ size and shape and can be applied to both IMRT and VMAT plans. For a thorough review, the reader may refer to Hernandez et al<span class="citation"><sup><a href="references.html#ref-Hernandez2018" role="doc-biblioref">24</a></sup></span> and Chiavassa et al.<span class="citation"><sup><a href="references.html#ref-Chiavassa2019" role="doc-biblioref">25</a></sup></span> In this thesis, we study aperture-based metrics.</p>
+<p>Various TPSs assign different priorities when modulating the plan parameters. For example, Varian Eclipse plans are demanding for the MLC, rendering them more vulnerable to uncertainties stemming from the use of small apertures and potential errors in the MLC calibration.<span class="citation"><sup><a href="references.html#ref-Hernandez2018" role="doc-biblioref">24</a></sup></span> Other TPSs, such as Philips Pinnacle and Elekta Monaco, modulate the gantry speed and the dose rate on top of MLC positions. Therefore, a department’s adoption of a complexity metric should be individualized, considering the differences between treatment planning systems and linear accelerator technical specifications.</p>
+</div>
+<div id="circumferencearea-coa" class="section level2">
+<h2><span class="header-section-number">3.2</span> Circumference/Area (CoA)</h2>
+<p>The ratio of circumference over area may be calculated for each
+MLC aperture, via the following formula:</p>
+<p><span class="math display">\[
+\text{CoA}_\text{beam} = \sum_{i=1}^{S} \frac{\text{Perimeter}_i}{\text{Area}_i}
+\]</span></p>
+<p>where <span class="math inline">\(S\)</span> is the total number of segments. However, it would be more prudent to take into account the monitor units of the <span class="math inline">\(i_\text{th}\)</span> segment <span class="math inline">\((\text{MU}_i)\)</span>. Then, the plan’s complexity (<span class="math inline">\(\text{CoA}_\text{plan}\)</span>) would be written as the sum of CoA over all beams <span class="math inline">\(B\)</span>, weighted by the proportion of MUs delivered through the segments over the total MUs of the plan <span class="math inline">\((\text{MU}_\text{plan})\)</span>:</p>
+<p><span class="math display">\[
+\text{CoA}_\text{plan} = \frac{1}{\text{MU}_\text{plan}}\sum_{j=1}^B  \underbrace{\sum_{i=1}^{S} \frac{\text{Perimeter}_i}{\text{Area}_i} \times \text{MU}_i}_{\text{CoA of }j\text{-th beam}}
+\]</span></p>
+<p>The advantage of this index is that it conceptually is a straight-forward and tangible metric.<span class="citation"><sup><a href="references.html#ref-Gotstedt2015" role="doc-biblioref">20</a></sup></span> In Fig. <a href="literature.html#fig:polarImage">3.1</a>, the CoA for a patient with locally advanced prostate cancer has been calculated. The plot uses polar coordinates to express complexity as a function of gantry’s rotation. The surge in complexity between <span class="math inline">\(19\pi/12\)</span> and <span class="math inline">\(11\pi/6\)</span> exposes the plan to delivery uncertainties, such as intrafraction prostate motion. Ideally, complexity should be spread out over the entire arc. However, this is not always feasible due to the geometric relation of organs at risk and planning treatment volumes.</p>
+<div class="figure" style="text-align: center"><span id="fig:polarImage"></span>
+<img src="images/complexity_polar_plot3.png" alt="Polar plot of complexity (circumference/area) as a function of gantry angle in a patient with locally advanced prostate cancer. The shaded part of the arcs is associated with a high degree of complexity, rendering the plan vulnerable to spatio-temporal uncertainties (e.g., intrafraction prostate motion). Source: Radiation Oncology Department of Papageorgiou General Hospital." width="50%" />
+<p class="caption">
+Figure 3.1: Polar plot of complexity (circumference/area) as a function of gantry angle in a patient with locally advanced prostate cancer. The shaded part of the arcs is associated with a high degree of complexity, rendering the plan vulnerable to spatio-temporal uncertainties (e.g., intrafraction prostate motion). Source: Radiation Oncology Department of Papageorgiou General Hospital.
+</p>
+</div>
+</div>
+<div id="leaf-travel-lt" class="section level2">
+<h2><span class="header-section-number">3.3</span> Leaf Travel (LT)</h2>
+<p>This index measures the average distance traveled by the moving leaves of the collimator. LT was conceived for VMAT treatments consisting of a single full arc. To allow for straightforward comparisons between plans with different arcs or partial arcs, LT is sometimes divided by the corresponding arc length (typically about 360 degrees for single arcs and about 720 degrees for double arcs). In this thesis, we calculated the plans’ total LT by weighting each arc’s LT based on its monitor units.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p><span class="math display">\[
+\text{LT}_{\text{beam}} = \frac{1000(mm) - \text{LT Mean}(mm)}{1000(mm)}
+\]</span>
+The plan’s total LT is the weighted sum of beams’ LT over all <span class="math inline">\(B\)</span> beams:</p>
+<p><span class="math display">\[
+\text{LT}_{\text{plan}} = \frac{1}{\text{MU}_\text{plan}}\sum_{i=1}^B \text{LT}_\text{beam} \times \text{MU}_i
+\]</span></p>
+</div>
+<div id="edge-metric-em" class="section level2">
+<h2><span class="header-section-number">3.4</span> Edge Metric (EM)</h2>
+<p>This metric describes the complexity of multileaf collimator apertures based on the ratio of leaf side edge length and the distances between leaves. The constants <span class="math inline">\(C_1\)</span> and <span class="math inline">\(C_2\)</span> in the formula below constitute scaling factors that define the relative importance of the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> edges.<span class="citation"><sup><a href="references.html#ref-Younge2012" role="doc-biblioref">26</a></sup></span> <span class="math inline">\(A\)</span> is the segment’s area. As the differences between adjacent leaves positions accumulate, the higher the values of EM index are assumed. EM is inherently linked to the tongue-and-groove effect.<span class="citation"><sup><a href="references.html#ref-Younge2012" role="doc-biblioref">26</a></sup></span> In the original study by Younge et al., the recommended parameters were <span class="math inline">\(C_1 = 0\)</span> and <span class="math inline">\(C_2 = 1\)</span> because this combination produced the strongest correlation between EM and the measured dosimetric error. <span class="math inline">\(W_i\)</span> are the aperture weights that, in their absence, the optimization will be biased towards the regularization of apertures with the lowest number of MUs because any change in these apertures will have the least dosimetric impact.</p>
+<p><span class="math display">\[
+\text{EM}_\text{beam} = \sum_{i=1}^S W_i \frac{C_1 x_i + C_2 y_i}{A_i}
+\]</span></p>
+<p>In Fig. <a href="literature.html#fig:edgePenalty">3.2</a>, various segments’ apertures are shown when the edge metric penalty is enabled or disabled in the cost function <span class="math inline">\(J\)</span>. The penalty is recalculated after each iteration during the optimization process and added to the dose-related component of the cost function to yield the total cost. A scaling factor, expressed as the relative importance of EM penalty with respect to the dose-related cost function, is used, i.e. <span class="math inline">\(J_\text{EM} = \lambda \text{EM}_\text{plan} = \lambda \sum_{i=1}^S W_i y_i/A_i\)</span>. In Fig. <a href="literature.html#fig:edgePenaltyDD">3.3</a>, the dose difference between the theoretically calculated and measured doses is shown (<span class="math inline">\(\lambda = 0.031\)</span>). It is evident how the activation of edge penalty regularizes apertures’ shapes and reduces the dosimetric error.</p>
+<div class="figure" style="text-align: center"><span id="fig:edgePenalty"></span>
+<img src="images/edge_penalty2.png" alt="Aperture-regularization integration into the objective function of VMAT optimization process. Top: Apertures generated without an edge penalty. Bottom: Apertures generated with an edge penalty. Source: Younge et al.[@Younge2012}." width="70%" />
+<p class="caption">
+Figure 3.2: Aperture-regularization integration into the objective function of VMAT optimization process. Top: Apertures generated without an edge penalty. Bottom: Apertures generated with an edge penalty. Source: Younge et al.[<span class="citation"><a href="references.html#ref-Younge2012" role="doc-biblioref">26</a></span>}.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:edgePenaltyDD"></span>
+<img src="images/edge_penalty_onoff.PNG" alt="(a) Dose difference (calculated – measured) in a VMAT plan without the edge penalty. (b) With the edge penalty turned on. (c) Distribution of measured dose deviations. Source: Younge et al.[@Younge2012]." width="90%" />
+<p class="caption">
+Figure 3.3: (a) Dose difference (calculated – measured) in a VMAT plan without the edge penalty. (b) With the edge penalty turned on. (c) Distribution of measured dose deviations. Source: Younge et al.<span class="citation"><sup><a href="references.html#ref-Younge2012" role="doc-biblioref">26</a></sup></span>.
+</p>
+</div>
+</div>
+<div id="equivalent-square-field-esf-and-mean-field-area-mfa" class="section level2">
+<h2><span class="header-section-number">3.5</span> Equivalent Square Field (ESF) and Mean Field Area (MFA)</h2>
+<p>ESF is defined as the square root of the total area of the beams’s apperture. In literature, a conversion function, <span class="math inline">\(f(x) = 1-e^{-x}\)</span>, has been used to endow distances with a non-linear contribution to the field’s complexity.<span class="citation"><sup><a href="references.html#ref-Gotstedt2015" role="doc-biblioref">20</a></sup></span> In this thesis, distances contributed equally to the ESF score. A similar complexity metric is the mean field area, that was found to correlate with gamma passing rates in prostate IMRT plans.<span class="citation"><sup><a href="references.html#ref-Crowe2014" role="doc-biblioref">27</a>,<a href="references.html#ref-Kairn2014-ee" role="doc-biblioref">28</a></sup></span></p>
+</div>
+<div id="modulation-complexity-score-mcs-and-leaf-travel-mcs-for-vmat-ltmcsv" class="section level2">
+<h2><span class="header-section-number">3.6</span> Modulation Complexity Score (MCS) and Leaf Travel MCS for VMAT (LTMCSV)</h2>
+<p>This score considers two contributing factors to a plan’s complexity. Namely, the variability in the shape of beamlets (Leaf Sequence Variability, LSV) and the geometric variation of their aperture area (Aperture Area Variability, AAV).<span class="citation"><sup><a href="references.html#ref-McNiven2010" role="doc-biblioref">29</a></sup></span> The formula for calculating the MCS score of a plan is as following:</p>
+<p><span class="math display">\[
+\text{MCS}_\text{plan}
+= \sum_{j=1}^{B} \left[\underbrace{\left(\sum_{i=1}^{S} \text{AAV}_i \times \text{LSV}_i \times 
+\frac{\text{MU}_i}{\text{MU}_{\text{beam,}j}}\right)}_{\text{MCS of } j \text{-th beam}} \times \frac{\text{MU}_{\text{beam,}j}}{\text{MU}_\text{plan}} \right]
+\]</span></p>
+<p><span class="math display">\[\begin{align*}
+LSV_j &amp;= \left[\frac{\sum_{i=1}^{N-1} p_\text{max}-(p_i-p_{i+1})}{(N-1) \cdot p_\text{max}}\right]_{\text{left bank},j} \times
+\left[\frac{\sum_{i=1}^{N-1} p_\text{max}-(p_i-p_{i+1})}{(N-1) \cdot p_\text{max}}\right]_{\text{right bank},j}\\
+AAV_j &amp;= \frac{
+\sum_{i=1}^N p_{i,_{\text{left bank}}} - p_{i,_{\text{right bank}}}}
+{N\cdot\left(\text{max}(p_{i,\text{left bank}})-\text{max}(p_{i,\text{right bank}})\right)}
+\end{align*}\]</span></p>
+<p>where <span class="math inline">\(p_i\)</span> is the coordinate of the <span class="math inline">\(i_\text{th}\)</span> leaf position, and <span class="math inline">\(p_\text{max}\)</span> is the maximum distance between positions for a given leaf bank, summed over all <span class="math inline">\(B\)</span> beams (arcs) and all segments <span class="math inline">\(S\)</span> (Fig. <a href="literature.html#fig:leafPairsMCS">3.4</a>). MCS values range in <span class="math inline">\([0,1]\)</span>, and by the definition above, it follows that the higher the MCS value, the lower the complexity. MCS enables the comparison of complexity between different treatment sites and the comparison of single <em>vs.</em> multiple arcs plans. The largest value of MCS, 1.0, is realized by an open field, since <span class="math inline">\(p_i = p_{i+1}\)</span>:</p>
+<div class="figure" style="text-align: center"><span id="fig:leafPairsMCS"></span>
+<img src="images/leaf_pairs.png" alt="Schematic representation of an aperture's shape. In both the left and the right banks the extreme right and extreme left leaves are in yellow and red, respectively. The maximum leaf opening, $p_\text{max}$, corresponds to the the red leaf in the left bank and in the yellow leaf in the right bank. Modified from: Sumida et al.[-@Sumida2017]" width="100%" />
+<p class="caption">
+Figure 3.4: Schematic representation of an aperture’s shape. In both the left and the right banks the extreme right and extreme left leaves are in yellow and red, respectively. The maximum leaf opening, <span class="math inline">\(p_\text{max}\)</span>, corresponds to the the red leaf in the left bank and in the yellow leaf in the right bank. Modified from: Sumida et al.<span class="citation"><sup><a href="references.html#ref-Sumida2017" role="doc-biblioref">30</a></sup></span>
+</p>
+</div>
+<p><span class="math display">\[\begin{align*}
+LSV_j &amp;= \left[\frac{\sum_{i=1}^{N-1} p_\text{max}}{(N-1) p_\text{max}}\right]_{\text{left bank},j}
+\left[\frac{\sum_{i=1}^{N-1} p_\text{max}}{(N-1) p_\text{max}}\right]_{\text{right bank},j}
+= \frac{(N-1) p_\text{max}}{(N-1)p_\text{max}} 
+\frac{(N-1) p_\text{max}}{(N-1)p_\text{max}} = 1\\
+AAV_j &amp;= \frac{
+\sum_{i=1}^N p_\text{max}}
+{N p_\text{max}} = 1
+\end{align*}\]</span></p>
+<p>Therefore:</p>
+<p><span class="math display">\[\begin{align*}
+\text{MCS}_\text{plan}
+&amp;=\sum_{j=1}^B \left[\left(\sum_{i=1}^S \frac{\text{MU}_i}{\text{MU}_{\text{beam},_j}}\right) \times \frac{\text{MU}_{\text{beam},_j}}{\text{MU}_\text{plan}} \right]
+= \sum_{j=1}^B \left[\left(\frac{1}{\text{MU}_{\text{beam},_j}} \sum_{i=1}^S \text{MU}_{i}\right) \times \frac{\text{MU}_{\text{beam},_j}}{\text{MU}_\text{plan}} \right]\\
+&amp;=\sum_{j=1}^B \left(\frac{\text{MU}_{\text{beam},_j}}{\text{MU}_{\text{beam},_j}} \times \frac{\text{MU}_{\text{beam},_j}}{\text{MU}_\text{plan}}\right)
+=\frac{1}{\text{MU}_\text{plan}} \sum_{j=1}^B \text{MU}_{\text{beam},j}
+= \frac{\text{MU}_\text{plan}}{\text{MU}_\text{plan}} = 1
+\end{align*}\]</span></p>
+<p>The original MCS formulation was referring to step and shoot IMRT. However, during a VMAT arc, MUs are delivered in a continuous manner between adjacent control points (CPs). Thus, the calculation of MCS has been slightly modified to adapt to the VMAT case.<span class="citation"><sup><a href="references.html#ref-Masi2013" role="doc-biblioref">31</a></sup></span> Concretely, we must consider the product of the mean values of <span class="math inline">\(\text{LSV}_i\)</span> and <span class="math inline">\(\text{AAV}_i\)</span> between adjacent control point:</p>
+<p><span class="math display">\[
+\text{MCS-VMAT}_\text{beam} = \sum_{i=1}^{S-1}\left( \frac{\text{AAV}_i + \text{AAV}_{i+1}}{2} \times \frac{\text{LSV}_i + \text{LSV}_{i+1}}{2} \times \frac{\text{MU}_{i,i+1}}{\text{MU}_\text{beam}}\right)
+\]</span></p>
+<p>Although MCS is capable of distinguishing between the levels of complexity of different treatment sites, it has not yet been validated as a surrogate marker of dosimetric deviations for specific treatment sites. A multiplicative combination of mean leaf travel and modulation complexity score has also been proposed, i.e. <span class="math inline">\(\text{LTMCS} = \text{LT} \times \text{MCS}\)</span>,<span class="citation"><sup><a href="references.html#ref-Masi2013" role="doc-biblioref">31</a></sup></span> or <span class="math inline">\(\text{LTMCSV} = \text{LT} \times \text{MCSV}\)</span> for the case of a VMAT plan.</p>
+</div>
+<div id="modulation-index-total-textmi_texttotal" class="section level2">
+<h2><span class="header-section-number">3.7</span> Modulation Index total (<span class="math inline">\(\text{MI}_\text{total}\)</span>)</h2>
+<p>This index involves the variations in speed and acceleration of the MLC, as well as variations of the gantry speed (GA) and the dose rate (DRV).<span class="citation"><sup><a href="references.html#ref-Park2014-fn" role="doc-biblioref">32</a></sup></span> Its calculation is based on the concept of Modulation Index introduced by Webb.<span class="citation"><sup><a href="references.html#ref-Webb2003-nc" role="doc-biblioref">33</a></sup></span> First, we define a “counting” function <span class="math inline">\(z_\text{total}(f)\)</span>:</p>
+<p><span class="math display">\[\begin{align*}
+z_\text{total}(f)
+&amp;=\frac{1}{S-2} \sum_{i=1}^{S} \bigg[N_i\Big( \text{MLC speed}_i&gt;f \sigma_{\text{MLC speed}} \text{ or } \text{MLC accel}_i &gt; \alpha f \sigma_{\text{MLC}_\text{accel}} \Big) \\
+&amp;\cdot W_{\text{GA},i+1} \cdot W_{\text{MU},i+1}\bigg]
+\end{align*}\]</span></p>
+<p>where <span class="math inline">\(S\)</span> is the total number of control points and:</p>
+<p><span class="math display">\[N_i\Big( \text{MLC speed}_i&gt;f \sigma_{\text{MLC speed}} \text{ or } \text{MLC accel}_i &gt; \alpha f \sigma_{\text{MLC}_\text{accel}}\Big)\]</span></p>
+<p>means that if the MLC speed <em>or</em> acceleration at the <span class="math inline">\(i_\text{th}\)</span> control point is larger than <span class="math inline">\(f\sigma_{\text{MLC speed}}\)</span> <em>or</em> <span class="math inline">\(\alpha f \sigma_{\text{MLC}_\text{accel}}\)</span>, respectively, then the value of that CP becomes <span class="math inline">\(1\)</span> multiplied by the weight factors <span class="math inline">\(W_{\text{GA},i+1}\)</span> and <span class="math inline">\(W_{\text{MU},i+1}\)</span>, <span class="math inline">\(\sigma_{\text{MLC speed}_i}, \sigma_{\text{MLC accel}_i}\)</span> being the standard deviations of MLC <span class="math inline">\(\text{speed}_i\)</span> and MLC <span class="math inline">\(\text{accel}_i\)</span>, respectively. The <span class="math inline">\(f\)</span> argument controls therefore the “threshold” beyond which a leaf pair contributes to complexity, and, similarly, <span class="math inline">\(\alpha\)</span> is a scaling factor that empirically is set to <span class="math inline">\(\alpha = 1/\text{Time}_i\)</span>. The weight factors are defined by the following formulas:</p>
+<p><span class="math display">\[\begin{align*}
+{}&amp;W_{\text{GA,}_{i+1}} = \frac{\beta}{1+(\beta-1)\exp\left(-\frac{\text{GA}_i}{\gamma}\right)}\\
+{}&amp;W_{\text{MU,}_{i+1}} = \frac{\beta}{1+(\beta-1)\exp\left(-\frac{\text{DRV}_i}{\gamma}\right)}
+\end{align*}\]</span></p>
+<p>In the paper of Park et al.<span class="citation"><sup><a href="references.html#ref-Park2014-fn" role="doc-biblioref">32</a></sup></span> it is <span class="math inline">\(\beta = \gamma = 2\)</span>, and the gantry acceleration <span class="math inline">\(\text{GA}_i\)</span> and dose rate variation <span class="math inline">\((\text{DRV}_i)\)</span> are calculated as:</p>
+<p><span class="math display">\[\begin{align*}
+\text{GA}_i &amp;= \left| \frac{\Delta\text{Gantry angle}_i}{\text{Time}_i} - \frac{\Delta\text{Gantry angle}_{i+1}}{\text{Time}_{i+1}} \right|\\
+\text{DRV}_i &amp;= \left|\text{DR}_i - \text{DR}_{i+1}\right|
+\end{align*}\]</span></p>
+<p>Finally, <span class="math inline">\(\text{MI}_\text{total}\)</span> is calculated as the sum of the contributions of all the individual leaves:</p>
+<p><span class="math display">\[
+\text{MI}_t = \sum_{i=1}^{N_\text{leaves}} \int_0^k z_\text{total}(f)\mathrm{d}f, \hspace{1cm} k = 0.2, 0.5, 1 \text{ and } 2
+\]</span></p>
+</div>
+<div id="plan-irregularity-pi" class="section level2">
+<h2><span class="header-section-number">3.8</span> Plan Irregularity (PI)</h2>
+<p>PI quantifies the deviations of aperture shapes from a circle,<span class="citation"><sup><a href="references.html#ref-Du2014" role="doc-biblioref">23</a></sup></span> with <span class="math inline">\(\text{PI}=1\)</span> corresponding to a perfect circle. In Fig. <a href="literature.html#fig:pischema">3.5</a> aperture area (AA) of beam <span class="math inline">\(b\)</span> and segment <span class="math inline">\(s\)</span> is given by:</p>
+<p><span class="math display">\[
+\text{AA}_{bs} = \sum_{k=1}^{N_{\small\text{LP}}} t_k\left(x_{bsk}^{(2)} - x_{bsk}^{(1)}\right)
+\]</span></p>
+<p>Where <span class="math inline">\(k\)</span> is the leaf pair index, <span class="math inline">\(N_\text{LP}\)</span> is the total number of leaf pairs, <span class="math inline">\(t_k\)</span> is the width of the <span class="math inline">\(k_\text{th}\)</span> leaf pair and <span class="math inline">\(x^{(1)}, x^{(2)}\)</span> are the positions of the leaves of te pair. The aperture irregularity is computed as:</p>
+<p><span class="math display">\[
+\text{AI}_{bs} = \frac{\text{AP}_{bs}^2}{4\pi \text{AA}_{bs}}
+\]</span></p>
+<div class="figure" style="text-align: center"><span id="fig:pischema"></span>
+<img src="images/plan_irreg_schematic.PNG" alt="Schematic representation of beam aperture analysis for the plan irregularity index." width="40%" />
+<p class="caption">
+Figure 3.5: Schematic representation of beam aperture analysis for the plan irregularity index.
+</p>
+</div>
+<p>For instance, for a <em>square segment</em> <span class="math inline">\(\text{AP} = 4a, \text{AA} = a^2\)</span>. Then:</p>
+<p><span class="math display">\[
+\text{AI}_{bs} = \frac{16a^2}{4\pi a^2} = \frac{4}{\pi} \simeq 1.273
+\]</span></p>
+<p>On the contrary, for a <em>perfect circular segment</em> it holds that <span class="math inline">\(\text{AP} = 2\pi R, \text{AA} = \pi R^2\)</span>. Then:</p>
+<p><span class="math display">\[
+\text{AI}_{bs} = \frac{4\pi^2 R^2}{4\pi \cdot\pi R^2} = 1
+\]</span></p>
+<p>Given the quantities above one can define beam irregularity (BI) of beam <span class="math inline">\(b\)</span> averaged over all <span class="math inline">\(S\)</span> segments:</p>
+<p><span class="math display">\[
+\text{BI}_{b} = \frac{\sum_{s=1}^S\text{MU}_{bs} \text{AI}_{bs}}{\text{MU}_{b}}
+\]</span></p>
+<p>And the plan irregularity (PI) averaged over all <span class="math inline">\(B\)</span> beams:</p>
+<p><span class="math display">\[
+\text{PI} = \frac{\sum_{b=1}^B\text{MU}_{b} \text{BI}_{b}}{\text{MU}_{\text{plan}}}
+\]</span></p>
+</div>
+<div id="small-aperture-score-sas" class="section level2">
+<h2><span class="header-section-number">3.9</span> Small Aperture Score (SAS)</h2>
+<p>The small aperture score (SAS) is defined as the ratio of open leaves for which the aperture is less than a predefined threshold (e.g., 2, 5, 10mm) to all open leaf pairs:</p>
+<p><span class="math display">\[
+\text{SAS}(x)_{\text{beam}} =\sum_{i=1}^S \left[\frac{N(x&gt;a&gt;0)_i}{N(a&gt;0)_i} \times \frac{\text{MU}_i}{\text{MU}_\text{beam}}\right]
+\]</span></p>
+<p>Where <span class="math inline">\(x\)</span> is the aperture criteria, e.g., <span class="math inline">\(x = \{2, 5, 10\}\)</span>, <span class="math inline">\(S\)</span> is the number of segments in the beam, <span class="math inline">\(N\)</span> is the number of leaf pairs not blocked by the jaws, and <span class="math inline">\(a\)</span> is the aperture distance between opposing leaves. The <span class="math inline">\(\text{SAS}(5\text{mm})\)</span> metric has been found to correlate well with <span class="math inline">\(\Gamma(2\%/2\text{mm})\)</span> pass rates.<span class="citation"><sup><a href="references.html#ref-Crowe2014" role="doc-biblioref">27</a></sup></span> Also, <span class="math inline">\(\text{SAS}(5\text{mm})\)</span> was able to provide a threshold below which all plans passed their MapCHECK diode array QA tests, and above which only a small percentage of verified plans were identified, incorrectly, as likely to fail the QA process.</p>
+
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>There were no plans with partial arcs in our dataset.<a href="literature.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Introduction | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans</title>
+  <meta name="description" content="2 Introduction | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Introduction | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Introduction | Complexity analysis of Volumetric Modulated Arc Therapy prostate plans" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="abstract.html"/>
+<link rel="next" href="literature.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i><b>1</b> Abstract</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#prostate-cancer"><i class="fa fa-check"></i><b>2.1</b> Prostate Cancer</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#volumetric-modulated-arc-therapy"><i class="fa fa-check"></i><b>2.2</b> Volumetric Modulated Arc Therapy</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#inverse-treatment-planning"><i class="fa fa-check"></i><b>2.3</b> Inverse treatment planning</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#plan-complexity"><i class="fa fa-check"></i><b>2.4</b> Plan complexity</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a><ul>
+<li class="chapter" data-level="3.1" data-path="literature.html"><a href="literature.html#background"><i class="fa fa-check"></i><b>3.1</b> Background</a></li>
+<li class="chapter" data-level="3.2" data-path="literature.html"><a href="literature.html#circumferencearea-coa"><i class="fa fa-check"></i><b>3.2</b> Circumference/Area (CoA)</a></li>
+<li class="chapter" data-level="3.3" data-path="literature.html"><a href="literature.html#leaf-travel-lt"><i class="fa fa-check"></i><b>3.3</b> Leaf Travel (LT)</a></li>
+<li class="chapter" data-level="3.4" data-path="literature.html"><a href="literature.html#edge-metric-em"><i class="fa fa-check"></i><b>3.4</b> Edge Metric (EM)</a></li>
+<li class="chapter" data-level="3.5" data-path="literature.html"><a href="literature.html#equivalent-square-field-esf-and-mean-field-area-mfa"><i class="fa fa-check"></i><b>3.5</b> Equivalent Square Field (ESF) and Mean Field Area (MFA)</a></li>
+<li class="chapter" data-level="3.6" data-path="literature.html"><a href="literature.html#modulation-complexity-score-mcs-and-leaf-travel-mcs-for-vmat-ltmcsv"><i class="fa fa-check"></i><b>3.6</b> Modulation Complexity Score (MCS) and Leaf Travel MCS for VMAT (LTMCSV)</a></li>
+<li class="chapter" data-level="3.7" data-path="literature.html"><a href="literature.html#modulation-index-total-textmi_texttotal"><i class="fa fa-check"></i><b>3.7</b> Modulation Index total (<span class="math inline">\(\text{MI}_\text{total}\)</span>)</a></li>
+<li class="chapter" data-level="3.8" data-path="literature.html"><a href="literature.html#plan-irregularity-pi"><i class="fa fa-check"></i><b>3.8</b> Plan Irregularity (PI)</a></li>
+<li class="chapter" data-level="3.9" data-path="literature.html"><a href="literature.html#small-aperture-score-sas"><i class="fa fa-check"></i><b>3.9</b> Small Aperture Score (SAS)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a><ul>
+<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#dataset-curation"><i class="fa fa-check"></i><b>4.1</b> Dataset curation</a></li>
+<li class="chapter" data-level="4.2" data-path="methods.html"><a href="methods.html#dataset-description"><i class="fa fa-check"></i><b>4.2</b> Dataset description</a></li>
+<li class="chapter" data-level="4.3" data-path="methods.html"><a href="methods.html#data-analysis"><i class="fa fa-check"></i><b>4.3</b> Data analysis</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="methods.html"><a href="methods.html#summary-statistics"><i class="fa fa-check"></i><b>4.3.1</b> Summary statistics</a></li>
+<li class="chapter" data-level="4.3.2" data-path="methods.html"><a href="methods.html#principal-component-analysis-pca"><i class="fa fa-check"></i><b>4.3.2</b> Principal Component Analysis (PCA)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="methods.html"><a href="methods.html#mutual-information-analysis-mia"><i class="fa fa-check"></i><b>4.3.3</b> Mutual information analysis (MIA)</a></li>
+<li class="chapter" data-level="4.3.4" data-path="methods.html"><a href="methods.html#linear-regression-analysis"><i class="fa fa-check"></i><b>4.3.4</b> Linear regression analysis</a></li>
+<li class="chapter" data-level="4.3.5" data-path="methods.html"><a href="methods.html#logistic-regression-analysis"><i class="fa fa-check"></i><b>4.3.5</b> Logistic regression analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a><ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#summary-of-the-data"><i class="fa fa-check"></i><b>5.1</b> Summary of the data</a></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#principal-component-analysis"><i class="fa fa-check"></i><b>5.2</b> Principal Component Analysis</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="results.html"><a href="results.html#correlation-matrix"><i class="fa fa-check"></i><b>5.2.1</b> Correlation matrix</a></li>
+<li class="chapter" data-level="5.2.2" data-path="results.html"><a href="results.html#sampling-adequacy"><i class="fa fa-check"></i><b>5.2.2</b> Sampling adequacy</a></li>
+<li class="chapter" data-level="5.2.3" data-path="results.html"><a href="results.html#loading-plot"><i class="fa fa-check"></i><b>5.2.3</b> Loading plot</a></li>
+<li class="chapter" data-level="5.2.4" data-path="results.html"><a href="results.html#principal-components-extraction"><i class="fa fa-check"></i><b>5.2.4</b> Principal components extraction</a></li>
+<li class="chapter" data-level="5.2.5" data-path="results.html"><a href="results.html#communalities"><i class="fa fa-check"></i><b>5.2.5</b> Communalities</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#mutual-information-analysis"><i class="fa fa-check"></i><b>5.3</b> Mutual Information Analysis</a></li>
+<li class="chapter" data-level="5.4" data-path="results.html"><a href="results.html#linear-regression-analysis-1"><i class="fa fa-check"></i><b>5.4</b> Linear Regression Analysis</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="results.html"><a href="results.html#multicollinearity-detection"><i class="fa fa-check"></i><b>5.4.1</b> Multicollinearity detection</a></li>
+<li class="chapter" data-level="5.4.2" data-path="results.html"><a href="results.html#univariate-analysis"><i class="fa fa-check"></i><b>5.4.2</b> Univariate analysis</a></li>
+<li class="chapter" data-level="5.4.3" data-path="results.html"><a href="results.html#multivariate-analysis"><i class="fa fa-check"></i><b>5.4.3</b> Multivariate analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="results.html"><a href="results.html#logistic-regression-analysis-1"><i class="fa fa-check"></i><b>5.5</b> Logistic Regression analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a><ul>
+<li class="chapter" data-level="6.1" data-path="discussion.html"><a href="discussion.html#general"><i class="fa fa-check"></i><b>6.1</b> General</a></li>
+<li class="chapter" data-level="6.2" data-path="discussion.html"><a href="discussion.html#complexity-metrics"><i class="fa fa-check"></i><b>6.2</b> Complexity metrics</a></li>
+<li class="chapter" data-level="6.3" data-path="discussion.html"><a href="discussion.html#complexity-prediction"><i class="fa fa-check"></i><b>6.3</b> Complexity prediction</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="discussion.html"><a href="discussion.html#the-choice-of-ltmcsv"><i class="fa fa-check"></i><b>6.3.1</b> The choice of LTMCSV</a></li>
+<li class="chapter" data-level="6.3.2" data-path="discussion.html"><a href="discussion.html#linear-regression-model"><i class="fa fa-check"></i><b>6.3.2</b> Linear regression model</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="discussion.html"><a href="discussion.html#plan-classification"><i class="fa fa-check"></i><b>6.4</b> Plan classification</a></li>
+<li class="chapter" data-level="6.5" data-path="discussion.html"><a href="discussion.html#future-work"><i class="fa fa-check"></i><b>6.5</b> Future work</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>7</b> Summary</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Complexity analysis of Volumetric Modulated Arc Therapy prostate plans</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">2</span> Introduction</h1>
+<div id="prostate-cancer" class="section level2">
+<h2><span class="header-section-number">2.1</span> Prostate Cancer</h2>
+<p>Prostate cancer (PCa) is the most common cancer among men, second only to skin cancer. This year, an estimated 191.930 men in the United States will be diagnosed with prostate cancer, accounting for 10.6% of all new cancer cases.<span class="citation"><sup><a href="references.html#ref-SEER2020" role="doc-biblioref">1</a></sup></span> Radiation therapy (RT), along with surgery and hormonal treatment, is one of the central pillars in managing PCa. During the last years, radiotherapy technology has seen dramatic progression that allowed dose escalation while keeping normal tissue toxicity from bladder and rectum low.<span class="citation"><sup><a href="references.html#ref-Otto2008" role="doc-biblioref">2</a>,<a href="references.html#ref-Palma2010" role="doc-biblioref">3</a></sup></span> Nowadays, Intensity Modulated Radiation Therapy (IMRT) and its evolution, Volumetric Modulated Arc Therapy (VMAT), represent the state-of-the-art treatment techniques.<span class="citation"><sup><a href="references.html#ref-Jacobs2013" role="doc-biblioref">4</a></sup></span></p>
+<p>During VMAT radiotherapy, the linear accelerator rotates around the patient and irradiates from different angles with beamlets of varying aperture shape and intensity (Fig. <a href="introduction.html#fig:linacmlc">2.1</a>). The fields’ shape is modulated by a multileaf collimator (MLC) system consisting of a set of pairs of “leaves”, which can move in and out of the beam’s field. This beam modulation results in a dose gradient that conforms tightly to the target volume, and it drops fast inside the surrounding normal tissues. Had it not been for the modern imaging techniques, such as cone-beam computed tomography, that localize the prostate and guide the precise delivery of radiation, this highly conformal treatment would not have been possible.<span class="citation"><sup><a href="references.html#ref-Dawson2007-au" role="doc-biblioref">5</a>,<a href="references.html#ref-Bujold2012-le" role="doc-biblioref">6</a></sup></span></p>
+<div class="figure" style="text-align: center"><span id="fig:linacmlc"></span>
+<img src="images/linac_mlc.png" alt="Left: A modern linear accelerator able to deliver volumetric modulated arc therapy. Right: A Multi Leaf Collimator (MLC) system. The leaves can move in and out of the beam's field, shaping the delivered dose." width="75%" />
+<p class="caption">
+Figure 2.1: Left: A modern linear accelerator able to deliver volumetric modulated arc therapy. Right: A Multi Leaf Collimator (MLC) system. The leaves can move in and out of the beam’s field, shaping the delivered dose.
+</p>
+</div>
+</div>
+<div id="volumetric-modulated-arc-therapy" class="section level2">
+<h2><span class="header-section-number">2.2</span> Volumetric Modulated Arc Therapy</h2>
+<p>VMAT, initially introduced under the name IMAT (Intensity Modulated Arc Therapy), was first proposed in 1995,<span class="citation"><sup><a href="references.html#ref-Yu1995" role="doc-biblioref">7</a></sup></span> although another type of IMRT using rotational fan beams was submitted two years earlier by Mackie et al. under the name tomotherapy.<span class="citation"><sup><a href="references.html#ref-Mackie1993" role="doc-biblioref">8</a></sup></span> In VMAT, the radiation is delivered over a continuous arc, similar to tomotherapy, but uses rotational cone beams shaped by an MLC system. The idea was to convert the intensity patterns into leaf segments delivered by a sequence of one or more arcs. In principle, one arc would suffice since it may incorporate hundreds of aperture shapes. However, the linear accelerator’s mechanical constraints necessitate multiple arcs to provide additional degrees of freedom to the system. Nowadays, linear accelerators can vary both the dose rate and the gantry speed at each beam angle, besides the aperture shape. These additional modulation degrees allow the creation of sophisticated dose distributions by redistributing the normal tissue dose to less critical regions. Also, partial and non-coplanar arcs can be combined depending on the clinical scenario.</p>
+</div>
+<div id="inverse-treatment-planning" class="section level2">
+<h2><span class="header-section-number">2.3</span> Inverse treatment planning</h2>
+<p>IMRT and VMAT treatment planning are inverse compared to conventional 3D conformal radiotherapy workflow. The planning treatment volumes are delineated, along with organs at risks (OARs), prescription and normal tissue constraints are set, and then the optimization algorithm seeks to find the optimal beam delivery. In its simplest form,<span class="citation"><sup><a href="references.html#ref-Khan2012" role="doc-biblioref">9</a></sup></span> the cost function that is optimized is the least square differences between the calculated dose <span class="math inline">\(d_c(\mathbf{r})\)</span> and the prescribed dose <span class="math inline">\(d_p(\mathbf{r})\)</span> of structure <span class="math inline">\(i\)</span>, over the 3D dose voxel matrix, weighted by some importance factor <span class="math inline">\(\lambda_i\)</span>:</p>
+<p><span class="math display">\[
+J \equiv J(\mathbf{w}) = \sum_{i=1}^N \lambda_i \left( d_c(\mathbf{r}) - d_p(\mathbf{r})\right)_i^2
+\]</span>
+There is an abundance of optimization algorithms to minimize the cost function <span class="math inline">\(J\)</span>, such as gradient descent and simulated annealing. In gradient descent, the weights are updated in the direction of the negative gradient of the <span class="math inline">\(J(\mathbf{w})\)</span>, i.e., <span class="math inline">\(\mathbf{w}_{n+1} = \mathbf{w}_n - \alpha \nabla_{\mathbf{w}}{J}, \alpha&gt;0\)</span>. The <span class="math inline">\(\alpha\)</span> value is the learning rate. The algorithm is iterative and stops when convergence is achieved, i.e., when the gradient <span class="math inline">\(\nabla_{\mathbf{w}}J(\mathbf{w})\)</span> is so small that <span class="math inline">\(\mathbf{w}\)</span> does not change much.</p>
+<p>In simulated annealing, a parameter (e.g., leaf position, aperture weight) is picked randomly, and its value is changed by some random amount. The new cost function is calculated, and if it is lower <span class="math inline">\((\Delta J &lt; 0)\)</span>, the change is accepted. If the new cost function is higher <span class="math inline">\((\Delta J &gt; 0)\)</span>, then the change is accepted with a probability <span class="math inline">\(p = \text{min}\left[1,\exp(-\Delta J / T)\right]\)</span>, via the criterion <span class="math inline">\(p \ge u\in[0,1]\)</span>, where <span class="math inline">\(T\)</span> is the annealing temperature that is initialized to some high value and then slowly lowered during the optimization process, and <span class="math inline">\(u\)</span> a uniform random number <span class="math inline">\(u\in[0,1]\)</span>. The logic behind simulated annealing is that during the initial phase of the optimization process, we want to explore the search space by allowing some suboptimal changes to take place. However, as simulation time passes by, the temperature <span class="math inline">\(T\)</span> is lowered, which lowers the probability of accepting such solutions, and the algorithm is driven to convergence. In Fig. <a href="introduction.html#fig:gradDesc">2.2</a> and <a href="introduction.html#fig:simAnn">2.3</a> we show two examples, of gradient descent and simulated annealing, minimizing the simple one-dimensional test function from Gramacy and Lee:<span class="citation"><sup><a href="references.html#ref-Gramacy2012-hy" role="doc-biblioref">10</a></sup></span></p>
+<p><span class="math display">\[
+f(x) = \frac{\sin(10\pi x)}{2x} + (x-1)^4, \hspace{5mm} x \in [0.5, 2.5]
+\]</span></p>
+<div class="figure" style="text-align: center"><span id="fig:gradDesc"></span>
+<img src="images/gradient_descent_trapped.png" alt="Gradient descent is trapped in a local minimum. In order to overcome local minima, there exist versions of gradient descent that use momentum or adaptive learning rate." width="100%" />
+<p class="caption">
+Figure 2.2: Gradient descent is trapped in a local minimum. In order to overcome local minima, there exist versions of gradient descent that use momentum or adaptive learning rate.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:simAnn"></span>
+<img src="images/sim_ann.png" alt="Simulated annealing with a cooling schedule $T(t) = 0.99^t T_0$. During the initial phase of high temperature, the algorithm accepts suboptimal changes to explore the search space. As the temperature drops, the cost function converges to a minimum." width="100%" />
+<p class="caption">
+Figure 2.3: Simulated annealing with a cooling schedule <span class="math inline">\(T(t) = 0.99^t T_0\)</span>. During the initial phase of high temperature, the algorithm accepts suboptimal changes to explore the search space. As the temperature drops, the cost function converges to a minimum.
+</p>
+</div>
+<p>Another versatile method of describing the goodness of treatment of a plan is to use the so-called “costlets”, in which case the overall cost function is given by <span class="math inline">\(J = F(c_1,c_2,\ldots,c_K)\)</span>. The <span class="math inline">\(c_i, i=1,\ldots,K\)</span> are the costlets and the function <span class="math inline">\(F\)</span> describes how the various costlets are combined to yield the overall optimization target.<span class="citation"><sup><a href="references.html#ref-Kessler2005" role="doc-biblioref">11</a></sup></span> A natural way to merge the <span class="math inline">\(c_i\)</span> into a penalty function is to calculate their weighted sum, e.g. <span class="math inline">\(J=\sum_{i=1}^K \lambda_i c_i\)</span>. In this framework, a plan’s complexity could be encoded in a complexity costlet, as per the following simplified example:</p>
+<span class="math display">\[\begin{align*}
+J &amp;= 0.2\underbrace{\sum_{i\in SC} \text{max}(d_i - 45, 0)^{10}}_\text{No more than 45 in Spinal Cord} + 0.3\underbrace{\sum_{i\in PTV} \text{max}(d_i - 63, 57 - d_i, 0)^2}_\text{No less than 57 and no more than 63 in PTV} \\
+&amp;+ 0.1\underbrace{\sum_{i\in NT} \text{max}(d_i, 0)^2}_\text{Minimize dose to Normal Tissues} +
+  0.05 \times \text{estimated time of delivery}\\
+  &amp;+ 0.05 \times \text{tongue &amp; groove effect}
+ + 0.05 \times \text{complexity} + \ldots
+\end{align*}\]</span>
+<p>
+Once inverse optimization derives an optimal fluence per field, the process is handed over to the “leaf sequencing algorithm” that determines a sequence of leaf motions to deliver that fluence (Fig. <a href="introduction.html#fig:beamlets">2.4</a>). Naturally, there will be some differences between
+the “optimal” and “actual” fluence after enforcing the mechanical constraints of the linear accelerator (e.g., maximum leaf speed, limitations in opposing leaf positions). Another strategy is the so-called “Direct Aperture Optimization”, where fluence optimization and leaf positions are optimized directly,<span class="citation"><sup><a href="references.html#ref-Shepard2002" role="doc-biblioref">12</a></sup></span> therefore what the dosimetrist sees at the optimization stage is what is delivered to the patient.</p>
+<div class="figure" style="text-align: center"><span id="fig:beamlets"></span>
+<img src="images/beamlets.png" alt="Ten reconstructed beamlets (out of total 200) in a VMAT plan. The blue shaded area is the MLC's aperture. The more irregularly shaped the beamlets, the more complex the plan. Source: Radiation Oncology Department of Papageorgiou General Hospital." width="95%" />
+<p class="caption">
+Figure 2.4: Ten reconstructed beamlets (out of total 200) in a VMAT plan. The blue shaded area is the MLC’s aperture. The more irregularly shaped the beamlets, the more complex the plan. Source: Radiation Oncology Department of Papageorgiou General Hospital.
+</p>
+</div>
+</div>
+<div id="plan-complexity" class="section level2">
+<h2><span class="header-section-number">2.4</span> Plan complexity</h2>
+<p>VMAT radiation plans are inherently complex to deliver by the linear accelerator. Plan complexity has many reverberations on radiation safety, treatment deliverability, beam-on time, mechanical strain on the linear accelerator, and necessitates laborious quality assurance (QA) and verification procedures.<span class="citation"><sup><a href="references.html#ref-Kamperis2020" role="doc-biblioref">13</a></sup></span> Concretely, some significant issues arising from excessive complexity include the following:</p>
+<ol style="list-style-type: decimal">
+<li><p>As the number of monitor units (MUs) increases, so does irradiation time and leakage radiation. This “low-dose bath” of normal tissues may double the risk of radiation-induced second cancers.<span class="citation"><sup><a href="references.html#ref-Craft2007-rq" role="doc-biblioref">14</a></sup></span></p></li>
+<li><p>Increased overall treatment time might have unfavorable radiobiologic implications in cell-sterilizing ability due to repair of sublethal DNA damage.<span class="citation"><sup><a href="references.html#ref-Mu2003" role="doc-biblioref">15</a>–<a href="references.html#ref-Yang2009-uh" role="doc-biblioref">19</a></sup></span></p></li>
+<li><p>The interaction between the delivery of an intricate plan and moving target (such as prostate) is, to a great degree, unknown.</p></li>
+</ol>
+<p>Complexity metrics (CMs) have been suggested as a complementary analytical tool to existing quality controls methods.<span class="citation"><sup><a href="references.html#ref-Gotstedt2015" role="doc-biblioref">20</a></sup></span> The extra information provided by CMs could facilitate the selection of a robust plan, deliverability-wise, among plans with similar dosimetric characteristics (Fig. <a href="introduction.html#fig:complqual">2.5</a>). A complexity metric could also be used as an optimization objective in the treatment planning system to reduce the plan complexity at an early stage.<span class="citation"><sup><a href="references.html#ref-Matuszak2007" role="doc-biblioref">21</a></sup></span> Integrating complexity minimization at the objective function, rather than at later stages of treatment planning, is advantageous in the following sense. It increases delivery efficiency while maintaining dosimetric quality. On the contrary, other methods, such as beamlet intensity restrictions, smoothing procedures, and direct aperture optimization, may compromise target coverage and OAR sparing in exchange for increased beam smoothness and delivery efficiency.<span class="citation"><sup><a href="references.html#ref-Matuszak2007" role="doc-biblioref">21</a></sup></span></p>
+<div class="figure" style="text-align: center"><span id="fig:complqual"></span>
+<img src="images/complexity_vs_plan_quality.png" alt="Qualitative representation of complexity vs. plan quality and plan deliverability." width="60%" />
+<p class="caption">
+Figure 2.5: Qualitative representation of complexity vs. plan quality and plan deliverability.
+</p>
+</div>
+<p>However, a high degree of complexity is not a priori a negative feature of a treatment plan. It may be the case that due to the particular target and anatomy of organs at risk, a rather intricate plan needs to be delivered. This may occur around complex targets involving convex and non-convex parts, and a tradeoff between treatment plan quality and required monitor units has been shown in the context of IMRT.<span class="citation"><sup><a href="references.html#ref-Craft2007" role="doc-biblioref">22</a></sup></span> Therefore, a balance between excessive complexity and dose distribution compromise is the most prudent way forward.</p>
+
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="abstract.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="literature.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
