@@ -14,7 +14,31 @@ description: Introduction to Python decorators and how to use the tf.function to
 {:toc}
 
 ## Python decorators
-A decorator is a function that accepts another function as an argument and adds new functionality to it. The typical place to put a decorator is just before the definition of a function. In the following example, we construct a decorator called `mytimer` that prints the time a function takes to execute. The decorator accepts as input the function "func", saves the current value of a performance counter, runs the function "func", and then takes the difference between the new minus old value of the performance counter. Notice that `mytimer` returns a new function, the one called `wrapper`, that wraps our code around the given function "func".
+A decorator is a function that accepts another function as an argument and adds new functionality to it. Decorators are used for all sorts of things, like logging, timing the execution of functions, and caching values. Let's see a couple of examples!
+
+### The most useless decorator
+Arguably, the most useless decorator is the following one that does absolutely nothing! :)
+
+{% highlight python %}
+{% raw %}
+def noop_decorator(func):
+    return func
+
+# The typical place to put a decorator is
+# just before the definition of a function
+@noop_decorator
+def hello_world():
+    return "Hello, world!"
+
+hello_world()
+#    Hello, world!
+{% endraw %}
+{% endhighlight %}
+
+So, basically, the `noop_decorator` returns whatever function we hand it over, without modifying it at all.
+
+### Timing the execution of a function
+In the following example, we construct a decorator called `mytimer` that prints the time a function takes to execute. The decorator accepts as input the function *func*, and returns another function called `wrapper`. The latter uses the `*args` and `**kwargs` to collect the positional and keyword arguments. Next, it saves the current value of a performance counter, runs the function *func* by forwarding the *args* and *kwargs* with the unpacking operators (asterisk and double asterisk). Subsequently, it takes the difference between the new minus old value of the performance counter and prints the result. Finally, it returns the result of `func`, as we expected if we called the undecorated function.
 
 {% highlight python %}
 {% raw %}
@@ -69,6 +93,81 @@ timeit.timeit(lambda: calc_stuff(2000), number=10)
 #    4.638937220999992
 {% endraw %}
 {% endhighlight %}
+
+### Retrieving the lost metadata
+When we decorate a function, we basically replace it with another function. This has the undesired side effect that some of the original function's metadata are lost since they are replaced by the wrapper's. See, for instance, the following code:
+
+{% highlight python %}
+{% raw %}
+def noop_decorator(func):
+    def wrapper(*args, **kwargs):
+        """Just a wrapper function"""
+        func_value = func(*args, **kwargs)
+        return func_value
+    return wrapper
+
+@noop_decorator
+def hello_world():
+    """Returns the string Hello, world!"""
+    return "Hello, world!"
+
+@noop_decorator
+def bye_world():
+    """Returns the string Bye, world!"""
+    return "Bye, world!"
+
+[hello_world.__name__, bye_world.__name__]
+{% endraw %}
+{% endhighlight %}
+
+The same applies for the docstrings:
+
+{% highlight python %}
+{% raw %}
+[hello_world.__doc__, bye_world.__doc__]
+#    ['Just a wrapper function', 'Just a wrapper function']
+{% endraw %}
+{% endhighlight %}
+
+To preserve the original function's metadata, we use the `functools.wraps()`, which copies the otherwise lost metadata to the wrapper function!
+
+{% highlight python %}
+{% raw %}
+import functools
+
+def noop_decorator(func):
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        """Just a wrapper function"""
+        func_value = func(*args, **kwargs)
+        return func_value
+    return wrapper
+
+@noop_decorator
+def hello_world():
+    """Returns the string Hello, world!"""
+    return "Hello, world!"
+
+@noop_decorator
+def bye_world():
+    """Returns the string Bye, world!"""
+    return "Bye, world!"
+
+#    [hello_world.__name__, bye_world.__name__]
+{% endraw %}
+{% endhighlight %}
+
+Neat! The function names were copied over. The same applies to the docstrings:
+
+{% highlight python %}
+{% raw %}
+[hello_world.__doc__, bye_world.__doc__]
+
+#    ['Returns the string Hello, world!', 'Returns the string Bye, world!']
+{% endraw %}
+{% endhighlight %}
+
+Notice that although we had a docstring for the `wrapper` function, it was replaced by the original functions' docstrings. Last, to blow your mind, `functools.wraps` is in itself a decorator! :P
 
 ## Eager vs. lazy Tensorflow's execution modes
 In eager execution, you write some code, and you can run it immediately, line by line, examine the output, modify it, re-run it, etc. Everything is evaluated on the spot without constructing a computational graph that will be run later in a session. This is easier to debug and feels like writing regular Python code. However, by running Tensorflow one step at a time, you give up all the nice speed optimizations available during the lazy execution mode. In Tensorflow 2.0, the default execution mode has been set to eager, presumably after people started to prefer [Pytorch](https://pytorch.org/) over TF since Pytorch was eager from the beginning. So, where does `tf.function` fit in this narrative? By using the `tf.function` decorator, we can convert a function into a TensorFlow Graph (`tf.Graph`) and lazy execute it, so we bring back some of the speed acceleration we gave up before.
