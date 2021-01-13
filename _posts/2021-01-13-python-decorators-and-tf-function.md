@@ -14,7 +14,7 @@ description: Introduction to Python decorators and how to use the tf.function to
 {:toc}
 
 ## Python decorators
-A decorator is a function that accepts another function as an argument and adds new functionality to it. The typical place to put a decorator is just before the definition of a function. In the following example, we construct a decorator called `mytimer` that prints the time a function takes to execute. The decorator accepts as input the function "func", saves the current value of a performance counter, runs the function "func", and then takes the difference between new minus old value of the performance counter. Notice that `mytimer` returns a new function, the one called `wrapper`, that wraps our code around the given function "func".
+A decorator is a function that accepts another function as an argument and adds new functionality to it. The typical place to put a decorator is just before the definition of a function. In the following example, we construct a decorator called `mytimer` that prints the time a function takes to execute. The decorator accepts as input the function "func", saves the current value of a performance counter, runs the function "func", and then takes the difference between the new minus old value of the performance counter. Notice that `mytimer` returns a new function, the one called `wrapper`, that wraps our code around the given function "func".
 
 {% highlight python %}
 {% raw %}
@@ -56,7 +56,7 @@ timeit.timeit(lambda: calc_stuff(2000), number=10)
 {% endraw %}
 {% endhighlight %}
 
-Summing up the individual execution times we get a total 4.85 seconds, which is pretty close to the total time `timeit()` reports. Next, we redefine the function with no decorator. Notice how the execution time of each function call is gone now.
+Summing up the individual execution times, we get a total of 4.85 seconds, which is pretty close to the cumulative time `timeit()` reports. Next, we redefine the function with no decorator, and we notice how each function call's execution time is gone now.
 
 {% highlight python %}
 {% raw %}
@@ -71,7 +71,7 @@ timeit.timeit(lambda: calc_stuff(2000), number=10)
 {% endhighlight %}
 
 ## Eager vs. lazy Tensorflow's execution modes
-In eager execution, you write some code, and you can run it immediately, line by line, examine the output, modify it, re-run it, etc. Everything is evaluated on the spot without constructing a computational graph that will be run later in a session. This is easier to debug and feels like writing regular Python code. However, by running Tensorflow one step at a time, you give up all the nice speed optimizations available during the lazy execution mode. In Tensorflow 2.0, the default execution mode has been set to eager, presumably after people started to prefer Pytorch over TF, since Pytorch was eager from the beginning. So, where does `tf.function` fit in this narrative? By using the `tf.function` decorator, we can convert a function into a TensorFlow Graph (`tf.Graph`), and lazy execute it, so we bring back some of the speed acceleration we gave up before.
+In eager execution, you write some code, and you can run it immediately, line by line, examine the output, modify it, re-run it, etc. Everything is evaluated on the spot without constructing a computational graph that will be run later in a session. This is easier to debug and feels like writing regular Python code. However, by running Tensorflow one step at a time, you give up all the nice speed optimizations available during the lazy execution mode. In Tensorflow 2.0, the default execution mode has been set to eager, presumably after people started to prefer [Pytorch](https://pytorch.org/) over TF since Pytorch was eager from the beginning. So, where does `tf.function` fit in this narrative? By using the `tf.function` decorator, we can convert a function into a TensorFlow Graph (`tf.Graph`) and lazy execute it, so we bring back some of the speed acceleration we gave up before.
 
 {% highlight python %}
 {% raw %}
@@ -147,7 +147,6 @@ def get_loss_and_grads(dist, x_train):
 {% endraw %}
 {% endhighlight %}
 
-
 We run it 1000 times and measure the execution time:
 
 {% highlight python %}
@@ -182,7 +181,7 @@ timeit.timeit(lambda: get_loss_and_grads(normal_dist, x_train), number=1000)
 
 
 ### Caveats
-There are, however, some caveats with the "tf.function" decorator. First, any Python side-effects will only happen once, when `func` is traced. Such side-effects include for instance printing with `print()` or appending to a list:
+By now, I might have given you the false impression that by adding `tf.function` to any existing function, whatsoever, we automatically convert it into a computational graph. We will now discuss some of the caveats with the `tf.function` decorator. First, any Python side-effects will only happen once, when `func` is traced. Such side-effects include, for instance, printing with `print()` or appending to a list:
 
 {% highlight python %}
 {% raw %}
@@ -263,7 +262,6 @@ timeit.timeit(lambda: [f(y) for y in range(100)], number=100)
 {% endraw %}
 {% endhighlight %}
 
-
 {% highlight python %}
 {% raw %}
 timeit.timeit(lambda: [f(tf.constant(y)) for y in range(100)], number=100)
@@ -272,6 +270,6 @@ timeit.timeit(lambda: [f(tf.constant(y)) for y in range(100)], number=100)
 {% endraw %}
 {% endhighlight %}
 
-Tensorflow will even warn if if detects such a use:
+Tensorflow will even warn if it detects such a use:
 
-WARNING:tensorflow:5 out of the last 10006 calls to <function f at 0x7f68e6f75a60> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has experimental_relax_shapes=True option that relaxes argument shapes that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+WARNING:tensorflow:5 out of the last 10006 calls to <function f at 0x7f68e6f75a60> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has experimental_relax_shapes=True option that relaxes argument shapes that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for more details.
