@@ -178,7 +178,7 @@ In Tensorflow, computations are modeled as a directed graph. Each node in the gr
 
 In Tensorflow 1.0, one had to construct the computation graph, then set up a *session.run()* with *feed_dict* to populate the graph with actual data. The advantage of working with a computation graph is that it allowed Tensorflow to perform many optimizations (e.g., graph simplifications, inlining function bodies to accommodate interprocedural optimizations, and so on). However, the user experience left much to be desired, so eager execution mode was introduced.
 
-In eager execution, we write some code, and we can run it immediately, line by line, examine the output, modify it, re-run it, etc. Everything is evaluated on the spot without constructing a computational graph that will be run later in a session. This is easier to debug and feels like writing regular Python code. However, by running Tensorflow one step at a time, we give up all the previous speed optimizations available during the lazy execution mode. In Tensorflow 2.0, the default execution mode has been set to eager, presumably after people started to favor Pytorch over TF since Pytorch was eager from the beginning. So, where does the tf.function fit in this narrative? By using the tf.function decorator, we can convert a function into a TensorFlow Graph (`tf.Graph`) and lazy execute it, so we bring back some of the speed acceleration we gave up before.
+In eager execution, we write some code, and we can run it immediately, line by line, examine the output, modify it, re-run it, etc. Everything is evaluated on the spot without constructing a computation graph that will be run later in a session. This is easier to debug and feels like writing regular Python code. However, by running Tensorflow one step at a time, we give up all the previous speed optimizations available during the lazy execution mode. In Tensorflow 2.0, the default execution mode has been set to eager, presumably after people started to favor Pytorch over TF since Pytorch was eager from the beginning. So, where does the tf.function fit in this narrative? By using the tf.function decorator, we can convert a function into a TensorFlow Graph (`tf.Graph`) and lazy execute it, so we bring back some of the speed acceleration we gave up before.
 
 
 
@@ -221,7 +221,7 @@ tf.summary.trace_export(
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/tensorboard.png" alt="Tensorboard computational graph">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/tensorboard.png" alt="Tensorboard computation graph">
 </p>
 
 We load the necessary modules and generate some normally distributed data.
@@ -290,7 +290,7 @@ timeit.timeit(lambda: get_loss_and_grads(normal_dist, x_train), number=1000)
 
 
 ### Caveats
-By now, I might have given you the false impression that by adding `tf.function` to any existing function, whatsoever, we automatically convert it into a computational graph. We will now discuss some of the caveats with the `tf.function` decorator. First, any Python side-effects will only happen once, when `func` is traced. Such side-effects include, for instance, printing with `print()` or appending to a list:
+By now, I might have given you the false impression that by adding `tf.function` to any existing function, whatsoever, we automatically convert it into a computation graph. We will now discuss some of the caveats with the `tf.function` decorator. First, any Python side-effects will only happen once, when `func` is traced. Such side-effects include, for instance, printing with `print()` or appending to a list:
 
 {% highlight python %}
 {% raw %}
@@ -340,7 +340,7 @@ f(tf.constant([1, 2, 3]))
 {% endhighlight %}
 
 
-Probably the most subtle gotcha here is this. Passing Python scalars or lists as arguments to `tf.function`, will always build a new graph! So by passing Python scalars repeatedly, say in a loop, as arguments to `tf.function`, it will thrash the system by creating new computational graphs again and again!
+Probably the most subtle gotcha here is this. Passing Python scalars or lists as arguments to `tf.function`, will always build a new graph! So by passing Python scalars repeatedly, say in a loop, as arguments to `tf.function`, it will thrash the system by creating new computation graphs again and again!
 
 {% highlight python %}
 {% raw %}
