@@ -155,7 +155,9 @@ def bye_world():
     """Returns the string Bye, world!"""
     return "Bye, world!"
 
-#    [hello_world.__name__, bye_world.__name__]
+[hello_world.__name__, bye_world.__name__]
+
+#    ['hello_world', 'bye_world']
 {% endraw %}
 {% endhighlight %}
 
