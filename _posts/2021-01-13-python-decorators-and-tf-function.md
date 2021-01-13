@@ -149,7 +149,7 @@ def get_loss_and_grads(dist, x_train):
 {% endhighlight %}
 
 
-We run it 1000 times and measure the executioon time:
+We run it 1000 times and measure the execution time:
 
 {% highlight python %}
 {% raw %}
