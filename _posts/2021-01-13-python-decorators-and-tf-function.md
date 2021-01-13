@@ -64,7 +64,6 @@ def calc_stuff(n):
     for _ in range(n):
         sum([i/3.14159 for i in range(2000)])
 
-import timeit
 timeit.timeit(lambda: calc_stuff(2000), number=10)
 
 #    4.638937220999992
