@@ -36,28 +36,27 @@ def calc_stuff(n):
 {% endraw %}
 {% endhighlight %}
 
-
 {% highlight python %}
 {% raw %}
 import timeit
 timeit.timeit(lambda: calc_stuff(2000), number=10)
-```
 
-    Function 'calc_stuff' in 0.5119 secs
-    Function 'calc_stuff' in 0.4639 secs
-    Function 'calc_stuff' in 0.4689 secs
-    Function 'calc_stuff' in 0.5194 secs
-    Function 'calc_stuff' in 0.5252 secs
-    Function 'calc_stuff' in 0.4812 secs
-    Function 'calc_stuff' in 0.4630 secs
-    Function 'calc_stuff' in 0.5072 secs
-    Function 'calc_stuff' in 0.4528 secs
-    Function 'calc_stuff' in 0.4544 secs
+#    Function 'calc_stuff' in 0.5119 secs
+#    Function 'calc_stuff' in 0.4639 secs
+#    Function 'calc_stuff' in 0.4689 secs
+#    Function 'calc_stuff' in 0.5194 secs
+#    Function 'calc_stuff' in 0.5252 secs
+#    Function 'calc_stuff' in 0.4812 secs
+#    Function 'calc_stuff' in 0.4630 secs
+#    Function 'calc_stuff' in 0.5072 secs
+#    Function 'calc_stuff' in 0.4528 secs
+#    Function 'calc_stuff' in 0.4544 secs
 
 #    4.853907419000052
 {% endraw %}
 {% endhighlight %}
 
+We redefine the function with no decorator this time. Notice how the execution time of each function call is gone now.
 
 {% highlight python %}
 {% raw %}
@@ -114,7 +113,7 @@ tf.summary.trace_export(
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 45%; height: 45%" src="{{ site.url }}/images/tensorboard.png" alt="Tensorboard computational graph">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/tensorboard.png" alt="Tensorboard computational graph">
 </p>
 
 We load the necessary modules and generate some normally distributed data.
