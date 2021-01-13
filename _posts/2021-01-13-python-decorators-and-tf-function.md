@@ -14,7 +14,7 @@ description: Introduction to Python decorators and how to use the tf.function to
 {:toc}
 
 ## Python decorators
-A decorator is a function that accepts another function as an argument and adds new functionality to it. The typical place to put a decorator is just before the definition of a function. In the following example, we construct a decorator called "mytimer" that prints the time a function takes to execute. The decorator accepts as input the function "func", saves the current value of a performance counter, runs the function "func", and then takes the new minus's old value of the performance counter. Notice that "mytimer" returns a new function, the one called "wrapper", that wraps our code around the given function "func".
+A decorator is a function that accepts another function as an argument and adds new functionality to it. The typical place to put a decorator is just before the definition of a function. In the following example, we construct a decorator called `mytimer` that prints the time a function takes to execute. The decorator accepts as input the function "func", saves the current value of a performance counter, runs the function "func", and then takes the new minus's old value of the performance counter. Notice that "mytimer" returns a new function, the one called `wrapper`, that wraps our code around the given function "func".
 
 {% highlight python %}
 {% raw %}
