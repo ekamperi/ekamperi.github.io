@@ -117,6 +117,8 @@ def bye_world():
     return "Bye, world!"
 
 [hello_world.__name__, bye_world.__name__]
+
+#    ['wrapper', 'wrapper']
 {% endraw %}
 {% endhighlight %}
 
