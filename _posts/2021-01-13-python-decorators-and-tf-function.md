@@ -38,7 +38,7 @@ hello_world()
 So, basically, the `noop_decorator` returns whatever function we hand it over, without modifying it at all.
 
 ### Timing the execution of a function
-In the following example, we construct a decorator called `mytimer` that prints the time a function takes to execute. The decorator accepts as input the function *func*, and returns another function called `wrapper`. The latter uses the `*args` and `**kwargs` to collect the positional and keyword arguments. Next, it saves the current value of a performance counter, runs the function *func* by forwarding the *args* and *kwargs* with the unpacking operators (asterisk and double asterisk). Subsequently, it takes the difference between the new minus old value of the performance counter and prints the result. Finally, it returns the result of `func`, as we expected if we called the undecorated function.
+In the following example, we construct a decorator called `mytimer` that prints the time a function takes to execute. The decorator accepts as input the function *func*, and returns another function called `wrapper`. The latter uses the `*args` and `**kwargs` to collect the positional and keyword arguments. Next, it saves the current value of a performance counter, runs the function *func* by forwarding the *args* and *kwargs* with the unpacking operators (asterisk and double asterisk). Subsequently, it takes the difference between the new minus old value of the performance counter and prints the result. Finally, it returns the result of *func*, as we expected if we called the undecorated function.
 
 {% highlight python %}
 {% raw %}
