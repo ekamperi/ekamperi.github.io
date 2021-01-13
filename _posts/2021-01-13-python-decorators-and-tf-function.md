@@ -56,7 +56,7 @@ timeit.timeit(lambda: calc_stuff(2000), number=10)
 {% endraw %}
 {% endhighlight %}
 
-We redefine the function with no decorator this time. Notice how the execution time of each function call is gone now.
+Summing up the individual execution times we get a total 4.85 seconds, which is pretty close to the total time `timeit()` reports. Next, we redefine the function with no decorator. Notice how the execution time of each function call is gone now.
 
 {% highlight python %}
 {% raw %}
