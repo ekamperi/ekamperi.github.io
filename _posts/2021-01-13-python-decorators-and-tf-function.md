@@ -178,7 +178,7 @@ Notice that although we had a docstring for the `wrapper` function, it was repla
 In Tensorflow, computations are modeled as a directed graph. Each node in the graph is a mathematical operation (say an addition of two scalars or a multiplication of two matrices). Every node has some inputs (possibly even zero) and some outputs  (possibly even zero). Along the edges of the graph, tensors flow! :) Tensors are multidimensional arrays with a specific type (e.g., float or double, etc.) and should not be confused with tensors in mathematical physics. For example, the mathematical operation $$\mathbf{\text{Relu}}\left(\mathbf{W} \mathbf{x} + \mathbf{b}\right)$$ is represented as:
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/computation_graph_example.png" alt="Tensorflow computation graph example">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/computation_graph_example.png" alt="Tensorflow computation graph example">
 </p>
 Image taken [from here](https://medium.com/@asjad/notes-on-tensor-flow-b90ef02b144f).
 
