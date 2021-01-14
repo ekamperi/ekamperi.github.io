@@ -250,7 +250,7 @@ Fire up the [Tensorboard](https://www.tensorflow.org/tensorboard) to inspect the
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/tensorboard.png" alt="Tensorboard computation graph">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/tensorboard.png" alt="Tensorboard computation graph">
 </p>
 
 #### Show me the speedup!
