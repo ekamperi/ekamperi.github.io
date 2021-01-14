@@ -131,7 +131,7 @@ The same applies for the docstrings:
 {% endraw %}
 {% endhighlight %}
 
-To preserve the original function's metadata, we use the `functools.wraps()`, which copies the otherwise lost metadata to the wrapper function!
+To preserve the original function's metadata, we use the `functools.wraps()`, which copies the metadata to the wrapper function that would be otherwise lost!
 
 {% highlight python %}
 {% raw %}
