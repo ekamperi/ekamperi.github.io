@@ -4,7 +4,7 @@ title: "Python decorators and the tf.function"
 date:   2021-01-13
 categories: [machine learning]
 tags: ['machine learning', Python, Tensorflow]
-description: Introduction to Python decorators and how to use the tf.function to speed things up in Tensorflow
+description: Introduction to Python decorators and how to use tf.function to speed things up in Tensorflow
 ---
 
 ### Contents
