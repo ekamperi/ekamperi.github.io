@@ -292,7 +292,7 @@ timeit.timeit(lambda: get_loss_and_grads(normal_dist, x_train), number=1000)
 
 ### Caveats
 #### Functions with side-effects
-By now, I might have given you the false impression that by adding `tf.function` to any existing function, whatsoever, we automatically convert it into a computation graph. We will now discuss some of the caveats with the `tf.function` decorator. First, any Python side-effects will only happen once, when `func` is traced. Such side-effects include, for instance, printing with `print()` or appending to a list:
+By now, I might have given you the false impression that adding `tf.function` to any existing function, whatsoever, automatically converts it into a computation graph. We will now discuss some of the caveats with the `tf.function` decorator. First, any Python side-effects will only happen once, when `func` is traced. Such side-effects include, for instance, printing with `print()` or appending to a list:
 
 {% highlight python %}
 {% raw %}
