@@ -254,7 +254,7 @@ Fire up the [Tensorboard](https://www.tensorflow.org/tensorboard) to inspect the
 </p>
 
 #### Show me the speedup!
-We will set up some real code and measure the speedup that `tf.function` brings. First, we load the necessary modules and generate some normally distributed training data.
+We will borrow some real code [from a previous post](https://ekamperi.github.io/mathematics/2020/12/26/tensorflow-trainable-probability-distributions.html), where we used trainable probability distributions and measure the speedup that `tf.function` brings. First, we load the necessary modules and generate some normally distributed training data.
 
 {% highlight python %}
 {% raw %}
