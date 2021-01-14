@@ -174,13 +174,14 @@ Neat! The function names were copied over. The same applies to the docstrings:
 Notice that although we had a docstring for the `wrapper` function, it was replaced by the original functions' docstrings. Last, to blow your mind, `functools.wraps` is in itself a decorator! :P
 
 ## Eager vs. lazy Tensorflow's execution modes
+### Basic computation model
 In Tensorflow, computations are modeled as a directed graph. Each node in the graph is a mathematical operation (say an addition of two scalars or a multiplication of two matrices). Every node has some inputs (possibly even zero) and some outputs  (possibly even zero). Along the edges of the graph, tensors flow! :) Tensors are multidimensional arrays with a specific type (e.g., float or double, etc.) and should not be confused with tensors in mathematical physics. 
 
+### Tensorflow 1.0 and lazy execution
 In Tensorflow 1.0, one had to construct the computation graph, then set up a *session.run()* with *feed_dict* to populate the graph with actual data. The advantage of working with a computation graph is that it allowed Tensorflow to perform many optimizations (e.g., graph simplifications, inlining function bodies to accommodate interprocedural optimizations, and so on). However, the user experience left much to be desired, so eager execution mode was introduced.
 
+### Tensorflow 2.0 and eager execution
 In eager execution, we write some code, and we can run it immediately, line by line, examine the output, modify it, re-run it, etc. Everything is evaluated on the spot without constructing a computation graph that will be run later in a session. This is easier to debug and feels like writing regular Python code. However, by running Tensorflow one step at a time, we give up all the previous speed optimizations available during the lazy execution mode. In Tensorflow 2.0, the default execution mode has been set to eager, presumably after people started to favor Pytorch over TF since Pytorch was eager from the beginning. So, where does the tf.function fit in this narrative? By using the tf.function decorator, we can convert a function into a TensorFlow Graph (`tf.Graph`) and lazy execute it, so we bring back some of the speed acceleration we gave up before.
-
-
 
 {% highlight python %}
 {% raw %}
