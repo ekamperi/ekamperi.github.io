@@ -192,17 +192,19 @@ In eager execution, we write some code, and we can run it immediately, line by l
 {% raw %}
 # TensorFlow 2.x with eager execution (default)
 import tensorflow as tf
-x = tf.constant([[1, 2], [2, 1]])
-print(x)
+a = tf.constant([[1, 2], [3, 4]])
+b = tf.constant([[1, 2], [3, 4]])
+print(a + b)
 #    tf.Tensor(
-#    [[1 2]
-#     [2 1]], shape=(2, 2), dtype=int32)
- 
+#    [[2 4]
+#     [6 8]], shape=(2, 2), dtype=int32)
+
 # Tensorflow 2.x with lazy execution
 tf.compat.v1.disable_eager_execution()
-x = tf.constant([[1, 2], [2, 1]])
-print(x)
-#    Tensor("Const:0", shape=(2, 2), dtype=int32)
+a = tf.constant([[1, 2], [3, 4]])
+b = tf.constant([[1, 2], [3, 4]])
+print(a + b)
+#    Tensor("add:0", shape=(2, 2), dtype=int32)
 {% endraw %}
 {% endhighlight %}
 
@@ -238,6 +240,7 @@ tf.summary.trace_export(
 {% endraw %}
 {% endhighlight %}
 
+Fire up the Tensorboard to inspect the computation graph. By the way, if you are using ssh tunelling, you will probably need to add local port forwarding for port 6006.
 
 {% highlight python %}
 {% raw %}
