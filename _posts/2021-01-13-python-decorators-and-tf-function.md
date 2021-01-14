@@ -310,8 +310,6 @@ def get_loss_and_grads(dist, x_train):
         grads = tape.gradient(loss, dist.trainable_variables)
     return loss, grads
 
-normal_dist = tfd.Normal(loc=tf.Variable(0., name='loc'),
-                         scale=tf.Variable(2., name='scale'))
 timeit.timeit(lambda: get_loss_and_grads(normal_dist, x_train), number=1000)
 
 #    0.6962701760003256
