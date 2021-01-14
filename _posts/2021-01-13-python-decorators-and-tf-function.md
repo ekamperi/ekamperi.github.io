@@ -358,7 +358,6 @@ The correct way to is to rewrite the append to a list as a Tensorflow operations
 
 {% highlight python %}
 {% raw %}
-tf.autograph.set_verbosity(0, True)
 @tf.function
 def f(x):
     ta = tf.TensorArray(dtype=tf.int32, size=0, dynamic_size=True)
