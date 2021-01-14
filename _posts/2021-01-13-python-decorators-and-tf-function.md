@@ -208,7 +208,7 @@ print(a + b)
 {% endraw %}
 {% endhighlight %}
 
-However, by running Tensorflow one step at a time, we give up the previous speed optimizations available during the lazy execution mode. In Tensorflow 2.0, the default execution mode has been set to eager, presumably after people started to favor Pytorch over TF since Pytorch was eager from the beginning. So, where does the `tf.function` fit in this narrative? By using the tf.function decorator, we can convert a function into a Tensorflow Graph (`tf.Graph`) and lazy execute it, so we bring back some of the speed acceleration we gave up before. The following code uses the `tf.function` decorator to convert `my_func()` into a callable Tensorflow graph, that we visualize with Tensorboard.
+However, by running Tensorflow one step at a time, we give up the previous speed optimizations that were possible during the lazy execution mode. In Tensorflow 2.0, the default execution mode has been set to eager, presumably after people started to favor Pytorch over TF since Pytorch was eager from the beginning. So, where does the `tf.function` fit in this narrative? By using the tf.function decorator, we can convert a function into a Tensorflow Graph (`tf.Graph`) and lazy execute it, so we bring back some of the speed acceleration we gave up before. The following code uses the `tf.function` decorator to convert `my_func()` into a callable Tensorflow graph that we visualize with Tensorboard.
 
 {% highlight python %}
 {% raw %}
@@ -240,7 +240,7 @@ tf.summary.trace_export(
 {% endraw %}
 {% endhighlight %}
 
-Fire up the [Tensorboard](https://www.tensorflow.org/tensorboard) to inspect the computation graph. By the way, if you are using ssh tunelling, you will probably need to add local port forwarding for port 6006.
+Fire up the [Tensorboard](https://www.tensorflow.org/tensorboard) to inspect the computation graph. By the way, if you are using ssh tunneling, you will probably need to add local port forwarding for port 6006.
 
 {% highlight python %}
 {% raw %}
@@ -253,7 +253,8 @@ Fire up the [Tensorboard](https://www.tensorflow.org/tensorboard) to inspect the
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/tensorboard.png" alt="Tensorboard computation graph">
 </p>
 
-We load the necessary modules and generate some normally distributed data.
+#### Show me the speedup!
+We will set up some real code and measure the speedup that `tf.function` brings. First, we load the necessary modules and generate some normally distributed training data.
 
 {% highlight python %}
 {% raw %}
@@ -269,7 +270,7 @@ x_train = generate_gaussian_data(m=2, s=1)
 {% endraw %}
 {% endhighlight %}
 
-We define a negative log-likelihood loss function and another function to calculate the gradients and loss.
+We then define a negative log-likelihood loss function and a function to calculate the gradients and loss. Naturally, we would call `get_loss_and_grads()` in a custom training loop, and then we would pass the gradients to the optimizer with `optimizer.apply_gradients()` to update the model's parameters. Here, we will just call `get_loss_and_grads()` repeatedly.
 
 {% highlight python %}
 {% raw %}
@@ -316,6 +317,8 @@ timeit.timeit(lambda: get_loss_and_grads(normal_dist, x_train), number=1000)
 #    0.6962701760003256
 {% endraw %}
 {% endhighlight %}
+
+So, by decorating the `get_loss_and_grads()` with `tf.function`, we reduced the execution time from about 5.66 seconds to 0.70, that's roughly a 88% relative reduction. Not bad!
 
 ### Caveats
 #### Functions with side-effects
