@@ -208,7 +208,7 @@ print(a + b)
 {% endraw %}
 {% endhighlight %}
 
-However, by running Tensorflow one step at a time, we give up the previous speed optimizations available during the lazy execution mode. In Tensorflow 2.0, the default execution mode has been set to eager, presumably after people started to favor Pytorch over TF since Pytorch was eager from the beginning. So, where does the `tf.function` fit in this narrative? By using the tf.function decorator, we can convert a function into a TensorFlow Graph (`tf.Graph`) and lazy execute it, so we bring back some of the speed acceleration we gave up before.
+However, by running Tensorflow one step at a time, we give up the previous speed optimizations available during the lazy execution mode. In Tensorflow 2.0, the default execution mode has been set to eager, presumably after people started to favor Pytorch over TF since Pytorch was eager from the beginning. So, where does the `tf.function` fit in this narrative? By using the tf.function decorator, we can convert a function into a Tensorflow Graph (`tf.Graph`) and lazy execute it, so we bring back some of the speed acceleration we gave up before. The following code uses the `tf.function` decorator to convert `my_func()` into a callable Tensorflow graph, that we visualize with Tensorboard.
 
 {% highlight python %}
 {% raw %}
@@ -240,7 +240,7 @@ tf.summary.trace_export(
 {% endraw %}
 {% endhighlight %}
 
-Fire up the Tensorboard to inspect the computation graph. By the way, if you are using ssh tunelling, you will probably need to add local port forwarding for port 6006.
+Fire up the [Tensorboard](https://www.tensorflow.org/tensorboard) to inspect the computation graph. By the way, if you are using ssh tunelling, you will probably need to add local port forwarding for port 6006.
 
 {% highlight python %}
 {% raw %}
@@ -316,7 +316,6 @@ timeit.timeit(lambda: get_loss_and_grads(normal_dist, x_train), number=1000)
 #    0.6962701760003256
 {% endraw %}
 {% endhighlight %}
-
 
 ### Caveats
 #### Functions with side-effects
