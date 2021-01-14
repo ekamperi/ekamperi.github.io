@@ -38,7 +38,7 @@ hello_world()
 So, basically, the `noop_decorator` returns whatever function we hand it over, without modifying it at all.
 
 ### Timing the execution of a function
-In the following example, we construct a decorator called `mytimer` that prints the time in seconds a function takes to execute. The decorator accepts as input the function *func* and returns another function called `wrapper`. So, every time we call the `calc_stuff()` function, in reality the `wrapper()` function is executed. The latter saves the current value of a performance counter. It then uses the `*args` and `**kwargs` to collect the positional and keyword arguments.  Subsequently, it runs the function *func* by forwarding the *args* and *kwargs* with the unpacking operators (asterisk and double asterisk). Next, it takes the difference between the new minus the old value of the performance counter and prints the result. Finally, it returns the result of *func*, as we expected if we called the undecorated function.
+In the following example, we construct a decorator called `mytimer` that prints the time in seconds a function takes to execute. The decorator accepts as input the function *func* and returns another function called `wrapper`. So, every time we call the `calc_stuff()` function, in reality the `wrapper()` function is executed. The latter saves the current value of a performance counter. It then uses the `*args` and `**kwargs` to collect the positional and keyword arguments.  Subsequently, it runs the function *func* by forwarding the *args* and *kwargs* with the unpacking operators (asterisk and double asterisk). Next, it takes the difference between the new minus the old value of the performance counter and prints the result. This is the time elapsed during the execution of *func*. Finally, it returns the result of *func*, as we would expect if we had called the undecorated function.
 
 {% highlight python %}
 {% raw %}
@@ -122,7 +122,7 @@ def bye_world():
 {% endraw %}
 {% endhighlight %}
 
-The same applies for the docstrings:
+The same applies for [the docstrings](https://en.wikipedia.org/wiki/Docstring#Python):
 
 {% highlight python %}
 {% raw %}
