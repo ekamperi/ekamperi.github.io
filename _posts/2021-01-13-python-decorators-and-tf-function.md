@@ -183,7 +183,14 @@ In Tensorflow, computations are modeled as a directed graph. Each node in the gr
 Image taken [from here](https://medium.com/@asjad/notes-on-tensor-flow-b90ef02b144f).
 
 ### Tensorflow 1.0 and lazy execution
-In Tensorflow 1.0, one had to construct the computation graph, then set up a *session.run()* with *feed_dict* to populate the graph with actual data. The advantage of working with a computation graph is that it allowed Tensorflow to perform many optimizations (e.g., graph simplifications, inlining function bodies to accommodate interprocedural optimizations, and so on). However, the user experience left much to be desired, so eager execution mode was introduced.
+In Tensorflow 1.0, one had to construct the computation graph, then set up a *session.run()* with *feed_dict* to populate the graph with actual data. The advantage of working with a computation graph is that it allowed Tensorflow to perform many optimizations (e.g., graph simplifications, inlining function bodies to accommodate interprocedural optimizations, and so on). As of the time of writing, *Grappler* is the default graph optimization engine in the Tensorflow runtime. Grappler rewrites the graphs in order to improve performance, and also provides a plugin interface to register custom-made optimizers. A very basic example of such a simplification is the following algebraic one, that takes into account the properties of commutativity, assosiativity and distributivity:
+
+$$
+2\mathbf{A} + 3 \mathbf{B} + 3 \mathbf{C} + \mathbf{\text{Identity}}(\mathbf{A}) \Rightarrow 
+ 3\mathbf{A} + 3 \mathbf{B} + 3 \mathbf{C} \Rightarrow 3 \text{tf.raw_ops.AddN}(\mathbf{A},\mathbf{B},\mathbf{C})
+$$
+
+Despite the speed benefits, though, Tensorflow's 1.0 user experience left much to be desired, so eager execution mode was eventually introduced.
 
 ### Tensorflow 2.0 and eager execution
 In eager execution, we write some code, and we can run it immediately, line by line, examine the output, modify it, re-run it, etc. Everything is evaluated on the spot without constructing a computation graph that will be run later in a session. This is easier to debug and feels like writing regular Python code. Compare the following code:
