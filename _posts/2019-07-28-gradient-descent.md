@@ -136,7 +136,7 @@ The answer to this question is hidden in the second-order terms of the Taylor se
 
 $$f(\mathbf{x}+\delta \boldsymbol{x}) = f(\mathbf{x}) + \nabla_x f(\mathbf{x})\delta \boldsymbol{x} + \frac{1}{2} \delta\mathbf{x}^T \mathbf{H}\delta\mathbf{x} + \mathcal{O}\left(\left\|\delta^3 \boldsymbol{x}\right\|\right)$$
 
-Where $$\mathbf{H} = \nabla_x^2f(\mathbf{x})$$ is the [Hessian matrix]($https://en.wikipedia.org/wiki/Hessian_matrix).
+Where $$\mathbf{H} = \nabla_x^2f(\mathbf{x})$$ is the [Hessian matrix](https://en.wikipedia.org/wiki/Hessian_matrix).
 
 Now we are able to explore what's happening in the case of $$\nabla_x f(\mathbf{x}) = 0$$:
 
