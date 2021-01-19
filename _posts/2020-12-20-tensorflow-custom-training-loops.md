@@ -344,7 +344,7 @@ We then define a function that calculates the negative log-likelihood, given som
 
 {% highlight python %}
 {% raw %}
-def NLL(y_true, params):
+def nll(y_true, params):
     """Calculates the Negative Log-Likelihood for a given set of parameters"""
     N = len(y_true)
     m, s = params
@@ -363,7 +363,7 @@ epochs = 50
 nll_loss = []
 for i in range(epochs):
     with tf.GradientTape() as tape:
-        current_nll_loss = NLL(y_train, [gaussian_fit_layer.m, gaussian_fit_layer.s])
+        current_nll_loss = nll(y_train, [gaussian_fit_layer.m, gaussian_fit_layer.s])
     gradients = tape.gradient(current_nll_loss, gaussian_fit_layer.trainable_variables)
     gaussian_fit_layer.m.assign_sub(learning_rate * gradients[0])
     gaussian_fit_layer.s.assign_sub(learning_rate * gradients[1])
