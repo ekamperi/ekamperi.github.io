@@ -14,15 +14,16 @@ description: Introduction to the encoder-decoder model, also known as autoencode
 {:toc}
 
 ## Introduction
-In today's post, we will discuss the encoder-decoder model, or simply [autoencoder (AE)](https://en.wikipedia.org/wiki/Autoencoder).  This will serve as a basis for implementing the more robust [variational autoencoder (VAE)](https://en.wikipedia.org/wiki/Autoencoder#Variational_autoencoder_(VAE)) in the following weeks. For starters, we will describe the model briefly and implement a dead simple encoder-decoder model in Tensorflow with Keras, in an absolutely indifferent to you dataset (my master thesis data). As a reward for enduring my esoteric narrative, we will then proceed to a more exciting dataset, the Fashion-MNIST, where we will show how the encoder-decoder model can be used for dimensionality reduction. To spice things up, we will construct a Keras callback to visualize the encoder's feature representation before each epoch. You will then see how the network builds up its hidden model progressively, epoch by epoch. Finally, we will compare AE to other standard methods, such as [principal component analysis](https://en.wikipedia.org/wiki/Principal_component_analysis). Without further ado, let's get started!
+In today's post, we will discuss the encoder-decoder model, or simply [autoencoder (AE)](https://en.wikipedia.org/wiki/Autoencoder).  This will serve as a basis for implementing the more robust [variational autoencoder (VAE)](https://en.wikipedia.org/wiki/Autoencoder#Variational_autoencoder_(VAE)) in the following weeks. For starters, we will describe the model briefly and implement a dead simple encoder-decoder model in Tensorflow with Keras, in an absolutely indifferent to you dataset (my master thesis data). As a reward for enduring my esoteric narrative, we will then proceed to a more exciting dataset, the Fashion-MNIST, where we will show how the encoder-decoder model can be used for dimensionality reduction. To spice things up, we will construct a Keras callback to visualize the encoder's feature representation before each epoch. We will then see how the network builds up its hidden model progressively, epoch by epoch. Finally, we will compare AE to otherstandard methods, such as [principal component analysis](https://en.wikipedia.org/wiki/Principal_component_analysis). Without further ado, let's get started!
 
+## What is an encoder-decoder model?
 An encoder-decoder network is an unsupervised artificial neural model that consists of an encoder component and a decoder one (duh!). Its goal is to learn a representation (read: encoding) for a set of data. The encoder takes the input and transforms it into a compressed encoding, handed over to the decoder. The decoder strives to reconstruct the original representation as close as possible. In a sense, we push the AE to memorize the training data by devising some mnemonic rule. As you see in the following figure, typically, the network has a bottleneck-like shape. It starts wide, then its connections are squeezed toward the middle, and then they fan out again. This architecture forces the AE to compress the training data's informational content and embed it into a low-dimensional space. By the way, you may encounter the term "latent space" for this intermediate data's representation.
 
 <p align="center">
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/autoencoder/autoencoder_schematic.png" alt="Schematic representation of an autoencoder">
 </p>
 
-## Reconstructing outputs
+## A minimal working example
 ### Preprocessing
 First, we import the modules and functions we will be using:
 {% highlight python %}
@@ -160,6 +161,7 @@ We now move forward to the Fashion MNIST dataset. This consists of a training se
 
 We set up the autoencoder as before. Please keep in mind that whatever has to do with image classification uses convolutional neural networks of some sort. However, here we keep it simple and go with dense layers.
 
+### Creating a custom callback
 To visualize how the autoencoder builds up the latent space, we will create a custom callback by subclassing the `tf.keras.callbacks.Callback`. We will then override the method `on_epoch_begin(self, epoch, logs=None)`, which is called at the beginning of an epoch during training. There, we will hook up our code to extract the latent space representation. To obtain the output of an intermediate layer (in our case, we want to extract the encoder's output), we will retrieve it via `layer.output`. 
 
 {% highlight python %}
