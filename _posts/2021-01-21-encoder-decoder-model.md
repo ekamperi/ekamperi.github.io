@@ -18,6 +18,10 @@ In today's post, we will discuss the encoder-decoder model, or simply autoencode
 
 An encoder-decoder network is an unsupervised artificial neural model that consists of an encoder component and a decoder one (duh!). Its goal is to learn a representation (read: encoding) for a set of data. The encoder takes the input and transforms it into a compressed encoding, handed over to the decoder. The decoder strives to reconstruct the original representation as close as possible. In a sense, we push the AE to memorize the training data by devising some mnemonic rule. As you see in the following figure, typically, the network has a bottleneck-like shape. It starts wide, then its connections are squeezed toward the middle, and then they fan out again. This architecture forces the AE to compress the training data's informational content and embed it into a low-dimensional space. By the way, you may encounter the term "latent space" for this intermediate data's representation.
 
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/autoencoder_schematic.png" alt="Schematic representation of an autoencoder">
+</p>
+
 ## Reconstructing outputs
 
 First, we import the modules and functions we will be using:
