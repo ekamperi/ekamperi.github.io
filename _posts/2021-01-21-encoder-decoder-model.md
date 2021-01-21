@@ -70,7 +70,7 @@ x_train = scaler.transform(x_train)
 The data look like this:
 
 <p align="center">
- <img style="width: 70%; height: 70%" src="{{ site.url }}/images/autoencoder/pandas.png" alt="A high-dimensional dataset">
+ <img style="width: 90%; height: 90%" src="{{ site.url }}/images/autoencoder/pandas.png" alt="A high-dimensional dataset">
 </p>
 
 ### Building the autoencoder
