@@ -14,13 +14,13 @@ description: Introduction to the encoder-decoder model, also known as autoencode
 {:toc}
 
 ## Introduction
-In today's post, we will discuss the encoder-decoder model, or simply [autoencoder (AE)](https://en.wikipedia.org/wiki/Autoencoder).  This will serve as a basis for implementing the more robust [variational autoencoder (VAE)](https://en.wikipedia.org/wiki/Autoencoder#Variational_autoencoder_(VAE)) in the following weeks. For starters, we will describe the model briefly and implement a dead simple encoder-decoder model in Tensorflow with Keras, in an absolutely indifferent to you dataset (my master thesis data). As a reward for enduring my esoteric narrative, we will then proceed to a more exciting dataset, the Fashion-MNIST, where we will show how the encoder-decoder model can be used for dimensionality reduction. To spice things up, we will construct a Keras callback to visualize the encoder's feature representation before each epoch. We will then see how the network builds up its hidden model progressively, epoch by epoch. Finally, we will compare AE to otherstandard methods, such as [principal component analysis](https://en.wikipedia.org/wiki/Principal_component_analysis). Without further ado, let's get started!
+In today's post, we will discuss the encoder-decoder model, or simply [autoencoder (AE)](https://en.wikipedia.org/wiki/Autoencoder).  This will serve as a basis for implementing the more robust [variational autoencoder (VAE)](https://en.wikipedia.org/wiki/Autoencoder#Variational_autoencoder_(VAE)) in the following weeks. For starters, we will describe the model briefly and implement a dead simple encoder-decoder model in Tensorflow with Keras, in an absolutely indifferent to you dataset (my master thesis data). As a reward for enduring my esoteric narrative, we will then proceed to a more exciting dataset, the Fashion-MNIST, where we will show how the encoder-decoder model can be used for dimensionality reduction. To spice things up, we will construct a Keras callback to visualize the encoder's feature representation before each epoch. We will then see how the network builds up its hidden model progressively, epoch by epoch. Finally, we will compare AE to other standard methods, such as [principal component analysis](https://en.wikipedia.org/wiki/Principal_component_analysis). Without further ado, let's get started!
 
 ## What is an encoder-decoder model?
-An encoder-decoder network is an unsupervised artificial neural model that consists of an encoder component and a decoder one (duh!). Its goal is to learn a representation (read: encoding) for a set of data. The encoder takes the input and transforms it into a compressed encoding, handed over to the decoder. The decoder strives to reconstruct the original representation as close as possible. In a sense, we push the AE to memorize the training data by devising some mnemonic rule. As you see in the following figure, typically, the network has a bottleneck-like shape. It starts wide, then its connections are squeezed toward the middle, and then they fan out again. This architecture forces the AE to compress the training data's informational content and embed it into a low-dimensional space. By the way, you may encounter the term "latent space" for this intermediate data's representation.
+An encoder-decoder network is an unsupervised artificial neural model that consists of an encoder component and a decoder one (duh!). The encoder takes the input and transforms it into a compressed encoding, handed over to the decoder. The decoder strives to reconstruct the original representation as close as possible. So,  the goal is to learn a representation (read: encoding) for a set of data. In a sense, we push the AE to memorize the training data by devising some mnemonic rule of its own. As you see in the following figure, typically, the network has a bottleneck-like shape. It starts wide, then its connections are squeezed toward the middle, and then they fan out again. This architecture forces the AE to compress the training data's informational content and embed it into a low-dimensional space. By the way, you may encounter the term "latent space" for this intermediate data's representation.
 
 <p align="center">
- <img style="width: 80%; height: 80%" src="{{ site.url }}/images/autoencoder/autoencoder_schematic.png" alt="Schematic representation of an autoencoder">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/autoencoder/autoencoder_schematic.png" alt="Schematic representation of an autoencoder">
 </p>
 
 ## A minimal working example
@@ -35,7 +35,6 @@ from tensorflow.keras.models import Model, Sequential
 from tensorflow.keras.layers import Dense
 import pandas as pd
 import random
-from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 {% endraw %}
 {% endhighlight %}
