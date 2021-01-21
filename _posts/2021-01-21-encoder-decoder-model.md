@@ -124,7 +124,7 @@ plot_orig_vs_recon('Before training the encoder-decoder')
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/orig_vs_recon_untrained.png" alt="Original vs. reconstructed values of an autoencoder">
+ <img style="width: 90%; height: 90%" src="{{ site.url }}/images/autoencoder/orig_vs_recon_untrained.png" alt="Original vs. reconstructed values of an autoencoder">
 </p>
 
 Great! The autoencoder does not work at all! We then train the model and check the loss *vs.* epoch to make sure that it converged.
@@ -142,13 +142,13 @@ plt.grid(True)
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/loss_vs_epoch.png" alt="Loss vs. echo of an autoencoder training">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/autoencoder/loss_vs_epoch.png" alt="Loss vs. echo of an autoencoder training">
 </p>
 
 Woot. The optimizer converged, and we can check again how well the autoencoder can reconstruct an input.
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/orig_vs_recon_trained.png" alt="Original vs. reconstructed values of an autoencoder">
+ <img style="width: 90%; height: 90%" src="{{ site.url }}/images/autoencoder/orig_vs_recon_trained.png" alt="Original vs. reconstructed values of an autoencoder">
 </p>
 
 That's pretty damn good. The reconstructed values are very close to the original ones.
@@ -214,7 +214,7 @@ plt.grid(True)
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/loss_vs_epoch_mnist.png" alt="Loss vs. epoch during the training of an autoencoder">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/autoencoder/loss_vs_epoch_mnist.png" alt="Loss vs. epoch during the training of an autoencoder">
 </p>
 
 And here is another run:
