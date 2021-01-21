@@ -23,7 +23,7 @@ An encoder-decoder network is an unsupervised artificial neural model that consi
 </p>
 
 ## Reconstructing outputs
-
+### Preprocessing
 First, we import the modules and functions we will be using:
 {% highlight python %}
 {% raw %}
@@ -67,6 +67,7 @@ x_train = scaler.transform(x_train)
 {% endraw %}
 {% endhighlight %}
 
+### Building the autoencoder
 Next, we build our autoencoder's architecture. We will squeeze our 10-dimensional space into a 2-dimensional latent or encoding space. Our choices are very rudimentary; the goal is to demonstrate how an encoder works, not build the optimal one.
 
 {% highlight python %}
@@ -127,6 +128,7 @@ plot_orig_vs_recon('Before training the encoder-decoder')
  <img style="width: 90%; height: 90%" src="{{ site.url }}/images/autoencoder/orig_vs_recon_untrained.png" alt="Original vs. reconstructed values of an autoencoder">
 </p>
 
+### Training the autoencoder
 Great! The autoencoder does not work at all! We then train the model and check the loss *vs.* epoch to make sure that it converged.
 
 {% highlight python %}
@@ -153,7 +155,7 @@ Woot. The optimizer converged, and we can check again how well the autoencoder c
 
 That's pretty damn good. The reconstructed values are very close to the original ones.
 
-## An interesting dataset
+## A more interesting dataset
 We now move forward to the Fashion MNIST dataset. This consists of a training set of 60.000 examples and a test set of 10.000 samples. Each example is a 28x28 grayscale image, associated with a label from 10 classes. Fashion MNIST has been proposed as a replacement for the original MNIST dataset with the handwritten digits for benchmarking machine learning algorithms.
 
 We set up the autoencoder as before. Please keep in mind that whatever has to do with image classification uses convolutional neural networks of some sort. However, here we keep it simple and go with dense layers.
@@ -223,7 +225,7 @@ And here is another run:
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/latent_space2.png" alt="Evolution of latent space representation during the training of an autoencoder">
 </p>
 
-### Autoencoder vs. Principal component analysis
+## Autoencoder vs. Principal component analysis
 
 As we've seen, both autoencoder and PCA may be used as dimensionality reduction techniques. However, there are some difference between the two:
 
@@ -232,4 +234,4 @@ As we've seen, both autoencoder and PCA may be used as dimensionality reduction 
 3. PCA is computationally less demanding than autoencoders.
 4. Autoencoders having many trainable parameters are vulnerable to overfitting, similar to other neural networks.
 
-Regarding the question of which one to use, I'm afraid I'll sound cliche. It depends on the problem you are trying to solve. If your data share non-linear correlations, AE will compress them into a low-dimensional latent space since it is endowed with the capability to model non-linear functions. If your data are mostly linearly correlated, PCA will do fine. By the way, there's also a kernel version of PCA. Using a kernel trick, similar to the one with Support Vector Machines, the originally linear operations of PCA are performed in a reproducing kernel space. But that's the subject of a future post.
+Regarding the question of which one to use, I'm afraid I'll sound cliche. It depends on the problem you are trying to solve. If your data share non-linear correlations, AE will compress them into a low-dimensional latent space since it is endowed with the capability to model non-linear functions. If your data are mostly linearly correlated, PCA will do fine. By the way, there's also a kernel version of PCA. Using a [kernel trick](https://en.wikipedia.org/wiki/Kernel_method), similar to the one with [Support Vector Machines](https://en.wikipedia.org/wiki/Support-vector_machine), the originally linear operations of PCA are performed in a reproducing kernel space. But that's the subject of a future post.
