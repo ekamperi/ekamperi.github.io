@@ -67,6 +67,12 @@ x_train = scaler.transform(x_train)
 {% endraw %}
 {% endhighlight %}
 
+The data look like this:
+
+<p align="center">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/autoencoder/pandas.png" alt="A high-dimensional dataset">
+</p>
+
 ### Building the autoencoder
 Next, we build our autoencoder's architecture. We will squeeze our 10-dimensional space into a 2-dimensional latent or encoding space. Our choices are very rudimentary; the goal is to demonstrate how an encoder works, not build the optimal one.
 
