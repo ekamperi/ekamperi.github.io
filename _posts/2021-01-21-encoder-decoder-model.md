@@ -120,7 +120,7 @@ plot_orig_vs_recon('Before training the encoder-decoder')
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 30%; height: 30%" src="{{ site.url }}/images/autoencoder/orig_vs_recon_untrained.png" alt="Original vs. reconstructed values of an autoencoder">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/orig_vs_recon_untrained.png" alt="Original vs. reconstructed values of an autoencoder">
 </p>
 
 Great! The autoencoder does not work at all! We then train the model and check the loss *vs.* epoch to make sure that it converged.
@@ -138,13 +138,13 @@ plt.grid(True)
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 30%; height: 30%" src="{{ site.url }}/images/autoencoder/loss_vs_epoch.png" alt="Loss vs. echo of an autoencoder training">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/loss_vs_epoch.png" alt="Loss vs. echo of an autoencoder training">
 </p>
 
 Woot. The optimizer converged, and we can check again how well the autoencoder can reconstruct an input.
 
 <p align="center">
- <img style="width: 30%; height: 30%" src="{{ site.url }}/images/autoencoder/orig_vs_recon_trained.png" alt="Original vs. reconstructed values of an autoencoder">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/orig_vs_recon_trained.png" alt="Original vs. reconstructed values of an autoencoder">
 </p>
 
 That's pretty damn good. The reconstructed values are very close to the original ones.
@@ -194,7 +194,7 @@ model_history = autoencoder.fit(x_train, x_train, epochs=12, batch_size=32, verb
 Here is the latent space evolution as the autoencoder is trained, starting with an untrained state at the top left and ending in a fully trained state at the bottom right.
 
 <p align="center">
- <img style="width: 30%; height: 30%" src="{{ site.url }}/images/autoencoder/latent_space1.png" alt="Evolution of latent space representation during the training of an autoencoder">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/latent_space1.png" alt="Evolution of latent space representation during the training of an autoencoder">
 </p>
 
 We also check the loss *vs.* epoch to make sure the optimizer converged. You may even find a correspondence between the classes' separation and how fast the loss drops during the training.
@@ -210,21 +210,22 @@ plt.grid(True)
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 30%; height: 30%" src="{{ site.url }}/images/autoencoder/loss_vs_epoch" alt="Loss vs. epoch during the training of an autoencoder">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/loss_vs_epoch_mnist.png" alt="Loss vs. epoch during the training of an autoencoder">
 </p>
 
 And here is another run:
 
 <p align="center">
- <img style="width: 30%; height: 30%" src="{{ site.url }}/images/autoencoder/latent_space2.png" alt="Evolution of latent space representation during the training of an autoencoder">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/latent_space2.png" alt="Evolution of latent space representation during the training of an autoencoder">
 </p>
 
 ### Autoencoder vs. Principal component analysis
 
 As we've seen, both autoencoder and PCA may be used as dimensionality reduction techniques. However, there are some difference between the two:
-By definition, PCA is a linear transformation, whereas AEs are capable of modeling complex non-linear functions. There is, however, kernel PCA that can model non-linear data.
-In PCA, features are by definition linearly uncorrelated. Recall that they are projections onto an orthogonal basis. On the contrary, autoencoded features might be correlated. The two optimization objectives are simply different (an orthogonal basis that maximizes variance when data are projected onto it vs. maximum accuracy reconstruction).
-PCA is computationally less demanding than autoencoders.
-Autoencoders having many trainable parameters are vulnerable to overfitting, similar to other neural networks.
+
+1. By definition, PCA is a linear transformation, whereas AEs are capable of modeling complex non-linear functions. There is, however, kernel PCA that can model non-linear data.
+2. In PCA, features are by definition linearly uncorrelated. Recall that they are projections onto an orthogonal basis. On the contrary, autoencoded features might be correlated. The two optimization objectives are simply different (an orthogonal basis that maximizes variance when data are projected onto it vs. maximum accuracy reconstruction).
+3. PCA is computationally less demanding than autoencoders.
+4. Autoencoders having many trainable parameters are vulnerable to overfitting, similar to other neural networks.
 
 Regarding the question of which one to use, I'm afraid I'll sound cliche. It depends on the problem you are trying to solve. If your data share non-linear correlations, AE will compress them into a low-dimensional latent space since it is endowed with the capability to model non-linear functions. If your data are mostly linearly correlated, PCA will do fine. By the way, there's also a kernel version of PCA. Using a kernel trick, similar to the one with Support Vector Machines, the originally linear operations of PCA are performed in a reproducing kernel space. But that's the subject of a future post.
