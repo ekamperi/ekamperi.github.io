@@ -270,6 +270,10 @@ class TestEncoder(tf.keras.callbacks.Callback):
         plt.ylim(-9, 9)
         plt.xlabel('Latent Dimension 1')
         plt.ylabel('Latent Dimension 2')
+
+autoencoder = Model(inputs=encoder.input, outputs=decoder(encoder.output))
+autoencoder.compile(loss='binary_crossentropy', optimizer='adam')
+autoencoder.summary() 
 {% endraw %}
 {% endhighlight %}
 
