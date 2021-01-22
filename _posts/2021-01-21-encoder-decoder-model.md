@@ -315,6 +315,7 @@ We now change the activation function of the last dense layer in the decoder fro
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/latent_space2.png" alt="Evolution of latent space representation during the training of an autoencoder">
 </p>
 
+### Autoencoder vs. PCA decomposition
 Finally, let's take a look at PCA decomposition of the MNIST dataset assuming 2 principal components.
 
 {% highlight python %}
@@ -343,7 +344,7 @@ Autoencoder latent space representation             |  PCA decomposition
 ![]({{ site.url }}/images/autoencoder/autoencoder_mnist.png)  |  ![]({{ site.url }}/images/autoencoder/pca_mnist.png)
 
 
-## Autoencoder vs. Principal component analysis
+## Autoencoder vs. Principal Component Analysis
 
 As we've seen, both autoencoder and PCA may be used as dimensionality reduction techniques. However, there are some differences between the two:
 
