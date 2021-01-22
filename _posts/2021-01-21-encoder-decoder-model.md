@@ -320,7 +320,7 @@ Finally, let's take a look at PCA decomposition of the MNIST dataset assuming 2 
 {% highlight python %}
 {% raw %}
 pca = PCA(n_components=2)
-x_reshaped = x_test[0:500].reshape(-1, 784)    # new shape is (500, 28*28) = (500, 784)
+x_reshaped = x_test[0:500].reshape(-1, 784)              # new shape is (500, 28*28) = (500, 784)
 x_scaled = StandardScaler().fit_transform(x_reshaped)    # center and scale data (mean=0, std=1)
 x_transformed = pca.fit(x_scaled).transform(x_scaled)
 
