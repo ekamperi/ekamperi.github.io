@@ -246,7 +246,7 @@ decoder = Sequential([
 {% endhighlight %}
 
 #### Creating a custom callback
-Here comes the cool part. To visualize how the autoencoder builds up the latent space, as we train int, we will create a custom callback by subclassing the `tf.keras.callbacks.Callback`. We will then override the method `on_epoch_begin(self, epoch, logs=None)`, which is called at the beginning of an epoch during training. There, we will hook up our code to extract the latent space representation and plot it. To obtain the output of an intermediate layer (in our case, we want to extract the encoder's output), we will retrieve it via the `layer.output`. Here's how:
+Here comes the cool part. To visualize how the autoencoder builds up the latent space representation, as we train it, we will create a custom callback by subclassing the `tf.keras.callbacks.Callback`. We will then override the method `on_epoch_begin(self, epoch, logs=None)`, which is called at the beginning of an epoch during training. There, we will hook up our code to extract the latent space representation and plot it. To obtain the output of an intermediate layer (in our case, we want to extract the encoder's output), we will retrieve it via the `layer.output`. Here's how:
 
 {% highlight python %}
 {% raw %}
