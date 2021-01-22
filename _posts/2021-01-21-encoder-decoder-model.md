@@ -284,7 +284,7 @@ model_history = autoencoder.fit(x_train, x_train, epochs=12, batch_size=32, verb
 {% endraw %}
 {% endhighlight %}
 
-Here is the latent space evolution as the autoencoder is trained, starting with an untrained state at the top left and ending in a fully trained state at the bottom right. Before the first epoch, all the original space data are projected on the same point of the latent space. However, as the autoencoder undergoes training, the points corresponding to different classes start to separate.
+Here is the evolution of latent space representation as the autoencoder is trained, starting with an untrained state at the top left and ending in a fully trained state at the bottom right. Before the first epoch, all the original space data are projected on the same point of the latent space. However, as the autoencoder undergoes training, the points corresponding to different classes start to separate.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/latent_space1.png" alt="Evolution of latent space representation during the training of an autoencoder">
