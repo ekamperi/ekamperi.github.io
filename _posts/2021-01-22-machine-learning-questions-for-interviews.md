@@ -13,9 +13,10 @@ description: A list of machine-learning questions for interviews along with a sh
 * A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
 {:toc}
 
+**Here I'll be adding questions regarding machine-learning and data-science in general**
 
-### What are collinearity and multicollinearity?
-Collinearity is the existence of two correlated predictor variables in a regression problem. Multicollinearity is when there are more than two variables correlated. Collinearity hurts regression, both coefficient estimation and the interpretation of the model.
+### What are collinearity and multicollinearity? How can we detect them?
+Collinearity is the existence of two correlated predictor variables in a regression problem. Multicollinearity is when there are more than two variables correlated. Collinearity hurts regression, both coefficient estimation and the interpretation of the model. It can be detected with a scatterplot matrix, a correlation matrix, and via the calculation of Variance Inflation Factors (VIFs).
 
 ### What's a type I and type II error? Which one is worse?
 Type I is a false positive (you tell a healthy man he has cancer) Type II is a false negative (you tell a man with cancer he is healthy) Regarding which one is worse, it depends on the context. A false negative for a spam filter isn't a big deal, but a false negative for a cancer diagnostic test it is.
