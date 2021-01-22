@@ -273,7 +273,6 @@ class TestEncoder(tf.keras.callbacks.Callback):
 
 autoencoder = Model(inputs=encoder.input, outputs=decoder(encoder.output))
 autoencoder.compile(loss='binary_crossentropy', optimizer='adam')
-autoencoder.summary() 
 {% endraw %}
 {% endhighlight %}
 
