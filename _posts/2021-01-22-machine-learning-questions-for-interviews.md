@@ -60,11 +60,11 @@ It's a function without a name, i.e., an anonymous function. We use lambda funct
 {% raw %}
 lst_of_values = [('bob', 18), ('alice', 25), ('george', 99), ('stathis', 10)]
 print(lst_of_values)
-sorted_lst = sorted(lst_of_values, key=lambda x: x[1])
-
 [('bob', 18), ('alice', 25), ('george', 99), ('stathis', 10)]
-[('stathis', 10), ('bob', 18), ('alice', 25), ('george', 99)]
+
+sorted_lst = sorted(lst_of_values, key=lambda x: x[1])
 print(sorted_lst)
+[('stathis', 10), ('bob', 18), ('alice', 25), ('george', 99)]
 {% endraw %}
 {% endhighlight %}
 
