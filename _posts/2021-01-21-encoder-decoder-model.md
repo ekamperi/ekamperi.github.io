@@ -287,6 +287,12 @@ As we've seen, both autoencoder and PCA may be used as dimensionality reduction 
 
 1. By definition, PCA is a linear transformation, whereas AEs are capable of modeling complex non-linear functions. There is, however, kernel PCA that can model non-linear data.
 2. In PCA, features are by definition linearly uncorrelated. Recall that they are projections onto an orthogonal basis. On the contrary, autoencoded features might be correlated. The two optimization objectives are simply different (an orthogonal basis that maximizes variance when data are projected onto it vs. maximum accuracy reconstruction).
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/pca_vs_ae_cross.png" alt="PCA vs autoencoder">
+Image taken [from here](https://stats.stackexchange.com/questions/468913/pca-vs-linear-autoencoder-features-independence).
+</p>
+
 3. PCA is computationally less demanding than autoencoders.
 4. Autoencoders having many trainable parameters are vulnerable to overfitting, similar to other neural networks.
 
