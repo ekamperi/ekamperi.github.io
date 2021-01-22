@@ -134,4 +134,24 @@ Regularization is the process of controlling the model complexity (e.g., the num
 [You can read more here](https://ekamperi.github.io/machine%20learning/2019/10/19/norms-in-machine-learning.html#regularization)
 
 ### What is an eigenvector? And what is an eigenvalue?
-The eigenvector is a vector whose direction remains unchanged after a linear transformation is applied to it. The eigenvalue is the scalar by which an eigenvector is scaled when a linear transformation is applied to it. For a square matrix $$A$$, a vector $$\mathbf{x} \ne 0$$, and some number $$\lambda$$, it holds that $$\mathbf{A} \mathbf{x} = \lambda \mathbf{x}$$.
+The eigenvector is a vector whose direction remains unchanged after a linear transformation is applied to it. The eigenvalue is the scalar by which an eigenvector is scaled when a linear transformation is applied to it. For a square matrix $$A$$, a vector $$\mathbf{x} \ne 0$$, and some number $$\lambda$$, it holds that $$\mathbf{A} \mathbf{x} = \lambda \mathbf{x}$$. In the following example the eigenvector is $$\mathbf{x} = (-2, 1)$$ and the eigenvalue $$\lambda = -2$$.
+
+$$
+\left(
+\begin{matrix}
+1 & 6\\
+3 & 4
+\end{matrix}
+\right) \cdot
+\left( 
+\begin{matrix}
+-2\\1
+\end{matrix}
+\right) = -2\cdot
+\left(
+\begin{matrix}
+-2\\
+1
+\end{matrix}
+\right)
+$$
