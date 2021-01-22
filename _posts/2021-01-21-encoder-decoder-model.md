@@ -81,7 +81,7 @@ Next, we build our autoencoder's architecture. We will squeeze the 10-dimensiona
 {% highlight python %}
 {% raw %}
 # This is the dimension of the original space
-intent_dim = 10
+input_dim = 10
 
 # This is the dimension of the latent space (encoding space)
 latent_dim = 2
