@@ -89,7 +89,7 @@ TypeError: 'tuple' object does not support item assignment
 Classification is supervised learning, where we assign a label class to some input. E.g., the input is a human face, and the label is whether the facial expression (neutral, smiles, sad, etc.). Clustering is unsupervised learning where we put similar inputs together without actually providing the labels. In a sense, the model will figure out the labels by itself. E.g., we provide a list of furniture images, and the model will put all the tables in a cluster in the feature space, all the chairs in another cluster in the feature space, etc.
 
 ### What is regularization? What are the L1 and L2 regularization methods, and how do they differ?
-Regularization is the process of controlling the model complexity (e.g., the number of model parameters or the values the parameters take). It is realized as an additional term that is added to the loss function. The number of the model's parameters is regularized by L1 and the weights by L2. L1 is also called LASSO and L2 ridge.
+Regularization is the process of controlling the model complexity (e.g., the number of model parameters or the values the parameters take). It is realized as an additional term that is added to the loss function. The number of the model's parameters is regularized by L1 and the weights by L2. L1 is also called LASSO and L2 ridge. In the following figure the effect of L1 and L2 regularization is shown, for increasing values of the regularization parameter.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/machine-learning-q/lasso_vs_ridge.png" alt="LASSO vs ridge regularization">
