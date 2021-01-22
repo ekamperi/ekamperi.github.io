@@ -180,7 +180,7 @@ plt.ylabel('Latent Dimension 2');
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 90%; height: 90%" src="{{ site.url }}/images/autoencoder/latent_space.png" alt="2D latent space of an autoencoder">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/autoencoder/latent_space.png" alt="2D latent space of an autoencoder">
 </p>
 
 ## A more interesting dataset
