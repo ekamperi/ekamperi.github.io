@@ -315,7 +315,7 @@ We now change the activation function of the last dense layer in the decoder fro
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/latent_space2.png" alt="Evolution of latent space representation during the training of an autoencoder">
 </p>
 
-Finally, let's take a look at PCA decomposition of the MNIST dataset assuming 2 principal components..
+Finally, let's take a look at PCA decomposition of the MNIST dataset assuming 2 principal components.
 
 {% highlight python %}
 {% raw %}
@@ -333,7 +333,7 @@ plt.ylabel('Principal Component 2');
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/pca_mnist.png" alt="PCA decomposition of the MNIST dataset">
+ <img style="width: 50%; height:50%" src="{{ site.url }}/images/autoencoder/pca_mnist.png" alt="PCA decomposition of the MNIST dataset">
 </p>
 
 And here we plot them side by side:
