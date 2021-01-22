@@ -102,7 +102,7 @@ decoder = Sequential([
 {% endraw %}
 {% endhighlight %}
 
-Here comes the "surgical" part of the work. We stitch up the encoder and the decoder models into a single model, the autoencoder. The autoencoder's input is the encoder's input, and the autoencoder's output is the decoder's output. The output of the decoder is the result of calling the decoder on the output of the encoder. We also set the loss to [mean squared errorMSE](https://en.wikipedia.org/wiki/Mean_squared_error).
+Here comes the "surgical" part of the work. We stitch up the encoder and the decoder models into a single model, the autoencoder. The autoencoder's input is the encoder's input, and the autoencoder's output is the decoder's output. The output of the decoder is the result of calling the decoder on the output of the encoder. We also set the loss to [mean squared error](https://en.wikipedia.org/wiki/Mean_squared_error).
 
 {% highlight python %}
 {% raw %}
