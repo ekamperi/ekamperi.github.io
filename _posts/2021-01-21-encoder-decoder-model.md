@@ -180,7 +180,7 @@ plt.ylabel('Latent Dimension 2');
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/autoencoder/latent_space.png" alt="2D latent space of an autoencoder">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/autoencoder/latent_space.png" alt="2D latent space of an autoencoder">
 </p>
 
 This 2D imprint is all it takes for the decoder to regenerate the initial 10-dimensional space. Isn't it awesome? Notice, though, that there are lots of points crowded in the bottom left corner. Ideally, in a classification scenario, we would like each class's points to form distinct clusters. E.g., if our data were furniture, we would like chairs to be projected at the bottom left corner, tables to the bottom right, and so on. In the next example, we will make this happen, and as a matter of fact, we will watch it happening live during the training process.
@@ -290,8 +290,8 @@ As we've seen, both autoencoder and PCA may be used as dimensionality reduction 
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/pca_vs_ae_cross.png" alt="PCA vs autoencoder">
-Image taken [from here](https://stats.stackexchange.com/questions/468913/pca-vs-linear-autoencoder-features-independence).
 </p>
+Image taken [from here](https://stats.stackexchange.com/questions/468913/pca-vs-linear-autoencoder-features-independence).
 
 3. PCA is computationally less demanding than autoencoders.
 4. Autoencoders having many trainable parameters are vulnerable to overfitting, similar to other neural networks.
