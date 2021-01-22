@@ -84,6 +84,41 @@ TypeError                                 Traceback (most recent call last)
 TypeError: 'tuple' object does not support item assignment
 {% endraw %}
 {% endhighlight %}
+ 
+ ### What is broadcasting in Numpy?
+ Broadcasting in Numpy (and in Tensorflow) is the expansion of arrays so that their new shape would allow certain mathematical operations to take place. Example:
+
+{% highlight python %}
+{% raw %}
+import numpy as np
+# shape (4,1)
+a = np.array([[1.],
+              [2.],
+              [3.],
+              [4.]])
+# shape (3,)
+b = np.array([0., 1., 2.])
+
+a + b
+
+array([[1., 2., 3.],
+       [2., 3., 4.],
+       [3., 4., 5.],
+       [4., 5., 6.]])
+{% endraw %}
+{% endhighlight %}
+
+Here the array *b* is expanded from (3,) to (1,3) by replicating [0., 1. 2.] three times, and *a* is replicated 4 times along the second axis. The end result is:
+
+{% highlight python %}
+{% raw %}
+[ [1., 1., 1.],    +  [ [0., 1., 2.],  
+  [2., 2., 2.],         [0., 1., 2.],  
+  [3., 3., 3.],         [0., 1., 2.],  
+  [4., 4., 4.] ]        [0., 1., 2.] ]
+{% endraw %}
+{% endhighlight %}
+
 
 ### What is the difference between classification and clustering?
 Classification is supervised learning, where we assign a label class to some input. E.g., the input is a human face, and the label is whether the facial expression (neutral, smiles, sad, etc.). Clustering is unsupervised learning where we put similar inputs together without actually providing the labels. In a sense, the model will figure out the labels by itself. E.g., we provide a list of furniture images, and the model will put all the tables in a cluster in the feature space, all the chairs in another cluster in the feature space, etc.
