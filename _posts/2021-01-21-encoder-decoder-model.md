@@ -167,7 +167,7 @@ plot_orig_vs_recon('After training the encoder-decoder')
  <img style="width: 90%; height: 90%" src="{{ site.url }}/images/autoencoder/orig_vs_recon_trained.png" alt="Original vs. reconstructed values of an autoencoder">
 </p>
 
-That's pretty damn good. The reconstructed values are very close to the original ones! Now let's take a look at the latent space. Since we set it to be 2-dimensional, we will use a 2D scatterplot to visualize it. This is the projection of the 10-dimensional data onto a plane. This 2D imprint is all it takes for the decoder to regenerate the initial 10-dimensional space. Isn't it awesome? Notice, though, that there are lots of points crowded in the bottom left corner. Ideally, in a classification scenario, we would like each class's points to form distinct clusters. E.g., if our data were furniture, we would like chairs to be projected at the bottom left corner, tables to the bottom right, and so on. In the next example, we will make this happen, and as a matter of fact, we will watch it happening live during the training process.
+That's pretty damn good. The reconstructed values are very close to the original ones! Now let's take a look at the latent space. Since we set it to be 2-dimensional, we will use a 2D scatterplot to visualize it. This is the projection of the 10-dimensional data onto a plane.
 
 {% highlight python %}
 {% raw %}
@@ -182,6 +182,8 @@ plt.ylabel('Latent Dimension 2');
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/autoencoder/latent_space.png" alt="2D latent space of an autoencoder">
 </p>
+
+This 2D imprint is all it takes for the decoder to regenerate the initial 10-dimensional space. Isn't it awesome? Notice, though, that there are lots of points crowded in the bottom left corner. Ideally, in a classification scenario, we would like each class's points to form distinct clusters. E.g., if our data were furniture, we would like chairs to be projected at the bottom left corner, tables to the bottom right, and so on. In the next example, we will make this happen, and as a matter of fact, we will watch it happening live during the training process.
 
 ## A more interesting dataset
 We now move forward to the Fashion MNIST dataset. This consists of a training set of 60.000 examples and a test set of 10.000 samples. Each example is a 28x28 grayscale image, associated with a label from 10 classes (T-shirt, Trouser, Pullover, Dress, Coat, Sandal, Shirt, Sneaker, Bag, and Ankle boot). Fashion MNIST has been proposed as a replacement for the original MNIST dataset with the handwritten digits when benchmarking machine learning algorithms.
