@@ -275,7 +275,7 @@ plt.grid(True)
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/autoencoder/loss_vs_epoch_mnist.png" alt="Loss vs. epoch during the training of an autoencoder">
 </p>
 
-And here are the plots of another run:
+We now change the activation function of the last dense layer in the decoder from `relu` to `sigmoid`, and we retrain the model. Notice how the latent representation is different now (actually, it's better):
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/latent_space2.png" alt="Evolution of latent space representation during the training of an autoencoder">
