@@ -198,8 +198,22 @@ We now move forward to the MNIST dataset. This consists of a training set of 60.
 # Normalize pixel values to [0., 1.]
 x_train = x_train / 255.
 x_test = x_test / 255.
+
+# Take a look at the dataset
+n_samples = 10
+idx = random.sample(range(x_train.shape[0]), n_samples)
+plt.figure(figsize=(15,4))
+for i in range(n_samples):
+    plt.subplot(1, n_samples, i+1)
+    plt.imshow(x_train[idx[i]].squeeze());
+    plt.xticks([], [])
+    plt.yticks([], [])
 {% endraw %}
 {% endhighlight %}
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/mnist_digits.png" alt="MNIST digits">
+</p>
 
 ### Building the autoencoder
 The same as before, we set up the autoencoder. Please keep in mind that whatever has to do with image classification works better with convolutional neural networks of some sort. However, here we keep it simple and go with dense layers. Feel free to change the number of layers, the number of units, and the activation functions. My choice is by no way optimal nor the result of an exhaustive exploration.
