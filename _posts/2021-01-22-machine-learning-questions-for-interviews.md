@@ -19,7 +19,7 @@ description: A list of machine-learning questions for interviews along with a sh
 Collinearity is the existence of two correlated predictor variables in a regression problem. Multicollinearity is when there are more than two variables correlated. Collinearity hurts regression, both coefficient estimation and the interpretation of the model. It can be detected with a scatterplot matrix, a correlation matrix, and via the calculation of Variance Inflation Factors (VIFs).
 
 ### What's a type I and type II error? Which one is worse?
-Type I is a false positive (you tell a healthy man he has cancer) Type II is a false negative (you tell a man with cancer he is healthy) Regarding which one is worse, it depends on the context. A false negative for a spam filter isn't a big deal, but a false negative for a cancer diagnostic test it is.
+Type I is a false positive (you tell a healthy man he has cancer). Type II is a false negative (you tell a man with cancer he is healthy) Regarding which one is worse, it depends on the context. A false negative for a spam filter isn't a big deal, but a false negative for a cancer diagnostic test it is.
 
 ### What is a ROC curve?
 ROC stands for Receiver Operating Characteristic. ROC curve is a plot of True Positive rate (sensitivity) vs. False Positive rate (1-specificity) for different diagnostic test cut-off values. It demonstrates the inherent tradeoff of sensitivity vs. specificity (e.g., a covid test that is too sensitive won't miss any real covid cases but will have a high number of false-positive). The close the curve on the left/upper-hand border of the plot, the better. A random classifier is represented by a 45-degree diagonal line. The area under the curve (AUC) is a measure of the test's accuracy.
@@ -71,7 +71,7 @@ print(sorted_lst){% endraw %}
 Classification is supervised learning, where we assign a label class to some input. E.g., the input is a human face, and the label is whether the facial expression (neutral, smiles, sad, etc.). Clustering is unsupervised learning where we put similar inputs together without actually providing the labels. In a sense, the model will figure out the labels by itself. E.g., we provide a list of furniture images, and the model will put all the tables in a cluster in the feature space, all the chairs in another cluster in the feature space, etc.
 
 ### What is regularization? What are the L1 and L2 regularization methods, and how do they differ?
-Regularization is the process of controlling the model complexity (e.g., the number of model parameters of the values the parameters take). It is realized as an additional term that is added to the loss function. The number of the model's parameters is regularized by L1 and the weights by L2. L1 is also called LASSO and L2 ridge.
+Regularization is the process of controlling the model complexity (e.g., the number of model parameters or the values the parameters take). It is realized as an additional term that is added to the loss function. The number of the model's parameters is regularized by L1 and the weights by L2. L1 is also called LASSO and L2 ridge.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/machine-learning-q/lasso_vs_ridge.png" alt="LASSO vs ridge regularization">
