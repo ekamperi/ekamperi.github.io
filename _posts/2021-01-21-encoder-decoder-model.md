@@ -3,7 +3,7 @@ layout: post
 title: "The encoder-decoder model as a dimensionality reduction technique"
 date:   2021-01-21
 categories: [machine learning]
-tags: ['machine learning', Python, Tensorflow]
+tags: ['machine learning', 'Principal Component Analysis', Python, Tensorflow]
 description: Introduction to the encoder-decoder model, also known as autoencoder, for dimensionality reduction
 ---
 
@@ -17,7 +17,7 @@ description: Introduction to the encoder-decoder model, also known as autoencode
 In today's post, we will discuss the encoder-decoder model, or simply [autoencoder (AE)](https://en.wikipedia.org/wiki/Autoencoder).  This will serve as a basis for implementing the more robust [variational autoencoder (VAE)](https://en.wikipedia.org/wiki/Autoencoder#Variational_autoencoder_(VAE)) in the following weeks. For starters, we will describe the model briefly and implement a dead simple encoder-decoder model in Tensorflow with Keras, in an absolutely indifferent to you dataset (my master thesis data). As a reward for enduring my esoteric narrative, we will then proceed to a more exciting dataset, the Fashion-MNIST, where we will show how the encoder-decoder model can be used for dimensionality reduction. To spice things up, we will construct a Keras callback to visualize the encoder's feature representation before each epoch. We will then see how the network builds up its hidden model progressively, epoch by epoch. Finally, we will compare AE to other standard methods, such as [principal component analysis](https://en.wikipedia.org/wiki/Principal_component_analysis). Without further ado, let's get started!
 
 ## What is an encoder-decoder model?
-An encoder-decoder network is an unsupervised artificial neural model that consists of an encoder component and a decoder one (duh!). The encoder takes the input and transforms it into a compressed encoding, handed over to the decoder. The decoder strives to reconstruct the original representation as close as possible. So,  the goal is to learn a representation (read: encoding) for a set of data. In a sense, we push the AE to memorize the training data by devising some mnemonic rule of its own. As you see in the following figure, typically, the network has a bottleneck-like shape. It starts wide, then its connections are squeezed toward the middle, and then they fan out again. This architecture forces the AE to compress the training data's informational content and embed it into a low-dimensional space. By the way, you may encounter the term "latent space" for this intermediate data's representation.
+An encoder-decoder network is an unsupervised artificial neural model that consists of an encoder component and a decoder one (duh!). The encoder takes the input and transforms it into a compressed encoding, handed over to the decoder. The decoder strives to reconstruct the original representation as close as possible. Ultimately, the goal is to learn a representation (read: encoding) for a data set. In a sense, we force the AE to memorize the training data by devising some mnemonic rule of its own. As you see in the following figure, such a network has, typically, a bottleneck-like shape. It starts wide, then its units/connections are squeezed toward the middle, and then they fan out again. This architecture forces the AE to compress the training data's informational content, embedding it into a low-dimensional space. By the way, you may encounter the term "latent space" for this data's intermediate representation space.
 
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/autoencoder/autoencoder_schematic.png" alt="Schematic representation of an autoencoder">
@@ -39,7 +39,7 @@ from sklearn.preprocessing import StandardScaler
 {% endraw %}
 {% endhighlight %}
 
-Next, we load our dataset. Here, I'm using a dataset from [my master thesis](https://ekamperi.github.io/mrm_thesis/abstract.html) about comparing complexity indices in [volumetric modulated arc therapy](https://en.wikipedia.org/wiki/External_beam_radiotherapy#Volumetric_Modulated_Arc_Therapy) plans in prostate cancer. The details don't really matter; any high-dimensional data would do.
+The dataset that we will be using is from [my master thesis](https://ekamperi.github.io/mrm_thesis/abstract.html). It consists of 10 complexity indices for [volumetric modulated arc therapy](https://en.wikipedia.org/wiki/External_beam_radiotherapy#Volumetric_Modulated_Arc_Therapy) plans in prostate cancer. The details don't really matter; any high-dimensional data would do.
 
 {% highlight python %}
 {% raw %}
@@ -70,11 +70,11 @@ x_train = scaler.transform(x_train)
 The data look like this:
 
 <p align="center">
- <img style="width: 90%; height: 90%" src="{{ site.url }}/images/autoencoder/pandas.png" alt="A high-dimensional dataset">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/pandas.png" alt="A high-dimensional dataset">
 </p>
 
 ### Building the autoencoder
-Next, we build our autoencoder's architecture. We will squeeze our 10-dimensional space into a 2-dimensional latent or encoding space. Our choices are very rudimentary; the goal is to demonstrate how an encoder works, not build the optimal one.
+Next, we build our autoencoder's architecture. We will squeeze the 10-dimensional space into a 2-dimensional latent space. Our choices regarding the model's architecture are very rudimentary; the goal is to demonstrate how an encoder works, not design the optimal one.
 
 {% highlight python %}
 {% raw %}
@@ -100,7 +100,7 @@ decoder = Sequential([
 {% endraw %}
 {% endhighlight %}
 
-Here comes the surgical part of the work. We stitch up the encoder and the decoder models into a single model, the autoencoder. The autoencoder's input is the input of the encoder, and the output of the autoencoder is the output of the decoder. The output of the decoder is the result of calling the decoder on the output of the encoder. We also set the loss to MSE.
+Here comes the "surgical" part of the work. We stitch up the encoder and the decoder models into a single model, the autoencoder. The autoencoder's input is the input of the encoder, and the output of the autoencoder is the decoder's output. The output of the decoder is the result of calling the decoder on the output of the encoder. We also set the loss to [mean squared errorMSE](https://en.wikipedia.org/wiki/Mean_squared_error).
 
 {% highlight python %}
 {% raw %}
@@ -134,8 +134,10 @@ plot_orig_vs_recon('Before training the encoder-decoder')
  <img style="width: 90%; height: 90%" src="{{ site.url }}/images/autoencoder/orig_vs_recon_untrained.png" alt="Original vs. reconstructed values of an autoencoder">
 </p>
 
+Great! The autoencoder does not work at all! It would be very spooky to see it replicate the input without having been trained to do so ;)
+
 ### Training the autoencoder
-Great! The autoencoder does not work at all! We then train the model and check the loss *vs.* epoch to make sure that it converged.
+We then train the model for 5000 epochs and check the loss *vs.* epoch to make sure that it converged. Notice how the input and the output training data are the same, the `x_train`.
 
 {% highlight python %}
 {% raw %}
@@ -153,13 +155,33 @@ plt.grid(True)
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/autoencoder/loss_vs_epoch.png" alt="Loss vs. echo of an autoencoder training">
 </p>
 
-Woot. The optimizer converged, and we can check again how well the autoencoder can reconstruct an input.
+Woot. The optimizer converged, so we can check again how well the autoencoder can reconstruct its input.
+
+{% highlight python %}
+{% raw %}
+plot_orig_vs_recon('After training the encoder-decoder')
+{% endraw %}
+{% endhighlight %}
 
 <p align="center">
  <img style="width: 90%; height: 90%" src="{{ site.url }}/images/autoencoder/orig_vs_recon_trained.png" alt="Original vs. reconstructed values of an autoencoder">
 </p>
 
-That's pretty damn good. The reconstructed values are very close to the original ones.
+That's pretty damn good. The reconstructed values are very close to the original ones! Now let's take a look at the latent space. Since we set it to be 2 dimensional, we will use a 2D scatterplot to visualize it.
+
+{% highlight python %}
+{% raw %}
+encoded_x_train = encoder(x_train)
+plt.figure(figsize=(6,6))
+plt.scatter(encoded_x_train[:, 0], encoded_x_train[:, 1], alpha=.8)
+plt.xlabel('Latent Dimension 1')
+plt.ylabel('Latent Dimension 2');
+{% endraw %}
+{% endhighlight %}
+
+<p align="center">
+ <img style="width: 90%; height: 90%" src="{{ site.url }}/images/autoencoder/latent_space.png" alt="2D latent space of an autoencoder">
+</p>
 
 ## A more interesting dataset
 We now move forward to the Fashion MNIST dataset. This consists of a training set of 60.000 examples and a test set of 10.000 samples. Each example is a 28x28 grayscale image, associated with a label from 10 classes. Fashion MNIST has been proposed as a replacement for the original MNIST dataset with the handwritten digits for benchmarking machine learning algorithms.
