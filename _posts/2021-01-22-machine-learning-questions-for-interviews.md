@@ -13,7 +13,7 @@ description: A list of machine-learning questions for interviews along with a sh
 * A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
 {:toc}
 
-**Here I'll be adding questions regarding machine-learning and data-science in general**
+**Here I'll be adding questions regarding machine-learning and data-science in general. In the future I'll group them by subject.**
 
 ### What are collinearity and multicollinearity? How can we detect them?
 Collinearity is the existence of two correlated predictor variables in a regression problem. Multicollinearity is when there are more than two variables correlated. Collinearity hurts regression, both coefficient estimation and the interpretation of the model. It can be detected with a scatterplot matrix, a correlation matrix, and via the calculation of Variance Inflation Factors (VIFs).
@@ -59,15 +59,18 @@ It's a function without a name, i.e., an anonymous function. We use lambda funct
 {% highlight python %}
 {% raw %}
 lst_of_values = [('bob', 18), ('alice', 25), ('george', 99), ('stathis', 10)]
+print(lst_of_values)
 sorted_lst = sorted(lst_of_values, key=lambda x: x[1])
-{% endraw %}
+
+[('bob', 18), ('alice', 25), ('george', 99), ('stathis', 10)]
+[('stathis', 10), ('bob', 18), ('alice', 25), ('george', 99)]
+print(sorted_lst){% endraw %}
 {% endhighlight %}
 
 ### What is the difference between classification and clustering?
 Classification is supervised learning, where we assign a label class to some input. E.g., the input is a human face, and the label is whether the facial expression (neutral, smiles, sad, etc.). Clustering is unsupervised learning where we put similar inputs together without actually providing the labels. In a sense, the model will figure out the labels by itself. E.g., we provide a list of furniture images, and the model will put all the tables in a cluster in the feature space, all the chairs in another cluster in the feature space, etc.
 
 ### What is regularization? What are the L1 and L2 regularization methods, and how do they differ?
-
 Regularization is the process of controlling the model complexity (e.g., the number of model parameters of the values the parameters take). It is realized as an additional term that is added to the loss function. The number of the model's parameters is regularized by L1 and the weights by L2. L1 is also called LASSO and L2 ridge.
 
 <p align="center">
