@@ -314,7 +314,7 @@ We now change the activation function of the last dense layer in the decoder fro
 
 As we've seen, both autoencoder and PCA may be used as dimensionality reduction techniques. However, there are some difference between the two:
 
-1. By definition, PCA is a linear transformation, whereas AEs are capable of modeling complex non-linear functions. There is, however, kernel PCA that can model non-linear data.
+1. By definition, PCA is a linear transformation, whereas AEs are capable of modeling complex non-linear functions. There is, however, [kernel PCA](https://en.wikipedia.org/wiki/Kernel_principal_component_analysis) that can model non-linear data.
 2. In PCA, features are by definition linearly uncorrelated. Recall that they are projections onto an orthogonal basis. On the contrary, autoencoded features might be correlated. The two optimization objectives are simply different (an orthogonal basis that maximizes variance when data are projected onto it vs. maximum accuracy reconstruction).
 
 <p align="center">
