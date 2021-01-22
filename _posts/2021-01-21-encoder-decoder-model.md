@@ -17,7 +17,7 @@ description: Introduction to the encoder-decoder model, also known as autoencode
 In today's post, we will discuss the encoder-decoder model, or simply [autoencoder (AE)](https://en.wikipedia.org/wiki/Autoencoder).  This will serve as a basis for implementing the more robust [variational autoencoder (VAE)](https://en.wikipedia.org/wiki/Autoencoder#Variational_autoencoder_(VAE)) in the following weeks. For starters, we will describe the model briefly and implement a dead simple encoder-decoder model in Tensorflow with Keras, in an absolutely indifferent to you dataset (my master thesis data). As a reward for enduring my esoteric narrative, we will then proceed to a more exciting dataset, the Fashion-MNIST, where we will show how the encoder-decoder model can be used for dimensionality reduction. To spice things up, we will construct a Keras callback to visualize the encoder's feature representation before each epoch. We will then see how the network builds up its hidden model progressively, epoch by epoch. Finally, we will compare AE to other standard methods, such as [principal component analysis](https://en.wikipedia.org/wiki/Principal_component_analysis). Without further ado, let's get started!
 
 ## What is an encoder-decoder model?
-An encoder-decoder network is an unsupervised artificial neural model that consists of an encoder component and a decoder one (duh!). The encoder takes the input and transforms it into a compressed encoding, handed over to the decoder. The decoder strives to reconstruct the original representation as close as possible. Ultimately, the goal is to learn a representation (read: encoding) for a data set. In a sense, we force the AE to memorize the training data by devising some mnemonic rule of its own. As you see in the following figure, such a network has, typically, a bottleneck-like shape. It starts wide, then its units/connections are squeezed toward the middle, and then they fan out again. This architecture forces the AE to compress the training data's informational content, embedding it into a low-dimensional space. By the way, you may encounter the term "latent space" for this data's intermediate representation space.
+An encoder-decoder network is an unsupervised artificial neural model that consists of an encoder component and a decoder one (duh!). The encoder takes the input and transforms it into a compressed encoding, handed over to the decoder. The decoder strives to reconstruct the original representation as close as possible. Ultimately, the goal is to learn a representation (read: encoding) for a dataset. In a sense, we force the AE to memorize the training data by devising some mnemonic rule of its own. As you see in the following figure, such a network has, typically, a bottleneck-like shape. It starts wide, then its units/connections are squeezed toward the middle, and then they fan out again. This architecture forces the AE to compress the training data's informational content, embedding it into a low-dimensional space. By the way, you may encounter the term "latent space" for this data's intermediate representation space.
 
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/autoencoder/autoencoder_schematic.png" alt="Schematic representation of an autoencoder">
@@ -100,7 +100,7 @@ decoder = Sequential([
 {% endraw %}
 {% endhighlight %}
 
-Here comes the "surgical" part of the work. We stitch up the encoder and the decoder models into a single model, the autoencoder. The autoencoder's input is the input of the encoder, and the output of the autoencoder is the decoder's output. The output of the decoder is the result of calling the decoder on the output of the encoder. We also set the loss to [mean squared errorMSE](https://en.wikipedia.org/wiki/Mean_squared_error).
+Here comes the "surgical" part of the work. We stitch up the encoder and the decoder models into a single model, the autoencoder. The autoencoder's input is the encoder's input, and the autoencoder's output is the decoder's output. The output of the decoder is the result of calling the decoder on the output of the encoder. We also set the loss to [mean squared errorMSE](https://en.wikipedia.org/wiki/Mean_squared_error).
 
 {% highlight python %}
 {% raw %}
@@ -167,7 +167,7 @@ plot_orig_vs_recon('After training the encoder-decoder')
  <img style="width: 90%; height: 90%" src="{{ site.url }}/images/autoencoder/orig_vs_recon_trained.png" alt="Original vs. reconstructed values of an autoencoder">
 </p>
 
-That's pretty damn good. The reconstructed values are very close to the original ones! Now let's take a look at the latent space. Since we set it to be 2 dimensional, we will use a 2D scatterplot to visualize it.
+That's pretty damn good. The reconstructed values are very close to the original ones! Now let's take a look at the latent space. Since we set it to be 2-dimensional, we will use a 2D scatterplot to visualize it. This is the projection of the 10-dimensional data onto a plane. This 2D imprint is all it takes for the decoder to regenerate the initial 10-dimensional space. Isn't it awesome? Notice, though, that there are lots of points crowded in the bottom left corner. Ideally, in a classification scenario, we would like each class's points to form distinct clusters. E.g., if our data were furniture, we would like chairs to be projected at the bottom left corner, tables to the bottom right, and so on. In the next example, we will make this happen, and as a matter of fact, we will watch it happening live during the training process.
 
 {% highlight python %}
 {% raw %}
@@ -184,12 +184,37 @@ plt.ylabel('Latent Dimension 2');
 </p>
 
 ## A more interesting dataset
-We now move forward to the Fashion MNIST dataset. This consists of a training set of 60.000 examples and a test set of 10.000 samples. Each example is a 28x28 grayscale image, associated with a label from 10 classes. Fashion MNIST has been proposed as a replacement for the original MNIST dataset with the handwritten digits for benchmarking machine learning algorithms.
+We now move forward to the Fashion MNIST dataset. This consists of a training set of 60.000 examples and a test set of 10.000 samples. Each example is a 28x28 grayscale image, associated with a label from 10 classes (T-shirt, Trouser, Pullover, Dress, Coat, Sandal, Shirt, Sneaker, Bag, and Ankle boot). Fashion MNIST has been proposed as a replacement for the original MNIST dataset with the handwritten digits when benchmarking machine learning algorithms.
 
-We set up the autoencoder as before. Please keep in mind that whatever has to do with image classification uses convolutional neural networks of some sort. However, here we keep it simple and go with dense layers.
+The same as before, we set up the autoencoder. Please keep in mind that whatever has to do with image classification works better with convolutional neural networks of some sort. However, here we keep it simple and go with dense layers. Feel free to change the number of layers, the number of units, and the activation functions. My choice is by no way optimal nor the result of an exhaustive exploration.
+
+{% highlight python %}
+{% raw %}
+# This is the dimension of the latent space (encoding space)
+latent_dim = 2
+
+# Images are 28 by 28
+img_shape = (x_train.shape[1], x_train.shape[2])
+
+encoder = Sequential([
+    Flatten(input_shape=img_shape),
+    Dense(192, activation='sigmoid'),
+    Dense(64, activation='sigmoid'),
+    Dense(32, activation='sigmoid'),
+    Dense(latent_dim, name='encoder_output')
+])
+
+decoder = Sequential([
+    Dense(64, activation='sigmoid', input_shape=(latent_dim,)),
+    Dense(128, activation='sigmoid'),
+    Dense(img_shape[0] * img_shape[1], activation='relu'),
+    Reshape(img_shape)
+])
+{% endraw %}
+{% endhighlight %}
 
 ### Creating a custom callback
-To visualize how the autoencoder builds up the latent space, we will create a custom callback by subclassing the `tf.keras.callbacks.Callback`. We will then override the method `on_epoch_begin(self, epoch, logs=None)`, which is called at the beginning of an epoch during training. There, we will hook up our code to extract the latent space representation. To obtain the output of an intermediate layer (in our case, we want to extract the encoder's output), we will retrieve it via `layer.output`. 
+Here comes the cool part. To visualize how the autoencoder builds up the latent space, as we train int, we will create a custom callback by subclassing the `tf.keras.callbacks.Callback`. We will then override the method `on_epoch_begin(self, epoch, logs=None)`, which is called at the beginning of an epoch during training. There, we will hook up our code to extract the latent space representation and plot it. To obtain the output of an intermediate layer (in our case, we want to extract the encoder's output), we will retrieve it via the `layer.output`. Here's how:
 
 {% highlight python %}
 {% raw %}
@@ -226,13 +251,13 @@ model_history = autoencoder.fit(x_train, x_train, epochs=12, batch_size=32, verb
 {% endraw %}
 {% endhighlight %}
 
-Here is the latent space evolution as the autoencoder is trained, starting with an untrained state at the top left and ending in a fully trained state at the bottom right.
+Here is the latent space evolution as the autoencoder is trained, starting with an untrained state at the top left and ending in a fully trained state at the bottom right. Before the first epoch, all the original space data are projected on the same point of the latent space. However, as the autoencoder undergoes training, the points corresponding to different classes start to separate.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/latent_space1.png" alt="Evolution of latent space representation during the training of an autoencoder">
 </p>
 
-We also check the loss *vs.* epoch to make sure the optimizer converged. You may even find a correspondence between the classes' separation and how fast the loss drops during the training.
+We check the loss *vs.* epoch to make sure the optimizer converged. We may even observe a correspondence between the classes' separation and how fast the loss is minimized during the training.
 
 {% highlight python %}
 {% raw %}
@@ -248,7 +273,7 @@ plt.grid(True)
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/autoencoder/loss_vs_epoch_mnist.png" alt="Loss vs. epoch during the training of an autoencoder">
 </p>
 
-And here is another run:
+And here are the plots of another run:
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/latent_space2.png" alt="Evolution of latent space representation during the training of an autoencoder">
