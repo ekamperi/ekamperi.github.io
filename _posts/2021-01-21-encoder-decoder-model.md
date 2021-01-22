@@ -188,6 +188,7 @@ This 2D imprint is all it takes for the decoder to regenerate the initial 10-dim
 ## A more interesting dataset
 We now move forward to the Fashion MNIST dataset. This consists of a training set of 60.000 examples and a test set of 10.000 samples. Each example is a 28x28 grayscale image, associated with a label from 10 classes (T-shirt, Trouser, Pullover, Dress, Coat, Sandal, Shirt, Sneaker, Bag, and Ankle boot). Fashion MNIST has been proposed as a replacement for the original MNIST dataset with the handwritten digits when benchmarking machine learning algorithms.
 
+### Building the autoencoder
 The same as before, we set up the autoencoder. Please keep in mind that whatever has to do with image classification works better with convolutional neural networks of some sort. However, here we keep it simple and go with dense layers. Feel free to change the number of layers, the number of units, and the activation functions. My choice is by no way optimal nor the result of an exhaustive exploration.
 
 {% highlight python %}
@@ -215,7 +216,7 @@ decoder = Sequential([
 {% endraw %}
 {% endhighlight %}
 
-### Creating a custom callback
+#### Creating a custom callback
 Here comes the cool part. To visualize how the autoencoder builds up the latent space, as we train int, we will create a custom callback by subclassing the `tf.keras.callbacks.Callback`. We will then override the method `on_epoch_begin(self, epoch, logs=None)`, which is called at the beginning of an epoch during training. There, we will hook up our code to extract the latent space representation and plot it. To obtain the output of an intermediate layer (in our case, we want to extract the encoder's output), we will retrieve it via the `layer.output`. Here's how:
 
 {% highlight python %}
@@ -243,6 +244,7 @@ class TestEncoder(tf.keras.callbacks.Callback):
 {% endraw %}
 {% endhighlight %}
 
+### Training the autoencoder
 Off to train the model!
 
 {% highlight python %}
