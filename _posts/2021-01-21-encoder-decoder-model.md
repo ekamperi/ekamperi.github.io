@@ -354,7 +354,7 @@ As we've seen, both autoencoder and PCA may be used as dimensionality reduction 
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/pca_vs_ae_cross.png" alt="PCA vs autoencoder">
 </p>
 Image taken [from here](https://stats.stackexchange.com/questions/468913/pca-vs-linear-autoencoder-features-independence).
-* PCA is computationally less demanding than autoencoders.
+* PCA is computationally less demanding than autoencoders. For instance, PCA on the MNIST dataset takes 0.05 seconds +/- 0.008 in my PC, whereas training the AE around 3-4 minutes.
 * Autoencoders having many trainable parameters are vulnerable to overfitting, similar to other neural networks.
 
 Regarding the question of which one to use, I'm afraid I'll sound cliché. It depends on the problem you are trying to solve. If your data share non-linear correlations, AE will compress them into a low-dimensional latent space since it is endowed with the capability to model non-linear functions. If your data are mostly linearly correlated, PCA will do fine. By the way, there's also a kernel version of PCA. Using a [kernel trick](https://en.wikipedia.org/wiki/Kernel_method), similar to the one with [Support Vector Machines](https://en.wikipedia.org/wiki/Support-vector_machine), the originally linear operations of PCA are performed in a reproducing kernel space. But that's the subject of a future post.
