@@ -68,7 +68,7 @@ print(sorted_lst)
 {% endraw %}
 {% endhighlight %}
 
-## What is the difference between a tuple and a list in Python?
+### What is the difference between a tuple and a list in Python?
 Tuples are immutable, i.e., their contents cannot be mutated (changed) after their creation. Lists are mutable, i.e., their contents can be modified after their creation.
 
 {% highlight python %}
