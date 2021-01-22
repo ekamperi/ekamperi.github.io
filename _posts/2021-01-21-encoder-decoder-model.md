@@ -315,7 +315,7 @@ We now change the activation function of the last dense layer in the decoder fro
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/latent_space2.png" alt="Evolution of latent space representation during the training of an autoencoder">
 </p>
 
-### Autoencoder vs. PCA decomposition
+### Latent space vs. Principal components space
 Finally, let's take a look at PCA decomposition of the MNIST dataset assuming 2 principal components.
 
 {% highlight python %}
