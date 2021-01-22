@@ -35,7 +35,7 @@ KNN is a supervised algorithm, K-Means is an unsupervised technique. The former 
 It is a matrix used for evaluating a classification algorithm. The diagonal elements consist of true negative and true positive, whereas the off-diagonal consist of false negative and false positive.
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/machine-learning-q/confusion_matrix.png" alt="A confusion matrix">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/machine-learning-q/confusion_matrix.png" alt="A confusion matrix">
 </p>
 
 ### What are some differences between classification and regression?
