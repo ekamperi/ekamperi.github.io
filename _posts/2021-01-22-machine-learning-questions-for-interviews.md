@@ -119,6 +119,8 @@ Here the array *b* is expanded from (3,) to (1,3) by replicating [0., 1. 2.] thr
 {% endraw %}
 {% endhighlight %}
 
+The broadcasting rule is "Prepend 1s to the smaller shape, then check that the axes of both arrays have sizes that are equal or 1, and finally stretch the arrays in their size-1 axes.". Broadcasting allows writing compact code, but is also a source of confusion and errors.
+
 ### What is the difference between classification and clustering?
 Classification is supervised learning, where we assign a label class to some input. E.g., the input is a human face, and the label is whether the facial expression (neutral, smiles, sad, etc.). Clustering is unsupervised learning where we put similar inputs together without actually providing the labels. In a sense, the model will figure out the labels by itself. E.g., we provide a list of furniture images, and the model will put all the tables in a cluster in the feature space, all the chairs in another cluster in the feature space, etc.
 
