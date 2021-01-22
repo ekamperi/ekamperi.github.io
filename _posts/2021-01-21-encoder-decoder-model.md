@@ -207,7 +207,7 @@ class TestEncoder(tf.keras.callbacks.Callback):
         encoder_output = encoder_model(self.x_test)
         plt.subplot(4, 3, self.current_epoch)
         plt.scatter(encoder_output[:, 0],
-                    encoder_output[:, 1],  s=20, alpha=0.8,
+                    encoder_output[:, 1], s=20, alpha=0.8,
                     cmap='Set1', c=self.y_test[0:x_test.shape[0]])
         plt.xlim(-9, 9)
         plt.ylim(-9, 9)
