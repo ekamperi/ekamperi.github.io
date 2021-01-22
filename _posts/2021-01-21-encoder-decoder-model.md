@@ -314,13 +314,13 @@ We now change the activation function of the last dense layer in the decoder fro
 
 As we've seen, both autoencoder and PCA may be used as dimensionality reduction techniques. However, there are some difference between the two:
 
-1. By definition, PCA is a linear transformation, whereas AEs are capable of modeling complex non-linear functions. There is, however, [kernel PCA](https://en.wikipedia.org/wiki/Kernel_principal_component_analysis) that can model non-linear data.
-2. In PCA, features are by definition linearly uncorrelated. Recall that they are projections onto an orthogonal basis. On the contrary, autoencoded features might be correlated. The two optimization objectives are simply different (an orthogonal basis that maximizes variance when data are projected onto it vs. maximum accuracy reconstruction).
+* By definition, PCA is a linear transformation, whereas AEs are capable of modeling complex non-linear functions. There is, however, [kernel PCA](https://en.wikipedia.org/wiki/Kernel_principal_component_analysis) that can model non-linear data.
+* In PCA, features are by definition linearly uncorrelated. Recall that they are projections onto an orthogonal basis. On the contrary, autoencoded features might be correlated. The two optimization objectives are simply different (an orthogonal basis that maximizes variance when data are projected onto it vs. maximum accuracy reconstruction).
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/pca_vs_ae_cross.png" alt="PCA vs autoencoder">
 </p>
 Image taken [from here](https://stats.stackexchange.com/questions/468913/pca-vs-linear-autoencoder-features-independence).
-3. PCA is computationally less demanding than autoencoders.
-4. Autoencoders having many trainable parameters are vulnerable to overfitting, similar to other neural networks.
+* PCA is computationally less demanding than autoencoders.
+* Autoencoders having many trainable parameters are vulnerable to overfitting, similar to other neural networks.
 
 Regarding the question of which one to use, I'm afraid I'll sound cliche. It depends on the problem you are trying to solve. If your data share non-linear correlations, AE will compress them into a low-dimensional latent space since it is endowed with the capability to model non-linear functions. If your data are mostly linearly correlated, PCA will do fine. By the way, there's also a kernel version of PCA. Using a [kernel trick](https://en.wikipedia.org/wiki/Kernel_method), similar to the one with [Support Vector Machines](https://en.wikipedia.org/wiki/Support-vector_machine), the originally linear operations of PCA are performed in a reproducing kernel space. But that's the subject of a future post.
