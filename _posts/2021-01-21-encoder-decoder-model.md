@@ -14,7 +14,7 @@ description: Introduction to the encoder-decoder model, also known as autoencode
 {:toc}
 
 ## Introduction
-In today's post, we will discuss the encoder-decoder model, or simply [autoencoder (AE)](https://en.wikipedia.org/wiki/Autoencoder).  This will serve as a basis for implementing the more robust [variational autoencoder (VAE)](https://en.wikipedia.org/wiki/Autoencoder#Variational_autoencoder_(VAE)) in the following weeks. For starters, we will describe the model briefly and implement a dead simple encoder-decoder model in Tensorflow with Keras, in an absolutely indifferent to you dataset (my master thesis data). As a reward for enduring my esoteric narrative, we will then proceed to a more exciting dataset, the Fashion-MNIST, where we will show how the encoder-decoder model can be used for dimensionality reduction. To spice things up, we will construct a Keras callback to visualize the encoder's feature representation before each epoch. We will then see how the network builds up its hidden model progressively, epoch by epoch. Finally, we will compare AE to other standard methods, such as [principal component analysis](https://en.wikipedia.org/wiki/Principal_component_analysis). Without further ado, let's get started!
+In today's post, we will discuss the encoder-decoder model, or simply [autoencoder (AE)](https://en.wikipedia.org/wiki/Autoencoder).  This will serve as a basis for implementing the more robust [variational autoencoder (VAE)](https://en.wikipedia.org/wiki/Autoencoder#Variational_autoencoder_(VAE)) in the following weeks. For starters, we will describe the model briefly and implement a dead simple encoder-decoder model in Tensorflow with Keras, in an absolutely indifferent to you dataset (my master thesis data). As a reward for enduring my esoteric narrative, we will then proceed to a more exciting dataset, the MNIST, to show how the encoder-decoder model can be used for dimensionality reduction. To spice things up, we will construct a Keras callback to visualize the encoder's feature representation before each epoch. We will then see how the network builds up its hidden model progressively, epoch by epoch. Finally, we will compare AE to other standard methods, such as [principal component analysis](https://en.wikipedia.org/wiki/Principal_component_analysis). Without further ado, let's get started!
 
 ## What is an encoder-decoder model?
 An encoder-decoder network is an unsupervised artificial neural model that consists of an encoder component and a decoder one (duh!). The encoder takes the input and transforms it into a compressed encoding, handed over to the decoder. The decoder strives to reconstruct the original representation as close as possible. Ultimately, the goal is to learn a representation (read: encoding) for a dataset. In a sense, we force the AE to memorize the training data by devising some mnemonic rule of its own. As you see in the following figure, such a network has, typically, a bottleneck-like shape. It starts wide, then its units/connections are squeezed toward the middle, and then they fan out again. This architecture forces the AE to compress the training data's informational content, embedding it into a low-dimensional space. By the way, you may encounter the term "latent space" for this data's intermediate representation space.
@@ -183,10 +183,23 @@ plt.ylabel('Latent Dimension 2');
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/autoencoder/latent_space.png" alt="2D latent space of an autoencoder">
 </p>
 
-This 2D imprint is all it takes for the decoder to regenerate the initial 10-dimensional space. Isn't it awesome? Notice, though, that there are lots of points crowded in the bottom left corner. Ideally, in a classification scenario, we would like each class's points to form distinct clusters. E.g., if our data were furniture, we would like chairs to be projected at the bottom left corner, tables to the bottom right, and so on. In the next example, we will make this happen, and as a matter of fact, we will watch it happening live during the training process.
+This 2D imprint is all it takes for the decoder to regenerate the initial 10-dimensional space. Isn't it awesome? Notice, though, that there are lots of points crowded in the bottom left corner. Ideally, we would like each class's data points to form distinct clusters in a classification scenario. E.g., if our data were furniture, we would like chairs to be projected at the bottom left corner, tables to the bottom right, and so on. In the next example, we will make this happen, and as a matter of fact, we will watch it happening live during the training process.
 
 ## A more interesting dataset
-We now move forward to the Fashion MNIST dataset. This consists of a training set of 60.000 examples and a test set of 10.000 samples. Each example is a 28x28 grayscale image, associated with a label from 10 classes (T-shirt, Trouser, Pullover, Dress, Coat, Sandal, Shirt, Sneaker, Bag, and Ankle boot). Fashion MNIST has been proposed as a replacement for the original MNIST dataset with the handwritten digits when benchmarking machine learning algorithms.
+We now move forward to the MNIST dataset. This consists of a training set of 60.000 examples and a test set of 10.000 samples. Each example is a 28x28 grayscale image of a handwritten digit from 0 to 9. When I wrote this blog post, I thought that I had been using the Fashion MNIST dataset. The latter has been proposed as a replacement for the original MNIST dataset when benchmarking machine learning algorithms. I then realized that I had loaded the regular MNIST dataset but was too lazy to regenerate the plots for the Fashion MNIST. Hence, this is left as an exercise to the reader! :D
+
+### Preprocessing
+
+{% highlight python %}
+{% raw %}
+# Load the MNIST data set
+(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
+
+# Normalize pixel values to [0., 1.]
+x_train = x_train / 255.
+x_test = x_test / 255.
+{% endraw %}
+{% endhighlight %}
 
 ### Building the autoencoder
 The same as before, we set up the autoencoder. Please keep in mind that whatever has to do with image classification works better with convolutional neural networks of some sort. However, here we keep it simple and go with dense layers. Feel free to change the number of layers, the number of units, and the activation functions. My choice is by no way optimal nor the result of an exhaustive exploration.
