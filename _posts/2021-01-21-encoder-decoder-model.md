@@ -319,7 +319,7 @@ This is an animation that I made with an autoencoder model in *Mathematica*.
 
 <p align="center">
 <video id="movie" width="70%" height="70%" preload controls>
-   <source id="srcMp4" src="{{ site.url }}/autoencoder/latent.mp4" />
+   <source id="srcMp4" src="{{ site.url }}/images/autoencoder/latent.mp4" />
 </video>
 </p>
 
