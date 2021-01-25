@@ -371,7 +371,7 @@ for i in range(n_samples):
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height:100%" src="{{ site.url }}/images/autoencoder/latent_sampling.png" alt="Autoencoder as a generative model">
+ <img style="width: 100%; height:100%" src="{{ site.url }}/images/autoencoder/latent_sample.png" alt="Autoencoder as a generative model">
 </p>
 
 Occasionally, however, the autoencoder will output garbage output because our setup does not include any regularization. This lack of regularization leads to severe overfitting. Therefore some points of the latent space will give meaningless content once decoded. After all, we did not ask the autoencoder to organize the latent space representation in some particular way. All we asked was to reconstruct the input without any loss. And the easiest way to accomplish this is to overfit! ;) There are, of course, ways to mitigate overfitting, but that's for another day!
