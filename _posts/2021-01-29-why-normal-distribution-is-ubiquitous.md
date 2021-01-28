@@ -61,7 +61,7 @@ If we keep going by assuming the sum of more dice, say 3 dice, the sums' distrib
 In the following histograms we see the evolution of the distribution of the sums, starting with only one die and going up to 20 dice!
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/hist_of_sum.png" alt="Sum of dice histogram">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/hist_of_sum.png" alt="Sum of dice histogram">
 </p>
 
 For example, consider a person's height. This is determined by the sum of many independent variables:
