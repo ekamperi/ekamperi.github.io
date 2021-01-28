@@ -45,7 +45,7 @@ So the first time we got 3 and 4, the second time 6 and 5, and so on. Now take t
 And plot the histogram of the sums. As you see, the distribution of the sums looks roughly like a gaussian. If we keep going by assuming more dice rolls, the sums' distribution will get closer to a normal distribution. We already may answer why normal distributions are so ubiquitous: because many variables in the real world are the sum of other variables.
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/hist_of_sum2.png" alt="Sum of dice histogram">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/hist_of_sum2.png" alt="Sum of dice histogram">
 </p>
 
 For example, consider a person's height. This is determined by the sum of many independent variables:
@@ -79,11 +79,11 @@ $$
 Therefore, any distribution with finite variance given some time and convolution will morph into a Gaussian.
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/conv_1.png" alt="Convolution with itself">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/conv_1.png" alt="Convolution with itself">
 </p>
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/conv_2.png" alt="Convolution with itself">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/conv_2.png" alt="Convolution with itself">
 </p>
 
 {% highlight mathematica %}
