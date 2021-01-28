@@ -68,9 +68,9 @@ For example, consider a person's height. This is determined by the sum of many i
 * The genes (I haven't researched it by I presume several genes contribute to height, not just one)
 * Hormones (E.g., growth hormone)
 * The environment
-    ** The nutrition in terms of what one eats every day during the developmental phase
-    ** Sports / activity levels
-    ** Pollution
+  * The nutrition in terms of what one eats every day during the developmental phase
+  * Sports / activity levels
+  * Pollution
 * Other factors
 
 A person's height is akin to the sum of rolling many dice. Each die is similar to each of the above factors. I.e., the genes are the 1st die, the hormones the 2nd, etc.
