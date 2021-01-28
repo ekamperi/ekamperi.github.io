@@ -14,7 +14,11 @@ Let's look at a couple of examples.
 
 Suppose we throw a fair dice. Every number has an equal probability of showing up, i.e., $$p=1/6$$. For instance, let us assume the following sequence of 30 occurences:
 
+{% highlight mathematica %}
+{% raw %}
 {3, 4, 6, 5, 1, 5, 6, 5, 1, 5, 3, 1, 2, 4, 1, 1, 2, 5, 3, 1, 3, 4, 3, 6, 2, 4, 6, 2, 4, 3}
+{% endraw %}
+{% endhighlight %}
 
 If we plot the histogram of these frequencies, we get something close to a uniform distribution (that's ok, given we only threw it 30 times). Here comes the magic. Suppose that we throw two dice 15 times, and we get:
 
@@ -22,11 +26,21 @@ If we plot the histogram of these frequencies, we get something close to a unifo
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/hist_of_sum1.png" alt="Uniform distribution histogram">
 </p>
 
+
+{% highlight mathematica %}
+{% raw %}
 {{3, 4}, {6, 5}, {1, 5}, {6, 5}, {1, 5}, {3, 1}, {2, 4}, {1, 1}, {2, 5}, {3, 1}, {3, 4}, {3, 6}, {2, 4}, {6, 2}, {4, 3}}
+{% endraw %}
+{% endhighlight %}
 
 So the first time we got 3 and 4, the second time 6 and 5, and so on. Now take the sum of each throw:
 
+
+{% highlight mathematica %}
+{% raw %}
 {7, 11, 6, 11, 6, 4, 6, 2, 7, 4, 7, 9, 6, 8, 7}
+{% endraw %}
+{% endhighlight %}
 
 And plot the histogram of the sums. As you see, the distribution of the sums looks roughly like a gaussian. If we keep going by assuming more dice rolls, the sums' distribution will get closer to a normal distribution. We already may answer why normal distributions are so ubiquitous: because many variables in the real world are the sum of other variables.
 
