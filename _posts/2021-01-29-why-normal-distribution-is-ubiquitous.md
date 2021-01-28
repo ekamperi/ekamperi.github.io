@@ -23,9 +23,8 @@ Suppose we throw a fair dice. Every number has an equal probability of showing u
 If we plot the histogram of these frequencies, we get something close to a uniform distribution (that's ok, given we only threw it 30 times). Here comes the magic. Suppose that we throw two dice 15 times, and we get:
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/hist_of_sum_1.png" alt="Uniform distribution histogram">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/hist_of_sum_1.png" alt="Uniform distribution histogram">
 </p>
-
 
 {% highlight mathematica %}
 {% raw %}
