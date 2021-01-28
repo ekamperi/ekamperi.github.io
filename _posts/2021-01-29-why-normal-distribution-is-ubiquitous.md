@@ -11,7 +11,7 @@ description: A summary of explanations and insights on why the normal distributi
 Have you ever wondered why normal distributions are encountered so frequently? Some examples include the height, birth weight of newborns, the sum of dice, and others.
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/bell_curve_table.jpg" alt="Bell curve artistic">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/bell.png" alt="Bell curve artistic">
 </p>
 
 [Image taken from here](https://www.impactlab.com/2011/10/16/top-10-photos-of-the-week-200/)
