@@ -23,7 +23,7 @@ Suppose we throw a fair dice. Every number has an equal probability of showing u
 If we plot the histogram of these frequencies, we get something close to a uniform distribution (that's ok, given we only threw it 30 times). Here comes the magic. Suppose that we throw two dice 15 times, and we get:
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/hist_of_sum_1.png" alt="Uniform distribution histogram">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/hist_sum_of_1.png" alt="Uniform distribution histogram">
 </p>
 
 {% highlight mathematica %}
@@ -44,7 +44,7 @@ So the first time we got 3 and 4, the second time 6 and 5, and so on. Now take t
 And plot the histogram of the sums. As you see, the distribution of the sums looks roughly like a gaussian. If we keep going by assuming more dice rolls, the sums' distribution will get closer to a normal distribution. We already may answer why normal distributions are so ubiquitous: because many variables in the real world are the sum of other variables.
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/hist_of_sum_2.png" alt="Sum of dice histogram">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/hist_sum_of_2.png" alt="Sum of dice histogram">
 </p>
 
 For example, consider a person's height. This is determined by the sum of many independent variables:
