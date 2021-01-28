@@ -10,6 +10,12 @@ description: A summary of explanations and insights on why the normal distributi
 ## As simple as it can get
 Have you ever wondered why normal distributions are encountered so frequently? Some examples include the height, birth weight of newborns, the sum of dice, and others.
 
+<p align="center">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/bell_curve_table.jpg" alt="Bell curve artistic">
+</p>
+
+[Image taken from here](https://www.impactlab.com/2011/10/16/top-10-photos-of-the-week-200/)
+
 Let's look at a couple of examples.
 
 Suppose we throw a fair dice. Every number has an equal probability of showing up, i.e., $$p=1/6$$. For instance, let us assume the following sequence of 30 occurences:
