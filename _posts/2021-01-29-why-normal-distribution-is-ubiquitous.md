@@ -7,8 +7,8 @@ tags: ['machine learning', 'Mathematica', 'mathematics', 'statistics']
 description: A summary of explanations and insights on why the normal distribution shows up so often in real world phenomena
 ---
 
-## As simple as it can get
-Have you ever wondered why normal distributions are encountered so frequently? Some examples include the height, birth weight of newborns, the sum of dice, and others.
+## Introduction
+Have you ever wondered why normal distributions are encountered so frequently in everyday life? Some examples include the height of people, the birth weight of newborns, the sum of two dice, and many others. Also, in our statistical models very much often we assume that some quantity is modeled by a normal distribution. Is there some fundamental reason Gaussians are all over the place? Yes there is!
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/bell.png" alt="Bell curve artistic">
@@ -16,9 +16,9 @@ Have you ever wondered why normal distributions are encountered so frequently? S
 
 [Image taken from here](https://www.impactlab.com/2011/10/16/top-10-photos-of-the-week-200/)
 
-Let's look at a couple of examples.
-
-Suppose we throw a fair dice. Every number has an equal probability of showing up, i.e., $$p=1/6$$. For instance, let us assume the following sequence of 30 occurences:
+## As simple as it can get
+### The case of rolling dice
+Let's look at a couple of examples, starting with the case of throwing a fair die. Every number on each marked side has an equal probability of showing up, i.e., $$p=1/6$$. For instance, let us assume the following sequence of 30 occurences:
 
 {% highlight mathematica %}
 {% raw %}
@@ -26,11 +26,13 @@ Suppose we throw a fair dice. Every number has an equal probability of showing u
 {% endraw %}
 {% endhighlight %}
 
-If we plot the histogram of these frequencies, we get something close to a [uniform distribution](https://en.wikipedia.org/wiki/Discrete_uniform_distribution) (that's ok, given we only threw it 30 times). Here comes the magic. Suppose that we throw two dice 15 times, and we get:
+If we plot the frequency histogram of these numbers, we get something close to a [uniform distribution](https://en.wikipedia.org/wiki/Discrete_uniform_distribution) (that's ok, given we only threw the die 30 times). 
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/hist_sum_of_1.png" alt="Uniform distribution histogram">
 </p>
+
+Here comes the magic. Suppose that we throw two dice 15 times, and we get:
 
 {% highlight mathematica %}
 {% raw %}
@@ -38,7 +40,7 @@ If we plot the histogram of these frequencies, we get something close to a [unif
 {% endraw %}
 {% endhighlight %}
 
-So the first time we got 3 and 4, the second time 6 and 5, and so on. Now take the sum of each throw:
+So the first time we got 3 and 4, the second time 6 and 5, and so on. Now let us take the sum of each throw:
 
 {% highlight mathematica %}
 {% raw %}
@@ -46,10 +48,20 @@ So the first time we got 3 and 4, the second time 6 and 5, and so on. Now take t
 {% endraw %}
 {% endhighlight %}
 
-And plot the histogram of the sums. As you see, the distribution of the sums looks roughly like a gaussian. If we keep going by assuming more dice rolls, the sums' distribution will get closer to a normal distribution. We already may answer why normal distributions are so ubiquitous: because many variables in the real world are the sum of other variables.
+And plot the frequency histogram of the sums.
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/hist_sum_of_2.png" alt="Sum of dice histogram">
+</p>
+
+As you see, the distribution of the sums switched from a uniform to something that looks vageuly like a gaussian. Just think about it for a second. Why do the number 7 appear so often as the sum of two dice? Well, because there are many combinations that could end up having a sum of 7. E.g., $$2 + 5 = 7, 5 + 2 = 7, 1 + 6 = 7, 6 + 1 = 7, 3 + 4 = 7, 4 + 3 = 7$$. The same logic applies to 6 as well. However, in order to get some very large sum, say 12, there is only one combination, $$6 + 6 = 12$$. The same applies to small sums, like 2 which is realized only by $$1 + 1$$.
+
+If we keep going by assuming the sum of more dice, say 3 dice, the sums' distribution will get even closer to a normal distribution. The reasoning is the same as previously. There will be much more combinations of dice summing up to some value in the middle, rather than summing in some extreme value. We already may answer why normal distributions are so ubiquitous: because many variables in the real world are the sum of other independent variables. And, when independent variables are added together, their sum converges to a normal distribution. Neat?
+
+In the following histograms we see the evolution of the distribution of the sums, starting with only one die and going up to 20 dice!
+
+<p align="center">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/hist_of_sum.png" alt="Sum of dice histogram">
 </p>
 
 For example, consider a person's height. This is determined by the sum of many independent variables:
