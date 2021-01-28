@@ -20,7 +20,7 @@ Suppose we throw a fair dice. Every number has an equal probability of showing u
 {% endraw %}
 {% endhighlight %}
 
-If we plot the histogram of these frequencies, we get something close to a uniform distribution (that's ok, given we only threw it 30 times). Here comes the magic. Suppose that we throw two dice 15 times, and we get:
+If we plot the histogram of these frequencies, we get something close to a [uniform distribution](https://en.wikipedia.org/wiki/Discrete_uniform_distribution) (that's ok, given we only threw it 30 times). Here comes the magic. Suppose that we throw two dice 15 times, and we get:
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/hist_sum_of_1.png" alt="Uniform distribution histogram">
@@ -33,7 +33,6 @@ If we plot the histogram of these frequencies, we get something close to a unifo
 {% endhighlight %}
 
 So the first time we got 3 and 4, the second time 6 and 5, and so on. Now take the sum of each throw:
-
 
 {% highlight mathematica %}
 {% raw %}
@@ -51,9 +50,9 @@ For example, consider a person's height. This is determined by the sum of many i
 * The genes (I haven't researched it by I presume several genes contribute to height, not just one)
 * Hormones (E.g., growth hormone)
 * The environment
-** The nutrition in terms of what one eats every day during the developmental phase
-** Sports / activity levels
-** Pollution
+    ** The nutrition in terms of what one eats every day during the developmental phase
+    ** Sports / activity levels
+    ** Pollution
 * Other factors
 
 A person's height is akin to the sum of rolling many dice. Each die is similar to each of the above factors. I.e., the genes are the 1st die, the hormones the 2nd, etc.
