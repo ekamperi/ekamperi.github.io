@@ -20,7 +20,7 @@ Have you ever wondered why [normal distributions](https://en.wikipedia.org/wiki/
 ### The case of rolling dice
 
 <p align="center">
- <img style="width: 50%; height: 50%" src="{{ site.url }}/images/normal_dist/dice.jpg" alt="Dice">
+ <img style="width: 20%; height: 20%" src="{{ site.url }}/images/normal_dist/dice.jpg" alt="Dice">
 </p>
 
 
