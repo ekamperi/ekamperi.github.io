@@ -95,6 +95,8 @@ Show[
  {% endraw %}
 {% endhighlight %}
 
+The blue lines are the trajectories of the 1000 random walks. The red line is one representative such random walk. It should be evident by now, how it is much more probable for a person to end up at position 0, rather than to some extreme position like 6 or -6.
+
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/random_walk.png" alt="Random walk">
 </p>
@@ -110,7 +112,7 @@ These are the distributions of the positions (distances) after 4, 8, and 16 step
 ### So why are normal distributions so ubiquitous?
 **Because many things in our world emerge as the sum of smaller independent parts.** For example, consider a person's height. This is determined by the sum of many independent variables:
 * The **genes** (I haven't researched it by I presume several genes contribute to height, not just one)
-* Hormones (E.g., [growth hormone](https://en.wikipedia.org/wiki/Growth_hormone))
+* **Hormones** (E.g., [growth hormone](https://en.wikipedia.org/wiki/Growth_hormone))
 * The **environment**
   * The **nutrition** in terms of what one eats every day during the developmental phase
   * **Sports / activity levels**
