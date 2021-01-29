@@ -65,7 +65,7 @@ In the following histograms, we see the evolution of the sums' distribution, sta
 </p>
 
 ### So why are normal distributions so ubiquitous?
-For example, consider a person's height. This is determined by the sum of many independent variables:
+Because many things in our world emerge as the sum of smaller independent parts. For example, consider a person's height. This is determined by the sum of many independent variables:
 * The **genes** (I haven't researched it by I presume several genes contribute to height, not just one)
 * Hormones (E.g., [growth hormone](https://en.wikipedia.org/wiki/Growth_hormone))
 * The **environment**
