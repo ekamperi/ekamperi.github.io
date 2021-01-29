@@ -71,7 +71,7 @@ In the following histograms, we observe the sums' distribution evolution, starti
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/hist_of_sum.png" alt="Sum of dice histogram">
 </p>
 
-### The case of random walk
+### The case of [random walk](https://en.wikipedia.org/wiki/Random_walk)
 This example was reproduced by the excellent book "Statistical Rethinking: A Bayesian Course with Examples in R and Stan; Second Edition". Suppose we place 1000 folks on a field and then ask them to flip a coin, and depending on the outcome, to take a step from 0 to 1 meter in the indicated by the coin direction. Each person takes, say, a total of 16 such steps. At the end of this game, we can't really tell each person's position, but we can say something about the distribution of their distances. Arguably, **the distribution will be normal simply because there are vastly more sequences of left-right steps whose sum ends up being zero than sequences of steps that end up being non-zero.** For example, to end up with a distance of 16, one needs to take 16 consecutive left steps or 16 successive right steps. That's just very unlikely to happen (remember that the direction people move is determined by a flip coin, so they should have 16 heads or 16 tails in a row). The following code generates the plot below, but feel free to skip it.
 
 {% highlight mathematica %}
