@@ -76,7 +76,7 @@ Because many things in our world emerge as the sum of smaller independent parts.
 
 A person's height is akin to the sum of rolling many dice. Each die is similar to each of the above factors. I.e., the genes are the 1st die, the hormones the 2nd, etc.
 
-What follows is the presentation of the same arguments written with mathematical symbols. Do not worry if you find trouble understanding. You won't miss any insights!
+What follows is the presentation of the same arguments written with mathematical symbols. Do not worry if you find them confusing. You won't have missed any insights!
 
 ## Why convolution is the way to express the sum of two random variables, $$X, Y$$, mathematically
 
