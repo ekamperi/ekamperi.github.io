@@ -8,7 +8,7 @@ description: A summary of explanations and insights on why the normal distributi
 ---
 
 ## Introduction
-Have you ever wondered why normal distributions are encountered so frequently in everyday life? Some examples include the height of people, the birth weight of newborns, the sum of two dice, and many others. Also, in our statistical models very much often we assume that some quantity is modeled by a normal distribution. Is there some fundamental reason Gaussians are all over the place? Yes there is!
+Have you ever wondered why normal distributions are encountered so frequently in everyday life? Some examples include the height of people, newborns' birth weight, the sum of two dice, and many others. Also, in our statistical models, we often assume that some quantity is modeled by a normal distribution. Is there some fundamental reason Gaussians are all over the place? Yes, there is!
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/bell.png" alt="Bell curve artistic">
@@ -54,16 +54,17 @@ And plot the frequency histogram of the sums.
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/hist_sum_of_2.png" alt="Sum of dice histogram">
 </p>
 
-As you see, the distribution of the sums switched from a uniform to something that looks vageuly like a gaussian. Just think about it for a second. Why do the number 7 appear so often as the sum of two dice? Well, because there are many combinations that could end up having a sum of 7. E.g., $$2 + 5 = 7, 5 + 2 = 7, 1 + 6 = 7, 6 + 1 = 7, 3 + 4 = 7, 4 + 3 = 7$$. The same logic applies to 6 as well. However, in order to get some very large sum, say 12, there is only one combination, $$6 + 6 = 12$$. The same applies to small sums, like 2 which is realized only by $$1 + 1$$.
+As you see, the sums' distribution shifted from a uniform to something that looks vaguely like a gaussian. Just think about it for a second. Why does the number 7 appear so often as the sum of two dice? Well, because many combinations could end up having a sum of 7. E.g., $$2 + 5 = 7$$, $$5 + 2 = 7$$, $$1 + 6 = 7$$, $$6 + 1 = 7$$, $$3 + 4 = 7$$, $$4 + 3 = 7$$. The same logic applies to 6 as well. However, to get some very large sum, say 12, there is only one combination, namely $$6 + 6$$. The same applies to small sums, like 2, which is realized only by $$1 + 1$$.
 
-If we keep going by assuming the sum of more dice, say 3 dice, the sums' distribution will get even closer to a normal distribution. The reasoning is the same as previously. There will be much more combinations of dice summing up to some value in the middle, rather than summing in some extreme value. We already may answer why normal distributions are so ubiquitous: because many variables in the real world are the sum of other independent variables. And, when independent variables are added together, their sum converges to a normal distribution. Neat?
+If we keep going by assuming the sum of more dice, say 3 dice, the sums' distribution will get even closer to a normal distribution. The reasoning is the same as previously. There will be many more combinations of dice summing up to some value in the middle, rather than summing in some extreme value. We already may answer why normal distributions are so ubiquitous: because many variables in the real world are the sum of other independent variables. And, when independent variables are added together, their sum converges to a normal distribution. Neat?
 
-In the following histograms we see the evolution of the distribution of the sums, starting with only one die and going up to 20 dice!
+In the following histograms, we see the evolution of the sums' distribution, starting with only one die and going up to 20 dice!
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/hist_of_sum.png" alt="Sum of dice histogram">
 </p>
 
+### So why normal distributions are so ubiquitous?
 For example, consider a person's height. This is determined by the sum of many independent variables:
 * The genes (I haven't researched it by I presume several genes contribute to height, not just one)
 * Hormones (E.g., growth hormone)
@@ -114,5 +115,3 @@ Grid[
  ]
 {% endraw %}
 {% endhighlight %}
-
-
