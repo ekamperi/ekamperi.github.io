@@ -161,6 +161,12 @@ Grid[
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/normal_dist/unit_box.png" alt="Convolution of unit box function with itself">
 </p>
 
+<p align="center">
+<video id="movie" width="70%" height="70%" preload controls>
+   <source id="srcMp4" src="{{ site.url }}/images/normal_dist/unitbox_conv.avi" />
+</video>
+</p>
+
 Ok so convolving a unit box function with itself, which is similar to throwing dice and assuming their sums, led us to a Gaussian distribution. Does this have to do with the unit box? No! Αny distribution with a finite variance will morph into a Gaussian, given some time and repeated convolutions. In the following examples, we start with some quite noisy initial distributions and convolve them repeatedly with themselves. As you see the result is again a normal distribution!
 
 <p align="center">
