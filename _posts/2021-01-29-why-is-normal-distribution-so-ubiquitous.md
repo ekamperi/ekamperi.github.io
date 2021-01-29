@@ -161,9 +161,11 @@ Grid[
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/normal_dist/unit_box.png" alt="Convolution of unit box function with itself">
 </p>
 
+The following animation might clear up the operation of convolution between two functions.
+
 <p align="center">
 <video id="movie" width="70%" height="70%" preload controls>
-   <source id="srcMp4" src="{{ site.url }}/images/normal_dist/unitbox_conv.avi" />
+   <source id="srcMp4" src="{{ site.url }}/images/normal_dist/unitbox_conv.mp4" />
 </video>
 </p>
 
