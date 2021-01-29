@@ -93,16 +93,6 @@ $$
  \int_{-\infty}^\infty f(s) \, g(t - s) \, \mathrm{d}s
 $$
 
-Therefore, any distribution with finite variance given some time and convolution will morph into a Gaussian.
-
-<p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/conv_1.png" alt="Convolution with itself">
-</p>
-
-<p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/conv_2.png" alt="Convolution with itself">
-</p>
-
 {% highlight mathematica %}
 {% raw %}
 f0[x_] := UnitBox[x];
@@ -120,3 +110,15 @@ Grid[
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/normal_dist/unit_box.png" alt="Convolution of unit box function with itself">
 </p>
+
+
+Αny distribution with finite variance given some time and convolution will morph into a Gaussian.
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/conv_1.png" alt="Convolution with itself">
+</p>
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/conv_2.png" alt="Convolution with itself">
+</p>
+
