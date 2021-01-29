@@ -8,7 +8,7 @@ description: A summary of explanations and insights on why the normal distributi
 ---
 
 ## Introduction
-Have you ever wondered why normal distributions are encountered so frequently in everyday life? Some examples include the height of people, newborns' birth weight, the sum of two dice, and many others. Also, in our statistical models, we often assume that some quantity is modeled by a normal distribution. Is there some fundamental reason Gaussians are all over the place? Yes, there is!
+Have you ever wondered why [normal distributions](https://en.wikipedia.org/wiki/Normal_distribution) are encountered so frequently in everyday life? Some examples include the height of people, newborns' birth weight, the sum of two dice, and many others. Also, in our statistical models, we often assume that some quantity is modeled by a normal distribution. Is there some fundamental reason Gaussians are all over the place? Yes, there is!
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/bell.png" alt="Bell curve artistic">
