@@ -58,11 +58,18 @@ As you see, the sums' distribution shifted from a uniform to something that look
 
 If we keep going by assuming the sum of more dice, say 3 dice, the sums' distribution will get even closer to a normal distribution. The reasoning is the same as previously. There will be many more combinations of dice summing up to some value in the middle, rather than summing in some extreme value. We already may answer why normal distributions are so ubiquitous: because many variables in the real world are the sum of other independent variables. And, when independent variables are added together, their sum converges to a normal distribution. Neat?
 
-In the following histograms, we see the evolution of the sums' distribution, starting with only one die and going up to 20 dice!
+In the following histograms, we observe the evolution of the sums' distribution, starting with only one die and going up to 20 dice!
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/hist_of_sum.png" alt="Sum of dice histogram">
 </p>
+
+### The case of random walk
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/random_walk.png" alt="Random walk">
+</p>
+
 
 ### So why are normal distributions so ubiquitous?
 Because many things in our world emerge as the sum of smaller independent parts. For example, consider a person's height. This is determined by the sum of many independent variables:
