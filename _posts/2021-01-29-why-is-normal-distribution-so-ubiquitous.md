@@ -80,7 +80,7 @@ What follows is the presentation of the same arguments written with mathematical
 
 ## Why convolution is the way to express the sum of two random variables, $$X, Y$$, mathematically
 
-Suppose that each variable of $$X, Y$$, and $$Z=X+Y$$ (their sum) has a probability mass function (pmf). By definition, the pmf for $$Z=X+Y$$ at some number $$z_i$$ gives the proportion of the sum $$X+Y$$ that is equal to $$z_i$$ and is denoted as $$Pr(z_i=X+Y)$$. By applying the Law of Total Probability, we can break up $$Pr(Z=X+Y)$$, into the sum over all possible values of $$x$$, such that $$X=x$$, and $$Y=z-x$$. 
+Suppose that each variable of $$X, Y$$, and $$Z=X+Y$$ (their sum) has a probability mass function (pmf). By definition, the pmf for $$Z=X+Y$$ at some number $$z_i$$ gives the proportion of the sum $$X+Y$$ that is equal to $$z_i$$ and is denoted as $$\text{Pr}(z_i=X+Y)$$. By applying the [Law of Total Probability](https://en.wikipedia.org/wiki/Law_of_total_probability), we can break up $$\text{Pr}(Z=X+Y)$$, into the sum over all possible values of $$x$$, such that $$X=x$$, and $$Y=z-x$$. 
 
 $$
 \text{Pr}(z=X+Y) = \sum_{x} \text{Pr}(X=x,Y=z−x)
