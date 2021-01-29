@@ -82,7 +82,8 @@ randomWalks[reps_, steps_] :=
 Show[
  ListPlot[walks, Joined -> True, PlotStyle -> Directive[Blue, Opacity[0.02]],
   AspectRatio -> 1/3, Frame -> {True, True, True, True}, FrameLabel -> {"Steps", "Position"}, 
-  FrameTicksStyle -> Directive[Bold], FrameTicks -> {{{-6, -3, 0, 3, 6}, None}, {{0, 4, 8, 16, 32}, None}},
+  FrameTicksStyle -> Directive[Bold], FrameTicks -> {{{-6, -3, 0, 3, 6}, None},
+   {{0, 4, 8, 16, 32}, None}},
   GridLines -> {{4, 8, 16, 32}, None}, GridLinesStyle -> Dashed, ImageSize -> Large],
  ListPlot[walks[[1]], Joined -> True, PlotStyle -> Red]]
  {% endraw %}
@@ -92,7 +93,7 @@ Show[
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/random_walk.png" alt="Random walk">
 </p>
 
-
+These are the distributions of the positions (distances) after 4, 8, and 16 steps. Notice how as the number of steps increase, the distribution converges on a Gaussian (red one).
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/hist_vs_steps.png" alt="Random walk">
