@@ -140,7 +140,7 @@ $$
  \int_{-\infty}^\infty f(s) \, g(t - s) \, \mathrm{d}s
 $$
 
-Let's look at an example where we will convolve the unitbox function with itself. The unitbox function is equal to 1 for $$\left| x\right| \le 1/2$$ and 0 otherwise.
+Let's look at an example where we will convolve the unitbox function with itself. The unitbox function is equal to 1 for $$\mid x\mid \le 1/2$$ and 0 otherwise.
 
 {% highlight mathematica %}
 {% raw %}
