@@ -79,15 +79,23 @@ randomWalks[reps_, steps_] :=
    {k, reps}]
   ]
 
-ListPlot[randomWalks[1000, 16], Joined -> True, PlotStyle -> Directive[Blue, Opacity[0.02]],
- AspectRatio -> 1/3, Frame -> {True, True, True, True}, FrameLabel -> {"Steps", "Position"}, 
- FrameTicksStyle -> Directive[Bold], FrameTicks -> {{{-6, -3, 0, 3, 6}, None}, {{0, 4, 8, 16, 32}, None}},
-  GridLines -> {{4, 8, 16, 32}, None}, GridLinesStyle -> Dashed, ImageSize -> Large]
-{% endraw %}
+Show[
+ ListPlot[walks, Joined -> True, PlotStyle -> Directive[Blue, Opacity[0.02]],
+  AspectRatio -> 1/3, Frame -> {True, True, True, True}, FrameLabel -> {"Steps", "Position"}, 
+  FrameTicksStyle -> Directive[Bold], FrameTicks -> {{{-6, -3, 0, 3, 6}, None}, {{0, 4, 8, 16, 32}, None}},
+  GridLines -> {{4, 8, 16, 32}, None}, GridLinesStyle -> Dashed, ImageSize -> Large],
+ ListPlot[walks[[1]], Joined -> True, PlotStyle -> Red]]
+ {% endraw %}
 {% endhighlight %}
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/random_walk.png" alt="Random walk">
+</p>
+
+
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/hist_vs_step.png" alt="Random walk">
 </p>
 
 
