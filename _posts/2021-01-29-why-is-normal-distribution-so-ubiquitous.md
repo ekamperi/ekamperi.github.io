@@ -18,6 +18,12 @@ Have you ever wondered why [normal distributions](https://en.wikipedia.org/wiki/
 
 ## As simple as it can get
 ### The case of rolling dice
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/dice.jpg" alt="Dice">
+</p>
+
+
 Let's look at a couple of examples, starting with the case of throwing a fair die. Every number on each marked side has an equal probability of showing up, i.e., $$p=1/6$$. For instance, let us assume the following sequence of 30 occurences:
 
 {% highlight mathematica %}
