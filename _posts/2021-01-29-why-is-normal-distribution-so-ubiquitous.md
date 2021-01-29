@@ -118,5 +118,5 @@ Grid[
 
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/unit_box.png" alt="Convolution of unit box function with itself">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/normal_dist/unit_box.png" alt="Convolution of unit box function with itself">
 </p>
