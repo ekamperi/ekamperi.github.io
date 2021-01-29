@@ -8,7 +8,7 @@ description: A summary of explanations and insights on why the normal distributi
 ---
 
 ## Introduction
-Have you ever wondered why [normal distributions](https://en.wikipedia.org/wiki/Normal_distribution) are encountered so frequently in everyday life? Some examples include the height of people, newborns' birth weight, the sum of two dice, and many others. Also, in our statistical models, we often assume that some quantity is modeled by a normal distribution. Is there some fundamental reason Gaussians are all over the place? Yes, there is!
+Have you ever wondered why [normal distributions](https://en.wikipedia.org/wiki/Normal_distribution) are encountered so frequently in everyday life? Some examples include the height of people, newborns' birth weight, the sum of two dice, and numerous others. Also, in our statistical models, we often assume that some quantity is modeled by a normal distribution. Is there some fundamental reason Gaussians are all over the place? Yes, there is!
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/bell.png" alt="Bell curve artistic">
@@ -24,18 +24,16 @@ Have you ever wondered why [normal distributions](https://en.wikipedia.org/wiki/
 </p>
 
 
-Let's look at a couple of examples, starting with the case of throwing a fair die. Every number on each marked side has an equal probability of showing up, i.e., $$p=1/6$$. For instance, let us assume the following sequence of 30 trials:
+Let's look at a couple of examples, starting with the case of throwing a fair die. Every number on each marked side has an equal probability of showing up, i.e., $$p=1/6$$. Let us assume the following sequence of 30 trials:
 
-{% highlight mathematica %}
 {% raw %}
 {3, 4, 6, 5, 1, 5, 6, 5, 1, 5, 3, 1, 2, 4, 1, 1, 2, 5, 3, 1, 3, 4, 3, 6, 2, 4, 6, 2, 4, 3}
 {% endraw %}
-{% endhighlight %}
 
 If we plot the frequency histogram of these numbers, we get something close to a [uniform distribution](https://en.wikipedia.org/wiki/Discrete_uniform_distribution) (that's ok, given we only threw the die 30 times). 
 
 <p align="center">
- <img style="width: 40%; height: 40%" src="{{ site.url }}/images/normal_dist/hist_sum_of_1.png" alt="Uniform distribution histogram">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/normal_dist/hist_sum_of_1.png" alt="Uniform distribution histogram">
 </p>
 
 Here comes the magic. Suppose that we throw two dice 15 times, and we get:
@@ -47,7 +45,7 @@ Here comes the magic. Suppose that we throw two dice 15 times, and we get:
 {% endraw %}
 {% endhighlight %}
 
-So the first time we get 3 and 4, the second time 6 and 5, and so on. Now let us take the sum of each throw:
+So the first time we get 3 and 4, the second time 6 and 5, and so on. Now let us take the sum of each pair:
 
 {% highlight mathematica %}
 {% raw %}
@@ -58,21 +56,21 @@ So the first time we get 3 and 4, the second time 6 and 5, and so on. Now let us
 And plot the frequency histogram of the sums.
 
 <p align="center">
- <img style="width: 40%; height: 40%" src="{{ site.url }}/images/normal_dist/hist_sum_of_2.png" alt="Sum of dice histogram">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/normal_dist/hist_sum_of_2.png" alt="Sum of dice histogram">
 </p>
 
-As you see, the sums' distribution shifted from a uniform to something that looks vaguely like a gaussian. Just think about it for a second. Why does the number $$7$$ appear so often as the sum of two dice? Well, because many combinations could end up having a sum of $$7$$. E.g., $$2 + 5$$, $$5 + 2$$, $$1 + 6$$, $$6 + 1$$, $$3 + 4$$, $$4 + 3$$. The same logic applies to $$6$$ as well. However, to get some very large sum, say $$12$$, there is only one combination, namely $$6 + 6$$. The same applies to small sums, like $$2$$, which is realized only by $$1 + 1$$.
+As you notice, the sums' distribution changed from a uniform to something that looks vaguely like a Gaussian. Just think about it for a second. Why does the number $$7$$ appear so often as the sum of two dice? Well, because many combinations could end up having a sum of $$7$$. E.g., $$2 + 5$$, $$5 + 2$$, $$1 + 6$$, $$6 + 1$$, $$3 + 4$$, $$4 + 3$$. The same logic applies to $$6$$ as well. However, to get some very large sum, say $$12$$, there is only one combination, namely $$6 + 6$$. The same applies to small sums, like $$2$$, which is realized only by $$1 + 1$$.
 
-If we keep going by assuming the sum of more dice, say 3 dice, the sums' distribution will get even closer to a normal distribution. The reasoning is the same as previously. There will be many more combinations of dice summing up to some value in the middle, rather than summing in some extreme value. We already may answer why normal distributions are so ubiquitous: because many variables in the real world are the sum of other independent variables. And, when independent variables are added together, their sum converges to a normal distribution. Neat?
+If we keep going by considering the sum of more dice, say 3, the sums' distribution will get even closer to a normal distribution. There will be even more combinations of dice summing up to some value in the center, rather than summing in some extreme value. We already can answer why normal distributions are so ubiquitous: because many variables in the real world are the sum of other independent variables. And, when independent variables are added together, their sum converges to a normal distribution. Neat?
 
-In the following histograms, we observe the sums' distribution evolution, starting with only one die and going up to 20 dice!
+In the following histograms, we observe the sums' distribution evolution, starting with only one and going up to 20 dice!
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/hist_of_sum.png" alt="Sum of dice histogram">
 </p>
 
 ### The case of [random walk](https://en.wikipedia.org/wiki/Random_walk)
-This example was reproduced by the excellent book "Statistical Rethinking: A Bayesian Course with Examples in R and Stan; Second Edition". Suppose we place 1000 folks on a field and then ask them to flip a coin, and depending on the outcome, to take a step from 0 to 1 meter in the indicated by the coin direction. Each person takes, say, a total of 16 such steps. At the end of this game, we can't really tell each person's position, but we can say something about the distribution of their distances. Arguably, **the distribution will be normal simply because there are vastly more sequences of left-right steps whose sum ends up being zero than sequences of steps that end up being non-zero.** For example, to end up with a distance of 16, one needs to take 16 consecutive left steps or 16 successive right steps. That's just very unlikely to happen (remember that the direction people move is determined by a flip coin, so they should have 16 heads or 16 tails in a row). The following code generates the plot below, but feel free to skip it.
+This example was reproduced by the excellent book **"Statistical Rethinking: A Bayesian Course with Examples in R and Stan; Second Edition".** Suppose we place 1000 folks on a field and then ask them to flip a coin. Depending on the outcome, they take a step from 0 to 1 meter in the indicated by the coin direction. Each person takes, say, a total of 16 such steps. At the end of this game, we can't really tell each person's position, but we can say something about the distribution of their distances. Arguably, **the distribution will be normal simply because there are vastly more sequences of left-right steps whose sum ends up being zero than sequences of steps that end up being non-zero.** For example, to end up with a distance of 16, one needs to take 16 consecutive left steps or 16 successive right steps. That's just very unlikely to happen (remember that the direction people move is determined by a flip coin, so they should have 16 heads or 16 tails in a row). The following code generates the plot below, but feel free to skip it.
 
 {% highlight mathematica %}
 {% raw %}
@@ -95,7 +93,7 @@ Show[
  {% endraw %}
 {% endhighlight %}
 
-The blue lines are the trajectories of the 1000 random walks. The red line is one representative such random walk. It should be evident by now, how it is much more probable for a person to end up at position 0, rather than to some extreme position like 6 or -6.
+The blue lines are the trajectories of the 1000 random walks. The red line is one representative of such a random walk. It should be evident by now how it is much more probable for a person to end up at position 0, rather than to some extreme position like 6 or -6.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/random_walk.png" alt="Random walk">
