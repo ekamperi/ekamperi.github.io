@@ -95,7 +95,7 @@ Show[
 
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/hist_vs_step.png" alt="Random walk">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/hist_vs_steps.png" alt="Random walk">
 </p>
 
 
