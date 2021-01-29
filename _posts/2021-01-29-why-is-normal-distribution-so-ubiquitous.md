@@ -140,17 +140,18 @@ $$
  \int_{-\infty}^\infty f(s) \, g(t - s) \, \mathrm{d}s
 $$
 
-Let's look at an example where we will convolve the unitbox function with itself. The unitbox function is equal to 1 for $$\mid x\mid \le 1/2$$ and 0 otherwise.
+Let's look at an example where we will convolve the unit box function with itself. The unit box function is equal to 1 for $$\mid x\mid \le 1/2$$ and 0 otherwise.
 
 {% highlight mathematica %}
 {% raw %}
 f0[x_] := UnitBox[x];
 fg[f_, g_] := Convolve[f, g, x, y] /. y -> x
-repcon[n_] := repcon[n] = Nest[fg[#, #] &, f0[x], n]
+(* Cache the results because symbolic convolution takes time *)
+repconv[n_] := repconv[n] = Nest[fg[#, #] &, f0[x], n]
 Grid[
  Partition[#, 2] &@
   (Plot[#, {x, -3, 3}, Exclusions -> None, Filling -> Axis] & /@ 
-    Table[repcon[k], {k, 0, 3}])
+    Table[repconv[k], {k, 0, 3}])
  ]
 {% endraw %}
 {% endhighlight %}
@@ -160,8 +161,7 @@ Grid[
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/normal_dist/unit_box.png" alt="Convolution of unit box function with itself">
 </p>
 
-
-Αny distribution with finite variance given some time and convolution will morph into a Gaussian.
+Ok so convolving a unit box function with itself, which is similar to throwing dice and assuming their sums, led us to a Gaussian distribution. Does this have to do with the unit box? No! Αny distribution with a finite variance will morph into a Gaussian, given some time and repeated convolutions. In the following examples, we start with some quite noisy initial distributions and convolve them repeatedly with themselves. As you see the result is again a normal distribution!
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/conv_1.png" alt="Convolution with itself">
