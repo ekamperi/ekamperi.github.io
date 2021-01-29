@@ -47,7 +47,7 @@ Here comes the magic. Suppose that we throw two dice 15 times, and we get:
 {% endraw %}
 {% endhighlight %}
 
-So the first time we got 3 and 4, the second time 6 and 5, and so on. Now let us take the sum of each throw:
+So the first time we get 3 and 4, the second time 6 and 5, and so on. Now let us take the sum of each throw:
 
 {% highlight mathematica %}
 {% raw %}
