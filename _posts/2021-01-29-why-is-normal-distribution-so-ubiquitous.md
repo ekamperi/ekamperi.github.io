@@ -70,7 +70,7 @@ In the following histograms, we observe the sums' distribution evolution, starti
 </p>
 
 ### The case of [random walk](https://en.wikipedia.org/wiki/Random_walk)
-This example was reproduced by the excellent book **"Statistical Rethinking: A Bayesian Course with Examples in R and Stan; Second Edition".** Suppose we place 1000 folks on a field and then ask them to flip a coin. Depending on the outcome, they take a step from 0 to 1 meter in the indicated by the coin direction. Each person takes, say, a total of 16 such steps. At the end of this game, we can't really tell each person's position, but we can say something about the distribution of their distances. Arguably, **the distribution will be normal simply because there are vastly more sequences of left-right steps whose sum ends up being zero than sequences of steps that end up being non-zero.** For example, to end up with a distance of 16, one needs to take 16 consecutive left steps or 16 successive right steps. That's just very unlikely to happen (remember that the direction people move is determined by a flip coin, so they should have 16 heads or 16 tails in a row). The following code generates the plot below, but feel free to skip it.
+This example is reproduced by the excellent book *"Statistical Rethinking: A Bayesian Course with Examples in R and Stan; Second Edition".* Suppose we place 1000 folks on a field and then ask them to flip a coin. Depending on the outcome, they take a step from 0 to 1 meter in the indicated by the coin direction. Each person takes, say, a total of 16 such steps. At the end of this game, we can't really tell each person's position, but we can say something about the distribution of their distances. Arguably, **the distribution will be normal simply because there are vastly more sequences of left-right steps whose sum ends up being zero than sequences of steps that end up being non-zero.** For example, to end up with a distance of 16, one needs to take 16 consecutive left steps or 16 successive right steps. That's just very unlikely to happen (remember that the direction people move is determined by a flip coin, so they should have 16 heads or 16 tails in a row). The following code generates the plot below, but feel free to skip it.
 
 {% highlight mathematica %}
 {% raw %}
@@ -93,7 +93,7 @@ Show[
  {% endraw %}
 {% endhighlight %}
 
-The blue lines are the trajectories of the 1000 random walks. The red line is one representative of such a random walk. It should be evident by now how it is much more probable for a person to end up at position 0, rather than to some extreme position like 6 or -6.
+The blue lines are the trajectories of the 1000 random walks. The red line is one representative of such a random walk. It should be evident by now how it is much more probable for a person to end up near position 0, rather than to some extreme position like 6 or -6.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/random_walk.png" alt="Random walk">
@@ -127,18 +127,20 @@ What follows is the presentation of the same arguments written with mathematical
 
 ## Why is convolution the natural way to express the sum of two random variables, $$X, Y$$
 
-Suppose that each variable of $$X, Y$$, and $$Z=X+Y$$ (their sum) has a probability mass function (pmf). By definition, the pmf for $$Z=X+Y$$ at some number $$z_i$$ gives the proportion of the sum $$X+Y$$ that is equal to $$z_i$$ and is denoted as $$\text{Pr}(z_i=X+Y)$$. By applying the [Law of Total Probability](https://en.wikipedia.org/wiki/Law_of_total_probability), we can break up $$\text{Pr}(Z=X+Y)$$, into the sum over all possible values of $$x$$, such that $$X=x$$, and $$Y=z-x$$. 
+Suppose that each variable of $$X, Y$$, and $$Z=X+Y$$ has a probability mass function (PMF). By definition, a PMF is a function that gives the probability that a *discrete* random variable is exactly equal to some value. For a fair die, the PMF is simply $$p(x)=\text{Pr}(X=x_i)=1/6$$, with $$x_i=1,2,\ldots,6$$. Back to our sum $$Z=X+Y$$. By definition, again, the PMF for $$Z=X+Y$$ at some number $$z_i$$ gives the proportion of the sum $$X+Y$$ that is equal to $$z_i$$ and is denoted as $$\text{Pr}(Z=z_i), z_i=X+Y$$. By applying the [Law of Total Probability](https://en.wikipedia.org/wiki/Law_of_total_probability), we can break up $$\text{Pr}(Z=X+Y)$$, into the sum over all possible values of $$x$$, such that $$X=x$$, and $$Y=z-x$$.
 
 $$
 \text{Pr}(z=X+Y) = \sum_{x} \text{Pr}(X=x,Y=z−x)
 $$
 
-That's the convolution in the discrete case. For continuous variables, it's just:
+But, that's the definition of the convolution operation in the discrete case. For continuous variables, it's just:
 
 $$
 (f * g)(t) \stackrel{\text{def}}{=}
  \int_{-\infty}^\infty f(s) \, g(t - s) \, \mathrm{d}s
 $$
+
+Let's look at an example where we will convolve the unitbox function with itself. The unitbox function is equal to 1 for $$\left| x\right| \le 1/2$$ and 0 otherwise.
 
 {% highlight mathematica %}
 {% raw %}
