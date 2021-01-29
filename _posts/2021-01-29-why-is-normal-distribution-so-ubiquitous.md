@@ -164,7 +164,7 @@ Grid[
 The following animation might clear up the operation of convolution between two functions.
 
 <p align="center">
-<video id="movie" width="70%" height="70%" preload controls>
+<video id="movie" width="100%" height="100%" preload controls>
    <source id="srcMp4" src="{{ site.url }}/images/normal_dist/unitbox_conv.mp4" />
 </video>
 </p>
