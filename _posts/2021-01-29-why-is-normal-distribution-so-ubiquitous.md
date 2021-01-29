@@ -137,7 +137,7 @@ But, that's the definition of the convolution operation in the discrete case. Fo
 
 $$
 (f * g)(t) \stackrel{\text{def}}{=}
- \int_{-\infty}^\infty f(s) \, g(t - s) \, \mathrm{d}s
+ \int_{-\infty}^\infty f(x) \, g(t - x) \, \mathrm{d}x
 $$
 
 Let's look at an example where we will convolve the unit box function with itself. The unit box function is equal to 1 for $$\mid x\mid \le 1/2$$ and 0 otherwise.
