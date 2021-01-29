@@ -64,15 +64,15 @@ In the following histograms, we see the evolution of the sums' distribution, sta
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/hist_of_sum.png" alt="Sum of dice histogram">
 </p>
 
-### So why normal distributions are so ubiquitous?
+### So why are normal distributions so ubiquitous?
 For example, consider a person's height. This is determined by the sum of many independent variables:
-* The genes (I haven't researched it by I presume several genes contribute to height, not just one)
-* Hormones (E.g., growth hormone)
-* The environment
-  * The nutrition in terms of what one eats every day during the developmental phase
-  * Sports / activity levels
-  * Pollution
-* Other factors
+* The **genes** (I haven't researched it by I presume several genes contribute to height, not just one)
+* Hormones (E.g., [growth hormone](https://en.wikipedia.org/wiki/Growth_hormone))
+* The **environment**
+  * The **nutrition** in terms of what one eats every day during the developmental phase
+  * **Sports / activity levels**
+  * **Pollution**
+* **Other** factors
 
 A person's height is akin to the sum of rolling many dice. Each die is similar to each of the above factors. I.e., the genes are the 1st die, the hormones the 2nd, etc.
 
