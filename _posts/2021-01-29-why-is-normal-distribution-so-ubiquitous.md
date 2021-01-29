@@ -121,6 +121,10 @@ These are the distributions of the positions (distances) after 4, 8, and 16 step
 
 A person's height is akin to the sum of rolling many dice. Each die is similar to each of the above factors. I.e., the genes are the 1st die, the hormones the 2nd, etc. So, to end up being very tall, you need them all in favor of you: the genes, the hormones, the environment, the activity, etc. It's as if achieving 16 heads in a row in the random walk setting. That's why there are few very tall people. The same logic applies to very short people. In this case, you need to have everything against you: bad genes, poor nutrition, no activity, etc.
 
+<p align="center">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/normal_dist/four_dice.png" alt="Four dice">
+</p>
+
 What follows is the presentation of the same arguments written with mathematical symbols. Do not worry if you find them confusing. You won't have missed any insights!
 
 ## Why is convolution the natural way to express the sum of two random variables, $$X, Y$$
