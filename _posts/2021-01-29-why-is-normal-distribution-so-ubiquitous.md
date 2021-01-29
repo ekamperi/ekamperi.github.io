@@ -35,7 +35,7 @@ Let's look at a couple of examples, starting with the case of throwing a fair di
 If we plot the frequency histogram of these numbers, we get something close to a [uniform distribution](https://en.wikipedia.org/wiki/Discrete_uniform_distribution) (that's ok, given we only threw the die 30 times). 
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/hist_sum_of_1.png" alt="Uniform distribution histogram">
+ <img style="width: 40%; height: 40%" src="{{ site.url }}/images/normal_dist/hist_sum_of_1.png" alt="Uniform distribution histogram">
 </p>
 
 Here comes the magic. Suppose that we throw two dice 15 times, and we get:
@@ -58,7 +58,7 @@ So the first time we got 3 and 4, the second time 6 and 5, and so on. Now let us
 And plot the frequency histogram of the sums.
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/hist_sum_of_2.png" alt="Sum of dice histogram">
+ <img style="width: 40%; height: 40%" src="{{ site.url }}/images/normal_dist/hist_sum_of_2.png" alt="Sum of dice histogram">
 </p>
 
 As you see, the sums' distribution shifted from a uniform to something that looks vaguely like a gaussian. Just think about it for a second. Why does the number $$7$$ appear so often as the sum of two dice? Well, because many combinations could end up having a sum of $$7$$. E.g., $$2 + 5$$, $$5 + 2$$, $$1 + 6$$, $$6 + 1$$, $$3 + 4$$, $$4 + 3$$. The same logic applies to $$6$$ as well. However, to get some very large sum, say $$12$$, there is only one combination, namely $$6 + 6$$. The same applies to small sums, like $$2$$, which is realized only by $$1 + 1$$.
