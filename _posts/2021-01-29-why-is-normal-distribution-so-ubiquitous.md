@@ -36,7 +36,8 @@ Here comes the magic. Suppose that we throw two dice 15 times, and we get:
 
 {% highlight mathematica %}
 {% raw %}
-{{3, 4}, {6, 5}, {1, 5}, {6, 5}, {1, 5}, {3, 1}, {2, 4}, {1, 1}, {2, 5}, {3, 1}, {3, 4}, {3, 6}, {2, 4}, {6, 2}, {4, 3}}
+{{3, 4}, {6, 5}, {1, 5}, {6, 5}, {1, 5}, {3, 1}, {2, 4}, {1, 1},
+ {2, 5}, {3, 1}, {3, 4}, {3, 6}, {2, 4}, {6, 2}, {4, 3}}
 {% endraw %}
 {% endhighlight %}
 
@@ -65,6 +66,24 @@ In the following histograms, we observe the evolution of the sums' distribution,
 </p>
 
 ### The case of random walk
+
+{% highlight mathematica %}
+{% raw %}
+randomWalks[reps_, steps_] :=
+ Module[{},
+  Table[
+   Accumulate[
+    Flatten@Append[{0}, 
+      RandomVariate[UniformDistribution[{-1, 1}], steps]]],
+   {k, reps}]
+  ]
+
+ListPlot[randomWalks[1000, 16], Joined -> True, PlotStyle -> Directive[Blue, Opacity[0.02]],
+ AspectRatio -> 1/3, Frame -> {True, True, True, True}, FrameLabel -> {"Steps", "Position"}, 
+ FrameTicksStyle -> Directive[Bold], FrameTicks -> {{{-6, -3, 0, 3, 6}, None}, {{0, 4, 8, 16, 32}, None}},
+  GridLines -> {{4, 8, 16, 32}, None}, GridLinesStyle -> Dashed, ImageSize -> Large]
+{% endraw %}
+{% endhighlight %}
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/random_walk.png" alt="Random walk">
