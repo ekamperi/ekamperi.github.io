@@ -7,6 +7,12 @@ tags: ['machine learning', 'Mathematica', 'mathematics', 'statistics']
 description: A summary of explanations and insights on why the normal distribution shows up so often in real-world phenomena
 ---
 
+### Contents
+{:.no_toc}
+
+* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
+{:toc}
+
 ## Introduction
 Have you ever wondered why [normal distributions](https://en.wikipedia.org/wiki/Normal_distribution) are encountered so frequently in everyday life? Some examples include the height of people, newborns' birth weight, the sum of two dice, and numerous others. Also, in statistical modeling, we often assume that some quantity is represented by a normal distribution. Particularly when we don't know the actual distribution. It is as if Gaussian is the "default" or the one with the least assumptions. Is there some fundamental reason Gaussians are all over the place? Yes, there is!
 
