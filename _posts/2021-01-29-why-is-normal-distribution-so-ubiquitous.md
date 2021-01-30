@@ -75,13 +75,13 @@ So here are the 146 combinations of dice values that sum to 11.
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/raster_combinations.png" alt="Sum of dice plot">
 </p>
 
-We may now answer why normal distributions are so ubiquitous: **because many variables in the real world are the sum of other independent variables.** And, when independent variables are added together, their sum converges to a normal distribution. Neat?
-
 In the following histograms, we observe the sums' distribution evolution, starting with only one and going up to 20 dice!
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/hist_of_sum.png" alt="Sum of dice histogram">
 </p>
+
+We may now answer why normal distributions are so ubiquitous: **because many variables in the real world are the sum of other independent variables.** And, when independent variables are added together, their sum converges to a normal distribution. Neat?
 
 ### The case of [random walks](https://en.wikipedia.org/wiki/Random_walk)
 This example is reproduced (and modified) by the excellent book *"Statistical Rethinking: A Bayesian Course with Examples in R and Stan; Second Edition".* Suppose we place 1000 folks on a field, one at a time. We then ask them to flip a coin and depending on the outcome, they take a step in the left or right direction. The distance of each step is a random number from 0 to 1 meter. Each person takes, say, a total of 16 such steps. The blue lines are the trajectories of the 1000 random walks. The red line is one representative of such a random walk. 
