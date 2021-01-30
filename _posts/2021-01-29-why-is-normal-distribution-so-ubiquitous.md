@@ -124,7 +124,7 @@ These are the distributions of the positions (distances) after 4, 8, and 16 step
 
 What follows is the presentation of the same arguments with some math. Do not worry if you find them confusing. You won't have missed any insights!
 
-## Why is convolution the natural way to express the sum of two random variables, $$X, Y$$
+## Why is convolution the natural way to express the sum of two random variables?
 
 Summing random variables is at the heart of our discussion, so it deserves a few thoughts. Suppose that we have two random variables, $$X, Y$$, and we take their sum, $$Z=X+Y$$. Depending on what mathematical tools we use to describe the random variables, their sum is expressed differently. For a full list, feel free to [check this link](https://stats.stackexchange.com/questions/331973/why-is-the-sum-of-two-random-variables-a-convolution). We will discuss the case where $$X, Y, Z=X+Y$$ all have a probability mass function (PMF).
 
