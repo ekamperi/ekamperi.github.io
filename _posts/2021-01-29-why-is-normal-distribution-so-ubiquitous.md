@@ -146,6 +146,7 @@ $$
  \int_{-\infty}^\infty f(x) \, g(t - x) \, \mathrm{d}x
 $$
 
+### Convolving a unit box
 Let's look at an example where we will convolve the unit box function with itself. The unit box function is equal to 1 for $$\mid x\mid \le 1/2$$ and 0 otherwise.
 
 {% highlight mathematica %}
@@ -175,6 +176,7 @@ The following animation might clear up the operation of convolution between two 
 </video>
 </p>
 
+### Convolving noisy data
 Ok, so convolving a unit box function with itself, which is related to throwing dice and calculating their sums, led us to a Gaussian distribution. Does this have to do with the unit box? No! **Αny distribution with a finite variance will morph into a Gaussian, given some time and repeated convolutions.** In the following examples, we start with some quite noisy initial distributions and convolve them repeatedly with themselves. As you see, the result is again a normal distribution!
 
 <p align="center">
