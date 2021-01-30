@@ -19,9 +19,7 @@ Have you ever wondered why [normal distributions](https://en.wikipedia.org/wiki/
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/bell.png" alt="Bell curve artistic">
 </p>
-<p align="center">
 [Image taken from here](https://www.impactlab.com/2011/10/16/top-10-photos-of-the-week-200/)
-</p>
 
 ## As simple as it can get
 ### The case of rolling dice
