@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Why is normal distribution so ubiquitous"
-date:   2020-01-29
+title:  "Why is normal distribution so ubiquitous?"
+date:   2021-01-29
 categories: [mathematics]
 tags: ['machine learning', 'Mathematica', 'mathematics', 'statistics']
 description: A summary of explanations and insights on why the normal distribution shows up so often in real-world phenomena
