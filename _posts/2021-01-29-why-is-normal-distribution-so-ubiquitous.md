@@ -44,12 +44,10 @@ If we get to plot the frequency histogram of these numbers, we notice something 
 
 **Here comes the magic**. Suppose that we throw two dice 15 times, and we get the follwing pairs:
 
-{% highlight mathematica %}
 {% raw %}
 {3, 4}, {6, 5}, {1, 5}, {6, 5}, {1, 5}, {3, 1}, {2, 4}, {1, 1},
  {2, 5}, {3, 1}, {3, 4}, {3, 6}, {2, 4}, {6, 2}, {4, 3}
 {% endraw %}
-{% endhighlight %}
 
 So the first time, we get 3 and 4, the second time 6 and 5, and so on. Now let us **take the sum of each pair**:
 
@@ -63,9 +61,19 @@ And let's plot the frequency histogram **of the sums**.
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/normal_dist/hist_sum_of_2.png" alt="Sum of dice histogram">
 </p>
 
-**As you notice, the sums' distribution switched from a uniform to something that looks vaguely like a Gaussian.** Just think about it for a second. Why does the number $$7$$ appear so often as the sum of two dice? Well, because many combinations could end up having a sum of $$7$$. E.g., $$2 + 5$$, $$5 + 2$$, $$1 + 6$$, $$6 + 1$$, $$3 + 4$$, $$4 + 3$$. The same logic applies to $$6$$ as well. However, to get some very large sum, say $$12$$, there is only one combination, namely $$6 + 6$$. The same applies to small sums, like $$2$$, which is realized only by $$1 + 1$$.
+**As you notice, the sums' distribution switched from a uniform to something that looks vaguely like a Gaussian.** Just think about it for a second. Why does the number 7 appear so often as the sum of two dice? Well, because many combinations could end up having a sum of 7. E.g., 2 + 5, 5 + 2, 1 + 6, 6 + 1, 3 + 4, 4 + 3. The same logic applies to 6 as well. However, to get some very large sum, say 12, there is only one combination, namely 6 + 6. The same applies to small sums, like 2, which is realized only by 1 + 1.
 
-If we keep going by throwing more dice, say 3, the sums' distribution will get even closer to a normal distribution. **There will be even more combinations of dice summing up to a "center" value, rather than in some extreme value.** We may now answer why normal distributions are so ubiquitous: because many variables in the real world are the sum of other independent variables.** And, when independent variables are added together, their sum converges to a normal distribution. Neat?
+If we keep going by throwing more dice, say 4, the sums' distribution will get even closer to a normal distribution. **There will be even more combinations of dice summing up to a "center" value, rather than in some extreme value.** 
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/combinations.png" alt="Sum of dice plot">
+</p>
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/raster_combinations.png" alt="Sum of dice plot">
+</p>
+
+We may now answer why normal distributions are so ubiquitous: because many variables in the real world are the sum of other independent variables.** And, when independent variables are added together, their sum converges to a normal distribution. Neat?
 
 In the following histograms, we observe the sums' distribution evolution, starting with only one and going up to 20 dice!
 
