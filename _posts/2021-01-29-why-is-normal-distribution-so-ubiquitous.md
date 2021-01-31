@@ -217,13 +217,11 @@ $$
 h(X) = -\int_{-\infty}^{\infty} p_X(x) \log p_X(x) \mathrm{d}x
 $$
 
-Alright, but what normal distribution has anything to do with these? **It turns out that normal distribution is the distribution that maximizes information entropy under the constraint of fixed mean $$\m$$ and standard deviation $$s^2$$ of a random variable $$X$$.**
+Alright, but what normal distribution has anything to do with these? **It turns out that normal distribution is the distribution that maximizes information entropy under the constraint of fixed mean $$m$$ and standard deviation $$s^2$$ of a random variable $$X$$.**
 
 Here is a list of probability distributions and their corresponding maximum entropy constraints, taken from Wikipedia:
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/max_ent_examples.png" alt="Convolution with itself">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/max_entropy_examples.png" alt="Distributions with maximum entropy">
 </p>
-
-
 
