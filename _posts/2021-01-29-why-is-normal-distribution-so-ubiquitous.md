@@ -208,7 +208,7 @@ $$
 We define as *entropy* as the expected value of $$I(x_i)$$ over all $$2K+1$$ discrete values $$X$$ takes:
 
 $$
-H(X) = \mathop{\mathbb{E}} \left(I(x_i)\right) = \sum_{i=-K}^K p_i I(x_i) = \sum_{i=-K}^{K} p_i \log\frac{1}{p_i} = -\sum{i=-K}^{K} p_i \log p_i
+H(X) = \mathop{\mathbb{E}} \left(I(x_i)\right) = \sum_{i=-K}^{K} p_i I(x_i) = \sum_{i=-K}^{K} p_i \log\frac{1}{p_i} = -\sum{i=-K}^{K} p_i \log p_i
 $$
 
 Similarly, we define *differential entropy* for continuous variables:
@@ -217,6 +217,6 @@ $$
 h(X) = -\int_{-\infty}^{\infty} p_X(x) \log p_X(x) \mathrm{d}x
 $$
 
-Alright, but what normal distribution has anything to do with these? It turns out that normal distribution is the distribution that maximizes information entropy under the constraint of fixed mean $$\m$$ and standard deviation $$s^2$$ of a random variable $$XX$$.
+Alright, but what normal distribution has anything to do with these? It turns out that normal distribution is the distribution that maximizes information entropy under the constraint of fixed mean $$\m$$ and standard deviation $$s^2$$ of a random variable $$X$$.
 
 
