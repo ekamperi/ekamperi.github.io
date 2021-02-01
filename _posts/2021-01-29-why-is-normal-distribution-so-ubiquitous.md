@@ -14,7 +14,7 @@ description: A summary of explanations and insights on why the normal distributi
 {:toc}
 
 ## Introduction
-Have you ever wondered why [normal distributions](https://en.wikipedia.org/wiki/Normal_distribution) are encountered so frequently in everyday life? Some examples include the height of people, newborns' birth weight, the sum of two dice, and numerous others. Also, in statistical modeling, we often assume that some quantity is represented by a normal distribution. Particularly when we don't know the actual distribution, but we do know the sample mean and standard deviation. It is as if Gaussian is the "default" or the one with the least assumptions. Is there some fundamental reason Gaussians are all over the place? Yes, there is!
+Have you ever wondered why [normal distributions](https://en.wikipedia.org/wiki/Normal_distribution) are encountered so frequently in everyday life? Some examples include the height of people, newborns' birth weight, the sum of two dice, and numerous others. Also, in statistical modeling, we often assume that some quantity is represented by a normal distribution. Particularly when we don't know the actual distribution, but we do know the sample mean and standard deviation. It is as if Gaussian is the "default" or the one with the least assumptions (most generic). Is there some fundamental reason Gaussians are all over the place? Yes, there is!
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/bell.png" alt="Bell curve artistic">
@@ -196,16 +196,16 @@ Ok, so convolving a unit box function with itself, which is related to throwing 
 </p>
 
 ## Information theoretic arguments
-In 1948 Claude Shannon laid out the foundations of information theory. The need this new theory was supposed to meet was the effective and reliable transmission of messages. Although the motive was applied, information theory is deeply mathematical in its nature. A central concept in it is *entropy*, which is used somewhat differently than in thermodynamics. Consider a random variable $$X$$, which assumes the discrete values $$X = {x_i \mid i=-K, \ldots, 0, \ldots, +K}$$. Of course, $$0 \le p_i \le 1$$ and $$\sum_{i=-K}^{K} p_i = 1$$ must also be met.
+In 1948 Claude Shannon laid out the foundations of information theory. The need this new theory was supposed to meet was the effective and reliable transmission of messages. Although the motive was applied, information theory is deeply mathematical in its nature. A central concept in it is *entropy*, which is used somewhat differently than in thermodynamics. Consider a random variable $$X$$, which assumes the discrete values $$X = {x_i \mid i=1, 2, \ldots, K}$$. Of course, $$0 \le p_i \le 1$$ and $$\sum_{i=1}^{K} p_i = 1$$ must also be met.
 
 Suppose now the extreme case that the value $$X=x_i$$ has a probability of occurring $$p_i=1$$, and $$p_{j\ne i}=0$$. In this scenario, there's no 
-"surprise" by knowing the value of $$X$$, and there's no message being transmitted. It is as if I told you that it's chilly today in Alaska or that sun raised at east. In this context, we define the information content that we gain by observing $$X$$ as the following function:
+"surprise" by observing the value of $$X$$, and there's no message being transmitted. It is as if I told you that it's chilly today in Alaska or that sun raised at east. In this context, we define the information content that we gain by observing $$X$$ as the following function:
 
 $$
 I(x_i) = \log\left(\frac{1}{p_i}\right) = -\log p_i
 $$
 
-We define as *entropy* as the expected value of $$I(x_i)$$ over all $$2K+1$$ discrete values $$X$$ takes:
+We define as *entropy* the expected value of $$I(x_i)$$ over all $$K$$ discrete values $$X$$ takes:
 
 $$
 H(X) = \mathop{\mathbb{E}} \left(I(x_i)\right) = \sum_{i=-K}^{K} p_i I(x_i) = \sum_{i=-K}^{K} p_i \log\frac{1}{p_i} = -\sum_{i=-K}^{K} p_i \log p_i
