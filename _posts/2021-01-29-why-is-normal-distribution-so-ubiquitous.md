@@ -208,7 +208,7 @@ $$
 We define as *entropy* the expected value of $$I(x_i)$$ over all $$K$$ discrete values $$X$$ takes:
 
 $$
-H(X) = \mathop{\mathbb{E}} \left(I(x_i)\right) = \sum_{i=-K}^{K} p_i I(x_i) = \sum_{i=-K}^{K} p_i \log\frac{1}{p_i} = -\sum_{i=-K}^{K} p_i \log p_i
+H(X) = \mathop{\mathbb{E}} \left(I(x_i)\right) = \sum_{i=1}^{K} p_i I(x_i) = \sum_{i=1}^{K} p_i \log\frac{1}{p_i} = -\sum_{i=1}^{K} p_i \log p_i
 $$
 
 Similarly, we define *differential entropy* for continuous variables:
