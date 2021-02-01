@@ -59,7 +59,7 @@ And let's plot the frequency histogram **of the sums**.
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/normal_dist/hist_sum_of_2.png" alt="Sum of dice histogram">
 </p>
 
-**As you notice, the sums' distribution switched from a uniform to something that looks vaguely like a Gaussian.** Just think about it for a second. Why does the number 7 appear so often as the sum of two dice? Well, because many combinations could end up having a sum of 7. E.g., 2 + 5, 5 + 2, 1 + 6, 6 + 1, 3 + 4, 4 + 3. The same logic applies to 6 as well. However, to get some very large sum, say 12, there is only one combination, namely 6 + 6. The same applies to small sums, like 2, which is realized only by 1 + 1.
+**As you notice, the sums' distribution switched from a uniform to something that looks vaguely like a Gaussian.** Just think about it for a second. Why does the number 7 appear so often as the sum of two dice? Well, because many combinations could end up having a sum of 7. E.g., 1 + 6, 6 + 1, 2 + 5, 5 + 2, 3 + 4, 4 + 3. The same logic applies to 6 as well. However, to get some very large sum, say 12, there is only one combination, namely 6 + 6. The same applies to small sums, like 2, which is realized only by 1 + 1.
 
 If we keep going by throwing more dice, say 4, the sums' distribution will get even closer to a normal distribution. **There will be even more combinations of dice summing up to a "center" value, rather than in some extreme value.** In the following figure we plot the number of distinct combinations that yield all possible sums in a "roll 4 dice" scenario. There is a clear correspondence between the number of generating combinations and the frequency a sum appears.
 
@@ -196,7 +196,7 @@ Ok, so convolving a unit box function with itself, which is related to throwing 
 </p>
 
 ## Information theoretic arguments
-In 1948 Claude Shannon laid out the foundations of information theory. The need this new theory was supposed to meet was the effective and reliable transmission of messages. Although the motive was applied, information theory is deeply mathematical in its nature. A central concept in it is *entropy*, which is used somewhat differently than in thermodynamics. Consider a random variable $$X$$, which assumes the discrete values $$X = {x_i \mid i=1, 2, \ldots, K}$$. Of course, $$0 \le p_i \le 1$$ and $$\sum_{i=1}^{K} p_i = 1$$ must also be met.
+In 1948 [Claude Shannon](https://en.wikipedia.org/wiki/Claude_Shannon) laid out the foundations of information theory. The need this new theory was supposed to meet was the effective and reliable transmission of messages. Although the motive was applied, information theory is deeply mathematical in its nature. A central concept in it is *entropy*, which is used somewhat differently than in thermodynamics. Consider a random variable $$X$$, which assumes the discrete values $$X = {x_i \mid i=1, 2, \ldots, K}$$. Of course, $$0 \le p_i \le 1$$ and $$\sum_{i=1}^{K} p_i = 1$$ must also be met.
 
 Suppose now the extreme case that the value $$X=x_i$$ has a probability of occurring $$p_i=1$$, and $$p_{j\ne i}=0$$. In this scenario, there's no 
 "surprise" by observing the value of $$X$$, and there's no message being transmitted. It is as if I told you that it's chilly today in Alaska or that sun raised at east. In this context, we define the information content that we gain by observing $$X$$ as the following function:
@@ -217,9 +217,11 @@ $$
 h(X) = -\int_{-\infty}^{\infty} p_X(x) \log p_X(x) \mathrm{d}x
 $$
 
-Alright, but what normal distribution has anything to do with these? **It turns out that normal distribution is the distribution that maximizes information entropy under the constraint of fixed mean $$m$$ and standard deviation $$s^2$$ of a random variable $$X$$.** So, if we know the mean and standard deviation of some data, the optimal distribution to use is the one that maximizes entropy, or, equivalently, that satisfies the least of our assumptions. This principle may be viewed as expressing epistemic modesty or maximal ignorance because it makes the least strong claim on a distribution. Thomas Jaynes argues that the maxent distribution is “uniquely determined as the one which is maximally noncommittal with regard to missing information, in that it agrees with what is known, but expresses maximum uncertainty with respect to all other matters”. Therefore, this is the most principled choice. Here is a list of probability distributions and their corresponding maximum entropy constraints, taken from Wikipedia.
+Alright, but what normal distribution has anything to do with these? **It turns out that normal distribution is the distribution that maximizes information entropy under the constraint of fixed mean $$m$$ and standard deviation $$s^2$$ of a random variable $$X$$.** So, if we know the mean and standard deviation of some data, the optimal distribution to use is the one that maximizes entropy, or, equivalently, that satisfies the least of our assumptions. This principle may be viewed as expressing epistemic modesty or maximal ignorance because it makes the least strong claim on a distribution. [Edwin Thompson Jaynes](https://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes) argues that the max entropy distribution is *"uniquely determined as the one which is maximally noncommittal with regard to missing information, in that it agrees with what is known, but expresses maximum uncertainty with respect to all other matters".* Therefore, this is the most principled choice. Here is a list of probability distributions and their corresponding maximum entropy constraints, taken from Wikipedia.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/max_entropy_examples.png" alt="Distributions with maximum entropy">
 </p>
 
+## References
+1. Statistical Rethinking: A Bayesian Course with Examples in R and Stan; Second Edition
