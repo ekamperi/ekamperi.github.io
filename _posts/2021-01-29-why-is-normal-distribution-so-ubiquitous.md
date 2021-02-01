@@ -228,7 +228,7 @@ $$
 Here is the plot of entropy $$H(X)$$ *vs.* probability $$p$$. Notice how entropy is maximized when we assume that the coin is fair, i.e., $$p=0.5$$. So, in absence of any other more strong assumptions, such as that the coin is biased, the most honest position to take is that all outcomes are equally probable. Consider this like "presumption of innocence" ;)
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/h_vs_p_coin.png" alt="Entropy of coin flip">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/normal_dist/h_vs_p_coin.png" alt="Entropy of coin flip">
 </p>
 
 [Edwin Thompson Jaynes](https://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes) argues that the max entropy distribution is *"uniquely determined as the one which is maximally noncommittal with regard to missing information, in that it agrees with what is known, but expresses maximum uncertainty with respect to all other matters".* Therefore, this is the most principled choice. Here is a list of probability distributions and their corresponding maximum entropy constraints, taken from Wikipedia.
