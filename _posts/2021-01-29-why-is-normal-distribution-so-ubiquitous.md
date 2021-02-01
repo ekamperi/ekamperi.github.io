@@ -1,3 +1,4 @@
+
 ---
 layout: post
 title:  "Why is normal distribution so ubiquitous?"
@@ -28,7 +29,7 @@ Have you ever wondered why [normal distributions](https://en.wikipedia.org/wiki/
  <img style="width: 20%; height: 20%" src="{{ site.url }}/images/normal_dist/dice.jpg" alt="Dice">
 </p>
 
-Let's look at a couple of examples, starting with the case of throwing a fair die. Every number on each marked side has an equal probability of showing up, i.e., $$p=1/6$$. Let us examine the following sequence of 30 trials:
+Let's look at a couple of examples, starting with the case of throwing a fair die. Every number on each marked side has an equal probability of showing up, i.e., p=1/6. Let us examine the following sequence of 30 trials:
 
 {% raw %}
 3, 4, 6, 5, 1, 5, 6, 5, 1, 5, 3, 1, 2, 4, 1, 1, 2, 5, 3, 1, 3, 4, 3, 6, 2, 4, 6, 2, 4, 3
@@ -61,7 +62,7 @@ And let's plot the frequency histogram **of the sums**.
 
 **As you notice, the sums' distribution switched from a uniform to something that looks vaguely like a Gaussian.** Just think about it for a second. Why does the number 7 appear so often as the sum of two dice? Well, because many combinations could end up having a sum of 7. E.g., 1 + 6, 6 + 1, 2 + 5, 5 + 2, 3 + 4, 4 + 3. The same logic applies to 6 as well. However, to get some very large sum, say 12, there is only one combination, namely 6 + 6. The same applies to small sums, like 2, which is realized only by 1 + 1.
 
-If we keep going by throwing more dice, say 4, the sums' distribution will get even closer to a normal distribution. **There will be even more combinations of dice summing up to a "center" value, rather than in some extreme value.** In the following figure we plot the number of distinct combinations that yield all possible sums in a "roll 4 dice" scenario. There is a clear correspondence between the number of generating combinations and the frequency a sum appears.
+If we keep going by throwing more dice, say 4, the sums' distribution will get even closer to a normal distribution. **There will be even more combinations of dice summing up to a "center" value, rather than in some extreme value.** In the following figure, we plot the number of distinct combinations that yield all possible sums in a "roll 4 dice" scenario. There is an exact correspondence between the number of generating combinations and the frequency a sum appears.
 
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/normal_dist/combinations.png" alt="Sum of dice plot">
@@ -82,7 +83,7 @@ In the following histograms, we observe the sums' distribution evolution, starti
 We may now answer why normal distributions are so ubiquitous: **because many variables in the real world are the sum of other independent variables.** And, when independent variables are added together, their sum converges to a normal distribution. Neat?
 
 ### The case of [random walks](https://en.wikipedia.org/wiki/Random_walk)
-This example is reproduced (and modified) by the excellent book *"Statistical Rethinking: A Bayesian Course with Examples in R and Stan; Second Edition".* Suppose we place 1000 folks on a field, one at a time. We then ask them to flip a coin and depending on the outcome, they take a step in the left or right direction. The distance of each step is a random number from 0 to 1 meter. Each person takes, say, a total of 16 such steps. The blue lines are the trajectories of the 1000 random walks. The red line is one representative of such a random walk. 
+This example is reproduced (and modified) by the excellent book *"Statistical Rethinking: A Bayesian Course with Examples in R and Stan; Second Edition".* Suppose we place 1000 folks on a field, one at a time. We then ask them to flip a coin and depending on the outcome, they take a step in the left or right direction. The distance of each step is a random number from 0 to 1 meter. Each person takes, say, a total of 16 such steps. The blue lines are the trajectories of the 1000 random walks. The red line is one such representative walk. At the right end of the plot, the grey line is the probability distribution of the position when the random walks have been completed.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/random_walk.png" alt="Random walk">
@@ -197,7 +198,7 @@ Ok, so convolving a unit box function with itself, which is related to throwing 
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/conv_2.png" alt="Convolution with itself">
 </p>
 
-## Information theoretic arguments
+## Information-theoretic arguments
 In 1948 [Claude Shannon](https://en.wikipedia.org/wiki/Claude_Shannon) laid out the foundations of information theory. The need this new theory was called upon to meet was the effective and reliable transmission of messages. Although the motive was applied, information theory is deeply mathematical in its nature. A central concept in it is *entropy*, which is used somewhat differently than in thermodynamics. Consider a random variable $$X$$, which assumes the discrete values $$X = {x_i \mid i=1, 2, \ldots, K}$$. Of course, $$0 \le p_i \le 1$$ and $$\sum_{i=1}^{K} p_i = 1$$ must also be met.
 
 Suppose now the extreme case that the value $$X=x_i$$ has a probability of occurring $$p_i=1$$, and $$p_{j\ne i}=0$$. In this scenario, there's no 
@@ -219,15 +220,17 @@ $$
 h(X) = -\int_{-\infty}^{\infty} p_X(x) \log p_X(x) \mathrm{d}x
 $$
 
-(However some of the discrete's entropy properties do not apply to differential entropy, e.g., differential entropy can be negative.)
+(However, some of the discrete's entropy properties do not apply to differential entropy, e.g., differential entropy can be negative.)
 
-Alright, but what normal distribution has anything to do with these? **It turns out that normal distribution is the distribution that maximizes information entropy under the constraint of fixed mean $$m$$ and standard deviation $$s^2$$ of a random variable $$X$$.** So, if we know the mean and standard deviation of some data, the optimal distribution is the one that maximizes entropy, or, equivalently, that satisfies the least of our assumptions. This principle may be viewed as expressing **epistemic modesty** or **maximal ignorance** because it makes the least strong claim on a distribution. E.g., consider a coin that comes tails with a probability $$p$$, and heads with a probability $$1-p$$. The entropy of the flip is then given by:
+Alright, but what normal distribution has anything to do with these? **It turns out that normal distribution is the distribution that maximizes information entropy under the constraint of fixed mean $$m$$ and standard deviation $$s^2$$ of a random variable $$X$$.** So, if we know the mean and standard deviation of some data, the optimal distribution is the one that maximizes entropy, or, equivalently, that satisfies the least of our assumptions. This principle may be viewed as expressing **epistemic modesty** or **maximal ignorance** because it makes the least strong claim on a distribution.
+
+E.g., consider a coin that comes tails with a probability $$p$$, and heads with a probability $$1-p$$. The entropy of the flip is then given by:
 
 $$
 H(X) = - \sum_{i=1}^2 p_i \log p_i = -p \log p - (1-p) \log (1-p)
 $$
 
-Here is the plot of entropy $$H(X)$$ *vs.* probability $$p$$. Notice how entropy is maximized when we assume that the coin is fair, i.e., $$p=0.5$$. So, in absence of any other more strong assumptions, such as that the coin is biased, the most honest position to take is that all outcomes are equally probable. Consider this like "presumption of innocence" ;)
+Here is the plot of entropy $$H(X)$$ *vs.* probability $$p$$. Notice how entropy is maximized when we assume that the coin is fair, i.e., $$p=0.5$$. So, in the absence of any other more strong assumptions, such as that the coin is biased, the most honest position to take is that all outcomes are equally probable. Consider this like "presumption of innocence" ;)
 
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/normal_dist/h_vs_p_coin.png" alt="Entropy of coin flip">
@@ -240,4 +243,5 @@ Here is the plot of entropy $$H(X)$$ *vs.* probability $$p$$. Notice how entropy
 </p>
 
 ## References
-1. Statistical Rethinking: A Bayesian Course with Examples in R and Stan; Second Edition
+1. Statistical Rethinking: A Bayesian Course with Examples in R and Stan; Second Edition, by Richard McElreath.
+2. Neural Networks and Learning Machines 3rd Edition, by Simon Haykin.
