@@ -217,9 +217,7 @@ $$
 h(X) = -\int_{-\infty}^{\infty} p_X(x) \log p_X(x) \mathrm{d}x
 $$
 
-Alright, but what normal distribution has anything to do with these? **It turns out that normal distribution is the distribution that maximizes information entropy under the constraint of fixed mean $$m$$ and standard deviation $$s^2$$ of a random variable $$X$$.**
-
-Here is a list of probability distributions and their corresponding maximum entropy constraints, taken from Wikipedia:
+Alright, but what normal distribution has anything to do with these? **It turns out that normal distribution is the distribution that maximizes information entropy under the constraint of fixed mean $$m$$ and standard deviation $$s^2$$ of a random variable $$X$$.** So, if we know the mean and standard deviation of some data, the optimal distribution to use is the one that maximizes surprise (entropy) or, equivalently, that satisfies the least of our assumptions. This principle may be viewed as expressing epistemic modesty or maximal ignorance because it makes the least strong claim on a distribution. Here is a list of probability distributions and their corresponding maximum entropy constraints, taken from Wikipedia.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/max_entropy_examples.png" alt="Distributions with maximum entropy">
