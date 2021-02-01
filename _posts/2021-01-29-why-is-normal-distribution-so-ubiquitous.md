@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title:  "Why is normal distribution so ubiquitous?"
