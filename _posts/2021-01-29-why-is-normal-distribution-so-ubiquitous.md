@@ -207,7 +207,7 @@ $$
 I(x_i) = \log\left(\frac{1}{p_i}\right) = -\log p_i
 $$
 
-We define as *entropy* the expected value of $$I(x_i)$$ over all $$K$$ discrete values $$X$$ takes:
+We then define as *entropy* the expected value of $$I(x_i)$$ over all $$K$$ discrete values $$X$$ takes:
 
 $$
 H(X) = \mathop{\mathbb{E}} \left(I(x_i)\right) = \sum_{i=1}^{K} p_i I(x_i) = \sum_{i=1}^{K} p_i \log\frac{1}{p_i} = -\sum_{i=1}^{K} p_i \log p_i
@@ -223,7 +223,7 @@ $$
 
 Alright, but what normal distribution has anything to do with these? **It turns out that normal distribution is the distribution that maximizes information entropy under the constraint of fixed mean $$m$$ and standard deviation $$s^2$$ of a random variable $$X$$.** So, if we know the mean and standard deviation of some data, the optimal distribution is the one that maximizes entropy, or, equivalently, that satisfies the least of our assumptions. This principle may be viewed as expressing **epistemic modesty** or **maximal ignorance** because it makes the least strong claim on a distribution.
 
-E.g., consider a coin that comes tails with a probability $$p$$, and heads with a probability $$1-p$$. The entropy of the flip is then given by:
+Let us look at an even simpler case. E.g., consider a coin that comes tails with a probability $$p$$, and heads with a probability $$1-p$$. The entropy of the flip is then given by:
 
 $$
 H(X) = - \sum_{i=1}^2 p_i \log p_i = -p \log p - (1-p) \log (1-p)
