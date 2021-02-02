@@ -131,7 +131,7 @@ What we have discussed so far is the other side of the **[central limit theorem 
   * **Pollution**
 * **Other** factors
 
-**A person's height is akin to the sum of rolling many dice.** Each die parallels one of the above factors. I.e., the genes match the 1st die, the hormones the 2nd, etc. So, to end up being very tall, you need them all in favor of you: the genes, the hormones, the environment, the activity, etc. It's as if scoring 16 heads in a row in the random walk setting. That's why there are few very tall people. The same logic applies to very short people. In this case, you need to have everything against you: bad genes, poor nutrition, no activity, etc. However, most people have an average height because some factors contribute positively and others negatively.
+**A person's height is akin to the sum of rolling many dice.** Each die parallels one of the above factors. I.e., the genes match the 1st die, the hormones the 2nd, etc. So, to end up being very tall, you need them all working in favor of you: the genes, the hormones, the environment, the activity, etc. It's as if scoring 16 heads in a row in the random walk setting. That's why there are few very tall people. The same logic applies to very short people. In this case, you need to have everything working against you: bad genes, poor nutrition, no activity, etc. However, most people have an average height because some factors contribute positively and others negatively.
 
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/normal_dist/four_dice.png" alt="Four dice">
