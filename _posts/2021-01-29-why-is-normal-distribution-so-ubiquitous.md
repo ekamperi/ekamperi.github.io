@@ -61,7 +61,7 @@ And let's plot the frequency histogram **of the sums**.
 
 **As you notice, the sums' distribution switched from a uniform to something that could end up being a Gaussian.** Just think about it for a second. Why does the number 7 appear so often as the sum of two dice? Well, because many combinations could end up having a sum of 7. E.g., 1 + 6, 6 + 1, 2 + 5, 5 + 2, 3 + 4, 4 + 3. The same logic applies to 6 as well. However, to get some very large sum, say 12, there is only one combination, namely 6 + 6. The same applies to small sums, like 2, which is realized only by 1 + 1.
 
-If we keep going by throwing more dice, say 4, the sums' distribution will get even closer to a normal distribution. **There will be even more combinations of dice summing up to a "central" value, rather than in some extreme value.** In the following figure, we plot the number of distinct combinations that yield all possible sums in a "roll 4 dice" scenario. There is an exact correspondence between the number of generating combinations and the frequency a sum appears.
+If we keep going by throwing more dice, say 4 at a time, the sums' distribution will get even closer to a normal distribution. **There will be even more combinations of dice summing up to a "central" value, rather than in some extreme value.** In the following figure, we plot the number of distinct combinations that yield all possible sums in a "roll 4 dice" scenario. There is an exact correspondence between the number of generating combinations and the frequency a sum appears.
 
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/normal_dist/combinations.png" alt="Sum of dice plot">
