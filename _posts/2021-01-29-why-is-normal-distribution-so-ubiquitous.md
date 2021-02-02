@@ -73,7 +73,7 @@ So here are the 146 combinations of dice values that sum to 11.
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/raster_combinations.png" alt="Sum of dice plot">
 </p>
 
-In the following histograms, we observe the sums' distribution evolution, starting with only one and going up to 20 dice!
+In the following histograms, we observe the sums' distributions, starting with only one dice and going up to 20 dice!
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/hist_of_sum.png" alt="Sum of dice histogram">
