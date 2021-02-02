@@ -152,7 +152,7 @@ $$
 But, that's the definition of the convolution operation in the discrete case. For continuous variables, it's just:
 
 $$
-(f * g)(t) \stackrel{\text{def}}{=}
+(f \convolution g)(t) \stackrel{\text{def}}{=}
  \int_{-\infty}^\infty f(x) \, g(t - x) \, \mathrm{d}x
 $$
 
