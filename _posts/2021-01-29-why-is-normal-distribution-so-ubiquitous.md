@@ -187,7 +187,7 @@ The following animation might clear up the operation of convolution between two 
 </p>
 
 ### Convolving noisy data
-Ok, so convolving a unit box function with itself, which is related to throwing dice and calculating their sums, led us to a Gaussian distribution. Does this have to do with the unit box? No! **Αny distribution with a finite variance will morph into a Gaussian, given some time and repeated convolutions.** In the following examples, we start with some quite noisy initial distributions and convolve them repeatedly with themselves. As you see, the result is again a normal distribution!
+Ok, so convolving a unit box function with itself, which pertains to rolling two dice and calculating their sums, led us to a Gaussian distribution. Does this have to do with the unit box? No! **Αny distribution with a finite variance will morph into a Gaussian, given some time and repeated convolutions.** In the following examples, we start with some quite noisy initial distributions and convolve them repeatedly with themselves. As you see, the result is again a normal distribution!
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/conv_1.png" alt="Convolution with itself">
