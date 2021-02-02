@@ -14,7 +14,7 @@ description: A summary of explanations and insights on why the normal distributi
 {:toc}
 
 ## Introduction
-Have you ever wondered why [normal distributions](https://en.wikipedia.org/wiki/Normal_distribution) are encountered so frequently in everyday life? Some examples include the height of people, newborns' birth weight, the sum of two dice, and numerous others. Also, in statistical modeling, we often assume that some quantity is represented by a normal distribution. Particularly when we don't know the actual distribution, but we do know the sample mean and standard deviation. It is as if Gaussian is the "default" or the one with the least assumptions (most generic). Is there some fundamental reason Gaussians are all over the place? Yes, there is!
+Have you ever wondered why [normal distributions](https://en.wikipedia.org/wiki/Normal_distribution) are encountered so frequently in everyday life? Some examples include the height of people, newborns' birth weight, the sum of two dice, and numerous others. Also, in statistical modeling, we often assume that some quantity is represented by a normal distribution. Particularly when we don't know the actual distribution, but we do know the sample mean and standard deviation. It is as if Gaussian is the "default" or the most generic. Is there some fundamental reason Gaussians are all over the place? Yes, there is!
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/normal_dist/bell.png" alt="Bell curve artistic">
