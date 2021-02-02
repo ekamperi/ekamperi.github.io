@@ -119,7 +119,7 @@ These are the distributions of the positions (distances) after 4, 8, and 16 step
 
 What we have discussed so far is the other side of the **[central limit theorem (CLT)](https://en.wikipedia.org/wiki/Central_limit_theorem)**. CTL establishes that when independent random variables are added, their properly normalized sum converges toward a normal distribution even if the original variables themselves are not normally distributed.
 
-**The mind-blowing thing about what we have discussed so far is that it doesn't matter what the underlying distribution processes are**. They might be uniform like in our examples, or (almost) anything else. In the end, the sums will converge on a Gaussian. The only thing that can vary is the speed of convergence, which is high when the underlying distribution is uniform and slower otherwise.
+**The mind-blowing thing about this is that it doesn't matter what the underlying distribution processes are**. They might be uniform like in our examples, or (almost) anything else. In the end, the sums will converge on a Gaussian. The only thing that can vary is the speed of convergence, which is high when the underlying distribution is uniform and slower otherwise.
 
 ### So why are normal distributions so ubiquitous?
 **Because many things in our world emerge as the sum of smaller independent parts.** For example, consider a person's height. This is determined by the sum of many independent variables:
