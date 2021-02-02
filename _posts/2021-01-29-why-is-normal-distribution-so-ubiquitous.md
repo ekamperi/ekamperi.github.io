@@ -28,7 +28,7 @@ Have you ever wondered why [normal distributions](https://en.wikipedia.org/wiki/
  <img style="width: 20%; height: 20%" src="{{ site.url }}/images/normal_dist/dice.jpg" alt="Dice">
 </p>
 
-Let's look at a couple of examples, starting with the case of throwing a fair die. Every number on each marked side has an equal probability of showing up, i.e., p=1/6. Let us examine the following sequence of 30 trials:
+Let's take a look at a couple of examples, starting with the case of throwing a fair die. Every number on each marked side has an equal probability of showing up, i.e., p=1/6. Let us examine the following sequence of 30 trials:
 
 {% raw %}
 3, 4, 6, 5, 1, 5, 6, 5, 1, 5, 3, 1, 2, 4, 1, 1, 2, 5, 3, 1, 3, 4, 3, 6, 2, 4, 6, 2, 4, 3
