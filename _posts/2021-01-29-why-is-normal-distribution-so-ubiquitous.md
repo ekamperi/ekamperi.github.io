@@ -122,7 +122,7 @@ What we have discussed so far is the other side of the **[central limit theorem 
 **The mind-blowing thing about this is that it doesn't matter what the underlying distribution processes are**. They might be uniform like in our examples, or (almost) anything else. In the end, the sums will converge on a Gaussian. The only thing that can vary is the speed of convergence, which is high when the underlying distribution is uniform and slower otherwise.
 
 ### So why are normal distributions so ubiquitous?
-**Because many things in our world emerge as the sum of smaller independent parts.** For example, consider a person's height. This is determined by the sum of many independent variables:
+**Because many things in our world emerge as the sum of smaller independent parts.** For instance, consider a person's height. This is determined by the sum of many independent variables:
 * The **genes** (I haven't researched it by I presume several genes contribute to height, not just one)
 * **Hormones** (E.g., [growth hormone](https://en.wikipedia.org/wiki/Growth_hormone))
 * The **environment**
