@@ -268,6 +268,15 @@ $$
 \end{aligned}
 $$
 
+$$
+
+\begin{aligned}
+\frac{\partial J}{\partial \lambda}=&-\left(\sum_{i=a}^{\beta} p_{i}-1\right) \\
+\frac{\partial J}{\partial \lambda}=0 & \Leftrightarrow \sum_{i=a}^{\beta} p_{i}=1, \Delta \Rightarrow \sum_{i=a}^{\beta}\left(e^{-1-\lambda}\right)=1 \\
+& \Leftrightarrow e^{-1-\lambda}(\beta-a+1)=1 \Leftrightarrow
+\end{aligned}
+$$
+
 [Edwin Thompson Jaynes](https://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes) put it very beautifully, that the max entropy distribution is *"uniquely determined as the one which is maximally noncommittal with regard to missing information, in that it agrees with what is known, but expresses maximum uncertainty with respect to all other matters".* Therefore, this is the most principled choice. Here is a list of probability distributions and their corresponding maximum entropy constraints, taken from Wikipedia.
 
 <p align="center">
