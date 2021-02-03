@@ -156,7 +156,7 @@ And here is a video of drawing the intermediate points in the complex plane. Eve
 
 <p align="center">
 <video id="movie" width="70%" height="70%" preload controls>
-   <source id="srcMp4" src="{{ site.url }}/images/output.mp4" />
+   <source id="srcMp4" src="{{ site.url }}/images/output.mp4#t=0.1" />
 </video>
 </p>
 
