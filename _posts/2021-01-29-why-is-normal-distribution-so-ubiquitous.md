@@ -263,15 +263,15 @@ $$
 We solve for the stationary points of the lagrangian:
 $$
 \begin{aligned}
-\frac{\partial J}{\partial p_{i}}&=0 \Leftrightarrow &=\log p_i-1-\lambda=0 \Rightarrow p_{i}=e^{-1-\lambda} \\
-\frac{\partial J}{\partial \lambda}&=&-\left(\sum_{i=a}^{b} p_{i}-1\right)
+\frac{\partial J}{\partial p_{i}}&=\log p_i-1-\lambda=0 \Leftrightarrow p_{i}=e^{-1-\lambda} \\
+\frac{\partial J}{\partial \lambda}&=-\left(\sum_{i=a}^{b} p_{i}-1\right)
 \end{aligned}
 $$
 
 $$
 \begin{aligned}
-\frac{\partial J}{\partial \lambda}=&-\left(\sum_{i=a}^{\beta} p_{i}-1\right) \\
-\frac{\partial J}{\partial \lambda}=0 \Leftrightarrow \sum_{i=a}^{\beta} p_{i}=1, \Rightarrow \sum_{i=a}^{\beta}\left(e^{-1-\lambda}\right)=1 \\
+\frac{\partial J}{\partial \lambda}=&-\left(\sum_{i=a}^{b} p_{i}-1\right) \\
+\frac{\partial J}{\partial \lambda}=0 \Leftrightarrow \sum_{i=a}^{b} p_{i}=1, \Rightarrow \sum_{i=a}^{b}\left(e^{-1-\lambda}\right)=1 \\
 & \Leftrightarrow e^{-1-\lambda}(\beta-a+1)=1 \Leftrightarrow
 \end{aligned}
 $$
