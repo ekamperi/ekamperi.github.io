@@ -230,7 +230,7 @@ $$
 H(X) = - \sum_{i=1}^2 p_i \log p_i = -p \log p - (1-p) \log (1-p)
 $$
 
-Here is the plot of entropy $$H(X)$$ *vs.* probability $$p$$. Notice how entropy is maximized when we assume that the coin is fair, i.e., $$p=0.5$$.
+Here is the plot of entropy $$H(p)$$ *vs.* probability $$p$$. Notice how entropy is maximized when we assume that the coin is fair, i.e., $$p=0.5$$.
 
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/normal_dist/h_vs_p_coin.png" alt="Entropy of coin flip">
@@ -247,7 +247,7 @@ H(p) &=-p \log p-(1-p) \log (1-p) \\
 \end{aligned}
 $$
 
-So, in the absence of any other more strong assumptions, such as that the coin is biased, the most honest position to take is that all outcomes are equally probable. Consider maximum entropy like "presumption of innocence" ;) Beware, however, when applying the maximum entropy principle, you need to define the distribution's support. So, when the support is $$\{0,1\}$$ as in the coin flip experiment, the uniform distribution is the one with maximum entropy in the absence of any other information. When the support is $$(-\infty,+\infty)$$ and we know the sample mean and standard deviation, the normal distribution is the one that maximizes $$h(X)$$.
+So, in the absence of any other more strong assumptions, such as that the coin is biased, the most honest position to take is that all outcomes are equally probable. Consider principle of maximum entropy as the "presumption of innocence" 🙃
 
 [Edwin Thompson Jaynes](https://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes) put it very beautifully, that the max entropy distribution is *"uniquely determined as the one which is maximally noncommittal with regard to missing information, in that it agrees with what is known, but expresses maximum uncertainty with respect to all other matters".* Therefore, this is the most principled choice. Here is a list of probability distributions and their corresponding maximum entropy constraints, taken from Wikipedia.
 
