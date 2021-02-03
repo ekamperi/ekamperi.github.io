@@ -246,7 +246,7 @@ H(p) &=-p \log p-(1-p) \log (1-p) \\
 \end{aligned}
 $$
 
-So, in the absence of any other more strong assumptions, such as that the coin is biased, the most honest position to take is that all outcomes are equally probable. Consider principle of maximum entropy as the "presumption of innocence" 🙃
+So, in the absence of any data suggesting otherwise, such as that the coin is biased, the most honest position to take is to assume that all outcomes are equally probable. Consider the principle of maximum entropy as a form of "presumption of innocence" 🙃
 
 ### A discrete distribution with support {a, ..., b}
 In this case the random variable $$X$$ takes the values $$\{a,a+1,\ldots,b-1,b\}$$, with probabilities $$\{p_a, p_{a+1} \ldots, p_{b-1}, p_b\}$$. The entropy is equal to:
