@@ -223,32 +223,31 @@ $$
 
 Alright, but what normal distribution has anything to do with these? **It turns out that normal distribution is the distribution that maximizes information entropy under the constraint of fixed mean $$m$$ and standard deviation $$s^2$$ of a random variable $$X$$.** So, if we know the mean and standard deviation of some data, the optimal distribution is the one that maximizes entropy, or, equivalently, that satisfies the least of our assumptions. This principle may be viewed as expressing **epistemic modesty** or **maximal ignorance** because it makes the least strong claim on a distribution.
 
+### A discrete distribution with support $$\{0,\1}$$
 Let us look at an even simpler case. E.g., consider a coin that comes tails with a probability $$p$$, and heads with a probability $$1-p$$. The entropy of the flip is then given by:
 
 $$
 H(X) = - \sum_{i=1}^2 p_i \log p_i = -p \log p - (1-p) \log (1-p)
 $$
 
-Here is the plot of entropy $$H(X)$$ *vs.* probability $$p$$. Notice how entropy is maximized when we assume that the coin is fair, i.e., $$p=0.5$$. So, in the absence of any other more strong assumptions, such as that the coin is biased, the most honest position to take is that all outcomes are equally probable.
+Here is the plot of entropy $$H(X)$$ *vs.* probability $$p$$. Notice how entropy is maximized when we assume that the coin is fair, i.e., $$p=0.5$$.
+
+<p align="center">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/normal_dist/h_vs_p_coin.png" alt="Entropy of coin flip">
+</p>
+
+Let us solve it analytically:
 
 $$
 \begin{aligned}
 H(x) &=-p \log p-(1-p) \log (1-p) \\
 \frac{\partial J}{\partial p} &=-\log p-1+\log (1-p)+1 \\
 &=\log \frac{1-p}{p} \\
-\frac{\partial J}{\partial p} &=0 \Leftrightarrow \log \frac{1-p}{p}=0 \Leftrightarrow \frac{1-\rho}{p}=1 \quad \Leftrightarrow p=\frac{1}{2}
+\frac{\partial J}{\partial p} &=0 \Leftrightarrow \log \frac{1-p}{p}=0 \Leftrightarrow \frac{1-\p}{p}=1 \Leftrightarrow p=\frac{1}{2}
 \end{aligned}
 $$
 
-
-
-
-
-Consider maximum entropy like "presumption of innocence" ;) Beware, however, when applying the maximum entropy principle, you need to define the distribution's support. So, when the support is $$\{0,1\}$$ as in the coin flip experiment, the uniform distribution is the one with maximum entropy in the absence of any other information. When the support is $$(-\infty,+\infty)$$ and we know the sample mean and standard deviation, the normal distribution is the one that maximizes $$h(X)$$.
-
-<p align="center">
- <img style="width: 50%; height: 50%" src="{{ site.url }}/images/normal_dist/h_vs_p_coin.png" alt="Entropy of coin flip">
-</p>
+So, in the absence of any other more strong assumptions, such as that the coin is biased, the most honest position to take is that all outcomes are equally probable. Consider maximum entropy like "presumption of innocence" ;) Beware, however, when applying the maximum entropy principle, you need to define the distribution's support. So, when the support is $$\{0,1\}$$ as in the coin flip experiment, the uniform distribution is the one with maximum entropy in the absence of any other information. When the support is $$(-\infty,+\infty)$$ and we know the sample mean and standard deviation, the normal distribution is the one that maximizes $$h(X)$$.
 
 [Edwin Thompson Jaynes](https://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes) put it very beautifully, that the max entropy distribution is *"uniquely determined as the one which is maximally noncommittal with regard to missing information, in that it agrees with what is known, but expresses maximum uncertainty with respect to all other matters".* Therefore, this is the most principled choice. Here is a list of probability distributions and their corresponding maximum entropy constraints, taken from Wikipedia.
 
