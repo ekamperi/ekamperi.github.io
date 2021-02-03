@@ -269,6 +269,7 @@ J\left(p_{i}, \lambda\right)&=-\sum_{i=a}^{b} p_{i} \log p_{i}-\lambda\left(\sum
 $$
 
 We solve for the stationary points of the lagrangian:
+
 $$
 \begin{aligned}
 \frac{\partial J}{\partial p_{i}}&=-\log p_i-1-\lambda=0 \Leftrightarrow p_{i}=e^{-1-\lambda}\\
