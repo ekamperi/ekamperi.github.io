@@ -22,7 +22,8 @@ minima:
     twitter: stathisktw
     github: ekamperi
 
-remote_theme: jekyll/minima
+theme: Jekyll-theme-architect
+#remote_theme: jekyll/minima
 plugins:
   - jekyll-archives
   - jekyll-feed
