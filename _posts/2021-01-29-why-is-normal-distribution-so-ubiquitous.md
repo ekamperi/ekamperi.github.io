@@ -253,11 +253,11 @@ In this case the random variable $$X$$ takes the values $$\{a,a+1,\ldots,b-1,b\}
 
 $$
 \begin{aligned}
-H(X)=-\sum_{i=a}^{b} p_{i} \log p_i \text { given the constraint } \sum_{i=a}^{b} p_{i}=1
+H(X)=-\sum_{i=a}^{b} p_{i} \log p_i
 \end{aligned}
 $$
 
-We write the lagrangian and take the partial derivatives:
+The only constraint we impose is that $$\ sum_{i=a}^{b} p_{i}=1$$. We write the lagrangian and take the partial derivatives:
 
 $$
 \begin{aligned}
@@ -284,6 +284,8 @@ Therefore the probability is equal to:
 $$
 p_i = \frac{1}{b-a+1}
 $$
+
+So basically this case is a generalization of the previous. For $$a=0, b=1$$, we get the probability of the fair coin. 
 
 [Edwin Thompson Jaynes](https://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes) put it very beautifully, that the max entropy distribution is *"uniquely determined as the one which is maximally noncommittal with regard to missing information, in that it agrees with what is known, but expresses maximum uncertainty with respect to all other matters".* Therefore, this is the most principled choice. Here is a list of probability distributions and their corresponding maximum entropy constraints, taken from Wikipedia.
 
