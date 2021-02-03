@@ -240,10 +240,10 @@ Let us solve it analytically:
 
 $$
 \begin{aligned}
-H(x) &=-p \log p-(1-p) \log (1-p) \\
-\frac{\partial J}{\partial p} &=-\log p-1+\log (1-p)+1 \\
+H(p) &=-p \log p-(1-p) \log (1-p) \\
+\frac{\partial H}{\partial p} &=-\log p-1+\log (1-p)+1 \\
 &=\log \frac{1-p}{p} \\
-\frac{\partial J}{\partial p} &=0 \Leftrightarrow \log \frac{1-p}{p}=0 \Leftrightarrow \frac{1-\p}{p}=1 \Leftrightarrow p=\frac{1}{2}
+\frac{\partial H}{\partial p} &=0 \Leftrightarrow \log \frac{1-p}{p}=0 \Leftrightarrow \frac{1-p}{p}=1 \Leftrightarrow p=\frac{1}{2}
 \end{aligned}
 $$
 
