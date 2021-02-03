@@ -236,13 +236,12 @@ Here is the plot of entropy $$H(p)$$ *vs.* probability $$p$$. Notice how entropy
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/normal_dist/h_vs_p_coin.png" alt="Entropy of coin flip">
 </p>
 
-Let us solve it analytically:
+Let us solve it analytically, by taking the derivative of entropy and setting it equal to zero:
 
 $$
 \begin{aligned}
 H(p) &=-p \log p-(1-p) \log (1-p) \\
-\frac{\partial H}{\partial p} &=-\log p-1+\log (1-p)+1 \\
-&=\log \frac{1-p}{p} \\
+\frac{\partial H}{\partial p} &=-\log p-1+\log (1-p)+1 =\log \frac{1-p}{p} \\
 \frac{\partial H}{\partial p} &=0 \Leftrightarrow \log \frac{1-p}{p}=0 \Leftrightarrow \frac{1-p}{p}=1 \Leftrightarrow p=\frac{1}{2}
 \end{aligned}
 $$
@@ -277,6 +276,12 @@ $$
 & \Leftrightarrow e^{-1-\lambda}(b-a+1)=1\\
 & \Leftrightarrow \lambda=\log(b-a+1)-1
 \end{aligned}
+$$
+
+Therefore the probability is equal to:
+
+$$
+p_i = \frac{1}{b-a+1}
 $$
 
 [Edwin Thompson Jaynes](https://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes) put it very beautifully, that the max entropy distribution is *"uniquely determined as the one which is maximally noncommittal with regard to missing information, in that it agrees with what is known, but expresses maximum uncertainty with respect to all other matters".* Therefore, this is the most principled choice. Here is a list of probability distributions and their corresponding maximum entropy constraints, taken from Wikipedia.
