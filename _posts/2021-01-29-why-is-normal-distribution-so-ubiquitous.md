@@ -223,7 +223,7 @@ $$
 
 Alright, but what normal distribution has anything to do with these? **It turns out that normal distribution is the distribution that maximizes information entropy under the constraint of fixed mean $$m$$ and standard deviation $$s^2$$ of a random variable $$X$$.** So, if we know the mean and standard deviation of some data, the optimal distribution is the one that maximizes entropy, or, equivalently, that satisfies the least of our assumptions. This principle may be viewed as expressing **epistemic modesty** or **maximal ignorance** because it makes the least strong claim on a distribution.
 
-### A discrete distribution with support $$\{0,\1}$$
+### A discrete distribution with support {0,1}
 Let us look at an even simpler case. E.g., consider a coin that comes tails with a probability $$p$$, and heads with a probability $$1-p$$. The entropy of the flip is then given by:
 
 $$
