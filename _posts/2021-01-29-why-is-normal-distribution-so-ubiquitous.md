@@ -262,7 +262,7 @@ We write the lagrangian and take the partial derivatives:
 
 $$
 \begin{aligned}
-J\left(p_{i}, \lambda\right)&=-\sum_{i=a}^{p} p_{i} \log p_{i}-\lambda\left(\sum_{i=a}^{b} p_{i}-1\right) \\
+J\left(p_{i}, \lambda\right)&=-\sum_{i=a}^{b} p_{i} \log p_{i}-\lambda\left(\sum_{i=a}^{b} p_{i}-1\right) \\
 \frac{\partial J}{\partial p_{i}}&=-\sum_{i=a}^{b}\left(\log p_{i}+1\right)-\lambda\left(\sum_{i=a}^{b} 1\right)= \\
 &=-\left(\log p_{i}+1\right)(b-a+1)-\lambda(b-a+1) \\
 \frac{\partial J}{\partial \lambda}&=-\left(\sum_{i=a}^{b} p_{i}-1\right)
