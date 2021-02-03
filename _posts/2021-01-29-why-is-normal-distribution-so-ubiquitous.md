@@ -250,9 +250,9 @@ $$
 So, in the absence of any other more strong assumptions, such as that the coin is biased, the most honest position to take is that all outcomes are equally probable. Consider principle of maximum entropy as the "presumption of innocence" 🙃
 
 ### A discrete distribution with support {a, ..., b}
-
+In this case the random variable $$X$$ takes the values $$\{a,a+1,\ldots,b-1,b\}$$, with probabilities $$p_a, p_{a+1} \ldots, p_{b-1}, p_b$$. 
 $$
-\begin{aligned}{l}
+\begin{aligned}
 H(X)=-\sum_{i=a}^{b} p_{i} \log p_i \text { and } \sum_{i=a}^{b} p_{i}=1 \\
 J\left(p_{i}, \lambda\right)=-\sum_{i=a}^{p} p_{i} \log p_{i}-\lambda\left(\sum_{i=a}^{b} p_{i}-1\right) \\
 \frac{\partial J}{\partial p_{i}}=-\sum_{i=a}^{b}\left(\log p_{i}+1\right)-\lambda\left(\sum_{i=a}^{b} 1\right)= \\
@@ -260,16 +260,16 @@ J\left(p_{i}, \lambda\right)=-\sum_{i=a}^{p} p_{i} \log p_{i}-\lambda\left(\sum_
 \end{aligned}
 $$
 
+We solve for the stationary points of the lagrangian:
 $$
 \begin{aligned}
 \frac{\partial J}{\partial p_{i}}=0 \Leftrightarrow &=\log p i-1-\lambda=0 . \\
-& \Rightarrow \quad P_{i}=e^{-1-\lambda} \\
+& \Rightarrow p_{i}=e^{-1-\lambda} \\
 \frac{\partial J}{\partial \lambda}=&-\left(\sum_{i=a}^{b} p_{i}-1\right)
 \end{aligned}
 $$
 
 $$
-
 \begin{aligned}
 \frac{\partial J}{\partial \lambda}=&-\left(\sum_{i=a}^{\beta} p_{i}-1\right) \\
 \frac{\partial J}{\partial \lambda}=0 & \Leftrightarrow \sum_{i=a}^{\beta} p_{i}=1, \Delta \Rightarrow \sum_{i=a}^{\beta}\left(e^{-1-\lambda}\right)=1 \\
