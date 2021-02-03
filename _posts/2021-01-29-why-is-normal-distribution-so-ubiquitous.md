@@ -201,7 +201,7 @@ Ok, so convolving a unit box function with itself, which pertains to rolling two
 In 1948 [Claude Shannon](https://en.wikipedia.org/wiki/Claude_Shannon) laid out the foundations of information theory. The need this new theory was called upon to meet was the effective and reliable transmission of messages. Although the motive was applied, information theory is deeply mathematical in its nature. A central concept in it is *entropy*, which is used somewhat differently than in thermodynamics. Consider a random variable $$X$$, which assumes the discrete values $$X = \{x_i \mid i=1, 2, \ldots, K\}$$. Of course, $$0 \le p_i \le 1$$ and $$\sum_{i=1}^{K} p_i = 1$$ must also be met.
 
 Suppose now the extreme case that the value $$X=x_i$$ has a probability of occurring $$p_i=1$$, and $$p_{j\ne i}=0$$. In this scenario, there's no 
-"surprise" by observing the value of $$X$$, and there's no message being transmitted. It is as if I told you that it's chilly today in Alaska or that sun raised at east. In this context, we define the information content that we gain by observing $$X$$ as the following function:
+"surprise" in observing the value of $$X$$, and there's no message being transmitted. It is as if I told you that it's chilly today in Alaska or that sun raised at east. In this context, we define the information content that we gain by observing $$X$$ as the following function:
 
 $$
 I(x_i) = \log\left(\frac{1}{p_i}\right) = -\log p_i
