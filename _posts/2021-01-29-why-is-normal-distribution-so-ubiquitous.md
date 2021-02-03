@@ -250,10 +250,16 @@ $$
 So, in the absence of any other more strong assumptions, such as that the coin is biased, the most honest position to take is that all outcomes are equally probable. Consider principle of maximum entropy as the "presumption of innocence" 🙃
 
 ### A discrete distribution with support {a, ..., b}
-In this case the random variable $$X$$ takes the values $$\{a,a+1,\ldots,b-1,b\}$$, with probabilities $$p_a, p_{a+1} \ldots, p_{b-1}, p_b$$. 
+In this case the random variable $$X$$ takes the values $$\{a,a+1,\ldots,b-1,b\}$$, with probabilities $$\{p_a, p_{a+1} \ldots, p_{b-1}, p_b\}$$. The entropy is equal to:
+
 $$
 \begin{aligned}
-H(X)=-\sum_{i=a}^{b} p_{i} \log p_i \text { and } \sum_{i=a}^{b} p_{i}=1 \\
+H(X)=-\sum_{i=a}^{b} p_{i} \log p_i \text { given the constraint } \sum_{i=a}^{b} p_{i}=1
+$$
+
+We write the lagrangian and take the partial derivatives:
+
+$$
 J\left(p_{i}, \lambda\right)=-\sum_{i=a}^{p} p_{i} \log p_{i}-\lambda\left(\sum_{i=a}^{b} p_{i}-1\right) \\
 \frac{\partial J}{\partial p_{i}}=-\sum_{i=a}^{b}\left(\log p_{i}+1\right)-\lambda\left(\sum_{i=a}^{b} 1\right)= \\
 =-\left(\log p_{i}+1\right)(b-a+1)-\lambda(b-a+1)
