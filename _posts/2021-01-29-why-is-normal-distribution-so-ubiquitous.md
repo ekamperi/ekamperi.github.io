@@ -252,15 +252,21 @@ So, in the absence of any other more strong assumptions, such as that the coin i
 ### A discrete distribution with support {a, ..., b}
 
 $$
-
-\begin{array}{l}
-H(x)=-\sum_{i=a}^{b} p_{i} \log p_i \text { and } \sum_{i=a}^{b} p_{i}=1 \\
+\begin{aligned}{l}
+H(X)=-\sum_{i=a}^{b} p_{i} \log p_i \text { and } \sum_{i=a}^{b} p_{i}=1 \\
 J\left(p_{i}, \lambda\right)=-\sum_{i=a}^{p} p_{i} \log p_{i}-\lambda\left(\sum_{i=a}^{b} p_{i}-1\right) \\
 \frac{\partial J}{\partial p_{i}}=-\sum_{i=a}^{b}\left(\log p_{i}+1\right)-\lambda\left(\sum_{i=a}^{b} 1\right)= \\
-=-\left(f_{0} g p_{i}+1\right)(\beta-a+1)-\lambda(\beta-a+1)
-\end{array}
+=-\left(\log p_{i}+1\right)(b-a+1)-\lambda(b-a+1)
+\end{aligned}
 $$
 
+$$
+\begin{aligned}
+\frac{\partial J}{\partial p_{i}}=0 \Leftrightarrow &=\log p i-1-\lambda=0 . \\
+& \Rightarrow \quad P_{i}=e^{-1-\lambda} \\
+\frac{\partial J}{\partial \lambda}=&-\left(\sum_{i=a}^{b} p_{i}-1\right)
+\end{aligned}
+$$
 
 [Edwin Thompson Jaynes](https://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes) put it very beautifully, that the max entropy distribution is *"uniquely determined as the one which is maximally noncommittal with regard to missing information, in that it agrees with what is known, but expresses maximum uncertainty with respect to all other matters".* Therefore, this is the most principled choice. Here is a list of probability distributions and their corresponding maximum entropy constraints, taken from Wikipedia.
 
