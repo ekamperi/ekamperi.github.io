@@ -274,7 +274,8 @@ $$
 \begin{aligned}
 \frac{\partial J}{\partial p_{i}}&=-\log p_i-1-\lambda=0 \Leftrightarrow p_{i}=e^{-1-\lambda}\\
 \frac{\partial J}{\partial \lambda}&=0 \Leftrightarrow \sum_{i=a}^{b} p_{i}=1 \Rightarrow \sum_{i=a}^{b}\left(e^{-1-\lambda}\right)=1 \\
-& \Leftrightarrow e^{-1-\lambda}(b-a+1)=1 \Leftrightarrow
+& \Leftrightarrow e^{-1-\lambda}(b-a+1)=1\\
+& \Leftrightarrow \lambda=\log(b-a+1)-1
 \end{aligned}
 $$
 
