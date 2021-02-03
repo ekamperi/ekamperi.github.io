@@ -257,7 +257,7 @@ H(X)=-\sum_{i=a}^{b} p_{i} \log p_i
 \end{aligned}
 $$
 
-The only constraint we impose is that $$\ sum_{i=a}^{b} p_{i}=1$$. We write the lagrangian and take the partial derivatives:
+The only constraint we impose is that $$\sum_{i=a}^{b} p_{i}=1$$. We write the lagrangian and take the partial derivatives:
 
 $$
 \begin{aligned}
