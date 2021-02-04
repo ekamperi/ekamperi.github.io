@@ -213,6 +213,10 @@ $$
 H(X) = \mathop{\mathbb{E}} \left(I(x_i)\right) = \sum_{i=1}^{K} p_i I(x_i) = \sum_{i=1}^{K} p_i \log\frac{1}{p_i} = -\sum_{i=1}^{K} p_i \log p_i
 $$
 
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/low_vs_high_entropy.png" alt="Low vs. hight entropy">
+</p>
+
 Similarly, we define *differential entropy* for continuous variables:
 
 $$
