@@ -88,7 +88,7 @@ This example is reproduced (and modified) by the excellent book *"Statistical Re
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/random_walk.png" alt="Random walk">
 </p>
 
-At the end of this game, we can't really tell each person's position, but we can say something about the distribution of their distances. Arguably, **the distribution will look normal simply because there are vastly more sequences of left-right steps whose sum ends up being around zero than sequences of steps that end up being far away from zero.** For example, to end up near position 6 or -6, one needs to take 16 consecutive left steps or 16 successive right steps. That's just very unlikely to happen (remember that the direction people move is determined by a flip coin, so they should have 16 heads or 16 tails in a row). The following code generates the plot below, but feel free to skip it.
+At the end of this game, we can't really tell each person's position, but we can say something about the distribution of their distances. Arguably, **the distribution will look normal simply because there are vastly more sequences of left-right steps whose sum ends up being around zero than sequences of steps that end up being far away from zero.** For example, to end up near position 6 or -6, one needs to take 16 consecutive left steps or 16 successive right steps. That's just very unlikely to happen (remember that the direction people move is determined by a flip coin, so they should have 16 heads or 16 tails in a row). The following *Mathematica* code generates the plot below, but feel free to skip it.
 
 {% highlight mathematica %}
 {% raw %}
