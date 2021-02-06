@@ -13,13 +13,13 @@ description: A list of machine-learning questions for interviews along with a sh
 * A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
 {:toc}
 
-**Here I'll be adding questions regarding machine-learning and data-science in general. In the future I'll group them by subject.**
+**Here, I'll be adding questions regarding machine-learning and data-science in general. In the future, I'll group them by subject.**
 
 ### What are collinearity and multicollinearity? How can we detect them?
 Collinearity is the existence of two correlated predictor variables in a regression problem. Multicollinearity is when there are more than two variables correlated. Collinearity hurts regression, both coefficient estimation and the interpretation of the model. It can be detected with a scatterplot matrix, a correlation matrix, and via the calculation of Variance Inflation Factors (VIFs).
 
 ### What's a type I and type II error? Which one is worse?
-Type I is a false positive (you tell a healthy man he has cancer). Type II is a false negative (you tell a man with cancer he is healthy) Regarding which one is worse, it depends on the context. A false negative for a spam filter isn't a big deal, but a false negative for a cancer diagnostic test it is.
+Type I is a false positive (you tell a healthy man he has cancer). Type II is a false negative (you say to a man with cancer he is healthy). Regarding which one is worse, it depends on the context. A false negative for a spam filter isn't a big deal, but a false negative for a cancer diagnostic test it is.
 
 ### What is a ROC curve?
 ROC stands for Receiver Operating Characteristic. ROC curve is a plot of True Positive rate (sensitivity) vs. False Positive rate (1-specificity) for different diagnostic test cut-off values. It demonstrates the inherent tradeoff of sensitivity vs. specificity (e.g., a covid test that is too sensitive won't miss any real covid cases but will have a high number of false-positive). The close the curve on the left/upper-hand border of the plot, the better. A random classifier is represented by a 45-degree diagonal line. The area under the curve (AUC) is a measure of the test's accuracy.
@@ -68,7 +68,7 @@ print(sorted_lst)
 {% endraw %}
 {% endhighlight %}
 
-Lambda functions can have any number of parameters but they can have only one statement.
+Lambda functions can have any number of parameters, but they can have only one statement.
 
 ### What is the difference between a tuple and a list in Python?
 Tuples are immutable, i.e., their contents cannot be mutated (changed) after their creation. Lists are mutable, i.e., their contents can be modified after their creation.
@@ -121,13 +121,13 @@ Here the array *b* is expanded from (3,) to (1,3) by replicating [0., 1. 2.] thr
 {% endraw %}
 {% endhighlight %}
 
-The broadcasting rule is "Prepend 1s to the smaller shape, then check that the axes of both arrays have sizes that are equal or 1, and finally stretch the arrays in their size-1 axes.". Broadcasting allows writing compact code, but is also a source of confusion and errors.
+The broadcasting rule is "Prepend 1s to the smaller shape, then check that the axes of both arrays have sizes that are equal or 1, and finally stretch the arrays in their size-1 axes.". Broadcasting allows writing compact code but is also a source of confusion and errors.
 
 ### What is the difference between classification and clustering?
 Classification is supervised learning, where we assign a label class to some input. E.g., the input is a human face, and the label is whether the facial expression (neutral, smiles, sad, etc.). Clustering is unsupervised learning where we put similar inputs together without actually providing the labels. In a sense, the model will figure out the labels by itself. E.g., we provide a list of furniture images, and the model will put all the tables in a cluster in the feature space, all the chairs in another cluster in the feature space, etc.
 
 ### What is regularization? What are the L1 and L2 regularization methods, and how do they differ?
-Regularization is the process of controlling the model complexity (e.g., the number of model parameters *or* the values the parameters take). It is realized as an additional term that is added to the loss function. The number of the model's parameters is regularized by L1 (also known as LASSO) and the weights by L2 (also known as ridge). In the following figure the effects of L1 and L2 regularization are shown, for increasing values of the regularization parameter. L1 invokes sparsity by driving some of the model's parameters to become zero (this is some sort of feature selection). L2 makes all the model's parameters to become small, however it does not force them to become exactly zero.
+Regularization is the process of controlling the model complexity (e.g., the number of model parameters *or* the values the parameters take). It is realized as an additional term that is added to the loss function. The number of the model's parameters is regularized by L1 (also known as LASSO) and the weights by L2 (also known as ridge). In the following figure, the effects of L1 and L2 regularization are shown for increasing values of the regularization parameter. L1 invokes sparsity by driving some of the model's parameters to become zero (this is some sort of feature selection). L2 makes all the model's parameters small; however, it does not force them to become precisely zero.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/machine-learning-q/lasso_vs_ridge.png" alt="LASSO vs ridge regularization">
@@ -158,7 +158,7 @@ $$
 \right)
 $$
 
-### What is a token in the context of NLP and how can you tokenize?
+### What is a token in the context of NLP, and how can we tokenize?
 A token is a word in a sentence, and a sentence in a paragraph. NLTK is a Python library for doing natural language processing:
 
 {% highlight python %}
