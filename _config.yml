@@ -23,7 +23,7 @@ minima:
     github: ekamperi
 
 #remote_theme: jekyll/architect
-remote_theme: poole/hyde
+remote_theme: poole/poole
 plugins:
   - jekyll-archives
   - jekyll-feed
