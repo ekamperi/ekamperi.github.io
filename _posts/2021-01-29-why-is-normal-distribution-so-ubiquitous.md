@@ -272,19 +272,19 @@ The only constraint we impose is that $$\sum_{i=a}^{b} p_{i}=1$$. We write the L
 
 $$
 \begin{aligned}
-J\left(p_{i}, \lambda\right)&=-\sum_{i=a}^{b} p_{i} \log p_{i}-\lambda\left(\sum_{i=a}^{b} p_{i}-1\right) \\
-\frac{\partial J}{\partial p_{i}}&=-\sum_{i=a}^{b}\left(\log p_{i}+1\right)-\lambda\left(\sum_{i=a}^{b} 1\right)= \\
+$$\mathcal{L}$$\left(p_{i}, \lambda\right)&=-\sum_{i=a}^{b} p_{i} \log p_{i}-\lambda\left(\sum_{i=a}^{b} p_{i}-1\right) \\
+\frac{\partial $$\mathcal{L}$$}{\partial p_{i}}&=-\sum_{i=a}^{b}\left(\log p_{i}+1\right)-\lambda\left(\sum_{i=a}^{b} 1\right)= \\
 &=-\left(\log p_{i}+1\right)(b-a+1)-\lambda(b-a+1) \\
-\frac{\partial J}{\partial \lambda}&=-\left(\sum_{i=a}^{b} p_{i}-1\right)
+\frac{\partial $$\mathcal{L}$$}{\partial \lambda}&=-\left(\sum_{i=a}^{b} p_{i}-1\right)
 \end{aligned}
 $$
 
-We solve for the stationary points of the Lagrangian:
+We solve for the stationary points of the Lagrangian $$\mathcal{L}$$:
 
 $$
 \begin{aligned}
-\frac{\partial J}{\partial p_{i}}&=-\log p_i-1-\lambda=0 \Leftrightarrow p_{i}=e^{-1-\lambda}\\
-\frac{\partial J}{\partial \lambda}&=0 \Leftrightarrow \sum_{i=a}^{b} p_{i}=1 \Rightarrow \sum_{i=a}^{b}\left(e^{-1-\lambda}\right)=1 \\
+\frac{\partial $$\mathcal{L}$$}{\partial p_{i}}&=-\log p_i-1-\lambda=0 \Leftrightarrow p_{i}=e^{-1-\lambda}\\
+\frac{\partial $$\mathcal{L}$$}{\partial \lambda}&=0 \Leftrightarrow \sum_{i=a}^{b} p_{i}=1 \Rightarrow \sum_{i=a}^{b}\left(e^{-1-\lambda}\right)=1 \\
 & \Leftrightarrow e^{-1-\lambda}(b-a+1)=1\\
 & \Leftrightarrow \lambda=\log(b-a+1)-1
 \end{aligned}
