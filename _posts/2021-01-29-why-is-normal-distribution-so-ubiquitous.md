@@ -28,7 +28,7 @@ Have you ever wondered why [normal distributions](https://en.wikipedia.org/wiki/
  <img style="width: 20%; height: 20%" src="{{ site.url }}/images/normal_dist/dice.jpg" alt="Dice">
 </p>
 
-Let's take a look at a couple of examples, starting with the case of throwing a fair die. Every number on each marked side has an equal probability of showing up, i.e., p=1/6. Let us examine the following sequence of 30 trials:
+Let's take a couple of examples, starting with the case of throwing a fair die. Every number on each marked side has an equal probability of showing up, i.e., p=1/6. Let us examine the following sequence of 30 trials:
 
 {% highlight mathematica %}
 {% raw %}
@@ -65,7 +65,7 @@ And let's plot the frequency histogram **of the sums**.
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/normal_dist/hist_sum_of_2.png" alt="Sum of dice histogram">
 </p>
 
-**As you notice, the sums' distribution switched from a uniform to something that could end up being a Gaussian.** Just think about it for a second. Why does the number 7 appear so often as the sum of two dice? Well, because many combinations could end up having a sum of 7. E.g., 1 + 6, 6 + 1, 2 + 5, 5 + 2, 3 + 4, 4 + 3. The same logic applies to 6 as well. However, to get some very large sum, say 12, there is only one combination, namely 6 + 6. The same applies to small sums, like 2, which is realized only by 1 + 1.
+**As you notice, the sums' distribution switched from a uniform to something that starts looking like a Gaussian.** Just think about it for a second. Why does the number 7 appear so often as the sum of two dice? Well, because many combinations could end up having a sum of 7. E.g., 1 + 6, 6 + 1, 2 + 5, 5 + 2, 3 + 4, 4 + 3. The same logic applies to 6 as well. However, to get some very large sum, say 12, there is only one combination, namely 6 + 6. The same applies to small sums, like 2, which is realized only by 1 + 1.
 
 If we keep going by throwing more dice, say 4 at a time, the sums' distribution will get even closer to a normal distribution. **There will be even more combinations of dice outcomes summing up to a "central" value, rather than in some extreme value.** In the following figure, we plot the number of distinct combinations that yield all possible sums in a "roll 4 dice" scenario. There is an exact correspondence between the number of generating combinations and the frequency a sum appears.
 
@@ -206,8 +206,7 @@ Ok, so convolving a unit box function with itself, which pertains to rolling two
 ## Information-theoretic arguments
 In 1948 [Claude Shannon](https://en.wikipedia.org/wiki/Claude_Shannon) laid out the foundations of information theory. The need this new theory was called upon to meet was the effective and reliable transmission of messages. Although the motive was applied, information theory is deeply mathematical in its nature. A central concept in it is *entropy*, which is used somewhat differently than in thermodynamics. Consider a random variable $$X$$, which assumes the discrete values $$X = \{x_i \mid i=1, 2, \ldots, K\}$$. Of course, $$0 \le p_i \le 1$$ and $$\sum_{i=1}^{K} p_i = 1$$ must also be met.
 
-Consider now the extreme case where the value $$X=x_i$$ has a probability of occurring $$p_i=1$$, and $$p_{j\ne i}=0$$. In this scenario, there's no 
-"surprise" in observing the value of $$X$$, and there's no message being transmitted. It is as if I told you that it's chilly today in Alaska or that sun raised at east. In this context, we define the information content that we gain by observing $$X$$ as the following function:
+Consider now the extreme case where the value $$X=x_i$$ has a probability of occurring $$p_i=1$$, and $$p_{j\ne i}=0$$. In this scenario, there's no "surprise" in observing the value of $$X$$, and there's no message being transmitted. It is as if I told you that it's chilly today in Alaska or that sun raised at east. In this context, we define the information content that we gain by observing $$X$$ as the following function:
 
 $$
 I(x_i) = \log\left(\frac{1}{p_i}\right) = -\log p_i
@@ -258,7 +257,7 @@ H(p) &=-p \log p-(1-p) \log (1-p) \\
 \end{aligned}
 $$
 
-So, in the absence of any data suggesting otherwise, such as that the coin is biased, the most honest position to take is to assume that all outcomes are equally probable. Consider the principle of maximum entropy as a form of "presumption of innocence" 🙃
+So, in the absence of any data suggesting otherwise, such as that the coin is biased, the most honest position to take is to assume that all outcomes are equally probable. Consider the principle of maximum entropy as a form of "presumption of innocence". ;)
 
 ### A discrete distribution with support {a, ..., b}
 In this case the random variable $$X$$ takes the values $$\{a,a+1,\ldots,b-1,b\}$$, with probabilities $$\{p_a, p_{a+1} \ldots, p_{b-1}, p_b\}$$. The entropy is equal to:
@@ -269,7 +268,7 @@ H(X)=-\sum_{i=a}^{b} p_{i} \log p_i
 \end{aligned}
 $$
 
-The only constraint we impose is that $$\sum_{i=a}^{b} p_{i}=1$$. We write the lagrangian and take the partial derivatives:
+The only constraint we impose is that $$\sum_{i=a}^{b} p_{i}=1$$. We write the Lagrangian and take the partial derivatives:
 
 $$
 \begin{aligned}
@@ -280,7 +279,7 @@ J\left(p_{i}, \lambda\right)&=-\sum_{i=a}^{b} p_{i} \log p_{i}-\lambda\left(\sum
 \end{aligned}
 $$
 
-We solve for the stationary points of the lagrangian:
+We solve for the stationary points of the Lagrangian:
 
 $$
 \begin{aligned}
@@ -297,9 +296,9 @@ $$
 p_i = \frac{1}{b-a+1}
 $$
 
-So basically this case is a generalization of the previous. For $$a=0, b=1$$, we get the probability of the fair coin. 
+So basically, this case is a generalization of the previous. For $$a=0, b=1$$, we get the probability of the fair coin. 
 
-[Edwin Thompson Jaynes](https://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes) put it very beautifully, that the max entropy distribution is *"uniquely determined as the one which is maximally noncommittal with regard to missing information, in that it agrees with what is known, but expresses maximum uncertainty with respect to all other matters".* Therefore, this is the most principled choice. Here is a list of probability distributions and their corresponding maximum entropy constraints, taken from Wikipedia.
+[Edwin Thompson Jaynes](https://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes) put it very beautifully that the max entropy distribution is *"uniquely determined as the one which is maximally noncommittal with regard to missing information, in that it agrees with what is known, but expresses maximum uncertainty with respect to all other matters".* Therefore, this is the most principled choice. Here is a list of probability distributions and their corresponding maximum entropy constraints, taken from Wikipedia.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/max_entropy_examples.png" alt="Distributions with maximum entropy">
