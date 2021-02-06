@@ -170,7 +170,23 @@ A token in a word in a sentence and a sentence in a paragraph. NLTK is a Python 
 >>> nltk.tokenize.word_tokenize('Word tokenization happens at the word level, as opposed to sentence tokenization!')
 ['Word', 'tokenization', 'happens', 'at', 'the', 'word', 'level', ',', 'as', 'opposed', 'to', 'sentence', 'tokenization', '!']
 >>>
+{% endraw %}
+{% endhighlight %}
 
+### What are unigrams, bigrams, trigrams, and n-grams?
+
+{% highlight python %}
+{% raw %}
+>>> text = 'Parsing n- words at a time generates n-grams'
+>>> list(nltk.ngrams(nltk.word_tokenize(text), 1))
+[('Parsing',), ('n-',), ('words',), ('at',), ('a',), ('time',), ('generates',), ('n-grams',)]
+>>>
+>>> list(nltk.ngrams(nltk.word_tokenize(text), 2))
+[('Parsing', 'n-'), ('n-', 'words'), ('words', 'at'), ('at', 'a'), ('a', 'time'), ('time', 'generates'), ('generates', 'n-grams')]
+>>>
+>>> list(nltk.ngrams(nltk.word_tokenize(text), 3))
+[('Parsing', 'n-', 'words'), ('n-', 'words', 'at'), ('words', 'at', 'a'), ('at', 'a', 'time'), ('a', 'time', 'generates'), ('time', 'generates', 'n-grams')]
+>>>
 {% endraw %}
 {% endhighlight %}
 
