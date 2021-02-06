@@ -30,9 +30,11 @@ Have you ever wondered why [normal distributions](https://en.wikipedia.org/wiki/
 
 Let's take a look at a couple of examples, starting with the case of throwing a fair die. Every number on each marked side has an equal probability of showing up, i.e., p=1/6. Let us examine the following sequence of 30 trials:
 
+{% highlight mathematica %}
 {% raw %}
 3, 4, 6, 5, 1, 5, 6, 5, 1, 5, 3, 1, 2, 4, 1, 1, 2, 5, 3, 1, 3, 4, 3, 6, 2, 4, 6, 2, 4, 3
 {% endraw %}
+{% endhighlight %}
 
 If we get to plot the frequency histogram of these numbers, we notice something resembling a [uniform distribution](https://en.wikipedia.org/wiki/Discrete_uniform_distribution). Considering we only threw the die 30 times, the small deviations are ok.
 
@@ -42,16 +44,20 @@ If we get to plot the frequency histogram of these numbers, we notice something 
 
 **Here comes the magic**. Suppose that we throw two dice 15 times, and we get the follwing pairs:
 
+{% highlight mathematica %}
 {% raw %}
 {3, 4}, {6, 5}, {1, 5}, {6, 5}, {1, 5}, {3, 1}, {2, 4}, {1, 1},
  {2, 5}, {3, 1}, {3, 4}, {3, 6}, {2, 4}, {6, 2}, {4, 3}
 {% endraw %}
+{% endhighlight %}
 
 So the first time, we get 3 and 4, the second time 6 and 5, and so on. Now let us **take the sum of each pair**:
 
+{% highlight mathematica %}
 {% raw %}
-{7, 11, 6, 11, 6, 4, 6, 2, 7, 4, 7, 9, 6, 8, 7}
+7, 11, 6, 11, 6, 4, 6, 2, 7, 4, 7, 9, 6, 8, 7
 {% endraw %}
+{% endhighlight %}
 
 And let's plot the frequency histogram **of the sums**.
 
