@@ -70,7 +70,7 @@ Let us calculate the curvature of the surface of a sphere. To do that we need th
 The following image illustrates the calculation of infinitestimal length $$\mathrm{d}S^2$$ on the surface of a sphere.
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/infinitestimal_length_sphere.jpg">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/infinitestimal_length_sphere.jpg" alt="Metric tensor on a sphere">
 </p>
 
 $$
