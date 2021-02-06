@@ -157,3 +157,20 @@ $$
 \end{matrix}
 \right)
 $$
+
+### What is a token in the context of NLP and how can you tokenize?
+A token in a word in a sentence and a sentence in a paragraph. NLTK is a Python library for doing natural language processing:
+
+{% highlight python %}
+{% raw %}
+>>> import nltk
+>>> import nltk.tokenize
+>>> nltk.tokenize.sent_tokenize('NLTK is a Python library. It is used for natural language processing. It is used among other things for information retrieval in machine learning.')
+['NLTK is a Python library.', 'It is used for natural language processing.', 'It is used among other things for information retrieval in machine learning.']
+>>> nltk.tokenize.word_tokenize('Word tokenization happens at the word level, as opposed to sentence tokenization!')
+['Word', 'tokenization', 'happens', 'at', 'the', 'word', 'level', ',', 'as', 'opposed', 'to', 'sentence', 'tokenization', '!']
+>>>
+
+{% endraw %}
+{% endhighlight %}
+
