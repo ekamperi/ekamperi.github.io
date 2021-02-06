@@ -19,7 +19,7 @@ Quoting from the DICOM standard documentation, *Transfer Syntax* is a set of enc
 So, apparently Varian Eclipse does not like *Explicit Big Endian* transfer syntax. For the non-tech savvy, when we write the number "123", we write the most significant digit (e.g. 1) first. This is a big endian representation. If we'd like to write the "123" number in little endian format, we'd write "321". In order to figure out the supported transfer syntaxes oF Eclipse, I exported the treatment course a random patient, and, in the export's options dialog, the valid transfer syntaxes were listed as below:
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/Varian_Eclipse_Export.png">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/Varian_Eclipse_Export.png" alt="Varian Eclipse Export Dialog">
 </p>
 
 In layman's terms, the patient's MRI data are written in big-endian format (e.g. "123"), but Eclipse can only read data written in little-endian format (e.g. "321"). Therefore, we need to convert from big-endian to little-endian.
