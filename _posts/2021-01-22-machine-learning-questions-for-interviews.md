@@ -159,7 +159,7 @@ $$
 $$
 
 ### What is a token in the context of NLP and how can you tokenize?
-A token in a word in a sentence and a sentence in a paragraph. NLTK is a Python library for doing natural language processing:
+A token is a word in a sentence, and a sentence in a paragraph. NLTK is a Python library for doing natural language processing:
 
 {% highlight python %}
 {% raw %}
@@ -175,8 +175,11 @@ A token in a word in a sentence and a sentence in a paragraph. NLTK is a Python 
 
 ### What are unigrams, bigrams, trigrams, and n-grams?
 
+Unigrams, bigrams, trigrams and n-grams is the parsing of text one, two, three, or n- words at a time:
+
 {% highlight python %}
 {% raw %}
+>>> import nltk
 >>> text = 'Parsing n- words at a time generates n-grams'
 >>> list(nltk.ngrams(nltk.word_tokenize(text), 1))
 [('Parsing',), ('n-',), ('words',), ('at',), ('a',), ('time',), ('generates',), ('n-grams',)]
@@ -186,6 +189,21 @@ A token in a word in a sentence and a sentence in a paragraph. NLTK is a Python 
 >>>
 >>> list(nltk.ngrams(nltk.word_tokenize(text), 3))
 [('Parsing', 'n-', 'words'), ('n-', 'words', 'at'), ('words', 'at', 'a'), ('at', 'a', 'time'), ('a', 'time', 'generates'), ('time', 'generates', 'n-grams')]
+>>>
+{% endraw %}
+{% endhighlight %}
+
+## What is stemming in the context of NLP?
+
+It is the process of removing and prefixes or suffixes to get the root of a word:
+
+{% highlight python %}
+{% raw %}
+>>> from nltk.stem.porter import PorterStemmer
+>>> stemmer = PorterStemmer()
+>>> words_to_stem = ['interesting', 'candies', 'fireflies', 'eggs', 'implicated']
+>>> [stemmer.stem(w) for w in words_to_stem]
+['interest', 'candi', 'firefli', 'egg', 'implic']
 >>>
 {% endraw %}
 {% endhighlight %}
