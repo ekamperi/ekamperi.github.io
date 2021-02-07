@@ -209,5 +209,5 @@ It is the process of removing and prefixes or suffixes to get the root of a word
 {% endhighlight %}
 
 ## What is the difference between Embedding vectors vs. One-hot vectors in the context of NLP?
-One-hot vectors do not capture the level of similarity between words, since every one-hot vector has the same Euclidean distance from any other one-hot vector. Embedding vectors such as *word2vec* or *GloVe* vectors provide much more useful representation about the meaning of individual words.
+One-hot vectors do not capture the level of similarity between words, since every one-hot vector has the same Euclidean distance from any other one-hot vector. Embedding vectors such as *Word2Vec* or *GloVe* vectors provide much more useful representation about the meaning of individual words.
 
