@@ -3,7 +3,7 @@ layout: default
 title: About
 ---
 
-<img src="{{ site.url }}/images/me.jpg" width="100" border-radius: 50%>
+<img src="{{ site.url }}/images/me.jpg" width="100" style="border-radius: 50%">
 
 My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist](https://en.wikipedia.org/wiki/Radiation_oncologist) and physicist with a master degree in [computational physics](https://en.wikipedia.org/wiki/Computational_physics) and another one in [medical research methodology](https://en.wikipedia.org/wiki/Medical_research). I currently work on my thesis, which involves applying machine learning in [radiomics](https://en.wikipedia.org/wiki/Radiomics) in head neck cancer. You can [check my detailed bio in LinkedIn](https://www.linkedin.com/in/stathis-kamperis/).
 
