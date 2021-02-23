@@ -65,7 +65,7 @@ $$
 2\pi i \sum_{k=1}^n  \operatorname{Res}( f, a_k ) \Rightarrow\\
 \int_{-R}^R \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z &=
 2\pi i \sum_{k=1}^n  \operatorname{Res}( f, a_k ) -
-\int_\gamma \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z
+\int_{\gamma_R} \frac{e^{i z}}{(z^2+1)^2} \mathrm{d}z
 \end{align*}
 $$
 
