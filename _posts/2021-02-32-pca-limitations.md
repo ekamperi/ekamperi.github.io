@@ -7,7 +7,7 @@ tags: ['machine learning', 'mathematics', 'statistics']
 description: A list of common pitfalls / limitations of Principal Component Analysis
 ---
 
-We have already discussed principle component analysis in a previous post. PCA is a widely used data dimensionality reduction technique. However, there are some limitations of PCA that someone should be familiar with.
+We have already discussed principle component analysis [in a previous post](https://ekamperi.github.io/mathematics/2020/11/01/principal-component-analysis-lagrange-multiplier.html), where we viewed PCA as a constrained optimization problem solved with Lagrange multipliers. PCA is arguably a widely used data dimensionality reduction technique. In the era of big data, where our measuring capabilities have been exponentially increased, it is often the case that we end up with very high dimensional datasets that we want to "summarize" with low dimensionality projects. However, there are some limitations of PCA that someone should be familiar with.
 
 1. First, the method relies on linear relationships between the variables in the dataset. So if our data are not linear, then PCA will not perform well. However, there is the so-called called kernel PCA trick that allows PCA to also work with nonlinear data.
 2. The second limitation is the assumption of orthogonality, so the principal components are orthogonal to each other.
