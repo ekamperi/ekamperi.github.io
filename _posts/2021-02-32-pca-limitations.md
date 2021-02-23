@@ -11,7 +11,7 @@ We have already discussed principle component analysis [in a previous post](http
 
 1. First, the method relies on linear relationships between the variables in the dataset. So if our data are not linear, then PCA will not perform well. However, there is the so-called called kernel PCA trick that allows PCA to also work with nonlinear data.
 2. The second limitation is the assumption of orthogonality, so the principal components are orthogonal to each other.
-3. The next limitation is that large variance is used as a criterion for the existence of structure in the data. However, sometimes structure is found in places with low variance, as we see in the following image.
+3. The next limitation is that large variance is used as a criterion for the existence of structure in the data. However, sometimes structure is found in places with low variance, as we see in the following image. If we kept only the first principal component, out of 2, in the right case we would be absolutely fine, but in the left case we would perform badly.
 <p align="center">
 <img style="width: 100%; height: 100%" src="{{ site.url }}/images/pca_pitfall.png" alt="PCA pitfall">
 </p>
