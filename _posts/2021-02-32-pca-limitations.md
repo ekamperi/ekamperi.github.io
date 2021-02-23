@@ -9,7 +9,7 @@ description: A list of common pitfalls / limitations of Principal Component Anal
 
 We have already discussed principle component analysis [in a previous post](https://ekamperi.github.io/mathematics/2020/11/01/principal-component-analysis-lagrange-multiplier.html), where we viewed PCA as a constrained optimization problem solved with Lagrange multipliers. PCA is arguably a widely used data dimensionality reduction technique. In the era of big data, where our measuring capabilities have exponentially increased, it is often the case that we end up with very high dimensional datasets that we want to "summarize" with low dimensionality projections. However, there are some limitations of PCA that someone should be familiar with.
 
-1. First, the method relies on linear relationships between the variables in the dataset. So if our data are not linear, then PCA will not perform well. However, there is the so-called called kernel PCA version that allows PCA to also work with nonlinear data. Vanilla PCA computes the covariance matrix of the datset:
+1. First, the method relies on linear relationships between the variables in the dataset. So if our data are not linearly correlated, then PCA will not perform well. However, there is the so-called called kernel PCA version that allows PCA to also work with nonlinear data. Vanilla PCA computes the covariance matrix of the datset:
 $$
 C = \frac{1}{m}\sum_{i=1}^m{\mathbf{x}_i\mathbf{x}_i^\mathsf{T}}
 $$
