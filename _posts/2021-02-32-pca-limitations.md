@@ -21,7 +21,7 @@ $$. And only then projects the data onto the first $$k$$ eigenvectors of that ma
     <p align="center">
     <img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_pitfall2.png" alt="PCA pitfall">
     </p>
-3. The next gotcha is that large variance is used as a criterion for the existence of structure in the data. However, **sometimes structure is found in places with low variance**, as we see in the following image. If we kept only the first principal component, out of 2, in the right case we would be absolutely fine, but in the left case we would perform badly.
+3. The next gotcha is that large variance is used as a criterion for the existence of structure in the data. However, **sometimes structure is found in places with low variance**, as we see in the following image. If we kept only the first principal component, out of 2, in the right case we would be absolutely fine, but in the left case we would perform badly, in a classification context. 
     <p align="center">
     <img style="width: 100%; height: 100%" src="{{ site.url }}/images/pca_pitfall.png" alt="PCA pitfall">
     </p>
