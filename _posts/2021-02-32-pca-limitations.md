@@ -27,4 +27,4 @@ $$. And only then projects the data onto the first $$k$$ eigenvectors of that ma
     </p>
 4. Next, PCA is **scale variant**. This means that if the variables in our dataset have different units, some variables will dominate the others simply because they assume bigger values, and therefore contribute more to the overall variance. That's why we typically normalize our data so that they have a unit standard deviation.
 5. One very important issue is that of **interpretability**. Once we have replaced our original variables with the principal components, it's not always entirely trivial to interpret the results. Sometimes, depending again on data's structure, one might apply a rotation *after PCA* to simplify the interpretation of the components. Such rotations include Varimax and oblique rotations. 
-6. Last, PCA has a hard time working with **missing data and outliers**. With respect to outliers, there is Robust PCA. 
+6. Last, PCA has a hard time working with **missing data and outliers**. With respect to outliers, there is [Robust PCA](https://en.m.wikipedia.org/wiki/Robust_principal_component_analysis). 
