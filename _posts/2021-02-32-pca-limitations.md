@@ -9,7 +9,7 @@ description: A list of common pitfalls / limitations of Principal Component Anal
 
 We have already discussed principle component analysis [in a previous post](https://ekamperi.github.io/mathematics/2020/11/01/principal-component-analysis-lagrange-multiplier.html), where we viewed PCA as a constrained optimization problem solved with Lagrange multipliers. PCA is arguably a widely used data dimensionality reduction technique. In the era of big data, where our measuring capabilities have exponentially increased, it is often the case that we end up with very high dimensional datasets that we want to "summarize" with low dimensionality projections. However, there are some limitations of PCA that someone should be familiar with.
 
-1. First, the method relies on **linear relationships** between the variables in the dataset. So if our data are not linearly correlated, then PCA will not perform well. However, there is the so-called called kernel PCA version that allows PCA to also work with nonlinear data. Vanilla PCA computes the covariance matrix of the datset:
+1. First, the method relies on **linear relationships** between the variables in the dataset. So if our data are not linearly correlated, then PCA will not perform well. However, there is the so-called called kernel PCA version that allows PCA to also work with nonlinear data. Vanilla PCA computes the covariance matrix of the dataset:
 $$
 C = \frac{1}{n}\sum_{i=1}^n{\mathbf{x}_i\mathbf{x}_i^\mathsf{T}}
 $$. Kernel PCA, on the other hand, first transforms the data into an even higher-dimensional space where:
@@ -25,5 +25,5 @@ $$. And only then projects the data onto the first $$k$$ eigenvectors of that ma
     <img style="width: 100%; height: 100%" src="{{ site.url }}/images/pca_pitfall.png" alt="PCA pitfall">
     </p>
 4. Next, PCA is **scale variant**. This means that if the variables in our dataset have different units, some variables will dominate the others simply because they assume bigger values. That's why we typically normalize our data so that they have a unit standard deviation.
-5. One very important issue is that of **interpretability**. Once we have replaced our original variables with our principal components, it's not always entirely trivial to interpret the principal components.
+5. One very important issue is that of **interpretability**. Once we have replaced our original variables with our principal components, it's not always entirely trivial to interpret the principal components. Sometimes, depending on data's structure, one might apply a rotation *after PCA*, such as Varimax. 
 6. Last, PCA has a hard time working with **missing data and outliers**.
