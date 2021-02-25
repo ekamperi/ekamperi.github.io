@@ -23,7 +23,7 @@ C = \frac{1}{n}\sum_{i=1}^n{\Phi(\mathbf{x}_i)\Phi(\mathbf{x}_i)^\mathsf{T}}
 $$. And only then projects the data onto the eigenvectors of that matrix, just like regular PCA. The kernel trick refers to performing the computation without actually computing $$\Phi(\mathbf{x})$$. This is possible only if $$\Phi$$ is chosen such that it has a known corresponding kernel. KPCA doesn't always cut it, so depending on your dataset, you may need to look at other non-linear dimensionality reduction techniques, such as LLE, isomap, or t-SNE.
 3. Another limitation is the **assumption of orthogonality**, since the principal components are *by design* orthogonal to each other. Depending on the data, far "better" basis vectors may exist to summarize the data *that are not orthogonal*. The following image shows an extreme such case that was taken [from here](https://arxiv.org/pdf/1404.1100.pdf):
     <p align="center">
-    <img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_pitfall2.png" alt="PCA pitfall">
+    <img style="width: 60%; height: 60%" src="{{ site.url }}/images/pca_pitfall2.png" alt="PCA pitfall">
     </p>
 4. The next gotcha is that large variance is used as a criterion for the existence of structure in the data. However, **sometimes structure is found in places with low variance**, as we see in the following image. If we kept only the first principal component, we would be absolutely fine in the right case, but in the left case, we would perform badly in a classification context. 
     <p align="center">
