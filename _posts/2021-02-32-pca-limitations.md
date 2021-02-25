@@ -19,7 +19,7 @@ C = \frac{1}{n}\sum_{i=1}^n{\Phi(\mathbf{x}_i)\Phi(\mathbf{x}_i)^\mathsf{T}}
 $$. And only then projects the data onto the eigenvectors of that matrix, just like regular PCA. The kernel trick refers to performing the computation without actually computing $$\Phi(\mathbf{x})$$. This is possible only if $$\Phi$$ is chosen such that it has a known corresponding kernel. KPCA doesn't always cut it, so depending on your dataset, you may need to look at other non-linear dimensionality reduction techniques, such as LLE, isomap, or t-SNE.
 2. Principal components must be unique otherwise lack meaning (they are essentially random axes). We already [have demonstrated this](https://ekamperi.github.io/mathematics/2020/11/01/principal-component-analysis-lagrange-multiplier.html#weak-linear-correlation). Therefore, the distinctiveness of the eigenvalues is a fundamental assumption of PCA that the analyst must test. The following image was takedn [from here](https://onlinelibrary.wiley.com/doi/pdf/10.1111/evo.13835):
     <p align="center">
-        <img style="width: 50%; height: 50%" src="{{ site.url }}/images/pca_pitfall3.png" alt="PCA pitfall">
+        <img style="width: 100%; height: 100%" src="{{ site.url }}/images/pca_pitfall3.png" alt="PCA pitfall">
     </p>
 3. Another limitation is the **assumption of orthogonality**, since the principal components are *by design* orthogonal to each other. Depending on the data, far "better" basis vectors may exist to summarize the data *that are not orthogonal*. The following image shows an extreme such case and was taken [from here](https://arxiv.org/pdf/1404.1100.pdf):
     <p align="center">
