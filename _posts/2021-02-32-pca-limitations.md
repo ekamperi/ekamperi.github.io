@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Principal Component Analysis limitations (and prospects)"
+title: "Principal Component Analysis limitations and how to overcome them"
 date: 2021-02-23
 categories: [mathematics]
 tags: ['machine learning', 'mathematics', 'statistics']
-description: A list of common pitfalls/limitations of Principal Component Analysis
+description: A list of common pitfalls/limitations of Principal Component Analysis and how to overcome them
 ---
 
 In the era of big data, our measuring capabilities have exponentially increased. It is often the case that we end up with very high dimensional datasets that we want to "summarize" with low dimensionality projections. PCA is arguably a widely used data dimensionality reduction technique. We have already discussed it [in a previous post](https://ekamperi.github.io/mathematics/2020/11/01/principal-component-analysis-lagrange-multiplier.html), where we viewed PCA as a constrained optimization problem solved with Lagrange multipliers.  However, there are some limitations of PCA that someone should be familiar with. At the same time, a weakness could be an opportunity for new developments.
