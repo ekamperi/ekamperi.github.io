@@ -19,7 +19,7 @@ Suppose that we are given a large matrix $$\mathbf{X}$$, such that it can be dec
 low-rank matrix $$\mathbf{L}$$ and a sparse matrix $$\mathbf{S}$$, i.e., $$\mathbf{X} = \mathbf{L} + \mathbf{S}$$.
 
 <p align="center">
- <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robst_pca/rpca_example0.png" alt="Robust PCA example">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/rpca_example0.png" alt="Robust PCA example">
 </p>
 
 In this setup, we do not know the rank of matrix $$\mathbf{L}$$, not even the positions of the zeros in the sparse
