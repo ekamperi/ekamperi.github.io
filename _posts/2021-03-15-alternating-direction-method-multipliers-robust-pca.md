@@ -59,9 +59,9 @@ $$
 $$
 
 Where $$\left\Vert \mathbf{L}\right\Vert_*$$ is the nuclear norm of matrix $$\mathbf{L}$$, i.e.,
-the sum of $$\mathbf{L}$$'s singular values which is used as a proxy for the rank of the matrix:
+the sum of $$\mathbf{L}$$'s singular values which is used as a proxy for the rank of the matrix
 $$\left\Vert \mathbf{L}\right\Vert_* \stackrel{\text{def}}{=} \sum_i \sigma_i(\mathbf{L})$$ and $$\left\Vert \mathbf{S}\right\Vert_1$$
-is the $$\ell_1$$ norm: $$\left\Vert \mathbf{S}\right\Vert_1 \stackrel{\text{def}}{=} \sum_{ij} |S_{ij}|$$.
+is the *element-wise* $$\ell_1$$ norm $$\left\Vert \mathbf{S}\right\Vert_1 \stackrel{\text{def}}{=} \sum_{ij} |S_{ij}|$$.
 
 ### When is $$\mathbf{X} = \mathbf{L} + \mathbf{S}$$ separation meaningful?
 1. When $$\mathbf{L}$$ is not sparse, e.g., its singular values are reasonably spread out.
