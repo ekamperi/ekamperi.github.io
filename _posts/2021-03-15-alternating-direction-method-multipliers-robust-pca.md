@@ -27,7 +27,7 @@ A *sparse matrix* is one that contains very few non-zero elements.
 <p align="center">
   <img alt="Low-rank matrix example" src="{{ site.url }}/images/robust_pca/low_rank_matrix.png" width="20%" height="20%">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="Sparse matrix example" src="{{ site.url }}/images/robust_pca/low_rank_matrix.png" width="20%" height="20%">
+  <img alt="Sparse matrix example" src="{{ site.url }}/images/robust_pca/sparse_matrix.png" width="20%" height="20%">
 </p>
 Left: Low-rank matrix example, Right: Sparse matrix example
 
