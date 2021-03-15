@@ -10,6 +10,9 @@ description: An introduction on the Alternating Direction of Method Multipliers 
 ### Contents
 {:.no_toc}
 
+* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
+{:toc}
+
 In the [previous blog post](https://ekamperi.github.io/mathematics/2021/02/23/pca-limitations.html),
 we discussed some of the limitations of principle component analysis.
 One such restriction arises when there exist gross errors, corruption in the data, even just outliers.
