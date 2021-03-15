@@ -39,6 +39,7 @@ Alright, so our problem is akin to decomposing the image on the left as the sum 
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/rpca_example0.png" alt="Robust PCA example">
 </p>
+Image taken from [a presentation of Yuxin Chen](http://www.princeton.edu/~yc5/ele520_math_data/lectures/robust_PCA.pdf).
 
 In this setup, we do not know the rank of matrix $$\mathbf{L}$$, nor the positions of the zeros in the sparse matrix $$\mathbf{S}$$ or even how many of them there are. The optimization problem we are called to solve is:
 
