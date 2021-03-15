@@ -13,16 +13,13 @@ description: An introduction on the Alternating Direction of Method Multipliers 
 * A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
 {:toc}
 
-In the [previous blog post](https://ekamperi.github.io/mathematics/2021/02/23/pca-limitations.html),
-we discussed some of the limitations of principle component analysis.
-One such restriction arises when there exist gross errors, corruption in the data, even just outliers.
-A method to handle such cases is the so-called "Robust PCA", which we will talk about today. 
+In the [previous blog post](https://ekamperi.github.io/mathematics/2021/02/23/pca-limitations.html), we discussed some of the limitations of principle component analysis. One such restriction arises when there exist gross errors, corruption in the data, even just outliers. A method to handle such cases is the so-called "Robust PCA", which we will talk about today. 
 
 Suppose that we are given a large matrix $$\mathbf{X}\in \mathbb{R}^{m,n}$$, such that it can be decomposed as a sum of a
 low-rank matrix $$\mathbf{L}$$ and a sparse matrix $$\mathbf{S}$$, i.e., $$\mathbf{X} = \mathbf{L} + \mathbf{S}$$.
-In case your are unfamiliar with the terms, the *rank of a matrix* is defined as either the maximum number of linearly
+If you are unfamiliar with the terms, the *rank of a matrix* is defined as either the maximum number of linearly
 independent column vectors in the matrix or, equivalently, as the maximum number of linearly independent row vectors.
-A *sparse matrix* is one that contains very few non-zero elements.
+A *sparse matrix* contains very few non-zero elements.
 
 <p align="center">
   <img alt="Low-rank matrix example" src="{{ site.url }}/images/robust_pca/low_rank_matrix.png" width="20%" height="20%">
@@ -37,8 +34,7 @@ Alright, so our problem is akin to decomposing the image on the left as the sum 
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/rpca_example0.png" alt="Robust PCA example">
 </p>
 
-In this setup, we do not know the rank of matrix $$\mathbf{L}$$, not even the positions of the zeros in the sparse
-matrix $$\mathbf{S}$$ or how many of them there are. The optimization problem we are called to solve is:
+In this setup, we do not know the rank of matrix $$\mathbf{L}$$, nor the positions of the zeros in the sparse matrix $$\mathbf{S}$$ or even how many of them there are. The optimization problem we are called to solve is:
 
 $$
 \mathop{\mathrm{arg\,min}}_{L,S} \,\,\mathop{\mathrm{rank}}(\mathbf{L}) + \lambda \left\Vert \mathbf{S}\right\Vert_{\infty}, \,\, s.t. \mathbf{X} = \mathbf{L} + \mathbf{S}
@@ -46,11 +42,10 @@ $$
 
 Where $$\left\Vert \mathbf{S}\right\Vert_\infty$$ is the *infinity norm* that goes down as the non-zero elements of a matrix go down.
 The parameter $$\lambda$$ defines the relative contribution of the two terms in the optimization objective. If we assume a large
-value for $$\lambda$$, then the optimizer will try harder to decrease the density of the matrix $$\mathbf{S}$$ in order to achieve
+value for $$\lambda$$, then the optimizer will try harder to decrease the density of the matrix $$\mathbf{S}$$ to achieve
 sparseness.
 
-However, in the above formulation, both terms are non-convex, and we really like optimizing convex functions.
-Therefore we replace the original problem with a new one, that is "relaxed" in such a way that it now is convex:
+However, the above formulation is literally a disaster in an optimization context. We have twice as many unknown as knowns, the problem has a combinatorial complexity and both terms are non-convex. Since we really like optimizing convex functions, we replace the original problem with a new one, that is "relaxed" in such a way that it now is convex:
 
 $$
 \mathop{\mathrm{arg\,min}}_{L,S} \,\, \left\Vert \mathbf{L}\right\Vert_* + \lambda \left\Vert \mathbf{S}\right\Vert_1, \,\, s.t. \mathbf{X} = \mathbf{L} + \mathbf{S}
@@ -65,7 +60,7 @@ is the $$\ell_1$$ norm: $$\left\Vert \mathbf{S}\right\Vert_1 \stackrel{\text{def
 1. When $$\mathbf{L}$$ is not sparse, e.g., its singular values are reasonably spread out.
 2. When $$\mathbf{S}$$ is not low rank, e.g., it does not have all non zero elements in a column or in a few columns.
 
-Otherwise, the decomposition is simply not feasible. A remarkable fact is that there is no need for tuning the scalar $$\lambda$$ most of the time. There is a universal value that works well, $$\lambda = \frac{1}{\sqrt{\mathrm{max}(m,n)}}$$. However, if assumptions are only partially valid, the optimal value of $$\lambda$$ may vary a bit. For example, if the matrix $$\mathbf{S}$$ is very sparse, we may need to increase $$\lambda$$ to recover matrices $$\mathbf{L}$$ of larger rank.
+Otherwise, the decomposition is simply not feasible. A remarkable fact is that there is no need for tuning the scalar $$\lambda$$ most of the time. There is a universal value that works well, $$\lambda = \frac{1}{\sqrt{\mathrm{max}(m,n)}}$$. However, if assumptions are only partially valid, the optimal value of $$\lambda$$ may vary slightly. For example, if the matrix $$\mathbf{S}$$ is very sparse, we may need to increase $$\lambda$$ to recover matrices $$\mathbf{L}$$ of larger rank.
 
 ### Applications 
 1.	**Video surveillance**. The background variations of a video are modeled as low rank, and the foreground objects such as pedestrians and cars are modeled as sparse errors which are superimposed on the low-rank background. 
@@ -94,9 +89,7 @@ $$
 \mathbf{Y}_{k+1}=\underbrace{\mathbf{Y}_k + \rho \underbrace{(\mathbf{X}-\mathbf{L}_{k+1} - \mathbf{S}_{k+1})}_{\text{residual error}}}_{\text{running sum of residual errors}}
 $$
 
-However, the first step is usually as expensive as solving the initial problem. So we need to do better than this.
-In the literature, many methods solved the problem above. One such method is the so-called Alternating Direction Method of Multipliers.
-ADM splits the minimization problem into two smaller and easier to tackle subproblems, where $$\mathbf{L}, \mathbf{S}$$ are minimized separately. 
+However, the first step is usually as expensive as solving the initial problem. So we need to do better than this. In the literature, there are methods designed to solve the problem above. One such method is the so-called **Alternating Direction Method of Multipliers**. ADMM splits the minimization problem into two smaller and easier to tackle subproblems, where $$\mathbf{L}, \mathbf{S}$$ are minimized separately. 
 
 $$
 \begin{align*}
@@ -107,9 +100,7 @@ $$
 $$
 
 ADMM for solving convex problems globally converges for any penalty parameter $$\rho > 0$$ with a sublinear rate $$\mathcal{O}(1/k)$$.
-I listened to a talk of Stephen Boyd and he said that for every specific optimization problem probably exists a better optimization
-algorithm. However, as a generic algorithm that can be applied to pretty much every case and give reasonably good results after a
-few iterations, ADMM is top.
+I listened to Stephen Boyd's talk on ADMM, and he said this. For every *specific* optimization problem, a better optimization algorithm than ADMM probably exists. However, as a generic algorithm that can be applied to pretty much every case and give reasonably good results after a few iterations, ADMM is top.
 
 ### Example code in Mathematica
 
@@ -146,6 +137,4 @@ RobustPCA[X_] :=
 {{L, S}, errors} = RobustPCA[X];
 {% endraw %}
 {% endhighlight %}
-  
-
-
+ 
