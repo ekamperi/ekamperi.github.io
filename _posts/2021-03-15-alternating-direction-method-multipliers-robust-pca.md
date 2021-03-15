@@ -69,7 +69,7 @@ Otherwise, the decomposition is simply not feasible. A remarkable fact is that t
 
 ### Applications 
 1.	**Video surveillance**. The background variations of a video are modeled as low rank, and the foreground objects such as pedestrians and cars are modeled as sparse errors which are superimposed on the low-rank background. 
-2.	**Latent semantic indexing**. The basic idea here is to generate a document versus term matrix whose entries reflect a term's relevance in a document. Then, the composing X equal L + S, L would capture the common words and S the few terms that would distinguish the documents. 
+2.	**Latent semantic indexing**. The basic idea here is to generate a document versus term matrix whose entries reflect a term's relevance in a document. Then, the decomposing $$\mathbf{X} = \mathbf{L} + \mathbf{S}$$, $$\mathbf{L}$$ would capture the common words and $$\mathbf{S}$$ the few terms that would distinguish the documents. 
 3.	**Ranking and recommendation systems**.
 4.	**Face recognition**. Removing shadows, specularities, and reflections from facial images. 
 
