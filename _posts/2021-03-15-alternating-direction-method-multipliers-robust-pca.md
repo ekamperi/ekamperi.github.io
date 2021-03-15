@@ -106,6 +106,11 @@ $$
 \end{align*}
 $$
 
+ADMM for solving convex problems globally converges for any penalty parameter $$\rho > 0$$ with a sublinear rate $$\mathcal{O}(1/k)$.
+I listened to a talk of Stephen Boyd and he said that for every specific optimization problem probably exists a better optimization
+algorithm. However, as a generic algorithm that can be applied to pretty much every case and give reasonably good results after a
+few iterations, ADMM is top.
+
 ### Example code in Mathematica
 
 {% highlight mathematica %}
