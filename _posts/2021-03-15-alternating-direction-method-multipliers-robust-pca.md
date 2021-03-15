@@ -69,7 +69,7 @@ is the *element-wise* $$\ell_1$$ norm $$\left\Vert \mathbf{S}\right\Vert_1 \stac
 
 Otherwise, the decomposition is simply not feasible. A remarkable fact is that there is no need for tuning the scalar $$\lambda$$ most of the time. There is a universal value that works well, $$\lambda = \frac{1}{\sqrt{\mathrm{max}(m,n)}}$$. However, if assumptions are only partially valid, the optimal value of $$\lambda$$ may vary slightly. For example, if the matrix $$\mathbf{S}$$ is very sparse, we may need to increase $$\lambda$$ to recover matrices $$\mathbf{L}$$ of larger rank.
 
-### Applications 
+### Applications
 *	**Video surveillance**. The background variations of a video are modeled as a low-rank matrix, and the foreground objects such as pedestrians and cars are modeled as sparse errors superimposed on the low-rank background. How do we do that? We take every frame and reshape it into a long column vector, and then we use these long column vectors to construct the matrix $$\mathbf{X}$$. E.g., in the following case, the video consists of 100 frames.
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/rpca_video.png" alt="Robust PCA in video surveillance">
@@ -87,8 +87,8 @@ $$
 \left\Vert\mathbf{L}\right\Vert _*+ \lambda \left\Vert \mathbf{S}\right\Vert_1 + \underbrace{\left<{\mathbf{Y},\mathbf{X}-\mathbf{L}-\mathbf{S}}\right>}_{\text{Standard Lagrangian}} + \underbrace{\frac{\rho}{2} \left\Vert \mathbf{X} - \mathbf{L} -\mathbf{S}\right\Vert_2^2}_{\text{Augmented Lagrangian term}}
 $$
 
-Where $$\left<{\mathbf{A},\mathbf{B}}\right>=\text{trace}(\mathbf{A}^*\mathbf{B})$$. The quadratic penalty makes the objective strongly convex if
-$$\rho$$ is large. The penalty is softer than a barrier, as the iterates are no longer confined to the feasible space.  A generic ALM algorithm would solve by repeatedly doing the following calculations:
+Where $$\left<{\mathbf{A},\mathbf{B}}\right>=\text{trace}(\mathbf{A}^*\mathbf{B})$$. The quadratic penalty is added to make the objective strongly convex when
+$$\rho$$ is large. This helps convergence without assumptions like strict convexity or even finiteness of the minimized function. Also, the penalty is softer than a barrier, as the iterates are no longer confined to the feasible space.  Anyway, a generic ALM algorithm would solve by repeatedly doing the following calculations:
 
 $$
 (\mathbf{L}_{k+1}, \mathbf{S}_{k+1}) = \mathop{\mathrm{arg\,min}}_{L,S} \,\,\mathcal{L}(\mathbf{L},\mathbf{S},\mathbf{Y}_k)
