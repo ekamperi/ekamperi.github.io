@@ -17,13 +17,16 @@ One method that handles such cases is the so-called "Robust PCA", which we will 
 
 Suppose that we are given a large matrix $$\mathbf{X}$$, such that it can be decomposed as a sum of a
 low-rank matrix $$\mathbf{L}$$ and a sparse matrix $$\mathbf{S}$$, i.e., $$\mathbf{X} = \mathbf{L} + \mathbf{S}$$.
+In case your are unfamiliar with the terms, the *rank of a matrix* is defined as either the maximum number of linearly
+independent column vectors in the matrix or, equivalently, as the maximum number of linearly independent row vectors.
+A *sparse matrix* is one that contains very few non-zero elements. 
 
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/rpca_example0.png" alt="Robust PCA example">
 </p>
 
 In this setup, we do not know the rank of matrix $$\mathbf{L}$$, not even the positions of the zeros in the sparse
-matrix $$\mathbf{S}$$ or how many of them there are. The optimizatio problem we are called to solve is:
+matrix $$\mathbf{S}$$ or how many of them there are. The optimization problem we are called to solve is:
 
 $$
 \mathop{\mathrm{arg\,min}}_{L,S} \,\,\mathop{\mathrm{rank}}(\mathbf{L}) + \lambda \left\Vert \mathbf{S}\right\Vert_{\infty}, \,\, s.t. \mathbf{X} = \mathbf{L} + \mathbf{S}
