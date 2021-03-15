@@ -41,7 +41,8 @@ $$
 Where $$\left\Vert \mathbf{S}\right\Vert_\infty$$ is the *infinity norm* that goes down as the non-zero elements of a matrix go down.
 The parameter $$\lambda$$ defines the relative contribution of the two terms in the optimization objective. If we assume a large
 value for $$\lambda$$, then the optimizer will try harder to decrease the density of the matrix $$\mathbf{S}$$ in order to achieve
-sparseness. However, in this formulation, both terms are non-convex, and therefore we "relax" the problem's statement to make it convex:
+sparseness. However, in this formulation, both terms are non-convex, and we really like optimizing convex functions.
+Therefore we "relax" the initial problem to make it convex:
 
 $$
 \mathop{\mathrm{arg\,min}}_{L,S} \,\, \left\Vert \mathbf{L}\right\Vert_* + \lambda \left\Vert \mathbf{S}\right\Vert_1, \,\, s.t. \mathbf{X} = \mathbf{L} + \mathbf{S}
