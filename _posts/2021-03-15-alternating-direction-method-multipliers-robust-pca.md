@@ -32,8 +32,10 @@ $$
 \mathop{\mathrm{arg\,min}}_{L,S} \,\,\mathop{\mathrm{rank}}(\mathbf{L}) + \lambda \left\Vert \mathbf{S}\right\Vert_{\infty}, \,\, s.t. \mathbf{X} = \mathbf{L} + \mathbf{S}
 $$
 
-Where $$\left\Vert \mathbf{S}\right\Vert_\infty$$ is the *infinity norm* that just counts non-zero elements of a matrix.
-However, in this formulation, both terms are non-convex, and therefore we "relax" the problem's statement to make it convex:
+Where $$\left\Vert \mathbf{S}\right\Vert_\infty$$ is the *infinity norm* that goes down as the non-zero elements of a matrix go down.
+The parameter $$\lambda$$ defines the relative contribution of the two terms in the optimization objective. If we assume a large
+value for $$\lambda$$, then the optimizer will try harder to decrease the density of the matrix $$\mathbf{S}$$ in order to achieve
+sparseness. However, in this formulation, both terms are non-convex, and therefore we "relax" the problem's statement to make it convex:
 
 $$
 \mathop{\mathrm{arg\,min}}_{L,S} \,\, \left\Vert \mathbf{L}\right\Vert_* + \lambda \left\Vert \mathbf{S}\right\Vert_1, \,\, s.t. \mathbf{X} = \mathbf{L} + \mathbf{S}
@@ -48,8 +50,7 @@ is the $$\ell_1$$ norm: $$\left\Vert \mathbf{S}\right\Vert_1 \stackrel{\text{def
 1. When $$\mathbf{L}$$ is not sparse, e.g., its singular values are reasonably spread out.
 2. When $$\mathbf{S}$$ is not low rank, e.g., it does not have all non zero elements in a column or in a few columns.
 
-Otherwise, the decomposition is simply not feasible. A remarkable fact is that there is no need for tuning of the algorithm. 
-Not even the scalar $$\lambda$$ needs to be tuned most of the time. There is a universal value that works well, $$\lambda = \frac{1}{\sqrt{\mathrm{max}(n_1,n_2)}}$$. However, if assumptions are only partially valid, the optimal value of Lambda may vary a bit. For example, if the matrix $$\mathbf{S}$$ is very sparse, we may need to increase $$\lambda$$ to recover matrices $$\mathbf{L}$$ of larger rank.
+Otherwise, the decomposition is simply not feasible. A remarkable fact is that there is no need for tuning the scalar $$\lambda$$ most of the time. There is a universal value that works well, $$\lambda = \frac{1}{\sqrt{\mathrm{max}(n_1,n_2)}}$$. However, if assumptions are only partially valid, the optimal value of Lambda may vary a bit. For example, if the matrix $$\mathbf{S}$$ is very sparse, we may need to increase $$\lambda$$ to recover matrices $$\mathbf{L}$$ of larger rank.
 
 ### Applications 
 1.	**Video surveillance**. The background variations of a video are modeled as low rank, and the foreground objects such as pedestrians and cars are modeled as sparse errors which are superimposed on the low-rank background. 
