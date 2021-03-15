@@ -22,7 +22,7 @@ Suppose that we are given a large matrix $$\mathbf{X}$$, such that it can be dec
 low-rank matrix $$\mathbf{L}$$ and a sparse matrix $$\mathbf{S}$$, i.e., $$\mathbf{X} = \mathbf{L} + \mathbf{S}$$.
 In case your are unfamiliar with the terms, the *rank of a matrix* is defined as either the maximum number of linearly
 independent column vectors in the matrix or, equivalently, as the maximum number of linearly independent row vectors.
-A *sparse matrix* is one that contains very few non-zero elements, like the following one:
+A *sparse matrix* is one that contains very few non-zero elements.
 
 <p align="center">
   <img alt="Low-rank matrix example" src="{{ site.url }}/images/robust_pca/low_rank_matrix.png" width="20%" height="20%">
@@ -47,15 +47,17 @@ $$
 Where $$\left\Vert \mathbf{S}\right\Vert_\infty$$ is the *infinity norm* that goes down as the non-zero elements of a matrix go down.
 The parameter $$\lambda$$ defines the relative contribution of the two terms in the optimization objective. If we assume a large
 value for $$\lambda$$, then the optimizer will try harder to decrease the density of the matrix $$\mathbf{S}$$ in order to achieve
-sparseness. However, in this formulation, both terms are non-convex, and we really like optimizing convex functions.
-Therefore we "relax" the initial problem to make it convex:
+sparseness.
+
+However, in the above formulation, both terms are non-convex, and we really like optimizing convex functions.
+Therefore we replace the original problem with a new one, that is "relaxed" in such a way that it now is convex:
 
 $$
 \mathop{\mathrm{arg\,min}}_{L,S} \,\, \left\Vert \mathbf{L}\right\Vert_* + \lambda \left\Vert \mathbf{S}\right\Vert_1, \,\, s.t. \mathbf{X} = \mathbf{L} + \mathbf{S}
 $$
 
 Where $$\left\Vert \mathbf{L}\right\Vert_*$$ is the nuclear norm of matrix $$\mathbf{L}$$, i.e.,
-the sum of $$\mathbf{L}$$'s singular values which are used as a proxy for their rank of the matrix:
+the sum of $$\mathbf{L}$$'s singular values which are used as a proxy for the rank of the matrix:
 $$\left\Vert \mathbf{L}\right\Vert_* \stackrel{\text{def}}{=} \sum_i \sigma_i(\mathbf{L})$$ and $$\left\Vert \mathbf{S}\right\Vert_1$$
 is the $$\ell_1$$ norm: $$\left\Vert \mathbf{S}\right\Vert_1 \stackrel{\text{def}}{=} \sum_{ij} |S_{ij}|$$.
 
