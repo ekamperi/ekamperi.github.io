@@ -23,12 +23,11 @@ A *sparse matrix* is one that contains very few non-zero elements, like the foll
 
 Low-rank matrix example             |  Sparse matrix example
 :--------------------------------------------------:|:-------------------------:
-![style="width: 30%; height: 30%"]({{ site.url }}/images/robust_pca/low_rank_matrix.png)  |  ![]({{ site.url }}/images/robust_pca/sparse_matrix.png)
 
 <p align="center">
-  <img alt="Light" src="{{ site.url }}/images/robust_pca/low_rank_matrix.png" width="30%" height="30%">
+  <img alt="Low-rank matrix example" src="{{ site.url }}/images/robust_pca/low_rank_matrix.png" width="20%" height="20%">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="Dark" src="{{ site.url }}/images/robust_pca/low_rank_matrix.png" width="30%" height="30%">
+  <img alt="Sparse matrix example" src="{{ site.url }}/images/robust_pca/low_rank_matrix.png" width="20%" height="20%">
 </p>
 
 Alright, so our problem is akin to decomposing the image on the left as the sum of the two images on the right:
