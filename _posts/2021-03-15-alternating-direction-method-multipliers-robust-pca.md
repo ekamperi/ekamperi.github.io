@@ -19,7 +19,13 @@ Suppose that we are given a large matrix $$\mathbf{X}$$, such that it can be dec
 low-rank matrix $$\mathbf{L}$$ and a sparse matrix $$\mathbf{S}$$, i.e., $$\mathbf{X} = \mathbf{L} + \mathbf{S}$$.
 In case your are unfamiliar with the terms, the *rank of a matrix* is defined as either the maximum number of linearly
 independent column vectors in the matrix or, equivalently, as the maximum number of linearly independent row vectors.
-A *sparse matrix* is one that contains very few non-zero elements. 
+A *sparse matrix* is one that contains very few non-zero elements, like the following one:
+
+<p align="center">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/sparse_matrix.png" alt="Sparse matrix example">
+</p>
+
+Alright, so our problem is akin to decomposing the image on the left as the sum of the two images on the right:
 
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/rpca_example0.png" alt="Robust PCA example">
