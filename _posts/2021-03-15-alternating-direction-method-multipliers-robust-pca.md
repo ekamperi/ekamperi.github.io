@@ -80,9 +80,11 @@ Otherwise, the decomposition is simply not feasible. A remarkable fact is that t
 
 ### Augmented Lagrangian method 
 
+The augmented Lagrangian of the optimization problem is:
+
 $$
 \mathcal{L}(\mathbf{L},\mathbf{S},\mathbf{Y}) = 
-\left\Vert\mathbf{L}\right\Vert _*+ \lambda \left\Vert \mathbf{S}\right\Vert_1 + \underbrace{\left<{\mathbf{Y},\mathbf{X}-\mathbf{L}-\mathbf{S}}\right>}_{\text{Lagrange Multipliers}} + \underbrace{\frac{\rho}{2} \left\Vert \mathbf{X} - \mathbf{L} -\mathbf{S}\right\Vert_2^2}_{\text{Augmented Lagrangian}}
+\left\Vert\mathbf{L}\right\Vert _*+ \lambda \left\Vert \mathbf{S}\right\Vert_1 + \underbrace{\left<{\mathbf{Y},\mathbf{X}-\mathbf{L}-\mathbf{S}}\right>}_{\text{Standard Lagrangian}} + \underbrace{\frac{\rho}{2} \left\Vert \mathbf{X} - \mathbf{L} -\mathbf{S}\right\Vert_2^2}_{\text{Augmented Lagrangian}}
 $$
 
 Where $$\left<{\mathbf{A},\mathbf{B}}\right>=\text{trace}(\mathbf{A}^*\mathbf{B})$$. The quadratic penalty makes the objective strongly convex if
