@@ -13,7 +13,13 @@ description: An introduction on the Alternating Direction of Method Multipliers 
 * A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
 {:toc}
 
+### Introduction
 In the [previous blog post](https://ekamperi.github.io/mathematics/2021/02/23/pca-limitations.html), we discussed some of the limitations of principle component analysis. One such restriction arises when there exist gross errors, corruption in the data, even just outliers. A method to handle such cases is the so-called "Robust PCA", which we will talk about today. 
+
+<p align="center">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/pca_outliers.png" alt="PCA outliers">
+</p>
+Image taken from [a presentation of Yuxin Chen](http://www.princeton.edu/~yc5/ele520_math_data/lectures/robust_PCA.pdf).
 
 Suppose that we are given a large matrix $$\mathbf{X}\in \mathbb{R}^{m,n}$$, such that it can be decomposed as a sum of a
 low-rank matrix $$\mathbf{L}$$ and a sparse matrix $$\mathbf{S}$$, i.e., $$\mathbf{X} = \mathbf{L} + \mathbf{S}$$.
