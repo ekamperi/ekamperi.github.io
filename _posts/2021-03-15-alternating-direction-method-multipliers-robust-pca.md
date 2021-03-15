@@ -21,9 +21,9 @@ In case your are unfamiliar with the terms, the *rank of a matrix* is defined as
 independent column vectors in the matrix or, equivalently, as the maximum number of linearly independent row vectors.
 A *sparse matrix* is one that contains very few non-zero elements, like the following one:
 
-<p align="center">
- <img style="width: 30%; height: 30%" src="{{ site.url }}/images/robust_pca/sparse_matrix.png" alt="Sparse matrix example">
-</p>
+Low-rank matrix example             |  Sparse matrix example
+:--------------------------------------------------:|:-------------------------:
+![]({{ site.url }}/images/robust_pca/low_rank_matrix.png)  |  ![]({{ site.url }}/images/robust_pca/sparse_matrix.png)
 
 Alright, so our problem is akin to decomposing the image on the left as the sum of the two images on the right:
 
