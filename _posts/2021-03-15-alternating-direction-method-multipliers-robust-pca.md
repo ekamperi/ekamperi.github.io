@@ -42,7 +42,7 @@ $$
 $$
 
 Where $$\left\Vert \mathbf{L}\right\Vert_*$$ is the nuclear norm of matrix $$\mathbf{L}$$, i.e.,
-the sum of $$\mathbg{L}$$'s singular values which are used as a proxy for their rank of the matrix:
+the sum of $$\mathbf{L}$$'s singular values which are used as a proxy for their rank of the matrix:
 $$\left\Vert \mathbf{L}\right\Vert_* \stackrel{\text{def}}{=} \sum_i \sigma_i(\mathbf{L})$$ and $$\left\Vert \mathbf{S}\right\Vert_1$$
 is the $$\ell_1$$ norm: $$\left\Vert \mathbf{S}\right\Vert_1 \stackrel{\text{def}}{=} \sum_{ij} |S_{ij}|$$.
 
