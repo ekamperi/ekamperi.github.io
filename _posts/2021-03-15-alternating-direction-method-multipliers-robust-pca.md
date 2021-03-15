@@ -22,7 +22,7 @@ independent column vectors in the matrix or, equivalently, as the maximum number
 A *sparse matrix* is one that contains very few non-zero elements, like the following one:
 
 <p align="center">
- <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/sparse_matrix.png" alt="Sparse matrix example">
+ <img style="width: 30%; height: 30%" src="{{ site.url }}/images/robust_pca/sparse_matrix.png" alt="Sparse matrix example">
 </p>
 
 Alright, so our problem is akin to decomposing the image on the left as the sum of the two images on the right:
