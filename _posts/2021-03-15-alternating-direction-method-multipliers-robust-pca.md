@@ -32,7 +32,7 @@ A *sparse matrix* contains very few non-zero elements.
 &nbsp; &nbsp; &nbsp; &nbsp;
   <img alt="Sparse matrix example" src="{{ site.url }}/images/robust_pca/sparse_matrix.png" width="20%" height="20%">
 </p>
-Left: Low-rank matrix example, Right: Sparse matrix example
+**Left**: Low-rank matrix example. **Right**: Sparse matrix example.
 
 Alright, so our problem is akin to decomposing the image on the left as the sum of the two images on the right:
 
@@ -71,6 +71,10 @@ Otherwise, the decomposition is simply not feasible. A remarkable fact is that t
 
 ### Applications 
 1.	**Video surveillance**. The background variations of a video are modeled as low rank, and the foreground objects such as pedestrians and cars are modeled as sparse errors which are superimposed on the low-rank background. 
+<p align="center">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/rpca_video.png" alt="Robust PCA in video surveillance">
+</p>
+Image taken from [a presentation of Yuxin Chen](http://www.princeton.edu/~yc5/ele520_math_data/lectures/robust_PCA.pdf).
 2.	**Latent semantic indexing**. The basic idea here is to generate a document versus term matrix whose entries reflect a term's relevance in a document. Then, the decomposing $$\mathbf{X} = \mathbf{L} + \mathbf{S}$$, $$\mathbf{L}$$ would capture the common words and $$\mathbf{S}$$ the few terms that would distinguish the documents. 
 3.	**Ranking and recommendation systems**.
 4.	**Face recognition**. Removing shadows, specularities, and reflections from facial images. 
