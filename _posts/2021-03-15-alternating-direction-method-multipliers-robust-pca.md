@@ -18,7 +18,7 @@ we discussed some of the limitations of principle component analysis.
 One such restriction arises when there exist gross errors, corruption in the data, even just outliers.
 One method that handles such cases is the so-called "Robust PCA", which we will talk about today. 
 
-Suppose that we are given a large matrix $$\mathbf{X}$$, such that it can be decomposed as a sum of a
+Suppose that we are given a large matrix $$\mathbf{X}\in R^{m,n}$$, such that it can be decomposed as a sum of a
 low-rank matrix $$\mathbf{L}$$ and a sparse matrix $$\mathbf{S}$$, i.e., $$\mathbf{X} = \mathbf{L} + \mathbf{S}$$.
 In case your are unfamiliar with the terms, the *rank of a matrix* is defined as either the maximum number of linearly
 independent column vectors in the matrix or, equivalently, as the maximum number of linearly independent row vectors.
