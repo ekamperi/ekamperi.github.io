@@ -88,7 +88,7 @@ $$
 $$
 
 Where $$\left<{\mathbf{A},\mathbf{B}}\right>=\text{trace}(\mathbf{A}^*\mathbf{B})$$. The quadratic penalty is added to make the objective strongly convex when
-$$\rho$$ is large. This helps convergence without assumptions like strict convexity or even finiteness of the minimized function. Also, the penalty is softer than a barrier, as the iterates are no longer confined to the feasible space.  Anyway, a generic ALM algorithm would solve by repeatedly doing the following calculations:
+$$\rho$$ is large. This helps convergence without assumptions like strict convexity or even finiteness of the minimized function. Also, the penalty is softer than a barrier, as the iterates are no longer confined to the feasible space.  Anyway, a generic ALM algorithm would solve the optimization problem by repeatedly doing the following calculations:
 
 $$
 (\mathbf{L}_{k+1}, \mathbf{S}_{k+1}) = \mathop{\mathrm{arg\,min}}_{L,S} \,\,\mathcal{L}(\mathbf{L},\mathbf{S},\mathbf{Y}_k)
