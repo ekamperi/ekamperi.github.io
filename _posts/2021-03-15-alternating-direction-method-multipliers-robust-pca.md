@@ -12,7 +12,7 @@ description: An introduction on the Alternating Direction of Method Multipliers 
 
 In the [previous blog post](https://ekamperi.github.io/mathematics/2021/02/23/pca-limitations.html),
 we discussed some of the limitations of principle component analysis.
-One such restriction arises when there exist outliers, corruption in the data, and gross errors.
+One such restriction arises when there exist gross errors, corruption in the data, even just outliers.
 One method that handles such cases is the so-called "Robust PCA", which we will talk about today. 
 
 Suppose that we are given a large matrix $$\mathbf{X}$$, such that it can be decomposed as a sum of a
@@ -32,18 +32,17 @@ $$
 \mathop{\mathrm{arg\,min}}_{L,S} \,\,\mathop{\mathrm{rank}}(\mathbf{L}) + \lambda \left\Vert \mathbf{S}\right\Vert_{\infty}, \,\, s.t. \mathbf{X} = \mathbf{L} + \mathbf{S}
 $$
 
-However, in this formulation, both terms are non-convex, and therefore we restate the problem as follows:
+Where $$\left\Vert \mathbf{S}\right\Vert_\infty$$ is the *infinity norm* that just counts non-zero elements of a matrix.
+However, in this formulation, both terms are non-convex, and therefore we "relax" the problem's statement to make it convex:
 
 $$
 \mathop{\mathrm{arg\,min}}_{L,S} \,\, \left\Vert \mathbf{L}\right\Vert_* + \lambda \left\Vert \mathbf{S}\right\Vert_1, \,\, s.t. \mathbf{X} = \mathbf{L} + \mathbf{S}
 $$
 
 Where $$\left\Vert \mathbf{L}\right\Vert_*$$ is the nuclear norm of matrix $$\mathbf{L}$$, i.e.,
-the sum of else singular values which are used as a proxy for their rank of the matrix:
-$$
-\left\Vert \mathbf{L}\right\Vert_* \stackrel{\text{def}}{=} \sum_i \sigma_i(\mathbf{L}), \,\,\,\,\,\,
-\left\Vert \mathbf{S}\right\Vert_1 \stackrel{\text{def}}{=} \sum_{ij} |S_{ij}|
-$$
+the sum of $$\mathbg{L}$$'s singular values which are used as a proxy for their rank of the matrix:
+$$\left\Vert \mathbf{L}\right\Vert_* \stackrel{\text{def}}{=} \sum_i \sigma_i(\mathbf{L})$$ and $$\left\Vert \mathbf{S}\right\Vert_1$$
+is the $$\ell_1$$ norm: $$\left\Vert \mathbf{S}\right\Vert_1 \stackrel{\text{def}}{=} \sum_{ij} |S_{ij}|$$.
 
 ### When is $$\mathbf{X} = \mathbf{L} + \mathbf{S}$$ separation meaningful?
 1. When $$\mathbf{L}$$ is not sparse, e.g., its singular values are reasonably spread out.
