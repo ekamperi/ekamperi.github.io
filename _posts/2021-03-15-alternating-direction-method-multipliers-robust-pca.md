@@ -32,7 +32,7 @@ A *sparse matrix* contains very few non-zero elements.
 &nbsp; &nbsp; &nbsp; &nbsp;
   <img alt="Sparse matrix example" src="{{ site.url }}/images/robust_pca/sparse_matrix.png" width="20%" height="20%">
 </p>
-**Left**: Low-rank matrix example. **Right**: Sparse matrix example.
+**Left**: Low-rank matrix. Only the first and the last columns are linearly independent. **Right**: Sparse matrix. Only three elements are non-zero.
 
 Alright, so our problem is akin to decomposing the image on the left as the sum of the two images on the right:
 
