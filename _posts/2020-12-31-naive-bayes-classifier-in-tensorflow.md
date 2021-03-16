@@ -38,8 +38,8 @@ In the pet example, assuming we had two classes, $$C_\text{dog}$$ and $$C_\text{
 
 $$
 \begin{align*}
-P\left(\text{dog} \mid \text{4-legs}, \text{tail}, \text{barks}\right) &= P(\text{4-legs}) P(\text{tail}) P(\text{barks}) \,\, P(C_\text{dog})\\
-P\left(\text{monkey} \mid \text{4-legs}, \text{tail}, \text{barks}\right) &= \underbrace{P(\text{4-legs}) P(\text{tail}) P(\text{barks})}_{\text{feature distributions}} \,\, \underbrace{P(C_\text{monkey})}_{\text{prior}}
+P\left(\text{dog} \mid \text{4-legs}, \text{tail}, \text{barks}\right) &\sim P(\text{4-legs|dog}) P(\text{tail|dog}) P(\text{barks|dog}) \,\, P(C_\text{dog})\\
+P\left(\text{monkey} \mid \text{4-legs}, \text{tail}, \text{barks}\right) &\sim \underbrace{P(\text{4-legs|monkey}) P(\text{tail|monkey}) P(\text{barks|monkey})}_{\text{feature distributions}} \,\, \underbrace{P(C_\text{monkey})}_{\text{prior}}
 \end{align*}
 $$
 
