@@ -68,7 +68,7 @@ is the *element-wise* $$\ell_1$$ norm $$\left\Vert \mathbf{S}\right\Vert_1 \stac
 2. When $$\mathbf{S}$$ is not low rank, e.g., it does not have all non zero elements in a column or in a few columns.
 
 Otherwise, the decomposition is simply not feasible. For instance, check the following sparse matrices. The left one
-happens to also be low-rank!
+happens to also be low-rank since only the first column is linear independent! This is a no-go!
 
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/rpca_identify.png" alt="Robust PCA">
@@ -96,8 +96,7 @@ $$
 \underbrace{\left\Vert\mathbf{L}\right\Vert _*+ \lambda \left\Vert \mathbf{S}\right\Vert_1 + \left<{\mathbf{Y},\mathbf{X}-\mathbf{L}-\mathbf{S}}\right>}_{\text{Standard Lagrangian}} + \underbrace{\frac{\rho}{2} \left\Vert \mathbf{X} - \mathbf{L} -\mathbf{S}\right\Vert_2^2}_{\text{Augmented Lagrangian term}}
 $$
 
-Where $$\left<{\mathbf{A},\mathbf{B}}\right>=\text{trace}(\mathbf{A}^*\mathbf{B})$$. The quadratic penalty is added to make the objective strongly convex when
-$$\rho$$ is large. This helps convergence without assumptions like strict convexity or even finiteness of the minimized function. Also, the penalty is softer than a barrier, as the iterates are no longer confined to the feasible space.  Anyway, a generic ALM algorithm would solve the optimization problem by repeatedly doing the following calculations:
+Where $$\left<{\mathbf{A},\mathbf{B}}\right>=\text{trace}(\mathbf{A}^*\mathbf{B})$$. The quadratic penalty is added to make the objective strongly convex when $$\rho$$ is large. This helps convergence without assumptions like strict convexity or even finiteness of the minimized function. Also, the penalty is softer than a barrier, as the iterates are no longer confined to the feasible space.  Anyway, a generic ALM algorithm would solve the optimization problem by repeatedly doing the following calculations:
 
 $$
 (\mathbf{L}_{k+1}, \mathbf{S}_{k+1}) = \mathop{\mathrm{arg\,min}}_{L,S} \,\,\mathcal{L}(\mathbf{L},\mathbf{S},\mathbf{Y}_k)
