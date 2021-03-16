@@ -139,7 +139,7 @@ $$
 $$
 
 Where $$\mathrm{SVT}_{\tau}(\mathbf{X})=\mathbf{U} \mathcal{S}_{\tau}(\mathbf{\Sigma}) \mathbf{V}^{*}$$, where $$\mathrm{SVT}_{\tau}$$ is the singular
-value thresholding operator. And $$\mathcal{S}_{\tau}(x)$$.
+value thresholding operator. And $$\mathcal{S}_{\tau}(x)=\operatorname{sgn}(x)$$.
 
 ### Example code in Mathematica
 
