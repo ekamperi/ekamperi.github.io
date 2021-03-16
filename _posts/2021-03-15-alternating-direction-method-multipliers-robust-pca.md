@@ -231,7 +231,8 @@ corruptedImg = ImageAdd[
   ]
 
 X = ImageData[corruptedImg];
-{{L, S}, errors} = RobustPCA[X];  
+{{L, S}, errors} = RobustPCA[X];
+Style[Image /@ {X, L, S}, ImageSizeMultipliers -> 1]
 {% endraw %}
 {% endhighlight %}
 
