@@ -3,7 +3,7 @@ layout: post
 title:  "Alternating direction method of multipliers and Robust PCA"
 date:   2021-03-15
 categories: [mathematics]
-tags: ['machine learning', 'Mathematica', 'mathematics', 'statistics']
+tags: ['machine learning', 'Mathematica', 'mathematics', 'optimization', 'statistics']
 description: An introduction on the Alternating Direction of Method Multipliers and how it can be applied to Robust PCA
 ---
 
