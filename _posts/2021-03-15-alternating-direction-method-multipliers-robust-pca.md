@@ -113,6 +113,17 @@ $$
 ADMM for solving convex problems globally converges for any penalty parameter $$\rho > 0$$ with a sublinear rate $$\mathcal{O}(1/k)$$.
 I listened to Stephen Boyd's talk on ADMM, and he said this. For every *specific* optimization problem, a better optimization algorithm than ADMM probably exists. However, as a generic algorithm that can be applied to pretty much every case and give reasonably good results after a few iterations, ADMM is top.
 
+The linear and quadratic terms of the augmented Lagrangian can be combined, by "completing" the square:
+
+$$
+\begin{align*}
+\mathbf{L}_{k+1} &= \mathop{\mathrm{arg\,min}}_L \,\, \left\{ \left\Vert\mathbf{L}\right\Vert_* + \frac{\rho}{2}\left\Vert \mathbf{X}_k-\mathbf{L}-\mathbf{S}_k + (1/\rho)\mathbf{Y}_k\right\Vert_2^2\right\}\\
+\mathbf{S}_{k+1} &= \mathop{\mathrm{arg\,min}}_S \,\, \left\{ \lambda\left\Vert\mathbf{S}\right\Vert_1 + \frac{\rho}{2}\left\Vert \mathbf{X}_k-\mathbf{L}_{k+1}-\mathbf{S}_k + (1/\rho)\mathbf{Y}_k\right\Vert_2^2\right\}\\
+\mathbf{Y}_{k+1} &=\mathbf{Y}_k + \rho\left(\mathbf{X} -\mathbf{L} - \mathbf{S}\right)
+\end{align*}
+$$
+
+Sometimes, the transformation $$\mathbf{U}=(1/\rho)\mathbf{Y}$$ is used to simplify the expressions above.
 ### Example code in Mathematica
 
 {% highlight mathematica %}
