@@ -128,6 +128,16 @@ $$
 
 Sometimes, the transformation $$\mathbf{U}=(1/\rho)\mathbf{Y}$$ is used to simplify the expressions above.
 
+This is equivalent to:
+
+$$
+\begin{aligned}
+\mathbf{L}_{k+1} &=\mathrm{SVT}_{1/\rho}\left(\mathbf{X}-\mathbf{S}_{k}+\frac{1}{\rho} \mathbf{Y}_{k}\right) \\
+\mathbf{S}_{k+1} &=\mathrm{ST}_{\lambda/\rho}\left(\mathbf{X}-\mathbf{L}_{k+1}+\frac{1}{\rho} \mathbf{Y}^{t}\right) \\
+\mathbf{Y}_{k+1} &=\mathbf{Y}_{k}+\rho\left(\mathbf{X}-\mathbf{L}_{k+1}-\mathbf{S}^{k+1}\right)
+\end{aligned}
+$$
+
 ### Example code in Mathematica
 
 {% highlight mathematica %}
