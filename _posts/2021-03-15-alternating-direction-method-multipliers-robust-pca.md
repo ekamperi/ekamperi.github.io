@@ -76,7 +76,9 @@ Otherwise, the decomposition is simply not feasible. A remarkable fact is that t
 </p>Image taken [from here](https://cs205tsqr.weebly.com/motivation.html).
 *	**Latent semantic indexing**. The basic idea here is to generate a document versus term matrix whose entries reflect a term's relevance in a document. Then, the decomposing $$\mathbf{X} = \mathbf{L} + \mathbf{S}$$, $$\mathbf{L}$$ would capture the common words and $$\mathbf{S}$$ the few terms that would distinguish the documents. 
 *	**Ranking and recommendation systems**.
-*	**Face recognition**. Removing shadows, specularities, and reflections from facial images. 
+*	**Face recognition**. Removing shadows, specularities, and reflections from facial images.
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/rpca_faces.png" alt="Robust PCA in face recognition">
+</p>Image taken [from here](https://arxiv.org/pdf/0912.3599.pdf).
 
 ### Augmented Lagrangian method 
 
@@ -119,7 +121,7 @@ $$
 \begin{align*}
 \mathbf{L}_{k+1} &= \mathop{\mathrm{arg\,min}}_L \,\, \left\{ \left\Vert\mathbf{L}\right\Vert_* + \frac{\rho}{2}\left\Vert \mathbf{X}_k-\mathbf{L}-\mathbf{S}_k + (1/\rho)\mathbf{Y}_k\right\Vert_2^2\right\}\\
 \mathbf{S}_{k+1} &= \mathop{\mathrm{arg\,min}}_S \,\, \left\{ \lambda\left\Vert\mathbf{S}\right\Vert_1 + \frac{\rho}{2}\left\Vert \mathbf{X}_k-\mathbf{L}_{k+1}-\mathbf{S}_k + (1/\rho)\mathbf{Y}_k\right\Vert_2^2\right\}\\
-\mathbf{Y}_{k+1} &=\mathbf{Y}_k + \rho\left(\mathbf{X} -\mathbf{L} - \mathbf{S}\right)
+\mathbf{Y}_{k+1} &=\mathbf{Y}_k + \rho\left(\mathbf{X} -\mathbf{L}_{k+1} - \mathbf{S}_{k+1}\right)
 \end{align*}
 $$
 
