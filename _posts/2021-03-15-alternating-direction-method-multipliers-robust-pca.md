@@ -193,6 +193,7 @@ corruptedImg = ImageAdd[
   RandomImage[CauchyDistribution[0, 0.02], ImageDimensions@origImg]
   ]
   
+X = ImageData[corruptedImg];
 {{L, S}, errors} = RobustPCA[X];
 Style[Image /@ {X, L, S}, ImageSizeMultipliers -> 1]
 {% endraw %}
@@ -204,5 +205,26 @@ Style[Image /@ {X, L, S}, ImageSizeMultipliers -> 1]
 
 And this is the result of running it on a selfie of mine:
 <p align="center">
- <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/example_me.png" alt="Robust PCA example">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/example_checker.png" alt="Robust PCA example">
 </p>
+
+Last, we run the algorithm on an corrupted low-rank image:
+
+{% highlight mathematica %}
+{% raw %}
+Clear[a, b];
+a = Join[ConstantArray[0, {50, 50}], ConstantArray[1, {50, 50}]];
+b = Reverse[a];
+origImg = Image[Join[a, b, 2]]
+
+corruptedImg = ImageAdd[
+  origImg, 
+  RandomImage[CauchyDistribution[0, 0.1], ImageDimensions@origImg]
+  ]
+
+X = ImageData[corruptedImg];
+{{L, S}, errors} = RobustPCA[X];  
+{% endraw %}
+{% endhighlight %}
+
+
