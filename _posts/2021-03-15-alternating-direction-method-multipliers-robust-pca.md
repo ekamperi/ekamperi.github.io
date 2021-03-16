@@ -143,8 +143,11 @@ value thresholding operator. And $$\mathcal{S}_{\tau}(x)=\operatorname{sgn}(x)\m
 
 ### Example code in Mathematica
 
+The following code implements the Alternating Direction of Method Multipliers:
+
 {% highlight mathematica %}
 {% raw %}
+(* Define the shrinkage operator aka thresholding operator *)
 Shrink[t_, x_] := Sign[x]*Map[Max[#, 0] &, Abs[x] - t, {2}]
 
 RobustPCA[X_] :=
@@ -172,12 +175,29 @@ RobustPCA[X_] :=
      ]];
   {{L, S}, errors}
 ]
-
-{{L, S}, errors} = RobustPCA[X];
 {% endraw %}
 {% endhighlight %}
  
 Here is the output of running the above implementation on a rainbow image:
+
+{% highlight mathematica %}
+{% raw %}
+origImg =
+ ColorConvert[
+  ImageResize[Import["C:\\Users\\stathis\\Desktop\\rainbow.jpg"], 200],
+  "Grayscale"]
+
+(* Add some salt-and-pepper noise *)
+corruptedImg = ImageAdd[
+  origImg, 
+  RandomImage[CauchyDistribution[0, 0.02], ImageDimensions@origImg]
+  ]
+  
+{{L, S}, errors} = RobustPCA[X];
+Style[Image /@ {X, L, S}, ImageSizeMultipliers -> 1]
+{% endraw %}
+{% endhighlight %}
+
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/example_rainbow.png" alt="Robust PCA example">
 </p>
