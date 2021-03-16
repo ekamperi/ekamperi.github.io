@@ -94,13 +94,13 @@ $$
 (\mathbf{L}_{k+1}, \mathbf{S}_{k+1}) = \mathop{\mathrm{arg\,min}}_{L,S} \,\,\mathcal{L}(\mathbf{L},\mathbf{S},\mathbf{Y}_k)
 $$
 
-And then update the Lagrange multipliers:
+And then updating the Lagrange multipliers:
 
 $$
 \mathbf{Y}_{k+1}=\underbrace{\mathbf{Y}_k + \rho \underbrace{(\mathbf{X}-\mathbf{L}_{k+1} - \mathbf{S}_{k+1})}_{\text{residual error}}}_{\text{running sum of residual errors}}
 $$
 
-However, the first step is usually as expensive as solving the initial problem. So we need to do better than this. In the literature, there are methods designed to solve the problem above. One such method is the so-called **Alternating Direction Method of Multipliers**. ADMM splits the minimization problem into two smaller and easier to tackle subproblems, where $$\mathbf{L}, \mathbf{S}$$ are minimized separately. 
+However, the first step is usually as expensive as solving the initial problem. So we need to do better than this. In the literature, there are dozens of methods designed to solve the problem above. One such method is the so-called **Alternating Direction Method of Multipliers**. ADMM splits the minimization problem into two smaller and easier to tackle subproblems, where $$\mathbf{L}, \mathbf{S}$$ are minimized separately, rather than jointly:
 
 $$
 \begin{align*}
