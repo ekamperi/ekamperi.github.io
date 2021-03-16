@@ -78,7 +78,7 @@ Otherwise, the decomposition is simply not feasible. A remarkable fact is that t
 *	**Ranking and recommendation systems**.
 *	**Face recognition**. Removing shadows, specularities, and reflections from facial images.
 <p align="center">
- <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/rpca_faces.png" alt="Robust PCA in face recognition">
+ <img style="width: 80%; height: 80%" src="{{ site.url }}/images/robust_pca/rpca_faces.png" alt="Robust PCA in face recognition">
 </p>Image taken [from here](https://arxiv.org/pdf/0912.3599.pdf).
 
 ### Augmented Lagrangian method 
@@ -127,6 +127,7 @@ $$
 $$
 
 Sometimes, the transformation $$\mathbf{U}=(1/\rho)\mathbf{Y}$$ is used to simplify the expressions above.
+
 ### Example code in Mathematica
 
 {% highlight mathematica %}
