@@ -138,8 +138,9 @@ $$
 \end{aligned}
 $$
 
-Where $$\mathrm{SVT}_{\tau}(\mathbf{X})=\mathbf{U} \mathcal{S}_{\tau}(\mathbf{\Sigma}) \mathbf{V}^{*}$$, where $$\mathrm{SVT}_{\tau}$$ is the singular
-value thresholding operator. And $$\mathcal{S}_{\tau}(x)=\operatorname{sgn}(x)\max(\mid x \mid-\tau, 0)$$.
+Where $$\mathrm{SVT}_{\tau}(\mathbf{X})=\mathbf{U} \mathcal{S}_{\tau}(\mathbf{\Sigma}) \mathbf{V}^{*}$$, is the singular
+value thresholding operator. And $$\mathcal{S}_{\tau}(x)=\operatorname{sgn}(x)\max(\mid x \mid-\tau, 0)$$ is the soft
+thresholding operator.
 
 ### Example code in Mathematica
 
