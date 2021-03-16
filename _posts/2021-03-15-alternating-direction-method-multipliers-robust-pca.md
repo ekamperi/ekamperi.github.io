@@ -67,7 +67,11 @@ is the *element-wise* $$\ell_1$$ norm $$\left\Vert \mathbf{S}\right\Vert_1 \stac
 1. When $$\mathbf{L}$$ is not sparse, e.g., its singular values are reasonably spread out.
 2. When $$\mathbf{S}$$ is not low rank, e.g., it does not have all non zero elements in a column or in a few columns.
 
-Otherwise, the decomposition is simply not feasible.
+Otherwise, the decomposition is simply not feasible. For instance, check the following matrices:
+
+<p align="center">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/rpca_identify.png" alt="Robust PCA">
+</p>
 
 ### Applications of Robust PCA
 *	**Video surveillance**. The background variations of a video are modeled as a low-rank matrix, and the foreground objects such as pedestrians and cars are modeled as sparse errors superimposed on the low-rank background. How do we do that? We take every frame and reshape it into a long column vector, and then we use these long column vectors to construct the matrix $$\mathbf{X}$$. E.g., in the following case, the video consists of 100 frames.
