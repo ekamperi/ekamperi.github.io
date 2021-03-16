@@ -177,3 +177,12 @@ RobustPCA[X_] :=
 {% endraw %}
 {% endhighlight %}
  
+ 
+<p align="center">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/example_rainbow.png" alt="Robust PCA example">
+</p>
+
+<p align="center">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/example_me.png" alt="Robust PCA example">
+</p>
+
