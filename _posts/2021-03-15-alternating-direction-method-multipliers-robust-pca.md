@@ -206,10 +206,10 @@ Style[Image /@ {X, L, S}, ImageSizeMultipliers -> 1]
 
 And this is the result of running it on a selfie of mine:
 <p align="center">
- <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/example_checker.png" alt="Robust PCA example">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/example_me.png" alt="Robust PCA example">
 </p>
 
-Last, we run the algorithm on an corrupted low-rank image:
+Last, we run the algorithm on a corrupted **low-rank image**:
 
 {% highlight mathematica %}
 {% raw %}
@@ -228,4 +228,6 @@ X = ImageData[corruptedImg];
 {% endraw %}
 {% endhighlight %}
 
-
+<p align="center">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/example_checker.png" alt="Robust PCA example">
+</p>
