@@ -238,3 +238,7 @@ X = ImageData[corruptedImg];
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/example_checker.png" alt="Robust PCA example">
 </p>
+
+### References
+1. Candès, EJ et al. Robust principal component analysis? J. ACM 58, 1–37 (2011)
+2. Boyd, S et al, Distributed Optimization and Statistical Learning via the Alternating Direction Method of Multipliers.
