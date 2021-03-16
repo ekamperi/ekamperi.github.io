@@ -77,6 +77,7 @@ Otherwise, the decomposition is simply not feasible. A remarkable fact is that t
 *	**Latent semantic indexing**. The basic idea here is to generate a document versus term matrix whose entries reflect a term's relevance in a document. Then, the decomposing $$\mathbf{X} = \mathbf{L} + \mathbf{S}$$, $$\mathbf{L}$$ would capture the common words and $$\mathbf{S}$$ the few terms that would distinguish the documents. 
 *	**Ranking and recommendation systems**.
 *	**Face recognition**. Removing shadows, specularities, and reflections from facial images.
+<p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/rpca_faces.png" alt="Robust PCA in face recognition">
 </p>Image taken [from here](https://arxiv.org/pdf/0912.3599.pdf).
 
