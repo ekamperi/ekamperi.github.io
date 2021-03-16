@@ -177,12 +177,12 @@ RobustPCA[X_] :=
 {% endraw %}
 {% endhighlight %}
  
- 
+Here is the output of running the above implementation on a rainbow image:
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/example_rainbow.png" alt="Robust PCA example">
 </p>
 
+And this is the result of running it on a selfie of mine:
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/example_me.png" alt="Robust PCA example">
 </p>
-
