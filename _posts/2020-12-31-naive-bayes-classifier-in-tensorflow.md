@@ -411,5 +411,5 @@ Advantages of naive Bayes classifier:
 * Multiple classifiers may be combined, e.g., by taking the product of their predicted probabilities.
 * May be used as a first-line "punching bag" before other smarter algorithms kick in the problem.
 
-Disadvantages
+Disadvantages:
 * More sophisticated models outperform them.
