@@ -67,7 +67,7 @@ is the *element-wise* $$\ell_1$$ norm $$\left\Vert \mathbf{S}\right\Vert_1 \stac
 1. When $$\mathbf{L}$$ is not sparse, e.g., its singular values are reasonably spread out.
 2. When $$\mathbf{S}$$ is not low rank, e.g., it does not have all non zero elements in a column or in a few columns.
 
-Otherwise, the decomposition is simply not feasible. A remarkable fact is that there is no need for tuning the scalar $$\lambda$$ most of the time. There is a universal value that works well, $$\lambda = \frac{1}{\sqrt{\mathrm{max}(m,n)}}$$. However, if assumptions are only partially valid, the optimal value of $$\lambda$$ may vary slightly. For example, if the matrix $$\mathbf{S}$$ is very sparse, we may need to increase $$\lambda$$ to recover matrices $$\mathbf{L}$$ of larger rank.
+Otherwise, the decomposition is simply not feasible.
 
 ### Applications of Robust PCA
 *	**Video surveillance**. The background variations of a video are modeled as a low-rank matrix, and the foreground objects such as pedestrians and cars are modeled as sparse errors superimposed on the low-rank background. How do we do that? We take every frame and reshape it into a long column vector, and then we use these long column vectors to construct the matrix $$\mathbf{X}$$. E.g., in the following case, the video consists of 100 frames.
@@ -141,6 +141,8 @@ $$
 Where $$\mathrm{SVT}_{\tau}(\mathbf{X})=\mathbf{U} \mathcal{S}_{\tau}(\mathbf{\Sigma}) \mathbf{V}^{*}$$, is the singular
 value thresholding operator. And $$\mathcal{S}_{\tau}(x)=\operatorname{sgn}(x)\max(\mid x \mid-\tau, 0)$$ is the soft
 thresholding operator.
+
+A remarkable fact is that there is no need for tuning the scalar $$\lambda$$ most of the time. There is a universal value that works well, $$\lambda = \frac{1}{\sqrt{\mathrm{max}(m,n)}}$$. However, if assumptions are only partially valid, the optimal value of $$\lambda$$ may vary slightly. For example, if the matrix $$\mathbf{S}$$ is very sparse, we may need to increase $$\lambda$$ to recover matrices $$\mathbf{L}$$ of larger rank.
 
 ### Example code in Mathematica
 
