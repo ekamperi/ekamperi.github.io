@@ -151,25 +151,25 @@ The following code implements the Alternating Direction of Method Multipliers:
 Shrink[t_, x_] := Sign[x]*Map[Max[#, 0] &, Abs[x] - t, {2}]
 
 RobustPCA[X_] :=
- Module[{m, n, \[Rho], \[Lambda], i, U, \[CapitalSigma], V, L, S, Y, 
+ Module[{m, n, ρ, λ, i, U, Σ, V, L, S, Y, 
    error, tolerance},
   L = ConstantArray[0, Dimensions[X]];
   S = ConstantArray[0, Dimensions[X]];
   Y = ConstantArray[0, Dimensions[X]];
   {m, n} = Dimensions[X];
-  \[Rho] = m*n/(4 Norm[X, 1]);
-  \[Lambda] = 1./Sqrt[Max[Dimensions[X]]];
+  ρ = m*n/(4 Norm[X, 1]);
+  λ = 1./Sqrt[Max[Dimensions[X]]];
   tolerance = 10^-17*Norm[X, "Frobenius"];
   Print[tolerance];
   error = Infinity;
   errors =
    Reap[
     For[i = 1, i <= 10^4 && error > tolerance, i++,
-     {U, \[CapitalSigma], V} = 
-      SingularValueDecomposition[X - S + (1/\[Rho])*Y];
-     L = U . Shrink[1/\[Rho], \[CapitalSigma]] . Transpose[V];
-     S = Shrink[\[Lambda] /\[Rho], X - L + (1/\[Rho])*Y];
-     Y = Y + \[Rho]*(X - L - S);
+     {U, Σ, V} = 
+      SingularValueDecomposition[X - S + (1/ρ)*Y];
+     L = U . Shrink[1/ρ, Σ] . Transpose[V];
+     S = Shrink[λ /ρ, X - L + (1/ρ)*Y];
+     Y = Y + ρ*(X - L - S);
      error = Norm[X - L - S, "Frobenius"];
      Sow[error];
      ]];
