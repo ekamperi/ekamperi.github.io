@@ -14,7 +14,7 @@ description: An introduction on the Alternating Direction of Method Multipliers 
 {:toc}
 
 ### What's wrong with vanilla PCA?
-In the [previous blog post](https://ekamperi.github.io/mathematics/2021/02/23/pca-limitations.html), we discussed some of the limitations of principle component analysis. One such restriction arises when there exist gross errors, corruption in the data, even just outliers. A method to handle such cases is the so-called "Robust PCA", which we will talk about today. Take a look at the following two images. The original is on the left, and on the right, the one we corrupted slightly.
+In the [previous blog post](https://ekamperi.github.io/mathematics/2021/02/23/pca-limitations.html), we discussed some of the limitations of principle component analysis. One such restriction arises when there exist gross errors, corruption in the data, even just outliers. A method to handle such cases is the so-called "Robust PCA", which we will talk about today. To understand what's wrong with regular PCA, take a look at the following two images. The original is on the left, and on the right, the one we corrupted slightly.
 
 {% highlight mathematica %}
 {% raw %}
