@@ -14,7 +14,7 @@ description: An introduction on the Alternating Direction of Method Multipliers 
 {:toc}
 
 ### What's wrong with vanilla PCA?
-In the [previous blog post](https://ekamperi.github.io/mathematics/2021/02/23/pca-limitations.html), we discussed some of the limitations of principle component analysis. One such restriction arises when there exist gross errors, corruption in the data, even just outliers. A method to handle such cases is the so-called "Robust PCA", which we will talk about today. Take a look at the following two images, the original is on the left and on the right the one we corrupted slightly.
+In the [previous blog post](https://ekamperi.github.io/mathematics/2021/02/23/pca-limitations.html), we discussed some of the limitations of principle component analysis. One such restriction arises when there exist gross errors, corruption in the data, even just outliers. A method to handle such cases is the so-called "Robust PCA", which we will talk about today. Take a look at the following two images. The original is on the left, and on the right, the one we corrupted slightly.
 
 {% highlight mathematica %}
 {% raw %}
@@ -51,8 +51,7 @@ ReconstructUpTo[img_, k_] :=
 {% endraw %}
 {% endhighlight %}
 
-As you may notice, the reconstruction of the corrupted image is way worse compared to the original one. Even the
-presence of some outlier values were enough to derail PCA.
+As you may notice, the reconstruction of the corrupted image is way worse compared to the original one. The presence of a handful of outlier values is enough to derail PCA.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/robust_pca/pca_corruption.png" alt="PCA outliers">
@@ -156,7 +155,7 @@ $$
 $$
 
 ADMM for solving convex problems globally converges for any penalty parameter $$\rho > 0$$ with a sublinear rate $$\mathcal{O}(1/k)$$.
-I listened to Stephen Boyd's talk on ADMM, and he said this. For every *specific* optimization problem, a better optimization algorithm than ADMM probably exists. However, as a generic algorithm that can be applied to pretty much every case and give reasonably good results after a few iterations, ADMM is top.
+I listened to Stephen Boyd's talk on ADMM, and he made the following statement. For every *specific* optimization problem, a better optimization algorithm than ADMM probably exists. However, as a generic algorithm that can be applied to pretty much every case and give reasonably good results after a few iterations, ADMM is top.
 
 The linear and quadratic terms of the augmented Lagrangian can be combined, by "completing" the square:
 
