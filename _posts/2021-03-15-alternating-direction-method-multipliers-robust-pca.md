@@ -52,7 +52,7 @@ ReconstructUpTo[img_, k_] :=
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/pca_corruption.png" alt="PCA outliers">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/robust_pca/pca_corruption.png" alt="PCA outliers">
 </p>
 
 Suppose that we are given a large matrix $$\mathbf{X}\in \mathbb{R}^{m,n}$$, such that it can be decomposed as a sum of a
