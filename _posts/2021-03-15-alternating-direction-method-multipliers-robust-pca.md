@@ -20,7 +20,7 @@ In the [previous blog post](https://ekamperi.github.io/mathematics/2021/02/23/pc
 {% raw %}
 origImg =
  ColorConvert[
-  ImageResize[Import["C:\\Users\\stath\\Desktop\\me.jpg"], 200],
+  ImageResize[Import["C:\\Users\\stathis\\Desktop\\me.jpg"], 200],
   "Grayscale"]
 
 corruptedImg = ImageAdd[
