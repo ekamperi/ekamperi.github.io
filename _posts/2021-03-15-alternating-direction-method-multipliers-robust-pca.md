@@ -32,7 +32,7 @@ Style[Grid[{{origImg, corruptedImg}}], ImageSizeMultipliers -> 1]
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/orig_vs_corrupted.png" alt="PCA outliers">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/robust_pca/orig_vs_corrupted.png" alt="PCA outliers">
 </p>
 
 Let's see what happens if we perform an SVD and then try to reconstruct the two images:
@@ -50,6 +50,9 @@ ReconstructUpTo[img_, k_] :=
    }]
 {% endraw %}
 {% endhighlight %}
+
+As you may notice, the reconstruction of the corrupted image is way worse compared to the original one. Even the
+presence of some outlier values were enough to derail PCA.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/robust_pca/pca_corruption.png" alt="PCA outliers">
