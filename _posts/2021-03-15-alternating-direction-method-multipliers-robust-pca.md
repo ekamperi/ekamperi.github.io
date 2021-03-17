@@ -57,6 +57,8 @@ As you may notice, the reconstruction of the corrupted image is way worse compar
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/robust_pca/pca_corruption.png" alt="PCA outliers">
 </p>
 
+### Problem formulation
+
 Suppose that we are given a large matrix $$\mathbf{X}\in \mathbb{R}^{m,n}$$, such that it can be decomposed as a sum of a
 low-rank matrix $$\mathbf{L}$$ and a sparse matrix $$\mathbf{S}$$, i.e., $$\mathbf{X} = \mathbf{L} + \mathbf{S}$$.
 If you are unfamiliar with the terms, the *rank of a matrix* is defined as either the maximum number of linearly
