@@ -13,13 +13,47 @@ description: An introduction on the Alternating Direction of Method Multipliers 
 * A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
 {:toc}
 
-### Introduction
-In the [previous blog post](https://ekamperi.github.io/mathematics/2021/02/23/pca-limitations.html), we discussed some of the limitations of principle component analysis. One such restriction arises when there exist gross errors, corruption in the data, even just outliers. A method to handle such cases is the so-called "Robust PCA", which we will talk about today. 
+### What's wrong with vanilla PCA?
+In the [previous blog post](https://ekamperi.github.io/mathematics/2021/02/23/pca-limitations.html), we discussed some of the limitations of principle component analysis. One such restriction arises when there exist gross errors, corruption in the data, even just outliers. A method to handle such cases is the so-called "Robust PCA", which we will talk about today. Take a look at the following two images, the original is on the left and on the right the one we corrupted slightly.
+
+{% highlight mathematica %}
+{% raw %}
+origImg =
+ ColorConvert[
+  ImageResize[Import["C:\\Users\\stath\\Desktop\\me.jpg"], 200],
+  "Grayscale"]
+
+corruptedImg = ImageAdd[
+  origImg, 
+  RandomImage[CauchyDistribution[0, 0.005], ImageDimensions@origImg]]
+
+Style[Grid[{{origImg, corruptedImg}}], ImageSizeMultipliers -> 1]
+{% endraw %}
+{% endhighlight %}
 
 <p align="center">
- <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/pca_outliers.png" alt="PCA outliers">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/orig_vs_corrupted.png" alt="PCA outliers">
 </p>
-Image taken from [a presentation of Yuxin Chen](http://www.princeton.edu/~yc5/ele520_math_data/lectures/robust_PCA.pdf).
+
+Let's see what happens if we perform an SVD and then try to reconstruct the two images:
+
+{% highlight mathematica %}
+{% raw %}
+Reconstruct[svd_, k_] := 
+ Labeled[Image[svd[[1]] . svd[[2]] . Transpose[svd[[3]]]], 
+  "k=" <> ToString@k]
+
+ReconstructUpTo[img_, k_] :=
+ Grid[{Table[
+    With[{svd = SingularValueDecomposition[ImageData@img, i]},
+     Reconstruct[svd, i]], {i, 1, k, 4}]
+   }]
+{% endraw %}
+{% endhighlight %}
+
+<p align="center">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/robust_pca/pca_corruption.png" alt="PCA outliers">
+</p>
 
 Suppose that we are given a large matrix $$\mathbf{X}\in \mathbb{R}^{m,n}$$, such that it can be decomposed as a sum of a
 low-rank matrix $$\mathbf{L}$$ and a sparse matrix $$\mathbf{S}$$, i.e., $$\mathbf{X} = \mathbf{L} + \mathbf{S}$$.
