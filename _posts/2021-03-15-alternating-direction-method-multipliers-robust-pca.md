@@ -57,7 +57,7 @@ As you may notice, the recovery of the corrupted image is way worse compared to 
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/robust_pca/pca_corruption.png" alt="PCA outliers">
 </p>
 
-If you want to dig in a bit deeper on why this happens, consider that PCA is a low-rank approximation of the data that minimizes the residuals' Frobenius norm. In this sense, its vulnerability to outliers is similar to least-squares. Due to the squaring of deviations from the outliers, they dominate the total norm and drive the PCA components. Feel free to also check the Eckard-Young theorem.
+If you want to dig in a bit deeper on why this happens, consider that PCA is a low-rank approximation of the data that minimizes the residuals' Frobenius norm. In this sense, its vulnerability to outliers is similar to the vulnerability of least-squares to outliers. Due to the squaring of deviations from the outliers, they dominate the total norm and drive the PCA components. Feel free to also check the [Eckard-Young theorem](https://en.wikipedia.org/wiki/Low-rank_approximation#Basic_low-rank_approximation_problem).
 
 ### Problem formulation
 
