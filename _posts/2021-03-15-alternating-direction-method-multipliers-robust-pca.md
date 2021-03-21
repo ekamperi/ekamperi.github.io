@@ -14,7 +14,7 @@ description: An introduction on the Alternating Direction of Method Multipliers 
 {:toc}
 
 ### What's wrong with vanilla PCA?
-In the [previous blog post](https://ekamperi.github.io/mathematics/2021/02/23/pca-limitations.html), we discussed some of the limitations of principle component analysis. One such restriction arises when there exist gross errors, corruption in the data, even just outliers. A method to handle such cases is the so-called "Robust PCA", which we will talk about today. To understand what's wrong with regular PCA, take a look at the following two images. The original is on the left, and on the right, the one we slightly corrupted with [salt-and-pepper noise](https://en.wikipedia.org/wiki/Salt-and-pepper_noise).
+In the [previous blog post](https://ekamperi.github.io/mathematics/2021/02/23/pca-limitations.html), we discussed some of the limitations of principle component analysis. One such restriction arises when there exist gross errors, corruption in the data, even just outliers. A method to handle such cases is the so-called "Robust PCA", which we will talk about today. To understand what's wrong with regular PCA, take a look at the following two images. The original image is on the left, whereas on the right we added some [salt-and-pepper noise](https://en.wikipedia.org/wiki/Salt-and-pepper_noise).
 
 {% highlight mathematica %}
 {% raw %}
@@ -50,7 +50,7 @@ ReconstructUpTo[img_, k_] :=
 {% endraw %}
 {% endhighlight %}
 
-As you may notice, the recovery of the corrupted image is way worse compared to the original one (for the same number of singular values). The presence of a handful of outlier values is enough to derail the reconstruction. We used SVD here, but essentially it's the same for PCA (we will talk in a future post on the connection between PCA and SVD).
+As you may notice, the decomposition of the corrupted image is way worse compared to the original one (for the same number of singular values). The presence of a handful of outlier values is enough to derail the reconstruction. We used SVD here, but essentially it's the same for PCA (we will talk in a future post on the connection between PCA and SVD).
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/robust_pca/pca_corruption.png" alt="PCA outliers">
