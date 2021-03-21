@@ -50,7 +50,7 @@ ReconstructUpTo[img_, k_] :=
 {% endraw %}
 {% endhighlight %}
 
-As you may notice, the recovery of the corrupted image is way worse compared to the original one. The presence of a handful of outlier values is enough to derail the reconstruction. We used SVD here, but essentially it's the same for PCA (we will talk in a future post on the connection between PCA and SVD).
+As you may notice, the recovery of the corrupted image is way worse compared to the original one (for the same number of singular values). The presence of a handful of outlier values is enough to derail the reconstruction. We used SVD here, but essentially it's the same for PCA (we will talk in a future post on the connection between PCA and SVD).
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/robust_pca/pca_corruption.png" alt="PCA outliers">
