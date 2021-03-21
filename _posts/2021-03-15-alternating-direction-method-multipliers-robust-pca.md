@@ -213,7 +213,6 @@ RobustPCA[X_] :=
   ρ = m*n/(4 Norm[X, 1]);
   λ = 1./Sqrt[Max[Dimensions[X]]];
   tolerance = 10^-17*Norm[X, "Frobenius"];
-  Print[tolerance];
   error = Infinity;
   errors =
    Reap[
