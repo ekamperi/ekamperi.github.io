@@ -228,6 +228,8 @@ def find_dup(target_list):
 
 # Homework: Write a similar function with
 # O(N) time complexity and O(N) space complexity
+def find_dup2(target_list):
+    pass
 
 # Should return the same
 print(find_dup(lst))
