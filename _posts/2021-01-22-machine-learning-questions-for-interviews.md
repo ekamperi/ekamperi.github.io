@@ -211,3 +211,27 @@ It is the process of removing and prefixes or suffixes to get the root of a word
 ## What is the difference between Embedding vectors vs. One-hot vectors in the context of NLP?
 One-hot vectors do not capture the level of similarity between words, since every one-hot vector has the same Euclidean distance from any other one-hot vector. Embedding vectors such as *Word2Vec* or *GloVe* vectors provide much more useful representation about the meaning of individual words.
 
+## Write a Python function that returns the index of the first duplicate element or -1 if none.
+
+{% highlight python %}
+{% raw %}lst = [1, 0, 3, 5, -8, 100, -8, 20, 30, 40, 2, 31, 5]
+
+# O(N^2) time complexity, O(1) space complexity
+def find_dup(target_list):
+    L = len(target_list)
+    for i in range(L-1):
+        for j in range(i+1, L):
+            if target_list[i] == target_list[j]:
+                return i
+
+    return -1
+
+# Homework: Write a similar function with
+# O(N) time complexity and O(N) space complexity
+
+# Should return the same
+print(find_dup(lst))
+print(find_dup2(lst))
+{% endraw %}
+{% endhighlight %}
+
