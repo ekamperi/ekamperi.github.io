@@ -54,7 +54,7 @@ This is a plausible covariance matrix since variables near the diagonal, i.e., c
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/covariance_matrix_plot.png" alt="Prior distribution over functions">
 </p>
 
-A kernel function is just a fancy name for a function that accepts as input two points in the input space, i.e., $$x_i$$ and $$x_j$$, and outputs how "similar" they are based on some notion of "distance". For example, the following is the so-called squared exponential kernel that uses the exp of the squared of the Euclidean distance between two points. Therefore, if $$x_i=x_j$$, then $$K(x_i, x_j) = \exp(0)=1$$, whereas if $$|xi-xj|-\to\inf$$, then $$K(x_i,x_j)\to 0$$.
+A kernel function is just a fancy name for a function that accepts as input two points in the input space, i.e., $$x_i$$ and $$x_j$$, and outputs how "similar" they are based on some notion of "distance". For example, the following is the so-called squared exponential kernel that uses the exp of the squared of the Euclidean distance between two points. Therefore, if $$x_i=x_j$$, then $$K(x_i, x_j) = \exp(0)=1$$, whereas if $$\|x_i-x_j\|- \to \inf$$, then $$K(x_i,x_j)\to 0$$.
 
 ```mathematica
 kernel[a_, b_] := Exp[-0.5*Norm[(a - b), 2]^2]
