@@ -67,7 +67,7 @@ $$
 $$
 
 The $$\ell$$ parameter determines the length of the "wiggles". Generally speaking, we won't be able to extrapolate more than $$\ell$$ units away from our data.
-Similarly, the $$\sigma^2$$ determines the average distance of our function from its mean value. In short, $$\ell, \sigma$$ determine the horizontal and vertical scaling of the function. The following image shows various different kernels that can be used in GP (and SVM!).
+Similarly, the variance $$\sigma^2$$ determines the average distance of our function from its mean value. In short, $$\ell, \sigma$$ determine the horizontal and vertical "effects" of the function. The following image shows various different kernels that can be used in GP (and SVM!).
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/kernels.png" alt="Various kernels">
