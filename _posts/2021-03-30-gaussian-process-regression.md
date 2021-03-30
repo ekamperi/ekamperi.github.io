@@ -74,6 +74,8 @@ The $$\ell$$ parameter determines the length of the "wiggles". Generally speakin
 
 Image taken [from here](https://www.cs.toronto.edu/~duvenaud/thesis.pdf).
 
+The covariance function $$\Sigma(x,x')$$ must be positive definite, which means that the following condition must be met:
+
 $$
 x^T \Sigma x > 0, \forall x \ne 0
 $$
