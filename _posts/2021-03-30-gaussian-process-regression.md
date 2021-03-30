@@ -22,7 +22,7 @@ One of the recurring topics in statistics is establishing a relationship between
 
 ## The ingredients
 ### Gaussian process priors 
-This is the problem that Gaussian Processes (GP) solve. So, the idea is the following. Let's start with a distribution of all possible functions that, conceivably, could have produced our data (without actually looking at the data!). This is portrayed in the following plot, where we have drawn 10 such candidate random functions. In principle, the number is infinite, but for brevity, we only drew 10. These functions are known as GP priors in the Bayesian vernacular. They capture our ignorance regarding the true generating function $$y = f(x)$$ we are after.
+This is the problem that [Gaussian Processes (GP)](https://en.wikipedia.org/wiki/Gaussian_process) solve. So, the idea is the following. Let's start with a distribution of all possible functions that, conceivably, could have produced our data (without actually looking at the data!). This is portrayed in the following plot, where we have drawn 10 such candidate random functions. In principle, the number is infinite, but for brevity, we only drew 10. These functions are known as GP priors in the Bayesian vernacular. They capture our ignorance regarding the true generating function $$y = f(x)$$ we are after.
 
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/gaussian_process/prior_functions.png" alt="Prior distribution over functions">
