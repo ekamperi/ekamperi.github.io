@@ -70,71 +70,52 @@ Plot[kernel[0, x], {x, -5, 5}, PlotRange -> All, Frame -> {True, True, False, Fa
 
 ## Sin(x) example
 
-```mathematica
+{% highlight mathematica %}
+{% raw %}
 ClearAll["Global`*"];
-```
 
-```mathematica
 (* Define a squared exponential kernel *)
   kernel[a_, b_] := Exp[-Norm[(a - b), 2]^2]
-```
 
-```mathematica
 (* These are our training data *)
   nTrainingPoints = 8; 
    X = Array[# &, nTrainingPoints, {0, 2 Pi}]; 
    Y = Sin[X];
-```
 
-```mathematica
 eps = 10^-6;
 Sigma = Outer[kernel, X, X] + eps*IdentityMatrix[nTrainingPoints];
-```
 
-```mathematica
 nTestPoints = 100;
 XX = Array[# &, nTestPoints, {-0.5, 2 Pi + 0.5}];
-```
 
-```mathematica
 SigmaXX = Outer[kernel, XX, XX] + eps*IdentityMatrix[nTestPoints];
 SigmaX = Outer[kernel, XX, X];
 SigmaInverse = Inverse[Sigma];
 Sigmap = SigmaXX - SigmaX . SigmaInverse . Transpose[SigmaX];
-```
 
-```mathematica
 (* Although it is positive definite, it isn't symmetric due to small round off errors *)
   {PositiveDefiniteMatrixQ[Sigmap], SymmetricMatrixQ[Sigmap]}
 
 (*{True, False}*)
-```
 
-```mathematica
 (* Make it symmetric *)
   Sigmap = (Sigmap + Transpose@Sigmap)/2; 
    {PositiveDefiniteMatrixQ[Sigmap], SymmetricMatrixQ[Sigmap]}
 
 (*{True, True}*)
-```
 
-```mathematica
 nsamples = 100;
 YY = RandomVariate[MultinormalDistribution[mup, Sigmap], nsamples];
 Dimensions@YY
 
 (*{100, 100}*)
-```
 
-```mathematica
 (* Calculate 5% and 95% quantiles for uncertainty modeling *)
   quantiles = Transpose@Quantile[RandomVariate[MultinormalDistribution[mup, Sigmap], nsamples], {0.05, 0.95}]; 
    Dimensions@quantiles
 
 (*{2, 100}*)
-```
 
-```mathematica
 Show[
   Table[
    ListPlot[Transpose@{XX, YY[[i]]}, AxesLabel -> {"x", "y"}, Joined -> True, PlotStyle -> Opacity[0.1], PlotRange -> {Automatic, {-2, 2}}], {i, 1, nsamples}], 
@@ -142,7 +123,9 @@ Show[
   Plot[Sin[x], {x, -0.5, 2 \[Pi] + 0.5}, PlotStyle -> Black], 
   ListPlot[Transpose@{XX, quantiles[[1]]}, PlotStyle -> {Red, Dashed},Joined -> True], 
   ListPlot[Transpose@{XX, quantiles[[2]]}, PlotStyle -> {Red, Dashed},Joined -> True]]
-```
+{% endraw %}
+{% endhighlight %}
+
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/gp_sin_example.png" alt="Prior distribution over functions">
 </p>
