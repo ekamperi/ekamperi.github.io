@@ -74,7 +74,8 @@ Therefore, if $$x_i=x_j$$, then $$K(x_i, x_j) = \exp(0)=1$$, whereas if $$\|x_i-
 {% highlight mathematica %}
 {% raw %}
 kernel[a_, b_] := Exp[-0.5*Norm[(a - b), 2]^2]
-Plot[kernel[0, x], {x, -5, 5}, PlotRange -> All, Frame -> {True, True, False, False}, FrameLabel -> {"|x_i-x_j|^2", "Kernel value"}, Filling -> Axis]
+Plot[kernel[0, x], {x, -5, 5}, PlotRange -> All, Frame -> {True, True, False, False},
+    FrameLabel -> {"|x_i-x_j|^2", "Kernel value"}, Filling -> Axis]
 {% endraw %}
 {% endhighlight %}
 
