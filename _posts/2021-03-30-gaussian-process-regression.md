@@ -146,7 +146,7 @@ Show[
 ## Limitations of Gaussian Processes
 1. **Slow inference.** Computing the inverse of the covariance matrix has a $$O(N^3)$$ time complexity, rendering exact inference too slow for more than a few thousand datapoints.
 2. **Choosing a covariance kernel.** There's some arbitrariness when choosing a kernel. However, the kernel's hyperparameters can be inferred by maximizing the marginal likelihood, and the whole process can be automated.
-3. Gaussian processes are in some sense idealizations. For the understanding of extreme phenomena exhibited by real physical systems, non-Gaussian processes might be more relevant. In this context, GP serve as starting points to be perturbed.
+3. **Gaussian processes are in some sense idealizations**. For the understanding of extreme phenomena exhibited by real physical systems, non-Gaussian processes might be more relevant. In this context, GP serve as starting points to be perturbed.
 
 ## References
 1. Surrogates: Gaussian process modeling, design and optimization for the applied sciences by Robert B. Gramacy, 2021-02-06. https://bookdown.org/rbg/surrogates/
