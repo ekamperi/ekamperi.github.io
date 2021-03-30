@@ -29,7 +29,7 @@ This is the problem that Gaussian Processes (GP) solve. So, the idea is the foll
 Then, as we look at the data, we narrow down the functions that could have generated them. In the following example, after considering 5 observations, we build-up some pretty strong confidence regarding how the data-generating function should look like. The shaded area represents our model’s uncertainty, and it's high where we lack data and low where we have many data points. The image was taken from the book *Machine Learning A Probabilistic Perspective* by Kevin P. Murphy, which is very nice, by the way.
 
 <p align="center">
- <img style="width: 90%; height: 90%" src="{{ site.url }}/images/gaussian_process/gp_prior_posterior.png" alt="Prior and posterior distribution over functions">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/gp_prior_posterior.png" alt="Prior and posterior distribution over functions">
 </p>
 
 Having said that, we don't really want to consider every mathematically valid function. Instead, we will impose some constraints on the prior distribution over all possible functions. For starters, we want our functions to be smooth because this matches our empirical knowledge about how the world generally works. Points that are close to each other in the input space (whether in the time domain, i.e. $$t_1, t_2, \ldots$$ or in the spatial domain, i.e. $$x_1, x_2, \ldots$$) are associated with $$y_1, y_2, \ldots$$ values that are also close to each other. Therefore, we don't really want our algorithm to favor functions that look like the wiggly one to the left.
