@@ -34,24 +34,24 @@ Having said that, we don't really want to consider every mathematically valid fu
 So, how do we impose smoothness? First, let's say that we define a distribution over the function's values at a finite yet arbitrary set of points, say $$x_1, x_2, \ldots, x_N$$. So, although we talk about functions, we use really long vectors to model them. You need to understand that every point $$x_1, x_2, \ldots, x_N$$ is treated as a random variable, and the joint probability distribution of $$x_1, x_2, \ldots, x_N$$ is a multivariate normal distribution. Let that sink in for a moment. To generate the following function, we set up a 120-variate normal distribution and took a 120-variate sample from it, and that was a long y vector that corresponds to our function.
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/prior_functions.png" alt="Prior distribution over functions">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/prior_functions.png" alt="Prior distribution over functions">
 </p>
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/function_as_vector.png" alt="Function as vector">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/function_as_vector.png" alt="Function as vector">
 </p>
 
 Ok, but if we sampled from a 120-variate Gaussian, how can we guarantee the function's smoothness? First, keep in mind that to set up a 120-variate Gaussian, we need a 120x120 covariance matrix. Each entry of the covariance matrix defines how much the $$(x_i, x_j)$$ variables are related. The trick now is to use a covariance matrix such that the values that are close together in the input space, the $$x$$'s, will produce output values that are close together, the $$y$$'s. In the following plot, $$x_1$$ and $$x_2$$ are close together, so we'd expect $$y_1$$ and $$y_2$$ to also be close (this makes the function smooth and not too wiggly). On the contrary, $$x_1$$ and $$x_N$$ are very apart, so the covariance matrix element $$C(1,N)$$ should be some tiny number.
 
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/covariance_distance.png" alt="Gaussian process">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/covariance_distance.png" alt="Gaussian process">
 </p>
 
 This is a plausible covariance matrix since variables near the diagonal, i.e., close together in the input space, are assigned a high value (1.0). On the contrary, the rest of the pairs are given a low value (0). Alright, but how do we actually calculate the values of the covariance matrix? We use a so-called specialized function called kernel. 
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/covariance_matrix_plot.png" alt="Prior distribution over functions">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/covariance_matrix_plot.png" alt="Prior distribution over functions">
 </p>
 
 A kernel function is just a fancy name for a function that accepts as input two points in the input space, i.e., $$x_i$$ and $$x_j$$, and outputs how "similar" they are based on some notion of "distance". For example, the following is the so-called squared exponential kernel that uses the exp of the squared of the Euclidean distance between two points. Therefore, if $$x_i=x_j$$, then $$K(x_i, x_j) = \exp(0)=1$$, whereas if $$|xi-xj|-\to\inf$$, then $$K(x_i,x_j)\to 0$$.
@@ -65,7 +65,7 @@ Plot[kernel[0, x], {x, -5, 5}, PlotRange -> All, Frame -> {True, True, False, Fa
 ```
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/squared_exp_kernel.png" alt="Squared exp kernel">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/squared_exp_kernel.png" alt="Squared exp kernel">
 </p>
 
 ## Sin(x) example
@@ -144,5 +144,5 @@ Show[
   ListPlot[Transpose@{XX, quantiles[[2]]}, PlotStyle -> {Red, Dashed},Joined -> True]]
 ```
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/gp_sin_example.png" alt="Prior distribution over functions">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/gp_sin_example.png" alt="Prior distribution over functions">
 </p>
