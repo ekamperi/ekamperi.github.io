@@ -60,22 +60,20 @@ The following covariance matrix is a plausible one, since the variables near the
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/covariance_matrix_plot.png" alt="Prior distribution over functions">
 </p>
 
-A kernel function is just a fancy name for a function that accepts as input two points in the input space, i.e., $$x_i$$ and $$x_j$$, and outputs how "similar" they are based on some notion of "distance". For example, the following kernel is the so-called exponentiated quadratic that uses the exp of the squared of the Euclidean distance between two points:
-
-The $$\ell$$ parameter determines the length of the "wiggles". Generally speaking, we won't be able to extrapolate more than $$\ell$$ units away from our data.
-Similarly, the $$\sigma^2$$ determines the average distance of our function from its mean value. In short, $$\ell, \sigma$$ determine the horizontal and vertical scaling of the function.
+A kernel function is just a fancy name for a function that accepts as input two points in the input space, i.e., $$x_i$$ and $$x_j$$, and outputs how "similar" they are based on some notion of "distance". For example, the following kernel is the so-called exponentiated quadratic that uses the exp of the squared of the Euclidean distance between two points. If $$x_i=x_j$$, then $$K(x_i, x_j) = \exp(0)=1$$, whereas if $$\|x_i-x_j\| \to \infty$$, then $$K(x_i, x_j) \to 0$$.
 
 $$
 \Sigma(x,x') = \sigma^2 \exp\left(-\frac{1}{2\ell^2}\|x-x'\|^2\right)
 $$
 
-Therefore, if $$x_i=x_j$$, then $$K(x_i, x_j) = \exp(0)=1$$, whereas if $$\|x_i-x_j\| \to \infty$$, then $$K(x_i, x_j) \to 0$$.
+The $$\ell$$ parameter determines the length of the "wiggles". Generally speaking, we won't be able to extrapolate more than $$\ell$$ units away from our data.
+Similarly, the $$\sigma^2$$ determines the average distance of our function from its mean value. In short, $$\ell, \sigma$$ determine the horizontal and vertical scaling of the function.
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/kernels.png" alt="Various kernels">
 </p>
 
-## A simple 1d GP prediction example
+## A simple 1D GP prediction example
 
 Let us consider a contrived one-dimensional problem where the response variable $$y$$ is a merely a sinusoid measured at eight equally spaced  
 $$x$$ locations in the span of a single period $$[0, 2\pi]$$. This example is [taken from here](https://bookdown.org/rbg/surrogates/chap5.html), and we reimplement it with *Mathematica* (the original implementation is in *R*).
