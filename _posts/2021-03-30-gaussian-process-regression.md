@@ -80,7 +80,7 @@ $$
 x^T \Sigma x > 0, \forall x \ne 0
 $$
 
-This is the multivariate analogue of the univariate requirement for the variance $$\sigma^2$$ to be positive.
+This is the multivariate analogue of the univariate requirement for the variance $$\sigma^2$$ to be positive. To be clear, we need to choose such a kernel, so that the resultant covariance matrix is positive definite. Although we haven't made any reference to it, we also need a mean function $$m(x)$$. 
 
 ## A simple 1D GP prediction example
 
@@ -142,6 +142,11 @@ Show[
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/gp_sin_example.png" alt="Prior distribution over functions">
 </p>
+
+## Limitations of Gaussian Processes
+1. **Slow inference.** Computing the inverse of the covariance matrix has a $$O(N^3)$$ time complexity, rendering exact inference too slow for more than a few thousand datapoints.
+2. **Choosing a covariance kernel.** There's some arbitrariness when choosing a kernel. However, the kernel's hyperparameters can be inferred by maximizing the marginal likelihood, and the whole process can be automated.
+3. Gaussian processes are in some sense idealizations. For the understanding of extreme phenomena exhibited by real physical systems, non-Gaussian processes might be more relevant. In this context, GP serve as starting points to be perturbed.
 
 ## References
 1. Surrogates: Gaussian process modeling, design and optimization for the applied sciences by Robert B. Gramacy, 2021-02-06. https://bookdown.org/rbg/surrogates/
