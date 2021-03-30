@@ -26,7 +26,7 @@ This is the problem that Gaussian Processes (GP) solve. So, the idea is the foll
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/prior_functions.png" alt="Prior distribution over functions">
 </p>
 
-Then, as we look at the data, we narrow down the functions that could have generates them. In the following image, after considering 5 observations, we build-up some pretty strong confidence regarding how the function that generated our data should look like. The shaded area represents the uncertainty, and it's high where we don't have much data and low where we have many data points. The image was taken from the book *Machine Learning A Probabilistic Perspective* by Kevin P. Murphy, which is very nice, by the way.
+Then, as we look at the data, we narrow down the functions that could have generates them. In the following image, after considering 5 observations, we build-up some pretty strong confidence regarding how the function that generated our data should look like. The shaded area represents our model’s uncertainty, and it's high where we don't have much data and low where we have many data points. The image was taken from the book *Machine Learning A Probabilistic Perspective* by Kevin P. Murphy, which is very nice, by the way.
 
 <p align="center">
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/gaussian_process/gp_prior_posterior.png" alt="Prior and posterior distribution over functions">
