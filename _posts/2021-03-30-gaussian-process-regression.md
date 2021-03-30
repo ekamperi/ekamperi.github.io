@@ -108,7 +108,7 @@ $$
 \left(\begin{array}{cc} n_1 \times n_1 & n_1 \times n_2 \\ n_2\times n_1 & n_2\times n_2 \end{array} \right)
 $$
 
-The distribution of  $$Y_1$$ conditional on $$Y_1 \mid y_2 \sim \mathcal{N}_q (\bar{\mu}, \bar{\Sigma})$$ is:
+The distribution of  $$Y_1$$ conditional on $$Y_1 \mid y_2 \sim \mathcal{N} (\bar{\mu}, \bar{\Sigma})$$ is:
 
 $$
 \begin{align}
@@ -183,7 +183,7 @@ Show[
 </p>
 
 ## Limitations of Gaussian Processes
-1. **Slow inference.** Computing the inverse of the covariance matrix has a $$O(N^3)$$ time complexity, rendering exact inference too slow for more than a few thousand datapoints.
+1. **Slow inference.** Computing the inverse of the covariance matrix has a $$\mathcal{O}(N^3)$$ time complexity, rendering exact inference too slow for more than a few thousand datapoints.
 2. **Choosing a covariance kernel.** There's some arbitrariness when choosing a kernel. However, the kernel's hyperparameters can be inferred by maximizing the marginal likelihood, and the whole process can be automated.
 3. **Gaussian processes are in some sense idealizations**. For the understanding of extreme phenomena exhibited by real physical systems, non-Gaussian processes might be more relevant. In this context, GP serve as starting points to be perturbed.
 
