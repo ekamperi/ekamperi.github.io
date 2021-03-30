@@ -13,6 +13,7 @@ description: An introduction to the Gaussian Processes, particularly in the cont
 * A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
 {:toc}
 
+## Introduction
 One of the recurring statistics topics is given some data points to perform regression analysis and establish a relationship between y and x. This is typically done by assuming some polynomial function and estimating its coefficients via least squares. But what if we don't want to commit ourselves upfront regarding the number of parameters to use? Suppose that we'd like to consider every possible function as a candidate for matching our data, no matter how many parameters that function had. How could we do that?
 
 <p align="center">
@@ -56,19 +57,21 @@ This is a plausible covariance matrix since variables near the diagonal, i.e., c
 
 A kernel function is just a fancy name for a function that accepts as input two points in the input space, i.e., $$x_i$$ and $$x_j$$, and outputs how "similar" they are based on some notion of "distance". For example, the following is the so-called squared exponential kernel that uses the exp of the squared of the Euclidean distance between two points. Therefore, if $$x_i=x_j$$, then $$K(x_i, x_j) = \exp(0)=1$$, whereas if $$\|x_i-x_j\|- \to \inf$$, then $$K(x_i,x_j)\to 0$$.
 
-```mathematica
+{% highlight mathematica %}
+{% raw %}
 kernel[a_, b_] := Exp[-0.5*Norm[(a - b), 2]^2]
-
-(* {1., 0.606531, 3.72665*10^-6} *)
-
 Plot[kernel[0, x], {x, -5, 5}, PlotRange -> All, Frame -> {True, True, False, False}, FrameLabel -> {"|x_i-x_j|^2", "Kernel value"}, Filling -> Axis]
-```
+{% endraw %}
+{% endhighlight %}
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/squared_exp_kernel.png" alt="Squared exp kernel">
 </p>
 
-## Sin(x) example
+## A simple 1d GP prediction example
+
+Let us consider a contrived one-dimensional problem where the response variable $$y$$ is a merely a sinusoid measured at eight equally spaced  
+$$x$$ locations in the span of a single period $$[0, 2\pi]$$. This example is [taken from here](https://bookdown.org/rbg/surrogates/chap5.html), and we reimpement it with *Mathematica* (the original implementation is in *R*).
 
 {% highlight mathematica %}
 {% raw %}
@@ -129,3 +132,6 @@ Show[
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/gp_sin_example.png" alt="Prior distribution over functions">
 </p>
+
+## References
+1. Surrogates: Gaussian process modeling, design and optimization for the applied sciences by Robert B. Gramacy, 2021-02-06. https://bookdown.org/rbg/surrogates/
