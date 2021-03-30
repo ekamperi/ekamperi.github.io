@@ -86,6 +86,37 @@ $$
 Y(x) \sim \mathcal{GP}\left(m(x),k(x,x')\right)
 $$
 
+### Making predictions from Gaussian Process posteriors
+We have gone through all the fuzz to make some predictions. Right? So, suppose that we want to predict $$Y_2=f(X_2)$$ for $$n_2$$ new samples, and we are going to base these predictions on our Gaussian process prior and $$n_1$$ previously observed data points $$(X1,Y1)$$. Therefore, we want to calculate $$p(y2∣y1,X1,X2)$$. Keep in mind that y1 and y2 are jointly Gaussian since they both come from the same multivariate distribution. Since they are jointly Gaussian and we have a finite number of samples we can write:
+
+$$
+Y = \left( \begin{array}{c} Y_1 \\ Y_2 \end{array} \right) 
+\quad \mbox{ with sizes } \quad 
+\left( \begin{array}{c} n_1 \times 1 \\ n_2 \times 1 
+\end{array} \right)
+$$
+
+$$
+\mu = \left( \begin{array}{c} \mu_1 \\ \mu_2 \end{array} \right) 
+\quad \mbox{ with sizes } \quad  
+\left( \begin{array}{c} n_1 \times 1 \\ n_2 \times 1 \end{array} \right)
+$$
+
+$$
+\Sigma = \left(\begin{array}{cc} \Sigma_{11} & \Sigma_{12} \\ \Sigma_{21} & \Sigma_{22} \end{array} \right)
+\  \mbox{ with sizes } \ 
+\left(\begin{array}{cc} n_1 \times n_1 & n_1 \times n_2 \\ n_2\times n_1 & n_2\times n_2 \end{array} \right)
+$$
+
+The distribution of  $$Y_1$$ conditional on $$Y_1 \mid y_2 \sim \mathcal{N}_q (\bar{\mu}, \bar{\Sigma})$$ is:
+
+$$
+\begin{align}
+\bar{\mu} &= \mu_1 + \Sigma_{12} \Sigma_{22}^{-1}(y_2 - \mu_2) \tag{5.1} \\
+\mbox{and } \quad \bar{\Sigma} &= \Sigma_{11} - \Sigma_{12} \Sigma_{22}^{-1} \Sigma_{21} \notag
+\end{align}
+$$
+
 ## A simple 1D GP prediction example
 
 Let us consider a contrived one-dimensional problem where the response variable $$y$$ is merely a sinusoid measured at eight equally spaced $$x$$ locations in the span of a single period $$[0, 2\pi]$$. This example is [taken from here](https://bookdown.org/rbg/surrogates/chap5.html), and we reimplement it with *Mathematica* (the original implementation is in *R*).
