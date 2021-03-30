@@ -77,7 +77,7 @@ Image taken [from here](https://www.cs.toronto.edu/~duvenaud/thesis.pdf).
 The covariance function $$\Sigma(x,x')$$ must be positive definite, which means that the following condition must be met:
 
 $$
-x^T \Sigma x > 0, \forall x \ne 0
+x^⊤ \Sigma x > 0, \forall x \ne 0
 $$
 
 This is the multivariate analogue of the univariate requirement for the variance $$\sigma^2$$ to be positive. To be clear, we need to choose such a kernel, so that the resultant covariance matrix is positive definite. Although we haven't made any reference to it, we also need a mean function $$m(x)$$. Having all the ingredients in place, we write:
@@ -87,7 +87,7 @@ Y(x) \sim \mathcal{GP}\left(m(x),k(x,x')\right)
 $$
 
 ### Making predictions from Gaussian Process posteriors
-We have gone through all the fuzz to make some predictions. Right? So, suppose that we want to predict $$Y_2=f(X_2)$$ for $$n_2$$ new samples, and we are going to base these predictions on our Gaussian process prior and $$n_1$$ previously observed data points $$(X1,Y1)$$. Therefore, we want to calculate $$p(y2∣y1,X1,X2)$$. Keep in mind that y1 and y2 are jointly Gaussian since they both come from the same multivariate distribution. Since they are jointly Gaussian and we have a finite number of samples we can write:
+We have gone through all the fuzz to make some predictions. Right? So, suppose that we have $$n_1$$ new testing samples, and we are going to base these predictions on $$n_2$$ previously observed data points. Therefore, we want to calculate $$Y(x)\mid D_{n_2}$$, where $$D_{n_2}=(x_1,y_1), \ldots$$. 
 
 $$
 Y = \left( \begin{array}{c} Y_1 \\ Y_2 \end{array} \right) 
@@ -126,12 +126,12 @@ Let us consider a contrived one-dimensional problem where the response variable 
 ClearAll["Global`*"];
 
 (* Define a squared exponential kernel *)
-  kernel[a_, b_] := Exp[-Norm[(a - b), 2]^2]
+ kernel[a_, b_] := Exp[-Norm[(a - b), 2]^2]
 
 (* These are our training data *)
-  nTrainingPoints = 8; 
-   X = Array[# &, nTrainingPoints, {0, 2 Pi}]; 
-   Y = Sin[X];
+nTrainingPoints = 8; 
+X = Array[# &, nTrainingPoints, {0, 2 Pi}]; 
+Y = Sin[X];
 
 eps = 10^-6;
 Sigma = Outer[kernel, X, X] + eps*IdentityMatrix[nTrainingPoints];
@@ -145,12 +145,12 @@ SigmaInverse = Inverse[Sigma];
 Sigmap = SigmaXX - SigmaX . SigmaInverse . Transpose[SigmaX];
 
 (* Although it is positive definite, it isn't symmetric due to small round off errors *)
-  {PositiveDefiniteMatrixQ[Sigmap], SymmetricMatrixQ[Sigmap]}
+{PositiveDefiniteMatrixQ[Sigmap], SymmetricMatrixQ[Sigmap]}
 (* {True, False} *)
 
 (* Make it symmetric *)
-  Sigmap = (Sigmap + Transpose@Sigmap)/2; 
-   {PositiveDefiniteMatrixQ[Sigmap], SymmetricMatrixQ[Sigmap]}
+Sigmap = (Sigmap + Transpose@Sigmap)/2; 
+{PositiveDefiniteMatrixQ[Sigmap], SymmetricMatrixQ[Sigmap]}
 (* {True, True} *)
 
 nsamples = 100;
@@ -159,18 +159,22 @@ Dimensions@YY
 (* {100, 100} *)
 
 (* Calculate 5% and 95% quantiles for uncertainty modeling *)
-  quantiles = Transpose@Quantile[RandomVariate[MultinormalDistribution[mup, Sigmap], nsamples], {0.05, 0.95}]; 
-   Dimensions@quantiles
+quantiles = Transpose@Quantile[
+    RandomVariate[
+        MultinormalDistribution[mup, Sigmap], nsamples],
+    {0.05, 0.95}]; 
+Dimensions@quantiles
 (* {2, 100} *)
 
 Show[
-  Table[
-   ListPlot[Transpose@{XX, YY[[i]]}, AxesLabel -> {"x", "y"}, Joined -> True, PlotStyle -> Opacity[0.1],
-       PlotRange -> {Automatic, {-2, 2}}], {i, 1, nsamples}], 
-  ListPlot[Transpose@{X, Y}, PlotStyle -> {Red, AbsolutePointSize[6]}], 
-  Plot[Sin[x], {x, -0.5, 2 \[Pi] + 0.5}, PlotStyle -> Black], 
-  ListPlot[Transpose@{XX, quantiles[[1]]}, PlotStyle -> {Red, Dashed},Joined -> True], 
-  ListPlot[Transpose@{XX, quantiles[[2]]}, PlotStyle -> {Red, Dashed},Joined -> True]]
+    Table[
+        ListPlot[Transpose@{XX, YY[[i]]}, AxesLabel -> {"x", "y"}, Joined -> True,
+            PlotStyle -> Opacity[0.1], PlotRange -> {Automatic, {-2, 2}}],
+    {i, 1, nsamples}],
+    ListPlot[Transpose@{X, Y}, PlotStyle -> {Red, AbsolutePointSize[6]}], 
+    Plot[Sin[x], {x, -0.5, 2 \[Pi] + 0.5}, PlotStyle -> Black], 
+    ListPlot[Transpose@{XX, quantiles[[1]]}, PlotStyle -> {Red, Dashed},Joined -> True], 
+    ListPlot[Transpose@{XX, quantiles[[2]]}, PlotStyle -> {Red, Dashed},Joined -> True]]
 {% endraw %}
 {% endhighlight %}
 
