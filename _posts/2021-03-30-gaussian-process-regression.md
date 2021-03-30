@@ -50,7 +50,7 @@ Ok, but if we sampled from a 120-variate Gaussian, how can we guarantee the func
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/covariance_distance.png" alt="Gaussian process">
 </p>
 
-This is a plausible covariance matrix since variables near the diagonal, i.e., close together in the input space, are assigned a high value (1.0). On the contrary, the rest of the pairs are given a low value (0). Alright, but how do we actually calculate the values of the covariance matrix? We use a so-called specialized function called kernel. 
+The following covariance matrix is a plausible one, since the variables near the diagonal, i.e., variables close in the input space, are assigned a high value (1.0). On the contrary, the rest of the pairs are given a low value (0). Alright, but how do we actually calculate the values of the covariance matrix? We use a so-called specialized function called kernel. 
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/covariance_matrix_plot.png" alt="Prior distribution over functions">
