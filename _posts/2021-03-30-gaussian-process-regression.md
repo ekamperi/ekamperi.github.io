@@ -41,10 +41,6 @@ Having said that, we don't really want to consider every mathematically valid fu
 So, how do we impose smoothness? First, let's say that we define a distribution over the function's values at a finite yet arbitrary set of points, say $$x_1, x_2, \ldots, x_N$$. So, although we talk about functions, we use really long vectors to model them. You need to understand that every point $$x_1, x_2, \ldots, x_N$$ is treated as a random variable, and the joint probability distribution of $$x_1, x_2, \ldots, x_N$$ is a multivariate normal distribution. Let that sink in for a moment. To generate the following function, we set up a 120-variate normal distribution and took a 120-variate sample from it, and that was a long y vector that corresponds to our function.
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/prior_functions.png" alt="Prior distribution over functions">
-</p>
-
-<p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/function_as_vector.png" alt="Function as vector">
 </p>
 
