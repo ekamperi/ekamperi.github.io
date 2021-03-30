@@ -75,7 +75,7 @@ Similarly, the variance $$\sigma^2$$ determines the average distance of our func
 
 ## A simple 1D GP prediction example
 
-Let us consider a contrived one-dimensional problem where the response variable $$y$$ is a merely a sinusoid measured at eight equally spaced  
+Let us consider a contrived one-dimensional problem where the response variable $$y$$ is merely a sinusoid measured at eight equally spaced  
 $$x$$ locations in the span of a single period $$[0, 2\pi]$$. This example is [taken from here](https://bookdown.org/rbg/surrogates/chap5.html), and we reimplement it with *Mathematica* (the original implementation is in *R*).
 
 {% highlight mathematica %}
