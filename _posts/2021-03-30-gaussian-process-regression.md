@@ -72,6 +72,7 @@ The $$\ell$$ parameter determines the length of the "wiggles". Generally speakin
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/kernels.png" alt="Various kernels">
 </p>
 
+Image taken [from here](https://www.cs.toronto.edu/~duvenaud/thesis.pdf).
 
 $$
 x^T \Sigma x > 0, \forall x \ne 0
