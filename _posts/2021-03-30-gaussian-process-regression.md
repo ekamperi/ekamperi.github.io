@@ -71,16 +71,8 @@ $$
 
 Therefore, if $$x_i=x_j$$, then $$K(x_i, x_j) = \exp(0)=1$$, whereas if $$\|x_i-x_j\| \to \infty$$, then $$K(x_i, x_j) \to 0$$.
 
-{% highlight mathematica %}
-{% raw %}
-kernel[a_, b_] := Exp[-0.5*Norm[(a - b), 2]^2]
-Plot[kernel[0, x], {x, -5, 5}, PlotRange -> All, Frame -> {True, True, False, False},
-    FrameLabel -> {"|x_i-x_j|^2", "Kernel value"}, Filling -> Axis]
-{% endraw %}
-{% endhighlight %}
-
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/squared_exp_kernel.png" alt="Squared exp kernel">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/kernels.png" alt="Various kernels">
 </p>
 
 ## A simple 1d GP prediction example
