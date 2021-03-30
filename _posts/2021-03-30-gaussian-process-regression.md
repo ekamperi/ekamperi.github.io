@@ -87,7 +87,7 @@ Y(x) \sim \mathcal{GP}\left(m(x),k(x,x')\right)
 $$
 
 ### Making predictions from Gaussian Process posteriors
-We have gone through all the fuzz to make some predictions. Right? So, suppose that we have $$n_1$$ new testing samples, and we are going to base these predictions on $$n_2$$ previously observed data points. Therefore, we want to calculate $$Y(x)\mid D_{n_2}$$, where $$D_{n_2}=(x_1,y_1), \ldots$$. 
+We have gone through all the fuzz to make some predictions. Right? So, suppose that we have $$n_1$$ new testing samples, and we are going to base these predictions on $$n_2$$ previously observed data points. Therefore, we want to calculate $$Y(x)\mid D_{n_2}$$, where $$D_{n_2}=(x_1,y_1), (x_2, y_2), \ldots$$. 
 
 $$
 Y = \left( \begin{array}{c} Y_1 \\ Y_2 \end{array} \right) 
@@ -108,7 +108,7 @@ $$
 \left(\begin{array}{cc} n_1 \times n_1 & n_1 \times n_2 \\ n_2\times n_1 & n_2\times n_2 \end{array} \right)
 $$
 
-The distribution of  $$Y_1$$ conditional on $$Y_1 \mid y_2 \sim \mathcal{N} (\bar{\mu}, \bar{\Sigma})$$ is:
+The distribution of  $$Y_1$$ conditional on $$Y_2=y_2$$ is $$Y_1 \mid y_2 \sim \mathcal{N} (\bar{\mu}, \bar{\Sigma})$$, where:
 
 $$
 \begin{align}
