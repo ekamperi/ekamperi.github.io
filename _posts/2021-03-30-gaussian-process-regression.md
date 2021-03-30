@@ -80,7 +80,11 @@ $$
 x^T \Sigma x > 0, \forall x \ne 0
 $$
 
-This is the multivariate analogue of the univariate requirement for the variance $$\sigma^2$$ to be positive. To be clear, we need to choose such a kernel, so that the resultant covariance matrix is positive definite. Although we haven't made any reference to it, we also need a mean function $$m(x)$$. 
+This is the multivariate analogue of the univariate requirement for the variance $$\sigma^2$$ to be positive. To be clear, we need to choose such a kernel, so that the resultant covariance matrix is positive definite. Although we haven't made any reference to it, we also need a mean function $$m(x)$$. Having all the ingredients in place, we write:
+
+$$
+Y(x) \sim \mathcal{GP}\left(m(x),k(x,x')\right)
+$$
 
 ## A simple 1D GP prediction example
 
