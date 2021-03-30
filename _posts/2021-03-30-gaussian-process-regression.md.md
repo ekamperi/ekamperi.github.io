@@ -1,0 +1,154 @@
+---
+layout: post
+title:  "An introduction to Gaussian Processes"
+date:   2021-03-30
+categories: [mathematics]
+tags: ['machine learning', 'Mathematica', 'mathematics', 'regression', 'statistics']
+description: An introduction to the Gaussian Processes, particularly in the context of regression analysis
+---
+
+### Contents
+{:.no_toc}
+
+* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
+{:toc}
+
+One of the recurring statistics topics is given some data points to perform regression analysis and establish a relationship between y and x. This is typically done by assuming some polynomial function and estimating its coefficients via least squares. But what if we don't want to commit ourselves upfront regarding the number of parameters to use? Suppose that we'd like to consider every possible function as a candidate for matching our data, no matter how many parameters that function had.
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/various_fits.png" alt="Regression analysis">
+</p>
+
+So, the idea of GP is this. Let's s start with a distribution over all possible functions that could conceivably have generated our data (without actually looking at the data!). This is depicted in the left plot, where we have three random functions. Then, as we look at the data and more measurements kick in our dataset, we narrow down the functions that match our data. After considering 5 observations, we build-up some pretty strong confidence on how the function that generated our data should look like. 
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/prior_functions.png" alt="Prior distribution over functions">
+</p>
+
+Having said that, we don't really want to consider every mathematically valid function. Instead, we impose some constraints on the prior distribution over all possible functions. We want our functions to be smooth for starters because that matches our empirical knowledge about how the world generally works. Points that are close to each other are associated with y values that are also close to each other. So, we don't really want our algorithm to favor functions that look like the one to the left.
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/smooth_vs_non_smooth.png" alt="Smooth vs non-smooth functions">
+</p>
+
+So, how do we impose smoothness? First, let's say that we define a distribution over the function's values at a finite yet arbitrary set of points, say $$x_1, x_2, \ldots, x_N$$. So, although we talk about functions, we use really long vectors to model them. You need to understand that every point $$x_1, x_2, \ldots, x_N$$ is treated as a random variable, and the joint probability distribution of $$x_1, x_2, \ldots, x_N$$ is a multivariate normal distribution. Let that sink in for a moment. To generate the following function, we set up a 120-variate normal distribution and took a 120-variate sample from it, and that was a long y vector that corresponds to our function.
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/prior_functions.png" alt="Prior distribution over functions">
+</p>
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/function_as_vector.png" alt="Function as vector">
+</p>
+
+Ok, but if we sampled from a 120-variate Gaussian, how can we guarantee the function's smoothness? First, keep in mind that to set up a 120-variate Gaussian, we need a 120x120 covariance matrix. Each entry of the covariance matrix defines how much the $$(x_i, x_j)$$ variables are related. The trick now is to use a covariance matrix such that the values that are close together in the input space, the $$x$$'s, will produce output values that are close together, the $$y$$'s. In the following plot, $$x_1$$ and $$x_2$$ are close together, so we'd expect $$y_1$$ and $$y_2$$ to also be close (this makes the function smooth and not too wiggly). On the contrary, $$x_1$$ and $$x_N$$ are very apart, so the covariance matrix element $$C(1,N)$$ should be some tiny number.
+
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/covariance_distance.png" alt="Gaussian process">
+</p>
+
+This is a plausible covariance matrix since variables near the diagonal, i.e., close together in the input space, are assigned a high value (1.0). On the contrary, the rest of the pairs are given a low value (0). Alright, but how do we actually calculate the values of the covariance matrix? We use a so-called specialized function called kernel. 
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/covariance_matrix_plot.png" alt="Prior distribution over functions">
+</p>
+
+A kernel function is just a fancy name for a function that accepts as input two points in the input space, i.e., $$x_i$$ and $$x_j$$, and outputs how "similar" they are based on some notion of "distance". For example, the following is the so-called squared exponential kernel that uses the exp of the squared of the Euclidean distance between two points. Therefore, if $$x_i=x_j$$, then $$K(x_i, x_j) = \exp(0)=1$$, whereas if $$|xi-xj|-\to\inf$$, then $$K(x_i,x_j)\to 0$$.
+
+```mathematica
+kernel[a_, b_] := Exp[-0.5*Norm[(a - b), 2]^2]
+```
+
+```mathematica
+kernel @@@ {{1, 1}, {1, 2}, {5, 10}}
+
+(*{1., 0.606531, 3.72665*10^-6}*)
+```
+
+```mathematica
+Plot[kernel[0, x], {x, -5, 5}, PlotRange -> All, Frame -> {True, True, False, False}, FrameLabel -> {"|\!\(\*SubscriptBox[\(x\), \(i\)]\)-\!\(\*SubscriptBox[\(x\), \(j\)]\)\!\(\*SuperscriptBox[\(|\), \(2\)]\)", "Kernel value"}, Filling -> Axis]
+```
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/squared_exp_kernel.png" alt="Squared exp kernel">
+</p>
+
+## Sin(x) example
+
+```mathematica
+ClearAll["Global`*"];
+```
+
+```mathematica
+(* Define a squared exponential kernel *)
+  kernel[a_, b_] := Exp[-Norm[(a - b), 2]^2]
+```
+
+```mathematica
+(* These are our training data *)
+  nTrainingPoints = 8; 
+   X = Array[# &, nTrainingPoints, {0, 2 Pi}]; 
+   Y = Sin[X];
+```
+
+```mathematica
+eps = 10^-6;
+Sigma = Outer[kernel, X, X] + eps*IdentityMatrix[nTrainingPoints];
+```
+
+```mathematica
+nTestPoints = 100;
+XX = Array[# &, nTestPoints, {-0.5, 2 Pi + 0.5}];
+```
+
+```mathematica
+SigmaXX = Outer[kernel, XX, XX] + eps*IdentityMatrix[nTestPoints];
+SigmaX = Outer[kernel, XX, X];
+SigmaInverse = Inverse[Sigma];
+Sigmap = SigmaXX - SigmaX . SigmaInverse . Transpose[SigmaX];
+```
+
+```mathematica
+(* Although it is positive definite, it isn't symmetric due to small round off errors *)
+  {PositiveDefiniteMatrixQ[Sigmap], SymmetricMatrixQ[Sigmap]}
+
+(*{True, False}*)
+```
+
+```mathematica
+(* Make it symmetric *)
+  Sigmap = (Sigmap + Transpose@Sigmap)/2; 
+   {PositiveDefiniteMatrixQ[Sigmap], SymmetricMatrixQ[Sigmap]}
+
+(*{True, True}*)
+```
+
+```mathematica
+nsamples = 100;
+YY = RandomVariate[MultinormalDistribution[mup, Sigmap], nsamples];
+Dimensions@YY
+
+(*{100, 100}*)
+```
+
+```mathematica
+(* Calculate 5% and 95% quantiles for uncertainty modeling *)
+  quantiles = Transpose@Quantile[RandomVariate[MultinormalDistribution[mup, Sigmap], nsamples], {0.05, 0.95}]; 
+   Dimensions@quantiles
+
+(*{2, 100}*)
+```
+
+```mathematica
+Show[
+  Table[
+   ListPlot[Transpose@{XX, YY[[i]]}, AxesLabel -> {"x", "y"}, Joined -> True, PlotStyle -> Opacity[0.1], PlotRange -> {Automatic, {-2, 2}}], {i, 1, nsamples}], 
+  ListPlot[Transpose@{X, Y}, PlotStyle -> {Red, AbsolutePointSize[6]}], 
+  Plot[Sin[x], {x, -0.5, 2 \[Pi] + 0.5}, PlotStyle -> Black], 
+  ListPlot[Transpose@{XX, quantiles[[1]]}, PlotStyle -> {Red, Dashed},Joined -> True], 
+  ListPlot[Transpose@{XX, quantiles[[2]]}, PlotStyle -> {Red, Dashed},Joined -> True]]
+```
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/gp_sin_example.png" alt="Prior distribution over functions">
+</p>
