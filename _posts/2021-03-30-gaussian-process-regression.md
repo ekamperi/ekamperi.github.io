@@ -62,8 +62,8 @@ The following covariance matrix is a plausible one, since the variables near the
 
 A kernel function is just a fancy name for a function that accepts as input two points in the input space, i.e., $$x_i$$ and $$x_j$$, and outputs how "similar" they are based on some notion of "distance". For example, the following kernel is the so-called exponentiated quadratic that uses the exp of the squared of the Euclidean distance between two points:
 
-The $$ℓ$$ parameter determines the length of the "wiggles". Generally speaking, we won't be able to extrapolate more than $$\ell$$ units away from our data.
-Similarly, the $$\sigma^2$$ determines the average distance of our function from its mean value. In short, $\ell, \sigma$$ determine the horizontal and vertical scaling of the function.
+The $$\ell$$ parameter determines the length of the "wiggles". Generally speaking, we won't be able to extrapolate more than $$\ell$$ units away from our data.
+Similarly, the $$\sigma^2$$ determines the average distance of our function from its mean value. In short, $$\ell, \sigma$$ determine the horizontal and vertical scaling of the function.
 
 $$
 \Sigma(x,x') = \sigma^2 \exp\left(-\frac{1}{2\ell^2}\|x-x'\|^2\right)
