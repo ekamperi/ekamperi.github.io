@@ -26,7 +26,7 @@ This is the problem that Gaussian Processes (GP) solve. So, the idea is the foll
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/prior_functions.png" alt="Prior distribution over functions">
 </p>
 
-Then, as we look at the data and more measurements kick in our dataset, we narrow down the functions that match our data. After considering 5 observations, we build-up some pretty strong confidence on how the function that generated our data should look like. 
+Then, as we look at the data and more measurements kick in our training dataset, we narrow down the functions that match our incoming data. In the following example, after considering 5 observations, we build-up some pretty strong confidence on how the function that generated our data should look like. The image was taken from the book *Machine Learning A Probabilistic Perspective* by Kevin P. Murphy, which is very nice by the way.
 
 <p align="center">
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/gaussian_process/gp_prior_posterior.png" alt="Prior and posterior distribution over functions">
@@ -45,7 +45,6 @@ So, how do we impose smoothness? First, let's say that we define a distribution 
 </p>
 
 Ok, but if we sampled from a 120-variate Gaussian, how can we guarantee the function's smoothness? First, keep in mind that to set up a 120-variate Gaussian, we need a 120x120 covariance matrix. Each entry of the covariance matrix defines how much the $$(x_i, x_j)$$ variables are related. The trick now is to use a covariance matrix such that the values that are close together in the input space, the $$x$$'s, will produce output values that are close together, the $$y$$'s. In the following plot, $$x_1$$ and $$x_2$$ are close together, so we'd expect $$y_1$$ and $$y_2$$ to also be close (this makes the function smooth and not too wiggly). On the contrary, $$x_1$$ and $$x_N$$ are very apart, so the covariance matrix element $$C(1,N)$$ should be some tiny number.
-
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/covariance_distance.png" alt="Gaussian process">
@@ -137,3 +136,4 @@ Show[
 
 ## References
 1. Surrogates: Gaussian process modeling, design and optimization for the applied sciences by Robert B. Gramacy, 2021-02-06. https://bookdown.org/rbg/surrogates/
+2. Machine Learning A Probabilistic Perspective by Kevin P. Murphy.
