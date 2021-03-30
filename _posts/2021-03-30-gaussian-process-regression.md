@@ -72,6 +72,13 @@ The $$\ell$$ parameter determines the length of the "wiggles". Generally speakin
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/kernels.png" alt="Various kernels">
 </p>
 
+
+$$
+x^T \Sigma x > 0, \forall x \ne 0
+$$
+
+This is the multivariate analogue of the univariate requirement for the variance $$\sigma^2$$ to be positive.
+
 ## A simple 1D GP prediction example
 
 Let us consider a contrived one-dimensional problem where the response variable $$y$$ is merely a sinusoid measured at eight equally spaced $$x$$ locations in the span of a single period $$[0, 2\pi]$$. This example is [taken from here](https://bookdown.org/rbg/surrogates/chap5.html), and we reimplement it with *Mathematica* (the original implementation is in *R*).
