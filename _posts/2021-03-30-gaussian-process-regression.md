@@ -20,6 +20,7 @@ One of the recurring topics in statistics is to establish a relationship between
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/various_fits.png" alt="Regression analysis">
 </p>
 
+## The ingredients
 ### Gaussian process priors 
 This is the problem that Gaussian Processes (GP) solve. So, the idea is the following. Let's start with a distribution of all possible functions that, conceivably, could have generated our data (without actually looking at the data!). This is depicted in the following plot, where we have drawn 10 such candidate random functions. In principle, the number is infinite, but for brevity, we only drew 10. These functions are known as GP priors in the Bayesian vernacular. They capture are ignorance regarding the true generating function $$y = f(x)$$ we are after.
 
@@ -53,13 +54,22 @@ Ok, but if we sample from a 120-variate Gaussian, how can we guarantee the funct
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/covariance_distance.png" alt="Gaussian process">
 </p>
 
-The following covariance matrix is a plausible one, since the variables near the diagonal, i.e., variables close in the input space, are assigned a high value (1.0). On the contrary, the rest of the pairs are given a low value (0). Alright, but how do we actually calculate the values of the covariance matrix? We use a so-called specialized function called kernel. 
+The following covariance matrix is a plausible one, since the variables near the diagonal, i.e., variables close in the input space, are assigned a high value (1.0). On the contrary, the rest of the pairs are given a low value (0). Alright, but how do we actually calculate the values of the covariance matrix? We use a so-called specialized function called kernel.
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/covariance_matrix_plot.png" alt="Prior distribution over functions">
 </p>
 
-A kernel function is just a fancy name for a function that accepts as input two points in the input space, i.e., $$x_i$$ and $$x_j$$, and outputs how "similar" they are based on some notion of "distance". For example, the following kernel is the so-called squared exponential that uses the exp of the squared of the Euclidean distance between two points. Therefore, if $$x_i=x_j$$, then $$K(x_i, x_j) = \exp(0)=1$$, whereas if $$\|x_i-x_j\| \to \infty$$, then $$K(x_i, x_j) \to 0$$.
+A kernel function is just a fancy name for a function that accepts as input two points in the input space, i.e., $$x_i$$ and $$x_j$$, and outputs how "similar" they are based on some notion of "distance". For example, the following kernel is the so-called exponentiated quadratic that uses the exp of the squared of the Euclidean distance between two points:
+
+The $$ℓ$$ parameter determines the length of the "wiggles". Generally speaking, we won't be able to extrapolate more than $$\ell$$ units away from our data.
+Similarly, the $$\sigma^2$$ determines the average distance of our function from its mean value. In short, $\ell, \sigma$$ determine the horizontal and vertical scaling of the function.
+
+$$
+\Sigma(x,x') = \sigma^2 \exp\left(-\frac{1}{2\ell^2}\|x-x'\|^2\right)
+$$
+
+Therefore, if $$x_i=x_j$$, then $$K(x_i, x_j) = \exp(0)=1$$, whereas if $$\|x_i-x_j\| \to \infty$$, then $$K(x_i, x_j) \to 0$$.
 
 {% highlight mathematica %}
 {% raw %}
