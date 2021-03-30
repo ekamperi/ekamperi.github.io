@@ -20,10 +20,16 @@ One of the recurring statistics topics is given some data points to perform regr
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/various_fits.png" alt="Regression analysis">
 </p>
 
-Enter Gaussian Processes (GP). So, the idea of GP is the following. Let's s start with a distribution over all possible functions that could conceivably have generated our data (without actually looking at the data!). This is depicted in the left plot, where we have three random functions. Then, as we look at the data and more measurements kick in our dataset, we narrow down the functions that match our data. After considering 5 observations, we build-up some pretty strong confidence on how the function that generated our data should look like. 
+Enter Gaussian Processes (GP). So, the idea of GP is the following. Let's s start with a distribution over all possible functions that could conceivably have generated our data (without actually looking at the data!). This is depicted in the following plot, where we have drawn 10 candidate random functions. 
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/prior_functions.png" alt="Prior distribution over functions">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/prior_functions.png" alt="Prior distribution over functions">
+</p>
+
+Then, as we look at the data and more measurements kick in our dataset, we narrow down the functions that match our data. After considering 5 observations, we build-up some pretty strong confidence on how the function that generated our data should look like. 
+
+<p align="center">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/gp_prior_posterior.png" alt="Prior and posterior distribution over functions">
 </p>
 
 Having said that, we don't really want to consider every mathematically valid function. Instead, we impose some constraints on the prior distribution over all possible functions. We want our functions to be smooth for starters because that matches our empirical knowledge about how the world generally works. Points that are close to each other are associated with y values that are also close to each other. So, we don't really want our algorithm to favor functions that look like the one to the left.
