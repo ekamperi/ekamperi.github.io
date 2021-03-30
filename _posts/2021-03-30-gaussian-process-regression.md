@@ -14,19 +14,19 @@ description: An introduction to the Gaussian Processes, particularly in the cont
 {:toc}
 
 ## Introduction
-One of the recurring statistics topics is given some data points to perform regression analysis and establish a relationship between y and x. This is typically done by assuming some polynomial function and estimating its coefficients via [ordinary least squares](https://en.wikipedia.org/wiki/Ordinary_least_squares). But what if we don't want to commit ourselves upfront regarding the number of parameters to use? Suppose that we'd like to consider every possible function as a candidate for matching our data, no matter how many parameters that function had. How could we do that?
+One of the recurring statistics topics is given some data points to perform regression analysis and establish a relationship between $$y$$ and $$x$$. This is typically done by assuming some polynomial function and estimating its coefficients via [ordinary least squares](https://en.wikipedia.org/wiki/Ordinary_least_squares). But what if we don't want to commit ourselves upfront regarding the number of parameters to use? Suppose that we'd like to consider every possible function as a candidate model for matching our data, no matter how many parameters were needed. How could we do that?
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/various_fits.png" alt="Regression analysis">
 </p>
 
-This is the problem that Gaussian Processes (GP) solve. So, the idea is the following. Let's s start with a distribution over all possible functions that could conceivably have generated our data (without actually looking at the data!). This is depicted in the following plot, where we have drawn 10 candidate random functions. 
+This is the problem that Gaussian Processes (GP) solve. So, the idea is the following. Let's start with a distribution of all possible functions that, conceivably, could have generated our data (without actually looking at the data!). This is depicted in the following plot, where we have drawn 10 such candidate random functions. In principle, the number is infinite, but for brevity, we only drew 10. 
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/prior_functions.png" alt="Prior distribution over functions">
 </p>
 
-Then, as we look at the data and more measurements kick in our training dataset, we narrow down the functions that match our incoming data. In the following example, after considering 5 observations, we build-up some pretty strong confidence on how the function that generated our data should look like. The image was taken from the book *Machine Learning A Probabilistic Perspective* by Kevin P. Murphy, which is very nice by the way.
+Then, as we look at the data and more measurements kick in our training dataset, we narrow down the functions that match our incoming data. In the following example, after considering 5 observations, we build-up some pretty strong confidence on how the function that generated our data should look like. The image was taken from the book *Machine Learning A Probabilistic Perspective* by Kevin P. Murphy, which is very nice, by the way.
 
 <p align="center">
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/gaussian_process/gp_prior_posterior.png" alt="Prior and posterior distribution over functions">
@@ -38,7 +38,7 @@ Having said that, we don't really want to consider every mathematically valid fu
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/smooth_vs_non_smooth.png" alt="Smooth vs non-smooth functions">
 </p>
 
-So, how do we impose smoothness? First, let's say that although we talk about the distribution over functions, in reality we define the distribution over the function's values at a finite yet arbitrary set of points, say $$x_1, x_2, \ldots, x_N$$. Hence, although we model functions as really long vectors. You also need to understand that every point $$x_1, x_2, \ldots, x_N$$ is treated as a random variable, and the joint probability distribution of $$x_1, x_2, \ldots, x_N$$ is a multivariate normal distribution. Let that sink in for a moment. To generate the following function, we set up a 120-variate normal distribution and took a singe 120-variate sample from it, and that was a long $$y$$ vector that corresponds to our function.
+So, how do we impose smoothness? First, let's say that although we talk about the distribution over functions, in reality, we define the distribution over the function's values at a finite yet arbitrary set of points, say $$x_1, x_2, \ldots, x_N$$. Hence, although we model functions as really long vectors. You also need to understand that every point $$x_1, x_2, \ldots, x_N$$ is treated as a random variable, and the joint probability distribution of $$x_1, x_2, \ldots, x_N$$ is a multivariate normal distribution. Let that sink in for a moment. To generate the following function, we set up a 120-variate normal distribution and took a single 120-variate sample from it, and that was a long $$y$$ vector that corresponds to our function.
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/function_as_vector.png" alt="Function as vector">
@@ -72,7 +72,7 @@ Plot[kernel[0, x], {x, -5, 5}, PlotRange -> All, Frame -> {True, True, False, Fa
 ## A simple 1d GP prediction example
 
 Let us consider a contrived one-dimensional problem where the response variable $$y$$ is a merely a sinusoid measured at eight equally spaced  
-$$x$$ locations in the span of a single period $$[0, 2\pi]$$. This example is [taken from here](https://bookdown.org/rbg/surrogates/chap5.html), and we reimpement it with *Mathematica* (the original implementation is in *R*).
+$$x$$ locations in the span of a single period $$[0, 2\pi]$$. This example is [taken from here](https://bookdown.org/rbg/surrogates/chap5.html), and we reimplement it with *Mathematica* (the original implementation is in *R*).
 
 {% highlight mathematica %}
 {% raw %}
