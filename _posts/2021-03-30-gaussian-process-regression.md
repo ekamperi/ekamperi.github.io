@@ -112,7 +112,7 @@ The distribution of  $$Y_1$$ conditional on $$Y_2=y_2$$ is $$Y_1 \mid y_2 \sim \
 
 $$
 \begin{align}
-\bar{\mu} &= \mu_1 + \Sigma_{12} \Sigma_{22}^{-1}(y_2 - \mu_2) \tag{5.1} \\
+\bar{\mu} &= \mu_1 + \Sigma_{12} \Sigma_{22}^{-1}(y_2 - \mu_2) \\
 \mbox{and } \quad \bar{\Sigma} &= \Sigma_{11} - \Sigma_{12} \Sigma_{22}^{-1} \Sigma_{21}
 \end{align}
 $$
