@@ -59,7 +59,6 @@ A kernel function is just a fancy name for a function that accepts as input two 
 ```mathematica
 kernel[a_, b_] := Exp[-0.5*Norm[(a - b), 2]^2]
 
-kernel @@@ {{1, 1}, {1, 2}, {5, 10}}
 (* {1., 0.606531, 3.72665*10^-6} *)
 
 Plot[kernel[0, x], {x, -5, 5}, PlotRange -> All, Frame -> {True, True, False, False}, FrameLabel -> {"|x_i-x_j|^2", "Kernel value"}, Filling -> Axis]
