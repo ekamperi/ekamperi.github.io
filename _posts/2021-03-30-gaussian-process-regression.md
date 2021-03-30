@@ -14,7 +14,7 @@ description: An introduction to the Gaussian Processes, particularly in the cont
 {:toc}
 
 ## Introduction
-One of the recurring topics in statistics is to perform regression analysis and establish a relationship between $$y$$ and $$x$$, given some data points. This is typically done by assuming some polynomial function and estimating its coefficients via [ordinary least squares](https://en.wikipedia.org/wiki/Ordinary_least_squares). But what if we don't want to commit ourselves upfront regarding the number of parameters to use? Suppose that we'd like to consider every possible function as a candidate model for matching our data, no matter how many parameters were needed. How could we do that?
+One of the recurring topics in statistics is to establish a relationship between some response variable $$y$$, given some data points $$x$$. This procedure is called regression analysis and is typically done by assuming some polynomial function and estimating its coefficients via [ordinary least squares](https://en.wikipedia.org/wiki/Ordinary_least_squares). But what if we don't want to commit ourselves upfront regarding the number of parameters to use? Suppose that we'd like to consider every possible function as a candidate model for matching our data, no matter how many parameters were needed. How could we do that?
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/various_fits.png" alt="Regression analysis">
