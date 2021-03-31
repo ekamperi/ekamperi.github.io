@@ -14,7 +14,7 @@ description: An introduction to the Gaussian Processes, particularly in the cont
 {:toc}
 
 ## Introduction
-One of the recurring topics in statistics is establishing a relationship between some response variable $$y$$, given some data points $$x$$. This procedure is known as regression analysis and is typically done by assuming some polynomial function whose coefficients are determined via [ordinary least squares](https://en.wikipedia.org/wiki/Ordinary_least_squares). But what if we don't want to commit ourselves upfront on the number of parameters to use? Suppose that we'd like to consider every possible function as a candidate model for matching our data, no matter how many parameters were needed. How could we do that?
+One of the recurring topics in statistics is establishing a relationship between some response variable $$y$$, given some data points. This procedure is known as regression analysis and is typically done by assuming some polynomial function whose coefficients are determined via [ordinary least squares](https://en.wikipedia.org/wiki/Ordinary_least_squares). But what if we don't want to commit ourselves upfront on the number of parameters to use? Suppose that we'd like to consider every possible function as a candidate model for matching our data, no matter how many parameters were needed. That's bold, could we pull it through? This is the problem that [Gaussian Processes (GP)](https://en.wikipedia.org/wiki/Gaussian_process) solve.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/various_fits.png" alt="Regression analysis">
@@ -22,7 +22,7 @@ One of the recurring topics in statistics is establishing a relationship between
 
 ## The ingredients
 ### Gaussian process priors 
-This is the problem that [Gaussian Processes (GP)](https://en.wikipedia.org/wiki/Gaussian_process) solve. So, the idea is the following. Let's start with a distribution of all possible functions that, conceivably, could have produced our data (without actually looking at the data!). This is portrayed in the following plot, where we have drawn 10 such candidate random functions. In principle, the number is infinite, but for brevity, we only drew 10. These functions are known as GP priors in the Bayesian vernacular. They capture our ignorance regarding the true generating function $$y = f(x)$$ we are after.
+Let's start with a distribution of all possible functions that, conceivably, could have produced our data (without actually looking at the data!). This is portrayed in the following plot, where we have drawn 10 such candidate random functions. In principle, the number is infinite, but for brevity, we only drew 10. These functions are known as GP priors in the Bayesian vernacular. They capture our ignorance regarding the true generating function $$y = f(x)$$ we are after.
 
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/gaussian_process/prior_functions.png" alt="Prior distribution over functions">
