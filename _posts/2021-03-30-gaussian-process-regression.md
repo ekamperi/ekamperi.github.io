@@ -14,7 +14,7 @@ description: An introduction to the Gaussian Processes, particularly in the cont
 {:toc}
 
 ## Introduction
-One of the recurring topics in statistics is establishing a relationship between some response variable $$y$$, given some data points. This procedure is known as regression analysis and is typically done by assuming some polynomial function whose coefficients are determined via [ordinary least squares](https://en.wikipedia.org/wiki/Ordinary_least_squares). But what if we don't want to commit ourselves upfront on the number of parameters to use? Suppose that we'd like to consider every possible function as a candidate model for matching our data, no matter how many parameters were needed. That's bold, could we pull it through? This is the problem that [Gaussian Processes (GP)](https://en.wikipedia.org/wiki/Gaussian_process) solve.
+One of the recurring topics in statistics is establishing a relationship between some response variable $$y$$ and predictor variable(s) $$x$$, given some data points. This procedure is known as regression analysis and is typically done by assuming a polynomial function whose coefficients are determined via [ordinary least squares](https://en.wikipedia.org/wiki/Ordinary_least_squares). But what if we don't want to commit ourselves upfront on the number of parameters to use? Suppose we'd like to consider every possible function as a candidate model for our data, no matter how many parameters were needed. That's bold, but could we pull it through? The answer is yes, with the help of[Gaussian Processes (GP)](https://en.wikipedia.org/wiki/Gaussian_process).
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/various_fits.png" alt="Regression analysis">
@@ -22,13 +22,13 @@ One of the recurring topics in statistics is establishing a relationship between
 
 ## The ingredients
 ### Gaussian process priors 
-Let's start with a distribution of all possible functions that, conceivably, could have produced our data (without actually looking at the data!). This is portrayed in the following plot, where we have drawn 10 such candidate random functions. In principle, the number is infinite, but for brevity, we only drew 10. These functions are known as GP priors in the Bayesian vernacular. They capture our ignorance regarding the true generating function $$y = f(x)$$ we are after.
+Let's start with a distribution of all possible functions that, conceivably, could have produced our data (without actually looking at the data!). This is portrayed in the following plot, where we have drawn 10 such candidate random functions. In principle, the number is infinite, but for brevity, we only drew 10 here. These functions are known as **GP priors** in the Bayesian vernacular. They capture our ignorance regarding the true generating function $$y = f(x)$$ we are after.
 
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/gaussian_process/prior_functions.png" alt="Prior distribution over functions">
 </p>
 
-### From priors to Gaussian process posteriors
+### From GP priors to GP posteriors
 Then, as we look at the data, we narrow down the functions that could have generated them. In the following example, after considering 5 observations, we build-up some pretty strong confidence regarding how the data-generating function should look like. The shaded area represents our model's uncertainty, and it's high where we lack data and low where we have many data points. The image was taken from the book *Machine Learning A Probabilistic Perspective* by Kevin P. Murphy, which is very nice, by the way.
 
 <p align="center">
@@ -60,13 +60,13 @@ In the following plot, we visualize such a legitimate covariance matrix. The var
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/covariance_matrix_plot.png" alt="Prior distribution over functions">
 </p>
 
-A kernel function is just a fancy name for a function that accepts as input two points in the input space, i.e., $$x_i$$ and $$x_j$$, and outputs how "similar" they are based on some notion of "distance". For example, the following kernel is the so-called exponentiated quadratic that uses the exponentiated squared Euclidean distance between two points. If $$x=x'$$, then $$K(x, x') = \exp(0)=1$$, whereas if $$\|x-x'\| \to \infty$$, then $$K(x, x') \to 0$$.
+A **kernel function** is just a fancy name for a function that accepts as input two points in the input space, i.e., $$x_i$$ and $$x_j$$, and outputs how "similar" they are based on some notion of "distance". For example, the following kernel is the exponentiated quadratic that uses the exponentiated squared Euclidean distance between two points. If $$x=x'$$, then $$K(x, x') = \exp(0)=1$$, whereas if $$\|x-x'\| \to \infty$$, then $$K(x, x') \to 0$$.
 
 $$
 \Sigma(x,x') = \sigma^2 \exp\left(-\frac{1}{2\ell^2}\|x-x'\|^2\right)
 $$
 
-The $$\ell$$ parameter determines the length of the "wiggles". Generally speaking, we won't be able to extrapolate more than $$\ell$$ units away from our data. Similarly, the variance $$\sigma^2$$ determines the average distance of our function from its mean value. In short, $$\ell, \sigma$$ circumscribe the horizontal and vertical "range" of the function. As you may have guessed, they are indeed hyperparameters (i.e., their values need to be set by you, they won't be inferred automatically by the algorithm). The following image shows various different kernels that can be used in GP and the derived GP priors. By the way, the same kernels are also used in Support Vector Machines (SVM).
+The $$\ell$$ parameter determines the length of the "wiggles". Generally speaking, we won't be able to extrapolate more than $$\ell$$ units away from our data. Similarly, the variance $$\sigma^2$$ determines the average distance of our function from its mean value. In short, $$\ell, \sigma$$ circumscribe the horizontal and vertical "range" of the function. As you may have guessed, they are indeed hyperparameters (i.e., their values need to be set by us; they can't be inferred automatically by the algorithm). The following image shows various different kernels that can be used in GP and the derived GP priors. By the way, the same kernels are also used in Support Vector Machines (SVM).
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/kernels.png" alt="Various kernels">
@@ -80,13 +80,13 @@ $$
 x^⊤ \Sigma x > 0, \forall x \ne 0
 $$
 
-This is the multivariate analogue of the univariate requirement for the variance $$\sigma^2$$ to be positive. To be clear, we need to choose such a kernel, so that the resultant covariance matrix is positive definite. Although we haven't made any reference to it, we also need a mean function $$m(x)$$. Having all the ingredients in place, we write:
+This is the multivariate analog of the univariate requirement for the variance $$\sigma^2$$ to be positive. To be clear, we need to choose such a kernel to make the resultant covariance matrix positive. Although we haven't made any reference to it, we also need a mean function $$m(x)$$. Having all the ingredients in place, we write:
 
 $$
 Y(x) \sim \mathcal{GP}\left(m(x),k(x,x')\right)
 $$
 
-### Making predictions from Gaussian Process posteriors
+### Making predictions from Gaussian Processes posteriors
 We have gone through all the fuzz to make some predictions. Right? So, suppose that we have $$n_1$$ new testing samples, and we are going to base these predictions on $$n_2$$ previously observed data points. Therefore, we want to calculate $$Y(x)\mid D_{n_2}$$, where $$D_{n_2}=(x_1,y_1), (x_2, y_2), \ldots$$. 
 
 $$
@@ -183,7 +183,7 @@ Show[
 </p>
 
 ## Limitations of Gaussian Processes
-1. **Slow inference.** Computing the inverse of the covariance matrix has a $$\mathcal{O}(N^3)$$ time complexity, rendering exact inference too slow for more than a few thousand datapoints.
+1. **Slow inference.** Computing the covariance matrix's inverse has a $$\mathcal{O}(N^3)$$ time complexity, rendering exact inference too slow for more than a few thousand data points.
 2. **Choosing a covariance kernel.** There's some arbitrariness when choosing a kernel. However, the kernel's hyperparameters can be inferred by maximizing the marginal likelihood, and the whole process can be automated.
 3. **Gaussian processes are in some sense idealizations**. For the understanding of extreme phenomena exhibited by real physical systems, non-Gaussian processes might be more relevant. In this context, GP serve as starting points to be perturbed.
 
