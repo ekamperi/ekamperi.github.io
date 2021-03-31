@@ -23,7 +23,8 @@ minima:
     github: ekamperi
 
 #remote_theme: jekyll/architect
-remote_theme: jekyll/minima
+#remote_theme: jekyll/minima
+remote_theme: mmistakes/minimal-mistakes
 plugins:
   - jekyll-archives
   - jekyll-feed
