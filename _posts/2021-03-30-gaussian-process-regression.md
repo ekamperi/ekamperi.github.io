@@ -54,7 +54,7 @@ Ok, but if we sample from a 120-variate Gaussian, how can we guarantee the funct
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/covariance_distance.png" alt="Gaussian process">
 </p>
 
-In the following plot, we visualize such a legitimate covariance matrix. The variables near the diagonal, i.e., variables close in the input space, are assigned a high value ($$\Sigma_{ij}=1$$). Therefore, when we sample from the multivariate normal distribution, these points will come out as neighbors. On the contrary, the rest of the pairs are given a low value ($$\Sigma_{ij}=0$$). Hence, when we sample from the MVN, the $$y$$'s will be uncorrelated. Alright, but how do we actually calculate the values of the covariance matrix? We use a so-called specialized function called kernel.
+In the following plot, we visualize such a legitimate covariance matrix. The variables near the diagonal, i.e., variables close in the input space, are assigned a high value ($$\Sigma_{ij}=1$$). Therefore, when we sample from the multivariate normal distribution, these points will come out as neighbors. On the contrary, the rest of the pairs are given a low value ($$\Sigma_{ij}=0$$). Hence, when we sample from the MVN, the $$y$$'s will be uncorrelated. Alright, but how do we actually calculate the values of the covariance matrix? We use a specialized function called **kernel** (also known as covariance function).
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/covariance_matrix_plot.png" alt="Prior distribution over functions">
@@ -73,6 +73,18 @@ The $$\ell$$ parameter determines the length of the "wiggles". Generally speakin
 </p>
 
 Image taken [from here](https://www.cs.toronto.edu/~duvenaud/thesis.pdf).
+
+Given a kernel $$k(x,x')$$ we construct the covariance matrix with:
+
+$$
+\Sigma(x,x')=
+\begin{bmatrix}
+    k(x_1,x_1)       & k(x_1,x_2) & k(x_1,x_3) & \dots & k(x_1,x_N) \\
+    k(x_2,x_1)       & k(x_2,x_2) & k(x_2,x_3) & \dots & k(x_2,x_N) \\
+\vdots & \vdots & \vdots & \vdots & \vdots\\
+    k(x_N,x_1)       & k(x_N,x_2) & k(x_N,x_3) & \dots & k(x_N,x_N) \\
+\end{bmatrix}
+$$
 
 The covariance function $$\Sigma(x,x')$$ must be [positive definite](https://en.wikipedia.org/wiki/Definite_symmetric_matrix#Definitions_for_real_matrices), meaning that the following condition must be met:
 
