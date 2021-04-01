@@ -42,7 +42,7 @@ The truth is that we don't really want to consider every mathematically valid fu
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/smooth_vs_non_smooth.png" alt="Smooth vs non-smooth functions">
 </p>
 
-Which brings us to the following question: how do we introduce smoothness? First, let's say that although we talk about the distribution over functions, in reality, we define the distribution over the function's values at a finite yet arbitrary set of points, say $$x_1, x_2, \ldots, x_N$$. I.e., **we model functions as really long column vectors**. You also need to realize that **every point $$y_1, y_2, \ldots, y_N$$ is treated as a random variable, and the joint probability distribution of $$p(y_1, y_2, \ldots, y_N)$$ is a multivariate normal distribution**. Let that sink in for a moment because this is the heart of GP. To generate the following function, we set up a 120-variate normal distribution and take a single 120-variate sample from it. This 120 long $$y$$ vector corresponds to our function.
+Which brings us to the following question: how do we introduce smoothness? First, let's say that although we talk about the distribution over functions, in reality, we define the distribution over the function's values at a finite yet arbitrary set of points, say $$x_1, x_2, \ldots, x_N$$. I.e., **we model functions as really long column vectors**. You also need to realize that **every point $$y_1, y_2, \ldots, y_N$$ is treated as a random variable, and the joint probability distribution of $$p(y_1, y_2, \ldots, y_N)$$ is a multivariate normal distribution** (MVN). Let that sink in for a moment because this is the heart of GP. To generate the following function, we set up a 120-variate normal distribution and take a single 120-variate sample from it. This 120 long $$y$$ vector corresponds to our function.
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/function_as_vector.png" alt="Function as vector">
@@ -54,7 +54,7 @@ Ok, but if we sample from a 120-variate Gaussian, how can we guarantee the funct
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/covariance_distance.png" alt="Gaussian process">
 </p>
 
-In the following plot, we visualize such a legitimate covariance matrix. The variables near the diagonal, i.e., variables close in the input space, are assigned a high value ($\Sigma_{ij}=1$$). Therefore, when we sample from the multivariate normal distribution, these points will come out as neighbors. On the contrary, the rest of the pairs are given a low value ($$\Sigma_{ij}=0$$). Hence, when we sample from the MVN, the $$y$$'s will be uncorrelated. Alright, but how do we actually calculate the values of the covariance matrix? We use a so-called specialized function called kernel.
+In the following plot, we visualize such a legitimate covariance matrix. The variables near the diagonal, i.e., variables close in the input space, are assigned a high value ($$\Sigma_{ij}=1$$). Therefore, when we sample from the multivariate normal distribution, these points will come out as neighbors. On the contrary, the rest of the pairs are given a low value ($$\Sigma_{ij}=0$$). Hence, when we sample from the MVN, the $$y$$'s will be uncorrelated. Alright, but how do we actually calculate the values of the covariance matrix? We use a so-called specialized function called kernel.
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/covariance_matrix_plot.png" alt="Prior distribution over functions">
@@ -80,7 +80,7 @@ $$
 x^⊤ \Sigma x > 0, \forall x \ne 0
 $$
 
-This is the multivariate analog of the univariate requirement for the variance $$\sigma^2$$ to be positive. To be clear, we need to choose such a kernel to make the resultant covariance matrix positive. Although we haven't made any reference to it, we also need a mean function $$m(x)$$ to fully characterize are multivariate normal distribution where we will sample our $$y$$'s from. Having all the ingredients in place, we write:
+This is the multivariate analog of the univariate requirement for the variance $$\sigma^2$$ to be positive. Although we haven't made any reference to it, we also need a mean function $$m(x)$$ to fully characterize our MVN that we will be sampling our $$y$$'s from. Having all the ingredients in place, we write:
 
 $$
 Y(x) \sim \mathcal{GP}\left(m(x),k(x,x')\right)
