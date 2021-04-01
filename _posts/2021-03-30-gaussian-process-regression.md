@@ -92,7 +92,7 @@ $$
 x^⊤ \Sigma x > 0, \forall x \ne 0
 $$
 
-This is the multivariate analog of the univariate requirement for the variance $$\sigma^2$$ to be positive. Although we haven't made any reference to it, we also need a mean function $$m(x)$$ to fully characterize our MVN that we will be sampling our $$y$$'s from. Having all the ingredients in place, we write:
+This is the multivariate analog of the univariate requirement for the variance $$\sigma^2$$ to be positive. Although we haven't made any reference to it, we also need a mean function $$m(x)$$ to fully characterize the MVN that we will be sampling our $$y$$'s from. Having all the ingredients in place, we write:
 
 $$
 Y(x) \sim \mathcal{GP}\left(m(x),k(x,x')\right)
