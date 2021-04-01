@@ -48,13 +48,13 @@ Which brings us to the following question: how do we introduce smoothness? First
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/function_as_vector.png" alt="Function as vector">
 </p>
 
-Ok, but if we sample from a 120-variate Gaussian, how can we guarantee the function's smoothness? After all, the $$y_i$$'s are random! First, to set up a 120-variate Gaussian, we need a 120x120 covariance matrix. Each element of the matrix determines how much the $$(x_i, x_j)$$ variables are related. The trick now is to use a covariance matrix such that the values that are close in the input space, the $$x$$'s, will produce values that are close in the output space, the $$y$$'s. In the following plot, $$x_1$$ and $$x_2$$ are close together, so we'd expect $$y_1$$ and $$y_2$$ to also be close (this makes the function smooth and not too wiggly). On the contrary, $$x_1$$ and $$x_N$$ are very apart, so the covariance matrix element $$C_{1N}$$ should be some tiny number. And $$y_1, y_N$$ are allowed to be as far away as they'd feel like.
+Ok, but if we sample from a 120-variate Gaussian, how can we guarantee the function's smoothness? After all, the $$y_i$$'s are random! First, to set up a 120-variate Gaussian, we need a 120x120 covariance matrix. Each element of the matrix determines how much the $$(x_i, x_j)$$ variables are related. The trick now is to use a covariance matrix such that the values that are close in the input space, the $$x$$'s, will produce values that are close in the output space, the $$y$$'s. In the following plot, $$x_1$$ and $$x_2$$ are close together, so we'd expect $$y_1$$ and $$y_2$$ to also be close (this makes the function smooth and not too wiggly). On the contrary, $$x_1$$ and $$x_N$$ are very apart, so the covariance matrix element $$\Sigma_{1N}$$ should be some tiny number. And $$y_1, y_N$$ would be allowed to be as far away as they'd feel like.
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/covariance_distance.png" alt="Gaussian process">
 </p>
 
-In the following plot, we visualize such a legitimate covariance matrix. The variables near the diagonal, i.e., variables close in the input space, are assigned a high value ($$C_{ij}=1$$). Therefore, when we sample from the multivariate normal distribution, these points will come out as neighbors. On the contrary, the rest of the pairs are given a low value ($$C_{ij}=0$$). Hence, when we sample from the MVN, the $$y$$'s will be uncorrelated. Alright, but how do we actually calculate the values of the covariance matrix? We use a so-called specialized function called kernel.
+In the following plot, we visualize such a legitimate covariance matrix. The variables near the diagonal, i.e., variables close in the input space, are assigned a high value ($\Sigma_{ij}=1$$). Therefore, when we sample from the multivariate normal distribution, these points will come out as neighbors. On the contrary, the rest of the pairs are given a low value ($$\Sigma_{ij}=0$$). Hence, when we sample from the MVN, the $$y$$'s will be uncorrelated. Alright, but how do we actually calculate the values of the covariance matrix? We use a so-called specialized function called kernel.
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/covariance_matrix_plot.png" alt="Prior distribution over functions">
@@ -63,7 +63,7 @@ In the following plot, we visualize such a legitimate covariance matrix. The var
 A **kernel function** is just a fancy name for a function that accepts as input two points in the input space, i.e., $$x_i$$ and $$x_j$$, and outputs how "similar" they are based on some notion of "distance". For example, the following kernel is the exponentiated quadratic that uses the exponentiated squared Euclidean distance between two points. If $$x=x'$$, then $$K(x, x') = \exp(0)=1$$, whereas if $$\|x-x'\| \to \infty$$, then $$K(x, x') \to 0$$.
 
 $$
-\Sigma(x,x') = \sigma^2 \exp\left(-\frac{1}{2\ell^2}\|x-x'\|^2\right)
+k(x,x') = \sigma^2 \exp\left(-\frac{1}{2\ell^2}\|x-x'\|^2\right)
 $$
 
 The $$\ell$$ parameter determines the length of the "wiggles". Generally speaking, we won't be able to extrapolate more than $$\ell$$ units away from our data. Similarly, the variance $$\sigma^2$$ determines the average distance of our function from its mean value. In short, $$\ell, \sigma$$ circumscribe the horizontal and vertical "range" of the function. As you may have guessed, they are indeed hyperparameters (i.e., their values need to be set by us; they can't be inferred automatically by the algorithm). The following image shows various different kernels that can be used in GP and the derived GP priors. By the way, the same kernels are also used in Support Vector Machines (SVM).
