@@ -100,6 +100,7 @@ $$
 
 ### Making predictions from Gaussian Processes posteriors
 We have gone through all the fuzz to make some predictions. Right? So, suppose that we have $$n_1$$ new testing samples, and we are going to base these predictions on $$n_2$$ previously observed data points. Therefore, we want to calculate $$Y(x)\mid D_{n_2}$$, where $$D_{n_2}=(x_1,y_1), (x_2, y_2), \ldots$$. 
+Keep in mind that both the training and testing $$y$$'s (that we want to calculate) are jointly Gaussian, since they both come from the same MVN. Since they are jointly Gaussian and the samples's size is finite we can write:
 
 $$
 Y = \left( \begin{array}{c} Y_1 \\ Y_2 \end{array} \right) 
@@ -131,7 +132,7 @@ $$
 
 ## A simple 1D GP prediction example
 
-Let us consider a contrived one-dimensional problem where the response variable $$y$$ is merely a sinusoid measured at eight equally spaced $$x$$ locations in the span of a single period $$[0, 2\pi]$$. This example is [taken from here](https://bookdown.org/rbg/surrogates/chap5.html), and we reimplement it with *Mathematica* (the original implementation is in *R*).
+Let us consider a somewhat contrived one-dimensional problem. The response variable $$y$$ is a sinusoid measured at eight equally spaced $$x$$ locations in the span of a single period $$[0, 2\pi]$$. This example is [taken from here](https://bookdown.org/rbg/surrogates/chap5.html), and we reimplement it with *Mathematica* (the original implementation is in *R*).
 
 {% highlight mathematica %}
 {% raw %}
