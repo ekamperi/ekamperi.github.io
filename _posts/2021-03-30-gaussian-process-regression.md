@@ -167,6 +167,8 @@ Sigmap = (Sigmap + Transpose@Sigmap)/2;
 {PositiveDefiniteMatrixQ[Sigmap], SymmetricMatrixQ[Sigmap]}
 (* {True, True} *)
 
+mup = SigmaX . SigmaInverse . Y;
+
 nsamples = 100;
 YY = RandomVariate[MultinormalDistribution[mup, Sigmap], nsamples];
 Dimensions@YY
