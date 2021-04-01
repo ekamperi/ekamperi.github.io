@@ -199,6 +199,8 @@ Show[
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/gp_sin_example.png" alt="Prior distribution over functions">
 </p>
 
+The black line is the ground truth function, the magenta is the mean function we calculated, the red dotted lines are the 5% and 95% quantiles and the faded out blue lines are the 100 function realizations that we sampled from the MVN.
+
 ## Limitations of Gaussian Processes
 1. **Slow inference.** Computing the covariance matrix's inverse has a $$\mathcal{O}(N^3)$$ time complexity, rendering exact inference too slow for more than a few thousand data points.
 2. **Choosing a covariance kernel.** There's some arbitrariness when choosing a kernel. However, the kernel's hyperparameters can be inferred by maximizing the marginal likelihood, and the whole process can be automated.
