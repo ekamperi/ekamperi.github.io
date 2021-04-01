@@ -60,7 +60,7 @@ In the following plot, we visualize such a legitimate covariance matrix. The var
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/covariance_matrix_plot.png" alt="Prior distribution over functions">
 </p>
 
-A **kernel function** is just a fancy name for a function that accepts as input two points in the input space, i.e., $$x_i$$ and $$x_j$$, and outputs how "similar" they are based on some notion of "distance". For example, the following kernel is the exponentiated quadratic that uses the exponentiated squared Euclidean distance between two points. If $$x=x'$$, then $$K(x, x') = \exp(0)=1$$, whereas if $$\|x-x'\| \to \infty$$, then $$K(x, x') \to 0$$.
+A **kernel function** is just a fancy name for a function that accepts as input two points in the input space, i.e., $$x_i$$ and $$x_j$$, and outputs how "similar" they are based on some notion of "distance". For example, the following kernel is the exponentiated quadratic that uses the exponentiated squared Euclidean distance between two points. If $$x=x'$$, then $$k(x, x') = \exp(0)=1$$, whereas if $$\|x-x'\| \to \infty$$, then $$k(x, x') \to 0$$.
 
 $$
 k(x,x') = \sigma^2 \exp\left(-\frac{1}{2\ell^2}\|x-x'\|^2\right)
@@ -86,7 +86,7 @@ $$
 \end{bmatrix}
 $$
 
-The covariance function $$\Sigma(x,x')$$ must be [positive definite](https://en.wikipedia.org/wiki/Definite_symmetric_matrix#Definitions_for_real_matrices), meaning that the following condition must be met:
+The covariance matrix $$\Sigma(x,x')$$ must be [positive definite](https://en.wikipedia.org/wiki/Definite_symmetric_matrix#Definitions_for_real_matrices), meaning that the following condition must be met:
 
 $$
 x^⊤ \Sigma x > 0, \forall x \ne 0
@@ -120,7 +120,7 @@ $$
 \left(\begin{array}{cc} n_1 \times n_1 & n_1 \times n_2 \\ n_2\times n_1 & n_2\times n_2 \end{array} \right)
 $$
 
-Just to make sure that we are on the same page here: $$Y_1$$ contains the output values we want to calculate, $$Y_2$$ contains the output values from the training set, $$\Sigma_{11}$$ is the covariance matrix for the testing set, $$\Sigma_{22}$$ for the training set and $$\Sigma_{12} = \Sigma_{21}$$ the mixed testing-training set. The distribution of  $$Y_1$$ conditional on $$Y_2=y_2$$ is $$Y_1 \mid y_2 \sim \mathcal{N} (\bar{\mu}, \bar{\Sigma})$$, where:
+Just to make sure that we are on the same page here: $$Y_1$$ contains the output values we want to calculate, $$Y_2$$ contains the output values from the training set, $$\Sigma_{11}$$ is the covariance matrix for the testing set, $$\Sigma_{22}$$ for the training set and $$\Sigma_{12} = \Sigma_{21}$$ for the mixed testing-training set. The distribution of  $$Y_1$$ conditional on $$Y_2=y_2$$ is $$Y_1 \mid y_2 \sim \mathcal{N} (\bar{\mu}, \bar{\Sigma})$$, where:
 
 $$
 \begin{align}
