@@ -182,13 +182,16 @@ Dimensions@quantiles
 
 Show[
     Table[
-        ListPlot[Transpose@{XX, YY[[i]]}, AxesLabel -> {"x", "y"}, Joined -> True,
-            PlotStyle -> Opacity[0.1], PlotRange -> {Automatic, {-2, 2}}],
-        {i, 1, nsamples}],
-    ListPlot[Transpose@{X, Y}, PlotStyle -> {Red, AbsolutePointSize[6]}], 
-    Plot[Sin[x], {x, -0.5, 2 \[Pi] + 0.5}, PlotStyle -> Black], 
-    ListPlot[Transpose@{XX, quantiles[[1]]}, PlotStyle -> {Red, Dashed},Joined -> True], 
-    ListPlot[Transpose@{XX, quantiles[[2]]}, PlotStyle -> {Red, Dashed},Joined -> True]]
+        ListPlot[Transpose@{XX, YY[[i]]}, AxesLabel -> {"x", "y"}, 
+        Joined -> True, PlotStyle -> Opacity[0.1], 
+        PlotRange -> {Automatic, {-2, 2}}], {i, 1, nsamples}],
+    ListPlot[Transpose@{XX, Mean[YY]}, AxesLabel -> {"x", "y"}, 
+        Joined -> True, PlotRange -> {Automatic, {-2, 2}}, 
+        PlotStyle -> Magenta],
+    Plot[Sin[x], {x, -0.5, 2 \[Pi] + 0.5}, PlotStyle -> Black],
+    ListPlot[Transpose@{XX, quantiles[[1]]}, PlotStyle -> {Red, Dashed}, Joined -> True],
+    ListPlot[Transpose@{XX, quantiles[[2]]}, PlotStyle -> {Red, Dashed}, Joined -> True],
+    ListPlot[Transpose@{X, Y}, PlotStyle -> {Blue, AbsolutePointSize[7]}]]
 {% endraw %}
 {% endhighlight %}
 
