@@ -129,6 +129,8 @@ $$
 \end{align}
 $$
 
+If you feel like reading more regarding conditional distributions, you can [start here](https://en.wikipedia.org/wiki/Multivariate_normal_distribution#Conditional_distributions).
+
 ## A simple 1D GP prediction example
 
 Let us consider a somewhat contrived one-dimensional problem. The response variable $$y$$ is a sinusoid measured at eight equally spaced $$x$$ locations in the span of a single period $$[0, 2\pi]$$. This example is [taken from here](https://bookdown.org/rbg/surrogates/chap5.html), and we reimplement it with *Mathematica* (the original implementation is in *R*).
