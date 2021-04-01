@@ -14,7 +14,7 @@ description: An introduction to the Gaussian Processes, particularly in the cont
 {:toc}
 
 ## Introduction
-One of the recurring topics in statistics is establishing a relationship between some response variable $$y$$ and predictor variable(s) $$x$$, given a set of data points. This procedure is known as regression analysis and is typically done by assuming a polynomial function whose coefficients are determined via [ordinary least squares](https://en.wikipedia.org/wiki/Ordinary_least_squares). But what if we don't want to commit ourselves upfront on the number of parameters to use? Suppose we'd like to consider every possible function as a candidate model for our data, no matter how many parameters were needed. That's bold, but could we pull it through? The answer is yes, with the help of [Gaussian Processes (GP)](https://en.wikipedia.org/wiki/Gaussian_process).
+One of the recurring topics in statistics is establishing a relationship between a response variable $$y$$ and some predictor variable(s) $$x$$, given a set of data points. This procedure is known as regression analysis and is typically done by assuming a polynomial function whose coefficients are determined via [ordinary least squares](https://en.wikipedia.org/wiki/Ordinary_least_squares). But what if we don't want to commit ourselves upfront on the number of parameters to use? Suppose we'd like to consider *every possible function as a candidate model* for our data, no matter how many parameters were needed. That's bold, but could we pull it through? The answer is yes, with the help of [Gaussian Processes (GP)](https://en.wikipedia.org/wiki/Gaussian_process).
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/various_fits.png" alt="Regression analysis">
@@ -36,19 +36,19 @@ Then, as we look at the data, we narrow down the functions that could have gener
 </p>
 
 ### Constraining the priors
-The truth is that we don't really want to consider every mathematically valid function. Instead, we will impose some constraints on the prior distribution over all possible functions. For starters, we want our functions to be smooth because this matches our empirical knowledge about how the world generally works. Points that are close to each other in the input space (whether in the time domain, i.e. $$t_1, t_2, \ldots$$ or in the spatial domain, i.e. $$x_1, x_2, \ldots$$) are associated with $$y_1, y_2, \ldots$$ values that are also close to each other. Therefore, we don't really want our algorithm to favor solutions that look like the left edgy function.
+The truth is that we don't really want to consider every mathematically valid function. Instead, we need to **impose some constraints on the prior distribution over all possible functions**. For starters, we want our functions to be **smooth** because this matches our empirical knowledge about how the world generally works. Points that are close to each other in the input space (whether in the time domain, i.e. $$t_1, t_2, \ldots$$ or in the spatial domain, i.e. $$x_1, x_2, \ldots$$) are associated with $$y_1, y_2, \ldots$$ values that are also close to each other. Therefore, we don't really want our algorithm to favor solutions that look like the left edgy function.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/smooth_vs_non_smooth.png" alt="Smooth vs non-smooth functions">
 </p>
 
-Which brings us to the following question: how do we introduce smoothness? First, let's say that although we talk about the distribution over functions, in reality, we define the distribution over the function's values at a finite yet arbitrary set of points, say $$x_1, x_2, \ldots, x_N$$. I.e., we model functions as really long column vectors. You also need to realize that every point $$y_1, y_2, \ldots, y_N$$ is treated as a random variable, and the joint probability distribution of $$p(y_1, y_2, \ldots, y_N)$$ is a multivariate normal distribution. Let that sink in for a moment because this is the heart of GP. To generate the following function, we set up a 120-variate normal distribution and take a single 120-variate sample from it. This 120 long $$y$$ vector corresponds to our function.
+Which brings us to the following question: how do we introduce smoothness? First, let's say that although we talk about the distribution over functions, in reality, we define the distribution over the function's values at a finite yet arbitrary set of points, say $$x_1, x_2, \ldots, x_N$$. I.e., **we model functions as really long column vectors**. You also need to realize that **every point $$y_1, y_2, \ldots, y_N$$ is treated as a random variable, and the joint probability distribution of $$p(y_1, y_2, \ldots, y_N)$$ is a multivariate normal distribution**. Let that sink in for a moment because this is the heart of GP. To generate the following function, we set up a 120-variate normal distribution and take a single 120-variate sample from it. This 120 long $$y$$ vector corresponds to our function.
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/function_as_vector.png" alt="Function as vector">
 </p>
 
-Ok, but if we sample from a 120-variate Gaussian, how can we guarantee the function's smoothness? After all, the $$ x_i$$'s are random! First, keep in mind that to set up a 120-variate Gaussian, we need a 120x120 covariance matrix. Each covariance matrix entry determines how much the $$(x_i, x_j)$$ variables are related. The trick now is to use a covariance matrix such that the values that are close in the input space, the $$x$$'s, will produce values that are close in the output space, the $$y$$'s. In the following plot, $$x_1$$ and $$x_2$$ are close together, so we'd expect $$y_1$$ and $$y_2$$ to also be close (this makes the function smooth and not too wiggly). On the contrary, $$x_1$$ and $$x_N$$ are very apart, so the covariance matrix element $$C_{1N}$$ should be some tiny number.
+Ok, but if we sample from a 120-variate Gaussian, how can we guarantee the function's smoothness? After all, the $$y_i$$'s are random! First, to set up a 120-variate Gaussian, we need a 120x120 covariance matrix. Each element of the matrix determines how much the $$(x_i, x_j)$$ variables are related. The trick now is to use a covariance matrix such that the values that are close in the input space, the $$x$$'s, will produce values that are close in the output space, the $$y$$'s. In the following plot, $$x_1$$ and $$x_2$$ are close together, so we'd expect $$y_1$$ and $$y_2$$ to also be close (this makes the function smooth and not too wiggly). On the contrary, $$x_1$$ and $$x_N$$ are very apart, so the covariance matrix element $$C_{1N}$$ should be some tiny number. And $$y_1, y_N$$ are allowed to be as far away as they'd feel like.
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/covariance_distance.png" alt="Gaussian process">
@@ -74,13 +74,13 @@ The $$\ell$$ parameter determines the length of the "wiggles". Generally speakin
 
 Image taken [from here](https://www.cs.toronto.edu/~duvenaud/thesis.pdf).
 
-The covariance function $$\Sigma(x,x')$$ must be positive definite, which means that the following condition must be met:
+The covariance function $$\Sigma(x,x')$$ must be [positive definite](https://en.wikipedia.org/wiki/Definite_symmetric_matrix#Definitions_for_real_matrices), meaning that the following condition must be met:
 
 $$
 x^⊤ \Sigma x > 0, \forall x \ne 0
 $$
 
-This is the multivariate analog of the univariate requirement for the variance $$\sigma^2$$ to be positive. To be clear, we need to choose such a kernel to make the resultant covariance matrix positive. Although we haven't made any reference to it, we also need a mean function $$m(x)$$. Having all the ingredients in place, we write:
+This is the multivariate analog of the univariate requirement for the variance $$\sigma^2$$ to be positive. To be clear, we need to choose such a kernel to make the resultant covariance matrix positive. Although we haven't made any reference to it, we also need a mean function $$m(x)$$ to fully characterize are multivariate normal distribution where we will sample our $$y$$'s from. Having all the ingredients in place, we write:
 
 $$
 Y(x) \sim \mathcal{GP}\left(m(x),k(x,x')\right)
