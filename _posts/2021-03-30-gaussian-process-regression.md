@@ -99,8 +99,7 @@ Y(x) \sim \mathcal{GP}\left(m(x),k(x,x')\right)
 $$
 
 ### Making predictions from Gaussian Processes posteriors
-We have gone through all the fuzz to make some predictions. Right? So, suppose that we have $$n_1$$ new testing samples, and we are going to base these predictions on $$n_2$$ previously observed data points. Therefore, we want to calculate $$Y(x)\mid D_{n_2}$$, where $$D_{n_2}=(x_1,y_1), (x_2, y_2), \ldots$$. 
-Keep in mind that both the training and testing $$y$$'s (that we want to calculate) are jointly Gaussian, since they both come from the same MVN. Since they are jointly Gaussian and the samples's size is finite we can write:
+We have gone through all the fuzz to make some predictions. Right? So, suppose that we have $$n_1$$ new testing samples, and we are going to base these predictions on $$n_2$$ previously observed data points. Keep in mind that both the training and testing $$y$$'s (that we want to calculate) are jointly Gaussian, since they both come from the same MVN. Having said that and given samples's finite size we can write:
 
 $$
 Y = \left( \begin{array}{c} Y_1 \\ Y_2 \end{array} \right) 
