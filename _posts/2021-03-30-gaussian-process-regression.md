@@ -29,7 +29,7 @@ Let's start with a distribution of all possible functions that, conceivably, cou
 </p>
 
 ### From GP priors to GP posteriors
-Then, as we look at the data, we narrow down the functions that could have generated them. In the following example, after considering 5 observations, we build-up some pretty strong confidence regarding how the data-generating function should look like. The shaded area represents our model's uncertainty, being high where we lack data and low where we have many data points. The image was taken from the book *Machine Learning A Probabilistic Perspective* by Kevin P. Murphy, which is very nice, by the way.
+Then, as we look at the data, we narrow down the functions that could have generated them. In the following example, after considering 5 observations, we build-up some pretty strong confidence regarding how the data-generating function should look like. It's as if we put a vertical loop around the prior functions at the training data points, and then we pull the rope. The shaded area represents our model's uncertainty, being high where we lack data and low where we have many data points. The image was taken from the book *Machine Learning A Probabilistic Perspective* by Kevin P. Murphy, which is very nice, by the way.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/gaussian_process/gp_prior_posterior.png" alt="Prior and posterior distribution over functions">
