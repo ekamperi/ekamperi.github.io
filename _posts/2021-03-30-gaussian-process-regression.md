@@ -201,7 +201,7 @@ Show[
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/gp_sin_example.png" alt="Prior distribution over functions">
 </p>
 
-The blue points are the training data points, the black line is the ground truth function, the magenta is the mean function we calculated after averaging 100 function samples, the red dotted lines are the 5% and 95% quantiles and the faded out blue lines are the 100 function realizations that we sampled from the MVN.
+The **blue** points are the training data points, the **black** line is the ground truth function, the **magenta** is the mean function we calculated after averaging 100 function samples, the **red** dotted lines are the 5% and 95% quantiles and the **faded out blue** lines are the 100 function realizations that we sampled from the MVN.
 
 ## Limitations of Gaussian Processes
 1. **Slow inference.** Computing the covariance matrix's inverse has a $$\mathcal{O}(N^3)$$ time complexity, rendering exact inference too slow for more than a few thousand data points.
