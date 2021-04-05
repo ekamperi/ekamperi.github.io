@@ -198,7 +198,7 @@ Show[
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/gaussian_process/gp_sin_example.png" alt="Prior distribution over functions">
+ <img style="width: 80%; height: 80%" src="{{ site.url }}/images/gaussian_process/gp_sin_example.png" alt="Prior distribution over functions">
 </p>
 
 The **blue points** are the training data points, the **black line** is the ground truth function, the **magenta line** is our approximation after averaging 100 function samples, the **red dotted** lines are the 5% and 95% quantiles and the **faded out blue** lines are the 100 function realizations that we sampled from the MVN.
