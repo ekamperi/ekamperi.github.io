@@ -237,17 +237,17 @@ print(find_dup2(lst))
 {% endraw %}
 {% endhighlight %}
 
-### What happens when a neural network's weights are initialized near zero?
+## What happens when a neural network's weights are initialized near zero?
 Assuming a sigmoid activation function, its Taylor expansion around zero is:
 
 $$
-f(x) = \frac{1}{1 + \exp(-x)} \simeq \frac{1}{2} + \frac{x}{4} - \frac{x^3}{48} + \mathrm{O}(x^5)
+f(x) = \frac{1}{1 + \exp(-x)} = \frac{1}{2} + \frac{x}{4} - \frac{x^3}{48} + \mathrm{O}(x^5)
 $$
 
 Therefore, for values of $$x$$ near zero, the sigmoid function acts like a linear function:
 
 $$
-f(x) \simeq = \frac{1}{2} + \frac{x}{4}
+f(x) \simeq \frac{1}{2} + \frac{x}{4}
 $$
 
 As the network is trained, and the weights increase, non-linearities are introduced as needed.
