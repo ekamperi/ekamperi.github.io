@@ -241,7 +241,7 @@ print(find_dup2(lst))
 Assuming a sigmoid activation function, its Taylor expansion around zero is:
 
 $$
-f(x) = \frac{1}{1 + \exp(-x) \simeq \frac{1}{2} + \frac{x}{4} - \frac{x^3}{48} + \mathrm{O}(x^5)
+f(x) = \frac{1}{1 + \exp(-x)} \simeq \frac{1}{2} + \frac{x}{4} - \frac{x^3}{48} + \mathrm{O}(x^5)
 $$
 
 Therefore, for values of $$x$$ near zero, the sigmoid function acts like a linear function:
