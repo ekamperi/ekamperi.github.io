@@ -11,6 +11,18 @@ Decision trees are tree-based methods that are used for both regression and clas
 
 Trees are constructed via recursive binary splitting, and two measures are usually used. One is the Gini index, and the other one is entropy. Both of these measures are pretty similar numerically. They both take small values, near zero, if all observations fall into the same class in a node. Contrastly, they assume a maximum value when there is an equal number of observations across all classes in a node. Such a node is called impure, and the Gini index is also referred to as a measure of impurity.
 
+Concretely, the Gini index is defined as:
+
+$$
+G = \sum_{k=1}^K p_k (1 - p_k) = 1 - \sum_{k=1}^N p_k^2
+$$
+
+And entropy as:
+
+$$
+H = -\sum_{k=1}^K p_k \log p_k
+$$
+
 <p align="center">
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/decision_trees/pure_vs_impure_node.png" alt="Decision trees: pure vs impure nodes">
 </p>
