@@ -3,7 +3,7 @@ layout: post
 title: "Decision Trees: Gini index vs entropy"
 date:   2021-04-13
 categories: [machine learning]
-tags: ['decision trees', 'machine learning', mathematics, 'R Language']
+tags: ['decision trees', 'machine learning', mathematics, 'R language']
 description: Gini index vs entropy in decision trees with imbalanced datasets 
 ---
 
