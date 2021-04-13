@@ -7,12 +7,6 @@ tags: ['decision trees', 'machine learning', mathematics, 'R language']
 description: Gini index vs entropy in decision trees with imbalanced datasets 
 ---
 
-### Contents
-{:.no_toc}
-
-* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
-{:toc}
-
 ### Introduction
 Decision trees are tree-based methods that are used for both regression and classification. They work by segmenting the feature space into several simple subregions. To make predictions, trees assume either the mean *or* the most frequent class of the training points inside the region our observation falls, depending on whether we do regression or classification, respectively. Decision trees are straightforward to interpret, and as a matter of fact, they can be even easier to interpret than linear or logistic regression models. Perhaps because they relate to how the human decision-making process works. On the downside, trees usually lack the level of predictive accuracy of other methods. Also, they can be susceptible to changes in the training dataset, where a slight change in it may cause a dramatic change in the final tree. That's why *bagging*, *random forests* and *boosting* are used to construct more robust tree-based prediction models. But that's for another day. Today we are going to talk about how the split happens.
 
