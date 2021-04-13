@@ -188,13 +188,13 @@ accuracy.meas(hacide.test$cls, pred.tree.imb[,2])
 {% endraw %}
 {% endhighlight %}
 
+The precision is still perfect, i.e. we aren't predicting any false positives, and we doubled the recall. This improvement also reflects to the F metric. Also, the ROC curve of the new decision tree is way better than the previous run.
+
 {% highlight R %}
 {% raw %}
 roc.curve(hacide.test$cls, pred.tree.imb[,2], plotit = T)
 {% endraw %}
 {% endhighlight %}
-
-The precision is still perfect, i.e. we aren't predicting any false positives, and we doubled the recall. This improvement also reflects to the F metric. Also, the ROC curve of the new decision tree is way better than the previous run.
 
 <p align="center">
 <img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/entropy_auc.png" alt="Gini vs entropy ROC curve">
