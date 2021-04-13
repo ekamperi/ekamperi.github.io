@@ -7,8 +7,10 @@ tags: ['decision trees', 'machine learning', mathematics, 'R language']
 description: Gini index vs entropy in decision trees with imbalanced datasets 
 ---
 
+### Introduction
 Decision trees are tree-based methods that are used for both regression and classification. They work by segmenting the feature space into several simple regions. To predict a given observation, we assume either the mean or the most frequent class of the training points inside the region to which our observation falls. Decision trees are straightforward to interpret, and as a matter of fact, they can be even easier to interpret than linear or logistic regression. Perhaps because decision trees are more close to the way the human decision-making process works. On the downside, trees usually lack the level of predictive accuracy of other regression and classification methods. Also, they can be susceptible to changes in the training dataset, where a slight change in it may cause a dramatic change in the final tree. That’s why bagging, random forests, and boosting are used to construct more robust tree-based prediction models. But that’s for another day.
 
+### Gini impurity and information entropy
 Trees are constructed via recursive binary splitting, and two measures are usually used. One is the Gini index, and the other one is information entropy. Both of these measures are pretty similar numerically. They both take small values, if most observations fall into the same class in a node. Contrastly, they assume a maximum value when there is an equal number of observations across all classes in a node. Such a node is called impure, and the Gini index is also referred to as a measure of impurity.
 
 Concretely, for a set of items with $$K$$ classes, and $$p_i$$ being the fraction of items labeled with class $$i\in {1,2,\ldots,K}$$, the Gini impurity is defined as:
@@ -61,6 +63,7 @@ $$
 
 Again, if we'd use base 2 in the entropy's logarithm, we'd get $$H \simeq 0.79 bits$$. Units aside, we see that the left node has a lower entropy than the right one, which is to be expected, since the left one is in a more *ordered* state and entropy measures *disorder*. So, $$H_\text{left} \simeq 0.27 nats, H_\text{right} \simeq 0.55 nats$$. The various algorithms for constructing trees via recursive binary splitting is to pick that feature whose split will result in maximum reduction in impurity. 
 
+### An example of an imbalanced dataset
 {% highlight R %}
 {% raw %}
 # Load the necessary libraries and the dataset 
