@@ -202,7 +202,7 @@ plot_runtimes(runtimes_very_slow, -1, verySlowLLS.__name__)
 
 
 <p align="center">
- <img style="width: 30%; height: 30%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/output_7_0.svg" alt="Longest non-repeating substring">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/output_7_0.svg" alt="Longest non-repeating substring">
 </p>
 
 
@@ -215,7 +215,7 @@ plot_runtimes(runtimes_slow_forward, 2, slowLLS_forward.__name__)
 
 
 <p align="center">
- <img style="width: 30%; height: 30%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/output_8_0.svg" alt="Longest non-repeating substring">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/output_8_0.svg" alt="Longest non-repeating substring">
 </p>
 
 
@@ -242,7 +242,7 @@ plot_runtimes(runtimes_fast, 1, fastLLS.__name__)
 
 
 <p align="center">
- <img style="width: 30%; height: 30%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/output_10_0.svg" alt="Longest non-repeating substring">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/output_10_0.svg" alt="Longest non-repeating substring">
 </p>
 
 
@@ -280,7 +280,7 @@ plot_runtimes(runtimes_very_slow, 3, verySlowLLS.__name__)
 
 
 <p align="center">
- <img style="width: 30%; height: 30%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/output_12_0.svg" alt="Longest non-repeating substring">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/output_12_0.svg" alt="Longest non-repeating substring">
 </p>
 
 
@@ -300,6 +300,6 @@ plt.ylabel('Execution time in sec');
 
 
 <p align="center">
- <img style="width: 30%; height: 30%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/output_13_0.svg" alt="Longest non-repeating substring">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/output_13_0.svg" alt="Longest non-repeating substring">
 </p>
 
