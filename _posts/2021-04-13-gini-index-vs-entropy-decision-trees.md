@@ -25,7 +25,7 @@ $$
 H = -\sum_{k=1}^K p_k \log p_k
 $$
 
-In the following plot, both metrics are plotted assuming a set of 2 classes appearing with probability $$p$$ and $$1-p$$, respectively. Notice how for small values of $$p$$, Gini takes lower values than entropy. **This is a crucial observation that will prove helpful in the context of imbalanced datasets**.
+In the following plot, both metrics are plotted assuming a set of 2 classes appearing with probability $$p$$ and $$1-p$$, respectively. Notice how for small values of $$p$$, Gini takes lower values than entropy. I.e., it penalizes less small impurities than entropy. **This is a crucial observation that will prove helpful in the context of imbalanced datasets**.
 
 <p align="center">
 <img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/gini_vs_entropy.png" alt="Gini vs entropy">
