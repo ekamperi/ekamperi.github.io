@@ -83,7 +83,7 @@ H\left(\text{Balance}\ge\text{50K}\right)
 \end{align} 
 $$
 
-Again, if we'd use base 2 in the entropy's logarithm, we'd get $$H \simeq 0.79 bits$$. Units aside, we see that the left node has lower entropy than the right one, which is expected since the left one is in a more *ordered* state and entropy measures *disorder*. So, it's $$H_\text{left} \simeq 0.27 nats$$ and  $$H_\text{right} \simeq 0.55 nats$$. The various algorithms for constructing decision trees pick the next feature to split so that maximum impurity reduction is achieved.
+Again, if we'd use base 2 in the entropy's logarithm, we'd get $$H \simeq 0.79 bits$$. Units aside, we see that the left node has lower entropy than the right one, which is expected since the left one is in a more *ordered* state and entropy measures *disorder*. So, it's $$H_\text{left} \simeq 0.27 nats$$ and  $$H_\text{right} \simeq 0.55 nats$$. **The various algorithms for constructing decision trees pick the next feature to split so that maximum impurity reduction is achieved.**
 
 Let's calculate how much entropy is reduced by splitting on the "Balance" feature:
 
