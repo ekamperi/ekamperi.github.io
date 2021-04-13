@@ -149,6 +149,7 @@ Things don't look all that great. Although we have a perfect precision (reminder
 {% highlight R %}
 {% raw %}
 roc.curve(hacide.test$cls, pred.tree.imb[,2], plotit = T, main = "Gini index")
+# Area under the curve (AUC): 0.600
 {% endraw %}
 {% endhighlight %}
 
@@ -193,6 +194,7 @@ The precision is still perfect, i.e. we aren't predicting any false positives, a
 {% highlight R %}
 {% raw %}
 roc.curve(hacide.test$cls, pred.tree.imb[,2], plotit = T)
+# Area under the curve (AUC): 0.883
 {% endraw %}
 {% endhighlight %}
 
