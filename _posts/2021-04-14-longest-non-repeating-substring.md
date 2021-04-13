@@ -201,8 +201,9 @@ plot_runtimes(runtimes_very_slow, -1, verySlowLLS.__name__)
 {% endhighlight %}
 
 
-![svg](output_7_0.svg)
-
+<p align="center">
+ <img style="width: 30%; height: 30%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/output_7_0.svg" alt="Longest non-repeating substring">
+</p>
 
 
 {% highlight python %}
@@ -213,8 +214,9 @@ plot_runtimes(runtimes_slow_forward, 2, slowLLS_forward.__name__)
 {% endhighlight %}
 
 
-![svg](output_8_0.svg)
-
+<p align="center">
+ <img style="width: 30%; height: 30%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/output_8_0.svg" alt="Longest non-repeating substring">
+</p>
 
 
 {% highlight python %}
@@ -225,7 +227,9 @@ plot_runtimes(runtimes_slow_backward, 2, slowLLS_backward.__name__)
 {% endhighlight %}
 
 
-![svg](output_9_0.svg)
+<p align="center">
+ <img style="width: 30%; height: 30%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/output_9_0.svg" alt="Longest non-repeating substring">
+</p>
 
 
 
@@ -237,8 +241,9 @@ plot_runtimes(runtimes_fast, 1, fastLLS.__name__)
 {% endhighlight %}
 
 
-![svg](output_10_0.svg)
-
+<p align="center">
+ <img style="width: 30%; height: 30%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/output_10_0.svg" alt="Longest non-repeating substring">
+</p>
 
 
 {% highlight python %}
@@ -274,8 +279,9 @@ plot_runtimes(runtimes_very_slow, 3, verySlowLLS.__name__)
 {% endhighlight %}
 
 
-![svg](output_12_0.svg)
-
+<p align="center">
+ <img style="width: 30%; height: 30%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/output_12_0.svg" alt="Longest non-repeating substring">
+</p>
 
 
 {% highlight python %}
@@ -293,5 +299,7 @@ plt.ylabel('Execution time in sec');
 {% endhighlight %}
 
 
-![svg](output_13_0.svg)
+<p align="center">
+ <img style="width: 30%; height: 30%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/output_13_0.svg" alt="Longest non-repeating substring">
+</p>
 
