@@ -44,10 +44,11 @@ $$
 H\left(\text{Balance<50K}\right)
 &= -\sum_{k=1}^{2} p_k \log{p}_k = -p_1 \log{p}_1 -p_2 \log{p}_2\\
 &=-\frac{12}{13}\log\left(\frac{12}{13}\right) -\frac{1}{13}\log\left(\frac{1}{13}\right)
-\end{align} \simeq 0.27 nats
+\simeq 0.27 nats
+\end{align}
 $$
 
-Depending on whether you are using $$log_2$$ or $$log_e$$ in the entropy formulat you get a result in *bits* or *nats*, respectively. For instance, here it's $$H \simeq 0.39 bits$$.
+Depending on whether you are using $$log_2$$ or $$log_e$$ in the entropy formula you get the result in *bits* or *nats*, respectively. For instance, here it's $$H \simeq 0.39 bits$$.
 
 {% highlight R %}
 {% raw %}
