@@ -11,7 +11,7 @@ layout: default
         {{ page.date | date: date_format }}
       </time>
             
-       {% include read_time.html text=post.content %} 
+      | Reading time: {% include read_time.html text=post.content %} 
 
       {%- if page.author -%}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author | escape }}</span></span>
