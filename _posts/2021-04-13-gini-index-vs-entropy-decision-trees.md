@@ -120,7 +120,7 @@ table(hacide.train$cls)
 {% endraw %}
 {% endhighlight %}
 
-As you may see from the output above, this is a very imbalanced dataset. The vast majority (980) of the observations belong to the "0" class. First, we will fit a decision tree by using Gini as the split criterion.
+As you may see from the output above, this is a very imbalanced dataset. The vast majority (980) of the (1000) observations belong to the "0" class, and only 20 belong to the "1" class. We will now fit a decision tree by using Gini as the split criterion.
 
 {% highlight R %}
 {% raw %}
@@ -135,10 +135,10 @@ roc.curve(hacide.test$cls, pred.tree.imb[,2], plotit = T, main = "Gini index")
 And this is the ROC curve which shows how horrible our classifier is.
 
 <p align="center">
-<img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/gini_auc.png" alt="Gini vs entropy ROC curv">
+<img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/gini_auc.png" alt="Gini vs entropy ROC curve">
 </p>
 
-Let's take a look at the decision tree itself. You may notice that the left node has 10 observations of the minority class and 989 of the dominant class. From the perspective of Gini impurity index that's a very pure node, because $$G_L = 1 - (10/989)^2 - (979/989)^2 \simeq 0.2$$. The same applies, albeit to a lesser degree, the right node: $$G_R = 1 - (1/11)^2 - (10/11)^2\simeq 0.17$$.
+So wha did go wrong here? Let's take a look at the decision tree itself. Notice that the left node has 10 observations of the minority class and 979 of the dominant class. From the perspective of Gini impurity index that's a very pure node, because $$G_L = 1 - (10/989)^2 - (979/989)^2 \simeq 0.2$$. The same applies, albeit to a lesser degree, for the right node: $$G_R = 1 - (1/11)^2 - (10/11)^2\simeq 0.17$$. Therefore, $$GG doesn't appear to be working so great with our imbalanced dataset.
 
 {% highlight R %}
 {% raw %}
@@ -147,8 +147,10 @@ rpart.plot(tree.imb, main = "Gini Index", type = 5, extra = 3)
 {% endhighlight %}
 
 <p align="center">
-<img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/gini_tree.png" alt="Gini vs entropy ROC curv">
+<img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/gini_tree.png" alt="Gini vs entropy ROC curve">
 </p>
+
+Let's repeat the fitting but now we will use entropy as the split criterion for growing our tree.
 
 {% highlight R %}
 {% raw %}
@@ -160,9 +162,13 @@ roc.curve(hacide.test$cls, pred.tree.imb[,2], plotit = T)
 {% endraw %}
 {% endhighlight %}
 
+The ROC curve of the new decision tree is way better than the previous run.
+
 <p align="center">
-<img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/entropy_auc.png" alt="Gini vs entropy ROC curv">
+<img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/entropy_auc.png" alt="Gini vs entropy ROC curve">
 </p>
+
+Here is the decision tree itself. 
 
 {% highlight R %}
 {% raw %}
@@ -170,7 +176,6 @@ rpart.plot(tree.imb, main = "Information Gain", type = 5, extra = 3)
 {% endraw %}
 {% endhighlight %}
 
-
 <p align="center">
-<img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/entropy_tree.png" alt="Gini vs entropy ROC curv">
+<img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/entropy_tree.png" alt="Gini vs entropy ROC curve">
 </p>
