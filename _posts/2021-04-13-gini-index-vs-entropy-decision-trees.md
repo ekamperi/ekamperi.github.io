@@ -83,7 +83,22 @@ H\left(\text{Balance}\ge\text{50K}\right)
 \end{align} 
 $$
 
-Again, if we'd use base 2 in the entropy's logarithm, we'd get $$H \simeq 0.79 bits$$. Units aside, we see that the left node has a lower entropy than the right one, which is to be expected, since the left one is in a more *ordered* state and entropy measures *disorder*. So, it's $$H_\text{left} \simeq 0.27 nats$$ and  $$H_\text{right} \simeq 0.55 nats$$. The various algorithms for constructing pick that feature whose split will result in maximum reduction of impurity. 
+Again, if we'd use base 2 in the entropy's logarithm, we'd get $$H \simeq 0.79 bits$$. Units aside, we see that the left node has a lower entropy than the right one, which is to be expected, since the left one is in a more *ordered* state and entropy measures *disorder*. So, it's $$H_\text{left} \simeq 0.27 nats$$ and  $$H_\text{right} \simeq 0.55 nats$$. The various algorithms for constructing decision trees, pick the next feature to split in such a way that maximum reduction of impurity is achieved.
+
+Let's calculate how much entropy is reduced by splitting on the "Balance" feature:
+
+$$
+\begin{align*}
+H(Parent) &= -\frac{16}{30} \log\left(\frac{16}{30}\right) -\frac{14}{30}\log\left(\frac{16}{30}\right)\simeq 0.69nats\\
+H(Balance) &= \frac{13}{30} \times 0.27 + \frac{17}{30} \times 0.55 \simeq 0.43nats
+\end{align*}
+$$
+
+Therefore, the information gain by splitting on the "Balance" feature is:
+
+$$
+\text{IG} = H(Parent) - H(Balance) = 0.69 - 0.43 = 0.26nats
+$$
 
 ### An example of an imbalanced dataset
 {% highlight R %}
