@@ -102,7 +102,7 @@ $$
 
 If we were to choose among "Balance" and some other feature, say "Education", we would make up our mind based on the IG of both. If IG of "Balance" was 0.26 nats and IG of "Education" was 0.14 nats, we would pick the former to split.
 
-So when do we use Gini impurity versus information gain via entropy reduction? Both metrics work more or less the same, and in only a few cases, the results differ considerably. However, **there's a scenario where entropy might be more prudent: imbalanced datasets.**
+So when do we use Gini impurity versus information gain via entropy reduction? Both metrics work more or less the same, and in only a few cases do the results differ considerably. Having said that, **there's a scenario where entropy might be more prudent: imbalanced datasets.**
 
 ### An example of an imbalanced dataset
 
