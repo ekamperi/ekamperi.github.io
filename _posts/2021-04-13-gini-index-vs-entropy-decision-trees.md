@@ -134,7 +134,7 @@ pred.tree.imb <- predict(tree.imb, newdata = hacide.test)
 {% endraw %}
 {% endhighlight %}
 
-Things don't look all that great. Although we have a perfect precision (reminder: $$Precision=TP/(TP+FP)$$), meaning that we don't have any false positives, our recall is very low (reminder: $$Recall=TP/(TP+FN)$$, meaning that we have many false negatives. So basically, our classifier outputs pretty much always the majority class "0". And this is the ROC curve which shows how horrible our performance is.
+Things don't look all that great. Although we have a perfect precision (reminder: Precision=TP/(TP+FP)), meaning that we don't have any false positives, our recall is very low (reminder: Recall=TP/(TP+FN), meaning that we have many false negatives. So basically, our classifier outputs pretty much always the majority class "0". And this is the ROC curve which shows how horrible our performance is.
 
 {% highlight R %}
 {% raw %}
