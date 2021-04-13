@@ -31,7 +31,7 @@ In the following plot, both metrics are plotted assuming a set of 2 classes appe
 <img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/gini_vs_entropy.png" alt="Gini vs entropy">
 </p>
 
-The Gini index is used by the CART (classification and regression tree) algorithm for classification trees, whereas information gain via entropy reduction is used by algorithms like C4.5. In the following image we see a part of a decision tree for predicting whether a person receiving a loan will be able to pay it back. The left node is an example of a node with low impurity, since most of the observations fall into the same class. Contrast this with the node on the right where observations of different classes are mixed in.
+The Gini index is used by the CART (classification and regression tree) algorithm for classification trees, whereas information gain via entropy reduction is used by algorithms like [C4.5](https://en.wikipedia.org/wiki/C4.5_algorithm). In the following image we see a part of a decision tree for predicting whether a person receiving a loan will be able to pay it back. The left node is an example of a node with low impurity, since most of the observations fall into the same class. Contrast this with the node on the right where observations of different classes are mixed in.
 
 <p align="center">
 <img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/pure_vs_impure_node.png" alt="Decision trees: pure vs impure nodes">
@@ -39,18 +39,40 @@ The Gini index is used by the CART (classification and regression tree) algorith
 
 Image taken from "Provost, Foster; Fawcett, Tom. Data Science for Business: What You Need to Know about Data Mining and Data-Analytic Thinking".
 
-Let's calculate the entropy of the left node:
+Let's calculate the **Gini impurity of the left node**:
 
 $$
 \begin{align}
-H\left(\text{Balance<50K}\right)
+G\left(\text{Balance < 50K}\right)
+&= 1-\sum_{k=1}^{2} p_k^2 = 1-p_1^2 - p_2^2\\
+&=1-\left(\frac{12}{13}\right)^2 -\left(\frac{1}{13}\right)^2
+\simeq 0.14
+\end{align} 
+$$
+
+And the **Gini impurity of the right node**:
+
+$$
+\begin{align}
+G\left(\text{Balance} \ge \text{50K}\right)
+&= 1-\sum_{k=1}^{2} p_k^2 = 1-p_1^2 - p_2^2\\
+&=1-\left(\frac{4}{17}\right)^2 -\left(\frac{13}{17}\right)^2
+\simeq 0.36
+\end{align} 
+$$
+
+We notice that the left node has a lower Gini impurity index, which we'd expect since $$G$$ measures impurity, and the left node is purer relative to the right one. Let's calculate now the **entropy of the left node**:
+
+$$
+\begin{align}
+H\left(\text{Balance < 50K}\right)
 &= -\sum_{k=1}^{2} p_k \log{p}_k = -p_1 \log{p}_1 -p_2 \log{p}_2\\
 &=-\frac{12}{13}\log\left(\frac{12}{13}\right) -\frac{1}{13}\log\left(\frac{1}{13}\right)
 \simeq 0.27 nats
 \end{align}
 $$
 
-Depending on whether you are using $$log_2$$ or $$log_e$$ in the entropy formula you get the result in *bits* or *nats*, respectively. For instance, here it's $$H \simeq 0.39 bits$$. Let's calculate the entropy of the right node as well:
+Depending on whether we are using $$log_2$$ or $$log_e$$ in the entropy formula we get the result in *bits* or *nats*, respectively. For instance, here it's $$H \simeq 0.39 bits$$. Let's calculate the **entropy of the right node** as well:
 
 $$
 \begin{align}
@@ -61,7 +83,7 @@ H\left(\text{Balance}\ge\text{50K}\right)
 \end{align} 
 $$
 
-Again, if we'd use base 2 in the entropy's logarithm, we'd get $$H \simeq 0.79 bits$$. Units aside, we see that the left node has a lower entropy than the right one, which is to be expected, since the left one is in a more *ordered* state and entropy measures *disorder*. So, $$H_\text{left} \simeq 0.27 nats, H_\text{right} \simeq 0.55 nats$$. The various algorithms for constructing trees via recursive binary splitting is to pick that feature whose split will result in maximum reduction in impurity. 
+Again, if we'd use base 2 in the entropy's logarithm, we'd get $$H \simeq 0.79 bits$$. Units aside, we see that the left node has a lower entropy than the right one, which is to be expected, since the left one is in a more *ordered* state and entropy measures *disorder*. So, it's $$H_\text{left} \simeq 0.27 nats$$ and  $$H_\text{right} \simeq 0.55 nats$$. The various algorithms for constructing pick that feature whose split will result in maximum reduction of impurity. 
 
 ### An example of an imbalanced dataset
 {% highlight R %}
