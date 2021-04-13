@@ -5,13 +5,16 @@
 
     <div class="footer-col-wrapper">
       <div class="footer-col">
-        <p class="feed-subscribe">
-          <a href="{{ 'feed.xml' | relative_url }}">
-            <svg class="svg-icon orange">
-              <use xlink:href="{{ 'assets/minima-social-icons.svg#rss' | relative_url }}"></use>
-            </svg><span>Subscribe</span>
-          </a>
-        </p>
+<div class="newsletter-container">
+    <h4 class="newsletter-title">Subscribe</h4>
+    <form style="border:0px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=ABlogOnScience', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+      <p class="newsletter-text">Get new posts to your inbox</p>
+      <input class="newsletter-email" type="text" style="width:140px" name="email" placeholder="name@example.com"/>
+      <input type="hidden" value="ABlogOnScience" name="uri"/>
+      <input type="hidden" name="loc" value="en_US"/>
+      <input class="newsletter-submit" type="submit" value="Subscribe" />
+    </form>
+  </div>
       {%- if site.author %}
         <ul class="contact-list">
           {% if site.author.name -%}
@@ -33,18 +36,5 @@
     </div>
   </div>
 
-  
-  <div class="newsletter-container">
-    <h4 class="newsletter-title">Subscribe</h4>
-    <form style="border:0px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=ABlogOnScience', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
-      <p class="newsletter-text">Get new posts to your inbox</p>
-      <input class="newsletter-email" type="text" style="width:140px" name="email" placeholder="name@example.com"/>
-      <input type="hidden" value="ABlogOnScience" name="uri"/>
-      <input type="hidden" name="loc" value="en_US"/>
-      <input class="newsletter-submit" type="submit" value="Subscribe" />
-    </form>
-  </div>
-
-  
   
 </footer>
