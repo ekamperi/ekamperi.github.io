@@ -138,7 +138,7 @@ And this is the ROC curve which shows how horrible our classifier is.
 <img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/gini_auc.png" alt="Gini vs entropy ROC curve">
 </p>
 
-So wha did go wrong here? Let's take a look at the decision tree itself. Notice that the left node has 10 observations of the minority class and 979 of the dominant class. From the perspective of Gini impurity index that's a very pure node, because $$G_L = 1 - (10/989)^2 - (979/989)^2 \simeq 0.2$$. The same applies, albeit to a lesser degree, for the right node: $$G_R = 1 - (1/11)^2 - (10/11)^2\simeq 0.17$$. Therefore, $$GG doesn't appear to be working so great with our imbalanced dataset.
+So wha did go wrong here? Let's take a look at the decision tree itself. Notice that the left node has 10 observations of the minority class and 979 of the dominant class. From the perspective of Gini impurity index that's a very pure node, because $$G_L = 1 - (10/989)^2 - (979/989)^2 \simeq 0.2$$. The same applies, albeit to a lesser degree, for the right node: $$G_R = 1 - (1/11)^2 - (10/11)^2\simeq 0.17$$. Therefore, $$G$$ doesn't appear to be working so great with our imbalanced dataset.
 
 {% highlight R %}
 {% raw %}
