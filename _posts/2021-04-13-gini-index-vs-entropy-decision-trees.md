@@ -29,12 +29,25 @@ In the following plot, both metrics are plotted assuming a set of 2 classes appe
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/decision_trees/gini_vs_entropy.png" alt="Gini vs entropy">
 </p>
 
+The Gini index is used by the CART (classification and regression tree) algorithm for classification trees, whereas information gain via entropy reduction is used by algorithms like C4.5. In the following image w
+
 <p align="center">
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/decision_trees/pure_vs_impure_node.png" alt="Decision trees: pure vs impure nodes">
 </p>
 
 Image taken from "Provost, Foster; Fawcett, Tom. Data Science for Business: What You Need to Know about Data Mining and Data-Analytic Thinking".
 
+Let's calculate the entropy of the left node:
+
+$$
+\begin{align}
+H\left(\text{Balance<50K}\right)
+&= -\sum_{k=1}^{2} p_k \log{p}_k = -p_1 \log{p}_1 -p_2 \log{p}_2\\
+&=-\frac{12}{13}\log\left(\frac{12}{13}\right) -\frac{1}{13}\log\left(\frac{1}{13}\right)
+\end{align} \simeq 0.27 nats
+$$
+
+Depending on whether you are using $$log_2$$ or $$log_e$$ in the entropy formulat you get a result in *bits* or *nats*, respectively. For instance, here it's $$H \simeq 0.39 bits$$.
 
 {% highlight R %}
 {% raw %}
