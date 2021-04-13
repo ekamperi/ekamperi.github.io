@@ -8,30 +8,30 @@ description: Gini index vs entropy in decision trees with imbalanced datasets
 ---
 
 ### Introduction
-Decision trees are tree-based methods that are used for both regression and classification. They work by segmenting the feature space into several simple regions. To predict a given observation, we assume either the mean or the most frequent class of the training points inside the region to which our observation falls. Decision trees are straightforward to interpret, and as a matter of fact, they can be even easier to interpret than linear or logistic regression. Perhaps because decision trees are more close to the way the human decision-making process works. On the downside, trees usually lack the level of predictive accuracy of other regression and classification methods. Also, they can be susceptible to changes in the training dataset, where a slight change in it may cause a dramatic change in the final tree. That’s why *bagging*, *random forests*, and *boosting* are used to construct more robust tree-based prediction models. But that’s for another day.
+Decision trees are tree-based methods that are used for both regression and classification. They work by segmenting the feature space into several simple regions. To predict a given observation, we assume either the mean or the most frequent class of the training points inside the region to which our observation falls. Decision trees are straightforward to interpret, and as a matter of fact, they can be even easier to interpret than linear or logistic regression. Perhaps because decision trees are more close to the way the human decision-making process works. On the downside, trees usually lack the level of predictive accuracy of other regression and classification methods. Also, they can be susceptible to changes in the training dataset, where a slight change in it may cause a dramatic change in the final tree. That's why *bagging*, *random forests* and *boosting* are used to construct more robust tree-based prediction models. But that's for another day. Today we are going to talk regarding how the split happens.
 
 ### Gini impurity and information entropy
-Trees are constructed via recursive binary splitting of the feature space. In classification, the criteria typically used to decide which feature to split on are the **Gini index** and **information entropy**. Both of these measures are pretty similar numerically. They both take small values, if most observations fall into the same class in a node. Contrastly, they assume a maximum value when there is an equal number of observations across all classes in a node. A node with mixed classes is called impure and Gini index is also known as **Gini impurity**.
+Trees are constructed via recursive binary splitting of the feature space. In classification, the criteria typically used to decide which feature to split on are the **Gini index** and **information entropy**. Both of these measures are pretty similar numerically. They both take small values if most observations fall into the same class in a node. Contrastly, they assume a maximum value when there is an equal number of observations across all classes in a node. A node with mixed classes is called impure, and the Gini index is also known as **Gini impurity**.
 
-Concretely, for a set of items with $$K$$ classes, and $$p_i$$ being the fraction of items labeled with class $$i\in {1,2,\ldots,K}$$, the Gini impurity is defined as:
+Concretely, for a set of items with $$K$$ classes, and $$p_i$$ being the fraction of items labeled with class $$i\in {1,2,\ldots,K}$$, the **Gini impurity** is defined as:
 
 $$
 G = \sum_{k=1}^K p_k (1 - p_k) = 1 - \sum_{k=1}^N p_k^2
 $$
 
-And information entropy as:
+And **information entropy** as:
 
 $$
 H = -\sum_{k=1}^K p_k \log p_k
 $$
 
-In the following plot, both metrics are plotted assuming a set of 2 classes appearing with probability $$p$$ and $$1-p$$, respectively. Notice how for small values of $$p$$ Gini takes lower values than entropy. **This is a key observation that will prove useful in the context of imbalanced datasets**.
+In the following plot, both metrics are plotted assuming a set of 2 classes appearing with probability $$p$$ and $$1-p$$, respectively. Notice how for small values of $$p$$, Gini takes lower values than entropy. **This is a crucial observation that will prove helpful in the context of imbalanced datasets**.
 
 <p align="center">
 <img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/gini_vs_entropy.png" alt="Gini vs entropy">
 </p>
 
-The Gini index is used by the CART (classification and regression tree) algorithm for classification trees, whereas information gain via entropy reduction is used by algorithms like [C4.5](https://en.wikipedia.org/wiki/C4.5_algorithm). In the following image we see a part of a decision tree for predicting whether a person receiving a loan will be able to pay it back. The left node is an example of a node with low impurity, since most of the observations fall into the same class. Contrast this with the node on the right where observations of different classes are mixed in.
+The Gini index is used by the CART (classification and regression tree) algorithm for classification trees, whereas information gain via entropy reduction is used by algorithms like [C4.5](https://en.wikipedia.org/wiki/C4.5_algorithm). In the following image, we see a part of a decision tree for predicting whether a person receiving a loan will be able to pay it back. The left node is an example of a low impurity node since most of the observations fall into the same class. Contrast this with the node on the right where observations of different classes are mixed in.
 
 <p align="center">
 <img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/pure_vs_impure_node.png" alt="Decision trees: pure vs impure nodes">
@@ -83,7 +83,7 @@ H\left(\text{Balance}\ge\text{50K}\right)
 \end{align} 
 $$
 
-Again, if we'd use base 2 in the entropy's logarithm, we'd get $$H \simeq 0.79 bits$$. Units aside, we see that the left node has a lower entropy than the right one, which is to be expected, since the left one is in a more *ordered* state and entropy measures *disorder*. So, it's $$H_\text{left} \simeq 0.27 nats$$ and  $$H_\text{right} \simeq 0.55 nats$$. The various algorithms for constructing decision trees, pick the next feature to split in such a way that maximum reduction of impurity is achieved.
+Again, if we'd use base 2 in the entropy's logarithm, we'd get $$H \simeq 0.79 bits$$. Units aside, we see that the left node has lower entropy than the right one, which is expected since the left one is in a more *ordered* state and entropy measures *disorder*. So, it's $$H_\text{left} \simeq 0.27 nats$$ and  $$H_\text{right} \simeq 0.55 nats$$. The various algorithms for constructing decision trees pick the next feature to split so that maximum impurity reduction is achieved.
 
 Let's calculate how much entropy is reduced by splitting on the "Balance" feature:
 
@@ -102,7 +102,7 @@ $$
 
 ### An example of an imbalanced dataset
 
-The package [ROSE](https://cran.r-project.org/web/packages/ROSE/ROSE.pdf) comes with a built-in imbalanced dataset named *hacide*, consisting of *hacide.train* and *hacide.test*. The dataset has three variables in it for a total of $$N=10^3$$ observations. The *cls*, short for "class", is the response categorical variable, and $$x_1$$ and $$x_2$$ are the predictor variables. For building our classification trees we will use the [rpart](https://cran.r-project.org/web/packages/rpart/rpart.pdf) package.
+The package [ROSE](https://cran.r-project.org/web/packages/ROSE/ROSE.pdf) comes with a built-in imbalanced dataset named *hacide*, consisting of *hacide.train* and *hacide.test*. The dataset has three variables in it for a total of $$N=10^3$$ observations. The *cls*, short for "class", is the response categorical variable, and $$x_1$$ and $$x_2$$ are the predictor variables. For building our classification trees, we will use the [rpart](https://cran.r-project.org/web/packages/rpart/rpart.pdf) package.
 
 {% highlight R %}
 {% raw %}
@@ -138,7 +138,7 @@ And this is the ROC curve which shows how horrible our classifier is.
 <img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/gini_auc.png" alt="Gini vs entropy ROC curve">
 </p>
 
-So wha did go wrong here? Let's take a look at the decision tree itself. Notice that the left node has 10 observations of the minority class and 979 of the dominant class. From the perspective of Gini impurity index that's a very pure node, because $$G_L = 1 - (10/989)^2 - (979/989)^2 \simeq 0.02$$. The same applies, albeit to a lesser degree, for the right node: $$G_R = 1 - (1/11)^2 - (10/11)^2\simeq 0.17$$. Therefore, $$G$$ doesn't appear to be working so great with our imbalanced dataset.
+So what did go wrong here? Let's take a look at the decision tree itself. Notice that the left node has 10 observations of the minority class and 979 of the dominant class. From the perspective of Gini impurity index that's a very pure node, because $$G_L = 1 - (10/989)^2 - (979/989)^2 \simeq 0.02$$. The same applies, albeit to a lesser degree, for the right node: $$G_R = 1 - (1/11)^2 - (10/11)^2\simeq 0.17$$. Therefore, $$G$$ doesn't appear to be working so great with our imbalanced dataset.
 
 {% highlight R %}
 {% raw %}
@@ -150,7 +150,7 @@ rpart.plot(tree.imb, main = "Gini Index", type = 5, extra = 3)
 <img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/gini_tree.png" alt="Gini vs entropy ROC curve">
 </p>
 
-Let's repeat the fitting but now we will use entropy as the split criterion for growing our tree.
+Let's repeat the fitting, but now we will use entropy as the split criterion for growing our tree.
 
 {% highlight R %}
 {% raw %}
