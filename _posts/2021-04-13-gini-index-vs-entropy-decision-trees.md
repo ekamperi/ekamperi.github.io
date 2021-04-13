@@ -89,15 +89,15 @@ Let's calculate how much entropy is reduced by splitting on the "Balance" featur
 
 $$
 \begin{align*}
-H(Parent) &= -\frac{16}{30} \log\left(\frac{16}{30}\right) -\frac{14}{30}\log\left(\frac{14}{30}\right)\simeq 0.69nats\\
-H(Balance) &= \frac{13}{30} \times 0.27 + \frac{17}{30} \times 0.55 \simeq 0.43nats
+H(\text{Parent}) &= -\frac{16}{30} \log\left(\frac{16}{30}\right) -\frac{14}{30}\log\left(\frac{14}{30}\right)\simeq 0.69nats\\
+H(\text{Balance}) &= \frac{13}{30} \times 0.27 + \frac{17}{30} \times 0.55 \simeq 0.43nats
 \end{align*}
 $$
 
 Therefore, the information gain by splitting on the "Balance" feature is:
 
 $$
-\text{IG} = H(Parent) - H(Balance) = 0.69 - 0.43 = 0.26nats
+\text{IG} = H(\text{Parent}) - H(\text{Balance}) = 0.69 - 0.43 = 0.26nats
 $$
 
 ### An example of an imbalanced dataset
