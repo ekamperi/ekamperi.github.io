@@ -43,15 +43,13 @@ data(hacide)
 
 # Check imbalance on training set
 table(hacide.train$cls)
-> table(hacide.train$cls)
-
-  0   1 
-980  20 
->
+#
+#   0   1 
+# 980  20 
 {% endraw %}
 {% endhighlight %}
 
-
+First, we will fit a decision tree by using Gini as the split criterion.
 {% highlight R %}
 {% raw %}
 # Use gini as the split criterion
@@ -62,9 +60,13 @@ roc.curve(hacide.test$cls, pred.tree.imb[,2], plotit = T, main = "Gini index")
 {% endraw %}
 {% endhighlight %}
 
+And this is the ROC curve which shows how horrible our classifier is.
+
 <p align="center">
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/decision_trees/gini_auc.png" alt="Gini vs entropy ROC curv">
 </p>
+
+Let's take a look at the decision tree itself. You may notice that the left node has 10 observations of the minority class and 989 of the dominant class. 
 
 {% highlight R %}
 {% raw %}
