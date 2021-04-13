@@ -9,19 +9,25 @@ description: Gini index vs entropy in decision trees with imbalanced datasets
 
 Decision trees are tree-based methods that are used for both regression and classification. They work by segmenting the feature space into several simple regions. To predict a given observation, we assume either the mean or the most frequent class of the training points inside the region to which our observation falls. Decision trees are straightforward to interpret, and as a matter of fact, they can be even easier to interpret than linear or logistic regression. Perhaps because decision trees are more close to the way the human decision-making process works. On the downside, trees usually lack the level of predictive accuracy of other regression and classification methods. Also, they can be susceptible to changes in the training dataset, where a slight change in it may cause a dramatic change in the final tree. That’s why bagging, random forests, and boosting are used to construct more robust tree-based prediction models. But that’s for another day.
 
-Trees are constructed via recursive binary splitting, and two measures are usually used. One is the Gini index, and the other one is entropy. Both of these measures are pretty similar numerically. They both take small values, near zero, if all observations fall into the same class in a node. Contrastly, they assume a maximum value when there is an equal number of observations across all classes in a node. Such a node is called impure, and the Gini index is also referred to as a measure of impurity.
+Trees are constructed via recursive binary splitting, and two measures are usually used. One is the Gini index, and the other one is information entropy. Both of these measures are pretty similar numerically. They both take small values, if most observations fall into the same class in a node. Contrastly, they assume a maximum value when there is an equal number of observations across all classes in a node. Such a node is called impure, and the Gini index is also referred to as a measure of impurity.
 
-Concretely, the Gini index is defined as:
+Concretely, for a set of items with $$K$$ classes, and $$p_i$$ being the fraction of items labeled with class $$i\in {1,2,\ldots,K}$$, the Gini impurity is defined as:
 
 $$
 G = \sum_{k=1}^K p_k (1 - p_k) = 1 - \sum_{k=1}^N p_k^2
 $$
 
-And entropy as:
+And information entropy as:
 
 $$
 H = -\sum_{k=1}^K p_k \log p_k
 $$
+
+In the following plot, both metrics are plotted assuming a set of 2 classes appearing with probability $$p$$ and $$1-p$$. Notice how for small values of $$p$$ Gini takes lower values than entropy. This is a key observation that will prove useful in the context of imbalanced datasets.
+
+<p align="center">
+<img style="width: 80%; height: 80%" src="{{ site.url }}/images/decision_trees/gini_vs_entropy.png" alt="Gini vs entropy">
+</p>
 
 <p align="center">
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/decision_trees/pure_vs_impure_node.png" alt="Decision trees: pure vs impure nodes">
@@ -29,9 +35,6 @@ $$
 
 Image taken from "Provost, Foster; Fawcett, Tom. Data Science for Business: What You Need to Know about Data Mining and Data-Analytic Thinking".
 
-<p align="center">
-<img style="width: 80%; height: 80%" src="{{ site.url }}/images/decision_trees/gini_vs_entropy.png" alt="Gini vs entropy">
-</p>
 
 {% highlight R %}
 {% raw %}
