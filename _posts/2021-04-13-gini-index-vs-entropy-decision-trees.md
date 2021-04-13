@@ -102,6 +102,7 @@ $$
 
 ### An example of an imbalanced dataset
 
+The package *ROSE* comes with a built-in imbalanced dataset named *hacide*, consisting of *hacide.train* and *hacide.test*. The dataset has 3 variables in it for a total of $$N=10^3$$ observations. The *cls* is the response categorical variable, and $$x_1$$ and $$x_2$$ are the predictor variables. 
 
 {% highlight R %}
 {% raw %}
@@ -119,7 +120,8 @@ table(hacide.train$cls)
 {% endraw %}
 {% endhighlight %}
 
-First, we will fit a decision tree by using Gini as the split criterion.
+As you may see from the output above, this is a severely imbalanced dataset. The vast majority (980) of the observations belong to the "0" class. First, we will fit a decision tree by using Gini as the split criterion.
+
 {% highlight R %}
 {% raw %}
 # Use gini as the split criterion
