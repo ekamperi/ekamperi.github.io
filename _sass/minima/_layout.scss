@@ -145,6 +145,8 @@
 .social-links {
   @include relative-font-size(0.9375);
   color: $brand-color;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-col {
