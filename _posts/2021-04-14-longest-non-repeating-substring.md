@@ -44,20 +44,23 @@ import time
 ```
 
 
-```python
+{% highlight python %}
+{% raw %}
 def str_generator(size=6, chars=string.ascii_lowercase + string.digits + string.whitespace):
     return ''.join(random.choice(chars) for _ in range(size))
 
 # Print 10 random strings of random length [0,20) 
 input_str = [str_generator(size=random.randrange(0, 20)) for _ in range(10)]
 print(input_str)
-```
+{% endraw %}
+{% endhighlight %}
 
     ['75ypzflfi85wgbe', 'k4dogu\x0c14ckj', 'zcj8aoquhzfsh1g7uyh', '\x0cce\r\tt48nq1gio', 'c58', 'ol\tnfq7', 'i', 'jsjn\t8', '2tj\x0bb413', '']
 
 
 
-```python
+{% highlight python %}
+{% raw %}
 def rep(s:str) -> bool:
     '''Returns True if str has repeating characters in it and False otherwise'''
     freq = {}
@@ -83,10 +86,12 @@ def helper(s:str, n:int) -> int:
 
 def verySlowLLS(s: str) -> int:
     return helper(s, len(s))
-```
+{% endraw %}
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
+{% raw %}
 def slowLLS_forward(s: str) -> int:
     '''It uses sliding windows of length 1, 2, ..., N-1, N.
     That's why we need to keep track of the currently maximum
@@ -102,10 +107,12 @@ def slowLLS_forward(s: str) -> int:
                 if current_len > max_len:
                     max_len = current_len
     return max_len
-```
+{% endraw %}
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
+{% raw %}
 def slowLLS_backward(s: str) -> int:
     '''It uses sliding windows of length N, N-1, N-2, ..., 1.
     That's why we don't need to keep track of the currently
@@ -118,10 +125,12 @@ def slowLLS_backward(s: str) -> int:
             sub = s[i:(i+w)]
             if not rep(sub):
                 return len(sub)
-```
+{% endraw %}
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
+{% raw %}
 def fastLLS(s: str) -> int:
     '''Calculate the longest non-repeating substring
     on one go, by keeping track of the start (variable a) and
@@ -146,10 +155,12 @@ def fastLLS(s: str) -> int:
         m = b - a + 1
         if m > max_len: max_len = m
     return max_len
-```
+{% endraw %}
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
+{% raw %}
 step = 2
 def profile_function(f, n):
     '''Profile `f' by applying it on input strings of
@@ -178,51 +189,60 @@ def plot_runtimes(r, fitDegree, title):
         polyline = np.linspace(1, len(r) * step, 50)
         plt.plot(polyline, model(polyline), 'r')
     #plt.show()
+{% endraw %}
+{% endhighlight %}
 
-```
 
-
-```python
+{% highlight python %}
+{% raw %}
 runtimes_very_slow = profile_function(verySlowLLS, 34)
 plot_runtimes(runtimes_very_slow, -1, verySlowLLS.__name__)
-```
+{% endraw %}
+{% endhighlight %}
 
 
 ![svg](output_7_0.svg)
 
 
 
-```python
+{% highlight python %}
+{% raw %}
 #untimes_slow_forward = profile_function(slowLLS_forward, 1000)
 plot_runtimes(runtimes_slow_forward, 2, slowLLS_forward.__name__)
-```
+{% endraw %}
+{% endhighlight %}
 
 
 ![svg](output_8_0.svg)
 
 
 
-```python
+{% highlight python %}
+{% raw %}
 runtimes_slow_backward = profile_function(slowLLS_backward, 1000)
 plot_runtimes(runtimes_slow_backward, 2, slowLLS_backward.__name__)
-```
+{% endraw %}
+{% endhighlight %}
 
 
 ![svg](output_9_0.svg)
 
 
 
-```python
+{% highlight python %}
+{% raw %}
 runtimes_fast = profile_function(fastLLS, 10000)
 plot_runtimes(runtimes_fast, 1, fastLLS.__name__)
-```
+{% endraw %}
+{% endhighlight %}
 
 
 ![svg](output_10_0.svg)
 
 
 
-```python
+{% highlight python %}
+{% raw %}
 # Sanity check -- all algorithms should agree
 for i in range(0, 30, 3):
     input_str = str_generator(size=i)
@@ -234,10 +254,12 @@ for i in range(0, 30, 3):
         print(input_str)
         print(y1, y2, y3, y4)
         break
-```
+{% endraw %}
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
+{% raw %}
 # Plot the runtimes of all algorithms side by side
 plt.figure(figsize=(15,4))
 plt.subplot(1,4,1)
@@ -248,14 +270,16 @@ plt.subplot(1,4,3)
 plot_runtimes(runtimes_slow_forward, 2, slowLLS_forward.__name__)
 plt.subplot(1,4,4)
 plot_runtimes(runtimes_very_slow, 3, verySlowLLS.__name__)
-```
+{% endraw %}
+{% endhighlight %}
 
 
 ![svg](output_12_0.svg)
 
 
 
-```python
+{% highlight python %}
+{% raw %}
 plt.figure()
 #plt.xscale('log')
 plt.yscale('log')
@@ -265,19 +289,9 @@ plt.scatter(*zip(*runtimes_slow_forward), s=10)
 plt.scatter(*zip(*runtimes_very_slow), s=10)
 plt.xlabel('Input string length')
 plt.ylabel('Execution time in sec');
-```
+{% endraw %}
+{% endhighlight %}
 
 
 ![svg](output_13_0.svg)
-
-
-
-```python
-
-```
-
-
-```python
-
-```
 
