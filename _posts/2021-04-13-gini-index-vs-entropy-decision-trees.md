@@ -26,13 +26,13 @@ $$
 In the following plot, both metrics are plotted assuming a set of 2 classes appearing with probability $$p$$ and $$1-p$$. Notice how for small values of $$p$$ Gini takes lower values than entropy. This is a key observation that will prove useful in the context of imbalanced datasets.
 
 <p align="center">
-<img style="width: 80%; height: 80%" src="{{ site.url }}/images/decision_trees/gini_vs_entropy.png" alt="Gini vs entropy">
+<img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/gini_vs_entropy.png" alt="Gini vs entropy">
 </p>
 
 The Gini index is used by the CART (classification and regression tree) algorithm for classification trees, whereas information gain via entropy reduction is used by algorithms like C4.5. In the following image w
 
 <p align="center">
-<img style="width: 80%; height: 80%" src="{{ site.url }}/images/decision_trees/pure_vs_impure_node.png" alt="Decision trees: pure vs impure nodes">
+<img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/pure_vs_impure_node.png" alt="Decision trees: pure vs impure nodes">
 </p>
 
 Image taken from "Provost, Foster; Fawcett, Tom. Data Science for Business: What You Need to Know about Data Mining and Data-Analytic Thinking".
@@ -80,7 +80,7 @@ roc.curve(hacide.test$cls, pred.tree.imb[,2], plotit = T, main = "Gini index")
 And this is the ROC curve which shows how horrible our classifier is.
 
 <p align="center">
-<img style="width: 80%; height: 80%" src="{{ site.url }}/images/decision_trees/gini_auc.png" alt="Gini vs entropy ROC curv">
+<img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/gini_auc.png" alt="Gini vs entropy ROC curv">
 </p>
 
 Let's take a look at the decision tree itself. You may notice that the left node has 10 observations of the minority class and 989 of the dominant class. 
@@ -92,7 +92,7 @@ rpart.plot(tree.imb, main = "Gini Index", type = 5, extra = 3)
 {% endhighlight %}
 
 <p align="center">
-<img style="width: 80%; height: 80%" src="{{ site.url }}/images/decision_trees/gini_tree.png" alt="Gini vs entropy ROC curv">
+<img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/gini_tree.png" alt="Gini vs entropy ROC curv">
 </p>
 
 {% highlight R %}
@@ -106,7 +106,7 @@ roc.curve(hacide.test$cls, pred.tree.imb[,2], plotit = T)
 {% endhighlight %}
 
 <p align="center">
-<img style="width: 80%; height: 80%" src="{{ site.url }}/images/decision_trees/entropy_auc.png" alt="Gini vs entropy ROC curv">
+<img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/entropy_auc.png" alt="Gini vs entropy ROC curv">
 </p>
 
 {% highlight R %}
@@ -117,5 +117,5 @@ rpart.plot(tree.imb, main = "Information Gain", type = 5, extra = 3)
 
 
 <p align="center">
-<img style="width: 80%; height: 80%" src="{{ site.url }}/images/decision_trees/entropy_tree.png" alt="Gini vs entropy ROC curv">
+<img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/entropy_tree.png" alt="Gini vs entropy ROC curv">
 </p>
