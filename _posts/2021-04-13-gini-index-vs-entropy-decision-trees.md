@@ -31,7 +31,7 @@ In the following plot, both metrics are plotted assuming a set of 2 classes appe
 <img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/gini_vs_entropy.png" alt="Gini vs entropy">
 </p>
 
-The Gini index is used by the CART (classification and regression tree) algorithm for classification trees, whereas information gain via entropy reduction is used by algorithms like [C4.5](https://en.wikipedia.org/wiki/C4.5_algorithm). In the following image, we see a part of a decision tree for predicting whether a person receiving a loan will be able to pay it back. The left node is an example of a low impurity node since most of the observations fall into the same class. Contrast this with the node on the right where observations of different classes are mixed in.
+The Gini index is used by the CART (classification and regression tree) algorithm, whereas information gain via entropy reduction is used by algorithms like [C4.5](https://en.wikipedia.org/wiki/C4.5_algorithm). In the following image, we see a part of a decision tree for predicting whether a person receiving a loan will be able to pay it back. The left node is an example of a low impurity node since most of the observations fall into the same class. Contrast this with the node on the right where observations of different classes are mixed in.
 
 <p align="center">
 <img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/pure_vs_impure_node.png" alt="Decision trees: pure vs impure nodes">
