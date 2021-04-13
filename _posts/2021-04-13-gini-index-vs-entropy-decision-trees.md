@@ -13,7 +13,7 @@ Decision trees are tree-based methods that are used for both regression and clas
 ### Gini impurity and information entropy
 Trees are constructed via recursive binary splitting of the feature space. In classification, the criteria typically used to decide which feature to split on are the **Gini index** and **information entropy**. Both of these measures are pretty similar numerically. They both take small values if most observations fall into the same class in a node. Contrastly, they assume a maximum value when there is an equal number of observations across all classes in a node. A node with mixed classes is called impure, and the Gini index is also known as **Gini impurity**.
 
-Concretely, for a set of items with $$K$$ classes, and $$p_i$$ being the fraction of items labeled with class $$i\in {1,2,\ldots,K}$$, the **Gini impurity** is defined as:
+Concretely, for a set of items with $$K$$ classes, and $$p_k$$ being the fraction of items labeled with class $$k\in {1,2,\ldots,K}$$, the **Gini impurity** is defined as:
 
 $$
 G = \sum_{k=1}^K p_k (1 - p_k) = 1 - \sum_{k=1}^N p_k^2
