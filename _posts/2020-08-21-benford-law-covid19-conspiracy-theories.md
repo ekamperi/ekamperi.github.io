@@ -3,7 +3,7 @@ layout: post
 title:  "Benford's law and COVID-19 conspiracy theories"
 date:   2020-08-21
 categories: [mathematics]
-tags: ['covid-19', 'mathematics', 'statistics']
+tags: ['covid-19', 'mathematics', 'R language', 'statistics']
 description: How to check the validity of conspiracy theories for Covid-19 using the Benford's law.
 ---
 
