@@ -171,7 +171,10 @@ a.codinfox-tag-mark:hover {
     flex-direction: column;
     background: #dbdada;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
-    margin-bottom: 2em;
+    margin-bottom: 2em;    
+	margin-left: auto;
+	margin-right: auto;
+    padding: 0em 5em 0em 5em;
 }
 .newsletter-container * {
     align-self: center;
