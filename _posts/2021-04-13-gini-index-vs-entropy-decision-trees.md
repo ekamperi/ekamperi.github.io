@@ -89,7 +89,7 @@ Let's calculate how much entropy is reduced by splitting on the "Balance" featur
 
 $$
 \begin{align*}
-H(Parent) &= -\frac{16}{30} \log\left(\frac{16}{30}\right) -\frac{14}{30}\log\left(\frac{16}{30}\right)\simeq 0.69nats\\
+H(Parent) &= -\frac{16}{30} \log\left(\frac{16}{30}\right) -\frac{14}{30}\log\left(\frac{14}{30}\right)\simeq 0.69nats\\
 H(Balance) &= \frac{13}{30} \times 0.27 + \frac{17}{30} \times 0.55 \simeq 0.43nats
 \end{align*}
 $$
@@ -101,6 +101,8 @@ $$
 $$
 
 ### An example of an imbalanced dataset
+
+
 {% highlight R %}
 {% raw %}
 # Load the necessary libraries and the dataset 
