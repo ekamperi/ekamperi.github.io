@@ -131,10 +131,20 @@ As you may see from the output above, this is a very imbalanced dataset. The vas
 # Use gini as the split criterion
 tree.imb <- rpart(cls ~ ., data = hacide.train, parms = list(split = "gini"))
 pred.tree.imb <- predict(tree.imb, newdata = hacide.test)
+accuracy.meas(hacide.test$cls, pred.tree.imb[,2])
+#
+# Call: 
+# accuracy.meas(response = hacide.test$cls, predicted = pred.tree.imb[, 2])
+#
+# Examples are labelled as positive when predicted is greater than 0.5 
+#
+# precision: 1.000
+# recall: 0.200
+# F: 0.167
 {% endraw %}
 {% endhighlight %}
 
-Things don't look all that great. Although we have a perfect precision (reminder: Precision=TP/(TP+FP)), meaning that we don't have any false positives, our recall is very low (reminder: Recall=TP/(TP+FN), meaning that we have many false negatives. So basically, our classifier outputs pretty much always the majority class "0". And this is the ROC curve which shows how horrible our performance is.
+Things don't look all that great. Although we have a perfect precision (reminder: Precision=TP/(TP+FP)), meaning that we don't have any false positives, our recall is very low (reminder: Recall=TP/(TP+FN), meaning that we have many false negatives. So basically, our classifier outputs pretty much always the majority class "0". F-metric also is very low. And this is the ROC curve which shows how horrible our performance is.
 
 {% highlight R %}
 {% raw %}
@@ -166,10 +176,9 @@ Let's repeat the fitting, but now we will use entropy as the split criterion for
 tree.imb <- rpart(cls ~ ., data = hacide.train, parms = list(split = "information"))
 pred.tree.imb <- predict(tree.imb, newdata = hacide.test)
 accuracy.meas(hacide.test$cls, pred.tree.imb[,2])
-accuracy.meas(hacide.test$cls, pred.tree.imb[,2])
+#
 # Call: 
-# accuracy.meas(response = hacide.test$cls, predicted = pred.tree.imb[, 
-    2])
+# accuracy.meas(response = hacide.test$cls, predicted = pred.tree.imb[, 2])
 #
 #  Examples are labelled as positive when predicted is greater than 0.5 
 #
@@ -185,13 +194,13 @@ roc.curve(hacide.test$cls, pred.tree.imb[,2], plotit = T)
 {% endraw %}
 {% endhighlight %}
 
-The ROC curve of the new decision tree is way better than the previous run.
+The precision is still perfect, i.e. we aren't predicting any false positives, and we doubled the recall. This improvement also reflects to the F metric. Also, the ROC curve of the new decision tree is way better than the previous run.
 
 <p align="center">
 <img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/entropy_auc.png" alt="Gini vs entropy ROC curve">
 </p>
 
-Here is the decision tree itself. 
+Here is the decision tree itself. Admittedly, it's a bit more complex that when we used Gini, but overall the classifier is more performant and useful.
 
 {% highlight R %}
 {% raw %}
