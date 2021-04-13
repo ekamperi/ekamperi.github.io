@@ -23,13 +23,13 @@ $$
 H = -\sum_{k=1}^K p_k \log p_k
 $$
 
-In the following plot, both metrics are plotted assuming a set of 2 classes appearing with probability $$p$$ and $$1-p$$. Notice how for small values of $$p$$ Gini takes lower values than entropy. This is a key observation that will prove useful in the context of imbalanced datasets.
+In the following plot, both metrics are plotted assuming a set of 2 classes appearing with probability $$p$$ and $$1-p$$, respectively. Notice how for small values of $$p$$ Gini takes lower values than entropy. This is a key observation that will prove useful in the context of **imbalanced datasets**.
 
 <p align="center">
 <img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/gini_vs_entropy.png" alt="Gini vs entropy">
 </p>
 
-The Gini index is used by the CART (classification and regression tree) algorithm for classification trees, whereas information gain via entropy reduction is used by algorithms like C4.5. In the following image w
+The Gini index is used by the CART (classification and regression tree) algorithm for classification trees, whereas information gain via entropy reduction is used by algorithms like C4.5. In the following image we see a part of a decision tree for predicting whether a person receiving a loan will be able to pay it back. The left node is an example of a node with low impurity, since most of the observations fall into the same class. Contrast this with the node on the right where observations of different classes are mixed in.
 
 <p align="center">
 <img style="width: 70%; height: 70%" src="{{ site.url }}/images/decision_trees/pure_vs_impure_node.png" alt="Decision trees: pure vs impure nodes">
