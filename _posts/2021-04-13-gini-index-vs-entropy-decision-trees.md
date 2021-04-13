@@ -48,7 +48,18 @@ H\left(\text{Balance<50K}\right)
 \end{align}
 $$
 
-Depending on whether you are using $$log_2$$ or $$log_e$$ in the entropy formula you get the result in *bits* or *nats*, respectively. For instance, here it's $$H \simeq 0.39 bits$$.
+Depending on whether you are using $$log_2$$ or $$log_e$$ in the entropy formula you get the result in *bits* or *nats*, respectively. For instance, here it's $$H \simeq 0.39 bits$$. Let's calculate the entropy of the right node as well:
+
+$$
+\begin{align}
+H\left(\text{Balance}\ge\text{50K}\right)
+&= -\sum_{k=1}^{2} p_k \log{p}_k = -p_1 \log{p}_1 -p_2 \log{p}_2\\
+&=-\frac{4}{17}\log\left(\frac{4}{17}\right) -\frac{13}{17}\log\left(\frac{13}{17}\right)
+\simeq 0.55 nats
+\end{align} 
+$$
+
+Again, if we'd use base 2 in the entropy's logarithm, we'd get $$H \simeq 0.79 bits$$. Units aside, we see that the left node has a lower entropy than the right one, which is to be expected, since the left one is in a more *ordered* state and entropy measures *disorder*. So, $$H_\text{left} \simeq 0.27 nats, H_\text{right} \simeq 0.55 nats$$. The various algorithms for constructing trees via recursive binary splitting is to pick that feature whose split will result in maximum reduction in impurity. 
 
 {% highlight R %}
 {% raw %}
