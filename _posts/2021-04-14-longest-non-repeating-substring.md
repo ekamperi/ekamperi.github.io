@@ -1,11 +1,13 @@
 ---
 layout: post
 title:  "Longest substring with non-repeating characters"
-date:   2020-04-14
+date:   2021-04-14
 categories: [programming]
 tags: [algorithms, Leetcode, programming, Python]
 description: How to find the longest substring with non-repeating characters in a string
 ---
+
+I have been doing some interviews for job positions like data scientist, machine learning engineer, and software developer during the past months. To prepare for the coding part of these interviews and brush up on my algorithmic thinking and programming skills, I decided to do some ad-hoc practice. Various websites include coding challenges with varying levels of difficulty. Some examples are Leetcode, HackerRank, Topcoder, and others. Although I kind of dislike the contrived nature of the quizzes, I joined nonetheless. Anyway, the problem I'm blogging about is finding the longest substring with non-repeating characters in a string.
 
 ### Problem formulation
 Given a string *s*, find the length of the longest substring without repeating characters.
@@ -43,6 +45,7 @@ import random
 import time
 ```
 
+First, we write a function to generate random strings consisting of lowercase letters, digits, and whitespace characters, of varying length.
 
 {% highlight python %}
 {% raw %}
@@ -52,13 +55,13 @@ def str_generator(size=6, chars=string.ascii_lowercase + string.digits + string.
 # Print 10 random strings of random length [0,20) 
 input_str = [str_generator(size=random.randrange(0, 20)) for _ in range(10)]
 print(input_str)
+
+#    ['75ypzflfi85wgbe', 'k4dogu\x0c14ckj', 'zcj8aoquhzfsh1g7uyh', '\x0cce\r\tt48nq1gio', 'c58', 'ol\tnfq7', 'i', 'jsjn\t8', '2tj\x0bb413', '']
 {% endraw %}
 {% endhighlight %}
 
-    ['75ypzflfi85wgbe', 'k4dogu\x0c14ckj', 'zcj8aoquhzfsh1g7uyh', '\x0cce\r\tt48nq1gio', 'c58', 'ol\tnfq7', 'i', 'jsjn\t8', '2tj\x0bb413', '']
 
-
-
+### The horrible solution
 {% highlight python %}
 {% raw %}
 def rep(s:str) -> bool:
@@ -89,7 +92,7 @@ def verySlowLLS(s: str) -> int:
 {% endraw %}
 {% endhighlight %}
 
-
+### A decent solution of $$\mathcal{O}(N^2)$$ complexity
 {% highlight python %}
 {% raw %}
 def slowLLS_forward(s: str) -> int:
@@ -128,6 +131,7 @@ def slowLLS_backward(s: str) -> int:
 {% endraw %}
 {% endhighlight %}
 
+### The best solution of $$\mathcal{O}(N)$$ complexity
 
 {% highlight python %}
 {% raw %}
@@ -246,6 +250,8 @@ plot_runtimes(runtimes_fast, 1, fastLLS.__name__)
 </p>
 
 
+As a sanity check we check that all algorithms return the same result for strings of various lengths. We can't really go past length of 30 characters, because the recursive algorithm takes ages to run.
+
 {% highlight python %}
 {% raw %}
 # Sanity check -- all algorithms should agree
@@ -262,7 +268,7 @@ for i in range(0, 30, 3):
 {% endraw %}
 {% endhighlight %}
 
-
+In this plot we combine the running times of all algorithms side by side.
 {% highlight python %}
 {% raw %}
 # Plot the runtimes of all algorithms side by side
@@ -283,7 +289,6 @@ plot_runtimes(runtimes_very_slow, 3, verySlowLLS.__name__)
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/output_12_0.svg" alt="Longest non-repeating substring">
 </p>
 
-
 {% highlight python %}
 {% raw %}
 plt.figure()
@@ -297,7 +302,6 @@ plt.xlabel('Input string length')
 plt.ylabel('Execution time in sec');
 {% endraw %}
 {% endhighlight %}
-
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/output_13_0.svg" alt="Longest non-repeating substring">
