@@ -39,15 +39,17 @@ $$0 \le \text{s.length} \le 5 \times 10^4$$
 ### Solutions
 We import some libraries that we will be needing later on.
 
-```python
+{% highlight python %}
+{% raw %}
 import matplotlib.pyplot as plt
 import numpy as np
 import string
 import random
 import time
-```
+{% endraw %}
+{% endhighlight %}
 
-For starters, we write a function to generate random strings consisting of lowercase letters, digits, and whitespace characters, of varying length. We will use it to see how our various solutions scale with increasing input size.
+For starters, we write a function to generate random strings consisting of lowercase letters, digits, and whitespace characters, of varying length. We will use it to see how our various solutions scale with increasing input size. When coding such problems it's very important to have abundant examples that cover all edge cases.
 
 {% highlight python %}
 {% raw %}
