@@ -7,7 +7,7 @@ tags: [algorithms, Leetcode, programming, Python]
 description: How to find the longest substring with non-repeating characters in a string
 ---
 
-I have been doing some interviews for job positions like data scientist, machine learning engineer, and software developer during the past months. To prepare for the coding part of these interviews and brush up on my algorithmic thinking and programming skills, I decided to do some ad-hoc practice. Various websites include coding challenges with varying levels of difficulty. Some examples are [Leetcode](https://leetcode.com/), [HackerRank](https://www.hackerrank.com/), [Topcoder](https://www.topcoder.com/), and others. Although I kind of dislike the contrived nature of the quizzes, I joined Leetcode nonetheless. Anyway, I picked a problem under the "medium" difficulty caterory, that I'll blog about. The problem is about finding the longest substring with non-repeating characters in a string.
+I have been doing some interviews for job positions like data scientist, machine learning engineer, and software developer during the past months. To prepare for the coding part of these interviews and brush up on my algorithmic thinking and programming skills, I decided to do some ad-hoc practicing. There are lots of websites with coding challenges of varying difficulty. Some examples include [Leetcode](https://leetcode.com/), [HackerRank](https://www.hackerrank.com/), [Topcoder](https://www.topcoder.com/), and others. Although I kind of dislike the contrived nature of these quizzes, I joined Leetcode nonetheless. Anyway, I picked a problem under the "medium" difficulty caterory that I'll blog about today. The problem is about **finding the longest substring with non-repeating characters in a string**.
 
 ### Problem formulation
 Given a string *s*, find the length of the longest substring without repeating characters.
@@ -49,7 +49,7 @@ import time
 {% endraw %}
 {% endhighlight %}
 
-For starters, we write a function to generate random strings consisting of lowercase letters, digits, and whitespace characters, of varying length. We will use it to see how our various solutions scale with increasing input size. When coding such problems it's very important to have abundant examples that cover all edge cases.
+For starters, we are going to write a function that generates random strings consisting of lowercase letters, digits, and whitespace characters, of varying length. We will use it to see how our different solutions scale with increasing input size. When coding such problems it's very important to have abundant examples that cover all edge cases. By the way, I've found it easier to write and run my code in a Jupyter Notebook inside Visual Studio Code, and then paste it to Leetcode.
 
 {% highlight python %}
 {% raw %}
@@ -67,7 +67,7 @@ print(input_str)
 
 ### The horrible solution
 
-My first attempt resulted in this readable yet completely horrible, complexity-wise, solution. The `rep()` function is good actually, and we will be using it in the other solutions as well. It uses a dictionary to keep track whether a character has been already seen inside a substring. It has the advantage that we iterate only once the substring, so it's $$\mathcal{O}(N)$$ time complexity. If we had used a nested loop to seek for repeating characters, that would lead us to $$\mathcal{O}(N^2)$$ complexity, and we haven't even started!
+My first attempt resulted in the following, I think, readable yet completely horrible, complexity-wise, solution. The `rep()` function is good actually, and we will be using it in the other solutions as well. It makes use of a dictionary to keep track whether the next character has been already seen inside a substring. It has the advantage that we iterate only once the substring, so it's $$\mathcal{O}(N)$$ time complexity. Had we used a nested loop to seek for repeating characters, that would lead us to $$\mathcal{O}(N^2)$$ complexity from the get go! So, the following algorithm starts with the full string and checks whether it has any repeating characters in it. If it doesn't, then this is the longest substring of length N! Return its length and we are done. If it has repeating characters though, we slice it into two N-1 substrings, and return the max length of the two substrings.
 
 {% highlight python %}
 {% raw %}
@@ -89,10 +89,7 @@ def helper(s:str, n:int) -> int:
         return n
     a, b = s[:-1], s[1:]
     rep_a, rep_b = rep(a), rep(b)
-    if not (rep_a and rep_b):
-        return n-1
-    else:
-        return max(helper(a, n-1), helper(b, n-1))
+    return max(helper(a, n-1), helper(b, n-1))
 
 def verySlowLLS(s: str) -> int:
     return helper(s, len(s))
