@@ -67,7 +67,7 @@ print(input_str)
 
 ### The horrible solution
 
-My first attempt resulted in this readable yet completely horrible, complexity-wise, solution. The `rep()` function is good actually, and we will be using it in the other solutions as well. It uses a dictionary to keep track whether a character has been already seen inside a substring. It has the advantage that we iterate only once the substring, so it's $$\mathcal{O}(N)$$ complexity. If we had used a nested loop to seek for repeating characters, that would lead us to $$\mathcal{O}(N^2)$$ complexity, and we haven't even started!
+My first attempt resulted in this readable yet completely horrible, complexity-wise, solution. The `rep()` function is good actually, and we will be using it in the other solutions as well. It uses a dictionary to keep track whether a character has been already seen inside a substring. It has the advantage that we iterate only once the substring, so it's $$\mathcal{O}(N)$$ time complexity. If we had used a nested loop to seek for repeating characters, that would lead us to $$\mathcal{O}(N^2)$$ complexity, and we haven't even started!
 
 {% highlight python %}
 {% raw %}
@@ -220,7 +220,7 @@ plot_runtimes(runtimes_very_slow, -1, verySlowLLS.__name__)
 Indeed, after submitting this solution to Leetcode we got:
 
 <p align="center">
- <img style="width: 80%; height: 80%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/runtime_vs_others.png" alt="Longest non-repeating substring">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/runtime_vs_others.png" alt="Longest non-repeating substring">
 </p>
 
 {% highlight python %}
