@@ -7,7 +7,7 @@ tags: [algorithms, Leetcode, programming, Python]
 description: How to find the longest substring with non-repeating characters in a string
 ---
 
-I have been doing some interviews for job positions like data scientist, machine learning engineer, and software developer during the past months. To prepare for the coding part of these interviews and brush up on my algorithmic thinking and programming skills, I decided to do some ad-hoc practice. Various websites include coding challenges with varying levels of difficulty. Some examples are Leetcode, HackerRank, Topcoder, and others. Although I kind of dislike the contrived nature of the quizzes, I joined nonetheless. Anyway, the problem I'm blogging about is finding the longest substring with non-repeating characters in a string.
+I have been doing some interviews for job positions like data scientist, machine learning engineer, and software developer during the past months. To prepare for the coding part of these interviews and brush up on my algorithmic thinking and programming skills, I decided to do some ad-hoc practice. Various websites include coding challenges with varying levels of difficulty. Some examples are [Leetcode](https://leetcode.com/), [HackerRank](https://www.hackerrank.com/), [Topcoder](https://www.topcoder.com/), and others. Although I kind of dislike the contrived nature of the quizzes, I joined Leetcode nonetheless. Anyway, the problem I'm blogging about is finding the longest substring with non-repeating characters in a string.
 
 ### Problem formulation
 Given a string *s*, find the length of the longest substring without repeating characters.
@@ -32,9 +32,9 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
 Input: s = ""
 Output: 0
  
-Constraints:
-0 <= s.length <= 5 * 104
-s consists of English letters, digits, symbols and spaces.
+**Constraints**:
+$$0 \le \text{s.length} \le 5 \times 10^4$$
+*s* consists of English letters, digits, symbols and spaces.
 
 ### Solutions
 ```python
@@ -204,11 +204,15 @@ plot_runtimes(runtimes_very_slow, -1, verySlowLLS.__name__)
 {% endraw %}
 {% endhighlight %}
 
-
 <p align="center">
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/output_7_0.svg" alt="Longest non-repeating substring">
 </p>
 
+Indeed, after submitting this solution to Leetcode we got:
+
+<p align="center">
+ <img style="width: 80%; height: 80%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/runtime_vs_others.png" alt="Longest non-repeating substring">
+</p>
 
 {% highlight python %}
 {% raw %}
