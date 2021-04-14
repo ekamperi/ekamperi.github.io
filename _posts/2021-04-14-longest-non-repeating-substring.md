@@ -67,7 +67,7 @@ print(input_str)
 
 ### The horrible solution
 
-My first attempt resulted in the following, I think, readable yet completely horrible, complexity-wise, solution. The `rep()` function is good actually, and we will be using it in the other solutions as well. It makes use of a dictionary to keep track whether the next character has been already seen inside a substring. It has the advantage that we iterate only once the substring, so it's $$\mathcal{O}(N)$$ time complexity. Had we used a nested loop to seek for repeating characters, that would lead us to $$\mathcal{O}(N^2)$$ complexity from the get go! So, the following algorithm starts with the full string and checks whether it has any repeating characters in it. If it doesn't, then this is the longest substring of length N! Return its length and we are done. If it has repeating characters though, we slice it into two N-1 substrings, and return the max length of the two substrings.
+My first attempt resulted in the following, I think, readable yet completely horrible, complexity-wise, solution. The `rep()` function is good actually, and we will be using it in the other solutions as well. It makes use of a dictionary to keep track whether the next character has been already seen inside a substring. It has the advantage that we iterate only once the substring, so it's $$\mathcal{O}(N)$$ time complexity. Had we used a nested loop to seek for repeating characters, that would lead us to $$\mathcal{O}(N^2)$$ complexity from the get go! So, the following algorithm starts with the full string and checks whether it has any repeating characters in it. If it doesn't, then this is the longest substring of length N! Return its length and we are done. If it has repeating characters though, we slice it into two N-1 substrings. If the repeating characters are located in only one out of the two, then we know that the other one is the longest substring with length N-1. Return immediately and we are done. Last, if there are repeating characters in both the substrings of length N-1, we need to dig deeper and therefore we return the maximum of the longest substring of these two substrings.
 
 {% highlight python %}
 {% raw %}
@@ -89,12 +89,17 @@ def helper(s:str, n:int) -> int:
         return n
     a, b = s[:-1], s[1:]
     rep_a, rep_b = rep(a), rep(b)
-    return max(helper(a, n-1), helper(b, n-1))
+    if not (rep_a and rep_b):
+        return n-1
+    else:
+        return max(helper(a, n-1), helper(b, n-1))
 
 def verySlowLLS(s: str) -> int:
     return helper(s, len(s))
 {% endraw %}
 {% endhighlight %}
+
+So, why does this algorithm perform so poorly? As I understand, there are two reasons: 1. Recursion is expensive because each time we call the `helper()` function a new stack frame needs to be allocated. And 2. When we are calling `max(helper(a, n-1), helper(b, n-1))`, we don't really *divide* the input, let alone *conquer* it! We merely go from N to N-1. It's not as if we reduced the search space from N to N/2 or something. 
 
 ### A decent solution of $$\mathcal{O}(N^2)$$ complexity
 The next two solutions are using sliding windows, either forward or backward, to find all possible substrings in a string.
