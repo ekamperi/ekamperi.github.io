@@ -37,6 +37,8 @@ $$0 \le \text{s.length} \le 5 \times 10^4$$
 *s* consists of English letters, digits, symbols and spaces.
 
 ### Solutions
+We import some libraries that we will be needing later on.
+
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
@@ -45,7 +47,7 @@ import random
 import time
 ```
 
-First, we write a function to generate random strings consisting of lowercase letters, digits, and whitespace characters, of varying length.
+For starters, we write a function to generate random strings consisting of lowercase letters, digits, and whitespace characters, of varying length. We will use it to see how our various solutions scale with increasing input size.
 
 {% highlight python %}
 {% raw %}
@@ -60,8 +62,10 @@ print(input_str)
 {% endraw %}
 {% endhighlight %}
 
-
 ### The horrible solution
+
+My first attempt resulted in this readable yet completely horrible, complexity-wise, solution.
+
 {% highlight python %}
 {% raw %}
 def rep(s:str) -> bool:
@@ -93,6 +97,8 @@ def verySlowLLS(s: str) -> int:
 {% endhighlight %}
 
 ### A decent solution of $$\mathcal{O}(N^2)$$ complexity
+The next two solutions are using sliding windows, either forward or backward, to find all possible substrings in a string.
+
 {% highlight python %}
 {% raw %}
 def slowLLS_forward(s: str) -> int:
