@@ -60,7 +60,8 @@ def str_generator(size=6, chars=string.ascii_lowercase + string.digits + string.
 input_str = [str_generator(size=random.randrange(0, 20)) for _ in range(10)]
 print(input_str)
 
-#    ['75ypzflfi85wgbe', 'k4dogu\x0c14ckj', 'zcj8aoquhzfsh1g7uyh', '\x0cce\r\tt48nq1gio', 'c58', 'ol\tnfq7', 'i', 'jsjn\t8', '2tj\x0bb413', '']
+#    ['75ypzflfi85wgbe', 'k4dogu\x0c14ckj', 'zcj8aoquhzfsh1g7uyh', '\x0cce\r\tt48nq1gio', 'c58',
+#     'ol\tnfq7', 'i', 'jsjn\t8', '2tj\x0bb413', '']
 {% endraw %}
 {% endhighlight %}
 
