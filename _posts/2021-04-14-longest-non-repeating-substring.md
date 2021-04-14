@@ -171,6 +171,11 @@ def fastLLS(s: str) -> int:
 {% endraw %}
 {% endhighlight %}
 
+Indeed, after submitting this solution to Leetcode we got:
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/runtime_vs_others.png" alt="Longest non-repeating substring">
+</p>
 
 {% highlight python %}
 {% raw %}
@@ -217,15 +222,9 @@ plot_runtimes(runtimes_very_slow, -1, verySlowLLS.__name__)
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/output_7_0.svg" alt="Longest non-repeating substring">
 </p>
 
-Indeed, after submitting this solution to Leetcode we got:
-
-<p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/Leetcode/longest_nonrepeating_substring/runtime_vs_others.png" alt="Longest non-repeating substring">
-</p>
-
 {% highlight python %}
 {% raw %}
-#untimes_slow_forward = profile_function(slowLLS_forward, 1000)
+runtimes_slow_forward = profile_function(slowLLS_forward, 1000)
 plot_runtimes(runtimes_slow_forward, 2, slowLLS_forward.__name__)
 {% endraw %}
 {% endhighlight %}
