@@ -234,5 +234,9 @@ a.codinfox-tag-mark:hover {
 }
 
 .message-to-readers {
-    border: 1px;
+    border: solid 1px;
+    border-radius: 5px;
+    border-color: cadetblue;
+    margin: 10px;
+    padding: 10px;
 }
