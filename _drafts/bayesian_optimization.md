@@ -29,6 +29,157 @@ e.	Increment $$n$$
 3.	Return either the $$x$$ evaluated with the largest $$f(x)$$, or the point with the largest posterior mean.
 
 ### Acquisition function
-As we have already noted, the role of the acquisition function is to guide the next best point to sample f to find the global optimum. Acquisition functions are constructed so that a high value corresponds to potentially high values of the objective function. Either because the prediction is high or the uncertainty is high. So, acquisition functions favor regions that already correspond to optimal values or areas that haven’t been explored yet. This is known as the so-called exploration-exploitation trade-off.
-There are three often cited acquisition functions: expected improvement (EI), maximum probability of improvement (MPI), and upper confidence bound (UCB). Although often cited last, I think it’s best to talk about UCB because it contains explicit exploitation and exploration terms.
+As we have already noted, the role of the acquisition function is to guide the next best point to sample f to find the global optimum. Acquisition functions are constructed so that a high value corresponds to potentially high values of the objective function. Either because the prediction is high or the uncertainty is high. So, acquisition functions favor regions that already correspond to optimal values or areas that haven’t been explored yet. This is known as the so-called exploration-exploitation trade-off. There are three often cited acquisition functions: **expected improvement** (EI), **maximum probability of improvement** (MPI), and **upper confidence bound** (UCB). Although often cited last, I think it’s best to talk about UCB because it contains explicit exploitation and exploration terms:
 
+$$
+a_\text{UCB} = 
+$$
+
+### A concrete example
+Let's import some of the stuff we will be using:
+
+{% highlight python %}
+{% raw %}
+from sklearn.datasets import make_classification
+from sklearn.model_selection import cross_val_score
+from sklearn.svm import SVC
+
+import matplotlib.pyplot as plt
+import matplotlib.tri as tri
+import numpy as np
+from hyperopt import fmin, tpe, Trials, hp, STATUS_OK
+{% endraw %}
+{% endhighlight %}
+
+Then, we construct an artificial training dataset with many classes, where some of the features are informative and some are not:
+
+{% highlight python %}
+{% raw %}
+# Create a random n-class classification problem.
+
+# n_features is the total number of features
+# n_informative is the number of informative features 
+# n_redundant features are generated as random linear combinations of the informative features
+
+X_train, y_train = make_classification(n_samples=2500, n_features=20, n_informative=7, n_redundant=3)
+{% endraw %}
+{% endhighlight %}
+
+We define our objective/cost/loss function. This is the $$f(\mathbf{x})$$ that we want talked about in the introduction, and $$\mathbf{x} = [C, \gamma]$$ is the domain of the function. Therefore, we want to find the best combination of $$C, \gamma$$ values that minimizes $$f(\mathbf{x})$$. The machine learning model that we will be using is an SVM, and the loss will be derived from the average 3-fold cross-validation score.
+
+{% highlight python %}
+{% raw %}
+def objective(args):
+    '''Define the loss function / objective of our model.
+
+    We will be using an SVM parameterized by the regularization parameter C
+    and the parameter gamma.
+    
+    The C parameter trades off correct classification of training examples
+    against maximization of the decision function's margin. For larger values
+    of C, a smaller margin will be accepted.
+
+    The gamma parameter defines how far the influence of a single training
+    example reaches, with larger values meaning 'close'. 
+    '''
+    C, gamma = args
+    model = SVC(C=10 ** C, gamma=10 ** gamma, random_state=12345)
+    loss = 1 - cross_val_score(estimator=model, X=X_train, y=y_train, scoring='roc_auc', cv=3).mean()
+    return {'params': {'C': C, 'gamma': gamma}, 'loss': loss, 'status': STATUS_OK }
+{% endraw %}
+{% endhighlight %}
+
+Now, we will use the $$fmin$$ function from the *scipy.optimize* package. Internally, **fmin** uses a Nelder-Mead simplex algorithm to find the minimum of function of one or more variables. This algorithm has been show to work well in many applications. However, compared to methods using first/second derivatives, like gradient descent or Newton's method, it is slower. For very high-dimensional problems, it can perform poorly, however we are merely working on the $$\mathrm{R}^2$$ space.
+
+{% highlight python %}
+{% raw %}
+# Minimize a function using the downhill simplex algorithm.
+# This algorithm only uses function values, not derivatives or second derivatives.
+trials = Trials()
+best = fmin(objective,
+    space=[hp.uniform('C', -4., 1.), hp.uniform('gamma', -4., 1.)],
+    algo=tpe.suggest,
+    max_evals=1000,
+    trials=trials)
+{% endraw %}
+{% endhighlight %}
+
+Let's print the results:
+
+{% highlight python %}
+{% raw %}
+print(best)
+100%|██████████| 1000/1000 [13:01<00:00,  1.28trial/s, best loss: 0.046323449153816476]
+{'C': 0.7280999882033379, 'gamma': -1.6752085795502363}
+{% endraw %}
+{% endhighlight %}
+
+
+Let us now extract the  value of our objective function for every $$C, \gamma$$ pair:
+
+{% highlight python %}
+{% raw %}
+# Extract the loss for every combination of C, gamma
+results = trials.results
+ar = np.zeros(shape=(1000,3))
+for i, r in enumerate(results):
+    C = r['params']['C']
+    gamma = r['params']['gamma']
+    loss = r['loss']
+    ar[i] = C, gamma, loss
+{% endraw %}
+{% endhighlight %}
+
+And then use it to plot the loss surface:
+
+{% highlight python %}
+{% raw %}
+C, gamma, loss = ar[:, 0], ar[:, 1], ar[:, 2]
+
+fig, ax = plt.subplots(nrows=1)
+ax.tricontour(C, gamma, loss, levels=14, linewidths=0.5, colors='k')
+cntr = ax.tricontourf(C, gamma, loss, levels=14, cmap="RdBu_r")
+
+fig.colorbar(cntr, ax=ax)
+ax.plot(C, gamma, 'ko', ms=1)
+ax.set(xlim=(-4, 1), ylim=(-4, 1))
+plt.title('Loss as a function of $10^C$, $10^\gamma$')
+plt.xlabel('C')
+plt.ylabel('gamma')
+
+plt.show()
+{% endraw %}
+{% endhighlight %}
+
+Since our optimization is just 2-dimensional, the dataset relatively small, and the SVM training fast, we can brute-force compute the value of the objective function for all possible values of $$C, \gamma$$. These will be our ground-truth data against which we will compare the resultss from the BO run.
+
+{% highlight python %}
+{% raw %}
+def sample_loss(args):
+    C, gamma = args
+    model = SVC(C=10 ** C, gamma=10 ** gamma, random_state=12345)
+    loss = 1 - cross_val_score(estimator=model, X=X_train, y=y_train, scoring='roc_auc', cv=3).mean()
+    return loss
+
+lambdas = np.linspace(1, -4, 25)
+gammas = np.linspace(1, -4, 20)
+param_grid = np.array([[C, gamma] for gamma in gammas for C in lambdas])
+
+real_loss = [sample_loss(params) for params in param_grid]
+{% endraw %}
+{% endhighlight %}
+
+And here is the respective contour plot:
+
+{% highlight python %}
+{% raw %}
+C, G = np.meshgrid(lambdas, gammas)
+plt.figure()
+cp = plt.contourf(C, G, np.array(real_loss).reshape(C.shape), cmap="RdBu_r")
+plt.colorbar(cp)
+plt.title('Loss as a function of $10^C$, $10^\gamma$')
+plt.xlabel('$C$')
+plt.ylabel('$\gamma$')
+plt.show()
+{% endraw %}
+{% endhighlight %}
