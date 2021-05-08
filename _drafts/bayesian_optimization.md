@@ -44,15 +44,13 @@ If you have played strategy games, like Age of Empires or Command & Conquer, you
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/bayesian_optimization/age_of_empires.png" alt="Exploitation vs exploration trafeodd">
 </p>
 
-Here, the emphasis on exploitation vs. exploration is explicit and easy to adjust. The UCB function can be seen as the maximum value (argmax) across all solutions of the weighted sum of the expected performance (mean of the Gaussian, μt(x)) and of the uncertainty (standard deviation of the Gaussian, σt(x)) of each solution. This sum is weighted by the κ factor. With a low κ, the algorithm will choose solutions that are expected to be high-performing. Conversely, with a high κ, the algorithm will focus its search on unexplored areas of the search space that may have high-performing solutions. The κ factor enables fine adjustments to the exploitation/exploration trade-off of the algorithm.
-
 In order to find the next point to evaluate, we optimize the acquisition function. This an optimization problem itself, but luckily does not require the evaluation of the objective function. In some cases, we may even derive the exact equation and find a solution with gradient-based optimization, or use any other optimizer. There are three often cited acquisition functions: **expected improvement** (EI), **maximum probability of improvement** (MPI), and **upper confidence bound** (UCB). Although often cited last, I think it's best to talk about UCB because it contains explicit exploitation and exploration terms:
 
 $$
 a_{\text{UCB}}(x;\lambda) = \mu(x) - \lambda \sigma(x)
 $$
 
-WIP
+With UCB, the exploitation *vs.* exploration tradeoff is explicit and easy to tune via the parameter $$\lambda$$. Concretely, we construct a weighted sum of the expected performance capture by $$\mu(x)$$ of the Gaussian Process, and of the uncertainty $$\sigma(x)$$, captured by the standard deviation of the GP. Assuming a small $$\lambda$$, BO will favor solutions that are expected to be high-performing, i.e. have high $$\mu(x)$$. Conversely, high values of $$\lambda$$ will make BO favor the exploration of currently unexplored areas in the search space. 
 
 ### A concrete example
 Let's import some of the stuff we will be using:
