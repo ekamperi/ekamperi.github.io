@@ -66,7 +66,7 @@ X_train, y_train = make_classification(n_samples=2500, n_features=20, n_informat
 {% endraw %}
 {% endhighlight %}
 
-We define our objective/cost/loss function. This is the $$f(\mathbf{x})$$ that we want talked about in the introduction, and $$\mathbf{x} = [C, \gamma]$$ is the domain of the function. Therefore, we want to find the best combination of $$C, \gamma$$ values that minimizes $$f(\mathbf{x})$$. The machine learning model that we will be using is an SVM, and the loss will be derived from the average 3-fold cross-validation score.
+We define our objective/cost/loss function. This is the $$f(\mathbf{x})$$ that we want talked about in the introduction, and $$\mathbf{x} = [C, \gamma]$$ is the domain of the function. Therefore, we want to find the best combination of $$C, \gamma$$ values that minimizes $$f(\mathbf{x})$$. The machine learning model that we will be using is a Support Vector Machine (SVM), and the loss will be derived from the average 3-fold cross-validation score.
 
 {% highlight python %}
 {% raw %}
