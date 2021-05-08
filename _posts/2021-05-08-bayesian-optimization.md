@@ -8,15 +8,20 @@ description: An introduction to Bayesian-based optimization for tuning hyperpara
 ---
 
 ### Introduction
-We died and ended up in [Dante's inferno](https://en.wikipedia.org/wiki/Inferno_(Dante)) -- the optimization version. I.e., we are asked to optimize a function we don't have an analytical expression for. It follows that we don't have access to the first or second derivatives, hence using [gradient descent](https://ekamperi.github.io/machine%20learning/2019/07/28/gradient-descent.html) or [Newton's method](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization) is a no-go. Also, we do not have any convexity guarantees about $$f(x)$$. Therefore, methods from the convex optimization field are also not an option. The only thing we can do is to evaluate $$f(x)$$ at some $$x$$. As if the situation was not bad enough, the function that we want to optimize is very costly to evaluate. Ergo, we can't just go ahead and massively evaluate $$f(x)$$ in, say, 100 billion random points and keep the one $$x$$ that optimizes $$f(x)$$'s value.
+Scene: We died and ended up in [Dante's inferno](https://en.wikipedia.org/wiki/Inferno_(Dante)) -- the optimization version.
+
+We are asked to optimize a function **we don't have an analytic expression** for. It follows that **we don't have access to the first or second derivatives**, hence using [gradient descent](https://ekamperi.github.io/machine%20learning/2019/07/28/gradient-descent.html) or [Newton's method](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization) is a no-go. Also, **we don't have any convexity guarantees** about $$f(x)$$. Therefore, methods from the convex optimization field are also not an option. The only thing we can do is to evaluate $$f(x)$$ at some $$x$$'s. As if the setup was not bad enough, **the function that we want to optimize is very costly to evaluate**. So, we can't just go ahead and massively evaluate $$f(x)$$ in, say, 100 billion random points and keep the one $$x$$ that optimizes $$f(x)$$'s value.
 
 <p align="center">
 <img style="width: 35%; height: 35%" src="{{ site.url }}/images/bayesian_optimization/dante_inferno.png" alt="Dante inferno">
 </p>
 
-To put it another way, we want to optimize an expensive, black-box, derivative-free, possibly non-convex function. And for this kind of problem, Bayesian Optimization (BO) is a very robust method.
+To put it another way, we want to optimize an expensive, black-box, derivative-free, possibly non-convex function. And for this kind of problem, **Bayesian Optimization (BO)** is a robust method.
 
-The evaluation of the function might not even be computational at all. For example, evaluating the function may entail the conduction of some experiment in the lab requiring personnel, supplies, consumables, and waiting for hours or days for the experiment to complete. Another example is the maximization of a function $$f(lat, long)$$ that gives the probability of finding oil if we drill on $$(lat, long)$$ coordinates. Drilling costs lots of money, so unless we have an infinite amount of resources to spare, we need to make good educated guesses, and we need to do so with only a few trials. In other cases, $$f(x)$$ might be the validation error of a neural network whose hyperparameters we would like to tune. So, to sum up, we want to optimize $$f(x)$$ and:
+The evaluation of the function might not even be computational at all. Let me give you a couple of examples, where $$f(x)$$ is not something you can calculate with a computer.
+You are a researcher, and you investigate combinations of chemotherapeutic drugs for their ability to kill cancer cells. You have 20 candidate molecules, and you need to come up with an effective drug combination. Evaluating the objective function $$f(x)$$ in this context entails conducting actual experiments in the lab requiring personnel, consumables and waiting for hours or days for the experiment to complete. Therefore, considering all the 190 combinations is not a realistic approach.
+Another example that you work as a consultant for an oil company, and you need to maximize a probability density function $$f(\text{LAT}, \text{LONG})$$ of finding oil if we drill on $$(\text{LAT}, \text{LONG})$$ coordinates. Drilling costs lots of money, so unless we have an infinite amount of resources to spare, we need to make good educated guesses, and we need to do so with only a few trials.
+In other cases, however, $$f(x)$$ might be computational. For instance, we may define it as the cross-validation error of a machine-learning model, whose hyperparameters we want to tune. So, to sum up, we want to optimize $$f(x)$$ and:
 
 1.	We don’t have a formula for $$f(x)$$
 2.	We don’t have access to its derivatives $$f'(x)$$ and $$f''(x)$$
