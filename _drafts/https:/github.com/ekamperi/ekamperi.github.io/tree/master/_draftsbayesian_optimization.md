@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Bayesian optimization for hyperparameter tuning"
+date:   2021-05-08
 categories: [machine learning]
 tags: [algorithms, 'Bayes theorem', 'neural networks', optimization, programming]
 description: An introduction to Bayesian-based optimization for tuning hyperparameters in machine learning models
