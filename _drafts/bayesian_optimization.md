@@ -1,27 +1,27 @@
 ---
 layout: post
-title:  "Bayesian optimization for hyperparameter tuning"
+title: "Bayesian optimization for hyperparameter tuning"
 categories: [machine learning]
 tags: [algorithms, 'Bayes theorem', 'neural networks', optimization, programming]
 description: An introduction to Bayesian-based optimization for tuning hyperparameters in machine learning models
 ---
 
 ### Introduction
-Imagine that we are trapped in [Dante's inferno](https://en.wikipedia.org/wiki/Inferno_(Dante)) -- the optimization version. I.e., we are asked to optimize a function we don't have an analytical expression for. It follows that we don't have access to the first or second derivatives; hence using [gradient descent](https://ekamperi.github.io/machine%20learning/2019/07/28/gradient-descent.html) or Newton’s method is a no-go. Also, we do not have any convexity guarantees about $$f(x)$$. Therefore, methods from the convex optimization field are also not an option. The only thing we can do is to evaluate $$f(x)$$ at some $$x$$. As if the situation was not bad enough, the function that we want to optimize is very costly to evaluate. Ergo, we can't just go ahead and massively evaluate $$f(x)$$ in, say, 100 billion random points and keep the one $$x$$ that optimizes $$f(x)$$'s value.
+Imagine that we are trapped in [Dante's inferno](https://en.wikipedia.org/wiki/Inferno_(Dante)) -- the optimization version. I.e., we are asked to optimize a function we don't have an analytical expression for. It follows that we don't have access to the first or second derivatives, hence using [gradient descent](https://ekamperi.github.io/machine%20learning/2019/07/28/gradient-descent.html) or Newton's method is a no-go. Also, we do not have any convexity guarantees about $$f(x)$$. Therefore, methods from the convex optimization field are also not an option. The only thing we can do is to evaluate $$f(x)$$ at some $$x$$. As if the situation was not bad enough, the function that we want to optimize is very costly to evaluate. Ergo, we can't just go ahead and massively evaluate $$f(x)$$ in, say, 100 billion random points and keep the one $$x$$ that optimizes $$f(x)$ $'s value.
 
 <p align="center">
 <img style="width: 35%; height: 35%" src="{{ site.url }}/images/bayesian_optimization/dante_inferno.png" alt="Dante inferno">
 </p>
 
-The evaluation of the function might not even be computational at all. For example, evaluating the function may entail the conduction of some experiment in the lab requiring personnel, supplies, consumables, and waiting for hours or days for the experiment to complete. Another example is the maximization of a function $$f(lat, long)$$ that gives the probability of finding oil if we drill on $$(lat, long)$$ coordinates. Drilling costs lots of money, so unless we have an infinite amount of resources to spare, we need to make good educated guesses and we need to do so with only a few trials. In other cases, $$f(x)$$ might be the validation error of a neural network whose hyperparameters we would like to tune. So, to sum up, we want to optimize $$f(x)$$ and:
+The evaluation of the function might not even be computational at all. For example, evaluating the function may entail the conduction of some experiment in the lab requiring personnel, supplies, consumables, and waiting for hours or days for the experiment to complete. Another example is the maximization of a function $$f(lat, long)$$ that gives the probability of finding oil if we drill on $$(lat, long)$$ coordinates. Drilling costs lots of money, so unless we have an infinite amount of resources to spare, we need to make good educated guesses, and we need to do so with only a few trials. In other cases, $$f(x)$$ might be the validation error of a neural network whose hyperparameters we would like to tune. So, to sum up, we want to optimize $$f(x)$$ and:
 
 1.	We don’t have a formula for $$f(x)$$
 2.	We don’t have access to its derivatives $$f'(x)$$ and $$f''(x)$$
-3.	We don’t have any convexity guarantees for $$f(x)$$
+3.	We don't have any convexity guarantees for $$f(x)$$
 4.	$$f(x)$$ is expensive to evaluate
 
 ### The ingredients of Bayesian Optimization
-To put it another way, we want to optimize an expensive, black-box, derivative-free, possibly non-convex function. And for this kind of problem, Bayesian Optimization (BO) is a very robust method. Since we don’t have an expression for the objective function, the first step is to use a surrogate model to approximate $$f(x)$$. It is typical in this context to use [Gaussian Processes (GPs)](https://ekamperi.github.io/mathematics/2021/03/30/gaussian-process-regression.html), as we have already discussed in a previous blog post. It’s vital that you grasp the concept of GPs, and then BO will require almost no mental effort to sink. Once we have built a proxy model for $$f(x)$$, we want to decide which point $$x$$ to sample next. For this, we need an acquisition function, which kind of “reads” the GP and outputs the best guess $$x$$. So, in BO, there are two components: the *surrogate model*, which most often is a Gaussian Process modeling $$f(x)$$, and the *acquisition function* that yields the next $$x$$ to evaluate. Having said that, a BO algorithm would look like this:
+To put it another way, we want to optimize an expensive, black-box, derivative-free, possibly non-convex function. And for this kind of problem, Bayesian Optimization (BO) is a very robust method. Since we don't have an expression for the objective function, the first step is to use a surrogate model to approximate $$f(x)$$. It is typical in this context to use [Gaussian Processes (GPs)](https://ekamperi.github.io/mathematics/2021/03/30/gaussian-process-regression.html), as we have already discussed in a previous blog post. It's vital that you grasp the concept of GPs, and then BO will require almost no mental effort to sink. Once we have built a proxy model for $$f(x)$$, we want to decide which point $$x$$ to sample next. For this, we need an acquisition function, which kind of "reads" the GP and outputs the best guess $$x$$. So, in BO, there are two components: the *surrogate model*, which most often is a Gaussian Process modeling $$f(x)$$, and the *acquisition function* that yields the next $$x$$ to evaluate. Having said that, a BO algorithm would look like this:
 
 1. Evaluate $$f(x)$$ at $$n$$ initial points
 2.	While $$n \le N$$ repeat:
@@ -33,7 +33,7 @@ To put it another way, we want to optimize an expensive, black-box, derivative-f
 3.	Return either the $$x$$ evaluated with the largest $$f(x)$$, or the point with the largest posterior mean.
 
 ### Acquisition function
-As we have already noted, the role of the acquisition function is to guide the next best point to sample f to find the global optimum. Acquisition functions are constructed so that a high value corresponds to potentially high values of the objective function. Either because the prediction is high or the uncertainty is high. So, acquisition functions favor regions that already correspond to optimal values or areas that haven’t been explored yet. This is known as the so-called exploration-exploitation trade-off. There are three often cited acquisition functions: **expected improvement** (EI), **maximum probability of improvement** (MPI), and **upper confidence bound** (UCB). Although often cited last, I think it’s best to talk about UCB because it contains explicit exploitation and exploration terms:
+As we have already noted, the role of the acquisition function is to guide the next best point to sample f to find the global optimum. Acquisition functions are constructed so that a high value corresponds to potentially high values of the objective function. Either because the prediction is high or the uncertainty is high. So, acquisition functions favor regions that already correspond to optimal values or areas that haven't been explored yet. This is known as the so-called exploration-exploitation trade-off. There are three often cited acquisition functions: **expected improvement** (EI), **maximum probability of improvement** (MPI), and **upper confidence bound** (UCB). Although often cited last, I think it's best to talk about UCB because it contains explicit exploitation and exploration terms:
 
 $$
 a_{\text{UCB}}(x;\lambda) = \mu(x) - \lambda \sigma(x)
@@ -57,7 +57,7 @@ from hyperopt import fmin, tpe, Trials, hp, STATUS_OK
 {% endraw %}
 {% endhighlight %}
 
-Then, we construct an artificial training dataset with many classes, where some of the features are informative and some are not:
+Then, we construct an artificial training dataset with many classes, where some of the features are informative, and some are not:
 
 {% highlight python %}
 {% raw %}
@@ -76,7 +76,7 @@ We define our objective/cost/loss function. This is the $$f(\mathbf{x})$$ that w
 {% highlight python %}
 {% raw %}
 def objective(args):
-    '''Define the loss function / objective of our model.
+    "'Define the loss function / objective of our model.
 
     We will be using an SVM parameterized by the regularization parameter C
     and the parameter gamma.
@@ -162,7 +162,7 @@ plt.show()
 </p>
 
 
-Since our optimization is just 2-dimensional, the dataset relatively small, and the SVM training fast, we can brute-force compute the value of the objective function for all possible values of $$C, \gamma$$. These will be our ground-truth data against which we will compare the resultss from the BO run.
+Since our optimization is just 2-dimensional, the dataset relatively small, and the SVM training fast, we can brute-force compute the value of the objective function for all possible values of $$C, \gamma$$. These will be our ground-truth data against which we will compare the results from the BO run.
 
 {% highlight python %}
 {% raw %}
@@ -199,7 +199,7 @@ plt.show()
 <img style="width: 70%; height: 70%" src="{{ site.url }}/images/bayesian_optimization/ground_truth.png" alt="Bayesian optimization">
 </p>
 
-Let's place the two plots side-by-side and talk about the results. In the **left plot** we see the ground-truth values of the loss function, that we acquired by computing the value $$\ell(C, \gamma)$$ for every possible pair of $$(C, \gamma)$$ via a grid-search. You see the blue shaded region corresponding to low values for the loss function (good!), and also the red stripe at the top corresponding to high values for the loss function (bad!). In the **right plot** we see the black points corresponding to the values that we tried. Do you notice how there is high density of points near the blue shaded arrea where $$\ell(C,\gamma)$$ is minimzed? That's exploitation! The BO algorithm picked up that there are some good solutions into that area, and sampled aggressively around that region.
+Let's place the two plots side-by-side and talk about the results. In the **left image**, we see the ground-truth values of the loss function that we acquired by computing the value $$\ell(C, \gamma)$$ for every possible pair of $$(C, \gamma)$$ via a grid-search. You see the blue shaded region corresponding to low values for the loss function (good!) and the red stripe at the top corresponding to high values for the loss function (bad!). In the **right image**, we see the black points corresponding to our tried values. Do you notice how there is a high density of points near the blue shaded area where $$\ell(C,\gamma)$$ is minimized? That's **exploitation**! The BO algorithm picked up some good solutions into that area and sampled aggressively around that region. On the contrary, it tried some values near the top red stripe region, and since those trials yielded bad results, it didn't bother sampling any further there.
 
 Ground-truth values             |  Bayesian Optimization
 :--------------------------------------------------:|:-------------------------:
