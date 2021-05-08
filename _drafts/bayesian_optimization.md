@@ -13,6 +13,8 @@ Imagine that we are trapped in [Dante's inferno](https://en.wikipedia.org/wiki/I
 <img style="width: 35%; height: 35%" src="{{ site.url }}/images/bayesian_optimization/dante_inferno.png" alt="Dante inferno">
 </p>
 
+To put it another way, we want to optimize an expensive, black-box, derivative-free, possibly non-convex function. And for this kind of problem, Bayesian Optimization (BO) is a very robust method.
+
 The evaluation of the function might not even be computational at all. For example, evaluating the function may entail the conduction of some experiment in the lab requiring personnel, supplies, consumables, and waiting for hours or days for the experiment to complete. Another example is the maximization of a function $$f(lat, long)$$ that gives the probability of finding oil if we drill on $$(lat, long)$$ coordinates. Drilling costs lots of money, so unless we have an infinite amount of resources to spare, we need to make good educated guesses, and we need to do so with only a few trials. In other cases, $$f(x)$$ might be the validation error of a neural network whose hyperparameters we would like to tune. So, to sum up, we want to optimize $$f(x)$$ and:
 
 1.	We don’t have a formula for $$f(x)$$
@@ -22,7 +24,7 @@ The evaluation of the function might not even be computational at all. For examp
 
 ### The ingredients of Bayesian Optimization
 #### Gaussian Processes
-To put it another way, we want to optimize an expensive, black-box, derivative-free, possibly non-convex function. And for this kind of problem, Bayesian Optimization (BO) is a very robust method. Since we don't have an expression for the objective function, the first step is to use a surrogate model to approximate $$f(x)$$. It is typical in this context to use [Gaussian Processes (GPs)](https://ekamperi.github.io/mathematics/2021/03/30/gaussian-process-regression.html), as we have already discussed in a previous blog post. It's vital that you grasp the concept of GPs, and then BO will require almost no mental effort to sink. Once we have built a proxy model for $$f(x)$$, we want to decide which point $$x$$ to sample next. For this, we need an acquisition function, which kind of "reads" the GP and outputs the best guess $$x$$. So, in BO, there are two components: the *surrogate model*, which most often is a Gaussian Process modeling $$f(x)$$, and the *acquisition function* that yields the next $$x$$ to evaluate. Having said that, a BO algorithm would look like this:
+ Since we don't have an expression for the objective function, the first step is to use a surrogate model to approximate $$f(x)$$. It is typical in this context to use [Gaussian Processes (GPs)](https://ekamperi.github.io/mathematics/2021/03/30/gaussian-process-regression.html), as we have already discussed in a previous blog post. It's vital that you grasp the concept of GPs, and then BO will require almost no mental effort to sink. Once we have built a proxy model for $$f(x)$$, we want to decide which point $$x$$ to sample next. For this, we need an acquisition function, which kind of "reads" the GP and outputs the best guess $$x$$. So, in BO, there are two components: the *surrogate model*, which most often is a Gaussian Process modeling $$f(x)$$, and the *acquisition function* that yields the next $$x$$ to evaluate. Having said that, a BO algorithm would look like this:
 
 1. Evaluate $$f(x)$$ at $$n$$ initial points
 2.	While $$n \le N$$ repeat:
