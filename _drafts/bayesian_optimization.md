@@ -198,3 +198,7 @@ plt.show()
 <p align="center">
 <img style="width: 70%; height: 70%" src="{{ site.url }}/images/bayesian_optimization/ground_truth.png" alt="Bayesian optimization">
 </p>
+
+Ground-truth values             |  Bayesian Optimization
+:--------------------------------------------------:|:-------------------------:
+![]({{ site.url }}/images/bayesian_optimization/ground_truth.png)  |  ![]({{ site.url }}/images/bayesian_optimization/bayesian_optimization.png)
