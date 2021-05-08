@@ -8,7 +8,7 @@ description: An introduction to Bayesian-based optimization for tuning hyperpara
 ---
 
 ### Introduction
-Scene: We died and ended up in [Dante's inferno](https://en.wikipedia.org/wiki/Inferno_(Dante)) -- the optimization version.
+Plot: We died and ended up in [Dante's inferno](https://en.wikipedia.org/wiki/Inferno_(Dante)) -- the optimization version.
 
 We are asked to optimize a function **we don't have an analytic expression** for. It follows that **we don't have access to the first or second derivatives**, hence using [gradient descent](https://ekamperi.github.io/machine%20learning/2019/07/28/gradient-descent.html) or [Newton's method](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization) is a no-go. Also, **we don't have any convexity guarantees** about $$f(x)$$. Therefore, methods from the convex optimization field are also not an option. The only thing we can do is to evaluate $$f(x)$$ at some $$x$$'s. As if the situation was not bad enough, **the function that we want to optimize is very costly**. So, we can't just go ahead and massively evaluate $$f(x)$$ in, say, 100 billion random points and keep the one $$x$$ that optimizes $$f(x)$$'s value.
 
