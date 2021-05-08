@@ -95,7 +95,7 @@ def objective(args):
 {% endraw %}
 {% endhighlight %}
 
-Now, we will use the `fmin` function from the `scipy.optimize` package. Internally, `fmin` uses a [Nelder-Mead simplex algorithm](https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method) to find the minimum of function of one or more variables. This algorithm has been show to work well in many applications. However, compared to methods using first/second derivatives, like gradient descent or Newton's method, it is slower. For very high-dimensional problems, it can perform poorly, however we are merely working on the $$\mathrm{R}^2$$ space.
+Now, we will use the `fmin` function from the `hyperopt` package.
 
 {% highlight python %}
 {% raw %}
@@ -198,6 +198,8 @@ plt.show()
 <p align="center">
 <img style="width: 70%; height: 70%" src="{{ site.url }}/images/bayesian_optimization/ground_truth.png" alt="Bayesian optimization">
 </p>
+
+Let's place the two plots side-by-side and talk about the results. In the left plot we see the ground-truth values of the loss function, that we acquired by computing the value $$\ell(C, \gamma)$$ for every possible pair of $$(C, \gamma)$$ via a grid-search. You see the blue shaded region corresponding to low values for the loss function (good!), and also the red stripe at the top corresponding to high values for the loss function (bad!). In the right plot we see the black points corresponding to the values that we tried. Do you notice how there is high density of points near the blue shaded arrea where $$\ell(C,\gamma)$$ is minimzed? That's exploitation! The BO algorithm picked up that there are some good solutions into that area, and sampled aggressively around that region.
 
 Ground-truth values             |  Bayesian Optimization
 :--------------------------------------------------:|:-------------------------:
