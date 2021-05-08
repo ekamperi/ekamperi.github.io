@@ -8,7 +8,7 @@ description: An introduction to Bayesian-based optimization for tuning hyperpara
 ---
 
 ### Introduction
-Imagine that we are trapped in [Dante's inferno](https://en.wikipedia.org/wiki/Inferno_(Dante)) -- the optimization version. I.e., we are asked to optimize a function we don't have an analytical expression for. It follows that we don't have access to the first or second derivatives, hence using [gradient descent](https://ekamperi.github.io/machine%20learning/2019/07/28/gradient-descent.html) or [Newton's method](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization) is a no-go. Also, we do not have any convexity guarantees about $$f(x)$$. Therefore, methods from the convex optimization field are also not an option. The only thing we can do is to evaluate $$f(x)$$ at some $$x$$. As if the situation was not bad enough, the function that we want to optimize is very costly to evaluate. Ergo, we can't just go ahead and massively evaluate $$f(x)$$ in, say, 100 billion random points and keep the one $$x$$ that optimizes $$f(x)$$'s value.
+We died and ended up in [Dante's inferno](https://en.wikipedia.org/wiki/Inferno_(Dante)) -- the optimization version. I.e., we are asked to optimize a function we don't have an analytical expression for. It follows that we don't have access to the first or second derivatives, hence using [gradient descent](https://ekamperi.github.io/machine%20learning/2019/07/28/gradient-descent.html) or [Newton's method](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization) is a no-go. Also, we do not have any convexity guarantees about $$f(x)$$. Therefore, methods from the convex optimization field are also not an option. The only thing we can do is to evaluate $$f(x)$$ at some $$x$$. As if the situation was not bad enough, the function that we want to optimize is very costly to evaluate. Ergo, we can't just go ahead and massively evaluate $$f(x)$$ in, say, 100 billion random points and keep the one $$x$$ that optimizes $$f(x)$$'s value.
 
 <p align="center">
 <img style="width: 35%; height: 35%" src="{{ site.url }}/images/bayesian_optimization/dante_inferno.png" alt="Dante inferno">
@@ -39,19 +39,19 @@ The evaluation of the function might not even be computational at all. For examp
 #### Acquisition function
 As we have already noted, the role of the acquisition function is to guide the next best point to sample $$f$$. Acquisition functions are constructed so that a high value corresponds to potentially high values of the objective function. Either because the prediction is high or because the uncertainty is high. So, acquisition functions favor regions that already correspond to optimal values or areas that haven't been explored yet. This is known as the so-called **exploration-exploitation trade-off**.
 
-If you have played strategy games, like Age of Empires or Command & Conquer, you are already familiar with the concept. Initially we are placed at some part of the map and only the near are is visible to us. We may choose to sit there and mine any resources we might already have access to, or send a scouter to explore the inivisible part of the map, risking to meet the enemy and getting killed but also to discover some high-value resource.
+If you have played strategy games, like Age of Empires or Command & Conquer, you are already familiar with the concept. Initially, we are placed at some part of the map, and only the immediate area is visible to us. We may choose to sit there and mine any resources we already have access to or send a scouter to explore the invisible part of the map. By exploring the map, we risk meeting the enemy and getting killed, but also, we may find some high-value resources.
 
 <p align="center">
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/bayesian_optimization/age_of_empires.png" alt="Exploitation vs exploration trafeodd">
 </p>
 
-In order to find the next point to evaluate, we optimize the acquisition function. This an optimization problem itself, but luckily does not require the evaluation of the objective function. In some cases, we may even derive the exact equation and find a solution with gradient-based optimization, or use any other optimizer. There are three often cited acquisition functions: **expected improvement** (EI), **maximum probability of improvement** (MPI), and **upper confidence bound** (UCB). Although often cited last, I think it's best to talk about UCB because it contains explicit exploitation and exploration terms:
+To find the next point to evaluate, we optimize the acquisition function. This an optimization problem itself, but luckily does not require the evaluation of the objective function. In some cases, we may even derive the exact equation and find a solution with, say, gradient-based optimization. There are three often cited acquisition functions: **expected improvement** (EI), **maximum probability of improvement** (MPI), and **upper confidence bound** (UCB). Although often cited last, I think it's best to talk about UCB because it contains explicit exploitation and exploration terms:
 
 $$
 a_{\text{UCB}}(x;\lambda) = \mu(x) + \lambda \sigma(x)
 $$
 
-With UCB, the exploitation *vs.* exploration tradeoff is explicit and easy to tune via the parameter $$\lambda$$. Concretely, we construct a weighted sum of the expected performance capture by $$\mu(x)$$ of the Gaussian Process, and of the uncertainty $$\sigma(x)$$, captured by the standard deviation of the GP. Assuming a small $$\lambda$$, BO will favor solutions that are expected to be high-performing, i.e. have high $$\mu(x)$$. Conversely, high values of $$\lambda$$ will make BO favor the exploration of currently unexplored areas in the search space. 
+With UCB, the exploitation *vs.* exploration trade-off is explicit and easy to tune via the parameter $$\lambda$$. Concretely, we construct a weighted sum of the expected performance captured by $$\mu(x)$$ of the Gaussian Process, and of the uncertainty $$\sigma(x)$$, captured by the standard deviation of the GP. Assuming a small $$\lambda$$, BO will favor solutions that are expected to be high-performing, i.e., have high $$\mu(x)$$. Conversely, high values of $$\lambda$$ will make BO favor the exploration of currently uncharted areas in the search space. 
 
 ### A concrete example
 Let's import some of the stuff we will be using:
