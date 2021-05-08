@@ -7,7 +7,7 @@ description: An introduction to Bayesian-based optimization for tuning hyperpara
 ---
 
 ### Introduction
-Imagine that we are trapped in [Dante's inferno](https://en.wikipedia.org/wiki/Inferno_(Dante)) -- the optimization version. I.e., we are asked to optimize a function we don't have an analytical expression for. It follows that we don't have access to the first or second derivatives, hence using [gradient descent](https://ekamperi.github.io/machine%20learning/2019/07/28/gradient-descent.html) or Newton's method is a no-go. Also, we do not have any convexity guarantees about $$f(x)$$. Therefore, methods from the convex optimization field are also not an option. The only thing we can do is to evaluate $$f(x)$$ at some $$x$$. As if the situation was not bad enough, the function that we want to optimize is very costly to evaluate. Ergo, we can't just go ahead and massively evaluate $$f(x)$$ in, say, 100 billion random points and keep the one $$x$$ that optimizes $$f(x)$ $'s value.
+Imagine that we are trapped in [Dante's inferno](https://en.wikipedia.org/wiki/Inferno_(Dante)) -- the optimization version. I.e., we are asked to optimize a function we don't have an analytical expression for. It follows that we don't have access to the first or second derivatives, hence using [gradient descent](https://ekamperi.github.io/machine%20learning/2019/07/28/gradient-descent.html) or Newton's method is a no-go. Also, we do not have any convexity guarantees about $$f(x)$$. Therefore, methods from the convex optimization field are also not an option. The only thing we can do is to evaluate $$f(x)$$ at some $$x$$. As if the situation was not bad enough, the function that we want to optimize is very costly to evaluate. Ergo, we can't just go ahead and massively evaluate $$f(x)$$ in, say, 100 billion random points and keep the one $$x$$ that optimizes $$f(x)$$'s value.
 
 <p align="center">
 <img style="width: 35%; height: 35%" src="{{ site.url }}/images/bayesian_optimization/dante_inferno.png" alt="Dante inferno">
@@ -21,6 +21,7 @@ The evaluation of the function might not even be computational at all. For examp
 4.	$$f(x)$$ is expensive to evaluate
 
 ### The ingredients of Bayesian Optimization
+#### Gaussian Processes
 To put it another way, we want to optimize an expensive, black-box, derivative-free, possibly non-convex function. And for this kind of problem, Bayesian Optimization (BO) is a very robust method. Since we don't have an expression for the objective function, the first step is to use a surrogate model to approximate $$f(x)$$. It is typical in this context to use [Gaussian Processes (GPs)](https://ekamperi.github.io/mathematics/2021/03/30/gaussian-process-regression.html), as we have already discussed in a previous blog post. It's vital that you grasp the concept of GPs, and then BO will require almost no mental effort to sink. Once we have built a proxy model for $$f(x)$$, we want to decide which point $$x$$ to sample next. For this, we need an acquisition function, which kind of "reads" the GP and outputs the best guess $$x$$. So, in BO, there are two components: the *surrogate model*, which most often is a Gaussian Process modeling $$f(x)$$, and the *acquisition function* that yields the next $$x$$ to evaluate. Having said that, a BO algorithm would look like this:
 
 1. Evaluate $$f(x)$$ at $$n$$ initial points
@@ -32,7 +33,7 @@ To put it another way, we want to optimize an expensive, black-box, derivative-f
     * Increment $$n$$
 3.	Return either the $$x$$ evaluated with the largest $$f(x)$$, or the point with the largest posterior mean.
 
-### Acquisition function
+#### Acquisition function
 As we have already noted, the role of the acquisition function is to guide the next best point to sample f to find the global optimum. Acquisition functions are constructed so that a high value corresponds to potentially high values of the objective function. Either because the prediction is high or the uncertainty is high. So, acquisition functions favor regions that already correspond to optimal values or areas that haven't been explored yet. This is known as the so-called exploration-exploitation trade-off. There are three often cited acquisition functions: **expected improvement** (EI), **maximum probability of improvement** (MPI), and **upper confidence bound** (UCB). Although often cited last, I think it's best to talk about UCB because it contains explicit exploitation and exploration terms:
 
 $$
