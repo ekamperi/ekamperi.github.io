@@ -3,7 +3,7 @@ layout: post
 title:  "GitHub analytics with Mathematica"
 date:   2020-10-14
 categories: [programming]
-tags: ['GitHub', 'GraphQL', 'git', 'JSON', 'Mathematica', 'Programming', 'REST API']
+tags: ['GitHub', 'GraphQL', 'git', 'JSON', 'Mathematica', 'programming', 'REST API']
 description: How to generate analytics from your GitHub account using Mathematica and GitHub's REST API.
 ---
 
