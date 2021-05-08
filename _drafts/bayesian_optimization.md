@@ -152,6 +152,11 @@ plt.show()
 {% endraw %}
 {% endhighlight %}
 
+<p align="center">
+<img style="width: 70%; height: 70%" src="{{ site.url }}/images/bayesian_optimization/bayesian_optimization.png" alt="Bayesian optimizationy">
+</p>
+
+
 Since our optimization is just 2-dimensional, the dataset relatively small, and the SVM training fast, we can brute-force compute the value of the objective function for all possible values of $$C, \gamma$$. These will be our ground-truth data against which we will compare the resultss from the BO run.
 
 {% highlight python %}
@@ -184,3 +189,7 @@ plt.ylabel('$\gamma$')
 plt.show()
 {% endraw %}
 {% endhighlight %}
+
+<p align="center">
+<img style="width: 70%; height: 70%" src="{{ site.url }}/images/bayesian_optimization/ground_truth.png" alt="Bayesian optimizationy">
+</p>
