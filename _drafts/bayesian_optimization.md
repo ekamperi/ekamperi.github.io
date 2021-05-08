@@ -95,7 +95,7 @@ def objective(args):
 {% endraw %}
 {% endhighlight %}
 
-Now, we will use the `fmin` function from the `scipy.optimize` package. Internally, `fmin` uses a Nelder-Mead simplex algorithm to find the minimum of function of one or more variables. This algorithm has been show to work well in many applications. However, compared to methods using first/second derivatives, like gradient descent or Newton's method, it is slower. For very high-dimensional problems, it can perform poorly, however we are merely working on the $$\mathrm{R}^2$$ space.
+Now, we will use the `fmin` function from the `scipy.optimize` package. Internally, `fmin` uses a [Nelder-Mead simplex algorithm](https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method) to find the minimum of function of one or more variables. This algorithm has been show to work well in many applications. However, compared to methods using first/second derivatives, like gradient descent or Newton's method, it is slower. For very high-dimensional problems, it can perform poorly, however we are merely working on the $$\mathrm{R}^2$$ space.
 
 {% highlight python %}
 {% raw %}
