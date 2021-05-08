@@ -153,7 +153,7 @@ plt.show()
 {% endhighlight %}
 
 <p align="center">
-<img style="width: 70%; height: 70%" src="{{ site.url }}/images/bayesian_optimization/bayesian_optimization.png" alt="Bayesian optimizationy">
+<img style="width: 70%; height: 70%" src="{{ site.url }}/images/bayesian_optimization/bayesian_optimization.png" alt="Bayesian optimization">
 </p>
 
 
@@ -191,5 +191,5 @@ plt.show()
 {% endhighlight %}
 
 <p align="center">
-<img style="width: 70%; height: 70%" src="{{ site.url }}/images/bayesian_optimization/ground_truth.png" alt="Bayesian optimizationy">
+<img style="width: 70%; height: 70%" src="{{ site.url }}/images/bayesian_optimization/ground_truth.png" alt="Bayesian optimization">
 </p>
