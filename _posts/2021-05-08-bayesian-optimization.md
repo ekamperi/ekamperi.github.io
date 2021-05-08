@@ -48,7 +48,7 @@ If you have played strategy games, like Age of Empires or Command & Conquer, you
 In order to find the next point to evaluate, we optimize the acquisition function. This an optimization problem itself, but luckily does not require the evaluation of the objective function. In some cases, we may even derive the exact equation and find a solution with gradient-based optimization, or use any other optimizer. There are three often cited acquisition functions: **expected improvement** (EI), **maximum probability of improvement** (MPI), and **upper confidence bound** (UCB). Although often cited last, I think it's best to talk about UCB because it contains explicit exploitation and exploration terms:
 
 $$
-a_{\text{UCB}}(x;\lambda) = \mu(x) - \lambda \sigma(x)
+a_{\text{UCB}}(x;\lambda) = \mu(x) + \lambda \sigma(x)
 $$
 
 With UCB, the exploitation *vs.* exploration tradeoff is explicit and easy to tune via the parameter $$\lambda$$. Concretely, we construct a weighted sum of the expected performance capture by $$\mu(x)$$ of the Gaussian Process, and of the uncertainty $$\sigma(x)$$, captured by the standard deviation of the GP. Assuming a small $$\lambda$$, BO will favor solutions that are expected to be high-performing, i.e. have high $$\mu(x)$$. Conversely, high values of $$\lambda$$ will make BO favor the exploration of currently unexplored areas in the search space. 
