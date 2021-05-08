@@ -16,9 +16,7 @@ We are asked to optimize a function **we don't have an analytic expression** for
 <img style="width: 35%; height: 35%" src="{{ site.url }}/images/bayesian_optimization/dante_inferno.png" alt="Dante inferno">
 </p>
 
-To put it another way, we want to optimize an expensive, black-box, derivative-free, possibly non-convex function. And for this kind of problem, **Bayesian Optimization (BO)** is a robust method.
-
-The evaluation of the function might not even be computational at all. Let me give you a couple of examples, where $$f(x)$$ is not something you can calculate with a computer.
+To put it another way, we want to optimize an expensive, black-box, derivative-free, possibly non-convex function. And for this kind of problem, **Bayesian Optimization (BO)** is a generic and robust method. Mind that the evaluation of the objective function might not even be computational at all. Let me give you a couple of examples, where $$f(x)$$ is not something you can calculate with a computer.
 1. You are a researcher, and you investigate combinations of chemotherapeutic drugs for their ability to kill cancer cells. You have 20 candidate molecules, and you need to come up with an effective drug combination. Evaluating the objective function $$f(x)$$ in this context entails conducting actual experiments in the lab requiring personnel, consumables and waiting for hours or days for the experiment to complete. Therefore, considering all the 190 combinations is not a realistic approach.
 2. You work as a consultant for an oil company, and you need to maximize a probability density function $$f(\text{LAT}, \text{LONG})$$ of finding oil if we drill on $$(\text{LAT}, \text{LONG})$$ coordinates. Drilling costs lots of money, therefore we need to make good educated guesses, and we need to do so with only a few trials.
 
