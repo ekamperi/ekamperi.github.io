@@ -158,11 +158,10 @@ plt.show()
 {% endhighlight %}
 
 <p align="center">
-<img style="width: 70%; height: 70%" src="{{ site.url }}/images/bayesian_optimization/bayesian_optimization.png" alt="Bayesian optimization">
+<img style="width: 65%; height: 65%" src="{{ site.url }}/images/bayesian_optimization/bayesian_optimization.png" alt="Bayesian optimization">
 </p>
 
-
-Since our optimization is just 2-dimensional, the dataset relatively small, and the SVM training fast, we can brute-force compute the value of the objective function for all possible values of $$C, \gamma$$. These will be our ground-truth data against which we will compare the results from the BO run.
+Since the parameter space is just 2-dimensional, the dataset relatively small, and the SVM training fast, we can brute-force compute the value of the objective function for all possible values of $$C$$ and $$\gamma$$. These will be our ground-truth data against which we will compare the results from the BO run.
 
 {% highlight python %}
 {% raw %}
@@ -196,7 +195,7 @@ plt.show()
 {% endhighlight %}
 
 <p align="center">
-<img style="width: 70%; height: 70%" src="{{ site.url }}/images/bayesian_optimization/ground_truth.png" alt="Bayesian optimization">
+<img style="width: 65%; height: 65%" src="{{ site.url }}/images/bayesian_optimization/ground_truth.png" alt="Bayesian optimization">
 </p>
 
 Let's place the two plots side-by-side and talk about the results. In the **left image**, we see the ground-truth values of the loss function that we acquired by computing the value $$\ell(C, \gamma)$$ for every possible pair of $$(C, \gamma)$$ via a grid-search. You see the blue shaded region corresponding to low values for the loss function (good!) and the red stripe at the top corresponding to high values for the loss function (bad!). In the **right image**, we see the black points corresponding to our tried values. Do you notice how there is a high density of points near the blue shaded area where $$\ell(C,\gamma)$$ is minimized? That's **exploitation**! The BO algorithm picked up some good solutions into that area and sampled aggressively around that region. On the contrary, it tried some values near the top red stripe region, and since those trials yielded bad results, it didn't bother sampling any further there.
