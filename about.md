@@ -57,12 +57,16 @@ I audited DragonflyBSD operating system against the latest POSIX and C99 standar
 *	Wrote a web user interface in PHP for tracking conformance status, backed by PostgreSQL
 
 # Academic
+## Master thesis in Computational Physics
 <p float="left">
 <img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/geant4_logo.png" alt="Geant4 logo">
 <img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/monte_carlo_logo.png" alt="Monte Carlo logo">
 </p>
 [You can read my first master thesis](http://ikee.lib.auth.gr/record/289589/files/GRI-2017-19273.pdf?version=1), where I used [Geant4](https://geant4.web.cern.ch/node/1) to run Monte Carlo simulations of external photon beams in human phantoms. Regrettably, the text is in Greek, but you might find the images and the code excerpts useful.
 
+<hr>
+
+## Master thesis in Medical Research Methodology
 <p float="left">
 <img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/r_logo.png" alt="R logo">
 <img style="width: 13%; height: 13%" src="{{ site.url }}/images/logos/scikit_logo.png" alt="Scikit logo">
