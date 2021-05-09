@@ -63,6 +63,14 @@ $$
 
 With UCB, the exploitation *vs.* exploration trade-off is explicit and easy to tune via the parameter $$\lambda$$. Concretely, we construct a weighted sum of the expected performance captured by $$\mu(x)$$ of the Gaussian Process, and of the uncertainty $$\sigma(x)$$, captured by the standard deviation of the GP. Assuming a small $$\lambda$$, BO will favor solutions that are expected to be high-performing, i.e., have high $$\mu(x)$$. Conversely, high values of $$\lambda$$ will make BO favor the exploration of currently uncharted areas in the search space. 
 
+Here is an example of a Gaussian Process along with the corresponding acquisition function. This is a 1 dimensional optimization problem. The black dots are our measurements, i.e. the x's that we have already sampled $$f(x))$$. The black dotted line is the objective function, and the black solid line is our surrogate model of it, i.e., our posterior Gaussian Process. The blue shaded area captures the uncertainty of our surrogate model, $$\sigma(x)$$, corresponding to regions in the domain of the objective function that we don't have any observations. The green line is the acquision function, which will guide us on what point $$x$$ to sample next. Notice that it takes high values in regions where our GP $$\mu(x)$$ is high and also $$\sigma(x)$$ is high.
+
+<p align="center">
+<img style="width: 80%; height: 80%" src="{{ site.url }}/images/bayesian_optimization/gaussian_process_acquision_function.png" alt="Exploitation vs exploration trafeodd">
+</p>
+Image taken [from here](https://towardsdatascience.com/shallow-understanding-on-bayesian-optimization-324b6c1f7083).
+
+
 This was a shallow introduction on how a Bayesian Optimization algorithm works under the hood. Next, we will use a third party library to tune an SVM's hyperparameters. In the future, we will talk more about BO, perhaps by implementing our own algorithm with GPs, acquisition functions and all.
 
 ### A concrete example
