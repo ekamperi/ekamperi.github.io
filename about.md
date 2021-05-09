@@ -13,7 +13,7 @@ My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist]
 <p float="left">
 <img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
 <img style="width: 7%; height: 7%" src="{{ site.url }}/images/logos/cern_logo.png" alt="CERN logo">
-<img style="width: 16%; height: 16%" src="{{ site.url }}/images/logos/geant4_logo.png" alt="Geant4 logo">
+<img style="width: 18%; height: 18%" src="{{ site.url }}/images/logos/geant4_logo.png" alt="Geant4 logo">
 <img style="width: 14%; height: 14%" src="{{ site.url }}/images/logos/solaris_logo.png" alt="Solaris logo">
 </p>
 
@@ -27,7 +27,7 @@ For more details, check [this link](https://ekamperi.github.io/Geant4).
 
 ### Auditng and extending NetBSD's math library
 <p float="left">
-<img style="width: 13%; height: 13%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
+<img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
 <img style="width: 11%; height: 11%" src="{{ site.url }}/images/logos/netbsd_logo.png" alt="NetBSD logo">
 <img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/amd64_logo.png" alt="AMD64 logo">
 </p>
@@ -44,7 +44,7 @@ For more details, check [this link](https://ekamperi.github.io/Mathlib/).
 
 ### Auditing DragonFlyBSD's POSIX/C99 conformance
 <p float="left">
-<img style="width: 13%; height: 13%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
+<img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
 <img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/dflybsd_logo.png" alt="DragonFlyBSD logo">
 <img style="width: 11%; height: 11%" src="{{ site.url }}/images/logos/netbsd_logo.png" alt="NetBSD logo">
 <img style="width: 11%; height: 11%" src="{{ site.url }}/images/logos/linux_logo.png" alt="Linux logo">
@@ -59,8 +59,8 @@ I audited DragonflyBSD operating system against the latest POSIX and C99 standar
 # Academic
 ## Master thesis in Computational Physics
 <p float="left">
-<img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/geant4_logo.png" alt="Geant4 logo">
-<img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/monte_carlo_logo.png" alt="Monte Carlo logo">
+<img style="width: 18%; height: 18%" src="{{ site.url }}/images/logos/geant4_logo.png" alt="Geant4 logo">
+<img style="width: 12%; height: 12%" src="{{ site.url }}/images/logos/monte_carlo_logo.png" alt="Monte Carlo logo">
 </p>
 [You can read my first master thesis](http://ikee.lib.auth.gr/record/289589/files/GRI-2017-19273.pdf?version=1), where I used [Geant4](https://geant4.web.cern.ch/node/1) to run Monte Carlo simulations of external photon beams in human phantoms. Regrettably, the text is in Greek, but you might find the images and the code excerpts useful.
 
