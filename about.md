@@ -13,6 +13,7 @@ My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist]
 <p float="left">
 <img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
 <img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/cern_logo.png" alt="CERN's logo">
+<img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/solaris_logo.png" alt="CERN's logo">
 </p>
 
 I ported Geant4 to Solaris, used DTrace to debug performance issues, and implemented a smart particle bunching algorithm to reduce cache misses. Detailed information: https://ekamperi.github.io/Geant4
@@ -20,7 +21,7 @@ I ported Geant4 to Solaris, used DTrace to debug performance issues, and impleme
 ### NetBSD math library
 <p float="left">
 <img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
-<img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/netbsd_logo.png" alt="CERN's logo">
+<img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/netbsd_logo.png" alt="NetBSD logo">
 </p>
 
 I audited and extended NetBSD's operating system math library. Detailed information: https://ekamperi.github.io/Mathlib/
@@ -28,7 +29,7 @@ I audited and extended NetBSD's operating system math library. Detailed informat
 ### DragonFlyBSD
 <p float="left">
 <img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
-<img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/dflybsd_logo.png" alt="CERN's logo">
+<img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/dflybsd_logo.png" alt="DragonFlyBSD logo">
 </p>
 
 I audited DragonflyBSD operating system against the latest POSIX and C99 standards.
