@@ -12,7 +12,7 @@ My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist]
 ## DICOM viewer
 
 <p float="left">
-<img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/dicom_logo.png" alt="DICOM logo">
+<img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/dicom_logo.jpg" alt="DICOM logo">
 <img style="width: 7%; height: 7%" src="{{ site.url }}/images/logos/opengl_logo.png" alt="Opengl logo">
 </p>
 
