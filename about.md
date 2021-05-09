@@ -9,12 +9,19 @@ My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist]
 
 # Hands-on experience
 ## Google Summer of Code
+### CERN's Geant4 high energy physics simulation framework
 <p align="center">
-<img style="width: 80%; height: 80%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
+<img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
+</p>
+
+I ported Geant4 to Solaris, used DTrace to debug performance issues, and implemented a smart particle bunching algorithm to reduce cache misses. Detailed information: https://ekamperi.github.io/Geant4
+
+### NetBSD math library
+<p align="center">
+<img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/netbsd_logo.png" alt="Google logo">
 </p>
 
 CERN's Geant4 high energy physics simulation framework. I ported Geant4 to Solaris, used DTrace to debug performance issues, and implemented a smart particle bunching algorithm to reduce cache misses. Detailed information: https://ekamperi.github.io/Geant4
-
 
 # Academic
 [You can read my first master thesis](http://ikee.lib.auth.gr/record/289589/files/GRI-2017-19273.pdf?version=1), where I used [Geant4](https://geant4.web.cern.ch/node/1) to run Monte Carlo simulations of external photon beams in human phantoms. Regrettably, the text is in Greek, but you might find the images and the code excerpts useful.
