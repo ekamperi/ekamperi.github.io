@@ -11,8 +11,8 @@ My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist]
 ## Google Summer of Code
 ### Profiling CERN's Geant4 high energy physics simulation framework
 <p float="left">
-<img style="width: 12%; height: 12%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
-<img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/cern_logo.png" alt="CERN logo">
+<img style="width: 11%; height: 11%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
+<img style="width: 8%; height: 8%" src="{{ site.url }}/images/logos/cern_logo.png" alt="CERN logo">
 <img style="width: 14%; height: 14%" src="{{ site.url }}/images/logos/geant4_logo.png" alt="Geant4 logo">
 <img style="width: 14%; height: 14%" src="{{ site.url }}/images/logos/solaris_logo.png" alt="Solaris logo">
 </p>
@@ -37,6 +37,7 @@ I audited and extended NetBSD's operating system math library. Specifically:
 *	Profiled the entire math library in terms of accuracy and speed (C).
 *	Added fenv.h support for amd64 and i386 CPU architectures (committed to official source tree).
 *	Implemented experimental fenv.h support for sparc64 and m68k CPU architectures.
+
 For more details, check [this link](https://ekamperi.github.io/Mathlib/).
 
 <hr>
