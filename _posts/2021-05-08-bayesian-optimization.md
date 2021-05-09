@@ -7,6 +7,12 @@ tags: [algorithms, 'Bayes theorem', 'neural networks', optimization, programming
 description: An introduction to Bayesian-based optimization for tuning hyperparameters in machine learning models
 ---
 
+### Contents
+{:.no_toc}
+
+* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
+{:toc}
+
 ### Introduction
 Plot: We died and ended up in [Dante's inferno](https://en.wikipedia.org/wiki/Inferno_(Dante)) -- the optimization version.
 
@@ -20,7 +26,7 @@ To put it another way, we want to optimize an expensive, black-box, derivative-f
 1. You are a researcher, and you investigate combinations of chemotherapeutic drugs for their ability to kill cancer cells. You have 20 candidate molecules, and you need to come up with an effective two-drug combination. Evaluating the objective function $$f(x)$$ in this context entails conducting actual experiments in the lab requiring personnel, consumables and waiting for hours or days for the experiment to complete. Therefore, considering all 190 combinations is not a realistic approach. Instead, what you need to is start with a few random drug combinations, test them, and then use the experimental outcomes to predict the most promising drug combination to use next. Makes sense?
 2. You work as a consultant for an oil company, and you need to maximize a probability density function $$f({\tiny\text{LAT}, \tiny\text{LONG}})$$ of finding oil if we drill on $$({\tiny\text{LAT}, \tiny\text{LONG}})$$ coordinates. Drilling costs lots of money, therefore we need to make good educated guesses, and we need to do so with only a few trials.
 
-In other cases, however, $$f(x)$$ might be computational. For instance, we may define it as the cross-validation error of a machine-learning model, whose hyperparameters we want to tune. So, to sum up, we want to optimize $$f(x)$$ and:
+In other cases, however, $$f(x)$$ might indeed be computational. For instance, we may define it as the cross-validation error of a machine-learning model, whose hyperparameters we want to tune. So, to sum up, we want to optimize $$f(x)$$ and:
 
 1.	We don’t have a formula for $$f(x)$$
 2.	We don’t have access to its derivatives $$f'(x)$$ and $$f''(x)$$
