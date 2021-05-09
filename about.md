@@ -68,6 +68,7 @@ I audited DragonflyBSD operating system against the latest POSIX and C99 standar
 ## Master thesis in Medical Research Methodology
 <p float="left">
 <img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/r_logo.png" alt="R logo">
+<img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/python_logo.png" alt="Python logo">
 <img style="width: 13%; height: 13%" src="{{ site.url }}/images/logos/scikit_logo.png" alt="Scikit logo">
 <img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/jupyter_logo.png" alt="Jupyter logo">
 <img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/mathematica_logo.png" alt="Mathematica logo">
