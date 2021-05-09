@@ -9,7 +9,7 @@ My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist]
 
 # Hands-on experience
 ## Google Summer of Code
-### CERN's Geant4 high energy physics simulation framework
+### Profiling CERN's Geant4 high energy physics simulation framework
 <p float="left">
 <img style="width: 13%; height: 13%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
 <img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/cern_logo.png" alt="CERN logo">
@@ -17,10 +17,9 @@ My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist]
 <img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/solaris_logo.png" alt="Solaris logo">
 </p>
 
-I profiled [Geant4](https://geant4.web.cern.ch/node/1) and implemented a cache-friendly particle-bunching algorithm. Specifically:
-*	I ported Geant4 to Solaris
+*	I ported [Geant4]((https://geant4.web.cern.ch/node/1)) to Solaris
 *	I used Solaris advanced built-in profiling tools to profile Geant4 with respect to cache misses, branch mispredictions, and total execution time (bash, awk, DTrace, C, C++)
-*	Used DTrace's speculative tracing to successfully debug an unstable behavior of Geant4's cache-friendly particle tracking stack manager (DTrace, C, C++)
+*	Used DTrace's speculative tracing to successfully debug an unstable behavior of Geant4's particle tracking manager (DTrace, C, C++)
 
 For more details, check [this link](https://ekamperi.github.io/Geant4)
 
