@@ -39,6 +39,8 @@ I audited and extended NetBSD's operating system math library. Specifically:
 *	Implemented experimental fenv.h support for sparc64 and m68k CPU architectures
 Detailed information: https://ekamperi.github.io/Mathlib/
 
+<hr>
+
 ### DragonFlyBSD
 <p float="left">
 <img style="width: 13%; height: 13%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
@@ -54,6 +56,9 @@ I audited DragonflyBSD operating system against the latest POSIX and C99 standar
 *	Wrote a web user interface in PHP for tracking conformance status, backed by PostgreSQL
 
 # Academic
+<p float="left">
+<img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/geant4_logo.png" alt="Geant4 logo">
+</p>
 [You can read my first master thesis](http://ikee.lib.auth.gr/record/289589/files/GRI-2017-19273.pdf?version=1), where I used [Geant4](https://geant4.web.cern.ch/node/1) to run Monte Carlo simulations of external photon beams in human phantoms. Regrettably, the text is in Greek, but you might find the images and the code excerpts useful.
 
 [You may also read my latest master thesis](https://ekamperi.github.io/mrm_thesis/abstract.html), where I analyzed the complexity of [Volumetric Modulated Arc Therapy](https://en.wikipedia.org/wiki/External_beam_radiotherapy#Volumetric_Modulated_Arc_Therapy) prostate plans. In the first part, I examined various complexity metrics with [Principal Component Analysis](https://en.wikipedia.org/wiki/Principal_component_analysis) and [Mutual Information Analysis](https://en.wikipedia.org/wiki/Mutual_information). In the second part, I developed both a linear and a [LASSO](https://en.wikipedia.org/wiki/Lasso_(statistics)) logistic regression model to predict complexity by clinical and dosimetric plan features.
