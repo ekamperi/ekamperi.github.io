@@ -18,10 +18,17 @@ I ported Geant4 to Solaris, used DTrace to debug performance issues, and impleme
 
 ### NetBSD math library
 <p align="center">
-<img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/netbsd_logo.png" alt="Google logo">
+<img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/netbsd_logo.png" alt="NetBSD logo">
 </p>
 
-CERN's Geant4 high energy physics simulation framework. I ported Geant4 to Solaris, used DTrace to debug performance issues, and implemented a smart particle bunching algorithm to reduce cache misses. Detailed information: https://ekamperi.github.io/Geant4
+I audited and extended NetBSD's operating system math library. Detailed information: https://ekamperi.github.io/Mathlib/
+
+### DragonFlyBSD
+<p align="center">
+<img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/dflybsd_logo.png" alt="DragonFlyBSD logo">
+</p>
+
+I audited DragonflyBSD operating system against the latest POSIX and C99 standards.
 
 # Academic
 [You can read my first master thesis](http://ikee.lib.auth.gr/record/289589/files/GRI-2017-19273.pdf?version=1), where I used [Geant4](https://geant4.web.cern.ch/node/1) to run Monte Carlo simulations of external photon beams in human phantoms. Regrettably, the text is in Greek, but you might find the images and the code excerpts useful.
