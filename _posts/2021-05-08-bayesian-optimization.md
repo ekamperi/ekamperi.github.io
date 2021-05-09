@@ -98,7 +98,7 @@ We define our objective/cost/loss function. This is the $$f(\mathbf{x})$$ that w
 {% highlight python %}
 {% raw %}
 def objective(args):
-    "'Define the loss function / objective of our model.
+    '''Define the loss function / objective of our model.
 
     We will be using an SVM parameterized by the regularization parameter C
     and the parameter gamma.
@@ -117,7 +117,7 @@ def objective(args):
 {% endraw %}
 {% endhighlight %}
 
-Now, we will use the `fmin` function from the `hyperopt` package.
+Now, we will use the `fmin()` function from the `hyperopt` package. Please note that 1000 trials is kind of overkill. The only reason we do so, is because we want to exaggeerate the effect of exploitation vs. exploration.
 
 {% highlight python %}
 {% raw %}
