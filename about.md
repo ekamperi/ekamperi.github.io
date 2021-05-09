@@ -11,9 +11,9 @@ My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist]
 ## Google Summer of Code
 ### Profiling CERN's Geant4 high energy physics simulation framework
 <p float="left">
-<img style="width: 11%; height: 11%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
-<img style="width: 8%; height: 8%" src="{{ site.url }}/images/logos/cern_logo.png" alt="CERN logo">
-<img style="width: 14%; height: 14%" src="{{ site.url }}/images/logos/geant4_logo.png" alt="Geant4 logo">
+<img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
+<img style="width: 7%; height: 7%" src="{{ site.url }}/images/logos/cern_logo.png" alt="CERN logo">
+<img style="width: 16%; height: 16%" src="{{ site.url }}/images/logos/geant4_logo.png" alt="Geant4 logo">
 <img style="width: 14%; height: 14%" src="{{ site.url }}/images/logos/solaris_logo.png" alt="Solaris logo">
 </p>
 
