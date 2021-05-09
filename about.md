@@ -36,9 +36,9 @@ Detailed information: https://ekamperi.github.io/Mathlib/
 <p float="left">
 <img style="width: 13%; height: 13%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
 <img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/dflybsd_logo.png" alt="DragonFlyBSD logo">
-<img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/netbsd_logo.png" alt="NetBSD logo">
-<img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/linux_logo.png" alt="Linux logo">
-<img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/pgsql_logo.png" alt="PostgreSQL logo">
+<img style="width: 11%; height: 11%" src="{{ site.url }}/images/logos/netbsd_logo.png" alt="NetBSD logo">
+<img style="width: 11%; height: 11%" src="{{ site.url }}/images/logos/linux_logo.png" alt="Linux logo">
+<img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/pgsql_logo.png" alt="PostgreSQL logo">
 </p>
 
 I audited DragonflyBSD operating system against the latest POSIX and C99 standards. Specifically:
