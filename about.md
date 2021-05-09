@@ -24,6 +24,8 @@ I profiled Geant4 and implemented a smart particle bunching algorithm to reduce 
 
 Detailed information: https://ekamperi.github.io/Geant4
 
+<hr>
+
 ### NetBSD math library
 <p float="left">
 <img style="width: 13%; height: 13%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
