@@ -12,8 +12,9 @@ My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist]
 ### CERN's Geant4 high energy physics simulation framework
 <p float="left">
 <img style="width: 13%; height: 13%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
-<img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/cern_logo.png" alt="CERN's logo">
-<img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/solaris_logo.png" alt="CERN's logo">
+<img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/cern_logo.png" alt="CERN logo">
+<img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/geant4_logo.png" alt="Geant4 logo">
+<img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/solaris_logo.png" alt="Solaris logo">
 </p>
 
 I ported Geant4 to Solaris, used DTrace to debug performance issues, and implemented a smart particle bunching algorithm to reduce cache misses. Detailed information: https://ekamperi.github.io/Geant4
