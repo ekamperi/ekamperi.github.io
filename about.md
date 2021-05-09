@@ -7,6 +7,16 @@ title: About
 
 My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist](https://en.wikipedia.org/wiki/Radiation_oncologist) and physicist with a master degree in [computational physics](https://en.wikipedia.org/wiki/Computational_physics) and another one in [medical research methodology](https://en.wikipedia.org/wiki/Medical_research). I currently work on my Ph.D. thesis, which involves applying machine learning in [radiomics](https://en.wikipedia.org/wiki/Radiomics) in head neck cancer. You can [check my detailed bio in LinkedIn](https://www.linkedin.com/in/stathis-kamperis/).
 
+# Hands-on experience
+## Google Summer of Code
+<p align="center">
+<img style="width: 80%; height: 80%" src="{{ site.url }}/images/logos/google_log.png" alt="Google logo">
+</p>
+
+CERN's Geant4 high energy physics simulation framework. I ported Geant4 to Solaris, used DTrace to debug performance issues, and implemented a smart particle bunching algorithm to reduce cache misses. Detailed information: https://ekamperi.github.io/Geant4
+
+
+# Academic
 [You can read my first master thesis](http://ikee.lib.auth.gr/record/289589/files/GRI-2017-19273.pdf?version=1), where I used [Geant4](https://geant4.web.cern.ch/node/1) to run Monte Carlo simulations of external photon beams in human phantoms. Regrettably, the text is in Greek, but you might find the images and the code excerpts useful.
 
 [You may also read my latest master thesis](https://ekamperi.github.io/mrm_thesis/abstract.html), where I analyzed the complexity of [Volumetric Modulated Arc Therapy](https://en.wikipedia.org/wiki/External_beam_radiotherapy#Volumetric_Modulated_Arc_Therapy) prostate plans. In the first part, I examined various complexity metrics with [Principal Component Analysis](https://en.wikipedia.org/wiki/Principal_component_analysis) and [Mutual Information Analysis](https://en.wikipedia.org/wiki/Mutual_information). In the second part, I developed both a linear and a [LASSO](https://en.wikipedia.org/wiki/Lasso_(statistics)) logistic regression model to predict complexity by clinical and dosimetric plan features.
