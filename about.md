@@ -25,7 +25,12 @@ I ported Geant4 to Solaris, used DTrace to debug performance issues, and impleme
 <img style="width: 11%; height: 11%" src="{{ site.url }}/images/logos/netbsd_logo.png" alt="NetBSD logo">
 </p>
 
-I audited and extended NetBSD's operating system math library. Detailed information: https://ekamperi.github.io/Mathlib/
+I audited and extended NetBSD's operating system math library. Specifically:
+*	Wrote 80 test programs and 260 test cases for math.h, fenv.h, float.h, com-plex.h and tgmath.h interfaces (C, C++)
+*	Profiled the entire math library in terms of accuracy and speed (C)
+*	Added fenv.h support for amd64 and i386 CPU architectures (committed to of-ficial source tree)
+*	Implemented experimental fenv.h support for sparc64 and m68k CPU architec-tures
+Detailed information: https://ekamperi.github.io/Mathlib/
 
 ### DragonFlyBSD
 <p float="left">
