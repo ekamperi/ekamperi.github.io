@@ -64,10 +64,10 @@ I audited DragonflyBSD operating system against the latest POSIX and C99 standar
 [You can read my first master thesis](http://ikee.lib.auth.gr/record/289589/files/GRI-2017-19273.pdf?version=1), where I used [Geant4](https://geant4.web.cern.ch/node/1) to run Monte Carlo simulations of external photon beams in human phantoms. Regrettably, the text is in Greek, but you might find the images and the code excerpts useful.
 
 <p float="left">
-<img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/r_logo.png" alt="R logo">
-<img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/scikit_logo.png" alt="Scikit logo">
-<img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/jupyter_logo.png" alt="Jupyter logo">
-<img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/mathematica_logo.png" alt="Mathematica logo">
+<img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/r_logo.png" alt="R logo">
+<img style="width: 13%; height: 13%" src="{{ site.url }}/images/logos/scikit_logo.png" alt="Scikit logo">
+<img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/jupyter_logo.png" alt="Jupyter logo">
+<img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/mathematica_logo.png" alt="Mathematica logo">
 </p>
 
 [You may also read my latest master thesis](https://ekamperi.github.io/mrm_thesis/abstract.html), where I analyzed the complexity of [Volumetric Modulated Arc Therapy](https://en.wikipedia.org/wiki/External_beam_radiotherapy#Volumetric_Modulated_Arc_Therapy) prostate plans. In the first part, I examined various complexity metrics with [Principal Component Analysis](https://en.wikipedia.org/wiki/Principal_component_analysis) and [Mutual Information Analysis](https://en.wikipedia.org/wiki/Mutual_information). In the second part, I developed both a linear and a [LASSO](https://en.wikipedia.org/wiki/Lasso_(statistics)) logistic regression model to predict complexity by clinical and dosimetric plan features.
