@@ -17,12 +17,12 @@ My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist]
 <img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/solaris_logo.png" alt="Solaris logo">
 </p>
 
-I profiled [Geant4](https://geant4.web.cern.ch/node/1) and implemented a smart particle bunching algorithm to reduce cache misses. Specifically:
-*	Ported Geant4 to Solaris
-*	Used Solaris built-in tools to profile it with respect to cache misses, branch mispredictions, and total execution time (bash, awk, DTrace, C++)
-*	Used DTrace's speculative tracing to successfully debug an unstable behavior of Geant4's cache-friendly particle tracking stack manager (DTrace, C++)
+I profiled [Geant4](https://geant4.web.cern.ch/node/1) and implemented a cache-friendly particle-bunching algorithm. Specifically:
+*	I ported Geant4 to Solaris
+*	I used Solaris advanced built-in profiling tools to profile Geant4 with respect to cache misses, branch mispredictions, and total execution time (bash, awk, DTrace, C, C++)
+*	Used DTrace's speculative tracing to successfully debug an unstable behavior of Geant4's cache-friendly particle tracking stack manager (DTrace, C, C++)
 
-Detailed information: https://ekamperi.github.io/Geant4
+For more details, check [this link](https://ekamperi.github.io/Geant4)
 
 <hr>
 
@@ -38,7 +38,7 @@ I audited and extended NetBSD's operating system math library. Specifically:
 *	Profiled the entire math library in terms of accuracy and speed (C)
 *	Added fenv.h support for amd64 and i386 CPU architectures (committed to official source tree)
 *	Implemented experimental fenv.h support for sparc64 and m68k CPU architectures
-Detailed information: https://ekamperi.github.io/Mathlib/
+For more details, check [this link](https://ekamperi.github.io/Mathlib/)
 
 <hr>
 
