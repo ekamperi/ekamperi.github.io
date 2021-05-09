@@ -8,6 +8,17 @@ title: About
 My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist](https://en.wikipedia.org/wiki/Radiation_oncologist) and physicist with a master degree in [computational physics](https://en.wikipedia.org/wiki/Computational_physics) and another one in [medical research methodology](https://en.wikipedia.org/wiki/Medical_research). I currently work on my Ph.D. thesis, which involves applying machine learning in [radiomics](https://en.wikipedia.org/wiki/Radiomics) in head neck cancer. You can [check my detailed bio in LinkedIn](https://www.linkedin.com/in/stathis-kamperis/).
 
 # Hands-on experience
+
+## DICOM viewer
+
+<p float="left">
+<img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/dicom_logo.png" alt="DICOM logo">
+<img style="width: 7%; height: 7%" src="{{ site.url }}/images/logos/opengl_logo.png" alt="Opengl logo">
+</p>
+
+I developed a cross-platform, OpenGL-accelerated, multi-threaded DICOM viewer (C++, OpenGL, Qt)
+For more details, check [this link](https://ekamperi.github.io/Volmetrics).
+
 ## Google Summer of Code
 ### Profiling CERN's Geant4 high energy physics simulation framework
 <p float="left">
