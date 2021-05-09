@@ -28,8 +28,8 @@ To put it another way, we want to optimize an expensive, black-box, derivative-f
 
 In other cases, however, $$f(x)$$ might indeed be computational. For instance, we may define it as the cross-validation error of a machine-learning model, whose hyperparameters we want to tune. So, to sum up, we want to optimize $$f(x)$$ and:
 
-1.	We don’t have a formula for $$f(x)$$
-2.	We don’t have access to its derivatives $$f'(x)$$ and $$f''(x)$$
+1.	We don't have a formula for $$f(x)$$
+2.	We don't have access to its derivatives $$f'(x)$$ and $$f''(x)$$
 3.	We don't have any convexity guarantees for $$f(x)$$
 4.	$$f(x)$$ is expensive to evaluate
 
@@ -62,6 +62,8 @@ a_{\text{UCB}}(x;\lambda) = \mu(x) + \lambda \sigma(x)
 $$
 
 With UCB, the exploitation *vs.* exploration trade-off is explicit and easy to tune via the parameter $$\lambda$$. Concretely, we construct a weighted sum of the expected performance captured by $$\mu(x)$$ of the Gaussian Process, and of the uncertainty $$\sigma(x)$$, captured by the standard deviation of the GP. Assuming a small $$\lambda$$, BO will favor solutions that are expected to be high-performing, i.e., have high $$\mu(x)$$. Conversely, high values of $$\lambda$$ will make BO favor the exploration of currently uncharted areas in the search space. 
+
+This was a shallow introduction on how a Bayesian Optimization algorithm works under the hood. Next, we will use a third party library to tune an SVM's hyperparameters. In the future, we will talk more about BO, perhaps by implementing our own algorithm with GPs, acquisition functions and all.
 
 ### A concrete example
 Let's import some of the stuff we will be using:
