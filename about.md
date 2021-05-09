@@ -10,8 +10,9 @@ My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist]
 # Hands-on experience
 ## Google Summer of Code
 ### CERN's Geant4 high energy physics simulation framework
-<p align="center">
+<p float="left">
 <img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
+<img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/cern_logo.png" alt="CERN's logo">
 </p>
 
 I ported Geant4 to Solaris, used DTrace to debug performance issues, and implemented a smart particle bunching algorithm to reduce cache misses. Detailed information: https://ekamperi.github.io/Geant4
