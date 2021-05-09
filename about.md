@@ -36,9 +36,15 @@ Detailed information: https://ekamperi.github.io/Mathlib/
 <p float="left">
 <img style="width: 13%; height: 13%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
 <img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/dflybsd_logo.png" alt="DragonFlyBSD logo">
+<img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/netbsd_logo.png" alt="NetBSD logo">
+<img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/linux_logo.png" alt="Linux logo">
+<img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/pgsql_logo.png" alt="PostgreSQL logo">
 </p>
 
-I audited DragonflyBSD operating system against the latest POSIX and C99 standards.
+I audited DragonflyBSD operating system against the latest POSIX and C99 standards. Specifically:
+*	Detected and fixed many conformance bugs on both DragonFlyBSD and other systems as well, such as NetBSD and GNU C library
+*	Ported POSIX message queues implementation from NetBSD to DragonFlyBSD
+*	Wrote a web user interface in PHP for tracking conformance status, backed by PostgreSQL
 
 # Academic
 [You can read my first master thesis](http://ikee.lib.auth.gr/record/289589/files/GRI-2017-19273.pdf?version=1), where I used [Geant4](https://geant4.web.cern.ch/node/1) to run Monte Carlo simulations of external photon beams in human phantoms. Regrettably, the text is in Greek, but you might find the images and the code excerpts useful.
