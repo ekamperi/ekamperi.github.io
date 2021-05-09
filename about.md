@@ -29,7 +29,7 @@ I audited and extended NetBSD's operating system math library. Detailed informat
 ### DragonFlyBSD
 <p float="left">
 <img style="width: 13%; height: 13%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
-<img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/dflybsd_logo.png" alt="DragonFlyBSD logo">
+<img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/dflybsd_logo.png" alt="DragonFlyBSD logo">
 </p>
 
 I audited DragonflyBSD operating system against the latest POSIX and C99 standards.
