@@ -17,15 +17,15 @@ My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist]
 <img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/solaris_logo.png" alt="Solaris logo">
 </p>
 
-*	I ported [Geant4]((https://geant4.web.cern.ch/node/1)) to Solaris
-*	I used Solaris advanced built-in profiling tools to profile Geant4 with respect to cache misses, branch mispredictions, and total execution time (bash, awk, DTrace, C, C++)
-*	Used DTrace's speculative tracing to successfully debug an unstable behavior of Geant4's particle tracking manager (DTrace, C, C++)
+*	Ported [Geant4]((https://geant4.web.cern.ch/node/1)) to Solaris.
+*	Used Solaris advanced built-in profiling tools to profile Geant4 with respect to cache misses, branch mispredictions, and total execution time (bash, awk, DTrace, C, C++).
+*	Used DTrace's speculative tracing to successfully debug an unstable behavior of Geant4's particle tracking manager (DTrace, C, C++).
 
-For more details, check [this link](https://ekamperi.github.io/Geant4)
+For more details, check [this link](https://ekamperi.github.io/Geant4).
 
 <hr>
 
-### NetBSD math library
+### Auditng and extending NetBSD's math library
 <p float="left">
 <img style="width: 13%; height: 13%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
 <img style="width: 11%; height: 11%" src="{{ site.url }}/images/logos/netbsd_logo.png" alt="NetBSD logo">
@@ -33,15 +33,15 @@ For more details, check [this link](https://ekamperi.github.io/Geant4)
 </p>
 
 I audited and extended NetBSD's operating system math library. Specifically:
-*	Wrote 80 test programs and 260 test cases for math.h, fenv.h, float.h, complex.h and tgmath.h interfaces (C, C++)
-*	Profiled the entire math library in terms of accuracy and speed (C)
-*	Added fenv.h support for amd64 and i386 CPU architectures (committed to official source tree)
-*	Implemented experimental fenv.h support for sparc64 and m68k CPU architectures
-For more details, check [this link](https://ekamperi.github.io/Mathlib/)
+*	Wrote 80 test programs and 260 test cases for math.h, fenv.h, float.h, complex.h and tgmath.h interfaces (C, C++).
+*	Profiled the entire math library in terms of accuracy and speed (C).
+*	Added fenv.h support for amd64 and i386 CPU architectures (committed to official source tree).
+*	Implemented experimental fenv.h support for sparc64 and m68k CPU architectures.
+For more details, check [this link](https://ekamperi.github.io/Mathlib/).
 
 <hr>
 
-### DragonFlyBSD
+### Auditing DragonFlyBSD's POSIX/C99 conformance
 <p float="left">
 <img style="width: 13%; height: 13%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
 <img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/dflybsd_logo.png" alt="DragonFlyBSD logo">
@@ -52,7 +52,7 @@ For more details, check [this link](https://ekamperi.github.io/Mathlib/)
 
 I audited DragonflyBSD operating system against the latest POSIX and C99 standards. Specifically:
 *	Detected and fixed many conformance bugs on both DragonFlyBSD and other systems as well, such as NetBSD and GNU C library
-*	Ported POSIX message queues implementation from NetBSD to DragonFlyBSD
+* Ported POSIX message queues implementation from NetBSD to DragonFlyBSD
 *	Wrote a web user interface in PHP for tracking conformance status, backed by PostgreSQL
 
 # Academic
