@@ -17,7 +17,12 @@ My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist]
 <img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/solaris_logo.png" alt="Solaris logo">
 </p>
 
-I ported Geant4 to Solaris, used DTrace to debug performance issues, and implemented a smart particle bunching algorithm to reduce cache misses. Detailed information: https://ekamperi.github.io/Geant4
+I profiled Geant4 and implemented a smart particle bunching algorithm to reduce cache misses. Specifically:
+*	Ported Geant4 to Solaris
+*	Used Solaris built-in tools to profile it with respect to cache misses, branch mispredictions, and total execution time (bash, awk, DTrace, C++)
+*	Used DTrace's speculative tracing to successfully debug an unstable behavior of Geant4's cache-friendly particle tracking stack manager (DTrace, C++)
+
+Detailed information: https://ekamperi.github.io/Geant4
 
 ### NetBSD math library
 <p float="left">
