@@ -17,11 +17,22 @@ My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist]
 <img style="width: 11%; height: 11%" src="{{ site.url }}/images/logos/dicom_logo.jpg" alt="DICOM logo">
 </p>
 
-I developed an end-to-end machine-learning model for predicting Quality Assurance and verification outcomes in radiation oncology departments.
+I developed an end-to-end machine-learning model for predicting quality assurance and verification outcomes in radiation oncology departments. It uses as features a diverse set of clinical and dosimetric features, such as complexity metrics, dose distributions, clinical and dosimetric traits. The extraction and calculation of many of these features is done by "rteval", an evaluation framework I wrote in Python.
 
-<p>
+<p align="center">
 <img style="width: 80%; height: 80%" src="https://ekamperi.github.io/mrm_thesis/images/dnn_arch.png" alt="Machine learning model">
 </p>
+
+## ⇝ Feature-engineering framework for radiation oncology treatment plans
+
+<p float="left">
+<img style="width: 30%; height: 30%" src="{{ site.url }}/images/logos/python_logo.png" alt="Python logo">
+<img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/linux_logo.png" alt="Linux logo">
+</p>
+
+I developed a specialized feature engineering framework for radiation oncology departments.
+* http://test.ogkologia.gr/rteval/ (Python)
+* A web application for the statistical analysis and presentation of the extracted data (R Shiny)
 
 ## ⇝ DICOM viewer
 
