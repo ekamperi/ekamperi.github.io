@@ -87,7 +87,7 @@ For more details, check [this link](https://ekamperi.github.io/Mathlib/).
 ### ⇝ Auditing DragonFlyBSD's POSIX/C99 conformance
 <p float="left">
 <img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
-<img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/dflybsd_logo.png" alt="DragonFlyBSD logo">
+<img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/dflybsd_logo.png" alt="DragonFlyBSD logo">
 <img style="width: 11%; height: 11%" src="{{ site.url }}/images/logos/netbsd_logo.png" alt="NetBSD logo">
 <img style="width: 8%; height: 8%" src="{{ site.url }}/images/logos/linux_logo.png" alt="Linux logo">
 <img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/pgsql_logo.png" alt="PostgreSQL logo">
