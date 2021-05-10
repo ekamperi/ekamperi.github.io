@@ -12,8 +12,8 @@ My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist]
 ## ⇝ Machine-learning model for virtual QA/verification
 
 <p float="left">
-<img style="width: 30%; height: 30%" src="{{ site.url }}/images/logos/keras_logo.png" alt="Keras logo">
-<img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/tensorflow_logo.png" alt="Tensorflow logo">
+<img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/keras_logo.png" alt="Keras logo">
+<img style="width: 7%; height: 7%" src="{{ site.url }}/images/logos/tensorflow_logo.png" alt="Tensorflow logo">
 <img style="width: 11%; height: 11%" src="{{ site.url }}/images/logos/dicom_logo.jpg" alt="DICOM logo">
 <img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/sqlite_logo.png" alt="SQLite logo">
 </p>
@@ -27,7 +27,7 @@ I developed an end-to-end machine-learning model for predicting quality assuranc
 ## ⇝ Feature-engineering framework for radiation oncology treatment plans
 
 <p float="left">
-<img style="width: 30%; height: 30%" src="{{ site.url }}/images/logos/python_logo.png" alt="Python logo">
+<img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/python_logo.png" alt="Python logo">
 <img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/linux_logo.png" alt="Linux logo">
 </p>
 
