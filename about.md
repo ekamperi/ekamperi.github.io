@@ -15,6 +15,7 @@ My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist]
 <img style="width: 30%; height: 30%" src="{{ site.url }}/images/logos/keras_logo.png" alt="Keras logo">
 <img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/tensorflow_logo.png" alt="Tensorflow logo">
 <img style="width: 11%; height: 11%" src="{{ site.url }}/images/logos/dicom_logo.jpg" alt="DICOM logo">
+<img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/sqlite_logo.png" alt="SQLite logo">
 </p>
 
 I developed an end-to-end machine-learning model for predicting quality assurance and verification outcomes in radiation oncology departments. It uses as features a diverse set of clinical and dosimetric features, such as complexity metrics, dose distributions, clinical and dosimetric traits. The extraction and calculation of many of these features is done by "rteval", an evaluation framework I wrote in Python.
