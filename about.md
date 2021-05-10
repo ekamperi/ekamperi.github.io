@@ -27,8 +27,8 @@ I developed an end-to-end machine-learning model for predicting quality assuranc
 ## ⇝ Feature-engineering framework for radiation oncology treatment plans
 
 <p float="left">
-<img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/python_logo.png" alt="Python logo">
-<img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/linux_logo.png" alt="Linux logo">
+<img style="width: 7%; height: 7%" src="{{ site.url }}/images/logos/python_logo.png" alt="Python logo">
+<img style="width: 8%; height: 8%" src="{{ site.url }}/images/logos/linux_logo.png" alt="Linux logo">
 </p>
 
 I developed a specialized feature engineering framework for radiation oncology departments.
@@ -54,6 +54,7 @@ For more details, check [this link](https://ekamperi.github.io/Volmetrics).
 <img style="width: 7%; height: 7%" src="{{ site.url }}/images/logos/cern_logo.png" alt="CERN logo">
 <img style="width: 18%; height: 18%" src="{{ site.url }}/images/logos/geant4_logo.png" alt="Geant4 logo">
 <img style="width: 14%; height: 14%" src="{{ site.url }}/images/logos/solaris_logo.png" alt="Solaris logo">
+<img style="width: 8%; height: 8%" src="{{ site.url }}/images/logos/linux_logo.png" alt="Linux logo">
 </p>
 
 *	Ported [Geant4]((https://geant4.web.cern.ch/node/1)) to Solaris.
@@ -86,7 +87,7 @@ For more details, check [this link](https://ekamperi.github.io/Mathlib/).
 <img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
 <img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/dflybsd_logo.png" alt="DragonFlyBSD logo">
 <img style="width: 11%; height: 11%" src="{{ site.url }}/images/logos/netbsd_logo.png" alt="NetBSD logo">
-<img style="width: 11%; height: 11%" src="{{ site.url }}/images/logos/linux_logo.png" alt="Linux logo">
+<img style="width: 8%; height: 8%" src="{{ site.url }}/images/logos/linux_logo.png" alt="Linux logo">
 <img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/pgsql_logo.png" alt="PostgreSQL logo">
 </p>
 
@@ -108,7 +109,7 @@ I audited DragonflyBSD operating system against the latest POSIX and C99 standar
 ## ⇝ Complexity analysis of VMAT prostate plans (Master thesis in Medical Research Methodology)
 <p float="left">
 <img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/r_logo.png" alt="R logo">
-<img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/python_logo.png" alt="Python logo">
+<img style="width: 7%; height: 7%" src="{{ site.url }}/images/logos/python_logo.png" alt="Python logo">
 <img style="width: 13%; height: 13%" src="{{ site.url }}/images/logos/scikit_logo.png" alt="Scikit logo">
 <img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/jupyter_logo.png" alt="Jupyter logo">
 <img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/mathematica_logo.png" alt="Mathematica logo">
