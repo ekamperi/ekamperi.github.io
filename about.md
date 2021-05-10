@@ -94,7 +94,7 @@ For more details, check [this link](https://ekamperi.github.io/Mathlib/).
 </p>
 
 I audited DragonflyBSD operating system against the latest POSIX and C99 standards. Specifically:
-*	Detected and fixed many conformance bugs on both DragonFlyBSD and other systems as well, such as NetBSD and GNU C library.
+*	Detected and fixed many conformance bugs on both DragonFlyBSD and other systems as well, such as NetBSD and [GNU C library](https://sourceware.org/bugzilla/show_bug.cgi?id=10401).
 * Ported POSIX message queues implementation from NetBSD to DragonFlyBSD.
 *	Wrote a web user interface in PHP for tracking conformance status, backed by PostgreSQL.
 
