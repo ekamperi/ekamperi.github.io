@@ -24,6 +24,8 @@ I developed an end-to-end machine-learning model for predicting quality assuranc
 <img style="width: 80%; height: 80%" src="https://ekamperi.github.io/mrm_thesis/images/dnn_arch.png" alt="Machine learning model">
 </p>
 
+<hr>
+
 ## ⇝ Feature-engineering framework for radiation oncology treatment plans
 
 <p float="left">
@@ -34,6 +36,8 @@ I developed an end-to-end machine-learning model for predicting quality assuranc
 I developed a specialized feature engineering framework for radiation oncology departments.
 * http://test.ogkologia.gr/rteval/ (Python)
 * A web application for the statistical analysis and presentation of the extracted data (R Shiny)
+
+<hr>
 
 ## ⇝ DICOM viewer
 
