@@ -9,7 +9,7 @@ My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist]
 
 # Hands-on experience
 
-## DICOM viewer
+## ⇝ DICOM viewer
 
 <p float="left">
 <img style="width: 6%; height: 6%" src="{{ site.url }}/images/logos/qt_logo.png" alt="Qt logo">
@@ -22,7 +22,7 @@ I developed a cross-platform, OpenGL-accelerated, multi-threaded DICOM viewer (C
 For more details, check [this link](https://ekamperi.github.io/Volmetrics).
 
 ## Google Summer of Code
-### Profiling CERN's Geant4 high energy physics simulation framework
+### ⇝ Profiling CERN's Geant4 high energy physics simulation framework
 <p float="left">
 <img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
 <img style="width: 7%; height: 7%" src="{{ site.url }}/images/logos/cern_logo.png" alt="CERN logo">
@@ -38,7 +38,7 @@ For more details, check [this link](https://ekamperi.github.io/Geant4).
 
 <hr>
 
-### Auditng and extending NetBSD's math library
+### ⇝ Auditing and extending NetBSD's math library
 <p float="left">
 <img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
 <img style="width: 11%; height: 11%" src="{{ site.url }}/images/logos/netbsd_logo.png" alt="NetBSD logo">
@@ -55,7 +55,7 @@ For more details, check [this link](https://ekamperi.github.io/Mathlib/).
 
 <hr>
 
-### Auditing DragonFlyBSD's POSIX/C99 conformance
+### ⇝ Auditing DragonFlyBSD's POSIX/C99 conformance
 <p float="left">
 <img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
 <img style="width: 20%; height: 20%" src="{{ site.url }}/images/logos/dflybsd_logo.png" alt="DragonFlyBSD logo">
@@ -70,7 +70,7 @@ I audited DragonflyBSD operating system against the latest POSIX and C99 standar
 *	Wrote a web user interface in PHP for tracking conformance status, backed by PostgreSQL
 
 # Academic
-## Master thesis in Computational Physics
+## ⇝ Monte Carlo simulations in human phantoms (Master thesis in Computational Physics)
 <p float="left">
 <img style="width: 18%; height: 18%" src="{{ site.url }}/images/logos/geant4_logo.png" alt="Geant4 logo">
 <img style="width: 12%; height: 12%" src="{{ site.url }}/images/logos/monte_carlo_logo.png" alt="Monte Carlo logo">
@@ -79,7 +79,7 @@ I audited DragonflyBSD operating system against the latest POSIX and C99 standar
 
 <hr>
 
-## Master thesis in Medical Research Methodology
+## ⇝ Complexity analysis of VMAT prostate plans (Master thesis in Medical Research Methodology)
 <p float="left">
 <img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/r_logo.png" alt="R logo">
 <img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/python_logo.png" alt="Python logo">
