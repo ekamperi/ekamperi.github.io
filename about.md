@@ -9,6 +9,20 @@ My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist]
 
 # Hands-on experience
 
+## ⇝ Machine-learning model for virtual QA/verification
+
+<p float="left">
+<img style="width: 6%; height: 6%" src="{{ site.url }}/images/logos/keras_logo.png" alt="Keras logo">
+<img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/tensorflow_logo.png" alt="Tensorflow logo">
+<img style="width: 11%; height: 11%" src="{{ site.url }}/images/logos/dicom_logo.jpg" alt="DICOM logo">
+</p>
+
+I developed an end-to-end machine-learning model for predicting Quality Assurance and verification outcomes in radiation oncology departments.
+
+<p>
+<img style="width: 6%; height: 6%" src="https://ekamperi.github.io/mrm_thesis/images/dnn_arch.png" alt="Machine learning model">
+</p>
+
 ## ⇝ DICOM viewer
 
 <p float="left">
