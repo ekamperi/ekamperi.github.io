@@ -23,7 +23,7 @@ We are asked to optimize a function **we don't have an analytic expression** for
 </p>
 
 To put it another way, we want to optimize an expensive, black-box, derivative-free, possibly non-convex function. And for this kind of problem, **Bayesian Optimization (BO)** is a generic and robust method. Mind that **the evaluation of the objective function is not necessarily computational**. Let me give you a couple of examples, where $$f(x)$$ is not something you can calculate with a computer.
-1. You are a researcher, and you investigate mixtures of chemotherapeutic drugs for their ability to kill cancer cells. You have come up with three candidate molecules, and you need to find the best combination of concentrations $$c_1, c_2, c_3$$ of the three drugs. Evaluating the objective function $$f(c_1,c_2,c_3)$$ in this context entails conducting actual experiments in the lab requiring personnel, consumables and waiting for hours or days for the experiment to complete. Therefore, considering all possible concentration combinations is not a realistic approach. Instead, you need to start with a few random drug concentrations, test them, and then use the experimental outcomes to predict the most promising drug combination to use next. Makes sense?
+1. You are a researcher, and you investigate mixtures of chemotherapeutic drugs for their ability to kill cancer cells. You have come up with three candidate molecules, and you need to find the best combination of concentrations $$c_1, c_2, c_3$$ of the three drugs. Evaluating the objective function $$f(c_1,c_2,c_3)$$ in this context entails conducting actual experiments in the lab requiring personnel, consumables, and waiting for hours or days for the experiment to complete. Therefore, considering all possible concentration combinations is not a realistic approach. Instead, you need to start with a few random drug concentrations, test them, and then use the experimental outcomes to predict the most promising drug combination to use next. Makes sense?
 2. You work as a consultant for an oil company, and you need to maximize a probability density function $$f({\tiny\text{LAT}, \tiny\text{LONG}})$$ of finding oil if we drill on $$({\tiny\text{LAT}, \tiny\text{LONG}})$$ coordinates. Drilling costs lots of money; therefore we need to make good educated guesses, and we need to do so with only a few trials.
 
 **In other cases, however, $$f(x)$$ might indeed be computational**. For instance, we may define it as the cross-validation error of a machine-learning model whose hyperparameters we want to tune. So, to sum up, we want to optimize $$f(x)$$ and:
@@ -105,7 +105,7 @@ X_train, y_train = make_classification(n_samples=2500, n_features=20, n_informat
 
 #### Objective function definition
 
-In this example we will be using the `hyperopt` package to perform the hyperparameter tuning. First, we define our objective/cost/loss function. This is the $$f(\mathbf{x})$$ that we want talked about in the introduction, and $$\mathbf{x} = [C, \gamma]$$ is the parameter space. Therefore, we want to find the best combination of $$C, \gamma$$ values that minimizes $$f(\mathbf{x})$$. The machine learning model that we will be using is a [Support Vector Machine (SVM)](https://en.wikipedia.org/wiki/Support-vector_machine), and the loss will be derived from the average 3-fold cross-validation score.
+In this example, we will be using the `hyperopt` package to perform the hyperparameter tuning. First, we define our objective/cost/loss function. This is the $$f(\mathbf{x})$$ that we want talked about in the introduction, and $$\mathbf{x} = [C, \gamma]$$ is the parameter space. Therefore, we want to find the best combination of $$C, \gamma$$ values that minimizes $$f(\mathbf{x})$$. The machine learning model that we will be using is a [Support Vector Machine (SVM)](https://en.wikipedia.org/wiki/Support-vector_machine), and the loss will be derived from the average 3-fold cross-validation score.
 
 {% highlight python %}
 {% raw %}
@@ -131,15 +131,7 @@ def objective(args):
 
 
 ####
-
-Having described the objective function to minimize, we
-the space over which to search
-the database in which to store all the point evaluations of the search
-the search algorithm to use
-
-
-
-Now, we will use the `fmin()` function from the `hyperopt` package. In this step, we need to specify the search space for our parameters, the database in which we will be storing the evaluation points of the search, and finally the search algorithm to use. Please note that 1000 trials are overkill. The only reason we do so is because we want to exaggerate the effect of exploitation *vs.* exploration.
+Now, we will use the `fmin()` function from the `hyperopt` package. In this step, we need to specify the search space for our parameters, the database in which we will be storing the evaluation points of the search, and finally, the search algorithm to use. The careful reader might notice that we are doing 1000 evaluations, although we said that evaluation $$f(x)$$ is expensive. That's correct; the only reason we do so is because we want to exaggerate the effect of exploitation *vs.* exploration, as you shall see in the plots.
 
 {% highlight python %}
 {% raw %}
