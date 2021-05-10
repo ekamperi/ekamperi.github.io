@@ -18,7 +18,7 @@ My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist]
 <img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/sqlite_logo.png" alt="SQLite logo">
 </p>
 
-I developed an end-to-end machine-learning model for predicting quality assurance and verification outcomes in radiation oncology departments. It uses as features a diverse set of clinical and dosimetric features, such as complexity metrics, dose distributions, clinical and dosimetric traits. The extraction and calculation of many of these features is done by "rteval", an evaluation framework I wrote in Python.
+I developed an end-to-end machine-learning model for predicting quality assurance and verification outcomes in radiation oncology departments. It uses as input a diverse set of clinical and dosimetric features, such as complexity metrics, dose distributions, clinical and dosimetric traits. The extraction and calculation of many of these features is done by [rteval](http://test.ogkologia.gr/rteval/), an evaluation framework I wrote in Python.
 
 <p align="center">
 <img style="width: 80%; height: 80%" src="https://ekamperi.github.io/mrm_thesis/images/dnn_arch.png" alt="Machine learning model">
@@ -33,9 +33,7 @@ I developed an end-to-end machine-learning model for predicting quality assuranc
 <img style="width: 8%; height: 8%" src="{{ site.url }}/images/logos/linux_logo.png" alt="Linux logo">
 </p>
 
-I developed a specialized feature engineering framework for radiation oncology departments.
-* http://test.ogkologia.gr/rteval/ (Python)
-* A web application for the statistical analysis and presentation of the extracted data (R Shiny)
+I developed a specialized feature engineering [framework for radiation oncology departments](http://test.ogkologia.gr/rteval). Also, I wrote a web application with [R Shiny](https://pbs.twimg.com/media/DkcZS0KX4AAx78M?format=jpg&name=medium) for the statistical analysis and presentation of the extracted data.
 
 <hr>
 
