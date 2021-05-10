@@ -72,7 +72,7 @@ Image taken [from here](https://towardsdatascience.com/shallow-understanding-on-
 
 This was a shallow introduction to how a Bayesian Optimization algorithm works under the hood. Next, we will use a third-party library to tune an SVM's hyperparameters. In the future, we will talk more about BO, perhaps by implementing our own algorithm with GPs, acquisition functions, and all.
 
-### A concrete example
+### Hyperparameter tuning of an SVM
 Let's import some of the stuff we will be using:
 
 {% highlight python %}
@@ -102,6 +102,7 @@ X_train, y_train = make_classification(n_samples=2500, n_features=20, n_informat
 {% endraw %}
 {% endhighlight %}
 
+#### Objective function definition
 We define our objective/cost/loss function. This is the $$f(\mathbf{x})$$ that we want talked about in the introduction, and $$\mathbf{x} = [C, \gamma]$$ is the parameter space. Therefore, we want to find the best combination of $$C, \gamma$$ values that minimizes $$f(\mathbf{x})$$. The machine learning model that we will be using is a [Support Vector Machine (SVM)](https://en.wikipedia.org/wiki/Support-vector_machine), and the loss will be derived from the average 3-fold cross-validation score.
 
 {% highlight python %}
@@ -192,6 +193,7 @@ plt.show()
 <img style="width: 65%; height: 65%" src="{{ site.url }}/images/bayesian_optimization/bayesian_optimization.png" alt="Bayesian optimization">
 </p>
 
+#### Brute-force evaluation of objective function
 Since the parameter space is just 2-dimensional, the dataset relatively small, and the SVM training fast, we can brute-force compute the value of the objective function for all possible values of $$C$$ and $$\gamma$$. These will be our ground-truth data against which we will compare the results from the BO run.
 
 {% highlight python %}
