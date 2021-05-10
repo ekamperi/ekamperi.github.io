@@ -16,7 +16,8 @@ My name is Stathis Kamperis, and I live in Greece. I am a [radiation oncologist]
 <img style="width: 7%; height: 7%" src="{{ site.url }}/images/logos/opengl_logo.png" alt="Opengl logo">
 </p>
 
-I developed a cross-platform, OpenGL-accelerated, multi-threaded DICOM viewer (C++, OpenGL, Qt)
+I developed a cross-platform, OpenGL-accelerated, multi-threaded DICOM viewer (C++, OpenGL, Qt).
+
 For more details, check [this link](https://ekamperi.github.io/Volmetrics).
 
 ## Google Summer of Code
