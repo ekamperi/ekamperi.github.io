@@ -42,7 +42,7 @@ For more details, check [this link](https://ekamperi.github.io/Geant4).
 <p float="left">
 <img style="width: 9%; height: 9%" src="{{ site.url }}/images/logos/google_logo.png" alt="Google logo">
 <img style="width: 11%; height: 11%" src="{{ site.url }}/images/logos/netbsd_logo.png" alt="NetBSD logo">
-<img style="width: 15%; height: 15%" src="{{ site.url }}/images/logos/amd64_logo.png" alt="AMD64 logo">
+<img style="width: 10%; height: 10%" src="{{ site.url }}/images/logos/amd64_logo.png" alt="AMD64 logo">
 </p>
 
 I audited and extended NetBSD's operating system math library. Specifically:
