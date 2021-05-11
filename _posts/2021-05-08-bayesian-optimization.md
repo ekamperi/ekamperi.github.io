@@ -130,7 +130,7 @@ def objective(args):
 {% endhighlight %}
 
 
-####
+#### Optimization
 Now, we will use the `fmin()` function from the `hyperopt` package. In this step, we need to specify the search space for our parameters, the database in which we will be storing the evaluation points of the search, and finally, the search algorithm to use. The careful reader might notice that we are doing 1000 evaluations, although we said that evaluation $$f(x)$$ is expensive. That's correct; the only reason we do so is because we want to exaggerate the effect of exploitation *vs.* exploration, as you shall see in the plots.
 
 {% highlight python %}
