@@ -24,23 +24,18 @@ We are asked to optimize a function **we don't have an analytic expression** for
 
 To put it another way, we want to optimize an expensive, black-box, derivative-free, possibly non-convex function. And for this kind of problem, **Bayesian Optimization (BO)** is a generic and robust method. Mind that **the evaluation of the objective function is not necessarily computational**. Let me give you a couple of examples, where $$f(x)$$ is not something you can calculate with a computer.
 1. You are a researcher, and you investigate mixtures of chemotherapeutic drugs for their ability to kill cancer cells. You have come up with three candidate molecules, and you need to find the best combination of concentrations $$c_1, c_2, c_3$$ of the three drugs. Evaluating the objective function $$f(c_1,c_2,c_3)$$ in this context entails conducting actual experiments in the lab requiring personnel, consumables, and waiting for hours or days for the experiment to complete. Therefore, considering all possible concentration combinations is not a realistic approach. Instead, you need to start with a few random drug concentrations, test them, and then use the experimental outcomes to predict the most promising drug combination to use next. Makes sense?
-2. You work as a consultant for an oil company, and you need to maximize a probability density function $$f({\tiny\text{LAT}, \tiny\text{LONG}})$$ of finding oil if we drill on $$({\tiny\text{LAT}, \tiny\text{LONG}})$$ coordinates. Drilling costs lots of money; therefore we need to make good educated guesses, and we need to do so with only a few trials.
+2. You work as a consultant for an oil company, and you need to maximize a probability density function $$f({\tiny\text{LAT}, \tiny\text{LONG}})$$ of finding oil if we drill on $$({\tiny\text{LAT}, \tiny\text{LONG}})$$ coordinates. Here, the evaluation of the function at some point requires the conduction of an actual drilling. And this costs lots of money; therefore you need to make good educated guesses, and you need to do so with only a few trials.
 
-**In other cases, however, $$f(x)$$ might indeed be computational**. For instance, we may define it as the cross-validation error of a machine-learning model whose hyperparameters we want to tune. So, to sum up, we want to optimize $$f(x)$$ and:
-
-1.	We don't have a formula for $$f(x)$$
-2.	We don't have access to its derivatives $$f'(x)$$ and $$f''(x)$$
-3.	We don't have any convexity guarantees for $$f(x)$$
-4.	$$f(x)$$ is expensive to evaluate
+**In other cases, however, $$f(x)$$ might indeed be computational**. For instance, we may define it as the cross-validation error of a machine-learning model whose hyperparameters we want to tune.
 
 ### The ingredients of Bayesian Optimization
-#### Gaussian Processes
-Since we don't have an expression for the objective function, the first step is to **use a surrogate model to approximate $$f(x)$$**. It is typical in this context to use Gaussian Processes (GPs), as we have already discussed in a [previous blog post](https://ekamperi.github.io/mathematics/2021/03/30/gaussian-process-regression.html). It's vital that you grasp the concept of GPs, and then BO will require almost no mental effort to sink. Once we have built a proxy model for $$f(x)$$, we want to decide which point $$x$$ to sample next. For this, we need an acquisition function, which kind of "reads" the GP and outputs the best guess $$x$$. So, in BO, there are two components: the *surrogate model*, which most often is a Gaussian Process modeling $$f(x)$$, and the *acquisition function* that yields the next $$x$$ to evaluate. Having said that, a BO algorithm would look like this:
+#### Surrogate model
+Since we don't have an expression for the objective function, the first step is to **use a surrogate model to approximate $$f(x)$$**. It is typical in this context to use Gaussian Processes (GPs), as we have already discussed in a [previous blog post](https://ekamperi.github.io/mathematics/2021/03/30/gaussian-process-regression.html). It's vital that you grasp the concept of GPs, and then BO will require almost no mental effort to sink. There are other choices as well, but let's stick to GPs for now. Once we have built a proxy model for $$f(x)$$, we want to decide which point $$x$$ to sample next. For this, we use an acquisition function, which kind of "looks" at the GP and generates the best guess $$x$$. So, in BO, there are two components: the *surrogate model*, which most often is a Gaussian Process modeling $$f(x)$$, and the *acquisition function* that yields the next $$x$$ to evaluate. Having said that, a BO algorithm would look like this:
 
 1. Evaluate $$f(x)$$ at $$n$$ initial points
 2.	While $$n \le N$$ repeat:
-    * Update the GP posterior using all available data
-    * Compute the acquisition function using the current GP
+    * Update the surrogate model (e.g. the GP posterior) using all available data
+    * Compute the acquisition function using the current surrogate model
     * Let $$x_n$$ be the maximizer of the acquisition function
     * Evaluate $$y_n = f(x_n)$$
     * Increment $$n$$
