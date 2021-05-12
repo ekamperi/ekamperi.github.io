@@ -35,7 +35,6 @@ Mind that **the evaluation of the objective function is not necessarily computat
 #### Surrogate model
 Since we lack an expression for the objective function, the first step is to **use a surrogate model to approximate $$f(x)$$**. It is typical in this context to use Gaussian Processes (GPs), as we have already discussed in a [previous blog post](https://ekamperi.github.io/mathematics/2021/03/30/gaussian-process-regression.html). It's vital that you grasp the concept of GPs, and then BO will require almost no mental effort to sink. There are other choices for surrogate models, but let's stick to GPs for now. Once we have built a proxy model for $$f(x)$$, we want to decide which point $$x$$ to sample next. This is the responsibility of the acquisition function (AF), which kind of "peeks" at the GP and generates the best guess $$x$$. So, in BO, there are two main components: the *surrogate model*, which most often is a Gaussian Process modeling $$f(x)$$, and the *acquisition function* that yields the next $$x$$ to evaluate. Having said that, a BO algorithm would look like this in pseudocode:
 
-<p style="border:2px; border-style:solid; border-color:#1C6EA4; border-radius: 5px; padding: 20px;">
 1. Evaluate $$f(x)$$ at $$n$$ initial points
 2.	While $$n \le N$$ repeat:
     * Update the surrogate model (e.g., the GP posterior) using all available data
@@ -44,7 +43,6 @@ Since we lack an expression for the objective function, the first step is to **u
     * Evaluate $$y_n = f(x_n)$$
     * Increment $$n$$
 3.	Return either the $$x$$ evaluated with the largest $$f(x)$$, or the point with the largest posterior mean.
-</p>
 
 #### Acquisition function
 As we have already noted, the purpose of the acquisition function is to guide the next best point to sample $$f(x)$$. Acquisition functions are constructed so that a high value corresponds to potentially high values of the objective function. Either because the prediction is high or because the uncertainty is high. Which is why they favor regions that already correspond to optimal values or areas that haven't been explored yet. This is known as the so-called **exploration-exploitation trade-off**.
