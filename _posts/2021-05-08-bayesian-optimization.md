@@ -14,35 +14,40 @@ description: An introduction to Bayesian-based optimization for tuning hyperpara
 {:toc}
 
 ### Introduction
-Plot: We died and ended up in [Dante's inferno](https://en.wikipedia.org/wiki/Inferno_(Dante)) -- the optimization version.
+Plot: We died and ended up in [Dante's inferno](https://en.wikipedia.org/wiki/Inferno_(Dante)) -- the optimization version. So, what does it mean to be in an optimization hell?
 
-We are asked to optimize a function **we don't have an analytic expression** for. It follows that **we don't have access to the first or second derivatives**, hence using [gradient descent](https://ekamperi.github.io/machine%20learning/2019/07/28/gradient-descent.html) or [Newton's method](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization) is a no-go. Also, **we don't have any convexity guarantees** about $$f(x)$$. Therefore, methods from the convex optimization field are also not an option. The only thing we can do is to evaluate $$f(x)$$ at some $$x$$'s. As if the situation was not bad enough, **the function we want to optimize is very costly**. So, we can't just go ahead and massively evaluate $$f(x)$$ in, say, 100 billion random points and keep the one $$x$$ that optimizes $$f(x)$$'s value.
+We are asked to optimize a function **we don't have an analytic expression** for. It follows that **we don't have access to the first or second derivatives**, hence using [gradient descent](https://ekamperi.github.io/machine%20learning/2019/07/28/gradient-descent.html) or [Newton's method](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization) is a no-go. Also, **we don't have any convexity guarantees** about $$f(x)$$. Therefore, methods from the convex optimization field are also not available to us. The only thing we can do is to evaluate $$f(x)$$ at some $$x$$'s. However, as if the situation was not bad enough, **the function we want to optimize is very costly**. So, we can't just go ahead and massively evaluate $$f(x)$$ in, say, 100 billion random points and keep the one $$x$$ that optimizes $$f(x)$$'s value.
 
 <p align="center">
 <img style="width: 35%; height: 35%" src="{{ site.url }}/images/bayesian_optimization/dante_inferno.png" alt="Dante inferno">
 </p>
 
-To put it another way, we want to optimize an expensive, black-box, derivative-free, possibly non-convex function. And for this kind of problem, **Bayesian Optimization (BO)** is a generic and robust method. Mind that **the evaluation of the objective function is not necessarily computational**. Let me give you a couple of examples, where $$f(x)$$ is not something you can calculate with a computer.
-1. You are a researcher, and you investigate mixtures of chemotherapeutic drugs for their ability to kill cancer cells. You have come up with three candidate molecules, and you need to find the best combination of concentrations $$c_1, c_2, c_3$$ of the three drugs. Evaluating the objective function $$f(c_1,c_2,c_3)$$ in this context entails conducting actual experiments in the lab requiring personnel, consumables, and waiting for hours or days for the experiment to complete. Therefore, considering all possible concentration combinations is not a realistic approach. Instead, you need to start with a few random drug concentrations, test them, and then use the experimental outcomes to predict the most promising drug combination to use next. Makes sense?
-2. You work as a consultant for an oil company, and you need to maximize a probability density function $$f({\tiny\text{LAT}, \tiny\text{LONG}})$$ of finding oil if we drill on $$({\tiny\text{LAT}, \tiny\text{LONG}})$$ coordinates. Here, the evaluation of the function at some point requires the conduction of an actual drilling. And this costs lots of money; therefore you need to make good educated guesses, and you need to do so with only a few trials.
+To summarize, we want to optimize an expensive, black-box, derivative-free, possibly non-convex function. And for this kind of problem, **Bayesian Optimization (BO)** is a universal and robust method.
 
-**In other cases, however, $$f(x)$$ might indeed be computational**. For instance, we may define it as the cross-validation error of a machine-learning model whose hyperparameters we want to tune.
+Mind that **the evaluation of the objective function is not necessarily computational**! Let me give you a couple of examples, where $$f(x)$$ is not something you can calculate with a computer:
+
+1. You are a researcher investigating mixtures of chemotherapeutic drugs for their ability to kill cancer cells. You have narrowed it down to three candidate molecules, and you need to find the best combination of concentrations $$c_1, c_2, c_3$$ of the three drugs. Evaluating the objective function $$f(c_1,c_2,c_3)$$ in this context entails conducting actual experiments in the lab requiring personnel, consumables, and waiting for hours or days for the cell cultures to grow. Therefore, considering all possible concentration combinations is not a realistic approach. Instead, you need to begin with a few random drug concentrations, test them, and then use the experimental outcomes to predict the most promising drug combination to use next. Makes sense?
+2. You work as a consultant for an oil company, and you want to maximize a probability density function $$f({\tiny\text{LAT}, \tiny\text{LONG}})$$ of finding oil if you drill on $$({\tiny\text{LAT}, \tiny\text{LONG}})$$ coordinates. Here, the evaluation of the function at a point requires the conduction of actual drilling. And this costs lots of money; therefore, you need to make good educated guesses, and you need to do so with only a few trials.
+
+**In other cases, however, $$f(x)$$ might indeed be computational**. For instance, we may define it as the k-fold cross-validation error of a machine-learning model whose hyperparameters we want to tune. As a matter of fact, we will do precisely that later on.
 
 ### The ingredients of Bayesian Optimization
 #### Surrogate model
-Since we don't have an expression for the objective function, the first step is to **use a surrogate model to approximate $$f(x)$$**. It is typical in this context to use Gaussian Processes (GPs), as we have already discussed in a [previous blog post](https://ekamperi.github.io/mathematics/2021/03/30/gaussian-process-regression.html). It's vital that you grasp the concept of GPs, and then BO will require almost no mental effort to sink. There are other choices as well, but let's stick to GPs for now. Once we have built a proxy model for $$f(x)$$, we want to decide which point $$x$$ to sample next. For this, we use an acquisition function, which kind of "looks" at the GP and generates the best guess $$x$$. So, in BO, there are two components: the *surrogate model*, which most often is a Gaussian Process modeling $$f(x)$$, and the *acquisition function* that yields the next $$x$$ to evaluate. Having said that, a BO algorithm would look like this:
+Since we lack an expression for the objective function, the first step is to **use a surrogate model to approximate $$f(x)$$**. It is typical in this context to use Gaussian Processes (GPs), as we have already discussed in a [previous blog post](https://ekamperi.github.io/mathematics/2021/03/30/gaussian-process-regression.html). It's vital that you grasp the concept of GPs, and then BO will require almost no mental effort to sink. There are other choices for surrogate models, but let's stick to GPs for now. Once we have built a proxy model for $$f(x)$$, we want to decide which point $$x$$ to sample next. This is the responsibility of the acquisition function (AF), which kind of "peeks" at the GP and generates the best guess $$x$$. So, in BO, there are two main components: the *surrogate model*, which most often is a Gaussian Process modeling $$f(x)$$, and the *acquisition function* that yields the next $$x$$ to evaluate. Having said that, a BO algorithm would look like this in pseudocode:
 
+<p style="border:2px; border-style:solid; border-color:#1C6EA4; border-radius: 5px; padding: 20px;">
 1. Evaluate $$f(x)$$ at $$n$$ initial points
 2.	While $$n \le N$$ repeat:
-    * Update the surrogate model (e.g. the GP posterior) using all available data
+    * Update the surrogate model (e.g., the GP posterior) using all available data
     * Compute the acquisition function using the current surrogate model
     * Let $$x_n$$ be the maximizer of the acquisition function
     * Evaluate $$y_n = f(x_n)$$
     * Increment $$n$$
 3.	Return either the $$x$$ evaluated with the largest $$f(x)$$, or the point with the largest posterior mean.
+</p>
 
 #### Acquisition function
-As we have already noted, the role of the acquisition function is to guide the next best point to sample $$f(x)$$. Acquisition functions are constructed so that a high value corresponds to potentially high values of the objective function. Either because the prediction is high or because the uncertainty is high. Which is why they favor regions that already correspond to optimal values or areas that haven't been explored yet. This is known as the so-called **exploration-exploitation trade-off**.
+As we have already noted, the purpose of the acquisition function is to guide the next best point to sample $$f(x)$$. Acquisition functions are constructed so that a high value corresponds to potentially high values of the objective function. Either because the prediction is high or because the uncertainty is high. Which is why they favor regions that already correspond to optimal values or areas that haven't been explored yet. This is known as the so-called **exploration-exploitation trade-off**.
 
 If you have played strategy games, like [Age of Empires](https://en.wikipedia.org/wiki/Age_of_Empires) or [Command & Conquer](https://en.wikipedia.org/wiki/Command_%26_Conquer), you are already familiar with the concept. Initially, we are placed at some part of the map, and only the immediate area is visible to us. We may choose to sit there and mine any resources we already have access to or send a scouter to explore the invisible part of the map. By exploring the map, we risk meeting the enemy and getting killed, but also, we may find some high-value resources.
 
@@ -50,7 +55,7 @@ If you have played strategy games, like [Age of Empires](https://en.wikipedia.or
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/bayesian_optimization/age_of_empires.png" alt="Exploitation vs exploration trafeodd">
 </p>
 
-To find the next point to evaluate, we optimize the acquisition function. This an optimization problem itself, but luckily does not require the evaluation of the objective function. In some cases, we may even derive the exact equation and find a solution with, say, gradient-based optimization. There are three often cited acquisition functions: **expected improvement** (EI), **maximum probability of improvement** (MPI), and **upper confidence bound** (UCB). Although often cited last, I think it's best to talk about UCB because it contains explicit exploitation and exploration terms:
+To find the next point to evaluate, we optimize the acquisition function. This an optimization problem itself, but luckily it does not require the evaluation of the objective function. In some cases, we may even derive an exact equation for the AF and find a solution with, say, gradient-based optimization. There are three often cited acquisition functions: **expected improvement** (EI), **maximum probability of improvement** (MPI), and **upper confidence bound** (UCB). Although often mentioned last, I think it's best to talk about UCB because it contains explicit exploitation and exploration terms:
 
 $$
 a_{\text{UCB}}(x;\lambda) = \mu(x) + \lambda \sigma(x)
@@ -58,14 +63,14 @@ $$
 
 With UCB, the exploitation *vs.* exploration trade-off is explicit and easy to tune via the parameter $$\lambda$$. Concretely, we construct a weighted sum of the expected performance captured by $$\mu(x)$$ of the Gaussian Process, and of the uncertainty $$\sigma(x)$$, captured by the standard deviation of the GP. Assuming a small $$\lambda$$, BO will favor solutions that are expected to be high-performing, i.e., have high $$\mu(x)$$. Conversely, high values of $$\lambda$$ will make BO favor the exploration of currently uncharted areas in the search space. 
 
-Here is an example of a Gaussian Process along with the corresponding acquisition function. This is a 1-dimensional optimization problem. The **black dots** are our measurements, i.e. the $$x$$'s where we have already sampled $$f(x)$$. The **black dotted line** is the objective function, and the **black solid line** is our surrogate model of it, i.e., our posterior Gaussian Process. The **blue shaded area** captures the uncertainty of our surrogate model, $$\sigma(x)$$, corresponding to regions in the domain of the objective function that we don't have any observations. The **green line** is the acquisition function, which guides us on what point $$x$$ to sample next. Notice that it takes high values in regions where our GP's $$\mu(x)$$ is high and $$\sigma(x)$$ is high.
+Here is an example of a Gaussian Process along with a corresponding acquisition function. This is a 1-dimensional optimization problem, but the idea is the same for more variables. The **black dots** are our measurements, i.e. the $$x$$'s where we have already sampled $$f(x)$$. The **black dotted line** is the objective function, and the **black solid line** is our surrogate model of it, i.e., our posterior Gaussian Process. The **blue shaded area** represents the uncertainty of our surrogate model, $$\sigma(x)$$, corresponding to regions in the domain of the objective function that we don't have any observations. The **green line** is the acquisition function, which informs us what point $$x$$ to sample next. Notice that it takes high values in regions where our GP's $$\mu(x)$$ is high and $$\sigma(x)$$ is high.
 
 <p align="center">
 <img style="width: 80%; height: 80%" src="{{ site.url }}/images/bayesian_optimization/gaussian_process_acquision_function.png" alt="Exploitation vs exploration trafeodd">
 </p>
 Image taken [from here](https://towardsdatascience.com/shallow-understanding-on-bayesian-optimization-324b6c1f7083).
 
-This was a shallow introduction to how a Bayesian Optimization algorithm works under the hood. Next, we will use a third-party library to tune an SVM's hyperparameters. In the future, we will talk more about BO, perhaps by implementing our own algorithm with GPs, acquisition functions, and all.
+This was a lightweight introduction to how a Bayesian Optimization algorithm works under the hood. Next, we will use a third-party library to tune an SVM's hyperparameters and compare the results with some ground-truth data acquired via brute force. In the future, we will talk more about BO, perhaps by implementing our own algorithm with GPs, acquisition functions, and all.
 
 ### Hyperparameter tuning of an SVM
 Let's import some of the stuff we will be using:
