@@ -50,7 +50,7 @@ As we have already noted, the purpose of the acquisition function is to guide th
 If you have played strategy games, like [Age of Empires](https://en.wikipedia.org/wiki/Age_of_Empires) or [Command & Conquer](https://en.wikipedia.org/wiki/Command_%26_Conquer), you are already familiar with the concept. Initially, we are placed at some part of the map, and only the immediate area is visible to us. We may choose to sit there and mine any resources we already have access to or send a scouter to explore the invisible part of the map. By exploring the map, we risk meeting the enemy and getting killed, but also, we may find some high-value resources.
 
 <p align="center">
-<img style="width: 80%; height: 80%" src="{{ site.url }}/images/bayesian_optimization/age_of_empires.png" alt="Exploitation vs exploration trafeodd">
+<img style="width: 90%; height: 90%" src="{{ site.url }}/images/bayesian_optimization/age_of_empires.png" alt="Exploitation vs exploration trafeodd">
 </p>
 
 To find the next point to evaluate, we optimize the acquisition function. This an optimization problem itself, but luckily it does not require the evaluation of the objective function. In some cases, we may even derive an exact equation for the AF and find a solution with, say, gradient-based optimization. There are three often cited acquisition functions: **expected improvement** (EI), **maximum probability of improvement** (MPI), and **upper confidence bound** (UCB). Although often mentioned last, I think it's best to talk about UCB because it contains explicit exploitation and exploration terms:
