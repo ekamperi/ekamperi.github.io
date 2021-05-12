@@ -41,7 +41,7 @@ Since we lack an expression for the objective function, the first step is to **u
     * Compute the acquisition function using the current surrogate model
     * Let $$x_{n+1}$$ be the maximizer of the acquisition function, i.e. $$x_{n+1} = \text{argmax}_x u(x\mid\mathcal{D}_{1:n})$$
     * Evaluate $$y_{n+1} = f(x_{n+1})$$
-    * Augment the data $$\mathcal{D}_{1:n+1} = \{\mathcal{D}_{1:n, (x_{n+1}, y_{n+1})}\}$$ and increment $$n$$
+    * Augment the data $$\mathcal{D}_{1:n+1} = \{\mathcal{D}_{1:n}, (x_{n+1}, y_{n+1})\}$$ and increment $$n$$
 3.	Return either the $$x$$ evaluated with the largest $$f(x)$$, or the point with the largest posterior mean.
 
 #### Acquisition function
