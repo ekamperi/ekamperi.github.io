@@ -39,7 +39,7 @@ Since we lack an expression for the objective function, the first step is to **u
 2.	While $$n \le N$$ repeat:
     * Update the surrogate model (e.g., the GP posterior) using all available data
     * Compute the acquisition function using the current surrogate model
-    * Let $$x_n$$ be the maximizer of the acquisition function, i.e. $$x_n = \text{argmax}_x u(x|\mathcal{D}_{1:n-1}$$
+    * Let $$x_n$$ be the maximizer of the acquisition function, i.e. $$x_n = \text{argmax}_x u(x\|\mathcal{D}_{1:n-1})$$
     * Evaluate $$y_n = f(x_n)$$
     * Augment the data $\mathcal{D}_{1:n} = \{\mathcal{D}_{1:(n-1), (x_n, y_n)}\}$ and increment $$n$$
 3.	Return either the $$x$$ evaluated with the largest $$f(x)$$, or the point with the largest posterior mean.
