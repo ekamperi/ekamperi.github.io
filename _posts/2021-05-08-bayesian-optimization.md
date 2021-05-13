@@ -37,8 +37,8 @@ Since we lack an expression for the objective function, the first step is to **u
 
 1. Evaluate $$f(x)$$ at $$n$$ initial points
 2.	While $$n \le N$$ repeat:
-    * Update the surrogate model (e.g., the GP posterior) using all available data
-    * Compute the acquisition function using the current surrogate model
+    * Update the surrogate model (e.g., the GP posterior) using all available data $$\mathcal{D}_{1:n}$$
+    * Compute the acquisition function,$$u(x\mid\mathcal{D}_{1:n})$$$, using the current surrogate model
     * Let $$x_{n+1}$$ be the maximizer of the acquisition function, i.e. $$x_{n+1} = \text{argmax}_x u(x\mid\mathcal{D}_{1:n})$$
     * Evaluate $$y_{n+1} = f(x_{n+1})$$
     * Augment the data $$\mathcal{D}_{1:n+1} = \{\mathcal{D}_{1:n}, (x_{n+1}, y_{n+1})\}$$ and increment $$n$$
