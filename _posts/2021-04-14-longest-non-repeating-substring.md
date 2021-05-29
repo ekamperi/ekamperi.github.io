@@ -101,7 +101,7 @@ def verySlowLLS(s: str) -> int:
 {% endraw %}
 {% endhighlight %}
 
-So, why does this algorithm perform so poorly? As I understand, there are two reasons: 1. Recursion is expensive because each time we call the `helper()` function, a new stack frame needs to be allocated, and 2. When we are calling `max(helper(a, n-1), helper(b, n-1))`, we don't really *divide* the input, let alone *conquer* it! We merely go from N to N-1. It's not as if we reduced the search space from N to N/2 or something.
+So, why does this algorithm perform so poorly? As I understand, there are two reasons: 1. Recursion is expensive because each time we call the `helper()` function, a new stack frame needs to be allocated, and 2. When we are calling `max(helper(a, n-1), helper(b, n-1))`, we don't really *divide* the input, let alone *conquer* it! We merely go from N to N-1. It's not as if we reduced the search space from N to N/2 or something. **So, remember: if you recurse, you better be dividing the search space at each step, otherwise don't recurse!**
 
 ### A decent solution of $$\mathcal{O}(N^2)$$ complexity
 The next two solutions use sliding windows, either forward or backward, to find all possible substrings in a string. The forward method keeps track of the length that is maximum at the current point in time. We need to do this because we must look up to the original string of length N.
