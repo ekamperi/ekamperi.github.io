@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Acquisition function in Bayesian Optimization"
+title: "Acquisition functions in Bayesian Optimization"
 date:   2021-06-11
 categories: [machine learning]
 tags: [algorithms, 'Bayes theorem', optimization, programming]
