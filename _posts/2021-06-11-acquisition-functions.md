@@ -38,9 +38,7 @@ At this point let us recall that in a Gaussian Process, at each point we assign 
 
 $$f(x) \sim \mathcal{N}(\mu, \sigma^2)$$
 
-Now, let us use a reparameterization trick. If $$z \sim \mathcal{N}(0, 1)$$, then $$f(x)=\mu+\sigma z$$ is a normal distribution with mean $$\mu$$ and variance $$\sigma^2$$.
-
-Therefore, we can rewrite the improvement function, $$I(x)$$, as:
+Now, let us use a reparameterization trick. If $$z \sim \mathcal{N}(0, 1)$$, then $$f(x)=\mu+\sigma z$$ is a normal distribution with mean $$\mu$$ and variance $$\sigma^2$$. Therefore, we can rewrite the improvement function, $$I(x)$$, as:
 
 $$I(x) = f(x) - f(x^\star) = \mu + \sigma z - f(x^\star), \,\, z \sim \mathcal{N}(0,1)$$
 
