@@ -18,9 +18,10 @@ In a previous blog post, we have talked about Bayesian Optimization as a generic
 The essential ingredients of a BO algorithm are the surrogate model (SM) and the acquisition function (AF). The SM model is often a Gaussian Process that can fit the observed data points and quantify the uncertainty of unobserved areas. Next, the acquisition function "looks" at the SM and decides what areas are worth exploiting and what areas are worth exploiting. So, in areas where $$f(x)$$ is optimal or areas that we haven't yet looked at, AF assumes a high value. By finding the $$x$$ that maximizes the acquisition function, we know the next best guess for $$f$$ to try. That's right: instead of maximizing directly $$f(x)$$, we instead maximize another function, AF, that is much easier to do and much less expensive.
 
 In the following video, the exploitation (trying slightly different things that have already been proven to be good solutions) vs. exploration (trying totally different things from areas that have not yet been probed) tradeoff is demonstrated.
+
 <p align="center">
 <video id="movie" width="70%" height="70%" preload controls>
-   <source id="srcMp4" src="{{ site.url }}/images/acquisition_functions/ucb_acq.mp4#t=0.1" />
+   <source id="srcMp4" src="{{ site.url }}/images/acquisition_functions/ucb_acq.mp4#t=0.2" />
 </video>
 </p>
 
@@ -64,6 +65,7 @@ Let's call this point $$z_0 = \frac{f(x^\star) - \mu}{\sigma}$$, and break up th
 $$\text{EI}(x) = \underbrace{\int_{-\infty}^{z_0} I(x)\varphi(z) \mathop{\mathrm{d}z}}_{\text{Zero since }I(x)=0} + \int_{z_0}^{\infty} I(x)\varphi(z) \mathop{\mathrm{d}z}$$
 
 Ok, so we are good to go now:
+
 $$\begin{aligned}
 \text{EI}(x)
 &=\int_{z_0}^{\infty} \max(f(x)-f(x^\star),0) \varphi(z)\mathop{\mathrm{d}z} =
