@@ -17,7 +17,7 @@ description: An introduction to acquisition function in the context of Bayesian 
 In a [previous blog post](https://ekamperi.github.io/machine%20learning/2021/05/08/bayesian-optimization.html), we have talked about Bayesian Optimization as a generic method for optimizing a black-box function, $$f(x)$$, that is a function whose formula we don't know.
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/blackbox.png" alt="Blackbox function">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/acquisition_functions/blackbox.png" alt="Blackbox function">
 </p>
 
 The essential ingredients of a BO algorithm are the **surrogate model** (SM) and the **acquisition function** (AF). The SM model is often a Gaussian Process that can fit the observed data points and quantify the uncertainty of unobserved areas. Next, the acquisition function "looks" at the SM and decides what areas are worth exploiting and what areas are worth exploiting. So, in areas where $$f(x)$$ is optimal or areas that we haven't yet looked at, AF assumes a high value. By finding the $$x$$ that maximizes the acquisition function, we know the next best guess for $$f$$ to try. That's right: instead of maximizing directly $$f(x)$$, we instead maximize another function, AF, that is much easier to do and much less expensive.
