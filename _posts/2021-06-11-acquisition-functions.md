@@ -14,19 +14,19 @@ description: An introduction to acquisition function in the context of Bayesian 
 {:toc}
 
 # Introduction
-In a [previous blog post](https://ekamperi.github.io/machine%20learning/2021/05/08/bayesian-optimization.html), we have talked about Bayesian Optimization (BO) as a generic method for optimizing a black-box function, $$f(x)$$, that is a function whose formula we don't know. The only thing we can do in this setup, is to ask $$f$$ evaluate at some $$x$$ and observe the output.
+In a [previous blog post](https://ekamperi.github.io/machine%20learning/2021/05/08/bayesian-optimization.html), we have talked about Bayesian Optimization (BO) as a generic method for optimizing a black-box function, $$f(x)$$, that is a function whose formula we don't know. In this setup, the only thing we can do is to ask $$f$$ evaluate at some $$x$$ and observe the output.
 
 <p align="center">
  <img style="width: 40%; height: 40%" src="{{ site.url }}/images/acquisition_functions/blackbox.png" alt="Blackbox function">
 </p>
 
-The essential ingredients of a BO algorithm are the **surrogate model** (SM) and the **acquisition function** (AF). The surrogate model is often a [Gaussian Process](https://ekamperi.github.io/mathematics/2021/03/30/gaussian-process-regression.html) that can fit the observed data points and quantify the uncertainty of unobserved areas. Next, the acquisition function "looks" at the SM and decides what areas are worth exploiting and what areas are worth exploiting. So, in areas where $$f(x)$$ is optimal or areas that we haven't yet looked at, AF assumes a high value. By finding the $$x$$ that maximizes the acquisition function, we know the next best guess for $$f$$ to try. That's right: instead of maximizing directly $$f(x)$$, we instead maximize another function, AF, that is much easier to do and much less expensive. So, the steps that follows a BO algorithm are the following.
+The essential ingredients of a BO algorithm are the **surrogate model** (SM) and the **acquisition function** (AF). The surrogate model is often a [Gaussian Process](https://ekamperi.github.io/mathematics/2021/03/30/gaussian-process-regression.html) that can fit the observed data points and quantify the uncertainty of unobserved areas. Next, the acquisition function "looks" at the SM and decides what areas are worth exploiting and what areas are worth exploiting. So, in areas where $$f(x)$$ is optimal or areas that we haven't yet looked at, AF assumes a high value. By finding the $$x$$ that maximizes the acquisition function, we know the next best guess for $$f$$ to try. That's right: instead of maximizing directly $$f(x)$$, we instead maximize another function, AF, that is much easier to do and much less expensive. So, the steps that a BO algorithm follows are the following.
 
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/acquisition_functions/bo_flow.png" alt="Blackbox function">
 </p>
 
-In the following video, the **exploitation** (trying slightly different things that have already been proven to be good solutions) vs. **exploration** (trying totally different things from areas that have not yet been probed) tradeoff is demonstrated. Although here $$f(x)$$ is known, in the general case it is not.
+In the following video, the **exploitation** (trying slightly different things that have already been proven to be good solutions) vs. **exploration** (trying totally different things from areas that have not yet been probed) tradeoff is demonstrated. Although here $$f(x)$$ is known, in the general case, it is not.
 
 <p align="center">
 <video id="movie" width="70%" height="70%" preload controls>
@@ -41,7 +41,7 @@ $$
 a(x;\lambda) = \mu(x) + \lambda \sigma (x)
 $$
 
-With UCB, the exploitation vs. exploration trade-off is explicit and easy to tune via the parameter $$\lambda$$. Concretely, we construct a weighted sum of the expected performance captured by $$\mu(x)$$ of the Gaussian Process, and of the uncertainty $$\sigma(x)$$, captured by the standard deviation of the GP. When $$\lambda$$ is small, BO will favor solutions that are expected to be high-performing, i.e., have high $$\mu(x)$$. On the contrary, when $$\lambda$$ is large BO consider the exploration of currently uncharted areas in the search space.
+With UCB, the exploitation vs. exploration tradeoff is explicit and easy to tune via the parameter $$\lambda$$. Concretely, we construct a weighted sum of the expected performance captured by $$\mu(x)$$ of the Gaussian Process, and of the uncertainty $$\sigma(x)$$, captured by the standard deviation of the GP. When $$\lambda$$ is small, BO will favor solutions that are expected to be high-performing, i.e., have high $$\mu(x)$$. On the contrary, when $$\lambda$$ is large, BO considers exploring currently uncharted areas in the search space.
 
 Example with a large value for $$\lambda$$. UCB favors areas where we don't have any samples from.
 
@@ -70,16 +70,16 @@ $$I(x) = \max(f(x) - f(x^\star), 0)$$
 
 Therefore, if the new $$x$$ we are looking at has an associated value $$f(x)$$ that is less than $$f(x^\star)$$, then $$f(x) - f(x^\star)$$ is negative, so we aren't improving at all, and the above formula returns 0, since the maximum number between any negative number and 0 is 0. On the contrary, if the new value $$f(x)$$ is larger than our current best estimate, then $$f(x) - f(x^\star)$$ is positive, and $$I(x)$$ returns the difference which is how much we will improve over our current best solution.
 
-In probability of improvement acquisition function, for each candidate $$x$$ we assign the probability of $$f(x)$$ being larger than our current best $$f(x^\star)$$:
+In probability of improvement acquisition function, for each candidate $$x$$ we assign the probability of $$f(x)$$ being larger than our current best $$f(x^\star)$$. At this point let us recall that in a Gaussian Process, at each point we assign a Gaussian distribution. Therefore, at point $$x$$ the value of the function $$f(x)$$ is sampled from a normal distribution with mean $$\mu$$ and variance $$\sigma^2$$:
+
+$$f(x) \sim \mathcal{N}(\mu, \sigma^2)$$
 
 <p align="center">
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/acquisition_functions/probability_of_improvement.png" alt="Probability of Improvement function">
 </p>
 
 # Expected Improvement (EI)
-PI considers only the probability of improving our current best estimate, but it does not factor in the magnitude of the improvement. This is where the expected improvement acquisition function is different. At this point let us recall that in a Gaussian Process, at each point we assign a Gaussian distribution. Therefore, at point $$x$$ the value of the function $$f(x)$$ is sampled from a normal distribution with mean $$\mu$$ and variance $$\sigma^2$$:
-
-$$f(x) \sim \mathcal{N}(\mu, \sigma^2)$$
+PI considers only the probability of improving our current best estimate, but it does not factor in the magnitude of the improvement. This is where the expected improvement acquisition function is different.
 
 Now, let us use a reparameterization trick. If $$z \sim \mathcal{N}(0, 1)$$, then $$f(x)=\mu+\sigma z$$ is a normal distribution with mean $$\mu$$ and variance $$\sigma^2$$. Therefore, we can rewrite the improvement function, $$I(x)$$, as:
 
@@ -127,5 +127,3 @@ There's one last before we conclude. By injecting a (hyper)parameter $$\xi$$ int
 $$\text{EI}(x;\xi) = \left(\mu- f(x^\star) - \xi\right) \Phi\left(\frac{\mu-f(x^\star)-\xi}{\sigma}\right) + \sigma \varphi\left(\frac{\mu - f(x^\star)-\xi}{\sigma}\right)$$
 
 For $$\xi=0$$, we just end up with the previous formula. However, for large values of $$\xi$$, you can think of it as if we pretend to have a larger current best value than we actually do! Therefore, this steers the BO algorithm towards more exploration.
-
-
