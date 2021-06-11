@@ -35,6 +35,28 @@ In the following video, the **exploitation** (trying slightly different things t
 </p>
 
 
+# Upper Confidence Bound (UCB)
+Probably as simple as an AF can get, UCB contains explicit exploitation and exploration terms:
+
+$$
+a(x;\lambda) = \mu(x) + \lambda \sigma σ(x)
+$$
+
+With UCB, the exploitation vs. exploration trade-off is explicit and easy to tune via the parameter $$\lambda$$. Concretely, we construct a weighted sum of the expected performance captured by $$\mu(x)$$ of the Gaussian Process, and of the uncertainty $$\sigma(x)$$, captured by the standard deviation of the GP. When $$\lambda$$ is small, BO will favor solutions that are expected to be high-performing, i.e., have high $$\mu(x)$$. On the contrary, when $$\lambda$$ is large BO consider the exploration of currently uncharted areas in the search space.
+
+<p align="center">
+ <img style="width: 80%; height: 80%" src="{{ site.url }}/images/acquisition_functions/ucb_large_lambda.png" alt="UCB function">
+</p>
+
+<p align="center">
+ <img style="width: 80%; height: 80%" src="{{ site.url }}/images/acquisition_functions/ucb_medium_lambda.png" alt="UCB function">
+</p>
+
+<p align="center">
+ <img style="width: 80%; height: 80%" src="{{ site.url }}/images/acquisition_functions/ucb_small_lambda.png" alt="UCB function">
+</p>
+
+
 # Expected Improvement (EI)
 Suppose that we'd like to maximize $$f(x)$$, and the best solution we have so far is $$x^\star$$. Then, we can defined improvement, $$I(x)$$, as:
 
