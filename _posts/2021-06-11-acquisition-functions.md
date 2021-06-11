@@ -30,7 +30,10 @@ In the following video, the exploitation (trying slightly different things that 
 </video>
 </p>
 
-Therefore, the flow of a BO algorithm is $$\text{Observed data}\Longrightarrow \text{Fit surrogate model}\Longrightarrow \text{Maximize acquisition function} \Longrightarrow \text{Evaluate } f(x)$$.
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/acquisition_functions/bo_flow.png" alt="Blackbox function">
+</p>
 
 # Expected Improvement (EI)
 Suppose that we'd like to maximize $$f(x)$$, and the best solution we have so far is $$x^\star$$. Then, we can defined improvement, $$I(x)$$, as:
