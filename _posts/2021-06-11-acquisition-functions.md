@@ -62,15 +62,22 @@ Example with a small value for $$\lambda$$. UCB is very conservative and causes 
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/acquisition_functions/ucb_small_lambda.png" alt="UCB function">
 </p>
 
+# Probability of Improvement (PI)
 
-# Expected Improvement (EI)
 Suppose that we'd like to maximize $$f(x)$$, and the best solution we have so far is $$x^\star$$. Then, we can defined improvement, $$I(x)$$, as:
 
 $$I(x) = \max(f(x) - f(x^\star), 0)$$
 
 Therefore, if the new $$x$$ we are looking at has an associated value $$f(x)$$ that is less than $$f(x^\star)$$, then $$f(x) - f(x^\star)$$ is negative, so we aren't improving at all, and the above formula returns 0, since the maximum number between any negative number and 0 is 0. On the contrary, if the new value $$f(x)$$ is larger than our current best estimate, then $$f(x) - f(x^\star)$$ is positive, and $$I(x)$$ returns the difference which is how much we will improve over our current best solution.
 
-At this point let us recall that in a Gaussian Process, at each point we assign a Gaussian distribution. Therefore, at point $$x$$ the value of the function $$f(x)$$ is sampled from a normal distribution with mean $$\mu$$ and variance $$\sigma^2$$:
+In probability of improvement acquisition function, for each candidate $$x$$ we assign the probability of $$f(x)$$ being larger than our current best $$f(x^\star)$$:
+
+<p align="center">
+ <img style="width: 80%; height: 80%" src="{{ site.url }}/images/acquisition_functions/probability_of_improvement.png" alt="Probability of Improvement function">
+</p>
+
+# Expected Improvement (EI)
+PI considers only the probability of improving our current best estimate, but it does not factor in the magnitude of the improvement. This is where the expected improvement acquisition function is different. At this point let us recall that in a Gaussian Process, at each point we assign a Gaussian distribution. Therefore, at point $$x$$ the value of the function $$f(x)$$ is sampled from a normal distribution with mean $$\mu$$ and variance $$\sigma^2$$:
 
 $$f(x) \sim \mathcal{N}(\mu, \sigma^2)$$
 
