@@ -37,7 +37,8 @@ In the following video, we demonstrate the **exploitation** (trying slightly dif
 </video>
 </p>
 
-# Upper Confidence Bound (UCB)
+# Acquisition Functions
+## Upper Confidence Bound (UCB)
 Probably as simple as an acquisition function can get, upper confidence bound contains explicit exploitation ($$\mu(x)$$) and exploration ($$\sigma(x)$$) terms:
 
 $$
@@ -64,7 +65,7 @@ Finally, here is an example with a small value for $$\lambda$$. UCB is very cons
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/acquisition_functions/ucb_small_lambda.png" alt="UCB function">
 </p>
 
-# Probability of Improvement (PI)
+## Probability of Improvement (PI)
 
 Suppose that we'd like to maximize $$f(x)$$, and the best solution we have so far is $$x^\star$$. Then, we can define "improvement", $$I(x)$$, as:
 
@@ -88,7 +89,7 @@ $$
 
 Where $$\Phi(z) \equiv \text{CDF}(z)$$ and $$z = \frac{f^\star - \mu(x)}{\sigma(x)}$$.
 
-# Expected Improvement (EI)
+## Expected Improvement (EI)
 PI considers only the probability of improving our current best estimate, but it does not factor in the magnitude of the improvement. This is where the expected improvement acquisition function is different.
 
 Let us take a pause here and make sure that we really understand what's going on. Here $$x$$ is some point that we want to check whether it worths evaluating $$f$$ at. So, we assign a value $$I(x)$$ to it. However, $$I(x)$$ is not some constant fixed value. Its value is **sampled** from a normal distribution $$\mathcal{N}(\mu, \sigma^2)$$. Hence, every time we calculate $$I(x)$$, at the same $$x$$, we get a different value!
