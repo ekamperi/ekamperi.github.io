@@ -23,7 +23,7 @@ In a [previous blog post](https://ekamperi.github.io/machine%20learning/2021/05/
 The essential ingredients of a BO algorithm are the **surrogate model** (SM) and the **acquisition function** (AF). The surrogate model is often a [Gaussian Process](https://ekamperi.github.io/mathematics/2021/03/30/gaussian-process-regression.html) that can fit the observed data points and quantify the uncertainty of unobserved areas. Next, the acquisition function "looks" at the SM and decides what areas are worth exploiting and what areas are worth exploiting. So, in areas where $$f(x)$$ is optimal or areas that we haven't yet looked at, AF assumes a high value. By finding the $$x$$ that maximizes the acquisition function, we know the next best guess for $$f$$ to try. That's right: instead of maximizing directly $$f(x)$$, we instead maximize another function, AF, that is much easier to do and much less expensive. So, the steps that a BO algorithm follows are the following.
 
 <p align="center">
- <img style="width: 50%; height: 50%" src="{{ site.url }}/images/acquisition_functions/bo_flow.png" alt="Blackbox function">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/acquisition_functions/bo_flow.png" alt="Blackbox function">
 </p>
 
 In the following video, the **exploitation** (trying slightly different things that have already been proven to be good solutions) vs. **exploration** (trying totally different things from areas that have not yet been probed) tradeoff is demonstrated. Although here $$f(x)$$ is known, in the general case, it is not.
