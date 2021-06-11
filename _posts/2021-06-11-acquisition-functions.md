@@ -23,7 +23,7 @@ In a [previous blog post](https://ekamperi.github.io/machine%20learning/2021/05/
 The essential ingredients of a BO algorithm are the **surrogate model** (SM) and the **acquisition function** (AF). The surrogate model is often a [Gaussian Process](https://ekamperi.github.io/mathematics/2021/03/30/gaussian-process-regression.html) that can fit the observed data points and quantify the uncertainty of unobserved areas. Next, the acquisition function "looks" at the SM and decides what areas are worth exploiting and what areas are worth exploiting. So, in areas where $$f(x)$$ is optimal or areas that we haven't yet looked at, AF assumes a high value. By finding the $$x$$ that maximizes the acquisition function, we know the next best guess for $$f$$ to try. That's right: instead of maximizing directly $$f(x)$$, we instead maximize another function, AF, that is much easier to do and much less expensive. So, the steps that follows a BO algorithm are the following.
 
 <p align="center">
- <img style="width: 80%; height: 80%" src="{{ site.url }}/images/acquisition_functions/bo_flow.png" alt="Blackbox function">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/acquisition_functions/bo_flow.png" alt="Blackbox function">
 </p>
 
 In the following video, the **exploitation** (trying slightly different things that have already been proven to be good solutions) vs. **exploration** (trying totally different things from areas that have not yet been probed) tradeoff is demonstrated. Although here $$f(x)$$ is known, in the general case it is not.
@@ -34,7 +34,6 @@ In the following video, the **exploitation** (trying slightly different things t
 </video>
 </p>
 
-
 # Upper Confidence Bound (UCB)
 Probably as simple as an AF can get, UCB contains explicit exploitation and exploration terms:
 
@@ -44,13 +43,20 @@ $$
 
 With UCB, the exploitation vs. exploration trade-off is explicit and easy to tune via the parameter $$\lambda$$. Concretely, we construct a weighted sum of the expected performance captured by $$\mu(x)$$ of the Gaussian Process, and of the uncertainty $$\sigma(x)$$, captured by the standard deviation of the GP. When $$\lambda$$ is small, BO will favor solutions that are expected to be high-performing, i.e., have high $$\mu(x)$$. On the contrary, when $$\lambda$$ is large BO consider the exploration of currently uncharted areas in the search space.
 
+Example with a large value for $$\lambda$$. UCB favors areas where we don't have any samples from.
+
 <p align="center">
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/acquisition_functions/ucb_large_lambda.png" alt="UCB function">
 </p>
 
+
+Example with a value for $$\lambda$$ around 1 (I made $$\lambda=1.2$$ so that the curves don't coincide). UCB balances between known good values and unexplored areas.
+
 <p align="center">
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/acquisition_functions/ucb_medium_lambda.png" alt="UCB function">
 </p>
+
+Example with a small value for $$\lambda$$. UCB is very conservative and causes aggressive sampling around the current best solution.
 
 <p align="center">
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/acquisition_functions/ucb_small_lambda.png" alt="UCB function">
