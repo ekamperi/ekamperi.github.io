@@ -21,7 +21,7 @@ Quoting the wikipedia definition of the [curl vector operator](https://en.wikipe
 The devil in this definiton lies in the word *infinitestimal*. I was under the impression that curl was related to the *macroscopic* rotation, but I couldn't be more wrong! Let me show what I mean. Consider the vector field defined by $$\mathbf{F}(x,y,z) = \left(-y/(x^2+y^2), x/(x^2+y^2), 0\right)$$. 
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/curl_operator.png" al="Curl operator example">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/curl_operator.png" alt="Curl operator example">
 </p>
 
 By looking at these images my first reaction was that this field is most certainly a rotational one. I mean look at how "swirly" it is! Imagine my surprise when I actually did the math and my intuition proved to be completely wrong:
