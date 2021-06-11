@@ -79,7 +79,7 @@ $$f(x) \sim \mathcal{N}(\mu, \sigma^2)$$
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/acquisition_functions/probability_of_improvement.png" alt="Probability of Improvement function">
 </p>
 
-So, how do we calculate $$\text{PI}(x) = \text{Pr}(I(x)) > 0 \Leftrightarrow \text{Pr}(f(x) > f(x^\star)$$? Well, if you look at the image above, it's clear that:
+So, how do we calculate $$\text{PI}(x) = \text{Pr}(I(x) > 0) \Leftrightarrow \text{Pr}(f(x) > f(x^\star)$$? Well, if you look at the image above, it's clear that:
 
 $$
 \text{PI}(x) = 1 - \Phi(z_0) = \Phi(-z_0) = \Phi\left(\frac{\mu(x)-f^\star}{\sigma(x)}\right)
