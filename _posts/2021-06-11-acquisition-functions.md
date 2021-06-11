@@ -14,7 +14,7 @@ description: An introduction to acquisition function in the context of Bayesian 
 {:toc}
 
 # Introduction
-In a [previous blog post](https://ekamperi.github.io/machine%20learning/2021/05/08/bayesian-optimization.html), we have talked about Bayesian Optimization (BO) as a generic method for optimizing a black-box function, $$f(x)$$, that is a function whose formula we don't know. The only thing we can do in this setup is to ask $$f$$ evaluate at some $$x$$ and observe the output.
+In a [previous blog post](https://ekamperi.github.io/machine%20learning/2021/05/08/bayesian-optimization.html), we talked about Bayesian Optimization (BO) as a generic method for optimizing a black-box function, $$f(x)$$, that is a function whose formula we don't know. The only thing we can do in this setup is to ask $$f$$ evaluate at some $$x$$ and observe the output.
 
 <p align="center">
  <img style="width: 40%; height: 40%" src="{{ site.url }}/images/acquisition_functions/blackbox.png" alt="Blackbox function">
