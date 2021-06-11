@@ -20,6 +20,7 @@ In a [previous blog post](https://ekamperi.github.io/machine%20learning/2021/05/
  <img style="width: 40%; height: 40%" src="{{ site.url }}/images/acquisition_functions/blackbox.png" alt="Blackbox function">
 </p>
 
+# A schematic Bayesian Optimization algorithm
 The essential ingredients of a BO algorithm are the **surrogate model** (SM) and the **acquisition function** (AF). The surrogate model is often a [Gaussian Process](https://ekamperi.github.io/mathematics/2021/03/30/gaussian-process-regression.html) that can fit the observed data points and quantify the uncertainty of unobserved areas. So, SM is our effort to approximate the unknown black-box function $$f(x)$$.
 
 Next, the acquisition function "looks" at the SM and determines what areas in the domain of $$f(x)$$ are worth exploiting and what areas are worth exploring. Accordingly, in areas where $$f(x)$$ is optimal or areas that we haven't yet looked at, AF assumes a high value. On the contrary, in areas where $$f(x)$$ is suboptimal or areas that we have already sampled from, AF's value is small. By finding the $$x$$ that maximizes the acquisition function, we identify the next best guess for $$f$$ to try. That's right: instead of maximizing directly $$f(x)$$, whose analytic form we don't even know, we instead maximize another function, AF, that is much easier to do and much less expensive. So, the steps that a BO algorithm follows are the following.
