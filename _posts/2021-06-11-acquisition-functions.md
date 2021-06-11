@@ -64,7 +64,7 @@ Example with a small value for $$\lambda$$. UCB is very conservative and causes 
 
 # Probability of Improvement (PI)
 
-Suppose that we'd like to maximize $$f(x)$$, and the best solution we have so far is $$x^\star$$. Then, we can defined improvement, $$I(x)$$, as:
+Suppose that we'd like to maximize $$f(x)$$, and the best solution we have so far is $$x^\star$$. Then, we can define "improvement", $$I(x)$$, as:
 
 $$I(x) = \max(f(x) - f(x^\star), 0)$$
 
