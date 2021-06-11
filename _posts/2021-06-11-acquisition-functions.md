@@ -30,7 +30,6 @@ In the following video, the exploitation (trying slightly different things that 
 </video>
 </p>
 
-
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/acquisition_functions/bo_flow.png" alt="Blackbox function">
 </p>
