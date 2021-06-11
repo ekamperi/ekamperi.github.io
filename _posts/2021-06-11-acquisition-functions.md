@@ -82,15 +82,13 @@ $$f(x) \sim \mathcal{N}(\mu, \sigma^2)$$
 So, how do we calculate $$\text{PI}(x) = \text{Pr}(I(x)) > 0 \Leftrightarrow \text{Pr}(f(x) > f(x^\star)$$? Well, if you look at the image above, it's clear that:
 
 $$
-\text{PI}(x) = 1 - \text{CDF}(z_0) = \text{CDF}(-z_0) = \text{CDF}\left(\frac{\mu-f^\star}{\sigma}\right)
+\text{PI}(x) = 1 - \Phi(z_0) = \Phi(-z_0) = \Phi\left(\frac{\mu(x)-f^\star}{\sigma(x)}\right)
 $$
+
+Where $$\Phi(z) \equiv \text{CDF}(z)$$ and $$z = \frac{f^\star - \mu(x)}{\sigma(x)}$$.
 
 # Expected Improvement (EI)
 PI considers only the probability of improving our current best estimate, but it does not factor in the magnitude of the improvement. This is where the expected improvement acquisition function is different.
-
-Now, let us use a reparameterization trick. If $$z \sim \mathcal{N}(0, 1)$$, then $$f(x)=\mu+\sigma z$$ is a normal distribution with mean $$\mu$$ and variance $$\sigma^2$$. Therefore, we can rewrite the improvement function, $$I(x)$$, as:
-
-$$I(x) = f(x) - f(x^\star) = \mu + \sigma z - f(x^\star), \,\, z \sim \mathcal{N}(0,1)$$
 
 Let us take a pause here and make sure that we really understand what's going on. Here $$x$$ is some point that we want to check whether it worths evaluating $$f$$ at. So, we assign a value $$I(x)$$ to it. However, $$I(x)$$ is not some constant fixed value. Its value is **sampled** from a normal distribution $$\mathcal{N}(\mu, \sigma^2)$$. Hence, every time we calculate $$I(x)$$, at the same $$x$$, we get a different value!
 
