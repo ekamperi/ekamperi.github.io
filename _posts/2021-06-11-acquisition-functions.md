@@ -38,7 +38,7 @@ In the following video, the **exploitation** (trying slightly different things t
 Probably as simple as an AF can get, UCB contains explicit exploitation and exploration terms:
 
 $$
-a(x;\lambda) = \mu(x) + \lambda \sigma σ(x)
+a(x;\lambda) = \mu(x) + \lambda \sigma (x)
 $$
 
 With UCB, the exploitation vs. exploration trade-off is explicit and easy to tune via the parameter $$\lambda$$. Concretely, we construct a weighted sum of the expected performance captured by $$\mu(x)$$ of the Gaussian Process, and of the uncertainty $$\sigma(x)$$, captured by the standard deviation of the GP. When $$\lambda$$ is small, BO will favor solutions that are expected to be high-performing, i.e., have high $$\mu(x)$$. On the contrary, when $$\lambda$$ is large BO consider the exploration of currently uncharted areas in the search space.
