@@ -14,19 +14,21 @@ description: An introduction to acquisition function in the context of Bayesian 
 {:toc}
 
 # Introduction
-In a [previous blog post](https://ekamperi.github.io/machine%20learning/2021/05/08/bayesian-optimization.html), we have talked about Bayesian Optimization (BO) as a generic method for optimizing a black-box function, $$f(x)$$, that is a function whose formula we don't know. In this setup, the only thing we can do is to ask $$f$$ evaluate at some $$x$$ and observe the output.
+In a [previous blog post](https://ekamperi.github.io/machine%20learning/2021/05/08/bayesian-optimization.html), we have talked about Bayesian Optimization (BO) as a generic method for optimizing a black-box function, $$f(x)$$, that is a function whose formula we don't know. The only thing we can do in this setup is to ask $$f$$ evaluate at some $$x$$ and observe the output.
 
 <p align="center">
  <img style="width: 40%; height: 40%" src="{{ site.url }}/images/acquisition_functions/blackbox.png" alt="Blackbox function">
 </p>
 
-The essential ingredients of a BO algorithm are the **surrogate model** (SM) and the **acquisition function** (AF). The surrogate model is often a [Gaussian Process](https://ekamperi.github.io/mathematics/2021/03/30/gaussian-process-regression.html) that can fit the observed data points and quantify the uncertainty of unobserved areas. Next, the acquisition function "looks" at the SM and decides what areas are worth exploiting and what areas are worth exploiting. So, in areas where $$f(x)$$ is optimal or areas that we haven't yet looked at, AF assumes a high value. By finding the $$x$$ that maximizes the acquisition function, we know the next best guess for $$f$$ to try. That's right: instead of maximizing directly $$f(x)$$, we instead maximize another function, AF, that is much easier to do and much less expensive. So, the steps that a BO algorithm follows are the following.
+The essential ingredients of a BO algorithm are the **surrogate model** (SM) and the **acquisition function** (AF). The surrogate model is often a [Gaussian Process](https://ekamperi.github.io/mathematics/2021/03/30/gaussian-process-regression.html) that can fit the observed data points and quantify the uncertainty of unobserved areas. So, SM is our effort to approximate the unknown black-box function $$f(x)$$.
+
+Next, the acquisition function "looks" at the SM and determines what areas in the domain of $$f(x)$$ are worth exploiting and what areas are worth exploring. Accordingly, in areas where $$f(x)$$ is optimal or areas that we haven't yet looked at, AF assumes a high value. On the contrary, in areas where $$f(x)$$ is suboptimal or areas that we have already sampled from, AF's value is small. By finding the $$x$$ that maximizes the acquisition function, we identify the next best guess for $$f$$ to try. That's right: instead of maximizing directly $$f(x)$$, whose analytic form we don't even know, we instead maximize another function, AF, that is much easier to do and much less expensive. So, the steps that a BO algorithm follows are the following.
 
 <p align="center">
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/acquisition_functions/bo_flow.png" alt="Blackbox function">
 </p>
 
-In the following video, the **exploitation** (trying slightly different things that have already been proven to be good solutions) vs. **exploration** (trying totally different things from areas that have not yet been probed) tradeoff is demonstrated. Although here $$f(x)$$ is known, in the general case, it is not.
+In the following video, we demonstrate the **exploitation** (trying slightly different things that have already been proven to be good solutions) vs. **exploration** (trying totally different things from areas that have not yet been probed) tradeoff. Although here $$f(x)$$ is known, in the general case, it is not.
 
 <p align="center">
 <video id="movie" width="70%" height="70%" preload controls>
@@ -35,28 +37,27 @@ In the following video, the **exploitation** (trying slightly different things t
 </p>
 
 # Upper Confidence Bound (UCB)
-Probably as simple as an AF can get, UCB contains explicit exploitation and exploration terms:
+Probably as simple as an acquisition function can get, upper confidence bound contains explicit exploitation ($$\mu(x)$$) and exploration ($$\sigma(x)$$) terms:
 
 $$
 a(x;\lambda) = \mu(x) + \lambda \sigma (x)
 $$
 
-With UCB, the exploitation vs. exploration tradeoff is explicit and easy to tune via the parameter $$\lambda$$. Concretely, we construct a weighted sum of the expected performance captured by $$\mu(x)$$ of the Gaussian Process, and of the uncertainty $$\sigma(x)$$, captured by the standard deviation of the GP. When $$\lambda$$ is small, BO will favor solutions that are expected to be high-performing, i.e., have high $$\mu(x)$$. On the contrary, when $$\lambda$$ is large, BO considers exploring currently uncharted areas in the search space.
+With UCB, the exploitation vs. exploration tradeoff is straightforward and easy to tune via the parameter $$\lambda$$. Concretely, UCB is a weighted sum of the expected performance captured by $$\mu(x)$$ of the Gaussian Process, and of the uncertainty $$\sigma(x)$$, captured by the standard deviation of the GP. When $$\lambda$$ is small, BO will favor solutions that are expected to be high-performing, i.e., have high $$\mu(x)$$. On the contrary, when $$\lambda$$ is large, BO rewards the exploration of currently uncharted areas in the search space.
 
-Example with a large value for $$\lambda$$. UCB favors areas where we don't have any samples from.
+Here is an example with a large value for $$\lambda$$. UCB favors areas where we don't have any samples from.
 
 <p align="center">
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/acquisition_functions/ucb_large_lambda.png" alt="UCB function">
 </p>
 
-
-Example with a value for $$\lambda$$ around 1 (I made $$\lambda=1.2$$ so that the curves don't coincide). UCB balances between known good values and unexplored areas.
+This is an example with a value for $$\lambda$$ around 1 (I made $$\lambda=1.2$$ so that AF and upper confidence interval curves don't coincide). UCB balances between known good values and unexplored areas.
 
 <p align="center">
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/acquisition_functions/ucb_medium_lambda.png" alt="UCB function">
 </p>
 
-Example with a small value for $$\lambda$$. UCB is very conservative and causes aggressive sampling around the current best solution.
+Finally, here is an example with a small value for $$\lambda$$. UCB is very conservative in this case and will cause aggressive sampling around the current best solution.
 
 <p align="center">
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/acquisition_functions/ucb_small_lambda.png" alt="UCB function">
