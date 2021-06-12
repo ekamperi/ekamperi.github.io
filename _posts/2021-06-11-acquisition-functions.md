@@ -77,9 +77,7 @@ In probability of improvement acquisition function, for each candidate $$x$$ we 
 
 $$f(x) \sim \mathcal{N}(\mu(x), \sigma^2(x))$$
 
-Now, let us use a reparameterization trick. If $$z \sim \mathcal{N}(0, 1)$$, then $$f(x) = \mu(x) + \sigma(x) z$$ is a normal distribution with mean $$\mu(x)$$ and variance $$\sigma^2(x)$$.
-
-Therefore, we can rewrite the improvement function, $$I(x)$$, as:
+Now, let us use a reparameterization trick. If $$z \sim \mathcal{N}(0, 1)$$, then $$f(x) = \mu(x) + \sigma(x) z$$ is a normal distribution with mean $$\mu(x)$$ and variance $$\sigma^2(x)$$. Therefore, we can rewrite the improvement function, $$I(x)$$, as:
 
 $$I(x) = \text{max}(f(x) - f(x^\star), 0) = \text{max}(\mu(x) + \sigma(x) z - f(x^\star), 0) \,\, z \sim \mathcal{N}(0,1)$$
 
