@@ -32,7 +32,7 @@ Next, the acquisition function "looks" at the SM and determines what areas in th
 In the following video, we demonstrate the **exploitation** (trying slightly different things that have already been proven to be good solutions) vs. **exploration** (trying totally different things from areas that have not yet been probed) tradeoff. Although here $$f(x)$$ is known, in the general case, it is not.
 
 <p align="center">
-<video id="movie" width="70%" height="70%" preload controls>
+<video id="movie" width="80%" height="80%" preload controls>
    <source id="srcMp4" src="{{ site.url }}/images/acquisition_functions/ucb_acq.mp4#t=0.2" />
 </video>
 </p>
