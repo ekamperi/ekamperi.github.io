@@ -79,15 +79,19 @@ $$f(x) \sim \mathcal{N}(\mu(x), \sigma^2(x))$$
 
 Now, let us use a reparameterization trick. If $$z \sim \mathcal{N}(0, 1)$$, then $$f(x) = \mu(x) + \sigma(x) z$$ is a normal distribution with mean $$\mu(x)$$ and variance $$\sigma^2(x)$$. Therefore, we can rewrite the improvement function, $$I(x)$$, as:
 
-$$I(x) = \text{max}(f(x) - f(x^\star), 0) = \text{max}(\mu(x) + \sigma(x) z - f(x^\star), 0) \,\, z \sim \mathcal{N}(0,1)$$
+$$
+I(x) = \text{max}(f(x) - f(x^\star), 0) = \text{max}(\mu(x) + \sigma(x) z - f(x^\star), 0) \,\, z \sim \mathcal{N}(0,1)
+$$
 
 <p align="center">
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/acquisition_functions/probability_of_improvement.png" alt="Probability of Improvement function">
 </p>
 
-Let us take a pause here and make sure that we really understand what's going on. Here $$x$$ is some point that we want to check whether it worths evaluating $$f$$ at. So, we assign a value $$I(x)$$ to it. However, $$I(x)$$'s value is **sampled** from a normal distribution $$\mathcal{N}(\mu, \sigma^2)$$. So, here's how we calculate:
+Let us take a pause here and make sure that we really understand what's going on. Here $$x$$ is some point that we want to check whether it worths evaluating $$f$$ at. So, we assign a value $$I(x)$$ to it. However, $$I(x)$$'s value is **sampled** from a normal distribution $$\mathcal{N}(\mu(x), \sigma^2(x))$$. So, here's how we calculate:
 
-$$\text{PI}(x) = \text{Pr}(I(x) > 0) \Leftrightarrow \text{Pr}(f(x) > f(x^\star)$$
+$$
+\text{PI}(x) = \text{Pr}(I(x) > 0) \Leftrightarrow \text{Pr}(f(x) > f(x^\star))
+$$
 
 If you look at the image above, it's clear that the probability of improvement is the shaded area under the Gaussian curve for $$z>z_0$$. Therefore:
 
@@ -102,7 +106,7 @@ PI considers only the probability of improving our current best estimate, but it
 
 $$\text{EI}(x)\equiv\mathbb{E}\left[I(x)\right] = \int_{-\infty}^{\infty} I(x)\varphi(z) \mathop{\mathrm{d}z}$$
 
-Where $$\varphi(z)$$ is the probability density function of the normal distribution $$\mathcal{N}(0,1)$$, i.e., $$\varphi(z) = \frac{1}{\sqrt{2\pi}}\exp\left(-z^2/2\right)$$. In case you aren't familiar with the [expected value](https://www.wikiwand.com/en/Expected_value) of a random variable, it's kind of a weight average of "value" time "probability of getting that value".
+Where $$\varphi(z)$$ is the probability density function of the normal distribution $$\mathcal{N}(0,1)$$, i.e., $$\varphi(z) = \frac{1}{\sqrt{2\pi}}\exp\left(-z^2/2\right)$$. In case you aren't familiar with the [expected value](https://www.wikiwand.com/en/Expected_value) of a random variable, it's kind of a weighted average of "value" times "probability of getting that value".
 
 Ok, so:
 
