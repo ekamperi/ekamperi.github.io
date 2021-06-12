@@ -81,6 +81,8 @@ $$f(x) \sim \mathcal{N}(\mu, \sigma^2)$$
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/acquisition_functions/probability_of_improvement.png" alt="Probability of Improvement function">
 </p>
 
+Let us take a pause here and make sure that we really understand what's going on. Here $$x$$ is some point that we want to check whether it worths evaluating $$f$$ at. So, we assign a value $$I(x)$$ to it. However, $$I(x)$$ is not some constant fixed value. Its value is **sampled** from a normal distribution $$\mathcal{N}(\mu, \sigma^2)$$. Hence, every time we calculate $$I(x)$$, at the same $$x$$, we get a different value!
+
 So, how do we calculate $$\text{PI}(x) = \text{Pr}(I(x) > 0) \Leftrightarrow \text{Pr}(f(x) > f(x^\star)$$? Well, if you look at the image above, it's clear that:
 
 $$
@@ -91,8 +93,6 @@ Where $$\Phi(z) \equiv \text{CDF}(z)$$ and $$z_0 = \frac{f(x^\star) - \mu(x)}{\s
 
 ## Expected Improvement (EI)
 PI considers only the probability of improving our current best estimate, but it does not factor in the magnitude of the improvement. This is where the expected improvement acquisition function is different.
-
-Let us take a pause here and make sure that we really understand what's going on. Here $$x$$ is some point that we want to check whether it worths evaluating $$f$$ at. So, we assign a value $$I(x)$$ to it. However, $$I(x)$$ is not some constant fixed value. Its value is **sampled** from a normal distribution $$\mathcal{N}(\mu, \sigma^2)$$. Hence, every time we calculate $$I(x)$$, at the same $$x$$, we get a different value!
 
 So, how do we proceed? Well, instead of looking at the improvement $$I(x)$$, which is a random variable, we will instead calculate the "Expected Improvement", which is the expected value of $$I(x)$$:
 
