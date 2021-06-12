@@ -81,7 +81,11 @@ $$f(x) \sim \mathcal{N}(\mu, \sigma^2)$$
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/acquisition_functions/probability_of_improvement.png" alt="Probability of Improvement function">
 </p>
 
-Let us take a pause here and make sure that we really understand what's going on. Here $$x$$ is some point that we want to check whether it worths evaluating $$f$$ at. So, we assign a value $$I(x)$$ to it. However, $$I(x)$$'s value is **sampled** from a normal distribution $$\mathcal{N}(\mu, \sigma^2)$$. So, how do we calculate $$\text{PI}(x) = \text{Pr}(I(x) > 0) \Leftrightarrow \text{Pr}(f(x) > f(x^\star)$$? Well, if you look at the image above, it's clear that:
+Let us take a pause here and make sure that we really understand what's going on. Here $$x$$ is some point that we want to check whether it worths evaluating $$f$$ at. So, we assign a value $$I(x)$$ to it. However, $$I(x)$$'s value is **sampled** from a normal distribution $$\mathcal{N}(\mu, \sigma^2)$$. So, here's how we calculate:
+
+$$\text{PI}(x) = \text{Pr}(I(x) > 0) \Leftrightarrow \text{Pr}(f(x) > f(x^\star)$$
+
+If you look at the image above, it's clear that the probability of improvement is the shaded area under the Gaussian curve for $$z>z_0$$. Therefore:
 
 $$
 \text{PI}(x) = 1 - \Phi(z_0) = \Phi(-z_0) = \Phi\left(\frac{\mu(x)-f^\star}{\sigma(x)}\right)
