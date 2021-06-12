@@ -87,7 +87,7 @@ $$
 \text{PI}(x) = 1 - \Phi(z_0) = \Phi(-z_0) = \Phi\left(\frac{\mu(x)-f^\star}{\sigma(x)}\right)
 $$
 
-Where $$\Phi(z) \equiv \text{CDF}(z)$$ and $$z = \frac{f(x^\star) - \mu(x)}{\sigma(x)}$$.
+Where $$\Phi(z) \equiv \text{CDF}(z)$$ and $$z_0 = \frac{f(x^\star) - \mu(x)}{\sigma(x)}$$.
 
 ## Expected Improvement (EI)
 PI considers only the probability of improving our current best estimate, but it does not factor in the magnitude of the improvement. This is where the expected improvement acquisition function is different.
