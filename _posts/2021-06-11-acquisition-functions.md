@@ -104,7 +104,7 @@ PI considers only the probability of improving our current best estimate, but it
 
 $$\text{EI}(x)\equiv\mathbb{E}\left[I(x)\right] = \int_{-\infty}^{\infty} I(x)\varphi(z) \mathop{\mathrm{d}z}$$
 
-Where $$\varphi(z)$$ is the probability density function of the normal distribution $$\mathcal{N}(0,1)$$, i.e., $$\varphi(z) = \frac{1}{\sqrt{2\pi}}\exp\left(-z^2/2\right)$$. In case you aren't familiar with the expected value of a random variable, it's kind of a weight average of "value" time "probability of getting that value".
+Where $$\varphi(z)$$ is the probability density function of the normal distribution $$\mathcal{N}(0,1)$$, i.e., $$\varphi(z) = \frac{1}{\sqrt{2\pi}}\exp\left(-z^2/2\right)$$. In case you aren't familiar with the [expected value](https://www.wikiwand.com/en/Expected_value) of a random variable, it's kind of a weight average of "value" time "probability of getting that value".
 
 Ok, so:
 
