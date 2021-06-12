@@ -88,7 +88,7 @@ $$\text{PI}(x) = \text{Pr}(I(x) > 0) \Leftrightarrow \text{Pr}(f(x) > f(x^\star)
 If you look at the image above, it's clear that the probability of improvement is the shaded area under the Gaussian curve for $$z>z_0$$. Therefore:
 
 $$
-\text{PI}(x) = 1 - \Phi(z_0) = \Phi(-z_0) = \Phi\left(\frac{\mu(x)-f^\star}{\sigma(x)}\right)
+\text{PI}(x) = 1 - \Phi(z_0) = \Phi(-z_0) = \Phi\left(\frac{\mu(x)-f(x^\star)}{\sigma(x)}\right)
 $$
 
 Where $$\Phi(z) \equiv \text{CDF}(z)$$ and $$z_0 = \frac{f(x^\star) - \mu(x)}{\sigma(x)}$$.
