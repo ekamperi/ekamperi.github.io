@@ -71,17 +71,17 @@ Suppose that we'd like to maximize $$f(x)$$, and the best solution we have so fa
 
 $$I(x) = \max(f(x) - f(x^\star), 0)$$
 
-Therefore, if the new $$x$$ we are looking at has an associated value $$f(x)$$ that is less than $$f(x^\star)$$, then $$f(x) - f(x^\star)$$ is negative, so we aren't improving at all, and the above formula returns 0, since the maximum number between any negative number and 0 is 0. On the contrary, if the new value $$f(x)$$ is larger than our current best estimate, then $$f(x) - f(x^\star)$$ is positive, and $$I(x)$$ returns the difference which is how much we will improve over our current best solution.
+Therefore, if the new $$x$$ we are looking at has an associated value $$f(x)$$ that is less than $$f(x^\star)$$, then $$f(x) - f(x^\star)$$ is negative. So we aren't improving at all, and the above formula returns 0, since the maximum number between any negative number and 0 is 0. On the contrary, if the new value $$f(x)$$ is larger than our current best estimate, then $$f(x) - f(x^\star)$$ is positive. In this case $$I(x)$$ returns the difference which is how much we will improve over our current best solution if we evaluate $$f$$ at the new point $$x$$.
 
-In probability of improvement acquisition function, for each candidate $$x$$ we assign the probability of $$I(x)>0$$, i.e., $$f(x)$$ being larger than our current best $$f(x^\star)$$. At this point let us recall that in a Gaussian Process, at each point there's a Gaussian distribution attached. Therefore, at point $$x$$ the value of the function $$f(x)$$ is sampled from a normal distribution with mean $$\mu$$ and variance $$\sigma^2$$:
+In probability of improvement acquisition function, for each candidate $$x$$ we assign the probability of $$I(x)>0$$, i.e., $$f(x)$$ being larger than our current best $$f(x^\star)$$. At this point let us recall that in a [Gaussian Process]((https://ekamperi.github.io/mathematics/2021/03/30/gaussian-process-regression.html)), at each point there's a Gaussian distribution attached. Therefore, at point $$x$$ the value of the function $$f(x)$$ is sampled from a normal distribution with mean $$\mu(x)$$ and variance $$\sigma^2(x)$$:
 
-$$f(x) \sim \mathcal{N}(\mu, \sigma^2)$$
+$$f(x) \sim \mathcal{N}(\mu(x), \sigma^2(x))$$
 
-Now, let us use a reparameterization trick. If $$z \sim \mathcal{N}(0, 1)$$, then $$f(x)=\mu+\sigma z$$ is a normal distribution with mean $$\mu$$ and variance $$\sigma^2$$.
+Now, let us use a reparameterization trick. If $$z \sim \mathcal{N}(0, 1)$$, then $$f(x) = \mu(x) + \sigma(x) z$$ is a normal distribution with mean $$\mu(x)$$ and variance $$\sigma^2(x)$$.
 
 Therefore, we can rewrite the improvement function, $$I(x)$$, as:
 
-$$I(x) = \text{max}(f(x) - f(x^\star), 0) = \text{max}(\mu + \sigma z - f(x^\star), 0) \,\, z \sim \mathcal{N}(0,1)$$
+$$I(x) = \text{max}(f(x) - f(x^\star), 0) = \text{max}(\mu(x) + \sigma(x) z - f(x^\star), 0) \,\, z \sim \mathcal{N}(0,1)$$
 
 <p align="center">
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/acquisition_functions/probability_of_improvement.png" alt="Probability of Improvement function">
