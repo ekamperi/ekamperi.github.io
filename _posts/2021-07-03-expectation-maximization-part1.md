@@ -44,7 +44,7 @@ $$L(\theta \mid x) = \prod_{i=1}^N p(x_i \mid \theta)$$
 
 But since it's easier to work with sums rather than products, we take the logarirthm of the likelihood, $$\ell(\theta\mid x)$$:
 
-$$\begin{align*}\ell(\theta \mid x) &= \log \prod_{i=1}^N p(x_i \mid \theta) =\sum_{i=1}^N \log p(x_i \mid \theta)\\&=\sum_{i=1}^N \log \left[\pi \varphi_1(x_i\mid \mu_1,\sigma_1^2) + (1-p)\varphi_2(x_i|\mu_2,\sigma_2^2)\right]\end{align*}$$
+$$\begin{align*}\ell(\theta \mid x) &= \log \prod_{i=1}^N p(x_i \mid \theta) =\sum_{i=1}^N \log p(x_i \mid \theta)\\&=\sum_{i=1}^N \log \left[\pi \varphi_1(x_i\mid \mu_1,\sigma_1^2) + (1-\pi)\varphi_2(x_i|\mu_2,\sigma_2^2)\right]\end{align*}$$
 
 So, our objective is to maximize likelihood $$L(\theta\mid x)$$, which is equivalent to maximizing the log-likelihood $$\ell(\theta\mid x)$$, with respect to the model's parameters $$\theta = [\pi, \mu_1, \sigma_1, \mu_2, \sigma_2]$$, *given* the data points $$\{x_i\}$$. 
 
