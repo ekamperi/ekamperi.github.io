@@ -54,7 +54,7 @@ Histogram[data]
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/em_algorithm/histogram.png" alt="Histogram of mixture distribution">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/em_algorithm/histogram.png" alt="Histogram of mixture distribution">
 </p>
 
 Let's plot the probability density functions of the mixture distribution for various mixing probabilities $$p$$. We notice how for $$p\to 0$$ the mixture distribution approaches the 1st distribution, and for $$p\to 1$$, the 2nd distribution. For in-between values, it's a mixture! ;)
@@ -94,7 +94,7 @@ logLikelihood[data_, p_, m1_, s1_, m2_, s2_] :=
   {% endraw %}
 {% endhighlight %}
 
-Ok, we are ready to go. We will first vary the mixing probability $$\pi$$, keeping the rest of the model's parameters fixed. In some sense, we are brute-forcing $$\pi$$, to find $$\pi_
+Ok, we are ready to go. We will first vary the mixing probability $$\pi$$, keeping the rest of the model's parameters fixed. In some sense, we are brute-forcing $$\pi$$, to find $$\pi$$:
 
 {% highlight mathematica %}
 {% raw %}
@@ -116,7 +116,7 @@ plot1 =
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/em_algorithm/log_likelihood_p.png" alt="Log likelihood for varying mixing probability">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/em_algorithm/log_likelihood_p.png" alt="Log likelihood for varying mixing probability">
 </p>
 
 Do you see how $$\ell(\theta|x)$$ is maximized at $$\pi = 0.3$$? By the same token, we can try other model parameters, but we always come to the same conclusion: the log-likelihood, therefore the likelihood, is maximized when our guesses become equal to the ground-truth values for the model's parameters.
