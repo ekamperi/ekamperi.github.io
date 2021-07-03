@@ -3,7 +3,7 @@ layout: post
 title:  "The expectation-maximization algorithm - Part 1"
 date:   2021-07-03
 categories: [mathematics]
-tags: ['machine learning', 'mathematics', 'Mathematica', 'optimization']
+tags: ['machine learning', 'Mathematica', 'mathematics', 'optimization']
 description: An introduction to the expectation-maximization algorithm focusing on the concept of maximum likelihood estimation
 ---
 
