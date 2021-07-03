@@ -22,17 +22,17 @@ $$p(x_i) = \pi \varphi_1(x_i) + (1-p)\varphi_2(x_i)$$
 
 To be more pedantic we would write:
 
-$$p(x_i|\theta) = \pi \varphi_1(x_i|\mu_1,\sigma_1^2) + (1-p)\varphi_2(x_i|\mu_2,\sigma_2^2)$$
+$$p(x_i\mid \theta) = \pi \varphi_1(x_i \mid \mu_1,\sigma_1^2) + (1-p)\varphi_2(x_i \mid \mu_2,\sigma_2^2)$$
 
 Which means that the PDF's are paremeterized by $$\mu_1,\sigma_1^2$$ and $$\mu_2, \sigma_2^2$$, respectively. Ok, but this is just for a single observation $$x_i$$. What if we have a bunch of $$x_i$$'s, say for $$i=1,\ldots,N$$? To find the joint probability of $$N$$ independent events (which by the way is the likelihood function!) we just multiply the individual probabilities:
 
-$$L(\theta|x) = \prod_{i=1}^N p(x_i|\theta)$$
+$$L(\theta \mid x) = \prod_{i=1}^N p(x_i \mid \theta)$$
 
-But since it's easier to work with sums rather than products, we take the logarirthm of the likelihood, $$\ell(\theta|x)$$:
+But since it's easier to work with sums rather than products, we take the logarirthm of the likelihood, $$\ell(\theta\mid x)$$:
 
-$$\begin{align*}\ell(\theta|x) &= \log \prod_{i=1}^N p(x_i|\theta) =\sum_{i=1}^N \log p(x_i|\theta)\\&=\sum_{i=1}^N \log \left[\pi \varphi_1(x_i|\mu_1,\sigma_1^2) + (1-p)\varphi_2(x_i|\mu_2,\sigma_2^2)\right]\end{align*}$$
+$$\begin{align*}\ell(\theta \mid x) &= \log \prod_{i=1}^N p(x_i \mid \theta) =\sum_{i=1}^N \log p(x_i \mid \theta)\\&=\sum_{i=1}^N \log \left[\pi \varphi_1(x_i\mid \mu_1,\sigma_1^2) + (1-p)\varphi_2(x_i|\mu_2,\sigma_2^2)\right]\end{align*}$$
 
-So, our objective is to maximize likelihood $$L(\theta|x)$$, which is equivalent to maximizing the log-likelihood $$\ell(\theta|x)$$, with respect to the model's parameters $$\theta = [\pi, \mu_1, \sigma_1, \mu_2, \sigma_2]$$, *given* the data points $$\{x_i\}$$. 
+So, our objective is to maximize likelihood $$L(\theta\mid x)$$, which is equivalent to maximizing the log-likelihood $$\ell(\theta\mid x)$$, with respect to the model's parameters $$\theta = [\pi, \mu_1, \sigma_1, \mu_2, \sigma_2]$$, *given* the data points $$\{x_i\}$$. 
 
 In the following examples, we will generate some synthetic observed data from a mixture distribution with known parameters and mixing probability $$p$$. We will then calculate $$\ell(\theta|x)$$ for various parameter values by keeping the rest fixed. Every time we will do that, we will see how $$\ell(\theta|x)$$ is maximized when the model's parameter that we vary becomes equal to the ground-truth value.
 
@@ -119,7 +119,7 @@ plot1 =
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/em_algorithm/log_likelihood_p.png" alt="Log likelihood for varying mixing probability">
 </p>
 
-Do you see how $$\ell(\theta|x)$$ is maximized at $$\pi = 0.3$$? By the same token, we can try other model parameters, but we always come to the same conclusion: the log-likelihood, therefore the likelihood, is maximized when our guesses become equal to the ground-truth values for the model's parameters.
+Do you see how $$\ell(\theta\mid x)$$ is maximized at $$\pi = 0.3$$? By the same token, we can try other model parameters, but we always come to the same conclusion: the log-likelihood, therefore the likelihood, is maximized when our guesses become equal to the ground-truth values for the model's parameters.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/em_algorithm/log_likelihood_combined.png" alt="Log likelihood for varying mixing probability, mean and standard deviation">
