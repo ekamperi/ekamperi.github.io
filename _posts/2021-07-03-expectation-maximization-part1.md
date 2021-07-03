@@ -34,7 +34,7 @@ $$\begin{align*}\ell(\theta \mid x) &= \log \prod_{i=1}^N p(x_i \mid \theta) =\s
 
 So, our objective is to maximize likelihood $$L(\theta\mid x)$$, which is equivalent to maximizing the log-likelihood $$\ell(\theta\mid x)$$, with respect to the model's parameters $$\theta = [\pi, \mu_1, \sigma_1, \mu_2, \sigma_2]$$, *given* the data points $$\{x_i\}$$. 
 
-In the following examples, we will generate some synthetic observed data from a mixture distribution with known parameters and mixing probability $$p$$. We will then calculate $$\ell(\theta|x)$$ for various parameter values by keeping the rest fixed. Every time we will do that, we will see how $$\ell(\theta|x)$$ is maximized when the model's parameter that we vary becomes equal to the ground-truth value.
+In the following examples, we will generate some synthetic observed data from a mixture distribution with known parameters and mixing probability $$p$$. We will then calculate $$\ell(\theta\mid x)$$ for various parameter values by keeping the rest fixed. Every time we will do that, we will see how $$\ell(\theta\mid x)$$ is maximized when the model's parameter that we vary becomes equal to the ground-truth value.
 
 Let's create a mixture distribution of two Gaussian distributions with known parameters $$m_1, s_1, m_2, s_2$$ and known mixing probability $$p=0.3$$. Normally, we won't know the values of these parameters, and as a matter of fact, finding them will be the very objective of the EM algorithm. But for now, let's *pretend* we don't know them.
 
