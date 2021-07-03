@@ -15,6 +15,7 @@ description: An introduction to the expectation-maximization algorithm focusing 
 
 ## Introduction
 ### What is EM used for?
+#### Maximum likelihood estimation (MLE)
 The expectation-maximization (EM) algorithm is an iterative method to find the local [maximum likelihood](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation) of parameters in statistical models. So what is the maximum likelihood? It's the maximum value of the likelihood function! And what is a likelihood function? It's a function of the model's parameters treating the observed data as fixed points, i.e., we write $$L(θ\mid x)$$ meaning that we vary the parameters $$\theta$$ while take the $$x$$'s as given. If $$L(θ_1\mid x) > L(θ_2 \mid x)$$ then the sample we observed is more likely to have occurred if $$\theta = \theta_1$$ rather than if $$\theta = \theta_2$$. So, given the data that we have observed, the likelihood function points us to those more plausible parameters that might have generated the observed data.
 
 Suppose for example that we have some data and we want to fit a model of the form $$y = a x$$. In this case $$\theta$$ is essentially the coefficient $$a$$. Here's is the likelihood function for various values of the parameter $$a$$ (actually it's the logarithm of the likelihood function, but we will talk about this later):
@@ -23,6 +24,7 @@ Suppose for example that we have some data and we want to fit a model of the for
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/em_algorithm/linear_regression_mle.png" alt="Log likelihood of linear regression model">
 </p>
 
+#### ... in the presence of hidden variables
 The EM algorithm is particularly useful when there are missing data in the data set or when the model depends on hidden or so-called [latent variables](https://en.wikipedia.org/wiki/Latent_variable). These are variables that affect our observed data but in ways that we can't know directly. Concretely, EM can be used in any of the following scenarios:
 
 * Estimating parameters of mixture models
