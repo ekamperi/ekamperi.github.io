@@ -32,11 +32,11 @@ Let us consider some observed 1-dimensional data points, $$x_i$$. We assume they
 
 Suppose that we observed a datapoint with value $$x_i$$. What is the probability of $$x_i$$ occuring? Assuming $$\varphi_1(x)$$ is the probability distribution function of the 1st distribution, and $$\varphi_2(x)$$ of the second, the probability of observing $$x_i$$ is:
 
-$$p(x_i) = \pi \varphi_1(x_i) + (1-p)\varphi_2(x_i)$$
+$$p(x_i) = \pi \varphi_1(x_i) + (1-\pi)\varphi_2(x_i)$$
 
 To be more pedantic we would write:
 
-$$p(x_i\mid \theta) = \pi \varphi_1(x_i \mid \mu_1,\sigma_1^2) + (1-p)\varphi_2(x_i \mid \mu_2,\sigma_2^2)$$
+$$p(x_i\mid \theta) = \pi \varphi_1(x_i \mid \mu_1,\sigma_1^2) + (1-\pi)\varphi_2(x_i \mid \mu_2,\sigma_2^2)$$
 
 Which means that the PDF's are paremeterized by $$\mu_1,\sigma_1^2$$ and $$\mu_2, \sigma_2^2$$, respectively. Ok, but this is just for a single observation $$x_i$$. What if we have a bunch of $$x_i$$'s, say for $$i=1,\ldots,N$$? To find the joint probability of $$N$$ independent events (which by the way is the likelihood function!) we just multiply the individual probabilities:
 
