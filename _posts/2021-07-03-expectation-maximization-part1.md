@@ -10,6 +10,9 @@ description: An introduction to the expectation-maximization algorithm focusing 
 ### Contents
 {:.no_toc}
 
+* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
+{:toc}
+
 ## Introduction
 ### What is EM used for?
 The expectation-maximization (EM) algorithm is an iterative method to find the local [maximum likelihood](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation) of parameters in statistical models. So what is the maximum likelihood? It's the maximum value of the likelihood function! And what is a likelihood function? It's a function of the model's parameters treating the observed data as fixed points, i.e., we write $$L(θ\mid x)$$ meaning that we vary the parameters $$\theta$$ while take the $$x$$'s as given. If $$L(θ_1\mid x) > L(θ_2 \mid x)$$ then the sample we observed is more likely to have occurred if $$\theta = \theta_1$$ rather than if $$\theta = \theta_2$$. So, given the data that we have observed, the likelihood function points us to those more plausible parameters that might have generated the observed data.
