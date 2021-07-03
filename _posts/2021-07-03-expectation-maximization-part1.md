@@ -99,7 +99,7 @@ Ok, we are ready to go. We will first vary the mixing probability $$\pi$$, keepi
 {% highlight mathematica %}
 {% raw %}
 llvalues = 
-  Table[{p, logLikelihood[yt, p, m1, s1, m2, s2]}, {p, 0, 1, 0.1}];
+  Table[{p, logLikelihood[data, p, m1, s1, m2, s2]}, {p, 0, 1, 0.1}];
 {pmax, llmax} = 
  llvalues[[Ordering[llvalues[[All, 2]], -1][[1]]]]
 (* {0.3, -14437.1} *)
