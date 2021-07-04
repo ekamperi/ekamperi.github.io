@@ -75,9 +75,9 @@ $$\begin{align*}\ell(\theta \mid x) &= \log \prod_{i=1}^N p(x_i \mid \theta) =\s
 
 So, our objective is to maximize likelihood $$\mathcal{L}(\theta\mid x)$$, which is equivalent to maximizing the log-likelihood $$\ell(\theta\mid x)$$, with respect to the model's parameters $$\theta = [\pi, \mu_1, \sigma_1, \mu_2, \sigma_2]$$, *given* the data points $$\{x_i\}$$. 
 
-In the following examples, we will generate some synthetic observed data from a mixture distribution with known parameters and mixing probability $$\pi$$. We will then calculate $$\ell(\theta\mid x)$$ for various parameter values by keeping the rest fixed. Every time we will do that, we will see how $$\ell(\theta\mid x)$$ is maximized when the model's parameter that we vary becomes equal to the ground-truth value.
+In the following examples, we will generate some synthetic observed data from a mixture distribution with known parameters $$\mu_1, \sigma_1, \mu_2, \sigma_2$$ and mixing probability $$\pi$$. We will then calculate $$\ell(\theta\mid x)$$ for various values of some varying parameter while keeping the rest of the parameters fixed. Every time we will do that, we will see how $$\ell(\theta\mid x)$$ is maximized when a model's parameter becomes equal to its ground-truth value.
 
-Let's create a mixture distribution of two Gaussian distributions with known parameters $$m_1, s_1, m_2, s_2$$ and known mixing probability $$\pi=0.3$$. Normally, we won't know the values of these parameters, and as a matter of fact, finding them will be the very objective of the EM algorithm. But for now, let's *pretend* we don't know them.
+Let's create a mixture distribution of two Gaussian distributions with known parameters $$\mu_1, \sigma_1, \mi_2, \sigma_2$$ and known mixing probability $$\pi=0.3$$. Normally, we won't know the values of these parameters, and as a matter of fact, **finding them will be the very objective of the EM algorithm**. But for now, let's *pretend* we don't know them.
 
 {% highlight mathematica %}
 {% raw %}
@@ -98,7 +98,7 @@ Histogram[data]
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/em_algorithm/histogram.png" alt="Histogram of mixture distribution">
 </p>
 
-Let's plot the probability density functions of the mixture distribution for various mixing probabilities $$p$$. We notice how for $$p\to 0$$ the mixture distribution approaches the 1st distribution, and for $$p\to 1$$, the 2nd distribution. For in-between values, it's a mixture! ;)
+Let's plot the probability density functions of the mixture distribution for various mixing probabilities $$\pi$$. We notice how for $$\pi\to 0$$ the mixture distribution approaches the 1st distribution, and for $$p\to 1$$, the 2nd distribution. For in-between values, it's a mixture! ;)
 
 {% highlight mathematica %}
 {% raw %}
@@ -160,7 +160,7 @@ plot1 =
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/em_algorithm/log_likelihood_p.png" alt="Log likelihood for varying mixing probability">
 </p>
 
-Do you see how $$\ell(\theta\mid x)$$ is maximized at $$\pi = 0.3$$? By the same token, we can try other model parameters, but we always come to the same conclusion: the log-likelihood, therefore the likelihood, is maximized when our guesses become equal to the ground-truth values for the model's parameters.
+Do you see how $$\ell(\theta\mid x)$$ is maximized at $$\pi = 0.3$$? By the same token, we can try other model parameters, but we will always come to the same conclusion: the log-likelihood, therefore the likelihood, is maximized when our guesses become equal to the ground-truth values for the model's parameters.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/em_algorithm/log_likelihood_combined.png" alt="Log likelihood for varying mixing probability, mean and standard deviation">
