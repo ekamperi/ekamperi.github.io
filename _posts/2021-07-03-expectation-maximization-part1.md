@@ -172,11 +172,11 @@ Do you see how $$\ell(\theta\mid x)$$ is maximized at $$\pi = 0.3$$? By the same
 ## Reformulating the problem as a latent variable problem
 Previously, we varied one parameter at a time, keeping the rest at their ground-truth values. Now, we are going to get serious and will try to estimate the value of *all* parameters simultaneously. If we try to directly maximize $$\ell(\theta|x)$$, however, it's going to be very difficult, due to the sum of terms inside the logarithm. If you doubt it, just calculate the partial derivatives of $$\ell(\theta|x)$$ with respect to $$\pi, \mu_1, \sigma_1, \mu_2, \sigma_2$$ and imagine solving the system where all these derivatives are required to become zero. Good luck with that!
 
-There's another way to go though. We will reformulate the problem as a problem of maxinum likelihood estimation with latent variables. For this, we will introduce a set of latent variables called $$\Delta_i \in \{0,1\}$$. If $$\Delta_i = 0$$ then $$x_i$$ was sampled from the 1st distribution, and if $$\Delta_i = 1$$, then it came from the 2nd distribution. In this case, the log-likelihood $$\ell(\theta|x,\Delta)$$ is given by:
+There's another way to go though. We will reformulate the problem as a problem of maxinum likelihood estimation with latent variables. For this, we will introduce a set of latent variables called $$\Delta_i \in \{0,1\}$$. If $$\Delta_i = 0$$ then $$x_i$$ was sampled from the 1st distribution, and if $$\Delta_i = 1$$, then it came from the 2nd distribution. In this case, the log-likelihood $$\ell(\theta\mid x,\Delta)$$ is given by:
 
 $$
 \begin{align*}
-\ell(\theta|x,\Delta) = &\sum_{i=1}^N \left[ (1-\Delta_i) \log \varphi_1(x_i) + \Delta_i \log\varphi_2(x_i)\right] +\\
+\ell(\theta\mid x,\Delta) = &\sum_{i=1}^N \left[ (1-\Delta_i) \log \varphi_1(x_i) + \Delta_i \log\varphi_2(x_i)\right] +\\
 &\sum_{i=1}^N \left[ (1-\Delta_i)\log\pi + \Delta_i\log(1-\pi)\right]
 \end{align*}
 $$
