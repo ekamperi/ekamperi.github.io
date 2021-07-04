@@ -165,3 +165,6 @@ Do you see how $$\ell(\theta\mid x)$$ is maximized at $$\pi = 0.3$$? By the same
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/em_algorithm/log_likelihood_combined.png" alt="Log likelihood for varying mixing probability, mean and standard deviation">
 </p>
+
+# References
+1. The Elements of Statistical Learning, Data Mining, Inference, and Prediction by Trevor Hastie, Robert Tibshirani, and Jerome Friedman.
