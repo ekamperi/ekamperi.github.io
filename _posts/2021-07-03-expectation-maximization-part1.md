@@ -16,7 +16,7 @@ description: An introduction to the expectation-maximization algorithm focusing 
 ## Introduction
 ### What is EM used for?
 #### Maximum likelihood estimation (MLE)
-The expectation-maximization (EM) algorithm is an iterative method to find the local [maximum likelihood](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation) of parameters in statistical models. So what is the maximum likelihood? It's the maximum value of the likelihood function! And what is a likelihood function? It's a function of the model's parameters treating the observed data as fixed points, i.e., we write $$L(θ\mid x)$$ meaning that we vary the parameters $$\theta$$ while take the $$x$$'s as given. If $$L(θ_1\mid x) > L(θ_2 \mid x)$$ then the sample we observed is more likely to have occurred if $$\theta = \theta_1$$ rather than if $$\theta = \theta_2$$. So, given the data that we have observed, the likelihood function points us to those more plausible parameters that might have generated the observed data.
+The expectation-maximization (EM) algorithm is an iterative method to find the local [maximum likelihood](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation) of parameters in statistical models. So what is the maximum likelihood? It's the maximum value of the likelihood function! And what is a likelihood function? It's a function of the model's parameters treating the observed data as fixed points, i.e., we write $$\mathcal{L}(θ\mid x)$$ meaning that we vary the parameters $$\theta$$ while take the $$x$$'s as given. If $$\mathcal{L}(θ_1\mid x) > \mathcal{L}(θ_2 \mid x)$$ then the sample we observed is more likely to have occurred if $$\theta = \theta_1$$ rather than if $$\theta = \theta_2$$. So, given the data that we have observed, the likelihood function points us to those more plausible parameters that might have generated the observed data.
 
 Suppose for example that we have some data and we want to fit a model of the form $$y = a x$$. In this case $$\theta$$ is essentially the coefficient $$a$$. Here's is the likelihood function for various values of the parameter $$a$$ (actually it's the logarithm of the likelihood function, but we will talk about this later):
 
@@ -52,13 +52,13 @@ $$p(x_i\mid \theta) = \pi \varphi_1(x_i \mid \mu_1,\sigma_1^2) + (1-\pi)\varphi_
 
 Which means that the PDF's are paremeterized by $$\mu_1,\sigma_1^2$$ and $$\mu_2, \sigma_2^2$$, respectively. Ok, but this is just for a single observation $$x_i$$. What if we have a bunch of $$x_i$$'s, say for $$i=1,\ldots,N$$? To find the joint probability of $$N$$ independent events (which by the way is the likelihood function!) we just multiply the individual probabilities:
 
-$$L(\theta \mid x) = \prod_{i=1}^N p(x_i \mid \theta)$$
+$$\mathcal{L}(\theta \mid x) = \prod_{i=1}^N p(x_i \mid \theta)$$
 
 But since it's easier to work with sums rather than products, we take the logarirthm of the likelihood, $$\ell(\theta\mid x)$$:
 
 $$\begin{align*}\ell(\theta \mid x) &= \log \prod_{i=1}^N p(x_i \mid \theta) =\sum_{i=1}^N \log p(x_i \mid \theta)\\&=\sum_{i=1}^N \log \left[\pi \varphi_1(x_i\mid \mu_1,\sigma_1^2) + (1-\pi)\varphi_2(x_i|\mu_2,\sigma_2^2)\right]\end{align*}$$
 
-So, our objective is to maximize likelihood $$L(\theta\mid x)$$, which is equivalent to maximizing the log-likelihood $$\ell(\theta\mid x)$$, with respect to the model's parameters $$\theta = [\pi, \mu_1, \sigma_1, \mu_2, \sigma_2]$$, *given* the data points $$\{x_i\}$$. 
+So, our objective is to maximize likelihood $$\mathcal{L}(\theta\mid x)$$, which is equivalent to maximizing the log-likelihood $$\ell(\theta\mid x)$$, with respect to the model's parameters $$\theta = [\pi, \mu_1, \sigma_1, \mu_2, \sigma_2]$$, *given* the data points $$\{x_i\}$$. 
 
 In the following examples, we will generate some synthetic observed data from a mixture distribution with known parameters and mixing probability $$\pi$$. We will then calculate $$\ell(\theta\mid x)$$ for various parameter values by keeping the rest fixed. Every time we will do that, we will see how $$\ell(\theta\mid x)$$ is maximized when the model's parameter that we vary becomes equal to the ground-truth value.
 
