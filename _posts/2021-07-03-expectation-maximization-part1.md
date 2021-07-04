@@ -16,9 +16,9 @@ description: An introduction to the expectation-maximization algorithm focusing 
 ## Introduction
 ### What is EM about?
 #### Maximum likelihood estimation (MLE)
-The expectation-maximization (EM) algorithm is an iterative method to find the local [maximum likelihood](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation) of parameters in statistical models. So what is the maximum likelihood? It's the maximum value of the likelihood function! And what is a likelihood function? It's a function of the model's parameters treating the observed data as fixed points, i.e., we write $$\mathcal{L}(θ\mid x)$$ meaning that we vary the parameters $$\theta$$ while taking the $$x$$'s as given. If $$\mathcal{L}(θ_1\mid x) > \mathcal{L}(θ_2 \mid x)$$ then the sample we observed is more likely to have occurred if $$\theta = \theta_1$$ rather than if $$\theta = \theta_2$$. So, given the data that we have observed, the likelihood function points us to those more plausible parameters that might have generated the observed data.
+The expectation-maximization (EM) algorithm is an iterative method to find the local [maximum likelihood](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation) of parameters in statistical models. So what is the maximum likelihood? It's the maximum value of the likelihood function! And what is a likelihood function? It's a function of the model's parameters treating the observed data as fixed points, i.e., we write $$\mathcal{L}(θ\mid x)$$ meaning that we vary the parameters $$\theta$$ while taking the $$x$$'s as given. If $$\mathcal{L}(θ_1\mid x) > \mathcal{L}(θ_2 \mid x)$$ then the sample we observed is more likely to have occurred if $$\theta = \theta_1$$ rather than if $$\theta = \theta_2$$. So, given the data that we have observed, the likelihood function points us to the most plausible parameters that might have generated the observed data.
 
-Suppose that we have some data and want to fit a model of the form $$y = a x$$. In this case $$\theta$$ is essentially the coefficient $$a$$. In the left image, there's the likelihood function for various values of the parameter $$a$$ (actually, it's the logarithm of the likelihood function, but we will talk about this later). In the right image, we plot $$y = a x, \, a = -3, \ldots 7$$ with a step size of 0.5, superimposed with the observed data. As you may notice, $$a = 2$$ maximizes the log-likelihood and fits the data better than any other line.
+Here is a very simple example. Suppose that we have some data and want to fit a model of the form $$y = a x$$. In this case $$\theta$$ is essentially the coefficient $$a$$, but typicall there will be many unknown parameters. In the left image, there's the likelihood function for various values of the parameter $$a$$ (actually, it's the logarithm of the likelihood function, but we will talk about this later). In the right image, we plot $$y = a x, \, a = -3, \ldots 7$$ with a step size of 0.5, superimposed with the observed data. As you may notice, $$a = 2$$ maximizes the log-likelihood *and* fits the data better than any other line.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/em_algorithm/linear_regression_mle.png" alt="Log likelihood of linear regression model">
@@ -27,7 +27,17 @@ Suppose that we have some data and want to fit a model of the form $$y = a x$$. 
 By the way, in a [previous blog post](https://ekamperi.github.io/mathematics/2020/12/20/tensorflow-custom-training-loops.html#how-is-mean-squared-error-related-to-log-likelihood) we have proven that by maximizing the likelihood in the linear regression case, this is equivalent to minimizing the mean squared error.
 
 #### ... in the presence of hidden variables
-The EM algorithm is particularly useful when there are missing data in the data set or when the model depends on hidden or so-called [latent variables](https://en.wikipedia.org/wiki/Latent_variable). These are variables that affect our observed data but in ways that we can't know directly. Concretely, EM can be used in any of the following scenarios:
+The EM algorithm is particularly useful when there are missing data in the data set or when the model depends on hidden or so-called [latent variables](https://en.wikipedia.org/wiki/Latent_variable). These are variables that affect our observed data but in ways that we can't know directly. So what's so special about latten parameters?
+
+Well, typically, if we know all the parameters, we can take the derivatives of the likelihood function with respect to all of them, solve the system of equations and find the values that maximize likelihood. Like:
+
+$$
+\left\{\frac{\partial \mathcal{L}}{\partial \theta_1}=0, \frac{\partial \mathcal{L}}{\partial \theta_2}=0, \ldots \right\}
+$$
+
+This is exactly what we did when we wanted to [fit some data to a normal distribution](https://ekamperi.github.io/mathematics/2020/12/26/tensorflow-trainable-probability-distributions.html). However, in statistical models with latent variables, this typically results in a set of equations where the solution to the parameters mandates the values of the latent variables and vice versa. By substituting one set of equations into the other we produce an unsolvable equation. This is why we need a method for solving such problems.
+
+Concretely, EM can be used in any of the following scenarios:
 
 * Estimating parameters of mixture models
 * Estimating parameters of Hidden Markov Models
