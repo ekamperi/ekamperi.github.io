@@ -37,7 +37,7 @@ This is precisely what we did when we wanted to [fit some data to a normal distr
 
 Concretely, EM can be used in any of the following scenarios:
 
-* Estimating parameters of mixture models
+* Estimating parameters of (usually Gaussian) mixture models
 * Estimating parameters of Hidden Markov Models
 * Unsupervised learning of clusters
 * Filling missing data in samples
