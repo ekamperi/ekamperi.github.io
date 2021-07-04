@@ -101,7 +101,7 @@ Histogram[data]
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/em_algorithm/histogram.png" alt="Histogram of mixture distribution">
 </p>
 
-Let's plot the probability density functions of the mixture distribution for various mixing probabilities $$\pi$$. We notice how for $$\pi\to 0$$ the mixture distribution approaches the 1st distribution, and for $$p\to 1$$, the 2nd distribution. For in-between values, it's a mixture! ;)
+Let's plot the probability density functions of the mixture distribution for various mixing probabilities $$\pi$$. We notice how for $$\pi\to 0$$ the mixture distribution approaches the 1st distribution, and for $$\pi\to 1$$, the 2nd distribution. For in-between values, it's a mixture! ;)
 
 {% highlight mathematica %}
 {% raw %}
