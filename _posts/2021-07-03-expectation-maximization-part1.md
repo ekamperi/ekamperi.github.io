@@ -77,7 +77,7 @@ $$\begin{align*}\ell(\theta \mid x) &= \log \prod_{i=1}^N p(x_i \mid \theta) =\s
 
 So, our objective is to maximize likelihood $$\mathcal{L}(\theta\mid x)$$, which is equivalent to maximizing the log-likelihood $$\ell(\theta\mid x)$$, with respect to the model's parameters $$\theta = [\pi, \mu_1, \sigma_1, \mu_2, \sigma_2]$$, *given* the data points $$\{x_i\}$$.
 
-## Brute forcing one paramer at a time
+## Brute forcing one parameter at a time
 In the following examples, we will generate some synthetic observed data from a mixture distribution with known parameters $$\mu_1, \sigma_1, \mu_2, \sigma_2$$ and mixing probability $$\pi$$. We will then calculate $$\ell(\theta\mid x)$$ for various values of some varying parameter while keeping the rest of the parameters fixed. Every time we will do that, we will see how $$\ell(\theta\mid x)$$ is maximized when a model's parameter becomes equal to its ground-truth value.
 
 Let's create a mixture distribution of two Gaussian distributions with known parameters $$\mu_1, \sigma_1, \mu_2, \sigma_2$$ and known mixing probability $$\pi=0.3$$. Normally, we won't know the values of these parameters, and as a matter of fact, **finding them will be the very objective of the EM algorithm**. But for now, let's *pretend* we don't know them.
