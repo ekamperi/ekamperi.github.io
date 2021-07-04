@@ -57,7 +57,7 @@ Let us consider some observed 1-dimensional data points, $$x_i$$. We assume they
  <img style="width: 90%; height: 90%" src="{{ site.url }}/images/em_algorithm/histogram_broken_by_dist.png" alt="Histogram of mixed gaussian distribution">
 </p>
 
-Suppose that we observed a datapoint with value $$x_i$$. What is the probability of $$x_i$$ occuring? Assuming $$\varphi_1(x)$$ is the probability distribution function of the 1st distribution, and $$\varphi_2(x)$$ of the second, the probability of observing $$x_i$$ is:
+Suppose that we observed a datapoint with value $$x_i$$. What is the probability of $$x_i$$ occuring? Assuming $$\varphi_1(x)$$ is the [probability density function](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation) of the 1st distribution, and $$\varphi_2(x)$$ of the second, the probability of observing $$x_i$$ is:
 
 $$p(x_i) = \pi \varphi_1(x_i) + (1-\pi)\varphi_2(x_i)$$
 
