@@ -192,28 +192,18 @@ But, we don't actually know the values $$\Delta_i$$! After all, these are the la
 em[data_, p_, m1_, s1_, m2_, s2_] :=
  Module[{newp, newm1, news1, newm2, news2, g, npts},
   npts = Length@data;
-  g = Table[((1 - p) PDF[dist[m2, s2], data[[i]]])/(
-    p PDF[dist[m1, s1], data[[i]]] + (1 - p) PDF[dist[m2, s2], 
-       data[[i]]]), {i, 1, npts}];
-  newm1 = Sum[(1 - g[[i]])*data[[i]], {i, 1, npts}]/
-   Sum[1 - g[[i]], {i, 1, npts}];
-  newm2 = Sum[g[[i]]*data[[i]], {i, 1, npts}]/
-   Sum[g[[i]], {i, 1, npts}];
-  news1 = 
-   Sqrt[Sum[(1 - g[[i]])*(data[[i]] - m1)^2, {i, 1, npts}]/
-    Sum[1 - g[[i]], {i, 1, npts}]];
-  news2 = 
-   Sqrt[Sum[g[[i]]*(data[[i]] - m2)^2, {i, 1, npts}]/
-    Sum[g[[i]], {i, 1, npts}]];
+  g = Table[((1 - p) PDF[dist[m2, s2], data[[i]]]) / (p PDF[dist[m1, s1], data[[i]]] + (1 - p) PDF[dist[m2, s2], data[[i]]]), {i, 1, npts}];
+  newm1 = Sum[(1 - g[[i]])*data[[i]], {i, 1, npts}] / Sum[1 - g[[i]], {i, 1, npts}];
+  newm2 = Sum[g[[i]]*data[[i]], {i, 1, npts}] / Sum[g[[i]], {i, 1, npts}];
+  news1 = Sqrt[Sum[(1 - g[[i]])*(data[[i]] - m1)^2, {i, 1, npts}] / Sum[1 - g[[i]], {i, 1, npts}]];
+  news2 = Sqrt[Sum[g[[i]]*(data[[i]] - m2)^2, {i, 1, npts}] / Sum[g[[i]], {i, 1, npts}]];
   newp = Sum[(1 - g[[i]])/npts, {i, 1, npts}];
   {newp, newm1, news1, newm2, news2, g}
   ]
 
 doEM[data_] :=
  Module[{p, m1, s1, m2, s2, g},
-  {p, m1, s1, m2, s2} = {0.5, RandomChoice[data], 
-    StandardDeviation[data], RandomChoice[data], 
-    StandardDeviation[data]};
+  {p, m1, s1, m2, s2} = {0.5, RandomChoice[data], StandardDeviation[data], RandomChoice[data], StandardDeviation[data]};
   Print[{p, m1, s1, m2, s2}];
   For [i = 1, i < 40, i++,
    {p, m1, s1, m2, s2, g} = em[data, p, m1, s1, m2, s2];
