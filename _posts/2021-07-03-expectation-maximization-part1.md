@@ -222,7 +222,13 @@ doEM[data_] :=
 {% endraw %}
 {% endhighlight %}
 
-In the following plot you can see how the $$gamma_i$$'s vary as our observed data go from the 1st to the 2nd distribution.
+This is a short test run, where we confirm that the algorithm converges to the ground-truth values.
+
+<p align="center">
+ <img style="width: 80%; height: 80%" src="{{ site.url }}/images/em_algorithm/parameters_convergence.png" alt="Expectation Maximization algorithm for Gaussian mixture models">
+</p>
+
+In the following plot you can see how the $$\gamma_i$$ vary as our observed data go from the 1st to the 2nd distribution. So, when we look at observed data around $$x=1$$, the $$gamma_i$$ are equal to zero, meaning that EM doesn't cast any doubt on the origin of these values. They were sampled from the 1st distribution. When we look observed data around $$x=9$$, again, the EM algorithm is confident that these values originate from the second distribution ($$\gamma_i=1$$). However, when we are in between, $$\gamma_i$$ is around 0.5, conveying the uncertainty on which distribution each $$x_i$$ belongs to. So, by using the EM algorithm we were able to discover both the membership of each observed value (with some uncertainty), *and* we were able to estimate the model's unknown parameters!
 
 <p align="center">
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/em_algorithm/x_vs_gamma.png" alt="Expectation Maximization algorithm for Gaussian mixture models">
