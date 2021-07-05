@@ -204,8 +204,8 @@ $$
 
 $$
 \begin{align*}
-\hat{\mu_1} &= \frac{\sum_{i=1}^N (1-\hat{\gamma_i})x_i}{\sum_{i=1}^N (1-\hat{\gamma_i})}\,\, \hat{\mu_2} = \frac{\sum_{i=1}^N \hat{\gamma_i} x_i}{\sum_{i=1}^N \hat{\gamma_i}}\\
-\hat{\sigma_1} = &\sqrt{\frac{\sum_{i=1}^N (1-\hat{\gamma_i})(x_i-\hat{\mu_1})^2}{\sum_{i=1}^N (1-\hat{\gamma_i})}}\,\,\,
+\hat{\mu_1} &= \frac{\sum_{i=1}^N (1-\hat{\gamma_i})x_i}{\sum_{i=1}^N (1-\hat{\gamma_i})}\hspace{3cm}\hat{\mu_2} = \frac{\sum_{i=1}^N \hat{\gamma_i} x_i}{\sum_{i=1}^N \hat{\gamma_i}}\\
+\hat{\sigma_1} = &\sqrt{\frac{\sum_{i=1}^N (1-\hat{\gamma_i})(x_i-\hat{\mu_1})^2}{\sum_{i=1}^N (1-\hat{\gamma_i})}}\hspace{1cm}
 \hat{\sigma_2} = \sqrt{\frac{\sum_{i=1}^N \hat{\gamma_i}(x_i-\hat{\mu_2})^2}{\sum_{i=1}^N \hat{\gamma_i}}}\\
 \hat{\pi} &= \sum_{i=1}^N(1-\hat{\gamma_i})/N
 \end{align*}
