@@ -193,7 +193,7 @@ Once we have $$\gamma_i$$ calculated, we know which distribution $$x_i$$ belongs
 
 So, here's the EM algorithm for our particular problem:
 
-1. Initialize unknown parameters (e.g., $$\hat{\pi} = 0.5, \hat{\mu_1} = \text{random }x_i, \sigma_i = \sigma_{i=1}^N(x_i-\bar{x})^2/N, \ldots$$ 
+1. Initialize unknown parameters (e.g., $$\hat{\pi} = 0.5, \hat{\mu_1} = \text{random }x_i, \sigma_i = \sum_{i=1}^N(x_i-\bar{x})^2/N, \ldots$$ 
 2. Expectation step:
 $$
 \hat{\gamma_i} = \frac{(1-\pi) \varphi_2(x_i)}{\pi \varphi_1(x_i) + (1-\pi)\varphi_2(x_i)}
