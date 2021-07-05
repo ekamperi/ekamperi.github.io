@@ -187,8 +187,6 @@ But, we don't actually know the values $$\Delta_i$$! After all, these are the la
 
 ## EM algorithm
 
-
-
 {% highlight mathematica %}
 {% raw %}
 em[data_, p_, m1_, s1_, m2_, s2_] :=
