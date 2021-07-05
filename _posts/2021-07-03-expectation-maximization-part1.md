@@ -27,7 +27,7 @@ Here is an elementary example. Suppose that we have some data and want to fit a 
 By the way, in a [previous blog post](https://ekamperi.github.io/mathematics/2020/12/20/tensorflow-custom-training-loops.html#how-is-mean-squared-error-related-to-log-likelihood) we have proven that by **maximizing the likelihood in the linear regression case, this is equivalent to minimizing the mean squared error**.
 
 ### ... in the presence of hidden variables
-The EM algorithm is particularly useful when there are missing data in the data set or when the model depends on **hidden** or so-called **[latent variables](https://en.wikipedia.org/wiki/Latent_variable**). These are variables that affect our observed data but in ways that we can't know directly. So what's so special about latent parameters? Typically, if we know all the parameters, we can take the derivatives of the likelihood function with respect to them, solve the system of equations and find the values that maximize the likelihood. Like:
+The EM algorithm is particularly useful when there are missing data in the data set or when the model depends on **hidden** or so-called [**latent variables**](https://en.wikipedia.org/wiki/Latent_variable). These are variables that affect our observed data but in ways that we can't know directly. So what's so special about latent parameters? Typically, if we know all the parameters, we can take the derivatives of the likelihood function with respect to them, solve the system of equations and find the values that maximize the likelihood. Like:
 
 $$
 \left\{\frac{\partial \mathcal{L}}{\partial \theta_1}=0, \frac{\partial \mathcal{L}}{\partial \theta_2}=0, \ldots \right\}
