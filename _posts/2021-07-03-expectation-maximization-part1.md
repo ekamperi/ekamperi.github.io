@@ -190,7 +190,7 @@ $$
 $$
 
 <p align="center">
- <img style="width: 50%; height: 50%" src="{{ site.url }}/images/em_algorithm/x_vs_gamma.png" alt="Expectation Maximization algorithm for Gaussian mixture models">
+ <img style="width: 80%; height: 80%" src="{{ site.url }}/images/em_algorithm/x_vs_gamma.png" alt="Expectation Maximization algorithm for Gaussian mixture models">
 </p>
 
 
