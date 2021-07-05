@@ -183,13 +183,17 @@ $$
 
 When we write $$\varphi_1(x_i)$$ in reality we mean $$\varphi_1(x_i\mid \mu_1, \sigma_1^2)$$, and similarly for $$\varphi_2(x_i)$$ we mean $$\varphi_2(x_i\mid \mu_2, \sigma_2^2)$$. The reason we omit it, is for keeping the log-likelihood expression easily readable. Feel free to check that the above formula is equal to the previous expression of $$\ell(\theta\mid x)$$, by first letting $$\Delta_i = 0$$ and then $$\Delta_i = 1$$.
 
-But, we don't actually know the values $$\Delta_i$$! After all, these are the latent variables that we introduced into the problem. If you feel that we ain't making any progress, hold on. Here's where the EM algorithm kicks in. Even though we don't know the exact values $$\Delta_i$$, we will use their *expected* values given our current best estimates for the model's parameters!
+But, we don't actually know the values $$\Delta_i$$. After all, these are the latent variables that we introduced into the problem! If you feel that we ain't making any progress, hold on. Here's where the EM algorithm kicks in. Even though we don't know the exact values $$\Delta_i$$, we will use their *expected* values given our current best estimates for the model's parameters! This is the expectation step of the EM algorithm. So, instead of $$\Delta_i$$ we will use $$\gamma_i$$ defined as:
 
 $$
 \gamma_i(\theta) = \mathbb{E}(\Delta_i\mid \theta,x) = \text{Pr}(\Delta_i = 1\mid \theta,x)
 $$
 
+Once we will have $$\gamma_i$$ calculated, we will be able to perform an update on the model's parameters, by using the weighted maximum-likelihood fits to update the estimates of the parameters. This is the maximization step!
+
 ## EM algorithm
+
+Here is a sample code that implements the EM algorithm for our particular problem.
 
 {% highlight mathematica %}
 {% raw %}
@@ -218,11 +222,11 @@ doEM[data_] :=
 {% endraw %}
 {% endhighlight %}
 
+In the following plot you can see how the $$gamma_i$$'s vary as our observed data go from the 1st to the 2nd distribution.
 
 <p align="center">
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/em_algorithm/x_vs_gamma.png" alt="Expectation Maximization algorithm for Gaussian mixture models">
 </p>
-
 
 # References
 1. The Elements of Statistical Learning, Data Mining, Inference, and Prediction by Trevor Hastie, Robert Tibshirani, and Jerome Friedman.
