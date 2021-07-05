@@ -186,7 +186,7 @@ When we write $$\varphi_1(x_i)$$ in reality we mean $$\varphi_1(x_i\mid \mu_1, \
 But, we don't actually know the values $$\Delta_i$$! After all, these are the latent variables that we introduced into the problem. If you feel that we ain't making any progress, hold on. Here's where the EM algorithm kicks in. Even though we don't know the exact values $$\Delta_i$$, we will use their *expected* values given our current best estimates for the model's parameters!
 
 $$
-\gamma_i(\theta) = \mathcal{E}(\Delta_i\mid \theta = \text{Pr)(\Delta_i = 1\mid \theta)
+\gamma_i(\theta) = \mathbb{E}(\Delta_i\mid \theta = \text{Pr)(\Delta_i = 1\mid \theta)
 $$
 
 # References
