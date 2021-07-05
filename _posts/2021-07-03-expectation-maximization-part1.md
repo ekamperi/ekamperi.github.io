@@ -194,12 +194,14 @@ Once we have $$\gamma_i$$ calculated, we know which distribution $$x_i$$ belongs
 So, here's the EM algorithm for our particular problem:
 
 1. Initialize unknown parameters (e.g., $$\hat{\pi} = 0.5, \hat{\mu_1} = \text{random }x_i, \sigma_i = \sum_{i=1}^N(x_i-\bar{x})^2/N, \ldots$$ 
-2. <ins>Expectation step<ins>:
+2. **Expectation step**:
  
 $$
 \hat{\gamma_i} = \frac{(1-\pi) \varphi_2(x_i)}{\pi \varphi_1(x_i) + (1-\pi)\varphi_2(x_i)}
 $$
-3. Maximization step:
+
+3. **Maximization step**:
+
 $$
 \begin{align*}
 \hat{\mu_1} &= \frac{\sum_{i=1}^N (1-\hat{\gamma_i})x_i}{\sum_{i=1}^N (1-\hat{\gamma_i})}\,\, \hat{\mu_2} = \frac{\sum_{i=1}^N \hat{\gamma_i} x_i}{\sum_{i=1}^N \hat{\gamma_i}}\\
@@ -208,6 +210,7 @@ $$
 \hat{\pi} &= \sum_{i=1}^N(1-\hat{\gamma_i})/N
 \end{align*}
 $$
+
 4. Repeat until convergence or maximum number of iterations reached.
 
 Here is a sample code that implements the EM algorithm for our particular problem. The code doesn't look pretty without Mathematica's syntax color highlighting and the Notebook's format, but anyway.
