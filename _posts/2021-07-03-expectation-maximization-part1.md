@@ -191,6 +191,21 @@ Once we have $$\gamma_i$$ calculated, we know which distribution $$x_i$$ belongs
 
 ## EM algorithm
 
+Expectation step:
+$$
+\hat{\gamma_i} = \frac{(1-\pi) \varphi_2(x_i)}{\pi \varphi_1(x_i) + (1-\pi)\varphi_2(x_i)}
+$$
+
+Maximization step:
+$$
+\begin{align*}
+\hat{\mu_1} &= \frac{\sum_{i=1}^N (1-\hat{\gamma_i})x_i}{\sum_{i=1}^N (1-\hat{\gamma_i})}\,\, \hat{\mu_2} = \frac{\sum_{i=1}^N \hat{\gamma_i} x_i}{\sum_{i=1}^N \hat{\gamma_i}}\\
+\hat{\sigma_1} = &\sqrt{\frac{\sum_{i=1}^N (1-\hat{\gamma_i})(x_i-\hat{\mu_1})^2}{\sum_{i=1}^N (1-\hat{\gamma_i})}}\,\,\,
+\hat{\sigma_2} = \sqrt{\frac{\sum_{i=1}^N \hat{\gamma_i}(x_i-\hat{\mu_2})^2}{\sum_{i=1}^N \hat{\gamma_i}}}\\
+\hat{\pi} &= \sum_{i=1}^N(1-\hat{\gamma_i})/N
+\end{align*}
+$$
+
 Here is a sample code that implements the EM algorithm for our particular problem. The code doesn't look pretty without Mathematica's syntax color highlighting and the Notebook's format, but anyway.
 
 {% highlight mathematica %}
