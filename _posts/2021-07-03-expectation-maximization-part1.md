@@ -242,7 +242,7 @@ doEM[data_] :=
 {% endraw %}
 {% endhighlight %}
 
-This is a short test run, where we confirm that the algorithm converges to the ground-truth values. As we mentioned in the introduction, EM is a local algorithm, meaning it can get stuck at a local maximum. Therefore, sometimes we may need to repeat the algorithm a few times to ensure that we got a solution near the global optimum.
+This is a short test run, where we confirm that the algorithm converges to the ground-truth values (the red lines are the ground-truth values). As we mentioned in the introduction, EM is a local algorithm, meaning it can get stuck at a local maximum. Therefore, sometimes we may need to repeat the algorithm a few times to ensure a near-global optimal solution.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/em_algorithm/parameters_convergence.png" alt="Expectation Maximization algorithm for Gaussian mixture models">
