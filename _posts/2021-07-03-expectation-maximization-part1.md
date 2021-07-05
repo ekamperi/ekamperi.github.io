@@ -181,7 +181,9 @@ $$
 \end{align*}
 $$
 
-You may check that the above formula is equal to the previous expression of $$\ell(\theta|x)$$.
+When we write $$\varphi_1(x_i)$$ in reality we mean $$\varphi_1(x_i\mid \mu_1, \sigma_1)$$, and similarly for $$\varphi_2(x_i)$$ we mean $$\varphi_1(x_i\mid \mu_2, \sigma_2)$$. The reason we omit it, is for keeping the log-likelihood expression easily readable.
+
+You may check that the above formula is equal to the previous expression of $$\ell(\theta\mid x)$$.
 
 # References
 1. The Elements of Statistical Learning, Data Mining, Inference, and Prediction by Trevor Hastie, Robert Tibshirani, and Jerome Friedman.
