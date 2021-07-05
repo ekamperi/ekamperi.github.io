@@ -183,5 +183,11 @@ $$
 
 When we write $$\varphi_1(x_i)$$ in reality we mean $$\varphi_1(x_i\mid \mu_1, \sigma_1^2)$$, and similarly for $$\varphi_2(x_i)$$ we mean $$\varphi_2(x_i\mid \mu_2, \sigma_2^2)$$. The reason we omit it, is for keeping the log-likelihood expression easily readable. Feel free to check that the above formula is equal to the previous expression of $$\ell(\theta\mid x)$$, by first letting $$\Delta_i = 0$$ and then $$\Delta_i = 1$$.
 
+But, we don't actually know the values $$\Delta_i$$! After all, these are the latent variables that we introduced into the problem. If you feel that we ain't making any progress, hold on. Here's where the EM algorithm kicks in. Even though we don't know the exact values $$\Delta_i$$, we will use their *expected* values given our current best estimates for the model's parameters!
+
+$$
+\gamma_i(\theta) = \mathcal{E}(\Delta_i\mid \theta = \text{Pr)(\Delta_i = 1\mid \theta)
+$$
+
 # References
 1. The Elements of Statistical Learning, Data Mining, Inference, and Prediction by Trevor Hastie, Robert Tibshirani, and Jerome Friedman.
