@@ -78,7 +78,7 @@ $$\begin{align*}\ell(\theta \mid x) &= \log \prod_{i=1}^N p(x_i \mid \theta) =\s
 So, our objective is to maximize likelihood $$\mathcal{L}(\theta\mid x)$$, which is equivalent to maximizing the log-likelihood $$\ell(\theta\mid x)$$, with respect to the model's parameters $$\theta = [\pi, \mu_1, \sigma_1, \mu_2, \sigma_2]$$, *given* the data points $$\{x_i\}$$.
 
 ## Brute forcing one parameter at a time
-In the following examples, we will generate some synthetic observed data from a mixture distribution with known parameters $$\mu_1, \sigma_1, \mu_2, \sigma_2$$ and mixing probability $$\pi$$. We will then calculate $$\ell(\theta\mid x)$$ for various values of some varying parameter while keeping the rest of the parameters fixed. Every time we will do that, we will see how $$\ell(\theta\mid x)$$ is maximized when a model's parameter becomes equal to its ground-truth value.
+In the following examples, we will generate some synthetic observed data from a mixture distribution with known parameters $$\mu_1, \sigma_1, \mu_2, \sigma_2$$ and mixing probability $$\pi$$. We will then calculate $$\ell(\theta\mid x)$$ for various parameter values while keeping the rest of the parameters fixed. Every time we will do that, we will see how $$\ell(\theta\mid x)$$ is maximized when a model's parameter becomes equal to its ground-truth value.
 
 Let's create a mixture distribution of two Gaussian distributions with known parameters $$\mu_1, \sigma_1, \mu_2, \sigma_2$$ and known mixing probability $$\pi=0.3$$. Normally, we won't know the values of these parameters, and as a matter of fact, **finding them will be the very objective of the EM algorithm**. But for now, let's *pretend* we don't know them.
 
@@ -170,9 +170,9 @@ Do you see how $$\ell(\theta\mid x)$$ is maximized at $$\pi = 0.3$$? By the same
 </p>
 
 ## Reformulating the problem as a latent variable problem
-Previously, we varied one parameter at a time, keeping the rest at their ground-truth values. Now, we are going to get serious and will try to estimate the value of *all* parameters simultaneously. If we try to directly maximize $$\ell(\theta|x)$$, however, it's going to be very difficult, due to the sum of terms inside the logarithm. If you doubt it, just calculate the partial derivatives of $$\ell(\theta|x)$$ with respect to $$\pi, \mu_1, \sigma_1, \mu_2, \sigma_2$$ and imagine solving the system where all these derivatives are required to become zero. Good luck with that!
+Previously, we varied one parameter at a time, keeping the rest at their ground-truth values. Now, we will get serious and try to estimate the value of *all* parameters simultaneously. If we try to directly maximize $$\ell(\theta|x)$$, it will be tough due to the sum of terms inside the logarithm. If you doubt it, just calculate the partial derivatives of $$\ell(\theta|x)$$ with respect to $$\pi, \mu_1, \sigma_1, \mu_2, \sigma_2$$ and imagine solving the system where all these derivatives are required to become zero. Good luck with that!
 
-There's another way to go though. We will reformulate the problem as a problem of maxinum likelihood estimation with latent variables. For this, we will introduce a set of latent variables called $$\Delta_i \in \{0,1\}$$. If $$\Delta_i = 0$$ then $$x_i$$ was sampled from the 1st distribution, and if $$\Delta_i = 1$$, then it came from the 2nd distribution. In this case, the log-likelihood $$\ell(\theta\mid x,\Delta)$$ is given by:
+There's another way to go, though. We will reformulate the problem as a problem of maximum likelihood estimation with latent variables. For this, we will introduce a set of latent variables called $$\Delta_i \in \{0,1\}$$. If $$\Delta_i = 0$$ then $$x_i$$ was sampled from the 1st distribution, and if $$\Delta_i = 1$$, then it came from the 2nd distribution. In this case, the log-likelihood $$\ell(\theta\mid x,\Delta)$$ is given by:
 
 $$
 \begin{align*}
@@ -183,13 +183,13 @@ $$
 
 When we write $$\varphi_1(x_i)$$ in reality we mean $$\varphi_1(x_i\mid \mu_1, \sigma_1^2)$$, and similarly for $$\varphi_2(x_i)$$ we mean $$\varphi_2(x_i\mid \mu_2, \sigma_2^2)$$. The reason we omit it, is for keeping the log-likelihood expression easily readable. Feel free to check that the above formula is equal to the previous expression of $$\ell(\theta\mid x)$$, by first letting $$\Delta_i = 0$$ and then $$\Delta_i = 1$$.
 
-But, we don't actually know the values $$\Delta_i$$. After all, these are the latent variables that we introduced into the problem! If you feel that we ain't making any progress, hold on. Here's where the EM algorithm kicks in. Even though we don't know the exact values $$\Delta_i$$, we will use their *expected* values given our current best estimates for the model's parameters! This is the expectation step of the EM algorithm. So, instead of $$\Delta_i$$ we will use $$\gamma_i$$ defined as:
+But, we don't actually know the values $$\Delta_i$$. After all, these are the latent variables that we introduced into the problem! If you feel that we ain't making any progress, hold on. Here's where the EM algorithm kicks in. Even though we don't know the exact values $$\Delta_i$$, we will use their *expected* values given our current best estimates for the model's parameters! This is the expectation step of the EM algorithm. So, instead of $$\Delta_i$$, we will use $$\gamma_i$$ defined as:
 
 $$
 \gamma_i(\theta) = \mathbb{E}(\Delta_i\mid \theta,x) = \text{Pr}(\Delta_i = 1\mid \theta,x)
 $$
 
-Once we will have $$\gamma_i$$ calculated, we will be able to perform an update on the model's parameters, by using the weighted maximum-likelihood fits to update the estimates of the parameters. This is the maximization step!
+Once we have $$\gamma_i$$ calculated, we will update the model's parameters by using the weighted maximum-likelihood fits. This is the maximization step!
 
 ## EM algorithm
 
@@ -228,7 +228,7 @@ This is a short test run, where we confirm that the algorithm converges to the g
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/em_algorithm/parameters_convergence.png" alt="Expectation Maximization algorithm for Gaussian mixture models">
 </p>
 
-In the following plot you can see how the $$\gamma_i$$ vary as our observed data go from the 1st to the 2nd distribution. So, when we look at observed data around $$x=1$$, the $$gamma_i$$ are equal to zero, meaning that EM doesn't cast any doubt on the origin of these values. They were sampled from the 1st distribution. When we look observed data around $$x=9$$, again, the EM algorithm is confident that these values originate from the second distribution ($$\gamma_i=1$$). However, when we are in between, $$\gamma_i$$ is around 0.5, conveying the uncertainty on which distribution each $$x_i$$ belongs to. So, by using the EM algorithm we were able to discover both the membership of each observed value (with some uncertainty), *and* we were able to estimate the model's unknown parameters!
+In the following plot, you can see how the $$\gamma_i$$ vary as our observed data go from the 1st to the 2nd distribution. So, when we look at observed data around $$x=1$$, the $$\gamma_i$$ are equal to zero, meaning that EM doesn't cast any doubt on the origin of these values. They were sampled from the 1st distribution. When we look at observed data around $$x=9$$, again, the EM algorithm is confident that these values originate from the second distribution ($$\gamma_i=1$$). However, when we are in between, $$\gamma_i$$ are around 0.5, conveying the uncertainty of which distribution each $$x_i$$ belongs. So, by using the EM algorithm, we discovered both the membership of each observed value (with some uncertainty), *and* we estimated the model's unknown parameters!
 
 <p align="center">
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/em_algorithm/x_vs_gamma.png" alt="Expectation Maximization algorithm for Gaussian mixture models">
