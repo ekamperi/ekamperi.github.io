@@ -187,7 +187,7 @@ $$
 \gamma_i(\theta) = \mathbb{E}(\Delta_i\mid \theta,x) = \text{Pr}(\Delta_i = 1\mid \theta,x)
 $$
 
-Once we have $$\gamma_i$$ calculated, we know which distribution $$x_i$$ belongs to. Therefore, we can update the model's parameters using the weighted maximum-likelihood fits. For Gaussian distributions, this is just the mean and standard deviation of the $$x_i$$. **This is the maximization step!** Actually, $$\gamma_i$$ doesn't take discrete values like the $$\Delta_i$$. Instead, it lies in the interval $$[0,1]$$ and, therefore, the EM algorithm does a soft membership assignment. I.e., for every $$x_i$$, it assigns a probability that it comes from the 1st or the 2nd distribution. That's why, when we calculate the Gaussians' parameters, we use a $\gamma_i$$-weighted average.
+Once we have $$\gamma_i$$ calculated, we know which distribution $$x_i$$ belongs to. Therefore, we can update the model's parameters using the weighted maximum-likelihood fits. For Gaussian distributions, this is just the mean and standard deviation of the $$x_i$$. **This is the maximization step!** Actually, $$\gamma_i$$ doesn't take discrete values like the $$\Delta_i$$. Instead, it lies in the interval $$[0,1]$$ and, therefore, the EM algorithm does a soft membership assignment. I.e., for every $$x_i$$, it assigns a probability that it comes from the 1st or the 2nd distribution. That's why, when we calculate the Gaussians' parameters, we use a $$\gamma_i$$-weighted average.
 
 ## EM algorithm
 
