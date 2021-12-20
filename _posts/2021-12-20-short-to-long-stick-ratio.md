@@ -86,5 +86,5 @@ ListPlot[
 {% endhighlight %}
 
 <p align="center">
- <img style="width: 50%; height: 50%" src="{{ site.url }}/images/short-stick-ratio.png" alt="Average short to long stick ratio">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/short-stick-ratio.png" alt="Average short to long stick ratio">
 </p>
