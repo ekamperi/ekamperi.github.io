@@ -1,13 +1,11 @@
 ---
 layout: post
-title:  "Short to long stick ratio"
+title:  "Short to long stick ratio: a nice little math problem"
 date:   2021-12-20
 categories: [mathematics]
 tags: ['mathematics']
 description: How to calculate the average ratio of short to long stick ratio.
 ---
-
-
 
 Hola! Long time no see! In the past months, I've been very busy working at Chronicles Health, a digital health company, on a course to revolutionize the management of inflammatory bowel disease.
 
@@ -39,8 +37,8 @@ Where $$x\frac{L-x}$$ is the *value of the ratio* when the rod breaks at short l
 
 $$
 \begin{align*}
-E(x/(L-x)) = \int_{0}^{L/2} \frac{x}{L-x} \cdot\frac{2}{L}d x = 
-2\int_{0}^{L/2} \frac{x}{L(L-x)} d x 
+E(x/(L-x)) = \int_{0}^{L/2} \frac{x}{L-x} \cdot\frac{2}{L} \mathrm{d}x = 
+2\int_{0}^{L/2} \frac{x}{L(L-x)} \mathrm{d}x 
 \end{align*}
 $$
 
@@ -61,7 +59,7 @@ Therefore:
 $$
 \begin{align*}
 E(x/(L-x)) =
-2\int_{0}^{L/2} \left( -\frac{1}{L} + \frac{1}{L-x} \right) dx=\\
+2\int_{0}^{L/2} \left( -\frac{1}{L} + \frac{1}{L-x} \right) \mathrm{d}x=\\
 -\frac{2}{L} \left(\frac{L}{2}-0\right) - 2\left[\ln{(L-x)}\right]_{0}^{L/2}=\\
 -1 - 2\left[\ln\left({L}-\frac{L}{2}\right) - \ln{L}\right]
 \end{align*}=\\
