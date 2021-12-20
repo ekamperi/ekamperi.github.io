@@ -18,6 +18,10 @@ But I'm back! However, today's post won't cover some fancy machine learning or d
 ### Solution
 We start by modeling the problem, and for that, we need to assign symbols to the various involved components. So, there's a rod, and two pieces, a short and a long one. Let's say that the rod has length $$L$$. Then, if we agree that the short piece has size $$x$$, the remainder will be the long one with length $$L-x$$. Okay, we named things, but we need to constrain the values that our variables assume so that the symbols always "make sense". Since $$x$$ is the short part, it really can't be larger than a half rod because it would be the long one! So, $$x\in[0,L/2]$$. Also, $$L>0$$ or there would be any rod, to begin with. So, we are interested in the average ratio of the short to long pieces, i.e., $$\left<x/(L-x)\right>$$.
 
+<p align="center">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/short-to-long-stick-sketch.png" alt="Average short to long stick ratio">
+</p>
+
 At this point, we need to invoke the **expected value** concept. The expected value of a random variable $$x$$, often denoted $$\mathbb{E}[X]$$, can be thought of as a generalized version of the weighted average, where the weights are given by the probabilities. Consider for example a fair die, then the probability of each outcome is $$p=1/6$$ and the expected value after many throws is given by $$1 \times 1/6 + 2 \times 1/6 + \ldots + 6 \times 1/6 = 7/2$$. This is easily demonstrated by simulating, say, 10.000 throws and taking the mean of the outcomes:
 
 {% highlight mathematica %}
