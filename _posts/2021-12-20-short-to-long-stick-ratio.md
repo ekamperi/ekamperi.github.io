@@ -65,3 +65,8 @@ $$
 \end{align*}=\\
 -1-2(\ln{1/2})= -1+\ln{4}
 $$
+
+
+<p align="center">
+ <img style="width: 50%; height: 50%" src="{{ site.url }}/images/short-stick-ratio.png" alt="Average short to long stick ratio">
+</p>
