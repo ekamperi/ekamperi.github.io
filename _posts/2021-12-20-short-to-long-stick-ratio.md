@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The joy of not Google'ing: Short to long stick ratio"
+title:  "The joy of not google'ing: Short to long stick ratio in broken rods"
 date:   2021-12-20
 categories: [mathematics]
 tags: ['mathematics']
@@ -10,7 +10,7 @@ description: How to calculate the average short-to-long stick ratio when breakin
 ### Introduction
 Hola! Long time no see! In the past months, I've been very busy working as a machine learning engineer at [Chronicles Health](https://www.chronicles.health/), a digital health company, on a course to revolutionize the management of inflammatory bowel disease.
 
-But I'm back! However, today's post won't cover some fancy machine learning algorithm or data science topic. Instead, let me tell you about a neat little problem I found on the Internet (credits to [Gianni Sarcone](https://www.wikiwand.com/en/Gianni_A._Sarcone)). It turns out that, as many people, I've become extremely good at Google'ing stuff, but less so at thinking for myself. So, I decided to solve this cute little puzzle in the traditional "analog" way, with pen and paper :)
+But I'm back! However, today's post won't cover some fancy machine learning algorithm or data science topic. Instead, let me tell you about a neat little problem I found on the Internet (credits to [Gianni Sarcone](https://www.wikiwand.com/en/Gianni_A._Sarcone)). It turns out that, like many people, I've become extremely good at googling stuff but less so at thinking for myself. So, I decided to solve this cute little puzzle in the traditional "analog" way, with pen and paper, without any online help :)
 
 ### Problem statement
 **Suppose that we throw 10.000 rods against a rock, and they break at random places. What is the average ratio of the length of the short piece to the length of the long piece?**
