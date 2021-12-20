@@ -4,19 +4,19 @@ title:  "Short to long stick ratio: a nice little math problem"
 date:   2021-12-20
 categories: [mathematics]
 tags: ['mathematics']
-description: How to calculate the average ratio of short to long stick ratio.
+description: How to calculate the average short-to-long stick ratio.
 ---
 
 ### Introduction
-Hola! Long time no see! In the past months, I've been very busy working at [Chronicles Health](https://www.chronicles.health/) as a machine learning engineer, a digital health company, on a course to revolutionize the management of inflammatory bowel disease. In today's blog post, I'm not going to talk about some fancy ML or data science topic. Instead, I'll write about a nice little mathematical problem I've stumbled upon on the Internet. And by solving it, I'll demonstrate my thought process. Without further ado:
+Hola! Long time no see! In the past months, I've been very busy working as a machine learning engineer at [Chronicles Health](https://www.chronicles.health/), a digital health company, on a course to revolutionize the management of inflammatory bowel disease. But I'm back! However, today's post won't cover some fancy machine learning or data science topic. Instead, let me tell you about a neat little problem I found on the Internet (credits to [Gianni Sarcone](https://www.wikiwand.com/en/Gianni_A._Sarcone)). And by solving it, I'll demonstrate my thought process. Without further ado:
 
 ### Problem statement
 **Suppose that we crack 10.000 rods at random into two pieces by throwing them against a rock. What is the average ratio of the length of the short piece to the length of the long piece?**
 
 ### Solution
-We start by modeling the problem, and for that, we need to assign symbols to the various components. So, there's a rod, and two pieces, a short and a long one. Let's say that the rod has length $$L$$. Then, if we agree that the short piece has size $$x$$, the rest will be the long one with length $$L-x$$. Okay, we named things, but we need to constrain the values that our variables assume so that the symbols always "make sense". Since $$x$$ is the short part, it really can't be larger than half the rod because then it would be the long one! So, $$x\in[0,L/2]$$. Also, $$L>0$$ or there would be any rod, to begin with. So, we are interested in the average ratio of the short to long pieces, but that is $$\left<x/(L-x)\right>$$.
+We start by modeling the problem, and for that, we need to assign symbols to the various components. So, there's a rod, and two pieces, a short and a long one. Let's say that the rod has length $$L$$. Then, if we agree that the short piece has size $$x$$, the rest will be the long one with length $$L-x$$. Okay, we named things, but we need to constrain the values that our variables assume so that the symbols always "make sense". Since $$x$$ is the short part, it really can't be larger than a half rod because it would be the long one! So, $$x\in[0,L/2]$$. Also, $$L>0$$ or there would be any rod, to begin with. So, we are interested in the average ratio of the short to long pieces, i.e., $$\left<x/(L-x)\right>$$.
 
-At this point, we need to invoke the **expected value**notion. The expected value of a random variable $$x$$, often denoted $$\mathbb{E}[X]$$, can be thought of as a generalized version of the weighted average, where the weights are given by the probabilities. If we have a fair die, then the probability of each outcome is $$p=1/6$$ and the expected value after one throw is given by $$1 \times 1/6 + 2 \times 1/6 + \ldots + 6 \times 1/6 = 7/2$$. So, if we throw the die 10.000 times and take the mean of the outcomes, we *expect* to get an average value of 3.5.
+At this point, we need to invoke the **expected value** concept. The expected value of a random variable $$x$$, often denoted $$\mathbb{E}[X]$$, can be thought of as a generalized version of the weighted average, where the weights are given by the probabilities. Consider for example a fair die, then the probability of each outcome is $$p=1/6$$ and the expected value after many throws is given by $$1 \times 1/6 + 2 \times 1/6 + \ldots + 6 \times 1/6 = 7/2$$. This is easily demonstrated by simulating say, 10.000 throws and taking the mean of the outcomes:
 
 {% highlight mathematica %}
 {% raw %}
@@ -33,7 +33,9 @@ $$
 \end{align*}
 $$
 
-Where $$\frac{x}{L-x}$$ is the *value of the ratio* when the rod breaks at short length $$x$$, and $$p(x)$$ is the *probability* of this particular break happening. We assume that a rod is equally probable to break at a point $$x$$ since the problem doesn't state any particular probability distribution. Therefore, $$p(x) = 1/(L/2)=2/L$$. Is this intuitive? Yes, because the longer the rod, the less probable it is for a particular break to happen. Imagine if we had a die with 1.000.000 faces; what would be the probability of getting the number "6" after a throw? 1/1.000.000.
+Where $$\frac{x}{L-x}$$ is the *value of the ratio* when the rod breaks at short length $$x$$, and $$p(x)$$ is the *probability* of this particular break happening. We assume that a rod is equally probable to break at a point $$x$$ since the problem doesn't state any specific probability distribution. In [another blog post]( https://ekamperi.github.io/mathematics/2021/01/29/why-is-normal-distribution-so-ubiquitous.html#information-theoretic-arguments) I talk about how uniform distribution is maximally noncommittal with respect to missing information.
+
+Therefore, $$p(x) = 1/(L/2)=2/L$$. Does this make sense? Yes, because the longer the rod, the less probable it is for a *particular* break $$x$$ to happen. Imagine if we had a die with 1.000.000 faces; what would be the probability of getting the number "6" after a throw? 1/1.000.000.
 
 $$
 \begin{align*}
@@ -42,7 +44,7 @@ $$
 \end{align*}
 $$
 
-From this point forward, it's just about calculating an integral. Such integrals are usually calculated by breaking up the fraction into a sum of simple fractions, e.g.,
+From this point forward, it's just about computing the integral. Such integrals are usually calculated by breaking up the fraction into a sum of simple fractions, e.g.,
 
 $$
 \frac{x}{L(L-x)}=\frac{A}{L} + \frac{B}{L-x}
