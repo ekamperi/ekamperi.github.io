@@ -34,7 +34,7 @@ At this point, we need to invoke the concept of [**expected value**](https://www
 {% highlight mathematica %}
 {% raw %}
 Mean@RandomInteger[{1, 6}, 1000] // N
-3.58
+(* 3.58 *)
 {% endraw %}
 {% endhighlight %}
 
