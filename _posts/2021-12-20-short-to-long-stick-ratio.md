@@ -1,19 +1,19 @@
 ---
 layout: post
-title:  "Short to long stick ratio: a nice little math problem"
+title:  "The joy of not Google'ing: Short to long stick ratio"
 date:   2021-12-20
 categories: [mathematics]
 tags: ['mathematics']
-description: How to calculate the average short-to-long stick ratio.
+description: How to calculate the average short-to-long stick ratio when breaking rods at random points.
 ---
 
 ### Introduction
 Hola! Long time no see! In the past months, I've been very busy working as a machine learning engineer at [Chronicles Health](https://www.chronicles.health/), a digital health company, on a course to revolutionize the management of inflammatory bowel disease.
 
-But I'm back! However, today's post won't cover some fancy machine learning algorithm or data science topic. Instead, let me tell you about a neat little problem I found on the Internet (credits to [Gianni Sarcone](https://www.wikiwand.com/en/Gianni_A._Sarcone)).
+But I'm back! However, today's post won't cover some fancy machine learning algorithm or data science topic. Instead, let me tell you about a neat little problem I found on the Internet (credits to [Gianni Sarcone](https://www.wikiwand.com/en/Gianni_A._Sarcone)). It turns out that, as many people, I've become extremely good at Google'ing stuff, but less so at thinking for myself. So, I decided to solve this cute little puzzle in the traditional "analog" way, with pen and paper :)
 
 ### Problem statement
-**Suppose that we through 10.000 rods against a rock, and they break at random places. What is the average ratio of the length of the short piece to the length of the long piece?**
+**Suppose that we throw 10.000 rods against a rock, and they break at random places. What is the average ratio of the length of the short piece to the length of the long piece?**
 
 ### Solution
 We start by modeling the problem, and for that, we need to assign symbols to the various involved components. So, there's a rod, and two pieces, a short and a long one. Let's say that the rod has length $$L$$. Then, if we agree that the short piece has size $$x$$, the remainder will be the long one with length $$L-x$$. 
