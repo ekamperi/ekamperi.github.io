@@ -7,7 +7,7 @@ tags: ['mathematics']
 description: How to calculate the average ratio of short to long stick ratio.
 ---
 
-Hola! Long time no see! In the past months, I've been very busy working at Chronicles Health, a digital health company, on a course to revolutionize the management of inflammatory bowel disease.
+Hola! Long time no see! In the past months, I've been very busy working at [Chronicles Health](https://www.chronicles.health/), a digital health company, on a course to revolutionize the management of inflammatory bowel disease.
 
 In today's blog post, I'm not going to talk about some fancy machine learning or data science topic. Instead, I'll write about a nice little mathematical problem I've stumbled upon on the Internet. And by solving it, I'll demonstrate my thought process. Without further ado:
 
@@ -29,7 +29,7 @@ Alright, back to our problem! Here we don't throw dice and look at the number we
 
 $$
 \begin{align*}
-E(x/(L-x)) = \int_{0}^{L/2} \frac{x}{L-x} p(x)d x
+\mathbb{E}(x/(L-x)) = \int_{0}^{L/2} \frac{x}{L-x} p(x)d x
 \end{align*}
 $$
 
@@ -37,7 +37,7 @@ Where $$\frac{x}{L-x}$$ is the *value of the ratio* when the rod breaks at short
 
 $$
 \begin{align*}
-E(x/(L-x)) = \int_{0}^{L/2} \frac{x}{L-x} \cdot\frac{2}{L} \mathrm{d}x = 
+\mathbb{E}(x/(L-x)) = \int_{0}^{L/2} \frac{x}{L-x} \cdot\frac{2}{L} \mathrm{d}x = 
 2\int_{0}^{L/2} \frac{x}{L(L-x)} \mathrm{d}x 
 \end{align*}
 $$
@@ -58,7 +58,7 @@ Therefore:
 
 $$
 \begin{align*}
-E(x/(L-x)) =
+\mathbb{E}(x/(L-x)) =
 2\int_{0}^{L/2} \left( -\frac{1}{L} + \frac{1}{L-x} \right) \mathrm{d}x=\\
 -\frac{2}{L} \left(\frac{L}{2}-0\right) - 2\left[\ln{(L-x)}\right]_{0}^{L/2}=\\
 -1 - 2\left[\ln\left({L}-\frac{L}{2}\right) - \ln{L}\right]
