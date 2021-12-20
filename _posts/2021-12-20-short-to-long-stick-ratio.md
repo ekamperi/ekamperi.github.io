@@ -33,7 +33,7 @@ E(x/(L-x)) = \int_{0}^{L/2} \frac{x}{L-x} p(x)d x
 \end{align*}
 $$
 
-Where $$x\frac{L-x}$$ is the *value of the ratio* when the rod breaks at short length $$x$$, and $$p(x)$$ is the *probability* of this particular break happening. We assume that a rod is equally probable to break at a point $$x$$ since the problem doesn't state any particular probability distribution. Therefore, $$p(x) = 1/(L/2)=2/L$$. Is this intuitive? Yes, because the longer the rod, the less probable it is for a particular break to happen. Imagine if we had a die with 1.000.000 faces; what would be the probability of getting the number "6" after a throw? 1/1.000.000.
+Where $$\frac{x}{L-x}$$ is the *value of the ratio* when the rod breaks at short length $$x$$, and $$p(x)$$ is the *probability* of this particular break happening. We assume that a rod is equally probable to break at a point $$x$$ since the problem doesn't state any particular probability distribution. Therefore, $$p(x) = 1/(L/2)=2/L$$. Is this intuitive? Yes, because the longer the rod, the less probable it is for a particular break to happen. Imagine if we had a die with 1.000.000 faces; what would be the probability of getting the number "6" after a throw? 1/1.000.000.
 
 $$
 \begin{align*}
