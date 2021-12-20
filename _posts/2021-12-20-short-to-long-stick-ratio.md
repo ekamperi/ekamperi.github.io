@@ -67,7 +67,7 @@ $$
 $$
 
 ### Simulation
-Here is a simple simulation for a rod of length $$L=1$$. Notice how the average ratio converges on $-1 + \ln{4} \simeq 0.386$.
+Here is a simple simulation for a rod of length $$L=1$$. Notice how the average ratio converges on $$-1 + \ln{4} \simeq 0.386$$.
 
 {% highlight mathematica %}
 {% raw %}
