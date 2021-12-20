@@ -66,6 +66,24 @@ $$
 -1-2(\ln{1/2})= -1+\ln{4}
 $$
 
+Here is a simple simulation for a rod of length $$L=1$$. Notice how the average ratio converges on $-1 + \ln{4} \simeq 0.386$.
+
+{% highlight mathematica %}
+{% raw %}
+L = 1;
+f[x_] := x/(L - x)
+sim[n_] :=
+ Mean[
+  f /@ RandomReal[{0, L/2},   n]
+  ]
+ListPlot[
+ Table[{n, sim[n]}, {n, 1, 20000, 1000}], Joined -> True, 
+ InterpolationOrder -> 2, PlotRange -> All, 
+ Frame -> {True, True, False, False}, 
+ FrameLabel -> {"# of throws", "Value of ratio"}, 
+ GridLines -> Automatic, PlotRange -> All]
+{% endraw %}
+{% endhighlight %}
 
 <p align="center">
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/short-stick-ratio.png" alt="Average short to long stick ratio">
