@@ -29,7 +29,7 @@ $$
 \text{ratio} = \left<x/(L-x)\right>
 $$
 
-At this point, we need to invoke the concept of [expected value](https://www.wikiwand.com/en/Expected_value. The expected value of a random variable $$X$$, often denoted $$\mathbb{E}[X]$$, can be thought of as a generalized version of the weighted average, where the weights are given by the probabilities. Consider for example a fair die, then the probability of each outcome is $$p=1/6$$ and the expected value after many throws is given by $$1 \times 1/6 + 2 \times 1/6 + \ldots + 6 \times 1/6 = 7/2$$. This is easily demonstrated by simulating, say, 10.000 throws and taking the mean of the outcomes:
+At this point, we need to invoke the concept of [**expected value**](https://www.wikiwand.com/en/Expected_value). The expected value of a random variable $$X$$, often denoted $$\mathbb{E}[X]$$, can be thought of as a generalized version of the weighted average, where the weights are given by the probabilities. Consider for example a fair die, then the probability of each outcome is $$p=1/6$$ and the expected value after many throws is given by $$1 \times 1/6 + 2 \times 1/6 + \ldots + 6 \times 1/6 = 7/2$$. This is easily demonstrated by simulating, say, 10.000 throws and taking the mean of the outcomes:
 
 {% highlight mathematica %}
 {% raw %}
