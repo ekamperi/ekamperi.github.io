@@ -16,7 +16,7 @@ But I'm back! However, today's post won't cover some fancy machine learning algo
 **Suppose that we throw 10.000 rods against a rock, and they break at random places. What is the average ratio of the length of the short piece to the length of the long piece?**
 
 ### Solution
-We start by modeling the problem, and for that, we need to assign symbols to the various involved components. So, there's a rod, and two pieces, a short and a long one. Let's say that the rod has length $$L$$. Then, if we agree that the short piece has size $$x$$, the remainder will be the long one with length $$L-x$$. 
+We start by modeling the problem, and for that, we need to assign symbols to the various involved components. So, there's a rod, and two pieces, a short and a long one. Let's say that the rod has length $$L$$. Then, if we agree that the short piece has size $$x$$, the remainder will be the long one with length $$L-x$$. Mind that $$x$$ is not fixed, it's a random variable, since we have 10.000 rods, and so is $$L-x$$.
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/short-to-long-stick-sketch.png" alt="Average short to long stick ratio">
