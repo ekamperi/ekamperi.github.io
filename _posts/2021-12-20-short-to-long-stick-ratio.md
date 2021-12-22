@@ -8,15 +8,17 @@ description: How to calculate the average short-to-long stick ratio when breakin
 ---
 
 ### Introduction
-Hola! Long time no see! In the past months, I've been very busy working as a machine learning engineer at [Chronicles Health](https://www.chronicles.health/), a digital health company, on a course to revolutionize the management of inflammatory bowel disease.
+Hola! Long time no see! In the past months, I've been swamped working as a machine learning engineer at [Chronicles Health](https://www.chronicles.health/), a digital health company, on a course to revolutionize the management of inflammatory bowel disease.
 
-But I'm back! However, today's post won't cover some fancy machine learning algorithm or data science topic. Instead, let me tell you about a neat little problem I found on the Internet (credits to [Gianni Sarcone](https://www.wikiwand.com/en/Gianni_A._Sarcone)). It turns out that, like many people, I've become extremely good at googling stuff but less so at thinking for myself. So, I decided to solve this cute little puzzle in the traditional "analog" way, with pen and paper, without any online help :)
+But I'm back! However, today's post won't cover some fancy machine learning algorithm or data science topic. Instead, let me tell you about a neat little problem I found on the Internet (credits to [Gianni Sarcone](https://www.wikiwand.com/en/Gianni_A._Sarcone)). It turns out that, like many people, I've become extremely good at googling stuff but less so at thinking for myself. So, I decided to solve this cute little puzzle in the traditional "analog" way, with pen and paper, without any online help :) And as a matter of fact, I encourage you to do the same. Once every now and then, try to solve a relatively simple science problem without referencing online resources. If you need some formula or a theorem, look it up in a paper book, seriously. You will be amazed at how beneficial this approach will be to your problem-solving skills.
 
 ### Problem statement
+<p style="border:2px; border-style:solid; border-color:#1C6EA4; border-radius: 5px; padding: 20px;">
 **Suppose that we throw 10.000 rods against a rock, and they break at random places. What is the average ratio of the length of the short piece to the length of the long piece?**
+</p>
 
 ### Solution
-We start by modeling the problem, and for that, we need to assign symbols to the various involved components. So, there's a rod, and two pieces, a short and a long one. Let's say that the rod has length $$L$$. Then, if we agree that the short piece has size $$x$$, the remainder will be the long one with length $$L-x$$. Mind that $$x$$ is not fixed, it's a random variable, since we have 10.000 rods, and so is $$L-x$$.
+We start by modeling the problem, which probably is the most critical part of a problem-solving process. The way we set it up will largely define the next steps. So, we need to assign symbols to the various involved components. There's a rod, and two pieces, a *short* and a *long* one. Let's say that the rod has length $$L$$. Then, if we agree that the short piece is of size $$x$$, the remainder will be the long one with length $$L-x$$. Mind that $$x$$ is not fixed; it's a random variable since we have 10.000 rods, and so is $$L-x$$.
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/short-to-long-stick-sketch.png" alt="Average short to long stick ratio">
