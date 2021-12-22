@@ -14,7 +14,7 @@ But I'm back! However, today's post won't cover some fancy machine learning algo
 
 ### Problem statement
 <p style="border:2px; border-style:solid; border-color:#1C6EA4; border-radius: 5px; padding: 20px;">
-**Suppose that we throw 10.000 rods against a rock, and they break at random places. What is the average ratio of the length of the short piece to the length of the long piece?**
+Suppose that we throw 10.000 rods against a rock, and they break at random places. What is the average ratio of the length of the short piece to the length of the long piece?
 </p>
 
 ### Solution
