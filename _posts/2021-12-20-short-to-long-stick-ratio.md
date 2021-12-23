@@ -75,12 +75,12 @@ Therefore:
 
 $$
 \begin{align*}
-\mathbb{E}(x/(L-x)) =
-2\int_{0}^{L/2} \left( -\frac{1}{L} + \frac{1}{L-x} \right) \mathrm{d}x=\\
--\frac{2}{L} \left(\frac{L}{2}-0\right) - 2\left[\ln{(L-x)}\right]_{0}^{L/2}=\\
--1 - 2\left[\ln\left({L}-\frac{L}{2}\right) - \ln{L}\right]
-\end{align*}=\\
--1-2(\ln{1/2})= -1+\ln{4}
+\mathbb{E}(x/(L-x))
+&= 2\int_{0}^{L/2} \left( -\frac{1}{L} + \frac{1}{L-x} \right) \mathrm{d}x
+&= -\frac{2}{L} \left(\frac{L}{2}-0\right) - 2\left[\ln{(L-x)}\right]_{0}^{L/2}
+&=-1 - 2\left[\ln\left({L}-\frac{L}{2}\right) - \ln{L}\right]
+&=-1-2(\ln{1/2}) = -1+\ln{4}
+\end{align*}
 $$
 
 ### Simulation
