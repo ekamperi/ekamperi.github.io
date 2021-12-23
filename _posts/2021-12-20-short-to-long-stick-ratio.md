@@ -54,7 +54,7 @@ Therefore, $$p(x) = 1/(L/2)=2/L$$. Does this make sense? Yes, because the longer
 
 $$
 \begin{align*}
-\mathbb{E}(x/(L-x)) = \int_{0}^{L/2} \frac{x}{L-x} \cdot\frac{2}{L} \mathrm{d}x = 
+\mathbb{E}(x/(L-x)) = \int_{0}^{L/2} \left( \frac{x}{L-x} \cdot\frac{2}{L} \right) \mathrm{d}x = 
 2\int_{0}^{L/2} \frac{x}{L(L-x)} \mathrm{d}x 
 \end{align*}
 $$
