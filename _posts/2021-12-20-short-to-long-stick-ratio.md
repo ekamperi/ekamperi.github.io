@@ -108,7 +108,7 @@ ListPlot[
 </p>
 
 ### Stuff to think about
-* Why is the result of *independent* of the length $$L$$? Is there any intuitive answer to this?
+* Why is the result *independent* of the length $$L$$? Is there any intuitive answer to this?
 * Why was it enough to integrate from $$x=0$$ to $$x=L/2$$ and not do something like:
 
 $$
