@@ -110,11 +110,8 @@ ListPlot[
 ### Stuff to think about
 1. Why is the result of *independent* of the length $$L$$? Is there any intuitive answer to this?
 2. Why was it enough to integrate from $$x=0$$ to $$x=L/2$$ and not do something like:
-
 $$
 \int_0^{L/2} \left(\frac{x}{L-x} \cdot \frac{1}{L} \right) \mathrm{d}x + \int_{L/2}^{L} \left(\frac{L-x}{x} \cdot \frac{1}{L} \right) \mathrm{d}x
 $$
-
 Is there any *symmetry* in the problem that allows us to shortcut it? (Always look for symmetries!)
-
 3. What whould happen if the probability of the rod breaking at some point wasn't the same along the rod? Say because the rod was weaker as we moved to its left end. How would this affect the symmetry of the initial problem?
