@@ -26,9 +26,8 @@ We start by modeling the problem, which probably is the most critical part of a 
 
 Every time we translate the statement of a problem into mathematical symbols and expressions, we need to constrain the values that our variables assume so that our setup always "makes sense". Since $$x$$ is the short part, it really can't be larger than a half rod because it would be the long one! So, $$x\in[0,L/2]$$. Also, $$L>0$$ or there would be any rod, to begin with. So, we are interested in the average ratio of the short to long pieces, i.e.:
 
-
 $$
-\text{ratio} = \left<x/(L-x)\right>
+\text{avg. ratio} = \left<x/(L-x)\right>
 $$
 
 At this point, we need to invoke the concept of [**expected value**](https://www.wikiwand.com/en/Expected_value). The expected value of a random variable $$X$$, often denoted $$\mathbb{E}[X]$$, can be thought of as a generalized version of the weighted average, where the weights are given by the probabilities. Consider for example a fair die, then the probability of each outcome is $$p=1/6$$ and the expected value after many throws is given by $$1 \times 1/6 + 2 \times 1/6 + \ldots + 6 \times 1/6 = 7/2$$. This is easily demonstrated by simulating, say, 10.000 throws and taking the mean of the outcomes:
