@@ -25,7 +25,7 @@ by learning some efficient low-dimensional data representation. To the extent th
 just like we can replace $$x$$ with the first couple of principal components when doing PCA.
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/autoencoder/autoencoder_schematic.png" alt="Schematic representation of an autoencoder">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/autoencoder/autoencoder_schematic.png" alt="Schematic representation of an autoencoder">
 </p>
 
 As it turns out, though, there are quite a few more applications that we will present here briefly.
@@ -38,10 +38,10 @@ Again, this application is connected to the previous one. Say we'd like to build
 
 ### Denoising
 Autoencoders can be trained in such a way that they learn how to perform efficient denoising of the source. Contrary to conventional denoising techniques, they do not actively look for noise in the data. Instead, they extract the source from the noisy input by learning a representation of it. The representation is subsequently used to decompress the input into noise-free data. A concrete example is training an autoencoder to remove noise from images. The key to
-accomplishing this is to take the training images, *add some noise* to them, and use them as the $$x$$. Then use the original images (without the noise) as the $$y$$. So, to put it a bit more formally, we are asking the network to learn the mapping $$f:(x+\text{noise}) \to x$$. The following figure is taken from Keras's documentation on autoencoders. The upper row consists of the original untainted images (the $$y$$), and the lower row contains images with some noise added by us (the $$x$$).
+accomplishing this is to take the training images, *add some noise* to them, and use them as the $$x$$. Then use the original images (without the noise) as the $$y$$. So, to put it a bit more formally, we are asking the network to learn the mapping $$(x+\text{noise}) \to x$$. The following figure is taken from Keras's documentation on autoencoders. The upper row consists of the original untainted images (the $$y$$), and the lower row contains images with some noise added by us (the $$x$$).
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/autoencoder/noisy_digits.png" alt="Noisy digits for training a denoising autoencoder">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/autoencoder/noisy_digits.png" alt="Noisy digits for training a denoising autoencoder">
 </p>
 
 ### Anomaly detection
@@ -51,7 +51,7 @@ Since autoencoders are trained to reconstruct their input as well as they can, n
 Variational autoencoders can be used to generate new synthetic data, mostly image, but also time-series. The way to do this is by first training an autoencoder with some data, and then *randomly sampling the latent dimension* of the autoencoder. These random samples are then handed over to the decoder part of the network, leading to new data generation. The following image shows the results of sampling an autoencoder trained on the MNIST dataset. These digits do not exist in the training dataset; they are *generated* by the network.
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/autoencoder/latent_sample.png" alt="Image generation with variation autoencoders">
+ <img style="width: 70%; height: 70%" src="{{ site.url }}/images/autoencoder/latent_sample.png" alt="Image generation with variation autoencoders">
 </p>
 
 
