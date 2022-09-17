@@ -14,7 +14,7 @@ description: A high-level summary of autoencoders' applications
 {:toc}
 
 ## Introduction
-Hello, world! It's been nine months since my last post! I was so engaged working at Chronicles Health that I couldn't find time to reserve for blogging. However, the previous week was my last one there. Now I'll wear my medical hat again and work as a radiation oncology consultant, hopefully enjoying a more predictable work schedule. I will probably write a blog post about my venture working on a startup. But for now, I wanted to make a soft comeback by writing a short blog post on **the applications of autoencoders**.
+Hello, world! It's been nine months since my last post! I was so engaged working at Chronicles Health that I couldn't find time to reserve for blogging. However, the previous week was my last one there. Now I'll wear my medical hat again and work as a [radiation oncology consultant](https://en.wikipedia.org/wiki/Radiation_therapy), hopefully enjoying a more predictable work schedule. I will probably write a blog post about my venture working on a startup. But for now, I wanted to make a soft comeback by writing a short blog post on **the applications of autoencoders**, one of my favorite machine learning topics.
 
 In the future, I expect to find time to expand on these topics via separate posts, with in-depth analysis and coding examples.
 
