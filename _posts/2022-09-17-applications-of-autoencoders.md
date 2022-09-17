@@ -38,7 +38,7 @@ Again, this application is connected to the previous one. Say we'd like to build
 
 To be a bit more concrete, this is the hypothetical database of known songs along with their latent encoding:
 
-| Song name  | Position at latent dim 1 | Position at latent dim 2 |
+| Song name  | Coordinate at latent dim 1 | Coordinate at latent dim 2 |
 | ------------- | --------------------- | ------------------------ |
 | Enter Sandman  | 0.65  | 0.12
 | Fear of the Dark  | 0.44  | 0.99
