@@ -3,7 +3,7 @@ layout: post
 title: "Applications of autoencoders"
 date:   2022-09-17
 categories: [mathematics]
-tags: ['machine learning', 'mathematics', 'statistics']
+tags: ['machine learning', 'mathematics', 'neural networks', 'statistics']
 description: A high-level summary of autoencoders' applications
 ---
 
