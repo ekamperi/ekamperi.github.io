@@ -38,8 +38,7 @@ Again, this application is connected to the previous one. Say we'd like to build
 
 ### Denoising
 Autoencoders can be trained in such a way that they learn how to perform efficient denoising of the source. Contrary to conventional denoising techniques, they do not actively look for noise in the data. Instead, they extract the source from the noisy input by learning a representation of it. The representation is subsequently used to decompress the input into noise-free data. A concrete example is training an autoencoder to remove noise from images. The key to
-accomplishing this is to take the training images, *add some noise* to them, and use them as the $$x$$. Then use the original images (without the noise) as the $$y$$. The following figure is taken from Keras's documentation on autoencoders. The upper row consists of the original untainted images (the $$y$$), and the lower row contains
-images with some noise added by us (the $$x$$).
+accomplishing this is to take the training images, *add some noise* to them, and use them as the $$x$$. Then use the original images (without the noise) as the $$y$$. So, to put it a bit more formally, we are asking from the network to learn the mapping $f:(x+\text{noise}) \to x$. The following figure is taken from Keras's documentation on autoencoders. The upper row consists of the original untainted images (the $$y$$), and the lower row contains images with some noise added by us (the $$x$$).
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/autoencoder/noisy_digits.png" alt="Noisy digits for training a denoising autoencoder">
