@@ -36,6 +36,17 @@ To the uninitiated, feature extraction is the process of taking some data and th
 ### Object search
 Again, this application is connected to the previous one. Say we'd like to build a search engine for images or songs. We could save all the items in a database and then go through each one, comparing it with our target. But that would be very time-consuming if we did the comparison pixel-by-pixel (or beat-by-beat). Instead, we could run the entire thing in the latent space. Concretely, we would first pass all the known images (or songs) from an autoencoder and save their latent space representation (which, by definition, is low dimensional and cheap!) in a database. The position of the input on the latent space is akin to a "signature".  Assuming we would use a 2D latent space, every song in the database would be characterized just by two numbers! Then, given an image (or song) to search for, we would convert it into a latent space representation (again, two numbers), and *then* we would search the database for it. The comparison could be made via, for instance, the Euclidean distance between the target and the $$i$$-th element in the database. The rationale is that operating on low-dimensional latent space is much more economical, computation-wise, than high-dimensional original space. What if this method didn't work? Well, we could try increasing the latent space dimensionality from 2D to 3D and try again until we find the minimum number of dimensions in the latent space that are enough to separate the images (or songs) in our database.
 
+To be a bit more concrete, this is the hypothetical database of known songs along with their latent encoding:
+
+| Song name  | Position at latent dim 1 | Position at latent dim 2 |
+| ------------- | --------------------- | ------------------------ |
+| Enter Sandman  | 0.65  | 0.12
+| Fear of the Dark  | 0.44  | 0.99
+| ...  | ...  | ...
+| Land of the free | 0.81 | 0.03
+
+And suppose we are given an unknown song with $$\text{latent dim}_1 = 0.45, \text{latent dim}_2 = 0.97$$. We would then calculate its distance from the first, 2nd, 3rd song in the database, and we would pick the one with the minimum distance. Neat?
+
 ### Denoising
 Autoencoders can be trained in such a way that they learn how to perform efficient denoising of the source. Contrary to conventional denoising techniques, they do not actively look for noise in the data. Instead, they extract the source from the noisy input by learning a representation of it. The representation is subsequently used to decompress the input into noise-free data. A concrete example is training an autoencoder to remove noise from images. The key to
 accomplishing this is to take the training images, *add some noise* to them, and use them as the $$x$$. Then use the original images (without the noise) as the $$y$$. So, to put it a bit more formally, we are asking the network to learn the mapping $$(x+\text{noise}) \to x$$. The following figure is taken from Keras's documentation on autoencoders. The upper row consists of the original untainted images (the $$y$$), and the lower row contains images with some noise added by us (the $$x$$).
