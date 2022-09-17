@@ -21,7 +21,7 @@ In the future, I expect to find time to expand on these topics via separate post
 ## Applications of autoencoders
 ### Dimensionality reduction
 [We have already used autoencoders as a dimensionality reduction technique before](https://ekamperi.github.io/machine%20learning/2021/01/21/encoder-decoder-model.html), and judging from Google Analytics, this post has been quite a success! So, the idea here is to compress the input,
-by learning some efficient low-dimensional representation. If we do that, we can replace the original input $x$ with the new $x_\text{latent}$.
+by learning some efficient low-dimensional representation. If we do that, we can replace the original input $$x$$ with the new $$x_\text{latent}$$.
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/autoencoder/autoencoder_schematic.png" alt="Schematic representation of an autoencoder">
@@ -37,15 +37,15 @@ Again, this application is related to the previous one. Say we'd like to build a
 
 ### Denoising
 Autoencoders can be trained in such a way that they learn how to perform efficient denoising of the source. Contrary to conventional denoising techniques, they do not actively look for noise in the data. Instead, they extract the source from the noisy input by learning a representation of it. The representation is subsequently used to decompress the input into noise-free data. A concrete example is training an autoencoder to remove noise from images. The key to
-accomplishing this is to take the training images, *add some noise* to them, and use them as the $x$. Then use the original images (without the noise) as the $y$. The following figure is taken from Keras's documentation on autoencoders. The upper row consists of the original untainted images (the $y$), and the lower row contains
-images with some noise added by us (the $x$).
+accomplishing this is to take the training images, *add some noise* to them, and use them as the $$x$$. Then use the original images (without the noise) as the $$y$$. The following figure is taken from Keras's documentation on autoencoders. The upper row consists of the original untainted images (the $$y$$), and the lower row contains
+images with some noise added by us (the $$x$$).
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/autoencoder/noisy_digits.png" alt="Noisy digits for training a denoising autoencoder">
 </p>
 
 ### Anomaly detection
-Since autoencoders are trained to reconstruct their input as well as they can, naturally, if they are given an *out of distribution* example, the reconstruction will not be as good as if this example was *from the training distribution*. So, by using some proper threshold for the reconstruction loss, one can build an anomaly detector: any outlier $x$ will be reconstructed as $x'$, where $\left|x' - x\right| \gt \text{thresh}$.
+Since autoencoders are trained to reconstruct their input as well as they can, naturally, if they are given an *out of distribution* example, the reconstruction will not be as good as if this example was *from the training distribution*. So, by using some proper threshold for the reconstruction loss, one can build an anomaly detector: any outlier $$x$$ will be reconstructed as $$x'$$, where $$\left|x' - x\right| \gt \text{thresh}$$.
 
 ### Synthetic data generation
 Variational Autoencoders can be used to generate both new synthetic data. The way to do this is by *randomly sampling the latent dimension* of the autoencoder. These random samples are then handed over to the decoder part of the network, leading to new data generation.
