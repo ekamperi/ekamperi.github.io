@@ -20,7 +20,14 @@ In the future, I expect to find time to expand on these topics via separate post
 
 ## Applications of autoencoders
 ### Dimensionality reduction
-[We have already used autoencoders as a dimensionality reduction technique before](https://ekamperi.github.io/machine%20learning/2021/01/21/encoder-decoder-model.html), and judging from Google Analytics, this post has been quite a success! As it turns out, though, there are quite a few more applications that we will present here briefly.
+[We have already used autoencoders as a dimensionality reduction technique before](https://ekamperi.github.io/machine%20learning/2021/01/21/encoder-decoder-model.html), and judging from Google Analytics, this post has been quite a success! So, the idea here is to compress the input,
+by learning some efficient low-dimensional representation. If we do that, we can replace the original input $x$ with the new $x_\text{latent}$.
+
+<p align="center">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/autoencoder/autoencoder_schematic.png" alt="Schematic representation of an autoencoder">
+</p>
+
+As it turns out, though, there are quite a few more applications that we will present here briefly.
 
 ### Feature extraction
 This application is tightly related to the previous one. Here's how we do it. We take raw (unlabelled) data and train an autoencoder with it to force it to learn efficient data representations. So, we train an autoencoder network and then **ignore the decoder part of the model**. Instead, we use only the encoder to convert new raw input data into the latent space representation. This new representation can then be used for supervised learning tasks.
@@ -34,7 +41,7 @@ accomplishing this is to take the training images, *add some noise* to them, and
 images with some noise added by us (the $x$).
 
 <p align="center">
- <img style="width: 60%; height: 60%" src="{{ site.url }}/images/autoencoder/../../../../images/autoencoder/noisy_digits.png" alt="Noisy digits for training a denoising autoencoder">
+ <img style="width: 60%; height: 60%" src="{{ site.url }}/images/autoencoder/noisy_digits.png" alt="Noisy digits for training a denoising autoencoder">
 </p>
 
 ### Anomaly detection
