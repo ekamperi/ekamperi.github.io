@@ -21,7 +21,8 @@ In the future, I expect to find time to expand on these topics via separate post
 ## Applications of autoencoders
 ### Dimensionality reduction
 [We have already used autoencoders as a dimensionality reduction technique before](https://ekamperi.github.io/machine%20learning/2021/01/21/encoder-decoder-model.html), and judging from Google Analytics, this post has been quite a success! So, the idea here is to compress the input,
-by learning some efficient low-dimensional representation. If we do that, we can replace the original input $$x$$ with the new $$x_\text{latent}$$.
+by learning some efficient low-dimensional representation of the data. If we do that, we can replace the original input $$x$$ with the new $$x_\text{latent}$$,
+just like we can replace $$x$$ with the first couple of its principal components, when doing PCA.
 
 <p align="center">
  <img style="width: 60%; height: 60%" src="{{ site.url }}/images/autoencoder/autoencoder_schematic.png" alt="Schematic representation of an autoencoder">
@@ -30,7 +31,7 @@ by learning some efficient low-dimensional representation. If we do that, we can
 As it turns out, though, there are quite a few more applications that we will present here briefly.
 
 ### Feature extraction
-This application is tightly related to the previous one. Here's how we do it. We take raw (unlabelled) data and train an autoencoder with it to force it to learn efficient data representations. So, we train an autoencoder network and then **ignore the decoder part of the model**. Instead, we use only the encoder to convert new raw input data into the latent space representation. This new representation can then be used for supervised learning tasks.
+This application is tightly related to the previous one. Here's how we do it. We take raw (unlabelled) data and train an autoencoder with it to force the model learn an efficient data representations. So, we train an autoencoder network and then **ignore the decoder part of the model**. Instead, we use only the encoder to convert new raw input data into the latent space representation. This new representation can then be used for supervised learning tasks.
 
 ### Object search
 Again, this application is related to the previous one. Say we'd like to build a search engine for images or songs. Instead of comparing the given image (or song), we could run the entire thing in the latent space. Concretely, we would first pass all the known images (or songs) from the autoencoder and save their latent space representation (which is low dimensional and doesn't take much space!) in a database. Then, given an image (or song) to search for, we would convert it into a latent space representation, and *then* we would search the database for it. The rationale is that operating on the low-dimensional latent space is much faster than the high-dimensional original space.
