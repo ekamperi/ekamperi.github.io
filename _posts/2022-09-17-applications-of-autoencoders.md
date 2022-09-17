@@ -38,14 +38,14 @@ Again, this application is connected to the previous one. Say we'd like to build
 
 To be a bit more concrete, this is the hypothetical database of known songs along with their latent encoding:
 
-| Song name  | Coordinate at latent dim 1 | Coordinate at latent dim 2 |
+| Song name  | Coordinate of latent dim 1 | Coordinate of latent dim 2 |
 | ------------- | --------------------- | ------------------------ |
 | Enter Sandman  | 0.65  | 0.12
 | Fear of the Dark  | 0.44  | 0.99
 | ...  | ...  | ...
 | Land of the free | 0.81 | 0.03
 
-And suppose we are given an unknown song with $$\text{latent dim}_1 = 0.45, \text{latent dim}_2 = 0.97$$. We would then calculate its distance from the first, 2nd, 3rd song in the database, and we would pick the one with the minimum distance. Neat?
+And suppose we are given an unknown song with $$\text{coord latent dim}_1 = 0.45, \text{coord latent dim}_2 = 0.97$$. We would then calculate its distance from the first, 2nd, 3rd song in the database, and we would pick the one with the minimum distance. Neat?
 
 ### Denoising
 Autoencoders can be trained in such a way that they learn how to perform efficient denoising of the source. Contrary to conventional denoising techniques, they do not actively look for noise in the data. Instead, they extract the source from the noisy input by learning a representation of it. The representation is subsequently used to decompress the input into noise-free data. A concrete example is training an autoencoder to remove noise from images. The key to
