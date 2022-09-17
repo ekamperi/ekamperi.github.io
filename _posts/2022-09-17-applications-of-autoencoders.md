@@ -55,5 +55,5 @@ Variational autoencoders can be used to generate new synthetic data, mostly imag
 </p>
 
 
-## Data imputation
+### Data imputation
 This is similar to the previous application. The idea here is to take a dataset *without* any missing entries and randomly *delete* some of the rows for some of the columns, pretending they are missing. However, we know the ground truth values and train the autoencoder to output those. Once trained, we can present a *really missing* entry to the network, and assuming that it has been trained robustly, it should perform efficient imputation. Again, to be a bit more concrete, given a dataset with $$x$$ values *without* any missing data, we artificially remove some values and then train an autoencoder to learn the mapping $$x_{\text{missing}} \to x$$.
