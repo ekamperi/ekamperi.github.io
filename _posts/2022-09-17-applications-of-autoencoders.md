@@ -52,7 +52,7 @@ Autoencoders can be trained in such a way that they learn how to perform efficie
 accomplishing this is to take the training images, *add some noise* to them, and use them as the $$x$$. Then use the original images (without the noise) as the $$y$$. So, to put it a bit more formally, we are asking the network to learn the mapping $$(x+\text{noise}) \to x$$. The following figure is taken from Keras's documentation on autoencoders. The upper row consists of the original untainted images (the $$y$$), and the lower row contains images with some noise added by us (the $$x$$).
 
 <p align="center">
- <img style="width: 70%; height: 70%" src="{{ site.url }}/images/autoencoder/noisy_digits.png" alt="Noisy digits for training a denoising autoencoder">
+ <img style="width: 80%; height: 80%" src="{{ site.url }}/images/autoencoder/noisy_digits.png" alt="Noisy digits for training a denoising autoencoder">
 </p>
 
 ### Anomaly detection
@@ -62,7 +62,7 @@ Since autoencoders are trained to reconstruct their input as well as they can, n
 Variational autoencoders can generate new synthetic data, primarily images but also time series. The way to do this is by first training an autoencoder with some data and then *randomly sampling the latent dimension* of the autoencoder. These random samples are then handed over to the decoder part of the network, leading to new data generation. The following image shows the results of sampling an autoencoder trained on the MNIST dataset. These digits do not exist in the training dataset; they are *generated* by the network.
 
 <p align="center">
- <img style="width: 70%; height: 70%" src="{{ site.url }}/images/autoencoder/latent_sample.png" alt="Image generation with variation autoencoders">
+ <img style="width: 80%; height: 80%" src="{{ site.url }}/images/autoencoder/latent_sample.png" alt="Image generation with variation autoencoders">
 </p>
 
 
