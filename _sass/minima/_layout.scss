@@ -351,13 +351,14 @@ a {
 
 a::before {
   content: '';
-  background-color: hsla(196, 61%, 58%, .85);
+  background-color: hsla(196, 61%, 58%, .95);
   position: absolute;
   left: 0;
-  bottom: 2px;
+  bottom: 1px;
   width: 100%;
-  height: 2px;
+  height: 1px;
   z-index: -1;
+  text-decoration: none;
 }
 
 a:hover::before {
@@ -368,12 +369,13 @@ a:hover::before {
 
 a::before {
   content: '';
-  background-color: hsla(196, 61%, 58%, .85);
+  background-color: hsla(196, 61%, 58%, .95);
   position: absolute;
   left: 0;
-  bottom: 2px;
+  bottom: 1px;
   width: 100%;
-  height: 2px;
+  height: 1px;
   z-index: -1;
-  transition: all .1s ease-in-out;
+  transition: all .05s ease-in-out;
+  text-decoration: none;
 }
