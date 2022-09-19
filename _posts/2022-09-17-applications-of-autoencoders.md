@@ -73,7 +73,7 @@ This is similar to the previous application. The idea here is to take a dataset 
 Image colorization is the process of assigning colors to a grayscale image.
 
 <p align="center">
- <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/colorized_einstein.jpeg" alt="Colorized Albert Einstein">
+ <img style="width: 80%; height: 80%" src="{{ site.url }}/images/autoencoder/colorized_einstein.jpeg" alt="Colorized Albert Einstein">
 </p>
 
 This task can be achieved by taking a dataset with colored images, and create a new dataset with pairs of grayscale and colored images. We then train an autoencoder to learn the mapping $$x_\text{grayscale} \to x_\text{colored}$$.
