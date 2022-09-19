@@ -68,3 +68,13 @@ Variational autoencoders can generate new synthetic data, primarily images but a
 
 ### Data imputation
 This is similar to the previous application. The idea here is to take a dataset *without* any missing entries and randomly *delete* some of the rows for some of the columns, pretending they are missing. However, we know the ground truth values and train the autoencoder to output those. Once trained, we can present a *really missing* entry to the network, and assuming that it has been trained robustly, it should perform efficient imputation. Again, to be a bit more concrete, given a dataset with $$x$$ values *without* any missing data, we artificially remove some values and then train an autoencoder to learn the mapping $$x_{\text{missing}} \to x$$.
+
+## Image colorization
+Image colorization is the process of assigning colors to a grayscale image.
+
+<p align="center">
+ <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/colorized_einstein.jpeg" alt="Colorized Albert Einstein">
+</p>
+
+This task can be achieved by taking a dataset with colored images, and create a new dataset with pairs of grayscale and colored images. We then train an autoencoder to learn the mapping $$x_\text{grayscale}
+to x_\text{colored}$$.
