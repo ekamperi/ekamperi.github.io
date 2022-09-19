@@ -76,5 +76,4 @@ Image colorization is the process of assigning colors to a grayscale image.
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/autoencoder/colorized_einstein.jpeg" alt="Colorized Albert Einstein">
 </p>
 
-This task can be achieved by taking a dataset with colored images, and create a new dataset with pairs of grayscale and colored images. We then train an autoencoder to learn the mapping $$x_\text{grayscale}
-to x_\text{colored}$$.
+This task can be achieved by taking a dataset with colored images, and create a new dataset with pairs of grayscale and colored images. We then train an autoencoder to learn the mapping $$x_\text{grayscale} \to x_\text{colored}$$.
