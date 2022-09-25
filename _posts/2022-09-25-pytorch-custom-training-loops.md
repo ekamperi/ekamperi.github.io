@@ -15,6 +15,10 @@ description: How to create custom training loops with Pytorch
 {:toc}
 
 ## Introduction
+[In a previous post](https://ekamperi.github.io/mathematics/2020/12/20/tensorflow-custom-training-loops.html), we saw a couple of examples on how to construct a custom training loop, define a custom loss function, have Tensorflow automatically compute the gradients of the loss function with respect to the trainable parameters, and then update the model. In this post, we will do the same, but this time we are going to use PyTorch. It's been a while that I wanted to switch from Tensorflow to Pytorch.
+
+## Fit linear regression model to data by minimizing MSE
+### Generate training data
 
 {% highlight python %}
 {% raw %}
@@ -41,6 +45,7 @@ plt.title('Dataset')
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/pytorch_custom_loop/dataset.png" alt="Dataset for regression">
 </p>
 
+### Define a model with trainable parameters
 {% highlight python %}
 {% raw %}
 def f(x, params):
@@ -50,6 +55,7 @@ def f(x, params):
 {% endhighlight %}
 
 
+### Define a custom loss function
 {% highlight python %}
 {% raw %}
 def mse(y_pred, y_true):
@@ -97,6 +103,7 @@ def apply_step():
 {% endhighlight %}
 
 
+### Run the custom training loop
 {% highlight python %}
 {% raw %}
 epochs = 15000
@@ -117,9 +124,12 @@ plt.grid()
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/pytorch_custom_loop/history.png" alt="History of MSE loss">
 </p>
 
+### Final results
+Finally, we superimpose the dataset with the best quadratic regression model PyTorch converged to:
+
 {% highlight python %}
 {% raw %}
-plot_pred_vs_true('Before training')
+plot_pred_vs_true('After training')
 {% endraw %}
 {% endhighlight %}
 
