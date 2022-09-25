@@ -30,8 +30,10 @@ just like we can replace $$x$$ with the first couple of principal components whe
 
 As it turns out, though, there are quite a few more applications that we will present here briefly.
 
+
 ### Feature extraction
 To the uninitiated, feature extraction is the process of transforming some data so that the new variables are more informative and less redundant than the original ones. Also, the new derived values (features), hopefully, can differentiate different classes of things in a classification task or predict some target value in a regression task. This application is tightly related to dimensionality reduction. Here's how we do it. We take raw (unlabelled) data and train an autoencoder with it to force the model learn efficient data representations (the so-called latent space). Once we have trained the autoencoder network, we then **ignore the decoder part of the model**. Instead, we use only the encoder to convert new raw input data into the latent space representation. This new representation can then be used for supervised learning tasks. So, instead of training a supervised model to learn how to map $$x$$ to $$y$$, we ask it to map $$x_\text{latent}$$ to $$y$$.
+
 
 ### Object matching
 Again, this application is connected to the previous one. Say we'd like to build a search engine for images or songs. We could save all the items in a database and then go through each one, comparing it with our target. But that would be very time-consuming if we did the comparison pixel-by-pixel (or beat-by-beat). Instead, we could run the entire thing in the latent space. Concretely, we would first pass all the known images (or songs) from a trained autoencoder and save their latent space representation (which, by definition, is low dimensional and cheap!) in a database. The position of the input on the latent space is akin to a "signature".  Assuming we would use a 2D latent space, every song in the database would be characterized just by two numbers! Then, given an image (or song) to search for, we would convert it into a latent space representation (again, two numbers), and *then* we would search the database for it. The comparison could be made via, for instance, the [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance) between the target and the $$i$$-th element in the database. The rationale is that operating on low-dimensional latent space is much more economical, computation-wise, than high-dimensional original space. What if this method doesn't work? Well, we could try increasing the latent space dimensionality from 2D to 3D and try again until we find the minimum number of dimensions in the latent space that are enough to separate the images (or songs) in our database.
@@ -65,7 +67,7 @@ Variational autoencoders can generate new synthetic data, primarily images but a
  <img style="width: 80%; height: 80%" src="{{ site.url }}/images/autoencoder/latent_sample.png" alt="Image generation with variation autoencoders">
 </p>
 
-Variational autoencoders differ from vanilla autoencoders because the network learns a (typically) normal distribution for the latent vectors. This acts as some sort of *regularization*since autoencoders tend to memorize their input.
+Variational autoencoders differ from vanilla autoencoders because the network learns a (typically) normal **distribution for the latent vectors**. This acts as some sort of *regularization* since autoencoders tend to memorize their input.
 
 
 ### Data imputation
