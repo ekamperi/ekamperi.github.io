@@ -15,10 +15,11 @@ description: How to create custom training loops with Pytorch
 {:toc}
 
 ## Introduction
-[In a previous post](https://ekamperi.github.io/mathematics/2020/12/20/tensorflow-custom-training-loops.html), we saw a couple of examples on how to construct a custom training loop, define a custom loss function, have Tensorflow automatically compute the gradients of the loss function with respect to the trainable parameters, and then update the model. In this post, we will do the same, but this time we are going to use PyTorch. It's been a while that I wanted to switch from Tensorflow to Pytorch.
+[In a previous post](https://ekamperi.github.io/mathematics/2020/12/20/tensorflow-custom-training-loops.html), we saw a couple of examples on how to construct a custom training loop, define a custom loss function, have Tensorflow automatically compute the gradients of the loss function with respect to the trainable parameters, and then update the model. In this post, we will do the same, but this time we are going to use PyTorch. It's been a while that I wanted to switch from Tensorflow to Pytorch, and what a better way than start from the basics?
 
 ## Fit linear regression model to data by minimizing MSE
 ### Generate training data
+We are going to generate some data coming from a quadratic model, i.e., $$y = a x^2 + b x + c$$, and we are also going to add some noise, to make the setup look a bit more realistic, as in real world.
 
 {% highlight python %}
 {% raw %}
@@ -46,6 +47,8 @@ plt.title('Dataset')
 </p>
 
 ### Define a model with trainable parameters
+In this step, we are defining a model, the $$y = f(x)$$. Given the model's parameters, $$a, b, c$$, and an input $$x$$, $$x$$ being a tensor, we will calculate the output tensor $$y_\text{pred}$$:
+
 {% highlight python %}
 {% raw %}
 def f(x, params):
