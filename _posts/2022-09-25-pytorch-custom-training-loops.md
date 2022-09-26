@@ -69,7 +69,7 @@ def mse(y_pred, y_true):
 {% endraw %}
 {% endhighlight %}
 
-We then assign some initial random values to the parameters $$a, b, c$$:
+We then assign some initial random values to the parameters $$a, b, c$$, and also tell PyTorch that we want it to compute the gradients for this tensor (the parameters tensor).
 
 {% highlight python %}
 {% raw %}
