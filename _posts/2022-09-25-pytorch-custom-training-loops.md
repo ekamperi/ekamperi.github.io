@@ -69,6 +69,8 @@ def mse(y_pred, y_true):
 {% endraw %}
 {% endhighlight %}
 
+We then assign some initial random values to the parameters $$a, b, c$$:
+
 {% highlight python %}
 {% raw %}
 params = torch.randn(3).requires_grad_()
