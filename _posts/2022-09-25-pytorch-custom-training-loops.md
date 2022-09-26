@@ -15,11 +15,11 @@ description: How to create custom training loops with Pytorch
 {:toc}
 
 ## Introduction
-[In a previous post](https://ekamperi.github.io/mathematics/2020/12/20/tensorflow-custom-training-loops.html), we saw a couple of examples on how to construct a custom training loop, define a custom loss function, have Tensorflow automatically compute the gradients of the loss function with respect to the trainable parameters, and then update the model. In this post, we will do the same, but this time we are going to use PyTorch. It's been a while that I wanted to switch from Tensorflow to Pytorch, and what a better way than start from the basics?
+[In a previous post](https://ekamperi.github.io/mathematics/2020/12/20/tensorflow-custom-training-loops.html), we saw a couple of examples on how to construct a custom training loop, define a custom loss function, have Tensorflow automatically compute the gradients of the loss function with respect to the trainable parameters, and then update the model. We will do the same in this post, but we will use PyTorch this time. It's been a while since I wanted to switch from Tensorflow to Pytorch, and what better way than start from the basics?
 
-## Fit linear regression model to data by minimizing MSE
+## Fit quadratic regression model to data by minimizing MSE
 ### Generate training data
-We are going to generate some data coming from a quadratic model, i.e., $$y = a x^2 + b x + c$$, and we are also going to add some noise, to make the setup look a bit more realistic, as in real world.
+First, we will generate some data coming from a quadratic model, i.e., $$y = a x^2 + b x + c$$, and we will add some noise to make the setup look a bit more realistic, as in the real world.
 
 {% highlight python %}
 {% raw %}
@@ -59,6 +59,8 @@ def f(x, params):
 
 
 ### Define a custom loss function
+Here we define a custom loss function that calculates the mean squared error between the model's predictions and the actual target values in the dataset.
+
 {% highlight python %}
 {% raw %}
 def mse(y_pred, y_true):
@@ -74,6 +76,7 @@ y_pred = f(x, params)
 {% endraw %}
 {% endhighlight %}
 
+Here is a helper function that draws the predictions and actual targets in the same plot. Before training the model, we expect a considerable discordance between these two.
 
 {% highlight python %}
 {% raw %}
@@ -92,6 +95,9 @@ plot_pred_vs_true('Before training')
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/pytorch_custom_loop/before_training.png" alt="Regression with Pytorch">
 </p>
 
+### Define a custom training loop
+This is the heart of our setup. Given the old values for the model's parameters, we construct a function that calculates its predictions, how much they deviate from the actual targets, and modifies the parameters via gradient descent.
+
 {% highlight python %}
 {% raw %}
 def apply_step():
@@ -107,6 +113,8 @@ def apply_step():
 
 
 ### Run the custom training loop
+We repeatedly apply the previous step until the model's parameters converge.
+
 {% highlight python %}
 {% raw %}
 epochs = 15000
