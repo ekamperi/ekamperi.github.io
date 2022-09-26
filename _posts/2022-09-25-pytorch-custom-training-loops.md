@@ -15,7 +15,7 @@ description: How to create custom training loops with Pytorch
 {:toc}
 
 ## Introduction
-[In a previous post](https://ekamperi.github.io/mathematics/2020/12/20/tensorflow-custom-training-loops.html), we saw a couple of examples on how to construct a custom training loop, define a custom loss function, have Tensorflow automatically compute the gradients of the loss function with respect to the trainable parameters, and then update the model. We will do the same in this post, but we will use PyTorch this time. It's been a while since I wanted to switch from Tensorflow to Pytorch, and what better way than start from the basics?
+[In a previous post](https://ekamperi.github.io/mathematics/2020/12/20/tensorflow-custom-training-loops.html), we saw a couple of examples on how to construct a linear regression model, define a custom loss function, have Tensorflow automatically compute the gradients of the loss function with respect to the trainable parameters, and then update the model. We will do the same in this post, but we will use PyTorch this time. It's been a while since I wanted to switch from Tensorflow to Pytorch, and what better way than start from the basics?
 
 ## Fit quadratic regression model to data by minimizing MSE
 ### Generate training data
