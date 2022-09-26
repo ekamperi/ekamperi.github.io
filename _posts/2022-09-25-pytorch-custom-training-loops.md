@@ -47,11 +47,12 @@ plt.title('Dataset')
 </p>
 
 ### Define a model with trainable parameters
-In this step, we are defining a model, the $$y = f(x)$$. Given the model's parameters, $$a, b, c$$, and an input $$x$$, $$x$$ being a tensor, we will calculate the output tensor $$y_\text{pred}$$:
+In this step, we are defining a model, the $$y = f(x) = a x^2 + b x + c$$. Given the model's parameters, $$a, b, c$$, and an input $$x$$, $$x$$ being a tensor, we will calculate the output tensor $$y_\text{pred}$$:
 
 {% highlight python %}
 {% raw %}
 def f(x, params):
+    """Calculate the model's output given a set of parameters"""
     a, b, c = params
     return a * (x**2) + b * x + c
 {% endraw %}
@@ -64,7 +65,7 @@ Here we define a custom loss function that calculates the mean squared error bet
 {% highlight python %}
 {% raw %}
 def mse(y_pred, y_true):
-    """Returns the mean squared error between y_pred and y_true"""
+    """Returns the mean squared error between y_pred and y_true tensors"""
     return ((y_pred - y_true)**2).mean()
 {% endraw %}
 {% endhighlight %}
@@ -115,7 +116,7 @@ def apply_step():
 
 
 ### Run the custom training loop
-We repeatedly apply the previous step until the model's parameters converge.
+We repeatedly apply the previous step until the training process converges to a particular combination of $$a, b, c$$.
 
 {% highlight python %}
 {% raw %}
