@@ -15,7 +15,7 @@ description: How to create custom training loops with Pytorch
 {:toc}
 
 ## Introduction
-[In a previous post](https://ekamperi.github.io/mathematics/2020/12/20/tensorflow-custom-training-loops.html), we saw a couple of examples on how to construct a linear regression model, define a custom loss function, have Tensorflow automatically compute the gradients of the loss function with respect to the trainable parameters, and then update the model. We will do the same in this post, but we will use PyTorch this time. It's been a while since I wanted to switch from Tensorflow to Pytorch, and what better way than start from the basics?
+[In a previous post](https://ekamperi.github.io/mathematics/2020/12/20/tensorflow-custom-training-loops.html), we saw a couple of examples on how to construct a linear regression model, define a custom loss function, have Tensorflow automatically compute the gradients of the loss function with respect to the trainable parameters, and then update the model's parameters. We will do the same in this post, but we will use PyTorch this time. It's been a while since I wanted to switch from Tensorflow to Pytorch, and what better way than start from the basics?
 
 ## Fit quadratic regression model to data by minimizing MSE
 ### Generate training data
@@ -47,12 +47,12 @@ plt.title('Dataset')
 </p>
 
 ### Define a model with trainable parameters
-In this step, we are defining a model, the $$y = f(x) = a x^2 + b x + c$$. Given the model's parameters, $$a, b, c$$, and an input $$x$$, $$x$$ being a tensor, we will calculate the output tensor $$y_\text{pred}$$:
+In this step, we are defining a model, specifically the $$y = f(x) = a x^2 + b x + c$$. Given the model's parameters, $$a, b, c$$, and an input $$x$$, $$x$$ being a tensor, we will calculate the output tensor $$y_\text{pred}$$:
 
 {% highlight python %}
 {% raw %}
 def f(x, params):
-    """Calculate the model's output given a set of parameters"""
+    """Calculate the model's output given a set of parameters and input x"""
     a, b, c = params
     return a * (x**2) + b * x + c
 {% endraw %}
@@ -99,7 +99,7 @@ plot_pred_vs_true('Before training')
 </p>
 
 ### Define a custom training loop
-This is the heart of our setup. Given the old values for the model's parameters, we construct a function that calculates its predictions, how much they deviate from the actual targets, and modifies the parameters via gradient descent.
+This is the heart of our setup. Given the old values for the model's parameters, we construct a function that calculates its predictions, how much they deviate from the actual targets, and modifies the parameters via [gradient descent](https://ekamperi.github.io/machine%20learning/2019/07/28/gradient-descent.html).
 
 {% highlight python %}
 {% raw %}
