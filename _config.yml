@@ -13,14 +13,14 @@ kramdown:
   math_engine: mathjax
   math_enging_opts:
     preview: true
-    
+
 url: "https://ekamperi.github.io"
 
 minima:
   date_format: "%b %-d, %Y"
   social_links:
-    twitter: stathisktw
-    github: ekamperi
+    - { platform: github,  user_url: "https://github.com/ekamperi" }
+    - { platform: twitter, user_url: "https://twitter.com/stathisktw" }
 
 remote_theme: jekyll/minima
 plugins:
