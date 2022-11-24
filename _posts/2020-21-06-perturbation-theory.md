@@ -14,6 +14,7 @@ x^5 + x = 1
 $$
 
 This equation cannot be solved exactly, like the quadratic, cubic, or quartic equations. However, the perturbation theory allows us to solve it with arbitrarily high precision.
+**EDIT**: Professors Jean Côté kindly corrected me that the equation can be factored as $$(x^2-x+1)(x^3+x^2-1) = 0$$ which can be solved analytically. Thanks Jean!
 
 The **first step** when doing perturbation theory is to introduce the perturbation factor $$\epsilon$$ into our problem. This is, to some degree, an art, but the general rule to follow is this. We put $$\epsilon$$ into our problem in such a way, that when we set $$\epsilon = 0$$, that is when we consider the unperturbed problem, we can solve it exactly. For instance, if we put $$\epsilon$$ as $$x^5 + \epsilon x = 1$$, then for $$\epsilon = 0$$, we get $$x^5 = 1$$, that we can solve exactly ($$x = 1$$).
 
@@ -111,7 +112,7 @@ f[e_] = ans[e] //. Flatten@sols
 For instance, you could add some more terms in the power series expansion by modifying the list of variables with`vars = {a,b,c,p,q,r}` and get:
 
 $$
-x(\epsilon) = 1 -\frac{\epsilon}{5} - \frac{\epsilon^2}{25} - \frac{\epsilon^3}{125} + \frac{21 \epsilon^5}{15625} + \frac{78 \epsilon^6}{78125} 
+x(\epsilon) = 1 -\frac{\epsilon}{5} - \frac{\epsilon^2}{25} - \frac{\epsilon^3}{125} + \frac{21 \epsilon^5}{15625} + \frac{78 \epsilon^6}{78125}
 $$
 
 Which gives $$x = x(1) = 0.754342$$.
@@ -142,4 +143,4 @@ I wasn't able to calculate the radius of convergence, but my book says that it's
  <img style="width: 70%; height: 70%" src="{{ site.url }}/images/perturb0.png" alt="Plot of power series sum vs. epsilon">
 </p>
 
-Naturally, one could ask "Why not put the $$\epsilon$$ parameter in front of $$x^5$$ in the equation $$x^5 + x = 1$$" ? That is, why not write $$\epsilon x^5 + x = 1$$. It turns out that if you do that, the answer $$x(\epsilon)$$ you get is a *divergent* series. However, this is when things start to get *very* interesting. Because, contrary to what I knew until know and contrary to my intuition, a divergent series may contain valuable information that can be extracted by [rewriting it in such a way that it converges](https://ekamperi.github.io/mathematics/2020/07/13/sum-divergent-series.html). 
+Naturally, one could ask "Why not put the $$\epsilon$$ parameter in front of $$x^5$$ in the equation $$x^5 + x = 1$$" ? That is, why not write $$\epsilon x^5 + x = 1$$. It turns out that if you do that, the answer $$x(\epsilon)$$ you get is a *divergent* series. However, this is when things start to get *very* interesting. Because, contrary to what I knew until know and contrary to my intuition, a divergent series may contain valuable information that can be extracted by [rewriting it in such a way that it converges](https://ekamperi.github.io/mathematics/2020/07/13/sum-divergent-series.html).
