@@ -9,7 +9,7 @@ description: Random thoughts on ChatGPT
 
 *Shout out to the kind person somewhere in the globe that donated 20 coffees in "Buy me a coffee". Whoever you are, I thank you! I promise that I will try to deliver high value content in the following months.*
 
-In Superintelligence, Nick Bostrom talks about an "Oracle AI," i.e., an AI system that, by design, does not act but merely answers questions, akin to having a genie in a bottle. Arguably, this is the safest advanced AI we can build and have it confined. However, even in this case, we could still be vulnerable to Oracle's social engineering dexterity should it find the right arguments to persuade us for a matter. So Bostrom makes the following suggestions.
+In [Superintelligence](https://en.wikipedia.org/wiki/Superintelligence:_Paths,_Dangers,_Strategies), Nick Bostrom talks about an "Oracle AI," i.e., an AI system that, by design, does not act but merely answers questions, akin to having a genie in a bottle. Arguably, this is the safest advanced AI we can build and have it confined. However, even in this case, we could still be vulnerable to Oracle's social engineering dexterity should it find the right arguments to persuade us for a matter. So Bostrom makes the following suggestions.
 
 1. He proposes limiting the number of interactions between humans and the Oracle; contrast this with how many of us treat ChatGPT as an infinite capacity system interrogating it repeatedly.
 2. He makes a case for reducing its output to "yes/no/undetermined" instead of free text responses so that a social engineering attack would take much longer. Again, ChatGPT works differently since it produces a great deal of narrative text.
