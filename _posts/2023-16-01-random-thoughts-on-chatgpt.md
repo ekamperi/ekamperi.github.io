@@ -1,12 +1,14 @@
 ---
 layout: post
 title: "Random thoughts on ChatGPT"
-date:   2022-09-25
+date:   2023-16-01
 categories: [machine learning]
 tags: ['machine learning', 'neural networks', 'philosophy']
 description: Random thoughts on ChatGPT
 
 ---
+
+**Shout out to the kind person somewhere in the globe that donated 20 coffees in "Buy me a coffee". Whoever you are, I thank you! I promise that I will try to deliver high value content in the following months.**
 
 In Superintelligence, Nick Bostrom talks about an "Oracle AI," i.e., an AI system that, by design, does not act but merely answers questions, akin to having a genie in a bottle. Arguably, this is the safest advanced AI we can build and have it confined. However, even in this case, we could still be vulnerable to Oracle's social engineering dexterity should it find the right arguments to persuade us for a matter. So Bostrom makes the following suggestions.
 
