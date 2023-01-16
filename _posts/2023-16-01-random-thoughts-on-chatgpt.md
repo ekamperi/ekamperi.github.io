@@ -5,7 +5,6 @@ date:   2023-16-01
 categories: [machine learning]
 tags: ['machine learning', 'neural networks', 'philosophy']
 description: Random thoughts on ChatGPT
-
 ---
 
 **Shout out to the kind person somewhere in the globe that donated 20 coffees in "Buy me a coffee". Whoever you are, I thank you! I promise that I will try to deliver high value content in the following months.**
