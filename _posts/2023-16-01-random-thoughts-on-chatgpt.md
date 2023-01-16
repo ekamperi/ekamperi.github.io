@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Random thoughts on ChatGPT"
-date:   2023-16-01
+date: 2023-16-01
 categories: [machine learning]
 tags: ['machine learning', 'neural networks', 'philosophy']
 description: Random thoughts on ChatGPT
