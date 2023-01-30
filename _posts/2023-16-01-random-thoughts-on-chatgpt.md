@@ -19,8 +19,7 @@ In [Superintelligence](https://en.wikipedia.org/wiki/Superintelligence:_Paths,_D
 
 To be clear, **I'm not implying that ChatGPT is an Oracle or that it somehow possesses agency**, but still, it makes you think about the safety of forthcoming AI systems.
 
-Until, if ever, fully autonomous AI arrives, people misusing advanced AI such as ChatGPT in politics pose significant dangers to society. One major concern is the potential for manipulation and disinformation. ChatGPT can generate compelling and sophisticated text, making it easy for bad actors to spread false information and propaganda. This can be particularly dangerous in politics since misinformation there can have serious real-world consequences (e.g., climate change, pandemics,
-nuclear energy, etc.)
+The above are relevant for when fully autonomous AI arrives, if ever. Until then, people misusing advanced AI in politics pose significant dangers to society *already*. One major concern is the potential for manipulation and disinformation. ChatGPT can generate compelling and sophisticated text, making it easy for bad actors to spread false information and propaganda. This can be particularly dangerous in politics since misinformation there can have serious real-world consequences (e.g., climate change, pandemics, nuclear energy, etc.)
 
 Another concern is the potential for AI to be used to influence public opinion and sway elections. With its ability to generate vast amounts of content and target specific individuals, ChatGPT could be used to spread disinformation in a highly targeted and effective manner. This could significantly impact the outcome of elections and undermine the democratic process.
 
