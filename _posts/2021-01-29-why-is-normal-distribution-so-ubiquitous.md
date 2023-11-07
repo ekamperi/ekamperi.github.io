@@ -13,6 +13,9 @@ description: A summary of explanations and insights on why the normal distributi
 * A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
 {:toc}
 
+*Many thanks to Alexander Nordin for spotting some errors in the combinations of four dice and being kind
+enough to let me know.*
+
 ## Introduction
 Have you ever wondered why [normal distributions](https://en.wikipedia.org/wiki/Normal_distribution) are encountered so frequently in everyday life? Some examples include the height of people, newborns' birth weight, the sum of two dice, and numerous others. Also, in statistical modeling, we often assume that some quantity is represented by a normal distribution. Particularly when we don't know the actual distribution, but we do know the sample mean and standard deviation. It is as if Gaussian is the "default" or the most generic. Is there some fundamental reason Gaussians are all over the place? Yes, there is!
 
@@ -73,13 +76,13 @@ If we keep going by throwing more dice, say 4 at a time, the sums' distribution 
  <img style="width: 50%; height: 50%" src="{{ site.url }}/images/normal_dist/combinations.png" alt="Sum of dice plot">
 </p>
 
-So here are the 146 combinations of dice values that sum to 11.
+So here are the 104 combinations of dice values that sum to 11.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/raster_combinations.png" alt="Sum of dice plot">
 </p>
 
-In the following histograms, we examine the sums' distributions, starting with only one die and going up to 20 dice! By rolling merely three dice, the sum already looks pretty normally distributed. 
+In the following histograms, we examine the sums' distributions, starting with only one die and going up to 20 dice! By rolling merely three dice, the sum already looks pretty normally distributed.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/hist_of_sum.png" alt="Sum of dice histogram">
@@ -102,14 +105,14 @@ randomWalks[reps_, steps_] :=
  Module[{},
   Table[
    Accumulate[
-    Flatten@Append[{0}, 
+    Flatten@Append[{0},
       RandomVariate[UniformDistribution[{-1, 1}], steps]]],
    {k, reps}]
   ]
 
 Show[
  ListPlot[walks, Joined -> True, PlotStyle -> Directive[Blue, Opacity[0.02]],
-  AspectRatio -> 1/3, Frame -> {True, True, True, True}, FrameLabel -> {"Steps", "Position"}, 
+  AspectRatio -> 1/3, Frame -> {True, True, True, True}, FrameLabel -> {"Steps", "Position"},
   FrameTicksStyle -> Directive[Bold], FrameTicks -> {{{-6, -3, 0, 3, 6}, None},
    {{0, 4, 8, 16, 32}, None}},
   GridLines -> {{4, 8, 16, 32}, None}, GridLinesStyle -> Dashed, ImageSize -> Large],
@@ -117,7 +120,7 @@ Show[
  {% endraw %}
 {% endhighlight %}
 
-These are the distributions of the positions (distances) after 4, 8, and 16 steps. Notice how the distribution converges on a Gaussian (the red one) as the number of steps increases. 
+These are the distributions of the positions (distances) after 4, 8, and 16 steps. Notice how the distribution converges on a Gaussian (the red one) as the number of steps increases.
 
 <p align="center">
  <img style="width: 100%; height: 100%" src="{{ site.url }}/images/normal_dist/hist_vs_steps.png" alt="Random walk">
@@ -173,7 +176,7 @@ fg[f_, g_] := Convolve[f, g, x, y] /. y -> x
 repconv[n_] := repconv[n] = Nest[fg[#, #] &, f0[x], n]
 Grid[
  Partition[#, 2] &@
-  (Plot[#, {x, -3, 3}, Exclusions -> None, Filling -> Axis] & /@ 
+  (Plot[#, {x, -3, 3}, Exclusions -> None, Filling -> Axis] & /@
     Table[repconv[k], {k, 0, 3}])
  ]
 {% endraw %}
@@ -296,7 +299,7 @@ $$
 p_i = \frac{1}{b-a+1}
 $$
 
-So basically, this case is a generalization of the previous. For $$a=0, b=1$$, we get the probability of the fair coin. 
+So basically, this case is a generalization of the previous. For $$a=0, b=1$$, we get the probability of the fair coin.
 
 [Edwin Thompson Jaynes](https://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes) put it very beautifully that the max entropy distribution is *"uniquely determined as the one which is maximally noncommittal with regard to missing information, in that it agrees with what is known, but expresses maximum uncertainty with respect to all other matters".* Therefore, this is the most principled choice. Here is a list of probability distributions and their corresponding maximum entropy constraints, taken from Wikipedia.
 
