@@ -209,6 +209,12 @@ a.codinfox-tag-mark:hover {
     border-width: 1px;
 }
 
+.post-header a.codinfox-tag-mark:hover {
+    border: none;
+    background: #dbeaf2;
+    color: #5f8ea2;
+}
+
 
 @media screen and (max-width: 600px) {
  a.page-link {
