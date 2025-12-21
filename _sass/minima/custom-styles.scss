@@ -2,8 +2,7 @@ pre,
 code {
     font-family: monospace, monospace;
     font-size: 12px;
-#    border: 1px solid #0000ff;
-    border: 1px solid #da0069;
+    border: 0;
     border-radius: 3px;
     background-color: #f9f9f9;
 }
@@ -53,7 +52,7 @@ a.post-link:hover {
 }
 
 .post-content {
-    max-width: 72ch;
+    max-width: 78ch;
     line-height: 1.7;
 }
 
