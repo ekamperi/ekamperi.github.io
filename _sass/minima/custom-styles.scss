@@ -39,6 +39,19 @@ a.post-link:hover {
     background-color: #e7f2f7;
 }
 
+.page-content a:not(.page-link):not(.post-link):not(.codinfox-tag-mark):not(.codinfox-category-mark) {
+    background-image: linear-gradient(#e7f2f7, #e7f2f7);
+    background-size: 100% 0.35em;
+    background-position: 0 88%;
+    background-repeat: no-repeat;
+    transition: background-size 180ms ease, background-position 180ms ease;
+}
+
+.page-content a:not(.page-link):not(.post-link):not(.codinfox-tag-mark):not(.codinfox-category-mark):hover {
+    background-size: 100% 100%;
+    background-position: 0 0;
+}
+
 /*
 *************************************************
 *             Taken from codinfox
