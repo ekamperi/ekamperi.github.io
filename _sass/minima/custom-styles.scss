@@ -52,6 +52,39 @@ a.post-link:hover {
     background-position: 0 0;
 }
 
+.post-content {
+    max-width: 72ch;
+    line-height: 1.7;
+}
+
+.post-content h2 {
+    margin-top: 2rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid #e7f2f7;
+}
+
+.post-content h3,
+.post-content h4 {
+    margin-top: 1.5rem;
+}
+
+.post-content a:not(.page-link):not(.post-link):not(.codinfox-tag-mark):not(.codinfox-category-mark) {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 0.08em;
+}
+
+pre {
+    background-color: #f6f8fa;
+    border-left: 4px solid #e7f2f7;
+    padding: 0.75rem 1rem;
+    overflow-x: auto;
+}
+
+pre code {
+    background-color: transparent;
+}
+
 /*
 *************************************************
 *             Taken from codinfox
