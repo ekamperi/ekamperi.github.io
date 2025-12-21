@@ -68,9 +68,7 @@ a.post-link:hover {
 }
 
 .post-content a:not(.page-link):not(.post-link):not(.codinfox-tag-mark):not(.codinfox-category-mark) {
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-    text-decoration-thickness: 0.08em;
+    text-decoration: none;
 }
 
 pre {
