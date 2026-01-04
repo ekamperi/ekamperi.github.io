@@ -12,12 +12,12 @@ We used to have an implicit rule in this blog, that we post only about things th
 The key idea on how to succeed installing Jupyter Lab in FreeBSD 15.0 is to use as many FreeBSD packages as possible, and use pip only for what's left. Here is the exact recipe that worked for me. Mind the option ``--system-site-packages``:
 
 {% raw %}
-% pkg install pkgconf python311 py311-pip py311-setuptools py311-wheel py311-cython py311-maturin py311-pyzmq py311-scikit-build-core cmake ninja rust
-% mkdir -p venvs
-% python3.11 -m venv --system-site-packages ~/venvs/jupyter
-% source ~/venvs/jupyter/bin/activate
-% pip install jupyterlab notebook
-% jupyter lab
+$ sudo pkg install pkgconf python311 py311-pip py311-setuptools py311-wheel py311-cython py311-maturin py311-pyzmq py311-scikit-build-core cmake ninja rust
+$ mkdir -p venvs
+$ python3.11 -m venv --system-site-packages ~/venvs/jupyter
+$ source ~/venvs/jupyter/bin/activate
+$ pip install jupyterlab notebook
+$ jupyter lab
 {% endraw %}
 
 Here is the proof:
