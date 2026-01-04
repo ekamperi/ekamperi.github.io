@@ -23,6 +23,6 @@ The key idea on how to succeed installing Jupyter Lab in FreeBSD 15.0 is to use 
 Here is the proof:
 
 <p align="center">
-    <img style="width: 60%; height: 60%" src="{{ site.url }}/images/jupyter_lab.png">
+    <img style="width: 100%; height: 100%" src="{{ site.url }}/images/jupyter_lab.png">
 </p>
 
