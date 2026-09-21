@@ -2,3 +2,23 @@
 $base-font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif !default;
 $base-font-size:   15px !default;
 $base-line-height: 1.2 !default;
+
+// A warm, paper-like palette shared by the theme and custom components.
+$background-color: #faf7f2;
+$text-color: #302d29;
+$brand-color: #71685f;
+$brand-color-light: #e4ddd3;
+$brand-color-dark: #50483f;
+$site-title-color: $text-color;
+$link-base-color: #934b35;
+$link-visited-color: #79422f;
+$link-hover-color: #703823;
+$border-color-01: #e4ddd3;
+$border-color-02: #c6b9a9;
+$border-color-03: #71685f;
+$code-background-color: #f2ede5;
+$table-text-color: $text-color;
+$table-zebra-color: #f5f0e8;
+$table-header-bg-color: #eee7dd;
+$table-header-border: $border-color-02;
+$table-border-color: $border-color-01;
