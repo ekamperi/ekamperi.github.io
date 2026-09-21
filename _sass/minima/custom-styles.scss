@@ -1,172 +1,54 @@
-// Shared colors are defined in custom-variables.scss.
-body {
-    color: $text-color;
-    background: $background-color;
+pre,
+code {
+    font-family: monospace, monospace;
+    font-size: 12px;
+    border: 0;
+    border-radius: 3px;
+    background-color: #f9f9f9;
 }
 
-a {
-    color: $link-base-color;
-    text-underline-offset: 0.18em;
-    text-decoration-thickness: 1px;
-
-    &:visited { color: $link-visited-color; }
-    &:hover { color: $link-hover-color; }
-}
-
-a:focus-visible,
-input:focus-visible,
-button:focus-visible {
-    outline: 2px solid $link-base-color;
-    outline-offset: 4px;
-}
-
-.page-content a:not(.page-link):not(.post-link):not(.codinfox-tag-mark):not(.codinfox-category-mark),
-.site-footer a:not(.social-media-list a) {
-    text-decoration: underline;
-}
-
-::selection {
-    background: #e7cdbd;
-    color: $text-color;
+pre code {
+    border: 0;
 }
 
 .site-header {
-    background: $background-color;
-    border-top: 0;
-    border-bottom: 1px solid $border-color-01;
-    padding: 1.25rem 0;
-    min-height: 0;
-    line-height: 1.4;
-
-    .wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem 2rem;
-
-        // Minima's clearfix would otherwise become an extra flex item.
-        &::after { display: none; }
-    }
+#    background-color: #f1f8ff;
+  background-image: url('/images/assets/logo2.svg');
 }
 
-.site-title,
-.site-title:visited {
-    float: none;
-    padding: 0;
-    margin: 0;
-    color: $text-color;
-    font-weight: 400;
-    font-size: 1.5rem;
-    letter-spacing: -0.03em;
-    line-height: 1.35;
-    text-decoration: none;
+.nav .site-nav {
+  background-image: url('/images/assets/logo2.svg');
+}
+.site-nav .page-link {
+ color: white;
 }
 
-.site-nav {
-    position: static;
-    float: none;
-    background: transparent;
-    border: 0;
-    text-align: left;
-    flex-shrink: 0;
-
-    .trigger {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.25rem 1.25rem;
-    }
-
-    .page-link,
-    .page-link:not(:last-child) {
-        display: inline-flex;
-        align-items: center;
-        min-height: 44px;
-        margin: 0;
-        padding: 0;
-        color: $brand-color;
-        line-height: 1.4;
-    }
-
-    .page-link:hover {
-        color: $link-base-color;
-        text-decoration: underline;
-    }
+.site-title, .site-title:visited {
+    color: white;
 }
 
-.message-to-readers {
-    margin: 0 0 3rem;
-    padding: 0.75rem 0 0;
-    color: $brand-color;
-    line-height: 1.7;
-    text-align: left;
-}
-
-.home {
-    text-align: left;
-}
-
-.post-list-heading {
-    margin-bottom: 1.75rem;
-    font-size: 1rem;
-    font-weight: 500;
-    color: $brand-color;
-}
-
-.post-list {
-    > li {
-        margin-bottom: 2rem;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid $border-color-01;
-    }
-
-    h3 { margin: 0.4rem 0 0.6rem; }
-}
-
-.post-link,
-.post-link:visited {
-    color: $text-color;
-    font-size: 1.55rem;
-    line-height: 1.35;
-    letter-spacing: -0.02em;
-    text-decoration: none;
-    border: 0;
-    border-radius: 0;
+.post-link {
+    font-size:18px;
+    border-bottom: 1px solid #e7f2f7;
+    border-radius: 5px;
 }
 
 a.post-link:hover {
-    color: $link-base-color;
-    text-decoration: underline;
+    text-decoration: none;
+    background-color: #e7f2f7;
 }
 
-.post-meta {
-    color: $brand-color;
+.page-content a:not(.page-link):not(.post-link):not(.codinfox-tag-mark):not(.codinfox-category-mark) {
+    background-image: linear-gradient(#e7f2f7, #e7f2f7);
+    background-size: 100% 0.35em;
+    background-position: 0 88%;
+    background-repeat: no-repeat;
+    transition: background-size 180ms ease, background-position 180ms ease;
 }
 
-.home ul.pager {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem 1.5rem;
-    list-style: none;
-    margin: 0;
-
-    li {
-        margin: 0;
-        padding: 0;
-        border: 0;
-    }
-
-    a {
-        display: inline-flex;
-        align-items: center;
-        min-height: 44px;
-    }
-
-    .selected {
-        background: $code-background-color;
-        border-radius: 4px;
-        padding: 0 0.75rem;
-    }
+.page-content a:not(.page-link):not(.post-link):not(.codinfox-tag-mark):not(.codinfox-category-mark):hover {
+    background-size: 100% 100%;
+    background-position: 0 0;
 }
 
 .post-content {
@@ -177,7 +59,7 @@ a.post-link:hover {
 .post-content h2 {
     margin-top: 2rem;
     padding-bottom: 0.25rem;
-    border-bottom: 1px solid $border-color-01;
+    border-bottom: 1px solid #e7f2f7;
 }
 
 .post-content h3,
@@ -185,24 +67,34 @@ a.post-link:hover {
     margin-top: 1.5rem;
 }
 
-pre,
-code {
-    font-family: monospace, monospace;
-    font-size: 12px;
-    border: 0;
-    border-radius: 3px;
-    background-color: $code-background-color;
+.post-content a:not(.page-link):not(.post-link):not(.codinfox-tag-mark):not(.codinfox-category-mark) {
+    text-decoration: none;
 }
 
 pre {
-    border-left: 3px solid $border-color-01;
+    background-color: #f6f8fa;
+    border-left: 4px solid #e7f2f7;
     padding: 0.75rem 1rem;
     overflow-x: auto;
 }
 
 pre code {
-    border: 0;
     background-color: transparent;
+}
+
+/*
+*************************************************
+*             Taken from codinfox
+*************************************************
+*/
+
+::selection {
+    background: #6a9fb5;
+    color: #fff;
+}
+::moz-selection {
+    background: #6a9fb5;
+    color: #fff;
 }
 
 .masthead {
@@ -268,136 +160,136 @@ div.codinfox-index-bg>img {
 .codinfox-category-list h3 {
     font-size: 1rem;
     margin-top: 0;
-    line-height: 1.6;
 }
 
 .codinfox-category-list li small {
-    font-size: 85%;
-    color: $brand-color;
+    font-size: 75%;
+    color: #999;
 }
 
 .codinfox-category-list li a:hover {
-    color: $link-hover-color;
-}
-
-a.codinfox-category-mark,
-a.codinfox-tag-mark {
-    display: inline-block;
-    margin: 0 0.25rem 0.5rem 0;
-    padding: 0.25rem 0.65rem;
-    border: 1px solid $border-color-01;
-    border-radius: 4px;
-    background: transparent;
-    color: $brand-color;
-    font-size: 90%;
-    line-height: 1.6;
+    color: #6a9fb5;
     text-decoration: none;
-    vertical-align: middle;
 }
 
-a.codinfox-category-mark:hover,
+.codinfox-category-list li a:hover small {
+    color: inherit;
+}
+
+.codinfox-category-mark {
+    padding: 0 .5rem 0 .5rem;
+    border-radius: 5px;
+    background: #f0f0f0;
+    color: #999;
+    text-decoration: none;
+    margin-bottom: .75rem;
+}
+
+.codinfox-category-mark:hover {
+    font-weight: bold;
+}
+
+a.codinfox-tag-mark {
+    text-decoration: none;
+    font-size: 90%;
+    padding: .3rem;
+    border-radius: 5px;
+    background: #e7f2f7;
+    margin-bottom: .3rem;
+    color: #6a9fb5;
+    line-height: 2;
+    display: ruby;
+}
+
 a.codinfox-tag-mark:hover {
-    color: $link-base-color;
-    border-color: $border-color-02;
-    background: $code-background-color;
+    border-style: solid;
+    border-color: #275c74;
+    border-width: 1px;
 }
 
-.site-footer {
-    border-top: 1px solid $border-color-01;
-    padding: 2.5rem 0 2rem;
-    color: $brand-color;
-    line-height: 1.6;
+.post-header a.codinfox-tag-mark:hover {
+    border: none;
+    background: #dbeaf2;
+    color: #5f8ea2;
+}
+
+
+@media screen and (max-width: 600px) {
+ a.page-link {
+  color: black !important;
+ }
 }
 
 .newsletter-container {
-    padding: 1.75rem;
-    border: 1px solid $border-color-01;
-    border-radius: 6px;
-    background: #f5f0e8;
+    max-width: 400px;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    background: #3e3f44;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 2em;    
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em 0;
+    font-size: 12px;
+    line-height: 1.1;
 }
 
+.newsletter-container * {
+    align-self: center;
+    padding: 0;
+}
+.newsletter-form {
+    text-align: center;
+}
 .newsletter-title {
-    margin: 0 0 0.4rem;
-    color: $text-color;
-    font-size: 1.5rem;
-    line-height: 1.3;
+    font-size: 1.5em;
+    margin: 0;
+    color: #fff;
+    text-transform: uppercase;
 }
-
 .newsletter-text {
-    margin: 0 0 1.25rem;
+    font-weight: 600;
+    color: #ddd;
+    text-align: center;
 }
-
 .newsletter-email,
 .newsletter-submit {
-    box-sizing: border-box;
-    min-height: 44px;
+    display: inline-block;
     border-radius: 4px;
-    padding: 0.65rem 0.85rem;
-    font: inherit;
-    line-height: 1.4;
+    padding: 0;
+    align-self: center;
 }
-
 .newsletter-email {
-    display: block;
-    width: 100% !important; // Override the original inline 140px width.
-    min-width: 0;
-    border: 1px solid $border-color-02;
-    color: $text-color;
-    background: $background-color;
-    font-size: 16px;
-
-    &::placeholder { color: $brand-color; opacity: 1; }
+    text-align: center;
+    font-size: .9em;
 }
-
 .newsletter-submit {
-    width: 100%;
-    margin-top: 0.75rem;
-    border: 1px solid $link-base-color;
-    background: $link-base-color;
-    color: $background-color;
-    cursor: pointer;
+    font-size: .6em;
+    margin-left: 1em;
+    padding: 0.5em;
+    border: none;
+    background: #f5f5f5;
+    text-transform: uppercase;
+    font-weight: 600;
+}
 
-    &:hover {
-        border-color: $link-hover-color;
-        background: $link-hover-color;
+@media screen and (min-width: 400px) {
+    .newsletter-title {
+        font-size: 2.5em;
+    }
+    .newsletter-text {
+        font-size: 1.5em;
+    }
+    .newsletter-submit {
+        font-size: .7em;
     }
 }
 
-.footer-col-wrapper {
-    align-items: flex-start;
-    color: $brand-color;
-}
-
-.social-media-list {
-    a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        box-sizing: border-box;
-        min-width: 44px;
-        min-height: 44px;
-        border-color: $border-color-01;
-    }
-
-    .svg-icon { fill: $brand-color; }
-}
-
-@media screen and (max-width: 640px) {
-    .site-header .wrapper {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.4rem;
-    }
-
-    .site-title { font-size: 1.4rem; }
-
-    .site-nav { width: 100%; }
-
-    .message-to-readers { margin-bottom: 2.5rem; }
-
-    .post-link { font-size: 1.4rem; }
-}
-
-@media screen and (max-width: 400px) {
-    .newsletter-container { padding: 1.25rem; }
+.message-to-readers {
+    border: solid 1px;
+    border-radius: 5px;
+    border-color: cadetblue;
+    margin: 40px;
+    padding: 20px;
 }
