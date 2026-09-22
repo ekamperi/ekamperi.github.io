@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+// Warm, paper-like skin. Follows the reader's OS light/dark preference.
+// Built on top of minima's "auto" skin, which turns these into CSS variables.
+
+// Light mode
+$lm-brand-color:           #857869;
+$lm-brand-color-light:     #e8dfd2;
+$lm-brand-color-dimmed:    #6e6256;
+$lm-brand-color-dark:      #4f463d;
+
+$lm-site-title-color:      #2b2520;
+
+$lm-heading-color:         #2b2520;
+$lm-text-color:            #3b332c;
+$lm-background-color:      #faf6ef;
+$lm-code-background-color: #f2ebe0;
+
+$lm-link-base-color:       #a2472a;
+$lm-link-visited-color:    #8a3f27;
+$lm-link-hover-color:      #6e2e19;
+
+$lm-border-color-01:       #e8dfd2;
+$lm-border-color-02:       #cfc2b1;
+$lm-border-color-03:       #857869;
+
+$lm-table-text-color:      #3b332c;
+$lm-table-zebra-color:     #f4eee4;
+$lm-table-header-bg-color: #eee6d9;
+$lm-table-header-border:   #cfc2b1;
+$lm-table-border-color:    #e8dfd2;
+
+// Dark mode
+$dm-brand-color:           #a09383;
+$dm-brand-color-light:     #b8ac9c;
+$dm-brand-color-dimmed:    #8c8071;
+$dm-brand-color-dark:      #3a332d;
+
+$dm-site-title-color:      #efe6da;
+
+$dm-heading-color:         #efe6da;
+$dm-text-color:            #d9cfc2;
+$dm-background-color:      #1e1a17;
+$dm-code-background-color: #28231f;
+
+$dm-link-base-color:       #e39a76;
+$dm-link-visited-color:    #cf8d6d;
+$dm-link-hover-color:      #f2b797;
+
+$dm-border-color-01:       #38312b;
+$dm-border-color-02:       #564c43;
+$dm-border-color-03:       #a09383;
+
+$dm-table-text-color:      #d9cfc2;
+$dm-table-zebra-color:     #24201c;
+$dm-table-header-bg-color: #2c2622;
+$dm-table-header-border:   #564c43;
+$dm-table-border-color:    #38312b;
+
+$color-scheme-auto: true;
+$color-scheme-dark: false;
+@import "minima/skins/auto";

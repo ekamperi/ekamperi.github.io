@@ -17,6 +17,7 @@ kramdown:
 url: "https://ekamperi.github.io"
 
 minima:
+  skin: cozy
   date_format: "%b %-d, %Y"
   social_links:
     - { platform: github,  user_url: "https://github.com/ekamperi" }
@@ -38,7 +39,6 @@ header_pages:
   - archive.md
   - tags.md
 
-google_analytics: UA-145393080-1
 
 #disqus:
 #    shortname: https-ekamperi-github-io

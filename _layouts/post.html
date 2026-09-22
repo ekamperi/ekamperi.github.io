@@ -27,9 +27,28 @@ layout: default
     {{ content }}
   </div>
 
+  {%- if page.previous or page.next -%}
+  <nav class="post-nav" aria-label="More posts">
+    {%- if page.previous -%}
+    <a class="post-nav-link post-nav-prev" href="{{ page.previous.url | relative_url }}" rel="prev">
+      <span class="post-nav-label">&larr; Older</span>
+      <span class="post-nav-title">{{ page.previous.title | escape }}</span>
+    </a>
+    {%- endif -%}
+    {%- if page.next -%}
+    <a class="post-nav-link post-nav-next" href="{{ page.next.url | relative_url }}" rel="next">
+      <span class="post-nav-label">Newer &rarr;</span>
+      <span class="post-nav-title">{{ page.next.title | escape }}</span>
+    </a>
+    {%- endif -%}
+  </nav>
+  {%- endif -%}
+
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
   {%- endif -%}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
+
+{%- include post-enhancements.html -%}

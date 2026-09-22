@@ -1,0 +1,59 @@
+<script>
+(function () {
+  var article = document.querySelector('.post-content');
+  if (!article) return;
+
+  // Link icon next to each section heading, for sharing a specific section.
+  article.querySelectorAll('h2[id], h3[id], h4[id]').forEach(function (h) {
+    var a = document.createElement('a');
+    a.className = 'heading-anchor';
+    a.href = '#' + h.id;
+    a.setAttribute('aria-label', 'Link to this section');
+    a.textContent = '#';
+    h.appendChild(a);
+  });
+
+  // "Copy" button on every code block.
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text);
+    }
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } finally { document.body.removeChild(ta); }
+    return Promise.resolve();
+  }
+
+  article.querySelectorAll('pre').forEach(function (pre) {
+    if (pre.classList.contains('lineno')) return;
+    var box = pre.closest('figure.highlight, div.highlight');
+    if (!box) {
+      box = document.createElement('div');
+      box.className = 'code-block';
+      pre.parentNode.insertBefore(box, pre);
+      box.appendChild(pre);
+    }
+    if (box.querySelector('.copy-code')) return;
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'copy-code';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', function () {
+      copyText(pre.innerText.replace(/\n$/, '')).then(function () {
+        btn.textContent = 'Copied';
+        btn.classList.add('is-done');
+        setTimeout(function () {
+          btn.textContent = 'Copy';
+          btn.classList.remove('is-done');
+        }, 1500);
+      });
+    });
+    box.appendChild(btn);
+  });
+})();
+</script>
