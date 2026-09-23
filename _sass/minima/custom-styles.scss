@@ -132,7 +132,7 @@ h1, h2, h3, h4, h5, h6 {
     background-size: 100% 0.47em;
     background-position: 0 100%;
     background-repeat: no-repeat;
-    transition: background-size 180ms ease;
+    transition: background-size 80ms ease-out;
 
     &:hover {
         text-decoration: none;
@@ -688,5 +688,54 @@ figure.highlight:hover .copy-code,
 
     .post-nav-next {
         grid-column: 1;
+    }
+}
+
+/**
+ * 404 page
+ */
+.not-found {
+    padding-block: 1rem 2rem;
+
+    h1 {
+        margin-bottom: 0.75rem;
+        font-size: 2rem;
+    }
+
+    h2 {
+        margin-top: 2.5rem;
+        font-family: $base-font-family;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: $brand-color;
+    }
+}
+
+.not-found-code {
+    margin-bottom: 0.25rem;
+    font-family: $base-font-family;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: $link-base-color;
+}
+
+.page-content .not-found-links a {
+    margin-right: 1.25rem;
+}
+
+/**
+ * Respect the OS "reduce motion" setting: no animated transitions.
+ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
     }
 }
