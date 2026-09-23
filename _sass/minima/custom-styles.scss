@@ -124,18 +124,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .page-content a:not(.post-link):not(.codinfox-tag-mark):not(.codinfox-category-list a):not(.post-nav-link):not(.heading-anchor) {
-    // A highlighter band under the link that grows to cover the text on hover.
+    // A highlighter band under the link that fills upwards on hover. The band's
+    // bottom edge stays put: it is anchored to the bottom of the box, and the
+    // transparent 0.12em at the bottom of the gradient lifts it off the edge.
     text-decoration: none;
-    background-image: linear-gradient(var(--link-highlight), var(--link-highlight));
-    background-size: 100% 0.35em;
-    background-position: 0 88%;
+    background-image: linear-gradient(to top, transparent 0.12em, var(--link-highlight) 0.12em);
+    background-size: 100% 0.47em;
+    background-position: 0 100%;
     background-repeat: no-repeat;
-    transition: background-size 180ms ease, background-position 180ms ease;
+    transition: background-size 180ms ease;
 
     &:hover {
         text-decoration: none;
         background-size: 100% 100%;
-        background-position: 0 0;
     }
 }
 
