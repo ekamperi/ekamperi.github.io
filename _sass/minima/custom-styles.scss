@@ -2,15 +2,15 @@
 
 :root {
     --accent-soft: #f1e4d6;
-    --accent-underline: rgba(162, 71, 42, 0.35);
-    --card-background: #f3ece1;
+    --link-highlight: #f6dfd1;
+    --card-background: #f6f1e9;
     color-scheme: light dark;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --accent-soft: #3a2b23;
-        --accent-underline: rgba(227, 154, 118, 0.4);
+        --link-highlight: #4a3125;
         --card-background: #25201c;
     }
 
@@ -115,14 +115,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .page-content a:not(.post-link):not(.codinfox-tag-mark):not(.codinfox-category-list a):not(.post-nav-link):not(.heading-anchor) {
-    text-decoration: underline;
-    text-decoration-color: var(--accent-underline);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.2em;
-    transition: text-decoration-color 150ms ease;
+    // A highlighter band under the link that grows to cover the text on hover.
+    text-decoration: none;
+    background-image: linear-gradient(var(--link-highlight), var(--link-highlight));
+    background-size: 100% 0.35em;
+    background-position: 0 88%;
+    background-repeat: no-repeat;
+    transition: background-size 180ms ease, background-position 180ms ease;
 
     &:hover {
-        text-decoration-color: currentColor;
+        text-decoration: none;
+        background-size: 100% 100%;
+        background-position: 0 0;
     }
 }
 
