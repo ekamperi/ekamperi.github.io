@@ -42,7 +42,14 @@ h1, h2, h3, h4, h5, h6 {
  * Header
  */
 .site-header {
-    background: #008cc9 url('/images/assets/logo2.svg') center / cover no-repeat;
+    // Recolor the blue network banner to warm clay: keep the image's light/dark
+    // pattern (luminosity) and take the hue from the gradient underneath.
+    background-color: #8a5b45;
+    background-image: url('/images/assets/logo2.svg'), linear-gradient(90deg, #7a4a36, #9c6b4a);
+    background-size: cover, 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: luminosity, normal;
     border-bottom: 0;
     min-height: 0;
     line-height: 1.4;
@@ -111,6 +118,8 @@ h1, h2, h3, h4, h5, h6 {
     padding: 2.5rem 0 3rem;
     font-family: $serif-font-family;
     font-size: 1.125rem;
+    // Slightly heavier than regular: Source Serif's thin strokes strain the eyes at 400.
+    font-weight: 450;
     line-height: 1.7;
 }
 
@@ -373,7 +382,7 @@ a.codinfox-tag-mark:visited {
     h3 {
         margin: 0 0 0.4rem;
         font-size: 1.05rem;
-        font-weight: 400;
+        font-weight: 450;
     }
 
     a:hover {
