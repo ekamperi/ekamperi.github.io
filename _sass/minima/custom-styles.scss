@@ -114,6 +114,26 @@ h1, h2, h3, h4, h5, h6 {
 /**
  * Reading
  */
+html {
+    scroll-behavior: smooth;
+}
+
+// Leave some air above a heading when jumping to it.
+.post-content [id] {
+    scroll-margin-top: 1.5rem;
+}
+
+// Even line lengths in headings; no lone last word in paragraphs.
+// Browsers without support simply ignore these.
+h1, h2, h3, h4, .post-link, .post-nav-title {
+    text-wrap: balance;
+}
+
+.post-content p,
+.post-content li {
+    text-wrap: pretty;
+}
+
 .page-content {
     padding: 2.5rem 0 3rem;
     font-family: $serif-font-family;
@@ -581,7 +601,8 @@ a.codinfox-tag-mark:visited {
 }
 
 /**
- * Copy button on code blocks
+ * Code block toolbar: language label and "Copy" button, top-right.
+ * With a mouse, the label gives way to the button on hover.
  */
 div.highlight,
 figure.highlight,
@@ -589,10 +610,32 @@ figure.highlight,
     position: relative;
 }
 
-.copy-code {
+.code-tools {
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.code-lang {
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    background: $code-background-color;
+    color: $brand-color;
+    font-family: $base-font-family;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+    text-transform: lowercase;
+    pointer-events: none;
+    user-select: none;
+    transition: opacity 120ms ease;
+}
+
+.copy-code {
     padding: 0.2rem 0.6rem;
     border: 1px solid $border-color-02;
     border-radius: 5px;
@@ -603,7 +646,6 @@ figure.highlight,
     font-weight: 600;
     line-height: 1.4;
     cursor: pointer;
-    opacity: 0;
     transition: opacity 120ms ease;
 
     &:hover {
@@ -612,21 +654,80 @@ figure.highlight,
     }
 
     &.is-done {
-        opacity: 1;
+        opacity: 1 !important;
         color: $link-base-color;
     }
 }
 
-div.highlight:hover .copy-code,
-figure.highlight:hover .copy-code,
-.code-block:hover .copy-code,
-.copy-code:focus-visible {
-    opacity: 1;
+@media (hover: hover) {
+    .copy-code {
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0;
+    }
+
+    div.highlight:hover,
+    figure.highlight:hover,
+    .code-block:hover,
+    .code-tools:focus-within {
+        .copy-code { opacity: 1; }
+        .code-lang { opacity: 0; }
+    }
 }
 
-@media (hover: none) {
-    .copy-code {
-        opacity: 0.85;
+/**
+ * Click-to-zoom figures
+ */
+.post-content img.zoomable {
+    cursor: zoom-in;
+}
+
+.zoom-open,
+.zoom-open body {
+    overflow: hidden;
+}
+
+.zoom-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgba(28, 25, 23, 0.82);
+    cursor: zoom-out;
+    animation: zoom-fade 120ms ease-out;
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        height: auto;
+        border-radius: 6px;
+        background: #fff;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+        animation: zoom-grow 160ms ease-out;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@keyframes zoom-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes zoom-grow {
+    from { transform: scale(0.96); }
+    to   { transform: scale(1); }
+}
+
+@media (prefers-color-scheme: dark) {
+    .zoom-overlay img {
+        filter: brightness(0.9);
     }
 }
 

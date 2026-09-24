@@ -37,7 +37,25 @@
       pre.parentNode.insertBefore(box, pre);
       box.appendChild(pre);
     }
-    if (box.querySelector('.copy-code')) return;
+    if (box.querySelector('.code-tools')) return;
+
+    var tools = document.createElement('div');
+    tools.className = 'code-tools';
+
+    // Language label, from Rouge's "language-xxx" class or data-lang attribute.
+    var code = pre.querySelector('code');
+    var lang = (code && code.getAttribute('data-lang')) || '';
+    if (!lang) {
+      var holder = box.closest('[class*="language-"]') || code;
+      var m = holder && holder.className.match(/language-([\w+#-]+)/);
+      lang = m ? m[1] : '';
+    }
+    if (lang && lang !== 'plaintext' && lang !== 'text') {
+      var label = document.createElement('span');
+      label.className = 'code-lang';
+      label.textContent = lang;
+      tools.appendChild(label);
+    }
 
     var btn = document.createElement('button');
     btn.type = 'button';
@@ -53,7 +71,74 @@
         }, 1500);
       });
     });
-    box.appendChild(btn);
+    tools.appendChild(btn);
+    box.appendChild(tools);
+  });
+
+  // Click a figure to see it enlarged. Only for images shown smaller than
+  // their real size, and not for images that are already links.
+  var overlay = null, lastFocus = null;
+
+  function closeZoom() {
+    if (!overlay) return;
+    overlay.remove();
+    overlay = null;
+    document.documentElement.classList.remove('zoom-open');
+    document.removeEventListener('keydown', onZoomKey);
+    if (lastFocus) lastFocus.focus();
+  }
+
+  function onZoomKey(e) {
+    if (e.key === 'Escape') closeZoom();
+  }
+
+  function openZoom(img) {
+    lastFocus = document.activeElement;
+    overlay = document.createElement('div');
+    overlay.className = 'zoom-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', img.alt || 'Enlarged figure');
+    overlay.tabIndex = -1;
+
+    var big = document.createElement('img');
+    big.src = img.currentSrc || img.src;
+    big.alt = img.alt;
+    big.style.width = zoomWidth(img) + 'px';
+    overlay.appendChild(big);
+
+    overlay.addEventListener('click', closeZoom);
+    document.addEventListener('keydown', onZoomKey);
+    document.documentElement.classList.add('zoom-open');
+    document.body.appendChild(overlay);
+    overlay.focus();
+  }
+
+  // Enlarge up to 2x the image's own size, as far as the window allows.
+  function zoomWidth(img) {
+    var w = img.naturalWidth, h = img.naturalHeight;
+    if (!w || !h) return 0;
+    var scale = Math.min(2, (window.innerWidth - 48) / w, (window.innerHeight - 48) / h);
+    return Math.round(w * scale);
+  }
+
+  // Worth zooming only if the enlarged version is noticeably bigger.
+  function isZoomable(img) {
+    return zoomWidth(img) > img.clientWidth * 1.25;
+  }
+
+  article.querySelectorAll('img').forEach(function (img) {
+    if (img.closest('a')) return;
+
+    function setup() {
+      img.classList.toggle('zoomable', isZoomable(img));
+    }
+    if (img.complete) setup(); else img.addEventListener('load', setup);
+    window.addEventListener('resize', setup);
+
+    img.addEventListener('click', function () {
+      if (isZoomable(img)) openZoom(img);
+    });
   });
 })();
 </script>
